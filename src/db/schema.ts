@@ -45,10 +45,26 @@ export interface SettingRecord {
   value: number
 }
 
+/**
+ * A word/grammar point the user chose to study, before it's ever been
+ * reviewed. `cards` rows only exist post-first-review (see cards.ts), so
+ * "加入複習" from the browse page needs somewhere to register interest —
+ * this is that holding area. The review queue drains it (oldest first) into
+ * real `cards` rows as new-card slots become available; gradeItem() removes
+ * the row here the moment an item gets its first review.
+ */
+export interface QueuedItemRecord {
+  itemId: string
+  itemType: ItemType
+  level: JlptLevel
+  addedAt: Date
+}
+
 export class KotobaDB extends Dexie {
   cards!: Table<CardRecord, [ItemType, string]>
   reviewLogs!: Table<ReviewLogRecord, number>
   settings!: Table<SettingRecord, string>
+  queuedItems!: Table<QueuedItemRecord, [ItemType, string]>
 
   constructor() {
     super('kotoba')
@@ -56,6 +72,12 @@ export class KotobaDB extends Dexie {
       cards: '[itemType+itemId], due, state',
       reviewLogs: '++id, [itemType+itemId], review',
       settings: 'key',
+    })
+    this.version(2).stores({
+      cards: '[itemType+itemId], due, state',
+      reviewLogs: '++id, [itemType+itemId], review',
+      settings: 'key',
+      queuedItems: '[itemType+itemId], addedAt',
     })
   }
 }

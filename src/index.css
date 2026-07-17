@@ -60,6 +60,17 @@ button {
   background: #9ca3af;
 }
 
+.browse-vocab {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid #6b46c1;
+  background: none;
+  color: #6b46c1;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .daily-limit-setting {
   display: flex;
   align-items: center;
@@ -209,4 +220,331 @@ button {
 
 .grade-easy {
   background: #2563eb;
+}
+
+/* Vocab browse */
+
+.vocab-browse-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem calc(1rem + env(safe-area-inset-bottom));
+}
+
+.vocab-browse-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vocab-browse-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.vocab-browse-back,
+.vocab-detail-back {
+  min-height: 44px;
+  padding: 0 0.5rem;
+  border: none;
+  background: none;
+  color: #6b46c1;
+  font-size: 1rem;
+}
+
+.level-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+}
+
+.level-tab {
+  flex: 1;
+  min-height: 44px;
+  min-width: 44px;
+  border: 1px solid #e5e4e7;
+  border-radius: 8px;
+  background: none;
+  font-size: 1rem;
+}
+
+.level-tab.active {
+  background: #6b46c1;
+  border-color: #6b46c1;
+  color: #fff;
+  font-weight: 600;
+}
+
+.vocab-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.vocab-search {
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid #e5e4e7;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.pos-chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pos-chips .pos-chip {
+  flex-shrink: 0;
+}
+
+.pos-chip {
+  min-height: 32px;
+  padding: 0 0.625rem;
+  border: 1px solid #e5e4e7;
+  border-radius: 999px;
+  background: none;
+  font-size: 0.8125rem;
+}
+
+.pos-chip.active {
+  background: #6b46c1;
+  border-color: #6b46c1;
+  color: #fff;
+}
+
+.vocab-batch-add {
+  margin-bottom: 0.75rem;
+}
+
+.vocab-batch-add button {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid #6b46c1;
+  background: none;
+  color: #6b46c1;
+  font-size: 0.9375rem;
+}
+
+.vocab-batch-add button:disabled {
+  border-color: #9ca3af;
+  color: #9ca3af;
+}
+
+.vocab-status,
+.vocab-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  opacity: 0.7;
+}
+
+.vocab-error {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.vocab-error button {
+  min-height: 44px;
+  min-width: 44px;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #6b46c1;
+  color: #fff;
+}
+
+.vocab-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vocab-list-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  border-bottom: 1px solid #e5e4e7;
+  background: none;
+  font: inherit;
+  text-align: left;
+}
+
+.vocab-list-kanji {
+  font-size: 1.125rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.vocab-list-kana {
+  font-size: 0.8125rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.vocab-list-meaning {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.vocab-list-added {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: #16a34a;
+}
+
+/* Vocab detail */
+
+.vocab-detail {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
+}
+
+.vocab-detail-kanji {
+  font-size: 2rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.vocab-detail-kana {
+  font-size: 1.125rem;
+  opacity: 0.7;
+  margin: 0 0 0.5rem;
+}
+
+.vocab-detail-usage-note {
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+.vocab-detail-pos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0.5rem 0;
+}
+
+.vocab-detail-meaning {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.vocab-detail-meaning-en {
+  font-size: 0.9375rem;
+  opacity: 0.7;
+  margin: 0 0 0.75rem;
+}
+
+.vocab-add-button {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 8px;
+  border: none;
+  background: #6b46c1;
+  color: #fff;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.vocab-add-button:disabled {
+  background: #9ca3af;
+}
+
+.vocab-detail-sentences h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.vocab-detail-sentences ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vocab-detail-sentences li {
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+  border-radius: 8px;
+  background: rgba(107, 70, 193, 0.06);
+}
+
+.sentence-difficulty {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.vocab-detail-sentences .jp {
+  margin: 0 0 0.25rem;
+}
+
+.vocab-detail-sentences .en {
+  margin: 0;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+/* Batch add confirm dialog */
+
+.batch-add-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.batch-add-dialog {
+  width: 100%;
+  max-width: 360px;
+  background: var(--page-bg, Canvas);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.batch-add-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.batch-add-actions button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9375rem;
+}
+
+.batch-add-cancel {
+  background: #e5e4e7;
+}
+
+.batch-add-confirm {
+  background: #6b46c1;
+  color: #fff;
 }

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { Rating } from 'ts-fsrs'
 import { db } from '../../db/schema.ts'
-import { gradeItem, setDailyNewCardLimit } from '../../db/cards.ts'
+import { gradeItem, setDailyNewCardLimit, addToReviewQueue } from '../../db/cards.ts'
 import type { VocabEntry } from '../../shared/contentTypes.ts'
 
 const mockN5Vocab: VocabEntry[] = Array.from({ length: 15 }, (_, i) => ({
@@ -26,6 +26,7 @@ beforeEach(async () => {
   await db.cards.clear()
   await db.reviewLogs.clear()
   await db.settings.clear()
+  await db.queuedItems.clear()
 })
 
 describe('buildReviewQueue', () => {
@@ -87,5 +88,26 @@ describe('getNewCardCandidates', () => {
 
   it('returns an empty list when the limit is 0', async () => {
     expect(await getNewCardCandidates(0)).toEqual([])
+  })
+
+  it('sources manually-queued items (any level, oldest first) before falling back to the N5 auto-pool', async () => {
+    // A non-N5 word manually added via "加入複習" on the browse page.
+    await addToReviewQueue('vocab', 'n3-manual-1', 'N3', new Date('2026-01-01T00:00:00Z'))
+    await addToReviewQueue('vocab', 'n3-manual-2', 'N3', new Date('2026-01-01T00:01:00Z'))
+
+    const candidates = await getNewCardCandidates(3)
+
+    expect(candidates[0]).toMatchObject({ itemId: 'n3-manual-1', level: 'N3', isNew: true })
+    expect(candidates[1]).toMatchObject({ itemId: 'n3-manual-2', level: 'N3', isNew: true })
+    // Third slot backfilled from the N5 auto-pool.
+    expect(candidates[2]).toMatchObject({ itemType: 'vocab', level: 'N5', isNew: true })
+  })
+
+  it('does not double-count an N5 word that was both manually queued and present in the auto-pool', async () => {
+    await addToReviewQueue('vocab', 'n5-0', 'N5', new Date('2026-01-01T00:00:00Z'))
+
+    const candidates = await getNewCardCandidates(20)
+    const occurrences = candidates.filter((c) => c.itemId === 'n5-0').length
+    expect(occurrences).toBe(1)
   })
 })

@@ -1,5 +1,5 @@
 import { fsrs, createEmptyCard, State, type Card as FsrsCard, type Grade } from 'ts-fsrs'
-import { db, type CardRecord, type ItemType } from './schema.ts'
+import { db, type CardRecord, type ItemType, type QueuedItemRecord } from './schema.ts'
 import type { JlptLevel } from '../shared/contentTypes.ts'
 
 const scheduler = fsrs()
@@ -41,6 +41,61 @@ export async function countDueCards(now: Date = new Date()): Promise<number> {
 export async function listExistingItemIds(itemType: ItemType): Promise<Set<string>> {
   const rows = await db.cards.where('itemType').equals(itemType).toArray()
   return new Set(rows.map((r) => r.itemId))
+}
+
+/** True if the item already has review progress or is queued awaiting its first review. */
+export async function isInReviewQueueOrCards(itemType: ItemType, itemId: string): Promise<boolean> {
+  const [card, queued] = await Promise.all([
+    db.cards.get([itemType, itemId]),
+    db.queuedItems.get([itemType, itemId]),
+  ])
+  return card !== undefined || queued !== undefined
+}
+
+/** Registers interest in an item ("加入複習") without granting it a review yet. No-op if already added. */
+export async function addToReviewQueue(
+  itemType: ItemType,
+  itemId: string,
+  level: JlptLevel,
+  now: Date = new Date(),
+): Promise<void> {
+  if (await isInReviewQueueOrCards(itemType, itemId)) return
+  await db.queuedItems.put({ itemType, itemId, level, addedAt: now })
+}
+
+/** Manually-queued candidates awaiting their first review, oldest first, up to `limit`. */
+export async function listQueuedCandidates(limit: number): Promise<QueuedItemRecord[]> {
+  if (limit <= 0) return []
+  return db.queuedItems.orderBy('addedAt').limit(limit).toArray()
+}
+
+/** itemIds that already have review progress or are queued, for a given itemType (cards ∪ queuedItems). */
+export async function listAddedItemIds(itemType: ItemType): Promise<Set<string>> {
+  const [cards, queued] = await Promise.all([
+    db.cards.where('itemType').equals(itemType).toArray(),
+    db.queuedItems.where('itemType').equals(itemType).toArray(),
+  ])
+  return new Set([...cards.map((c) => c.itemId), ...queued.map((q) => q.itemId)])
+}
+
+/**
+ * Registers interest in many items at once ("批次加入"), skipping any that
+ * already have progress or are queued. Returns how many were actually added.
+ */
+export async function addManyToReviewQueue(
+  items: Array<{ itemType: ItemType; itemId: string; level: JlptLevel }>,
+  now: Date = new Date(),
+): Promise<number> {
+  let added = 0
+  await db.transaction('rw', db.cards, db.queuedItems, async () => {
+    for (const item of items) {
+      const alreadyAdded = await isInReviewQueueOrCards(item.itemType, item.itemId)
+      if (alreadyAdded) continue
+      await db.queuedItems.put({ itemType: item.itemType, itemId: item.itemId, level: item.level, addedAt: now })
+      added++
+    }
+  })
+  return added
 }
 
 function startOfDay(date: Date): Date {
@@ -109,7 +164,7 @@ export async function gradeItem(
     last_review: nextCard.last_review,
   }
 
-  await db.transaction('rw', db.cards, db.reviewLogs, async () => {
+  await db.transaction('rw', db.cards, db.reviewLogs, db.queuedItems, async () => {
     await db.cards.put(record)
     await db.reviewLogs.add({
       itemId,
@@ -123,6 +178,8 @@ export async function gradeItem(
       learning_steps: log.learning_steps,
       review: log.review,
     })
+    // No-op if it was never queued (e.g. auto-sourced from the N5 pool).
+    await db.queuedItems.delete([itemType, itemId])
   })
 
   return record

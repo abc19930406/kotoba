@@ -1,4 +1,10 @@
-import { listDueCards, listExistingItemIds, getDailyNewCardLimit, countNewCardsIntroducedToday } from '../../db/cards.ts'
+import {
+  listDueCards,
+  listExistingItemIds,
+  getDailyNewCardLimit,
+  countNewCardsIntroducedToday,
+  listQueuedCandidates,
+} from '../../db/cards.ts'
 import { loadVocabLevel } from '../../shared/contentLoader.ts'
 import type { ItemType } from '../../db/schema.ts'
 import type { JlptLevel } from '../../shared/contentTypes.ts'
@@ -10,8 +16,8 @@ export interface QueueItem {
   isNew: boolean
 }
 
-/** New cards are sourced from N5 vocab until Phase 3 adds manual add-to-review. */
-const NEW_CARD_SOURCE_LEVEL: JlptLevel = 'N5'
+/** Fallback new-card source (any level, not just N5) once the manually-queued pool runs dry. */
+const AUTO_NEW_CARD_SOURCE_LEVEL: JlptLevel = 'N5'
 
 export async function getRemainingNewCardSlots(now: Date = new Date()): Promise<number> {
   const dailyLimit = await getDailyNewCardLimit()
@@ -19,16 +25,31 @@ export async function getRemainingNewCardSlots(now: Date = new Date()): Promise<
   return Math.max(0, dailyLimit - introducedToday)
 }
 
-/** Vocab entries from the new-card source level not yet in the cards table, capped at `limit`. */
+/**
+ * New-card candidates, capped at `limit`: manually-queued items first
+ * (oldest "加入複習" first, any level — this is what Phase 3's browse page
+ * feeds), then the N5 auto-pool fills any remaining slots so the app still
+ * has new cards to offer before the user has curated anything.
+ */
 export async function getNewCardCandidates(limit: number): Promise<QueueItem[]> {
   if (limit <= 0) return []
+
+  const queued = await listQueuedCandidates(limit)
+  const candidates: QueueItem[] = queued.map((q) => ({
+    itemType: q.itemType,
+    itemId: q.itemId,
+    level: q.level,
+    isNew: true,
+  }))
+  if (candidates.length >= limit) return candidates
+
+  const queuedIds = new Set(queued.filter((q) => q.itemType === 'vocab').map((q) => q.itemId))
   const [allVocab, existingIds] = await Promise.all([
-    loadVocabLevel(NEW_CARD_SOURCE_LEVEL),
+    loadVocabLevel(AUTO_NEW_CARD_SOURCE_LEVEL),
     listExistingItemIds('vocab'),
   ])
-  const candidates: QueueItem[] = []
   for (const entry of allVocab) {
-    if (existingIds.has(entry.id)) continue
+    if (existingIds.has(entry.id) || queuedIds.has(entry.id)) continue
     candidates.push({ itemType: 'vocab', itemId: entry.id, level: entry.level, isNew: true })
     if (candidates.length >= limit) break
   }

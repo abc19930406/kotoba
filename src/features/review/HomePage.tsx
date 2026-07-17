@@ -4,9 +4,10 @@ import { getRemainingNewCardSlots, getNewCardCandidates } from './queue.ts'
 
 interface HomePageProps {
   onStartReview: () => void
+  onBrowseVocab: () => void
 }
 
-export function HomePage({ onStartReview }: HomePageProps) {
+export function HomePage({ onStartReview, onBrowseVocab }: HomePageProps) {
   const [dueCount, setDueCount] = useState<number | null>(null)
   const [newCount, setNewCount] = useState<number | null>(null)
   const [dailyLimit, setDailyLimitState] = useState(DEFAULT_DAILY_NEW_CARD_LIMIT)
@@ -48,6 +49,9 @@ export function HomePage({ onStartReview }: HomePageProps) {
       </div>
       <button type="button" className="start-review" onClick={onStartReview} disabled={!hasWork}>
         {hasWork ? '開始複習' : '今天沒有待複習卡片'}
+      </button>
+      <button type="button" className="browse-vocab" onClick={onBrowseVocab}>
+        瀏覽單字
       </button>
       <label className="daily-limit-setting">
         每日新卡上限：
