@@ -6,3 +6,207 @@
 body {
   margin: 0;
 }
+
+button {
+  font: inherit;
+}
+
+/* Home page */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+.start-review {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 8px;
+  border: none;
+  background: #6b46c1;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.start-review:disabled {
+  background: #9ca3af;
+}
+
+.daily-limit-setting {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.daily-limit-setting input {
+  width: 4rem;
+  min-height: 44px;
+  font-size: 1rem;
+}
+
+/* Review session */
+
+.review-session {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.review-progress {
+  text-align: center;
+  opacity: 0.7;
+  padding: 0.5rem;
+}
+
+.review-status,
+.review-complete {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.review-complete button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #6b46c1;
+  color: #fff;
+}
+
+.review-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: calc(100% - 2rem);
+  margin: 0.5rem 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e5e4e7;
+  background: none;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.review-card-front {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.review-card-back {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.review-card-meaning .kana {
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
+.review-card-meaning .usage-note {
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+.review-card-meaning .formation {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.review-card-meaning .meaning {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.review-card-sentences {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.review-card-sentences .jp {
+  margin: 0;
+}
+
+.review-card-sentences .en {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+/* Grade buttons — thumb zone at the bottom of the viewport */
+
+.grade-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  position: sticky;
+  bottom: 0;
+  background: var(--page-bg, Canvas);
+}
+
+.grade-buttons button {
+  min-height: 48px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.grade-again {
+  background: #dc2626;
+}
+
+.grade-hard {
+  background: #d97706;
+}
+
+.grade-good {
+  background: #16a34a;
+}
+
+.grade-easy {
+  background: #2563eb;
+}

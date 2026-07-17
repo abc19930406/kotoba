@@ -1,10 +1,16 @@
+import { useState } from 'react'
+import { HomePage } from './features/review/HomePage.tsx'
+import { ReviewSession } from './features/review/ReviewSession.tsx'
+
+type View = 'home' | 'review'
+
 function App() {
-  return (
-    <main>
-      <h1>kotoba</h1>
-      <p>日文學習 PWA — 骨架建置中</p>
-    </main>
-  )
+  const [view, setView] = useState<View>('home')
+
+  if (view === 'review') {
+    return <ReviewSession onComplete={() => setView('home')} />
+  }
+  return <HomePage onStartReview={() => setView('review')} />
 }
 
 export default App
