@@ -6,6 +6,8 @@
     "formation": "Place + に + Object/Thing + が + あります",
     "shortExplanation": "Express the existence or presence of something in a place.",
     "longExplanation": "The ～（場所）に～があります grammar point is used to express the existence or presence of something in a specific location. In this structure, the place is followed by 'に', then the object, plus が, and finally あります (to exist / there is).",
+    "zhShort": "表示某物在某地點的存在；『在～地方有～』。",
+    "zhLong": "～（場所）に～があります 文法是用來表示某物在特定地點的存在或位置。在這個結構中，地點後面加上『に』，然後是物體、『が』，最後是『あります』（存在／有）。",
     "sentences": [
       {
         "jp": "図書館にたくさんの本があります。",
@@ -36,6 +38,8 @@
     "formation": "Object + が + あります",
     "shortExplanation": "Indicate possession or existence of inanimate objects; 'there is', 'there are'.",
     "longExplanation": "The あります grammar point is used to indicate the possession or existence of inanimate objects. It can be translated as 'there is' or 'there are' in English. It is different from います, which is used for people and most living creatures. あります is commonly used with particle が to mark the object.",
+    "zhShort": "表示無生物的所有或存在；『有～』、『存在有～』。",
+    "zhLong": "あります 文法是用來表示無生物的所有或存在。可以翻譯為『有』或『存在有』。它與 います 不同，います 是用於人和大多數生物。あります 通常與格助詞『が』一起使用來標示所有或存在的物體。",
     "sentences": [
       {
         "jp": "教室に机があります。",
@@ -66,6 +70,8 @@
     "formation": "Noun + は + いかがですか / (Verb-て form + は) いかがですか",
     "shortExplanation": "A polite way to ask someone's thoughts, opinions, or preferences; 'how about', 'how is'.",
     "longExplanation": "The ～いかがですか grammar point is used to politely ask someone's thoughts, opinions, or preferences. It can be translated as 'how about' or 'how is' in English. The formation is quite straightforward when used with verbs or nouns.",
+    "zhShort": "禮貌地詢問某人的想法、意見或偏好；『怎麼樣』、『如何』。",
+    "zhLong": "～いかがですか 文法是用來禮貌地詢問某人的想法、意見或偏好。可以翻譯為『怎麼樣』或『如何』。與動詞或名詞結合時形成方式相當直接。",
     "sentences": [
       {
         "jp": "お茶はいかがですか？",
@@ -96,6 +102,8 @@
     "formation": "Noun + が / い-Adjective + が / な-Adjective + が / Verb + が",
     "shortExplanation": "Particle indicating the subject of a sentence or expressing 'but'.",
     "longExplanation": "The ～が grammar point is a particle that is used to indicate the subject of a sentence or to express a contrast similar to 'but' in English. It has various functions depending on the context.",
+    "zhShort": "格助詞，表示句子的主語或表達『但是』的意思。",
+    "zhLong": "～が 文法是一個格助詞，用來表示句子的主語，或用來表達類似英文『but』的對比。根據上下文不同，它有各種不同的用途。",
     "sentences": [
       {
         "jp": "私が学生です。",
@@ -126,6 +134,8 @@
     "formation": "Person + が + (Thing or Action) + 私に + くれます",
     "shortExplanation": "Used to express that someone gives a gift or favor to 'me'; 'someone gives me'.",
     "longExplanation": "The ～が私にくれます grammar point is used to express that someone gives 'me' something or does something for me. It can be translated as 'someone gives me' or 'someone does something for me' in English. Typically, the giver is marked by が, and the receiver is 私に (to me).",
+    "zhShort": "表示某人送禮物或幫忙給『我』；『某人給我～』。",
+    "zhLong": "～が私にくれます 文法是用來表示某人送給『我』東西或為我做事。可以翻譯為『某人給我～』或『某人為我做～』。通常，送禮者用『が』標示，接收者用『私に』（給我）表示。",
     "sentences": [
       {
         "jp": "彼がプレゼントを私にくれました。",
@@ -156,6 +166,8 @@
     "formation": "Sentence 1 + が、+ Sentence 2",
     "shortExplanation": "Express a contrast between two sentences; 'but', 'however'.",
     "longExplanation": "The ～が、～ grammar point is used to express a contrast or contradiction between two sentences or clauses. It can be translated as 'but' or 'however' in English. This grammar point is slightly more formal than けど and is used to show a contrast in the situation.",
+    "zhShort": "表達兩個句子之間的對比；『但是』、『然而』。",
+    "zhLong": "～が、～ 文法是用來表達兩個句子或子句之間的對比或矛盾。可以翻譯為『但是』或『然而』。這個文法比『けど』略顯正式，用來表現情況上的對比。",
     "sentences": [
       {
         "jp": "デザートは美味しいが、カロリーが高い。",
@@ -186,6 +198,8 @@
     "formation": "Noun + から + (Verb-て form) + もらいます",
     "shortExplanation": "To receive something or get someone to do something.",
     "longExplanation": "The ～からもらいます grammar point is used to express receiving something from someone or getting someone to do something for you. In English, it can be translated as 'to receive from' or 'to get someone to do something'.",
+    "zhShort": "從某人那裡接收東西或讓某人做某事；『從～得到』。",
+    "zhLong": "～からもらいます 文法是用來表示從某人那裡接收東西，或讓某人為你做事。在英文中可以翻譯為『from』或『to receive from』、『to get someone to do something』。格助詞『から』表示施與者，『もらいます』表示接收。",
     "sentences": [
       {
         "jp": "友達からプレゼントをもらいました。",
@@ -216,6 +230,8 @@
     "formation": "Verb-casual + から / い-Adjective + から / な-Adjective + だから / Noun + だから",
     "shortExplanation": "Expresses reason or cause; 'because', 'since', 'so'.",
     "longExplanation": "The ～から grammar point is used to indicate the reason or cause for something. It can be translated as 'because', 'since', or 'so' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "zhShort": "表示原因或理由；『因為』、『由於』、『所以』。",
+    "zhLong": "～から 文法是用來表示事物的原因或理由。可以翻譯為『因為』、『由於』或『所以』。其形成方式取決於是與動詞、い形容詞、な形容詞或名詞一起使用而有所不同。",
     "sentences": [
       {
         "jp": "明日は試験があるから、今晩勉強しなければなりません。",
@@ -246,6 +262,8 @@
     "formation": "Verb-casual + からです / い-Adjective + からです / な-Adjective + だからです / Noun + だからです",
     "shortExplanation": "Express the reason or cause; 'because', 'since', 'due to'.",
     "longExplanation": "The ～からです grammar point is used to state the reason or cause of something, often as a short concluding statement. It can be translated as 'because', 'since', or 'due to' in English. The formation can be used with verbs, い-adjectives, な-adjectives, or nouns, but be careful with な-adjectives and nouns: typically, it's [Noun/な-adjective] + だからです.",
+    "zhShort": "表示原因或理由；『因為』、『由於』、『所以』。",
+    "zhLong": "～からです 文法是用來說明事物的原因或理由，通常用作簡短的結論陳述。可以翻譯為『因為』、『由於』或『所以』。可以與動詞、い形容詞、な形容詞或名詞一起使用，但要注意な形容詞和名詞：通常形式為【名詞/な形容詞】＋だからです。",
     "sentences": [
       {
         "jp": "寒いからです。コートを着ています。",
@@ -276,6 +294,8 @@
     "formation": "Verb-casual + けど / い-adjective + けど / な-adjective + だけど / Noun + だけど",
     "shortExplanation": "Used to connect two clauses; 'but', 'however', 'although'",
     "longExplanation": "The ～けど grammar point is used to connect two clauses, often to show a contrast or to introduce a different point of view. It can be translated as 'but', 'however', or 'although' in English. It's more casual than けれど or が.",
+    "zhShort": "用來連接兩個子句；『但是』、『然而』、『雖然』。",
+    "zhLong": "～けど 文法是用來連接兩個子句，通常表示對比或引入不同的觀點。可以翻譯為『但是』、『然而』或『雖然』。比『けれど』或『が』更口語化。",
     "sentences": [
       {
         "jp": "授業に出たけど、まだ宿題をしないといけない。",
@@ -306,6 +326,8 @@
     "formation": "Verb-casual + けれど / い-Adjective + けれど / な-Adjective + だけれど / Noun + だけれど",
     "shortExplanation": "Expresses a contrast or contradiction; 'but', 'however', 'even though'.",
     "longExplanation": "The ～けれど grammar point is used to express a contrast or contradiction between two statements. It can be translated as 'but', 'however', or 'even though' in English. This grammar point is slightly more formal than けど.",
+    "zhShort": "表示對比或矛盾；『但是』、『然而』、『即使』。",
+    "zhLong": "～けれど 文法是用來表達兩個陳述之間的對比或矛盾。可以翻譯為『但是』、『然而』或『即使』。這個文法比『けど』略顯正式。",
     "sentences": [
       {
         "jp": "今日は寒いけれど、散歩に行きます。",
@@ -336,6 +358,8 @@
     "formation": "Verb-casual-past + たり + Verb-casual-past + たり + します",
     "shortExplanation": "Used to list multiple actions or states; 'do things like', 'and'.",
     "longExplanation": "The ～たり、～たり します grammar point is used to list multiple actions or states without fully enumerating them. It can imply that there are more items in the list and can be translated as 'do things like', 'and', 'among other things', or 'and so on' in English. It is formed by attaching たり to the casual past tense of the verb, followed by します.",
+    "zhShort": "列舉多個動作或狀態；『做些～之類的事情』、『並且』。",
+    "zhLong": "～たり、～たり します 文法是用來列舉多個動作或狀態，而不需要完全列舉所有項目。它暗示列表中還有更多項目，可以翻譯為『do things like』、『and』、『among other things』或『and so on』。形成方式是將『たり』附加到動詞的過去時隨意形，然後加上『します』。",
     "sentences": [
       {
         "jp": "休日には、映画を見たり、友達と遊んだりします。",
@@ -366,6 +390,8 @@
     "formation": "Verb て-form + います",
     "shortExplanation": "Expresses the present continuous or ongoing action; 'to be doing', 'currently doing'.",
     "longExplanation": "The ～て います grammar pattern is used to express that an action is currently happening or ongoing. It can be translated as 'to be doing' or 'currently doing' in English. The formation differs depending on whether it is a る-verb, う-verb, or an irregular verb, but all use the verb’s て-form + います.",
+    "zhShort": "表示現在進行中的動作或正在進行的動作；『正在做』。",
+    "zhLong": "～て います 文法是用來表達動作目前正在發生或進行中。可以翻譯為『to be doing』或『currently doing』。形成方式取決於是否為る動詞、う動詞或不規則動詞，但所有形式都使用動詞的て形＋います。",
     "sentences": [
       {
         "jp": "今、音楽を聞いています。",
@@ -396,6 +422,8 @@
     "formation": "Situation + どうしますか",
     "shortExplanation": "Asking for someone's opinion or decision; 'what will you do?', 'how will you handle it?'.",
     "longExplanation": "The ～どうしますか grammar point is used to ask for someone's opinion, decision, or course of action in a specific situation. It can be translated as 'what will you do?' or 'how will you handle it?' in English. This grammar point is formed by attaching どうしますか to the end of a sentence.",
+    "zhShort": "詢問某人的意見或決定；『你要怎麼做？』、『你怎麼處理？』。",
+    "zhLong": "～どうしますか 文法是用來詢問某人對特定情況的意見、決定或應對方式。可以翻譯為『you will do what?』或『how will you handle it?』。這個文法是通過在句子末尾附加『どうしますか』形成的。",
     "sentences": [
       {
         "jp": "雨が降っているので、どうしますか？",
@@ -426,6 +454,8 @@
     "formation": "Word/Phrase + は [language]でどう言いますか / Word/Phrase + をどう言いますか",
     "shortExplanation": "Asking for the way to say something; 'how do you say'.",
     "longExplanation": "The ～どう言いますか grammar point is used to ask someone how to express something in a particular language or the appropriate way to say it. It can be translated as 'how do you say' in English.",
+    "zhShort": "詢問如何說某事；『怎麼說』、『怎麼表達』。",
+    "zhLong": "～どう言いますか 文法是用來詢問某人如何用特定語言表達某事，或適當的表達方式。可以翻譯為『how do you say』。通常用來詢問某個詞彙或表達方法的正確用法。",
     "sentences": [
       {
         "jp": "「ありがとう」は英語でどう言いますか。",
@@ -456,6 +486,8 @@
     "formation": "Noun + は/が + どうですか / Verb-casual + の + どうですか / い-Adjective + どうですか / な-Adjective + な + どうですか",
     "shortExplanation": "Asking for opinions or suggestions; 'how about', 'what do you think of'.",
     "longExplanation": "The ～どうですか grammar point is used to ask for someone's opinion or suggestion on something. It can be translated as 'how about' or 'what do you think of' in English. This expression is neither casual nor super-formal, and can be used in various situations.",
+    "zhShort": "詢問意見或建議；『怎麼樣』、『你覺得～如何』。",
+    "zhLong": "～どうですか 文法是用來詢問某人對某事的意見或建議。可以翻譯為『how about』或『what do you think of』。這個表達既不太隨意也不超級正式，可以用於各種情況。",
     "sentences": [
       {
         "jp": "この映画はどうですか？",
@@ -486,6 +518,8 @@
     "formation": "Verb-casual + とき / い-Adjective + とき / な-Adjective + なとき / Noun + のとき",
     "shortExplanation": "Expresses the time when something happens, 'when', 'at the time'.",
     "longExplanation": "The ～とき grammar point is used to express the time when something happens or happened. It can be translated as 'when' or 'at the time' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "zhShort": "表示事物發生的時間；『當～時候』、『在～時刻』。",
+    "zhLong": "～とき 文法是用來表示事物發生或曾經發生的時間。可以翻譯為『when』或『at the time』。其形成方式取決於是與動詞、い形容詞、な形容詞或名詞一起使用而有所不同。",
     "sentences": [
       {
         "jp": "公園で遊ぶとき、帽子をかぶりましょう。",
@@ -516,6 +550,8 @@
     "formation": "Noun + は/が + なんと言いますか",
     "shortExplanation": "Asking how something is called or referred to; 'how do you say'",
     "longExplanation": "The ～なんと言いますか grammar point is used to ask how something is called, expressed, or referred to in a polite manner. It can be translated as 'how do you say' or 'what do you call' in English. The formation is used with a noun or a topic where you would like to know the proper expression or name for something.",
+    "zhShort": "詢問某事如何被稱呼或指稱；『怎麼說』、『叫什麼』。",
+    "zhLong": "～なんと言いますか 文法是用來詢問某事如何被稱呼、表達或指稱，用法較為禮貌。可以翻譯為『how do you say』或『what do you call』。與名詞或主題一起使用，用來詢問某事的正確表達方式或名稱。",
     "sentences": [
       {
         "jp": "この花はなんと言いますか。",
@@ -546,6 +582,8 @@
     "formation": "Receiver + に + Object + を + あげます",
     "shortExplanation": "Used to express giving something to someone; 'give', 'offer'.",
     "longExplanation": "The ～に あげます grammar point is used when the speaker offers or gives something to someone. It emphasizes that the action is performed for the benefit of the receiver. The formation involves using the particle 'に' after the person receiving the item, followed by the verb あげます.",
+    "zhShort": "用來表示把某物給予某人；『給』、『提供』。",
+    "zhLong": "～に あげます 文法是用來表示說話者向某人提供或給予某物。強調這個動作是為接收者的利益而進行的。形成方式涉及在接收者名字後使用格助詞『に』，然後跟著『あげます』動詞。",
     "sentences": [
       {
         "jp": "私は友達に本をあげました。",
@@ -576,6 +614,8 @@
     "formation": "Giver + に + Verb-te form + もらいます / Giver + に + Object + を + もらいます",
     "shortExplanation": "To receive something or some action from someone; 'to get', 'to receive'.",
     "longExplanation": "The ～に もらいます grammar point is used to express receiving something or some action from someone. It can be translated as 'to get' or 'to receive' in English. The formation involves placing に after the giver and もらいます to show the act of receiving.",
+    "zhShort": "從某人那裡接收某物或某個動作；『得到』、『接收』。",
+    "zhLong": "～に もらいます 文法是用來表示從某人那裡接收某物或某個動作。可以翻譯為『to get』或『to receive』。形成方式涉及在施與者後面放置『に』，然後是『もらいます』，以表示接收的動作。",
     "sentences": [
       {
         "jp": "友達にプレゼントをもらいました。",
@@ -606,6 +646,8 @@
     "formation": "Noun1 + の + Noun2, (Adjective/Clause) + の (nominalized), etc.",
     "shortExplanation": "Express possession, apposition, or description using 'of' or ''s'.",
     "longExplanation": "The ～の grammar point is used to express possession, apposition, or description. It functions like 'of' or an apostrophe + 's' (’s) in English. It can be used with nouns, adjectives, and verbs to show relationships between words.",
+    "zhShort": "表示所有、同位或描述，相當於英文的 'of' 或 ''s'。",
+    "zhLong": "～の 文法用於表示所有、同位或描述。它的功能類似英文的 'of' 或所有格 ''s'。可與名詞、形容詞和動詞搭配使用，用來表示詞彙之間的關係。",
     "sentences": [
       {
         "jp": "これは私の鞄です。",
@@ -636,6 +678,8 @@
     "formation": "Noun + はたいへんです",
     "shortExplanation": "Express that something is difficult or tough.",
     "longExplanation": "The ～はたいへんです grammar point is used to express that something is difficult or tough to do, handle, or face. It can be translated as 'is difficult' or 'is tough' in English. The formation is used with a noun followed by はたいへんです.",
+    "zhShort": "表示某事困難或艱鉅。",
+    "zhLong": "～はたいへんです 文法用於表示做某事、處理某事或面對某事是困難或艱鉅的。可譯為 'is difficult'（很困難）或 'is tough'（很艱鉅）。構成方式為名詞後接 はたいへんです。",
     "sentences": [
       {
         "jp": "漢字を覚えるのはたいへんです。",
@@ -666,6 +710,8 @@
     "formation": "Noun + が + いちばん + Adjective/Verb",
     "shortExplanation": "Express the superlative degree; 'the most', 'the best', 'the least'.",
     "longExplanation": "The A が いちばん～ grammar point is used to express a superlative degree or the highest rank. It can be translated as 'the most', 'the best', or 'the least' in English. The formation is used with various adjectives and verbs, and can also be used in comparison with other items or people.",
+    "zhShort": "表示最高級；'最～'、'最好的'、'最少的'。",
+    "zhLong": "A が いちばん～ 文法用於表示最高級或最高的程度。可譯為 'the most'（最）、'the best'（最好）或 'the least'（最少）。可與各種形容詞和動詞搭配使用，也可用來與其他物品或人進行比較。",
     "sentences": [
       {
         "jp": "この中で、寿司が一番好きです。",
@@ -696,6 +742,8 @@
     "formation": "A は (Topic) + B が (Characteristic/Feature) + Description/Action",
     "shortExplanation": "Indicates that there is something unique or different about A and describes what is special about it.",
     "longExplanation": "The A は B が〜 grammar point is used to emphasize the uniqueness or difference of 'A' by describing a characteristic or feature 'B' that is specific to 'A'. This structure is used to convey that there is something notable or special about 'A' when compared to others.",
+    "zhShort": "表示 A 具有獨特性或不同之處，並描述什麼對 A 來說是特別的。",
+    "zhLong": "A は B が〜 文法用於強調 'A' 的獨特性或差異，透過描述特定於 'A' 的特徵或特性 'B'。這個結構用來傳達與他人相比，'A' 有值得注意或特別之處。",
     "sentences": [
       {
         "jp": "彼女は髪が長いです。",
@@ -726,6 +774,8 @@
     "formation": "A は B より + Adjective",
     "shortExplanation": "Express a comparison between A and B; 'A is more/less than B'.",
     "longExplanation": "The A は B より grammar point is used to express a comparison between two items or subjects (A and B). It can be translated as 'A is more/less than B' in English. This structure is followed by an adjective that describes the comparison.",
+    "zhShort": "表示 A 與 B 的比較；'A 比 B 更～/較不～'。",
+    "zhLong": "A は B より～ 文法用於表示兩個事物或主體（A 和 B）之間的比較。可譯為 'A is more/less than B'（A 比 B 更～/較不～）。這個結構後面接形容詞以表示比較。",
     "sentences": [
       {
         "jp": "このジュースはあのジュースより甘いです。",
@@ -756,6 +806,8 @@
     "formation": "A + より + B + のほうが + Adjective",
     "shortExplanation": "Used to compare two items; 'B is more ～ than A'.",
     "longExplanation": "The grammar point A より B のほうが～ is used to compare two items or situations and indicate that one is more (adjective) than the other. It can be translated as 'B is more ～ than A' in English. It is used with both い-adjectives and な-adjectives.",
+    "zhShort": "用於比較兩項事物；'B 比 A 更～'。",
+    "zhLong": "A より B のほうが～ 文法用於比較兩個事物或情況，表示其中一個相比於另一個更具有某項特性（形容詞）。可譯為 'B is more ～ than A'（B 比 A 更～）。可與 い-形容詞和な-形容詞都搭配使用。",
     "sentences": [
       {
         "jp": "ピザよりハンバーガーのほうが美味しい。",
@@ -786,6 +838,8 @@
     "formation": "Noun A + では、 + Subject + Predicate B",
     "shortExplanation": "Indicates a contrast or comparison between A and B; 'As for A, ~B'.",
     "longExplanation": "The A では、～B grammar point is used to indicate a contrast or comparison between A and B. It is used to express that 'As for A, ~ B' or 'Regarding A, ~ B'. This grammar structure is often used for contrasting or comparing different subjects/topics.",
+    "zhShort": "表示 A 和 B 之間的對比或比較；'至於 A，～B'。",
+    "zhLong": "A では、～B 文法用於表示 A 和 B 之間的對比或比較。用來表達 'As for A, ~ B'（至於 A，～B）或 'Regarding A, ~ B'（關於 A，～B）。這個文法結構常用於對比或比較不同的主題。",
     "sentences": [
       {
         "jp": "果物では、リンゴが一番好きです。",
@@ -816,6 +870,8 @@
     "formation": "Statement A + けれども、+ Statement B",
     "shortExplanation": "Used to express a contrast between two statements. It can be translated as 'but' or 'however'.",
     "longExplanation": "The grammar point A。けれども、～B。 is used to express a contrast or contradiction between statement A and statement B. It can be translated as 'but' or 'however' in English. けれども is a conjunction that links two clauses to show there is a conflicting or opposing idea between them.",
+    "zhShort": "用於表示兩個陳述句之間的對比，可譯為 'but'（但是）或 'however'（然而）。",
+    "zhLong": "A。けれども、～B。文法用於表示陳述句 A 和陳述句 B 之間的對比或矛盾。可譯為 'but'（但是）或 'however'（然而）。けれども 是一個連接詞，連結兩個子句以表示它們之間有衝突或相反的想法。",
     "sentences": [
       {
         "jp": "今日は晴れている。けれども、寒いです。",
@@ -846,6 +902,8 @@
     "formation": "Sentence A + しかし + Sentence B.",
     "shortExplanation": "Expresses contrast or contradiction between two clauses; 'A, but B', 'A, however B'.",
     "longExplanation": "The grammar point A。しかし、～B。 is used to show contrast or contradiction between two clauses. It can be translated as 'A, but B' or 'A, however B' in English. しかし is placed between two sentences to indicate a contrast between them.",
+    "zhShort": "表示兩個子句之間的對比或矛盾；'A，但是 B'、'A，然而 B'。",
+    "zhLong": "A。しかし、～B。文法用於表示兩個子句之間的對比或矛盾。可譯為 'A, but B'（A，但是 B）或 'A, however B'（A，然而 B）。しかし 置於兩個句子之間以表示它們之間的對比。",
     "sentences": [
       {
         "jp": "今日は忙しい。しかし、時間があるなら、コーヒーを飲もう。",
@@ -876,6 +934,8 @@
     "formation": "A: Sentence, B: Sentence (A and B can be any sentence type)",
     "shortExplanation": "Indicates a decision or suggestion; 'well then', 'in that case', 'so'.",
     "longExplanation": "The A。じゃ、～B。grammar point is used to express a decision, suggestion, or course of action based on a given situation or information. It can be translated as 'well then', 'in that case', or 'so' in English. This grammar works with any form of sentence, whether it's a verb, noun, い-adjective, or な-adjective in both parts (A and B).",
+    "zhShort": "表示決定或建議；'那麼'、'在那種情況下'、'所以'。",
+    "zhLong": "A。じゃ、～B。文法用於表示基於給定情況或資訊的決定、建議或行動方針。可譯為 'well then'（那麼）、'in that case'（在那種情況下）或 'so'（所以）。這個文法可與任何形式的句子搭配使用，無論 A 和 B 是動詞、名詞、い-形容詞還是な-形容詞，以及它們的時態。",
     "sentences": [
       {
         "jp": "映画は時間がない。じゃ、また今度行こう。",
@@ -906,6 +966,8 @@
     "formation": "Sentence A + 。それじゃ、 + Sentence B",
     "shortExplanation": "Connect two sentences; 'A, so/in that case, B'",
     "longExplanation": "The A。それじゃ、～B。grammar point is used to connect two sentences or ideas. It translates to 'A, so/in that case, B' in English. This expression is used when the first sentence (A) creates a situation or context and the second sentence (B) indicates the consequence or response to that situation.",
+    "zhShort": "連接兩個句子；'A，那麼/在那種情況下 B'。",
+    "zhLong": "A。それじゃ、～B。文法用於連接兩個句子或想法。譯為 'A, so/in that case, B'（A，那麼/在那種情況下 B）。當第一個句子（A）創造了一種情況或背景，而第二個句子（B）指出對該情況的結果或回應時，便使用此表達。",
     "sentences": [
       {
         "jp": "今日は休みです。それじゃ、映画を観に行きましょう。",
@@ -936,6 +998,8 @@
     "formation": "A (Statement) + 。それでは、 + B (Follow-up action or statement)",
     "shortExplanation": "Express a change in situation; 'then', 'in that case', 'so'.",
     "longExplanation": "The A。それでは、～B。grammar point is used to express a change in situation or transition from one action to another. It can be translated as 'then', 'in that case', or 'so' in English. The formation consists of two sentences or clauses, with それでは connecting them and reflecting a change based on the previous statement (A).",
+    "zhShort": "表示情況的改變；'那麼'、'在那種情況下'、'所以'。",
+    "zhLong": "A。それでは、～B。文法用於表示情況的改變或從一個行動過渡到另一個行動。可譯為 'then'（那麼）、'in that case'（在那種情況下）或 'so'（所以）。構成方式為兩個句子或子句，由それでは 連接，反映基於前面陳述（A）的改變。",
     "sentences": [
       {
         "jp": "今日は休みだ。それでは、映画を見に行こう。",
@@ -966,6 +1030,8 @@
     "formation": "Clause A + でも + Clause B",
     "shortExplanation": "Used to express contrast between two statements; 'A, but B', 'A, however B'.",
     "longExplanation": "The A。でも、～B。grammar point is used to express contrast or an unexpected continuation from statement A to statement B. It can be translated as 'A, but B' or 'A, however B' in English. The formation simply places でも at the beginning of the second sentence to show contrast with the first sentence.",
+    "zhShort": "用於表示兩個陳述句之間的對比；'A，但是 B'、'A，然而 B'。",
+    "zhLong": "A。でも、～B。文法用於表示陳述句 A 和陳述句 B 之間的對比或出人意料的發展。可譯為 'A, but B'（A，但是 B）或 'A, however B'（A，然而 B）。構成方式為在第二個句子的開頭放置でも，以與第一個句子形成對比。",
     "sentences": [
       {
         "jp": "昨日は寒かった。でも、今日は暖かいです。",
@@ -996,6 +1062,8 @@
     "formation": "Aと Bと どちら + Verb/Adjective/Noun",
     "shortExplanation": "Used to ask which of two alternatives is preferred or to compare two things",
     "longExplanation": "The grammar pattern Aと Bと どちら～ is used to compare two alternatives A and B, and ask which one is preferred, better, or more suitable. It can be used with verbs, adjectives, or nouns.",
+    "zhShort": "用於詢問兩個選項中的哪一個受歡迎，或比較兩個事物。",
+    "zhLong": "Aと Bと どちら～ 文法用於比較兩個選項 A 和 B，並詢問其中哪一個更受歡迎、更好或更合適。可與動詞、形容詞或名詞搭配使用。",
     "sentences": [
       {
         "jp": "りんごとみかんとどちらが好きですか。",
@@ -1026,6 +1094,8 @@
     "formation": "AとBと どっち + Verb, AかBか どっち + Verb",
     "shortExplanation": "Asking which one; 'which', 'A or B'.",
     "longExplanation": "The  AとBと どっち〜 grammar point is used to ask which one to choose between two options, A and B. It can be translated as 'which', 'A or B' in English. This is often used in casual speech and can be shortened to  AかBか どっち〜.",
+    "zhShort": "詢問哪一個；'哪一個'、'A 還是 B'。",
+    "zhLong": "AとBと どっち〜 文法用於詢問在 A 和 B 兩個選項之間選擇哪一個。可譯為 'which'（哪一個）或 'A or B'（A 還是 B）。這通常用於非正式用語中，也可簡化為 AかBか どっち〜。",
     "sentences": [
       {
         "jp": "コーヒーと紅茶とどっちが好き？",
@@ -1056,6 +1126,8 @@
     "formation": "Noun1 + か + Noun2 + か～",
     "shortExplanation": "Expresses choice or alternatives; 'either', 'or'.",
     "longExplanation": "The Noun か Noun か～ grammar point is used to present two or more alternatives for a choice. It can be translated to 'either', 'or' in English. It is formed by placing the particle か in between two nouns or noun phrases.",
+    "zhShort": "表示選擇或替代選項；'要麼'、'或'。",
+    "zhLong": "Noun か Noun か～ 文法用於提出兩個或多個選項供選擇。可譯為 'either'（要麼）或 'or'（或）。構成方式為在兩個名詞或名詞片語之間放置助詞か。",
     "sentences": [
       {
         "jp": "今日、映画を見るか、散歩するかどちらにしますか？",
@@ -1086,6 +1158,8 @@
     "formation": "Noun + が + できます",
     "shortExplanation": "Express the ability to do something.",
     "longExplanation": "The Noun が できます grammar point is used to express the ability to do something. In this grammar pattern, the noun is the activity that the speaker or subject can do. It translates as 'can do' or 'able to do' in English.",
+    "zhShort": "表示能夠做某事的能力。",
+    "zhLong": "Noun が できます 文法用於表示能夠做某事的能力。在這個文法模式中，名詞是說話者或主體能夠做的活動。譯為 'can do'（能夠做）或 'able to do'（能做）。",
     "sentences": [
       {
         "jp": "英語ができます。",
@@ -1116,6 +1190,8 @@
     "formation": "Noun + が + ほしいです",
     "shortExplanation": "Express a desire or wanting something; 'I want', 'I would like'.",
     "longExplanation": "The がほしいです grammar point is used to express a desire or the act of wanting something in polite form. It can be translated as 'I want' or 'I would like' in English. It is used with a noun and the particle が.",
+    "zhShort": "表達想要或渴望某物；'我想要'、'我希望'。",
+    "zhLong": "がほしいです 文法用於以禮貌形式表達對某物的渴望或想要。可譯為 'I want'（我想要）或 'I would like'（我希望）。與名詞和助詞が搭配使用。",
     "sentences": [
       {
         "jp": "新しい車がほしいです。",
@@ -1146,6 +1222,8 @@
     "formation": "Noun1 + から + Noun2 + まで",
     "shortExplanation": "Expresses a range; 'from...to', 'between...and'.",
     "longExplanation": "The から...まで grammar point is used to express a range between two nouns, indicating the starting point and ending point of an action, event, or period of time. It can be translated as 'from...to' or 'between...and' in English.",
+    "zhShort": "表示範圍；'從～到～'、'～到～之間'。",
+    "zhLong": "から...まで 文法用於表示兩個名詞之間的範圍，標示動作、事件或時間段的起點和終點。可譯為 'from...to'（從～到～）或 'between...and'（～到～之間）。",
     "sentences": [
       {
         "jp": "朝9時から午後5時まで働きます。",
@@ -1176,6 +1254,8 @@
     "formation": "Noun + ぐらい",
     "shortExplanation": "Express an approximate amount or degree; 'about', 'approximately'.",
     "longExplanation": "The ぐらい grammar point is used with nouns to express an approximate amount or degree. It is often translated as 'about', 'approximately', or 'around' in English. This can be used for time, quantity, or other measurements.",
+    "zhShort": "表示近似的量或程度；'大約'、'約莫'。",
+    "zhLong": "ぐらい 文法與名詞搭配使用以表示近似的量或程度。通常譯為 'about'（大約）、'approximately'（約莫）或 'around'（左右）。可用於時間、數量或其他測量。",
     "sentences": [
       {
         "jp": "一日中勉強したので、１０時間ぐらい勉強しました。",
@@ -1206,6 +1286,8 @@
     "formation": "Noun + くらい",
     "shortExplanation": "Express the extent or degree of something; 'about', 'approximately', 'at least'.",
     "longExplanation": "The くらい grammar point is used with a noun to express the extent or degree of something, meaning 'about', 'approximately', or 'at least' in English. It helps to provide a rough estimate or minimum standard to the noun it is attached to.",
+    "zhShort": "表示事物的程度或範圍；意為「大約」、「左右」、「至少」。",
+    "zhLong": "くらい文法用於名詞之後，表示事物的程度或範圍，意為「大約」、「左右」或「至少」。用來提供粗略的估計或對名詞的最低標準。",
     "sentences": [
       {
         "jp": "この本は三百ページくらいあります。",
@@ -1236,6 +1318,8 @@
     "formation": "Noun + ごろ",
     "shortExplanation": "Expresses 'around' or 'about' a certain time or age.",
     "longExplanation": "The ごろ grammar point is used to indicate 'around' or 'about' a certain time or age. It is commonly used with time-related expressions and age-related expressions to give an approximate time or age.",
+    "zhShort": "表示某個時間點或年紀「左右」、「大約」。",
+    "zhLong": "ごろ文法用於表示「左右」或「大約」某個時間點或年紀。常用於時間相關表達和年紀相關表達，提供大約的時間或年紀。",
     "sentences": [
       {
         "jp": "昼ごろに電話してください。",
@@ -1266,6 +1350,8 @@
     "formation": "Noun + だけ, Verb-casual + だけ, い-Adjective + だけ, な-Adjective-な + だけ",
     "shortExplanation": "Indicates 'only', 'just', or 'merely'.",
     "longExplanation": "The Noun だけ grammar point is used to emphasize the idea of 'only', 'just', or 'merely' in a sentence. It can be attached to nouns, verbs, い-adjectives, and な-adjectives to show this emphasis. This grammar point is commonly used in both spoken and written Japanese.",
+    "zhShort": "表示「只」、「僅」、「單單」之意。",
+    "zhLong": "Noun だけ文法用於強調「只」、「僅」或「單單」的意思。可附加在名詞、い形容詞、な形容詞和動詞上，以表達這種強調的概念。此文法在日語的口語和書面語中都很常見。",
     "sentences": [
       {
         "jp": "コーヒーだけ飲んで、帰りました。",
@@ -1296,6 +1382,8 @@
     "formation": "Noun1 + と + Noun2",
     "shortExplanation": "Express 'with', 'and' or 'together with' when connecting nouns.",
     "longExplanation": "The Noun と grammar point is used to express a connection between two or more nouns, indicating 'with', 'and', or 'together with' in English. It functions as a particle that is used to simply list multiple items or express companionship.",
+    "zhShort": "表示「和」、「跟」、「一起」連接名詞。",
+    "zhLong": "Noun と文法用於表示兩個或多個名詞的連接，表示「和」、「跟」或「一起」之意。作為一個助詞，用來列舉多個項目或表示陪伴關係。",
     "sentences": [
       {
         "jp": "リンゴとバナナを買いました。",
@@ -1326,6 +1414,8 @@
     "formation": "Noun + に します",
     "shortExplanation": "Express a choice or decision; 'choose', 'decide on'.",
     "longExplanation": "The に します grammar point is used to express making a choice or decision. It can be translated as 'choose' or 'decide on' in English. It is often used in situations where someone has to make a selection or decide on something, such as ordering food at a restaurant or deciding on a vacation destination.",
+    "zhShort": "表示做出選擇或決定；「選擇」、「決定」。",
+    "zhLong": "に します文法用於表示做出選擇或決定。可譯為英文的「choose」或「decide on」。常用於需要做出選擇或決定的情況，例如在餐廳點餐或決定度假目的地。",
     "sentences": [
       {
         "jp": "今日の昼ご飯は寿司にします。",
@@ -1356,6 +1446,8 @@
     "formation": "Noun + に + なります",
     "shortExplanation": "Expresses change or becoming something; 'to become', 'to turn into', 'to be'.",
     "longExplanation": "The grammar point Noun に なります is used to express a change or transformation into something else, or to indicate that something 'becomes', 'turns into', or simply 'is' something. It is commonly used with nouns.",
+    "zhShort": "表示變化或成為某物；「變成」、「成為」。",
+    "zhLong": "Noun に なります文法用於表示變化或轉變成其他事物，或表示某物「變成」、「成為」或「是」某種事物。常與名詞搭配使用。",
     "sentences": [
       {
         "jp": "彼は医者になります。",
@@ -1386,6 +1478,8 @@
     "formation": "Noun + に + 帰ります",
     "shortExplanation": "Express going back or returning to a place: 'to return to', 'to go back to'.",
     "longExplanation": "The grammar point 'Noun に 帰ります' is used to express physically going back or returning to a specific place. It can be translated as 'to go back to' or 'to return to' in English. The particle に indicates the destination of the return.",
+    "zhShort": "表示回到或返回某個地點；「回到」、「返回」。",
+    "zhLong": "「Noun に 帰ります」文法用於表示實際回到或返回特定地點。可譯為英文的「to go back to」或「to return to」。助詞に表示返回的目的地。",
     "sentences": [
       {
         "jp": "夏休みが終わったら、学校に帰ります。",
@@ -1416,6 +1510,8 @@
     "formation": "Noun + に + 戻ります",
     "shortExplanation": "Expresses the action of returning to a previous state, place, or condition.",
     "longExplanation": "The Noun に 戻ります grammar point is used to express going back or reverting to a previous state, place, or condition. 戻る (modoru) literally means 'to go back' or 'to revert'. This is often used after a change has occurred, indicating that something is being undone or returned to its original form.",
+    "zhShort": "表示回到先前的狀態、地點或條件。",
+    "zhLong": "Noun に 戻ります文法用於表示回到或恢復到先前的狀態、地點或條件。戻る（modoru）字面上意為「回去」或「恢復」。通常在發生變化後使用，表示某物被取消或恢復到原本的形式。",
     "sentences": [
       {
         "jp": "冷蔵庫に入れると、溶けたアイスクリームは固体に戻ります。",
@@ -1446,6 +1542,8 @@
     "formation": "Noun + に + 来ます (kimasu)",
     "shortExplanation": "Used to express coming to a place.",
     "longExplanation": "The grammar point Noun に 来ます is used to indicate that someone or something comes to a specific place. The noun before に indicates the destination or place, while the verb 来ます expresses the action of coming. (Similarly, 'Noun に 行きます' means 'go to [Noun],' and 'Noun に 帰ります' means 'return to [Noun].')",
+    "zhShort": "用於表示來到某個地點。",
+    "zhLong": "Noun に 来ます文法用於表示某人或某物來到特定地點。に之前的名詞表示目的地或地點，來ます動詞表達來的動作。（同樣地，「Noun に 行きます」表示「去[名詞]」，「Noun に 帰ります」表示「回到[名詞]」。）",
     "sentences": [
       {
         "jp": "友達が私の家に来ます。",
@@ -1476,6 +1574,8 @@
     "formation": "Noun + に + 行きます",
     "shortExplanation": "Used to express going to a location.",
     "longExplanation": "The Noun に 行きます grammar point is used to express going to a specific location. This structure requires a noun (indicating the destination) followed by に and the verb 行きます, which means 'to go'.",
+    "zhShort": "用於表示去往某個地點。",
+    "zhLong": "Noun に 行きます文法用於表示去往特定的地點。這個結構需要一個名詞（表示目的地）後接に和動詞行きます，表示「去」的意思。",
     "sentences": [
       {
         "jp": "学校に行きます。",
@@ -1506,6 +1606,8 @@
     "formation": "Noun + に",
     "shortExplanation": "Express a specific direction, target or purpose; 'to', 'toward', 'for'.",
     "longExplanation": "The 'Noun に' grammar point is used to express a specific direction, target, or purpose in relation to a noun. It can be translated as 'to', 'toward', or 'for' in English. The に particle is added directly after the noun which indicates direction, target or purpose.",
+    "zhShort": "表示特定的方向、目標或目的；「到」、「向」、「為了」。",
+    "zhLong": "「Noun に」文法用於表示名詞相關的特定方向、目標或目的。可譯為英文的「to」、「toward」或「for」。に助詞直接附加在表示方向、目標或目的的名詞之後。",
     "sentences": [
       {
         "jp": "彼女にプレゼントをあげました。",
@@ -1536,6 +1638,8 @@
     "formation": "Noun + の + あとで",
     "shortExplanation": "Expresses the order of events; 'after', 'later than'.",
     "longExplanation": "The の あとで grammar point is used to express the order of events, specifying that an action occurs after or later than the noun mentioned. It translates to 'after' or 'later than' in English. This structure is simply formed by attaching の あとで to the noun.",
+    "zhShort": "表示事件的順序；「之後」、「晚於」。",
+    "zhLong": "の あとで文法用於表示事件的順序，表示某個動作在提及的名詞之後或晚於其發生。譯為英文的「after」或「later than」。此結構的形成方式是在名詞後附加の あとで。",
     "sentences": [
       {
         "jp": "朝ご飯のあとで、歯を磨きます。",
@@ -1566,6 +1670,8 @@
     "formation": "Noun + の + 前に",
     "shortExplanation": "Used to describe a location or position 'in front of' a noun.",
     "longExplanation": "The grammar point Noun の 前に is used to describe a location or position 'in front of' a noun. It is formed by adding の 前に after the noun it refers to. (Note that 'Noun の 前に' can also mean 'before [Noun]' in time contexts, but these examples focus on physical location.)",
+    "zhShort": "用於描述名詞「前面」的位置或方向。",
+    "zhLong": "Noun の 前に文法用於描述名詞「前面」的位置或方向。形成方式是在名詞後添加の 前に。（注意「Noun の 前に」在時間關係中也可表示「在[名詞]之前」，但這些例子主要關注物理位置。）",
     "sentences": [
       {
         "jp": "駅の前にコンビニがあります。",
@@ -1596,6 +1702,8 @@
     "formation": "Noun + は",
     "shortExplanation": "Used to mark the topic of a sentence; 'as for', 'speaking of'.",
     "longExplanation": "The は (wa) particle is used to indicate the topic of a sentence. It is usually translated as 'as for', 'speaking of', or it simply marks what the sentence is about. This is different from が (ga), which marks the subject of a verb.",
+    "zhShort": "用於標記句子的話題；「關於」、「說到」。",
+    "zhLong": "は（wa）助詞用於表示句子的話題。通常譯為「關於」、「說到」或標記句子所述的內容。這與標記動詞主語的が（ga）不同。",
     "sentences": [
       {
         "jp": "私は日本の料理が好きです。",
@@ -1626,6 +1734,8 @@
     "formation": "Noun + も",
     "shortExplanation": "Indicates that the action or state is the same for multiple items or people; 'also', 'as well'.",
     "longExplanation": "The も grammar point is used after a noun to indicate that the action or state is the same for multiple items or people. It means 'also', 'as well', or 'too' in English. も often replaces は or が in the sentence to show that the same statement applies to this additional noun.",
+    "zhShort": "表示同樣的動作或狀態適用於多個項目或人；「也」、「同樣」。",
+    "zhLong": "も文法用於名詞之後，表示同樣的動作或狀態適用於多個項目或人。意為「也」、「同樣」或「也是」。も常在句子中取代は或が，以表示這個額外的名詞也適用相同的陳述。",
     "sentences": [
       {
         "jp": "私も日本語を勉強しています。",
@@ -1656,6 +1766,8 @@
     "formation": "Noun1 + や + Noun2 + など",
     "shortExplanation": "Lists items or examples but not exhaustively; 'such as', 'like', 'and so on'.",
     "longExplanation": "The や...など grammar point is used to list a few items or examples that belong to a similar category or context, but it is not exhaustive. It can be translated as 'such as', 'like', or 'and so on' in English. This grammar pattern is used with nouns.",
+    "zhShort": "列舉項目或例子但不全部；「例如」、「諸如」、「等等」。",
+    "zhLong": "や...など文法用於列舉屬於相似類別或情境的少數項目或例子，但並不詳盡。可譯為英文的「such as」、「like」或「and so on」。此文法用於名詞。",
     "sentences": [
       {
         "jp": "彼は野菜や果物などを食べるのが好きです。",
@@ -1686,6 +1798,8 @@
     "formation": "Noun + を + Verb",
     "shortExplanation": "Indicates the direct object of a verb.",
     "longExplanation": "The を (wo) particle is used to mark the direct object of a verb in a sentence. It shows the noun that the action (verb) is performed on. The particle を is usually pronounced as 'o' in spoken Japanese.",
+    "zhShort": "表示動詞的直接受詞。",
+    "zhLong": "を（wo）助詞用於標記句子中動詞的直接受詞。表示動作（動詞）所作用於的名詞。在日語口語中，を助詞通常發音為「o」。",
     "sentences": [
       {
         "jp": "私は本を読みます。",
@@ -1716,6 +1830,8 @@
     "formation": "Noun + で",
     "shortExplanation": "Indicate a place or means for an action or situation; 'at, in, on', 'using', or 'by means of'.",
     "longExplanation": "The で grammar point is used to indicate a location, method, or tool for doing an action or for being in a situation. It can be translated as 'at, in, on', 'using', or 'by means of' in English. Nounで is formed by adding で after a noun.",
+    "zhShort": "表示進行動作或所處情況的地點或手段；「在」、「用」、「以...方式」。",
+    "zhLong": "で文法用於表示進行動作或所處情況的地點、方法或工具。可譯為英文的「at, in, on」、「using」或「by means of」。Nounで形成方式是在名詞後添加で。",
     "sentences": [
       {
         "jp": "図書館で勉強します。",
@@ -1746,6 +1862,8 @@
     "formation": "Verb-た form + あとで",
     "shortExplanation": "Indicates an action that takes place after another action.",
     "longExplanation": "The たあとで grammar point is used to indicate that one action takes place after another action is completed. It means 'after' or 'after doing' in English. The formation is created with the た form (past tense) of a verb, followed by あとで (ato de).",
+    "zhShort": "表示一個動作在另一個動作完成後發生。",
+    "zhLong": "たあとで文法用於表示一個動作在另一個動作完成後發生。意為「之後」或「做...之後」。形成方式是使用動詞的た形（過去式），後接あとで（ato de）。",
     "sentences": [
       {
         "jp": "宿題をしたあとで、テレビを見ました。",
@@ -1776,6 +1894,8 @@
     "formation": "る-Verb: Remove る and add たいです, う-Verb: Replace the final verb character with the ～い form and add たいです, Exception: する becomes したいです",
     "shortExplanation": "Express desire or want to do something; 'I want to', 'I would like to'.",
     "longExplanation": "The たいです grammar point is used to express the speaker's desire or want to perform a certain action. It can be translated as 'I want to' or 'I would like to' in English. The formation differs depending on whether the verb is a る-verb or an う-verb.",
+    "zhShort": "表示想要做某事的願望；「想」、「想要」。",
+    "zhLong": "たいです文法用於表示說話者想要執行某個動作的願望。可譯為英文的「I want to」或「I would like to」。形成方式取決於動詞是る動詞或う動詞。",
     "sentences": [
       {
         "jp": "私は寿司を食べたいです。",
@@ -1806,6 +1926,8 @@
     "formation": "Verb て-form + います",
     "shortExplanation": "Express ongoing action or state; 'is doing', 'is doing (continuous)', 'has been doing'.",
     "longExplanation": "The て います grammar point is used to express an action that is ongoing, continuous, or has been happening. It is formed by conjugating the verb in its て-form and adding います. It can be translated as 'is doing', 'is doing (continuous)', or 'has been doing' in English.",
+    "zhShort": "表示正在進行的動作或狀態；『正在做』、『一直在做』、『已經做了』。",
+    "zhLong": "て形 + います 文法用於表示正在進行、持續進行或已經進行中的動作。由動詞的て形加上います構成。可翻譯為『正在做』、『一直在做』或『已經做了』。",
     "sentences": [
       {
         "jp": "彼女は今ピアノを弾いています。",
@@ -1836,6 +1958,8 @@
     "formation": "Verb-て form + ください",
     "shortExplanation": "A request or command; 'please do'.",
     "longExplanation": "The て ください grammar point is used to make a request or command someone to do something politely. The verb is conjugated into its て-form and followed by ください, which means 'please'. This structure is used when asking someone to do something with a polite and respectful tone.",
+    "zhShort": "禮貌地請求或命令他人做某事；『請做』。",
+    "zhLong": "て形 + ください 文法用於禮貌地請求或命令他人做某事。動詞變成て形後加上ください，表示敬禮的請求語氣。",
     "sentences": [
       {
         "jp": "ドアを開けてください。",
@@ -1866,6 +1990,8 @@
     "formation": "Verb (Group 1) - Replace last syllable with 〜て, Verb (Group 2) - Replace 'る' with 〜て, Verb (Group 3) - する becomes して, くる becomes きて",
     "shortExplanation": "A verb conjugation that connects actions or states.",
     "longExplanation": "The ～て form of a verb is used to connect actions or states in a sequence, implying that the first action is completed before the second one starts. The ～て form is frequently used in casual speech, and it can also be used in polite speech when combined with certain auxiliary verbs like ください (kudasai) or いる (iru).",
+    "zhShort": "動詞變化形式，用於連接連續的動作或狀態。",
+    "zhLong": "動詞的～て形用於連接按順序進行的多個動作或狀態，暗示第一個動作完成後才進行第二個動作。て形經常在日常會話中使用，與ください或いる等輔助動詞組合時也可用於敬體表達。",
     "sentences": [
       {
         "jp": "コーヒーを飲んで、出かけます。",
@@ -1896,6 +2022,8 @@
     "formation": "Verb-て形 + から",
     "shortExplanation": "Express a sequence of actions or events; 'after', 'since', 'once'.",
     "longExplanation": "The ～てから grammar point is used to indicate the sequence of actions or events, meaning that one action or event occurs after another. It can be translated as 'after', 'since', or 'once' in English. The て-form indicates the first action and から shows the sequence.",
+    "zhShort": "表示動作或事件的順序；『之後』、『自從』、『一旦』。",
+    "zhLong": "～てから 文法用於表示動作或事件的順序關係，表示一個動作或事件發生在另一個之後。て形表示先發生的動作，から表示順序關係。可翻譯為『之後』、『自從』或『一旦』。",
     "sentences": [
       {
         "jp": "宿題をしてから、テレビを見ました。",
@@ -1926,6 +2054,8 @@
     "formation": "Verb-ない-form + で ください",
     "shortExplanation": "Used to make a polite request for someone not to do something; 'please don't'.",
     "longExplanation": "The grammar point Verb ないで ください is used to make a polite request for someone not to do a certain action. In English, it can be translated as 'please don't'. To form this expression, take the verb in its negative form (ない-form) and add で ください.",
+    "zhShort": "禮貌地請求他人不要做某事；『請不要做』。",
+    "zhLong": "ないで + ください 文法用於禮貌地請求他人不要進行某個動作。將動詞變成否定形（ない形），再加上で ください。",
     "sentences": [
       {
         "jp": "タバコを吸わないでください。",
@@ -1956,6 +2086,8 @@
     "formation": "Verb (ます-stem) + に + 来ます",
     "shortExplanation": "Expresses the purpose of coming to a place; 'come to (do something)'.",
     "longExplanation": "The grammar point Verb に きます is used to express the purpose of coming to a place to perform an action. It can be translated as 'come to (do something)' in English. To form this expression, use the verb's ます-stem (i.e., remove ます) followed by に きます.",
+    "zhShort": "表示來到某地的目的；『來做（某事）』。",
+    "zhLong": "動詞的ます字幹 + に きます 文法用於表示為了進行某個動作而來到某地。將動詞的ます字幹（去掉ます的部分）加上に きます。",
     "sentences": [
       {
         "jp": "友達に会いに来ました。",
@@ -1986,6 +2118,8 @@
     "formation": "Verb (ます-stem) + に + 行きます",
     "shortExplanation": "To go (somewhere) in order to do an action.",
     "longExplanation": "The grammar point Verb に 行きます is used when expressing that someone is going to a certain place with the purpose of doing a specific action. Form it by taking the verb's ます-stem (for suru-verbs, remove する and add し) and then adding に 行きます.",
+    "zhShort": "表示去某地做某事；『去做（某事）』。",
+    "zhLong": "動詞的ます字幹 + に 行きます 文法用於表示為了進行特定動作而去往某地。對於する動詞，去掉する加上し，然後加上に 行きます。",
     "sentences": [
       {
         "jp": "公園に遊びに行きます。",
@@ -2016,6 +2150,8 @@
     "formation": "Verb (ます-stem) + ましょう",
     "shortExplanation": "Making a suggestion or invitation; 'let's' or 'shall we'.",
     "longExplanation": "The ましょう grammar point is used to suggest or invite someone to do something in a polite and friendly way. It can be translated as 'let's' or 'shall we' in English. This grammar point is formed by attaching ましょう to the stem of the verb (i.e. remove ます).",
+    "zhShort": "提出建議或邀請；『讓我們』、『我們一起』。",
+    "zhLong": "ましょう 文法用於以禮貌和友善的方式提出建議或邀請他人一起做某事。將ましょう接在動詞字幹上（去掉ます）。",
     "sentences": [
       {
         "jp": "一緒に映画を見ましょう。",
@@ -2046,6 +2182,8 @@
     "formation": "Verb (ます-stem) + ましょうか",
     "shortExplanation": "Used to make a polite suggestion or offer help; 'shall we', 'should we', 'do you want me to'.",
     "longExplanation": "The ましょうか grammar point is used to make a polite suggestion, propose an action, or offer help. It can be translated as 'shall we', 'should we', or 'do you want me to' in English. This formation is used with verbs in their ます-form, replacing ます with ましょう and adding か.",
+    "zhShort": "提出禮貌的建議或提供幫助；『要不要一起』、『要不要我做』。",
+    "zhLong": "ましょうか 文法用於提出禮貌的建議、提議某個動作或提供幫助。可翻譯為『要不要一起』、『我們一起好嗎』或『要不要我做』。將ます改為ましょう再加か。",
     "sentences": [
       {
         "jp": "一緒に映画を見に行きましょうか。",
@@ -2076,6 +2214,8 @@
     "formation": "Verb (ます-form) + ませんか",
     "shortExplanation": "An invitation or suggestion; 'won't you', 'why don't you', 'shall we'.",
     "longExplanation": "The ませんか grammar point is used for making invitations or suggestions in a polite manner. The verb is conjugated to its ます form and replaced with ませんか. This can be translated as 'won't you', 'why don't you', or 'shall we' in English.",
+    "zhShort": "邀請或建議；『你要不要』、『何不』、『要不要一起』。",
+    "zhLong": "ませんか 文法用於以禮貌的方式提出邀請或建議。動詞變成ます形後改為ませんか。可翻譯為『你要不要』、『何不』或『要不要一起』。",
     "sentences": [
       {
         "jp": "一緒に映画を見ませんか。",
@@ -2106,6 +2246,8 @@
     "formation": "Verb (dictionary form) + ことができます",
     "shortExplanation": "Express the potential form, or the ability to do something.",
     "longExplanation": "The 〜ることができます grammar point is used to express that someone is capable of doing something or that something is possible. It is essentially the potential form of the verb. The formation is made by changing the verb to a noun phrase with こと and then adding ができます.",
+    "zhShort": "表示潛在形或做某事的能力；『能做』、『可以做』。",
+    "zhLong": "ることができます 文法用於表示某人有能力做某事或某事是可能的。這本質上是動詞的潛在形。將動詞變成名詞化形式（加上こと），再加上ができます。",
     "sentences": [
       {
         "jp": "この問題を解くことができます。",
@@ -2136,6 +2278,8 @@
     "formation": "Verb (dictionary form) + ことができる",
     "shortExplanation": "Expresses the potential form; 'can', 'be able to', 'is possible'.",
     "longExplanation": "The る こと ができる grammar point is used to express the potential form of a verb, meaning the ability or possibility to do something. It can be translated as 'can', 'be able to', or 'is possible' in English. This grammar is often used with verbs ending in る, but can also apply to other verbs once they are in the dictionary form.",
+    "zhShort": "表示潛在形；『能做』、『可以做』、『有可能』。",
+    "zhLong": "ることができる 文法用於表示動詞的潛在形，即做某事的能力或可能性。可翻譯為『能做』、『可以做』或『有可能』。雖然常見於以る結尾的動詞，但適用於任何辭書形動詞。",
     "sentences": [
       {
         "jp": "この問題を解くことができる？",
@@ -2166,6 +2310,8 @@
     "formation": "Verb (dictionary form) + の (casual)",
     "shortExplanation": "Used to express the purpose or reason in casual speech, or nominalize the verb with の.",
     "longExplanation": "The る の～ grammar point is a casual spoken pattern that can nominalize a verb or explain a purpose/reason by adding の. It's often seen in everyday conversation, and can be used for nuance such as giving an explanation. It's similar to ること, but is more colloquial or explanatory in tone.",
+    "zhShort": "在日常口語中表達目的或理由，或用の使動詞名詞化。",
+    "zhLong": "る + の 文法在日常口語中用於名詞化動詞或解釋目的和理由。常見於日常會話中，可用於提供說明的語境。與こと相似，但更具日常性或說明性。",
     "sentences": [
       {
         "jp": "買い物をするために、銀行でお金をおろすの。",
@@ -2196,6 +2342,8 @@
     "formation": "Verb (dictionary form) + 前に",
     "shortExplanation": "Used to express 'before' in a sense of an action must be done before another action or event.",
     "longExplanation": "The る前に (ru mae ni) grammar point is used to indicate that an action (in the dictionary form) should be completed before another action occurs or before a specific event happens.",
+    "zhShort": "表示『之前』，指某動作必須在另一動作或事件前完成。",
+    "zhLong": "る前に 文法用於表示某個動作（用辭書形表示）應該在另一動作發生或特定事件發生之前完成。",
     "sentences": [
       {
         "jp": "出かける前に、部屋を掃除してください。",
@@ -2226,6 +2374,8 @@
     "formation": "Verb (dictionary form) + こと",
     "shortExplanation": "Express an action or event as a noun; 'the act of', 'doing'.",
     "longExplanation": "The ること grammar point is used to nominalize or turn a verb into a noun, which represents the action or event itself as a concept. It can be translated as 'the act of' or simply 'doing' in English. This formation is used with verbs in the dictionary (ru-)form.",
+    "zhShort": "將動作或事件表達為名詞；『做～的行為』、『做』。",
+    "zhLong": "ること 文法用於將動詞名詞化，將動作或事件本身表現為概念。可翻譯為『做～的行為』或『做』。用於辭書形（る形）動詞。",
     "sentences": [
       {
         "jp": "泳ぐことが大好きです。",
@@ -2256,6 +2406,8 @@
     "formation": "あまり + Verb-ないform + ありません / あまり + い-Adjective-く ありません / あまり + な-Adjective・Noun じゃありません",
     "shortExplanation": "Express 'not very', 'not much', or 'not really' when describing a negative state or situation.",
     "longExplanation": "The grammar point あまり～ありません is used to describe a negative state or condition and indicate that it's not very, not much, or not really. It is commonly used with verbs in the negative form and can be used with い-adjectives, な-adjectives, and nouns.",
+    "zhShort": "表示『不太』、『不怎麼』、『不太有』；用於描述否定狀態。",
+    "zhLong": "あまり～ありません 文法用於描述否定狀態或情況，表示『不太』、『不怎麼』或『不太有』。常與否定形動詞配合，也可與い形容詞、な形容詞和名詞使用。",
     "sentences": [
       {
         "jp": "彼はあまり疲れていません。",
@@ -2286,6 +2438,8 @@
     "formation": "あまり + Verb-ないform + です / あまり + い-Adjective-くない + です / あまり + な-Adjective-じゃない + です",
     "shortExplanation": "Express 'not really' or 'not very'; used to soften a negative statement.",
     "longExplanation": "The あまり～ないです grammar point is used to express that something is 'not really' or 'not very' to a certain extent. It is often used to soften a negative statement. It can be used with verbs, い-adjectives, and な-adjectives in their negative forms.",
+    "zhShort": "表示『不太』、『不怎麼』；用於緩和否定陳述。",
+    "zhLong": "あまり～ないです 文法用於表示某事『不太』或『不怎麼』達到某個程度。常用於緩和否定表達的語氣。可與否定形的動詞、い形容詞和な形容詞配合。",
     "sentences": [
       {
         "jp": "あまり食べないです。",
@@ -2316,6 +2470,8 @@
     "formation": "い-Adjective (remove い) + く + Verb",
     "shortExplanation": "Used to connect an い-adjective to a verb, modifying the verb (adverbial usage).",
     "longExplanation": "The い-Adjective + く + Verb grammar point transforms an い-adjective into its adverbial form, describing how the verb is performed. In English, this often corresponds to '-ly' adverbs (e.g., 'quickly', 'slowly').",
+    "zhShort": "用來連接い形容詞和動詞，修飾動詞的方式（副詞用法）。",
+    "zhLong": "い形容詞 + く + 動詞 文法將い形容詞轉變為副詞形式，描述動詞執行的方式。在英文中常對應『-ly』副詞（如『quickly』、『slowly』）。",
     "sentences": [
       {
         "jp": "彼は速く走りました。",
@@ -2346,6 +2502,8 @@
     "formation": "い-Adjective (remove い) + くします",
     "shortExplanation": "Use an い-adjective to express 'to make' or 'to become'.",
     "longExplanation": "By adding くします to an い-adjective, you express making something (or causing something to become) the quality of that adjective. In English, this often corresponds to phrases like 'make something more ADJECTIVE.'",
+    "zhShort": "用い形容詞表達『使～』或『變得～』。",
+    "zhLong": "い形容詞 + くします 文法用於表示使某物（或使某物變得）具有該形容詞的性質。英文常對應『make something more ADJECTIVE』之類的表達。",
     "sentences": [
       {
         "jp": "部屋を明るくします。",
@@ -2376,6 +2534,8 @@
     "formation": "い-Adjective (remove い) + くて + い-Adjective",
     "shortExplanation": "Used to connect two or more い-adjectives to describe something.",
     "longExplanation": "The い-Adjective て form is used to connect two or more い-adjectives when listing attributes of something or someone. To form it, replace the final い with くて. For example, かわいい → かわいくて, おいしい → おいしくて.",
+    "zhShort": "用於連接兩個或多個い形容詞來描述事物。",
+    "zhLong": "い形容詞 + て 形式用於連接多個い形容詞以描述人或事物的特徵。將最後的い改為くて。例如：かわいい → かわいくて、おいしい → おいしくて。",
     "sentences": [
       {
         "jp": "このリンゴは甘くて美味しいです。",
@@ -2406,6 +2566,8 @@
     "formation": "い-Adjective (remove い) + くないです",
     "shortExplanation": "Change an い-adjective into a polite negative form with ～くないです (or ～くありません).",
     "longExplanation": "To make an い-adjective negative and polite, remove the final い and add くないです. An alternative more formal style is くありません. For example, 美味しい → 美味しくないです / 美味しくありません。",
+    "zhShort": "將い形容詞改為禮貌負面形式，加上～くないです（或～くありません）。",
+    "zhLong": "將い形容詞改為負面且禮貌的表達方式，需去掉最後的い，加上くないです。較正式的方式則為くありません。例如：美味しい → 美味しくないです／美味しくありません。",
     "sentences": [
       {
         "jp": "このピザは美味しくないです。",
@@ -2436,6 +2598,8 @@
     "formation": "いくつ + Noun (optional)",
     "shortExplanation": "Used to express 'how many' or ask for the number of something.",
     "longExplanation": "The grammar point いくつ is used when asking or expressing 'how many' of something there are, or to indicate an unspecified number. In English, it can be translated as 'how many' or 'several'.",
+    "zhShort": "用於表達「幾個」或詢問事物的數量。",
+    "zhLong": "文法點いくつ用於詢問或表達有多少個東西，或表示不特定的數量。在英文中可譯為「how many」或「several」。",
     "sentences": [
       {
         "jp": "リンゴはいくつありますか？",
@@ -2466,6 +2630,8 @@
     "formation": "いつか + sentence",
     "shortExplanation": "Indicates an unspecified point in time; 'someday', 'one day', 'at some point'.",
     "longExplanation": "The grammar point いつか is used to indicate an unspecified point in time, meaning 'someday', 'one day', or 'at some point' in the future or the past. It can be used in sentences to express hopes, dreams, or possibilities.",
+    "zhShort": "表示不特定的時間點；「將來某一天」、「有朝一日」、「在某個時點」。",
+    "zhLong": "文法點いつか用於表示不特定的時間點，意為「將來某一天」、「有朝一日」或「在某個時點」。可用於句子中表達希望、夢想或可能性。",
     "sentences": [
       {
         "jp": "いつか日本に行きたいです。",
@@ -2496,6 +2662,8 @@
     "formation": "いつでも + (Verb)",
     "shortExplanation": "Expresses 'anytime', 'always', or 'whenever'.",
     "longExplanation": "The いつでも grammar point is used to express that something occurs, can occur, or is allowed to occur anytime, always, or whenever. It emphasizes the lack of restrictions related to time for a certain action or event.",
+    "zhShort": "表達「任何時候」、「隨時」或「每當」的意思。",
+    "zhLong": "文法點いつでも用於表達某事在任何時候都可以發生、一直發生或被允許發生。它強調時間上沒有限制的某種行動或事件。",
     "sentences": [
       {
         "jp": "いつでも遊びに来てください。",
@@ -2526,6 +2694,8 @@
     "formation": "いつも + Verb / Adjective / Noun",
     "shortExplanation": "Expressing 'always' or 'usually' in a sentence.",
     "longExplanation": "The grammar point いつも (itsumo) is used to express the meaning of 'always' or 'usually' when describing a habitual action or situation. It is often used with the present tense or past tense to show that something is done on a regular basis or has been happening consistently.",
+    "zhShort": "表達句子中「總是」或「通常」的意思。",
+    "zhLong": "文法點いつも用於表達「總是」或「通常」的意思，用來描述習慣性的行動或情況。經常與現在式或過去式並用，表示某事經常做或一直在發生。",
     "sentences": [
       {
         "jp": "彼はいつも遅刻します。",
@@ -2556,6 +2726,8 @@
     "formation": "こちら / こちら + の + Person/Thing",
     "shortExplanation": "Refers to a person, place or thing; 'this', 'this one', 'this way', 'here'.",
     "longExplanation": "The こちら grammar point is used to refer to a person, place, or thing that is closer to the speaker, or to show politeness when referring to someone. It can mean 'this', 'this one', 'this way', or 'here'.",
+    "zhShort": "指稱人、場所或事物；「這個」、「這一個」、「這邊」、「這裡」。",
+    "zhLong": "文法點こちら用於指稱較靠近說話者的人、場所或事物，或在指稱某人時表示禮貌。可表示「這個」、「這一個」、「這邊」或「這裡」。",
     "sentences": [
       {
         "jp": "こちらは田中さんです。",
@@ -2586,6 +2758,8 @@
     "formation": "さっき + verb / さっき + phrase",
     "shortExplanation": "Refers to a short time ago or just now.",
     "longExplanation": "The word さっき (sakki) is an adverb used to express that something happened or was done a short time ago or just now. It can be combined with verbs or other phrases to convey that meaning.",
+    "zhShort": "指「剛才」或「不久前」。",
+    "zhLong": "詞彙さっき是副詞，用來表達不久前發生或做過的事。可與動詞或其他片語組合來傳達這一含義。",
     "sentences": [
       {
         "jp": "さっき電話がありました。",
@@ -2616,6 +2790,8 @@
     "formation": "すぐに + Verb/Adjective",
     "shortExplanation": "Immediately or right away; used to express promptness or quickness.",
     "longExplanation": "The すぐに～ grammar point is used to express an action happening immediately or right away. It often indicates promptness or quickness and can be used with both verbs and adjectives.",
+    "zhShort": "「立刻」或「馬上」；用於表達迅速或立即性。",
+    "zhLong": "文法點すぐに～用於表達某動作立刻或馬上發生。它通常表示迅速性或即刻性，可同時與動詞和形容詞並用。",
     "sentences": [
       {
         "jp": "友達が来たら、すぐに電話をかけてください。",
@@ -2646,6 +2822,8 @@
     "formation": "ぜんぜん + [Negative verb/adjective]",
     "shortExplanation": "Used to express 'not at all' or 'completely' in negative sentences.",
     "longExplanation": "The ぜんぜん grammar point is used to emphasize a negative statement and can be translated as 'not at all' or 'completely (in negative sense)'. It is commonly used with negative verbs or negative forms of adjectives, placed before the negative part.",
+    "zhShort": "用於強調負面敘述，表達「完全不」或「一點也不」。",
+    "zhLong": "文法點ぜんぜん用於強調否定陳述，可譯為「完全不」或「一點也不」。常與負面動詞或形容詞的負面形式並用，放在負面部分之前。",
     "sentences": [
       {
         "jp": "彼はぜんぜん話さない。",
@@ -2676,6 +2854,8 @@
     "formation": "Sentence 1 + そして + Sentence 2",
     "shortExplanation": "Used to connect two sentences; 'and then', 'and'.",
     "longExplanation": "The そして grammar point is used to connect two sentences or ideas, expressing a sequence of events or actions. It is commonly translated to 'and then' or simply 'and' in English.",
+    "zhShort": "用於連接兩個句子；「然後」、「並且」。",
+    "zhLong": "文法點そして用於連接兩個句子或想法，表達事件或動作的順序。通常譯為「然後」或簡單的「並且」。",
     "sentences": [
       {
         "jp": "朝起きて、そして宿題をしました。",
@@ -2706,6 +2886,8 @@
     "formation": "そちら [alone] / そちら + の + Noun",
     "shortExplanation": "Indicates a direction or person in moderate distance; 'that way', 'that person'.",
     "longExplanation": "The そちら grammar point is used to refer to a direction or a person that is moderate distance from both the speaker and listener, often closer to the listener. It can be translated as 'that way', 'that person', or 'that side'. This is distinct from あちら, used for things far from both speaker and listener.",
+    "zhShort": "指中等距離的方向或人；「那邊」、「那位」。",
+    "zhLong": "文法點そちら用於指稱距離說話者和聽者都適中距離的方向或人，通常較靠近聽者。可譯為「那邊」、「那位」或「那一側」。這與指遠離說話者和聽者的あちら不同。",
     "sentences": [
       {
         "jp": "そちらのレストランはどうですか？",
@@ -2736,6 +2918,8 @@
     "formation": "Clause 1 + それから + Clause 2",
     "shortExplanation": "Meaning 'after that', 'and then' or 'then', indicating sequence of events.",
     "longExplanation": "The それから grammar point is used to describe the sequence of events or actions, indicating that one action or event takes place after another. It can be translated as 'after that', 'and then', or 'then' in English. It can be used with verbs, adjectives, and nouns but should be placed between two clauses.",
+    "zhShort": "意為「之後」、「然後」或「其後」，表示事件的順序。",
+    "zhLong": "文法點それから用於描述事件或動作的順序，表示某一動作或事件在另一個之後發生。可譯為「之後」、「然後」或「其後」。可用於動詞、形容詞和名詞，但應置於兩個子句之間。",
     "sentences": [
       {
         "jp": "コーヒーを飲んで、それから家を出ました。",
@@ -2766,6 +2950,8 @@
     "formation": "だいたい + Number/Amount/Percentage",
     "shortExplanation": "Expresses 'roughly', 'approximately', or 'almost'.",
     "longExplanation": "The だいたい〜 (daitai〜) grammar point is used to express a rough estimate or generalization, meaning 'roughly', 'approximately', or 'almost' in English. It can be used before numbers, amounts, or percentages to show that the value is not exact.",
+    "zhShort": "表達「大約」、「approximately」或「幾乎」。",
+    "zhLong": "文法點だいたい〜用於表達粗略估計或概括，意為「大約」、「approximately」或「幾乎」。可用於數字、數量或百分比之前，表示該數值不確切。",
     "sentences": [
       {
         "jp": "だいたい１００人がパーティーに参加しました。",
@@ -2796,6 +2982,8 @@
     "formation": "たいてい + Verb/い-Adjective/な-Adjective/Noun",
     "shortExplanation": "Used for expressing 'usually', 'mostly', or 'generally'.",
     "longExplanation": "The たいてい grammar point is used to describe a situation that occurs frequently or under normal circumstances. It can be translated as 'usually', 'mostly', or 'generally' in English. It is often used with verbs, but can also be used with adjectives and nouns.",
+    "zhShort": "用於表達「通常」、「大多」或「一般而言」。",
+    "zhLong": "文法點たいてい用於描述經常發生或在正常情況下發生的情況。可譯為「通常」、「大多」或「一般而言」。雖常與動詞並用，但也可與形容詞和名詞並用。",
     "sentences": [
       {
         "jp": "たいてい朝８時に起きます。",
@@ -2826,6 +3014,8 @@
     "formation": "Noun + だから / な-Adjective + だから",
     "shortExplanation": "Expresses a reason or cause; 'because', 'so', 'therefore'.",
     "longExplanation": "The だから grammar point is used to connect two sentences and express a reason or cause for the second sentence. It is typically used with nouns or な-adjectives, and can be translated as 'because', 'so', or 'therefore' in English. For verbs/い-adjectives, the form is usually ～から (not だから).",
+    "zhShort": "表達原因或理由；「因為」、「所以」、「因此」。",
+    "zhLong": "文法點だから用於連接兩個句子並表達第二個句子的原因或理由。通常用於名詞或な形容詞，可譯為「因為」、「所以」或「因此」。對於動詞/い形容詞，通常使用～から形式（非だから）。",
     "sentences": [
       {
         "jp": "雨だから、傘を持って行きましょう。",
@@ -2856,6 +3046,8 @@
     "formation": "だれ + appropriate particle (が, は or を)",
     "shortExplanation": "Asking 'who' in a sentence, used to inquire about someone's identity or to clarify who is being referred to.",
     "longExplanation": "The だれ〜 grammar point is used to ask about the identity of someone in a sentence. It can be translated as 'who' or 'whom' in English. It is often used with the particle が, は, or を, but can also be combined with other particles depending on the context.",
+    "zhShort": "詢問「誰」；用於詢問某人的身份或澄清所指的人。",
+    "zhLong": "文法點だれ～用於詢問句子中某人的身份。可譯為「who」或「whom」。通常與助詞が、は或を並用，但也可根據語境與其他助詞組合。",
     "sentences": [
       {
         "jp": "だれがその本を買いましたか。",
@@ -2886,6 +3078,8 @@
     "formation": "だれか + Verb, だれか + Adjective, だれか + Noun",
     "shortExplanation": "Indicates 'someone' or something done or possessed by 'someone'.",
     "longExplanation": "The grammar point だれか〜 is used to suggest that something is done by, possessed by, or related to 'someone', usually when the actual person is unidentified or not important. It can be used with verbs, adjectives, or nouns.",
+    "zhShort": "表示「某人」或某人做的事或擁有的物。",
+    "zhLong": "文法點だれか〜用於表示某事由「某人」做、被「某人」擁有或與「某人」相關，通常在實際的人不確定或不重要時使用。可與動詞、形容詞或名詞並用。",
     "sentences": [
       {
         "jp": "だれかがドアをノックしました。",
@@ -2916,6 +3110,8 @@
     "formation": "だれでも + Verb/Adjective/Noun",
     "shortExplanation": "Used to express 'anyone' or 'everyone'; 'no matter who'.",
     "longExplanation": "The grammar point だれでも is used to emphasize that something applies to everyone or anyone, regardless of who they are. It can be translated as 'anyone', 'everyone', or 'no matter who' in English. It is used in sentences to show that a certain situation, characteristic, or condition applies to all people.",
+    "zhShort": "用於表達「任何人」或「每個人」；「不論誰」。",
+    "zhLong": "文法點だれでも用於強調某事適用於所有人或任何人，不論他們是誰。可譯為「任何人」、「每個人」或「不論誰」。用於句子中表示某種情況、特性或條件適用於所有人。",
     "sentences": [
       {
         "jp": "だれでもこのゲームができます。",
@@ -2946,6 +3142,8 @@
     "formation": "だれも + Verb-negative form (ないです), だれも + い-Adjective-negative form (ないです), だれも + な-Adjective-negative form (じゃないです)",
     "shortExplanation": "Express 'nobody' or 'no one' in a negative sentence.",
     "longExplanation": "The grammar point だれも～ないです is used to express the idea of 'nobody' or 'no one' in a negative sentence. だれも is followed by the negative form of a verb or adjective, often using the polite ないです form.",
+    "zhShort": "在否定句中表達「沒有人」或「無人」。",
+    "zhLong": "文法點だれも～ないです用於表達「沒有人」或「無人」的概念。だれも後接動詞或形容詞的否定形式，通常使用禮貌的ないです形式。",
     "sentences": [
       {
         "jp": "だれも知らないです。",
@@ -2976,6 +3174,8 @@
     "formation": "だれも + Verb-negative (ません)",
     "shortExplanation": "Express 'nobody' or 'no one' in negative sentences.",
     "longExplanation": "The grammar point だれも is used in combination with a negative form of the verb, usually ません, to express the idea of 'nobody' or 'no one' doing something. It is used with questions or statements and can be translated as 'nobody' or 'no one' in English.",
+    "zhShort": "在否定句中表達「沒有人」或「無人」。",
+    "zhLong": "文法點だれも與動詞的否定形式（通常為ません）組合使用，表達「沒有人」或「無人」做某事的概念。用於疑問句或陳述句中，可譯為「沒有人」或「無人」。",
     "sentences": [
       {
         "jp": "だれも秘密を知りません。",
@@ -3006,6 +3206,8 @@
     "formation": "どうやって + Verb-casual",
     "shortExplanation": "Ask 'how' something is done or how to do something.",
     "longExplanation": "The grammar point どうやって is used to ask how something is done or how to do something, and is translated as 'how' in English. It is often used in combination with verbs to inquire about the method or process someone goes through to complete a task or action.",
+    "zhShort": "詢問事情的方法或做法",
+    "zhLong": "「どうやって」是用來詢問某事的方法或如何進行某項動作的文法，意思是「怎樣、如何」。通常與動詞組合使用，用來詢問某人完成任務或執行動作的方法或過程。",
     "sentences": [
       {
         "jp": "どうやってお寿司を作りますか？",
@@ -3036,6 +3238,8 @@
     "formation": "ときどき + Verb/Adjective/Noun",
     "shortExplanation": "Used to indicate the frequency of an event; 'sometimes', 'occasionally', 'now and then'.",
     "longExplanation": "The grammar point ときどき is an adverb used to describe an event or action that occurs occasionally or at irregular intervals. It can be translated as 'sometimes', 'occasionally', or 'now and then' in English. It is often used to indicate that the speaker cannot predict the exact time when a certain event occurs.",
+    "zhShort": "表示事件發生的頻率，意為「有時」、「偶爾」、「不時」",
+    "zhLong": "「ときどき」是副詞，用於描述不規則發生的事件或動作，可翻譯為「有時」、「偶爾」或「不時」。通常用來表示說話者無法預測事件發生的確切時間。",
     "sentences": [
       {
         "jp": "彼はときどきケーキを作ります。",
@@ -3066,6 +3270,8 @@
     "formation": "どこ + question particle",
     "shortExplanation": "Express 'where', used with question words for asking about locations.",
     "longExplanation": "The どこ～ grammar point is used to express 'where', primarily for asking about locations or places. It is often combined with question words such as どこへ (doko e), どこで (doko de), and どこに (doko ni) to ask about destinations, locations of actions, and existence, respectively.",
+    "zhShort": "表示「哪裡」，用於詢問地點的疑問詞",
+    "zhLong": "「どこ～」文法用於表示「哪裡」，主要用於詢問地點或場所。通常與其他疑問詞組合使用，如「どこへ」（去往哪裡）、「どこで」（在哪裡）和「どこに」（存在在哪裡）等，用來詢問目的地、動作發生的地點和存在的位置。",
     "sentences": [
       {
         "jp": "駅はどこですか？",
@@ -3096,6 +3302,8 @@
     "formation": "どこか + (Particle, if needed) + Verb/Noun/Adjective",
     "shortExplanation": "Expresses 'somewhere', used when the specific location is unknown or uncertain.",
     "longExplanation": "The grammar point どこか is used when the speaker wants to express that something is happening or located 'somewhere', but the exact location is either unknown or uncertain. It can be used by itself or combined with other words.",
+    "zhShort": "表示「某個地方」，用於特定地點未知或不確定的情況",
+    "zhLong": "「どこか」文法用於表達某事正在進行或位於「某個地方」，但具體位置未知或不確定。可以單獨使用，也可與其他詞語組合使用。",
     "sentences": [
       {
         "jp": "どこかで財布をなくしました。",
@@ -3126,6 +3334,8 @@
     "formation": "Simply use the word どこでも in the sentence as an adverb to indicate 'anywhere' or 'everywhere'.",
     "shortExplanation": "Express 'anywhere' or 'everywhere' in Japanese.",
     "longExplanation": "The grammar point どこでも is used to express 'anywhere' or 'everywhere' in Japanese. It is usually used in sentences to indicate that an action or situation could happen or exist in any location.",
+    "zhShort": "表示「任何地方」或「到處」",
+    "zhLong": "「どこでも」文法用於表示「任何地方」或「到處」。通常用在句子中表示某個動作或狀況可能在任何地點發生或存在。",
     "sentences": [
       {
         "jp": "どこでも好きな場所で勉強できます。",
@@ -3156,6 +3366,8 @@
     "formation": "どこにも + Verb in ない-form + です",
     "shortExplanation": "Express that an action cannot be performed anywhere or something cannot be found anywhere.",
     "longExplanation": "The grammar point どこにも + Verb + ないです is used to express that an action cannot be performed anywhere or something cannot be found anywhere. It is used with a negative verb conjugation (ない-form) and highlights the unavailability or impossibility of finding or doing something in any location.",
+    "zhShort": "表示「在任何地方都無法進行某動作或找不到某物」",
+    "zhLong": "「どこにも + 動詞 + ないです」文法用於表達某動作在任何地方都無法執行，或某物在任何地方都找不到。與否定動詞形式（ない形）配合使用，強調無法在任何地點找到或執行某事。",
     "sentences": [
       {
         "jp": "どこにも傘が売ってないです。",
@@ -3186,6 +3398,8 @@
     "formation": "どこにも + Verb-negative",
     "shortExplanation": "Express 'not anywhere' or 'nowhere' with a negative verb.",
     "longExplanation": "The どこにも～ません grammar point is used to express that something doesn't exist, appear, or happen anywhere. It means 'not anywhere' or 'nowhere' when used with a negative verb. The formation is quite simple as you just need to add どこにも before the negative verb.",
+    "zhShort": "表示「在任何地方都沒有」或「任何地方都沒有」",
+    "zhLong": "「どこにも～ません」文法用於表達某物不存在、不出現或不在任何地方發生。意思是「在任何地方都沒有」或「任何地方都沒有」。構成方式很簡單，只需在否定動詞前加上「どこにも」。",
     "sentences": [
       {
         "jp": "どこにもあの猫がいません。",
@@ -3216,6 +3430,8 @@
     "formation": "どこへも + Verb in negative form (ないです)",
     "shortExplanation": "Express that an action doesn't take place anywhere; 'nowhere', 'not anywhere'.",
     "longExplanation": "The どこへも + Verb ないです grammar point is used to express a situation where an action doesn't occur or isn't applicable anywhere. It emphasizes a strong sense of not performing the action anywhere. Keep in mind that only negative verbs can follow 'どこへも' in this construction.",
+    "zhShort": "表示「任何地方都沒有發生某動作」；「沒有去任何地方」",
+    "zhLong": "「どこへも + 動詞ないです」文法用於表示某個動作在任何地方都不發生或不適用。強調在任何地點都沒有執行該動作的強烈含義。注意，在此結構中，只有否定動詞可以跟在「どこへも」後面。",
     "sentences": [
       {
         "jp": "今週末どこへも行かないです。",
@@ -3246,6 +3462,8 @@
     "formation": "どこへも + Verb-negative",
     "shortExplanation": "Nowhere; Not to any place",
     "longExplanation": "The grammar point どこへも is used to express the idea of 'nowhere' or 'not to any place'. It is combined with the negative form of a verb to indicate that the action does not happen to any place or destination.",
+    "zhShort": "表示「沒有去任何地方」；「不去任何地方」",
+    "zhLong": "「どこへも」文法用於表達「沒有去任何地方」或「不去任何地方」的意思。與動詞的否定形式搭配使用，表示動作沒有發生在任何目的地或地點。",
     "sentences": [
       {
         "jp": "今日はどこへも行きません。",
@@ -3276,6 +3494,8 @@
     "formation": "どこも + Verb-negative",
     "shortExplanation": "Express that something cannot be found anywhere or in any place; 'nowhere', 'in no place'.",
     "longExplanation": "The どこも～ないです grammar point is used to express that something cannot be found anywhere or in any place. It can be translated as 'nowhere' or 'in no place' in English. It is used in combination with a negative verb (ないです) to indicate the absence of something.",
+    "zhShort": "表示「在任何地方都找不到」或「任何地方都沒有」",
+    "zhLong": "「どこも～ないです」文法用於表達某物在任何地方都找不到或不存在。可翻譯為「任何地方都沒有」或「任何地方都找不到」。與否定動詞（ないです）組合使用，表示事物的缺失。",
     "sentences": [
       {
         "jp": "どこもうちわがないです。",
@@ -3306,6 +3526,8 @@
     "formation": "どこも + Verb-ます form + ません",
     "shortExplanation": "Express that 'nowhere' meets the verb action; 'nowhere does/can'.",
     "longExplanation": "The どこも + Verb ません grammar point is used to express that nowhere does or can fulfill the verb action. It is a negative statement and can be translated as 'nowhere (+ verb)' in English. Note that the first example below uses an adjective rather than a verb, which still conveys 'nowhere is ...'.",
+    "zhShort": "表示「任何地方都沒有符合該動詞動作」；「任何地方都不是」",
+    "zhLong": "「どこも + 動詞ません」文法用於表達沒有任何地方符合或執行該動詞的動作。屬於否定陳述，可翻譯為「任何地方都不是（+動詞）」。注意，下面的例句中使用形容詞而非動詞，但同樣傳達「任何地方都不是...」的含義。",
     "sentences": [
       {
         "jp": "どこも静かじゃありません。",
@@ -3336,6 +3558,8 @@
     "formation": "どちら + が/を + verb, どちら + が/を + adjective, どちら + が/を + noun",
     "shortExplanation": "Used to ask about two choices or options.",
     "longExplanation": "The どちら grammar point is used to ask about two choices or options. It translates to 'which of the two' or simply 'which' in English. It is commonly used with question words like どちらが or どちらを and can be combined with verbs, adjectives, and nouns to ask about preferences or to make comparisons.",
+    "zhShort": "用於詢問兩個選擇或選項",
+    "zhLong": "「どちら」文法用於詢問兩個選擇或選項。譯為「兩者中的哪一個」或簡稱「哪一個」。常與「どちらが」或「どちらを」等疑問詞搭配使用，可與動詞、形容詞和名詞組合，用來詢問偏好或進行比較。",
     "sentences": [
       {
         "jp": "この二つのリンゴ、どちらが美味しいですか？",
@@ -3366,6 +3590,8 @@
     "formation": "どなた",
     "shortExplanation": "A polite way to ask 'who', used for asking about someone's identity or when seeking information about an unknown person.",
     "longExplanation": "The word どなた is a polite version of the question word だれ (who). It is used when asking about someone's identity or when seeking information about an unknown person in a polite or formal context. It can be used in questions and sometimes with も to express 'no matter who'.",
+    "zhShort": "禮貌的詢問「誰」，用於詢問某人身分或尋找不明人士的資訊",
+    "zhLong": "「どなた」是疑問詞「だれ」（誰）的敬語表達。用於詢問某人的身分，或在禮貌或正式的語境中尋找關於陌生人的資訊。可用於疑問句中，有時與「も」搭配表示「不論誰」。",
     "sentences": [
       {
         "jp": "すみません、どなたが山田さんですか？",
@@ -3396,6 +3622,8 @@
     "formation": "どの + Noun",
     "shortExplanation": "Expresses 'which'; used to ask about specific items within a group.",
     "longExplanation": "The どの Noun grammar point is used to ask about specific items or objects within a group. It is the combination of the question word ど (which) and the particle の to connect to a noun. In English, it can be translated as 'which' depending on the context.",
+    "zhShort": "表示「哪個」；用於詢問群體中的特定項目",
+    "zhLong": "「どの + 名詞」文法用於詢問群體中的特定項目或物件。是疑問詞「ど」（哪個）與助詞「の」結合用於連接名詞的組合。在英文中可翻譯為「which」（哪個）。",
     "sentences": [
       {
         "jp": "どの本が一番面白いですか。",
@@ -3426,6 +3654,8 @@
     "formation": "どれ + でも",
     "shortExplanation": "Indicates 'any' or 'whichever' when referring to multiple items.",
     "longExplanation": "The どれでも grammar point is used to express that any option or element among multiple choices is acceptable. It can be translated as 'any' or 'whichever' in English. It is often used in questions or suggestions and is commonly seen with でも, but it can also be used with だれでも, いつでも, どこでも, etc.",
+    "zhShort": "表示「任何一個」或「無論哪一個」，用於多個項目中",
+    "zhLong": "「どれでも」文法用於表達在多個選項中，任何一個都是可以接受的。可翻譯為「任何一個」或「無論哪一個」。通常用於疑問句或建議中，常見與「でも」搭配，但也可與「だれでも」、「いつでも」、「どこでも」等組合使用。",
     "sentences": [
       {
         "jp": "どれでもいいですか？",
@@ -3456,6 +3686,8 @@
     "formation": "どんな + Noun",
     "shortExplanation": "Used to ask or describe 'what kind' or 'what type' of something.",
     "longExplanation": "The どんな (donna) grammar point is used to ask or describe 'what kind' or 'what type' of something. It is usually followed by a noun. It is similar to the English expression 'What kind of' or 'What type of' when asking about a specific characteristic or attribute.",
+    "zhShort": "用於詢問或描述「什麼樣的」或「什麼類型的」某物",
+    "zhLong": "「どんな」（donna）文法用於詢問或描述「什麼樣的」或「什麼類型的」某物。通常後面跟名詞。類似英文的「What kind of」或「What type of」表達方式，用於詢問特定的特徵或屬性。",
     "sentences": [
       {
         "jp": "どんな音楽が好きですか？",
@@ -3486,6 +3718,8 @@
     "formation": "な-Adjective + で",
     "shortExplanation": "Usage of で to connect or add information with a な-adjective.",
     "longExplanation": "Use な-adjective + で to connect it to another quality, action, or description. It can combine a な-adjective with another adjective, verb, or clause.",
+    "zhShort": "用「で」連接或附加な形容詞的資訊",
+    "zhLong": "使用「な形容詞 + で」來連接該形容詞與另一個性質、動作或描述。可將な形容詞與另一個形容詞、動詞或子句組合。",
     "sentences": [
       {
         "jp": "彼は綺麗で優しい女性が好きです。",
@@ -3516,6 +3750,8 @@
     "formation": "な-Adjective (remove な) + に + Verb",
     "shortExplanation": "Turn a な-adjective into an adverb by adding に.",
     "longExplanation": "To make a な-adjective modify a verb, remove the な and add に. This form describes how an action is performed. For instance, 静か（な） → 静かに, 親切（な） → 親切に.",
+    "zhShort": "在な形容詞後加「に」使其修飾動詞，將その形容詞轉變為副詞",
+    "zhLong": "要使な形容詞修飾動詞，需移除「な」並加上「に」。此形式描述動作的執行方式。例如：静か（な）→ 静かに、親切（な）→ 親切に。",
     "sentences": [
       {
         "jp": "彼は静かに話す。",
@@ -3546,6 +3782,8 @@
     "formation": "な-Adjective + に + します",
     "shortExplanation": "Expressing a decision or preference with a な-adjective.",
     "longExplanation": "The な-adjective に します pattern is used to express a decision or choice based on a な-adjective. It often translates as 'I’ll make it ...,' 'I will choose ...,' or 'I’ve decided on ...'.",
+    "zhShort": "用な形容詞表達決定或偏好",
+    "zhLong": "「な形容詞 + に + します」句型用於表達基於な形容詞的決定或選擇。通常譯為「我會讓它...」、「我會選擇...」或「我決定了...」。",
     "sentences": [
       {
         "jp": "静かにします。",
@@ -3576,6 +3814,8 @@
     "formation": "な-Adjective (remove な) + に + なります",
     "shortExplanation": "Express a change or transformation into a state described by the な-adjective.",
     "longExplanation": "The な-Adjective + に + なります grammar point is used to express a change or transformation into the state described by the な-adjective. It translates to 'become' or 'turn into' along with the meaning of the な-adjective.",
+    "zhShort": "表示轉變或改變為な形容詞所描述的狀態",
+    "zhLong": "「な形容詞 + に + なります」文法用於表達轉變或改變為該な形容詞所描述的狀態。譯為「變成...」或「成為...」，結合な形容詞的含義。",
     "sentences": [
       {
         "jp": "この部屋は静かになります。",
@@ -3606,6 +3846,8 @@
     "formation": "Verb + なに, い-Adjective + なに, な-Adjective + なに, Noun + なに",
     "shortExplanation": "Asking about 'what' or 'which' in Japanese",
     "longExplanation": "The なに～ grammar point is used to ask questions about 'what' or 'which' in Japanese. It can be combined with various parts of speech to create different questions. The formation differs depending on whether it's used with a verb, い-adjective, な-adjective, or noun.",
+    "zhShort": "用來詢問「什麼」或「哪個」。",
+    "zhLong": "なに～文法用於詢問日語中的「什麼」或「哪個」。它可以與各種詞性組合，形成不同的疑問句。接續方式取決於是否與動詞、い形容詞、な形容詞或名詞一起使用。",
     "sentences": [
       {
         "jp": "これはなにですか。",
@@ -3636,6 +3878,8 @@
     "formation": "なにか + Noun",
     "shortExplanation": "Indicates 'something' or 'some kind of'.",
     "longExplanation": "The なにか grammar point is used to express the idea of 'something' or 'some kind of' in Japanese. It is often used when the speaker is unsure or not specific about the details of the noun being referred to. なにか is used before the noun it modifies.",
+    "zhShort": "表示「某種東西」或「某種」。",
+    "zhLong": "なにか文法用於表達「某種東西」或「某種」的概念。當說話者對所指名詞的具體內容不確定或不特定時，經常使用。なにか置於其所修飾的名詞之前。",
     "sentences": [
       {
         "jp": "なにか飲み物を持ってきてください。",
@@ -3666,6 +3910,8 @@
     "formation": "なにも + Verb-negative",
     "shortExplanation": "Used to express 'not any' or 'nothing' in a negative sentence.",
     "longExplanation": "The なにも～ないです grammar point is used in negative sentences to express the idea of 'not any', 'not at all', 'nothing', or 'none'. It is commonly used with verbs in the negative form.",
+    "zhShort": "用於否定句中表示「沒有任何」或「什麼都沒有」。",
+    "zhLong": "なにも～ないです文法用於否定句中，表達「沒有任何」、「一點都不」、「什麼都沒有」或「都沒有」的意思。通常與動詞的否定形式一起使用。",
     "sentences": [
       {
         "jp": "彼はなにも言わなかったです。",
@@ -3696,6 +3942,8 @@
     "formation": "なにも + Verb-ます form + ません",
     "shortExplanation": "Used to express 'not anything', 'nothing'.",
     "longExplanation": "The grammar point なにも～ません is used to express the idea of 'not anything' or 'nothing' in negative sentences. It is placed before the verb in its negative form (～ません).",
+    "zhShort": "用於表示「沒有任何」或「什麼都沒有」。",
+    "zhLong": "なにも～ません文法用於表達否定句中「沒有任何」或「什麼都沒有」的概念。置於動詞的否定形式（～ません）之前。",
     "sentences": [
       {
         "jp": "昨日はなにも食べませんでした。",
@@ -3726,6 +3974,8 @@
     "formation": "なん + Counter / なん + Verb / なん + Adjective",
     "shortExplanation": "Used to form interrogative questions and emphasize the question word for 'what', 'how'.",
     "longExplanation": "The なん～ grammar point is used to form interrogative questions and emphasize the question word for 'what' or 'how'. It is an abbreviation of '何' meaning 'what'. Its usage can vary depending on whether it is used with a counter, verb, or adjective.",
+    "zhShort": "用於形成疑問句並強調「什麼」、「怎樣」的疑問詞。",
+    "zhLong": "なん～文法用於形成疑問句並強調「什麼」或「怎樣」的疑問詞。它是表示「什麼」的「何」的略稱。其用法取決於是否與計數詞、動詞或形容詞一起使用。",
     "sentences": [
       {
         "jp": "あなたはなん歳ですか？",
@@ -3756,6 +4006,8 @@
     "formation": "なんで + [phrase or sentence]",
     "shortExplanation": "Asking the reason or cause; 'why', 'how come'.",
     "longExplanation": "The なんで grammar point is used to ask the reason or cause behind something. It can be translated as 'why' or 'how come' in English. It is a casual way of asking for an explanation, and it can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "zhShort": "詢問原因或理由；「為什麼」、「怎麼會」。",
+    "zhLong": "なんで文法用於詢問某事背後的原因或理由。可翻譯為英文的「why」或「how come」。這是一種詢問解釋的非正式方式，可與動詞、い形容詞、な形容詞和名詞一起使用。",
     "sentences": [
       {
         "jp": "なんで遅れたの？",
@@ -3786,6 +4038,8 @@
     "formation": "なんでも + Verb / なんでも + Adjective / なんでも + Noun",
     "shortExplanation": "Means 'any', 'anything', 'anyone'.",
     "longExplanation": "The なんでも grammar point is used to express the concept of 'any', 'anything', or 'anyone' in Japanese. It can be used with verbs, adjectives, and nouns. It is often used in the meaning of 'no matter what' or 'regardless of'.",
+    "zhShort": "表示「任何」、「任何東西」、「任何人」。",
+    "zhLong": "なんでも文法用於表達日語中「任何」、「任何東西」或「任何人」的概念。可與動詞、形容詞和名詞一起使用。經常用於「無論什麼」或「不管怎樣」的意思。",
     "sentences": [
       {
         "jp": "なんでも食べられるから、何を頼んでも大丈夫です。",
@@ -3816,6 +4070,8 @@
     "formation": "ほとんど + Verb / ほとんど + Noun",
     "shortExplanation": "Used to express 'almost', 'nearly', or 'most'.",
     "longExplanation": "The ほとんど〜 grammar point is used to express that something is 'almost', 'nearly', or 'most'. It can appear in both negative contexts (hardly/barely) or positive contexts (almost all). It is typically followed by a verb or used with a noun to describe the quantity or extent of something.",
+    "zhShort": "用於表示「幾乎」、「將近」或「大部分」。",
+    "zhLong": "ほとんど〜文法用於表達某事「幾乎」、「將近」或「大部分」。既可出現在否定語境中（幾乎沒有/勉強），也可出現在肯定語境中（幾乎所有）。通常後接動詞或與名詞一起使用，以描述某事物的數量或程度。",
     "sentences": [
       {
         "jp": "彼女はほとんど英語を話せません。",
@@ -3846,6 +4102,8 @@
     "formation": "Used as an adverb or short expression with no special grammar structure.",
     "shortExplanation": "Expresses something as 'so-so', 'not bad', or 'average'.",
     "longExplanation": "The expression まあまあ is used to describe something that is neither particularly good nor bad, but rather average or 'so-so'. It is a neutral term and can be used in various contexts when discussing quality, feelings, or situations.",
+    "zhShort": "表示「馬馬虎虎」、「還不錯」或「普通」。",
+    "zhLong": "まあまあ表達被用於描述既不特別好也不特別壞，而是普通或「馬馬虎虎」的事物。這是一個中立詞彙，可在討論品質、感受或情況時用於各種語境。",
     "sentences": [
       {
         "jp": "彼の料理の腕前はまあまあです。",
@@ -3876,6 +4134,8 @@
     "formation": "まだ + Verb (non-past / negative / te-form), まだ + い-adjective, まだ + な-adjective + じゃない/ではない, まだ + Noun + じゃない/ではない",
     "shortExplanation": "Indicates something has not yet happened or is still happening; 'still', 'not yet'.",
     "longExplanation": "The まだ〜 grammar point is used to express that something has not yet occurred or is still in progress. It can be translated as 'still' or 'not yet' in English. Depending on the context or if expressing the negative, まだ can be used with different combinations of verb, adjective, or noun.",
+    "zhShort": "表示某事尚未發生或仍在進行；「仍然」、「還沒」。",
+    "zhLong": "まだ〜文法用於表達某事尚未發生或仍在進行中。可翻譯為英文的「still」或「not yet」。根據語境或表達否定時，まだ可與不同的動詞、形容詞或名詞組合使用。",
     "sentences": [
       {
         "jp": "昼ご飯はまだ食べていません。",
@@ -3906,6 +4166,8 @@
     "formation": "まだ + Verb-negative + です",
     "shortExplanation": "Expresses that something has not happened or been done yet.",
     "longExplanation": "The まだ〜ないです grammar point is used to indicate that a certain action or event has not yet happened or been completed. It is used with the negative form of a verb (casual negative + です) and can be translated as 'not yet', 'still', or 'haven't' in English.",
+    "zhShort": "表示某個動作或事件尚未發生或完成。",
+    "zhLong": "まだ〜ないです文法用於表明某個特定的動作或事件尚未發生或完成。與動詞的否定形式（非正式否定＋です）一起使用，可翻譯為英文的「not yet」、「still」或「haven't」。",
     "sentences": [
       {
         "jp": "まだ宿題をしていないです。",
@@ -3936,6 +4198,8 @@
     "formation": "まだ + Verb-ます form (negative)",
     "shortExplanation": "Expresses that something has not happened or been done yet (polite form).",
     "longExplanation": "The まだ～ません grammar point is used to express that something has not happened or been done yet in a polite register. It is used with the negative ます-form of a verb (～ません). まだ is placed before the verb phrase.",
+    "zhShort": "以敬語形式表示某事尚未發生或完成。",
+    "zhLong": "まだ～ません文法用於以敬語形式表達某事尚未發生或完成。與動詞的否定敬語形式（～ません）一起使用。まだ置於動詞短語之前。",
     "sentences": [
       {
         "jp": "昼ご飯をまだ食べていません。",
@@ -3966,6 +4230,8 @@
     "formation": "もう + Verb / もう + Adjective / もう + Noun",
     "shortExplanation": "Expresses 'already', 'anymore', or 'soon'.",
     "longExplanation": "The もう grammar point is used to express the idea of 'already', 'anymore', or 'soon' in English. It indicates that something has already happened, won't happen anymore, or will happen soon. It can be used with verbs, adjectives, or nouns depending on context.",
+    "zhShort": "表示「已經」、「不再」或「很快」。",
+    "zhLong": "もう文法用於表達「已經」、「不再」或「很快」的概念。表示某事已經發生、將不再發生或很快將發生。根據語境，可與動詞、形容詞或名詞一起使用。",
     "sentences": [
       {
         "jp": "もう昼ごはんを食べました。",
@@ -3996,6 +4262,8 @@
     "formation": "もうすぐ + Verb (~ます form or 〜る form)",
     "shortExplanation": "Express an action or event happening soon: 'soon', 'in a short while', 'almost'.",
     "longExplanation": "The もうすぐ grammar point is used to express that an action or event is going to happen soon or is almost happening. It can be translated as 'soon', 'in a short while', or 'almost' in English. もうすぐ is usually followed by a verb or a noun indicating an event.",
+    "zhShort": "表示某個動作或事件即將發生：「很快」、「過一會兒」、「幾乎」。",
+    "zhLong": "もうすぐ文法用於表達某個動作或事件即將發生。可翻譯為英文的「soon」、「in a short while」或「almost」。もうすぐ通常後接動詞或表示事件的名詞。",
     "sentences": [
       {
         "jp": "もうすぐ春が来ます。",
@@ -4026,6 +4294,8 @@
     "formation": "もっと + Verb / い-Adjective / な-Adjective",
     "shortExplanation": "Expresses 'more' or 'even more' when describing a quantity, frequency, or degree.",
     "longExplanation": "The もっと〜 grammar point is used to emphasize the desire or need for something to be 'more' or 'even more' in terms of quantity, frequency, or degree. It is often translated as 'more' or 'even more' in English. もっと can be used with verbs, い-adjectives, or な-adjectives.",
+    "zhShort": "在描述數量、頻率或程度時表示「更多」或「更加」。",
+    "zhLong": "もっと〜文法用於強調需要某事在數量、頻率或程度上「更多」或「更加」。通常翻譯為英文的「more」或「even more」。もっと可與動詞、い形容詞或な形容詞一起使用。",
     "sentences": [
       {
         "jp": "もっと勉強しなければなりません。",
@@ -4056,6 +4326,8 @@
     "formation": "よく + Verb-casual",
     "shortExplanation": "Often used to express 'doing something well' or 'often'.",
     "longExplanation": "The よく～ grammar point is used to express that someone does something well, frequently, or often. It is often placed before the verb and can also mean 'well done' or 'good job' when praising someone's action.",
+    "zhShort": "經常用於表示「做某事很好」或「經常」。",
+    "zhLong": "よく～文法用於表達某人做某事很好、頻繁或經常。通常置於動詞之前，也可在稱讚某人的動作時表示「做得好」或「幹得好」。",
     "sentences": [
       {
         "jp": "彼はよく勉強します。",

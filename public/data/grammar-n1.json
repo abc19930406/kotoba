@@ -6,6 +6,8 @@
     "formation": "Verb-stem + ぬく",
     "shortExplanation": "Expresses the concept of doing something completely or thoroughly.",
     "longExplanation": "'Noun ぬく' is a phrase that conveys the idea of doing an action thoroughly or completely. It demonstrates a determination to carry out a task until the end. While the formation commonly uses verbs, it does convey a meaning similar to the English phrase 'to do completely'.",
+    "zhShort": "表達完全或徹底地做某件事。",
+    "zhLong": "「Verb＋ぬく」這個句型表達徹底或完全進行某項動作的概念。它表示對於執行某項任務直到完成的決心。雖然接續形式通常與動詞搭配，但其含義相似於英文的「do completely（完全做好）」。",
     "sentences": [
       {
         "jp": "彼は一日中本を読みぬく。",
@@ -36,6 +38,8 @@
     "formation": "❶ (Group 1) Verb:  書く → 書ける / 飲む → 飲める, etc.\n❷ (Group 2) Verb-ます stem + られる (食べる→食べられる、見る→見られる)",
     "shortExplanation": "Expresses potential or ability to do something; 'can', 'able to'.",
     "longExplanation": "The ～が Verb られる grammar pattern generally refers to the potential form of Japanese verbs (i.e., 'can do something'). However, the exact formation depends on the verb group. For most Group 1 (五段) verbs, potential form changes the final -u to -eru (e.g., 書く→書ける). For Group 2 (一段) verbs, you often see ～られる (e.g., 食べる→食べられる). In English, it translates as 'can' or 'able to'.",
+    "zhShort": "表示能力或可能性；「能」、「可以」。",
+    "zhLong": "文法形式～が Verb られる通常指日文動詞的可能形（即「能做某事」）。確切的接續方式取決於動詞的分類。對於第一類（五段）動詞，通常將最後的-u改為-eru（例如：書く→書ける）。對於第二類（一段）動詞，常見形式為～られる（例如：食べる→食べられる）。英文翻譯為「can（能）」或「able to（能夠）」。",
     "sentences": [
       {
         "jp": "彼がこの問題を解けると思いますか？",
@@ -66,6 +70,8 @@
     "formation": "Sentence + かと思いきや (Verb plain form, i-/na-Adjective, or Noun + だ + かと思いきや)",
     "shortExplanation": "Expressing unexpected outcomes; 'just when I thought...', 'but...'.",
     "longExplanation": "The ～かと思いきや grammar point is used when the outcome turns out different from what was initially assumed or expected. It can be translated as 'just when I thought...' or simply 'but (actually)...'. It often highlights that the speaker’s assumption was proven wrong by subsequent events.",
+    "zhShort": "表達出乎意料的結果；「正當我以為...」、「可是...」。",
+    "zhLong": "文法點～かと思いきや用於表達結果與最初的假設或預期不同的情況。可翻譯為「正當我以為...」或簡單地說「可是（實際上）...」。它經常強調說話者的假設被隨後發生的事件所推翻。",
     "sentences": [
       {
         "jp": "明日は晴れるかと思いきや、まさかの雨が降った。",
@@ -96,6 +102,8 @@
     "formation": "Noun / Verb / Adjective + がゆえに",
     "shortExplanation": "Expresses the reason or cause; 'because', 'due to', 'as a result of'.",
     "longExplanation": "The ～がゆえに grammar point is used to express a reason or cause, often in more formal writing or speech. It roughly corresponds to 'because (of)', 'due to', or 'as a result of' in English.",
+    "zhShort": "表示理由或原因；「因為」、「由於」、「作為...的結果」。",
+    "zhLong": "文法點～がゆえに用於表達理由或原因，常見於較正式的書寫或語言環境。粗略對應英文的「because of（因為）」、「due to（由於）」或「as a result of（作為...的結果）」。",
     "sentences": [
       {
         "jp": "愛情がゆえに、彼は彼女を許した。",
@@ -126,6 +134,8 @@
     "formation": "Noun / Verb-dictionary form + がゆえの + Noun",
     "shortExplanation": "Expresses the reason or cause for something; 'because of', 'due to'.",
     "longExplanation": "The ～がゆえの Noun pattern is used to describe a noun that exists or occurs due to some cause. It is often used in more literary or formal contexts.",
+    "zhShort": "表示某事的理由或原因；「因為」、「由於」。",
+    "zhLong": "文法形式～がゆえの Noun用於描述因某原因而存在或發生的名詞。常用於較文學性或正式的語境中。",
     "sentences": [
       {
         "jp": "愛がゆえの悲しみ。",
@@ -156,6 +166,8 @@
     "formation": "Noun (start) + から + Noun (end) + に至るまで",
     "shortExplanation": "Expressing range from one thing to another; 'from...to', 'ranging from...to'.",
     "longExplanation": "The ～から〜に至るまで grammar point emphasizes a range or scope extending from one extreme to another. It can be translated as 'from...to...' or 'ranging from...to...' in English. It can apply to people, places, times, objects, and so on.",
+    "zhShort": "表達從某事物到另一事物的範圍；「從...到...」、「範圍從...到...」。",
+    "zhLong": "文法點～から〜に至るまで強調從一個極端延伸到另一個極端的範圍或範疇。可翻譯為英文的「from...to...（從...到...）」或「ranging from...to...（範圍從...到...）」。它可應用於人物、地點、時間、物件等。",
     "sentences": [
       {
         "jp": "このバンドの曲は、青年から老人に至るまで、人々に愛されています。",
@@ -186,6 +198,8 @@
     "formation": "Verb-て + ごとく / Noun + の + ごとく",
     "shortExplanation": "To seem like; as if; as though.",
     "longExplanation": "The ～ごとく grammar point is used to express similarity or resemblance. It is quite formal/literary, meaning 'as if,' 'as though,' or 'like.' It can be used with verbs and nouns.",
+    "zhShort": "似乎像；彷彿；好像。",
+    "zhLong": "文法點～ごとく用於表達相似性或相似之處。語氣頗為正式或文學性，意思為「as if（如果）」、「as though（好像）」或「like（像）」。可與動詞和名詞搭配使用。",
     "sentences": [
       {
         "jp": "彼は鳥のごとく飛んでいるように見えた。",
@@ -216,6 +230,8 @@
     "formation": "Verb (plain form) + こととて / Noun + の + こととて / (な-Adjective + な) + こととて",
     "shortExplanation": "Used to express the reason or premise for a decision or judgment; 'since', 'because'.",
     "longExplanation": "The ～こととて grammar point expresses a reason or premise in a slightly formal or literary way. It can often be interpreted as 'since' or 'because'.",
+    "zhShort": "用於表達某個決定或判斷的理由或前提；「因為」、「既然」。",
+    "zhLong": "文法點～こととて用於以略帶正式或文學性的方式表達理由或前提。常可解釋為「since（既然）」或「because（因為）」。",
     "sentences": [
       {
         "jp": "彼は裁判に勝つために全資産を使うこととて、弁護士に頼んだ。",
@@ -246,6 +262,8 @@
     "formation": "Verb-ず form + に + すんだ",
     "shortExplanation": "Expresses the idea of 'was able to do without'; 'managed to avoid'.",
     "longExplanation": "The ～ずにすんだ grammar point indicates that one was able to avoid doing something or managed to get by without doing it. It translates as 'managed to avoid ~' or 'got by without ~.'",
+    "zhShort": "表達「得以不做」、「不必做」的概念；「成功避免」。",
+    "zhLong": "文法點～ずにすんだ表示某人得以避免做某事或不必做某事就得以應付。翻譯為「managed to avoid ~（成功避免~）」或「got by without ~（不必~就度過難關）」。",
     "sentences": [
       {
         "jp": "彼は事故を起こさずにすんだ。",
@@ -276,6 +294,8 @@
     "formation": "Noun / i-Adjective / na-Adjective / Verb + だろうとなかろうと",
     "shortExplanation": "Expresses 'regardless of whether it is or isn't'.",
     "longExplanation": "The ～だろうとなかろうと grammar point is used to express the idea of 'regardless of whether it is or isn't.' It translates roughly as 'whether it is ~ or not' in English. This construction emphasizes that the speaker’s stance or action does not change, regardless of the two possible conditions.",
+    "zhShort": "表達「不管是或不是」。",
+    "zhLong": "文法點～だろうとなかろうと用於表達「不管是或不是」的概念。英文粗略翻譯為「whether it is ~ or not（不管是或不是~）」。此結構強調說話者的立場或行動無論在兩種可能的情況下都不會改變。",
     "sentences": [
       {
         "jp": "試験が難しいだろうとなかろうと、全力で頑張ります。",
@@ -306,6 +326,8 @@
     "formation": "Verb-dictionary form + つもりだ",
     "shortExplanation": "Expresses the speaker's intention or plan.",
     "longExplanation": "The ～つもりだ grammar point is used to express the speaker's intention or plan to do something. It translates as 'intend to,' 'plan to,' or 'think that (I will).' It's often used with the verb in its dictionary form.",
+    "zhShort": "表達說話者的意圖或計畫。",
+    "zhLong": "文法點～つもりだ用於表達說話者打算或計畫做某事的意圖。翻譯為「intend to（打算）」、「plan to（計畫）」或「think that (I will)（認為我會）」。常與動詞的字典形搭配使用。",
     "sentences": [
       {
         "jp": "明日は早く起きるつもりです。",
@@ -336,6 +358,8 @@
     "formation": "Verb-dictionary form + つもりで",
     "shortExplanation": "Expresses the speaker's intention or plan; 'with the intention of', 'planning to'.",
     "longExplanation": "The ～つもりで grammar point is used to express the speaker's intention or mindset when doing something. It can often be translated as 'with the intention of' or 'with the mindset that.'",
+    "zhShort": "表達說話者的意圖或計畫；「帶著...的意圖」、「計畫要」。",
+    "zhLong": "文法點～つもりで用於表達說話者做某事時的意圖或心態。常可翻譯為「with the intention of（帶著...的意圖）」或「with the mindset that（抱著...的心態）」。",
     "sentences": [
       {
         "jp": "私は日本に住むつもりで日本語を勉強しています。",
@@ -366,6 +390,8 @@
     "formation": "Verb-dictionary form + ではすまない / い-Adjective + ではすまない / な-Adjective + ではすまない / Noun + ではすまない",
     "shortExplanation": "Expresses that just doing something is not enough or will not suffice.",
     "longExplanation": "The grammar point ～ではすまない is used when the speaker strongly feels that an action or situation alone is not sufficient or acceptable, implying that more serious measures are needed or that the consequences are more severe.",
+    "zhShort": "表達僅僅做某事還不夠或不足以解決。",
+    "zhLong": "文法點～ではすまない用於表達說話者強烈感受到某個行動或情況單獨是不夠或不能接受的，暗示需要採取更嚴肅的措施或結果更為嚴重。",
     "sentences": [
       {
         "jp": "ただ謝るではすまない。何か行動を取らなければならない。",
@@ -396,6 +422,8 @@
     "formation": "Noun + とあって / (Sometimes Verb + とあって, depending on context)",
     "shortExplanation": "Expresses a special situation or event due to certain circumstances.",
     "longExplanation": "The ～とあって grammar point is used to indicate that, due to a special or noteworthy circumstance, a particular situation has occurred. It often translates as 'because (it is)...' or 'given that...' in English, emphasizing the uniqueness of the cause.",
+    "zhShort": "表達由於特定環境或情況而產生的特殊狀況或事件。",
+    "zhLong": "文法點～とあって用於表達由於某種特殊或值得注意的情況，因此產生了某個特定的狀況。英文常翻譯為「because (it is)...（因為...）」或「given that...（鑑於...）」，強調原因的特殊性。",
     "sentences": [
       {
         "jp": "春休みとあって、公園は子供たちでいっぱいだ。",
@@ -426,6 +454,8 @@
     "formation": "Verb-casual + とあれば / い-Adjective + とあれば / な-Adjective + だとあれば / Noun + だとあれば",
     "shortExplanation": "Expresses a condition; 'if', 'when', 'since'.",
     "longExplanation": "The ～とあれば grammar point is used to express a condition or premise in which a certain outcome or action naturally follows. It can be translated as 'if,' 'when,' or 'since,' depending on context. It emphasizes that under this specific condition, a certain response is expected.",
+    "zhShort": "表達條件；「如果」、「當...時」、「既然」。",
+    "zhLong": "文法點～とあれば用於表達某個條件或前提，在此條件下某個特定的結果或行動自然而然地隨之而來。可翻譯為「if（如果）」、「when（當...時）」或「since（既然）」，具體取決於語境。它強調在此特定條件下，某個特定的回應是可預期的。",
     "sentences": [
       {
         "jp": "無料とあれば、誰でも利用したいと思います。",
@@ -456,6 +486,8 @@
     "formation": "Noun + といえども / Verb-plain form + といえども / Adjective + といえども",
     "shortExplanation": "Even if it is said that; Even though; Although.",
     "longExplanation": "The ～といえども grammar point is used to show a contrast or contradiction. It is similar to 'even though' or 'although' in English. It can be used with nouns, verbs, adjectives, etc., to emphasize that the reality is different from the assumption or label.",
+    "zhShort": "即使被說是；儘管；雖然。",
+    "zhLong": "文法點～といえども用於表達對比或矛盾。類似英文的「even though（儘管）」或「although（雖然）」。可與名詞、動詞、形容詞等搭配，強調現實與假設或標籤的不同。",
     "sentences": [
       {
         "jp": "彼が天才といえども、ミスをすることはあります。",
@@ -486,6 +518,8 @@
     "formation": "Noun + といったらありはしない / な-Adjective + といったらありはしない",
     "shortExplanation": "Express extreme exclamation; 'extremely', 'unbelievable', 'unsurpassed'.",
     "longExplanation": "The ～といったらありはしない grammar point is used to express an extreme degree of something, often surprise or admiration. It can be loosely translated as 'unbelievably...' or 'incredibly...'.",
+    "zhShort": "表達極度的感嘆；「極其」、「難以置信」、「無與倫比」。",
+    "zhLong": "文法點～といったらありはしない用於表達某事物的極端程度，常常帶有驚訝或讚賞的意涵。可粗略翻譯為「unbelievably...（難以置信地...）」或「incredibly...（極其...）」。",
     "sentences": [
       {
         "jp": "彼の英語の上手さといったらありはしない。",
@@ -516,6 +550,8 @@
     "formation": "Verb-casual + といったらありゃしない / い-Adjective + といったらありゃしない / な-Adjective + だ + といったらありゃしない / Noun + だ + といったらありゃしない",
     "shortExplanation": "Emphasizes that something is to the extreme; 'you have no idea how...', 'it's incredibly...'.",
     "longExplanation": "The ～といったらありゃしない grammar point is an idiomatic expression used to emphasize that something is extremely or incredibly a certain way—often beyond words. It can be loosely rendered as 'you wouldn't believe how...' or 'it's indescribably...'.",
+    "zhShort": "強調某事達到極端的程度；『你無法想像有多…』、『極其…』。",
+    "zhLong": "～といったらありゃしない 是一種習語表現，用來強調某事達到極端或令人難以置信的程度，通常超出言語所能描述的範圍。可譯為『你無法想像有多…』、『極其…』或『無法用言語形容…』。",
     "sentences": [
       {
         "jp": "その店のラーメンは美味しいといったらありゃしない。",
@@ -546,6 +582,8 @@
     "formation": "い-Adjective + といったらない / な-Adjective + だといったらない / Noun + だといったらない",
     "shortExplanation": "Expresses the extreme of something; 'nothing can be more ... than this'.",
     "longExplanation": "The ～といったらない grammar point is used to emphasize the high degree or intensity of an action or state. It can be translated as “nothing can be more ... than this” or “it’s extremely...”. It conveys that something is so intense or extreme that it cannot be adequately described.",
+    "zhShort": "表達某事的極端程度；『沒有比這更…的事了』。",
+    "zhLong": "～といったらない 文法用於強調某個動作或狀態的程度或強度。可譯為『沒有比這更…的事了』或『極其…』。它傳達出某事如此激烈或極端，以至於無法充分描述。",
     "sentences": [
       {
         "jp": "今日は寒いといったらない。",
@@ -576,6 +614,8 @@
     "formation": "Verb-casual / い-Adjective / な-Adjective（＋だ） / Noun（＋だ） + ときている",
     "shortExplanation": "Highlights a situation or condition that is serious/extreme, often with a negative nuance.",
     "longExplanation": "The grammar point ～ときている is used to emphasize that some circumstance is particularly notable—often negatively. It implies, “Given that things are so ~, it’s no wonder that...” or “Because the situation is (too) ~, such-and-such follows.” It is relatively informal and more common in spoken language.",
+    "zhShort": "突出某個情況或條件相當嚴重、極端，通常帶有負面含義。",
+    "zhLong": "～ときている 文法用於強調某項環境或狀況尤其值得注意，通常具有負面色彩。其含義為『鑑於事情如此～，難怪會…』或『因為情況（太）～，所以才會產生這樣的結果』。相對非正式，在口語中更常見。",
     "sentences": [
       {
         "jp": "仕事が忙しいときているので、なかなか休みが取れません。",
@@ -606,6 +646,8 @@
     "formation": "Verb-ている + ところを / Noun + の + ところを / い-Adjective + ところを / な-Adjective + な + ところを",
     "shortExplanation": "Indicates a contrasting or inconvenient timing; 'just when...', 'even though...'.",
     "longExplanation": "The grammar point ～ところを is often used when something happens (or one acts) at a certain moment/condition that makes the timing inconvenient or contrary to what is expected. It can imply “in spite of the fact that...” or “just when...” depending on context.",
+    "zhShort": "表示時機對比或不合時宜；『正好在…時』、『儘管…』。",
+    "zhLong": "～ところを 文法常用於表示某事發生（或某人採取行動）在某個時刻或條件下，使得時機不便或與預期相反。根據語境，可暗示『儘管…這一事實』或『正好在…時』。",
     "sentences": [
       {
         "jp": "ちょうど映画を見ているところを、停電で真っ暗になった。",
@@ -636,6 +678,8 @@
     "formation": "Verb-casual + とされる / い-Adjective + とされる / な-Adjective + だとされる / Noun + だとされる",
     "shortExplanation": "Indicates a general belief or widely accepted view; 'is considered', 'is seen as', 'is said to be'.",
     "longExplanation": "The ～とされる grammar point expresses what is generally believed, accepted, or reputed. It can be translated as 'is considered to be,' 'is seen as,' or 'is said to be.' It’s often used in formal or written contexts. The structure differs slightly depending on whether it’s used with a noun, adjective, or verb.",
+    "zhShort": "表示一般性的信念或廣泛接受的看法；『被認為是』、『被視為』、『據說是』。",
+    "zhLong": "～とされる 文法表達普遍被相信、接受或傳聞的內容。可譯為『被認為是』、『被視為』或『據說是』。常用於正式或書面語境。根據是否與名詞、形容詞或動詞搭配，結構會略有不同。",
     "sentences": [
       {
         "jp": "サッカーは世界で最も人気のあるスポーツとされています。",
@@ -666,6 +710,8 @@
     "formation": "Verb-casual + としたところで / い-Adjective + としたところで / な-Adjective + だとしたところで / Noun + だとしたところで",
     "shortExplanation": "Means 'even if' or 'even assuming'; emphasizes that the outcome won’t change.",
     "longExplanation": "The ～としたところで grammar point means 'even if' or 'even assuming that ~.' It highlights that even if the stated condition were met, the result would not significantly change. Often used to convey a sense of futility or skepticism in hypothetical statements.",
+    "zhShort": "表示『即使』或『假設』；強調結果不會改變。",
+    "zhLong": "～としたところで 文法表示『即使』或『假設…』。它強調即使滿足所述的條件，結果也不會發生顯著變化。通常用於傳達假設性敘述中的無奈感或懷疑態度。",
     "sentences": [
       {
         "jp": "彼が来るとしたところで、何も変わらないだろう。",
@@ -696,6 +742,8 @@
     "formation": "Verb-casual + とすると / い-Adjective + とすると / な-Adjective + だとすると / Noun + だとすると",
     "shortExplanation": "Expresses 'if', 'when', or 'assuming that' in a speculative sense.",
     "longExplanation": "The ～とすると grammar point is used for hypothetical or speculative situations, often in the sense of 'if we assume...', 'when it comes to...', or 'given that...' . It sets up a condition and then states the expected or possible outcome.",
+    "zhShort": "表達推測性的『如果』、『當…時』或『假設…』。",
+    "zhLong": "～とすると 文法用於假設或推測性情況，常以『如果我們假設…』、『當涉及…時』或『鑑於…』的意思出現。它設定一個條件，然後陳述預期的或可能的結果。",
     "sentences": [
       {
         "jp": "彼が来るとすると、もうすぐ到着するはずです。",
@@ -726,6 +774,8 @@
     "formation": "Verb-casual + とすれば / い-Adjective + とすれば / な-Adjective + だとすれば / Noun + だとすれば",
     "shortExplanation": "Used to express 'if it were the case that...', 'if we assume that...'.",
     "longExplanation": "The ～とすれば grammar point poses a hypothetical condition and then draws a conclusion or inference. It translates as 'if we suppose/assume that...' or 'if it is the case that...'.",
+    "zhShort": "用於表達『如果是…的話』、『假如…』。",
+    "zhLong": "～とすれば 文法提出一個假設條件，然後得出結論或推論。譯為『如果我們假設…』或『如果是…的話…』。",
     "sentences": [
       {
         "jp": "彼が嘘つきだとすれば、その話は信じられない。",
@@ -756,6 +806,8 @@
     "formation": "Verb-casual + となったら / Noun + となったら",
     "shortExplanation": "Used to express 'if it comes to...', 'when it becomes the case that...'.",
     "longExplanation": "The ～となったら grammar point is used to describe a situation where, if matters progress to that stage, a certain action or outcome will follow. It’s often translated as 'when it comes to...', 'if it comes to...'.",
+    "zhShort": "用於表達『如果演變為…』、『當變成…時』。",
+    "zhLong": "～となったら 文法用於描述一種情況，如果事態發展到那個階段，某個動作或結果就會隨之而來。通常譯為『如果演變為…』、『當涉及…時』或『一旦變成…』。",
     "sentences": [
       {
         "jp": "旅行に行くとなったら、荷造りをしなければいけません。",
@@ -786,6 +838,8 @@
     "formation": "Verb-casual + となると / い-Adjective + となると / な-Adjective + だとなると / Noun + だとなると",
     "shortExplanation": "Used to highlight a certain circumstance; 'when it comes to...', 'if it becomes...', 'in the event that...'.",
     "longExplanation": "The ～となると grammar point highlights a specific situation or condition and indicates what normally or naturally happens under that circumstance. It can be translated as 'when it comes to...', 'if it becomes...', or 'in the event that...'.",
+    "zhShort": "用於突出某個特定環境；『當涉及…時』、『如果變成…』、『一旦…』。",
+    "zhLong": "～となると 文法突出一個特定的情況或條件，指出在那種環境下通常或自然會發生什麼。可譯為『當涉及…時』、『如果變成…』或『一旦…會…』。",
     "sentences": [
       {
         "jp": "試験となると、多くの学生が緊張する。",
@@ -816,6 +870,8 @@
     "formation": "Verb-casual + となれば, い-Adjective + となれば, な-Adjective + だとなれば, Noun + だとなれば",
     "shortExplanation": "Expresses the idea of 'if it comes to...; when we talk about...; in the case of...'.",
     "longExplanation": "The ～となれば grammar point is used to express a situation where a particular case or condition brings about a certain result or consequence. It translates as 'if it comes to...; when we talk about...; in the case of...' in English.",
+    "zhShort": "表達『如果演變為…』、『當我們談到…』、『若是…的情況』。",
+    "zhLong": "～となれば 文法用於表達特定情況或條件帶來某個結果或後果的情形。譯為『如果演變為…』、『當我們談到…』或『若是…的情況…』。",
     "sentences": [
       {
         "jp": "彼がリーダーとなれば、プロジェクトは成功するでしょう。",
@@ -846,6 +902,8 @@
     "formation": "Simplified phrase + とのことだ",
     "shortExplanation": "Expresses something that the speaker heard; 'I've heard that', 'I was told that'.",
     "longExplanation": "The ～とのことだ grammar point is used to express something that the speaker has heard from someone else. It can be roughly translated as 'I've heard that', 'I was told that' in English. It is a formal way to present hearsay or information the speaker did not directly witness but was informed about.",
+    "zhShort": "表示說話者所聽聞的信息；『我聽說…』、『我被告知…』。",
+    "zhLong": "～とのことだ 文法用於表達說話者從他人那裡聽到的信息。可大致譯為『我聽說…』或『我被告知…』。這是呈現傳聞或說話者未直接目睹但被告知信息的正式方式。",
     "sentences": [
       {
         "jp": "週末にパーティーがあるとのことだ。",
@@ -876,6 +934,8 @@
     "formation": "Noun + とはいえ, な-Adjective + だとはいえ, い-Adjective + とはいえ, Verb-casual + とはいえ",
     "shortExplanation": "Even though; although; but",
     "longExplanation": "The ～とはいえ grammar structure is used to express the contradictory nature of a situation or event. It means 'even though' or 'although', signifying a sense of contrast or contradiction. The usage of this structure is mainly seen in a formal or written context.",
+    "zhShort": "表示轉折；『儘管…』、『雖然…』、『但…』。",
+    "zhLong": "～とはいえ 文法結構用於表達情況或事件的矛盾性。意為『儘管…』或『雖然…』，表示對比或矛盾的含義。主要出現在正式或書面語境中。",
     "sentences": [
       {
         "jp": "彼は頭が良いとはいえ、少し怠け者だ。",
@@ -906,6 +966,8 @@
     "formation": "Verb-casual + とみえて, い-Adjective + とみえて, な-Adjective + だとみえて, Noun + だとみえて",
     "shortExplanation": "It seems that; apparently",
     "longExplanation": "The ～とみえて grammar point is used to express the speaker's judgment about a situation based on visible or known information. It is often translated as 'apparently' or 'it seems that' in English.",
+    "zhShort": "表示『似乎是…』、『看起來…』。",
+    "zhLong": "～とみえて 文法用於表達說話者基於可見或已知信息對某個情況的判斷。通常譯為『似乎…』或『看起來…』。",
     "sentences": [
       {
         "jp": "彼は運動が得意とみえて、毎日ジムに行っています。",
@@ -936,6 +998,8 @@
     "formation": "Verb-casual + とみられる, Noun + とみられる",
     "shortExplanation": "It is considered that; It is thought that; It is believed that",
     "longExplanation": "The ～とみられる grammar point is used to express how an idea, fact, or circumstance is considered or understood. This phrase is often used in news or reports to show the speaker's or writer's estimation, judgment, or present belief about something.",
+    "zhShort": "表示『被認為…』、『據認為…』、『被相信…』。",
+    "zhLong": "～とみられる 文法用於表達某個想法、事實或環境被如何看待或理解。這個表達常用於新聞或報導中，表示說話者或寫作者的估計、判斷或當前對某事的信念。",
     "sentences": [
       {
         "jp": "彼の行動は無責任とみられる。",
@@ -966,6 +1030,8 @@
     "formation": "Verb-casual + とみると, い-Adjective + とみると, な-Adjective + だとみると, Noun + だとみると",
     "shortExplanation": "Expresses the concept of 'when one sees it as', 'viewed as', or 'considering'.",
     "longExplanation": "The ～とみると grammar point is used to express the concept of seeing something from a specific perspective and responding accordingly. It often brings awareness toward something or a change in perception. It is translated as 'when one sees it as', 'viewed as', or 'considering'.",
+    "zhShort": "表達『看…的話』、『從…的角度看』、『考慮到…』的概念。",
+    "zhLong": "～とみると 文法用於表達從特定角度看待事物並相應地做出回應的概念。通常帶來對某事的認識或觀點轉變。譯為『看…的話』、『從…的角度看』或『考慮到…』。",
     "sentences": [
       {
         "jp": "この問題を数学の視点でとみると、解決策が見えてきます。",
@@ -996,6 +1062,8 @@
     "formation": "Verb-volitional + と言わんばかりに, い-Adjective + と言わんばかりに, な-Adjective + だと言わんばかりに, Noun + だと言わんばかりに",
     "shortExplanation": "Indicates an action or behavior that strongly implies a certain unspoken message or feeling.",
     "longExplanation": "The ～と言わんばかりに grammar point is used to express that someone's action or behavior is so strong that it's as if they are saying something without actually saying it. It can be translated as 'as if to say' or 'almost as though stating'. This form is often used when the speaker wants to convey speculation about someone's unvoiced thoughts or feelings based on their behavior.",
+    "zhShort": "表示某個動作或行為強烈暗示未明言的信息或感受。",
+    "zhLong": "～と言わんばかりに 文法用於表達某人的動作或行為如此強烈，以至於彷彿在說某件事，儘管實際上沒有明言。可譯為『彷彿在說…』或『幾乎是在陳述…』。這個形式常用於說話者想根據某人的行為傳達他們未表達的想法或感受的推測。",
     "sentences": [
       {
         "jp": "彼女は優勝したと言わんばかりに笑った。",
@@ -1026,6 +1094,8 @@
     "formation": "Verb-plain form + と言わんばかりの Noun",
     "shortExplanation": "Expresses the concept of 'as if to say'; 'almost says'; 'suggests'.",
     "longExplanation": "The ～と言わんばかりの Noun grammar point is used to express that someone's action or a situation suggests a certain message, even though it is not explicitly said. It can be translated as 'as if to say', 'almost says', or 'suggests'. It is typically used to convey an unspoken message through someone's demeanor or behavior.",
+    "zhShort": "表達『彷彿在說…』、『幾乎…』、『暗示…』的概念。",
+    "zhLong": "～と言わんばかりの Noun 文法用於表達某人的動作或某個情況暗示某個信息，儘管並未明確陳述。可譯為『彷彿在說…』、『幾乎…』或『暗示…』。通常用於通過某人的舉止或行為傳達未言明的信息。",
     "sentences": [
       {
         "jp": "田中さんは嬉しくて飛び上がると言わんばかりの笑顔を見せた。",
@@ -1056,6 +1126,8 @@
     "formation": "Common set phrases: 生まれながらに, 涙ながらに, 昔ながらに, 子供ながらに, etc.",
     "shortExplanation": "Expresses a state or condition continuing just as it is (e.g. 'from birth', 'while crying', 'in the old way').",
     "longExplanation": "The ～ながらに grammar point is used to indicate a condition that remains unchanged from some starting point or in a certain manner. It appears in set phrases such as 生まれながらに (from birth), 涙ながらに (while crying), 昔ながらに (in the old/original way), 子供ながらに (even though [still] a child), etc.",
+    "zhShort": "表達某個狀態或條件維持原樣（如『從出生起』、『邊哭邊…』、『以舊有方式』）。",
+    "zhLong": "～ながらに 文法用於表達從某個起點或以某種方式始終保持不變的條件。常出現在固定短語中，如 生まれながらに（從出生起）、涙ながらに（邊哭邊…）、昔ながらに（以舊有方式）、子供ながらに（雖然（仍是）小孩…）等。",
     "sentences": [
       {
         "jp": "彼女は生まれながらにして優れた音感を持っている。",
@@ -1086,6 +1158,8 @@
     "formation": "Verb-ますstem (or plain minus る) + ながら + の + Noun",
     "shortExplanation": "Indicates one action or state happening at the same time as the noun in question (e.g. 'dinner while watching TV').",
     "longExplanation": "The ～ながらの Noun grammar point is used to modify a noun by describing an action happening simultaneously. For example, テレビを見ながらの夕食 means 'dinner while watching TV.' It can be translated as 'while ~ing' or 'during ~.'",
+    "zhShort": "表示某個動作或狀態與相關名詞同時發生（如『邊看電視邊吃晚餐』）。",
+    "zhLong": "～ながらの Noun 文法用於通過描述同時發生的動作來修飾名詞。例如，テレビを見ながらの夕食 意為『邊看電視邊吃晚餐』。可譯為『邊…邊…』或『在…期間…』。",
     "sentences": [
       {
         "jp": "テレビを見ながらの夕食は、子供たちにとって楽しいだろう。",
@@ -1116,6 +1190,8 @@
     "formation": "Verb stem + ながらも, い-Adjective + ながらも, な-Adjective/Noun + ながらも",
     "shortExplanation": "Means 'even though' or 'despite'.",
     "longExplanation": "The ～ながらも grammar point is used to express contrast, highlighting the difference between what is usually expected from a situation and what actually happens. It can be translated as 'even though' or 'despite.'",
+    "zhShort": "表示「儘管」或「儘管如此」，表達對比的含義。",
+    "zhLong": "～ながらも 文法用於表達對比，突出顯示通常情況下預期會發生的情形與實際發生的情形之間的差異。可翻譯為「儘管」或「儘管如此」，強調事實與預期的反差。",
     "sentences": [
       {
         "jp": "彼は貧しいながらも、幸せな生活を送っている。",
@@ -1146,6 +1222,8 @@
     "formation": "Verb-ないform + なくはない, い-Adjective－い + くはない, な-Adjective + ではなくはない, Noun + ではなくはない",
     "shortExplanation": "Expresses the idea 'it's not that it's impossible' or 'it's not that I can't'.",
     "longExplanation": "The ～なくはない grammar point implies that while something may not be your first choice or not guaranteed, it's not outright impossible. Translates to 'It's not that it's impossible,' 'It's not that I don't/can't ~.'",
+    "zhShort": "表示「不是不可能」或「並非完全不能」。",
+    "zhLong": "～なくはない 文法用於表達雖然某事可能不是首選或不被保證，但也並非完全不可能的想法。可翻譯為「不是不可能」「不是不能～」，暗示有一定的可能性，儘管不是最理想的。",
     "sentences": [
       {
         "jp": "それを終えるのは難しくなくはない。",
@@ -1176,6 +1254,8 @@
     "formation": "Verb-ないform + なくもない, い-Adjective－い + くもない, な-Adjective + でもない, Noun + でもない",
     "shortExplanation": "Expresses 'not impossible' or 'might as well'.",
     "longExplanation": "The ～なくもない grammar point is used to suggest that something is not necessarily preferred or likely, but it's also not out of the question. It can often translate to 'It’s not a bad idea' or 'It might be feasible.'",
+    "zhShort": "表示「並非不可能」或「也不失為一個選項」。",
+    "zhLong": "～なくもない 文法用於表示某事不是必然首選或不太可能，但也不是完全不可行。通常可譯為「也不是壞主意」或「不是不可行的」，帶有一定的可接受性。",
     "sentences": [
       {
         "jp": "彼がもうすぐ戻るなら、待つなくもない。",
@@ -1206,6 +1286,8 @@
     "formation": "Noun/Adjective + なら + (same Noun/Adjective) + なりに",
     "shortExplanation": "Means 'if it is X, then it's X in its own way', emphasizing unique qualities.",
     "longExplanation": "The ～なら～なりに grammar point shows that something has its own particular way or style of being, based on that condition. It often conveys a positive acceptance or appreciation of the situation 'in its own way.'",
+    "zhShort": "表示「如果是～，就按照～的方式」，強調獨特的特質。",
+    "zhLong": "～なら～なりに 文法用於顯示某事物基於該條件具有其獨特的方式或特點。通常傳達出對情況「以其自身的方式」的認可或欣賞，強調在該條件下事物本身的特有價值。",
     "sentences": [
       {
         "jp": "彼はまだ初心者なら初心者なりに頑張っている。",
@@ -1236,6 +1318,8 @@
     "formation": "Verb-dictionary form + には及ばない",
     "shortExplanation": "Means 'no need to go that far' or 'not necessary'.",
     "longExplanation": "The ～には及ばない grammar point is used to show that an action or degree of effort is unnecessary or excessive. It often translates to 'there’s no need to...' or 'it doesn’t warrant...' in English.",
+    "zhShort": "表示「沒有必要那樣做」或「不必…」。",
+    "zhLong": "～には及ばない 文法用於表明某項行動或努力程度是不必要的或過度的。可翻譯為「沒有必要…」或「不值得…」，表示不需要採取該行動。",
     "sentences": [
       {
         "jp": "ファーストクラスに乗るには及ばない、エコノミーでも十分だ。",
@@ -1266,6 +1350,8 @@
     "formation": "Verb-dictionary form + に堪えない, Noun + に堪えない",
     "shortExplanation": "Indicates something is unbearable or not worth doing (e.g., 'unbearable to watch', 'unbearable to listen to').",
     "longExplanation": "The ～に堪えない grammar pattern is used when something is so unpleasant, awful, or painful that one cannot tolerate it. Common verbs include 見るに堪えない, 聞くに堪えない, 読むに堪えない, etc., meaning 'unbearable to see/hear/read.'",
+    "zhShort": "表示某事令人難以忍受或無法容忍（如「看不得」「聽不得」）。",
+    "zhLong": "～に堪えない 文法模式用於表示某事令人討厭、可怕或痛苦到無法容忍的程度。常見搭配包括 見るに堪えない（看不得）、聞くに堪えない（聽不得）、讀むに堪えない（讀不得）等，強調難以忍受的程度。",
     "sentences": [
       {
         "jp": "彼の冗談は聞くに堪えない。",
@@ -1296,6 +1382,8 @@
     "formation": "Verb-dictionary form + に堪える, Noun + に堪える",
     "shortExplanation": "Used to say that something is 'worth doing' or 'can stand up to' something (the positive counterpart of ～に堪えない).",
     "longExplanation": "The ～に堪える grammar point indicates that something is good enough or worthy enough to do (read, see, listen to, etc.). Common examples include 読むに堪える, 見るに堪える, 聞くに堪える, etc., meaning 'worth reading/watching/listening to.'",
+    "zhShort": "表示某事「值得做」或「足以承受」，是～に堪えない 的正面用法。",
+    "zhLong": "～に堪える 文法點用於表示某事足夠好或足夠有價值可以做（閱讀、觀看、聆聽等）。常見例子包括 讀むに堪える（值得閱讀）、見るに堪える（值得觀看）、聞くに堪える（值得聆聽），強調事物具有相應的價值與品質。",
     "sentences": [
       {
         "jp": "彼の歌声は聞くに堪える。",
@@ -1326,6 +1414,8 @@
     "formation": "Noun + に耐える",
     "shortExplanation": "To endure or withstand something; 'endure', 'withstand', 'tolerate'.",
     "longExplanation": "The ～に耐える grammar point is used to express the concept of enduring or withstanding something, often involving a degree of difficulty or hardship. It can be translated as 'endure', 'withstand', or 'tolerate' in English. Here we focus on usage with nouns (e.g., a force or a hardship to endure).",
+    "zhShort": "表示「忍耐」或「承受」某事物；「經受」「能夠承受」。",
+    "zhLong": "～に耐える 文法點用於表達忍受或承受某事物的概念，通常涉及一定程度的困難或艱辛。可翻譯為「忍耐」「承受」或「容忍」。此處重點是與名詞搭配使用，表示對某種力量或困苦的承受能力。",
     "sentences": [
       {
         "jp": "彼は厳しい修行に耐えた。",
@@ -1356,6 +1446,8 @@
     "formation": "Verb-てform + に至った or Noun / Verb-dictionary + に至る (more general).",
     "shortExplanation": "Expresses the outcome or final conclusion of a process; 'reached the point', 'led to'.",
     "longExplanation": "The ～に至った grammar point is used to express the final outcome or conclusion that has been reached as a result of a process or a series of events. It can be translated as 'reached the point', 'led to', or 'resulted in' in English. It often indicates a significant outcome.",
+    "zhShort": "表示某過程或事件序列的最終結果或結論；「演變成」「導致」。",
+    "zhLong": "～に至った 文法點用於表達作為過程或一系列事件結果而被達成的最終結果或結論。可翻譯為「演變成」「導致」或「結果是」，通常暗示重要的或值得注意的結果。",
     "sentences": [
       {
         "jp": "彼は練習を重ねて、ついにプロのギタリストに至った。",
@@ -1386,6 +1478,8 @@
     "formation": "Verb (dictionary form) + に越したことはない, い-Adjective + に越したことはない, な-Adjective/Noun + である + に越したことはない",
     "shortExplanation": "Expresses that something is the best or most desirable course of action; 'nothing better than...'.",
     "longExplanation": "The ～に越したことはない grammar point indicates that a certain state or action is the most favorable or ideal. It literally conveys the idea that nothing surpasses the stated condition.",
+    "zhShort": "表示某事物是最佳或最理想的做法；「再好不過」。",
+    "zhLong": "～に越したことはない 文法點表示某個狀態或行動是最有利或最理想的。字面上傳達「沒有比…更好的」的意思，用於強調某事物是最好的選擇或結果。",
     "sentences": [
       {
         "jp": "早く準備するに越したことはない。",
@@ -1416,6 +1510,8 @@
     "formation": "Verb-dictionary form + に難くない (commonly with 想像する, 理解する, 察する, etc.)",
     "shortExplanation": "Expresses 'not difficult to ~' in a formal/literary sense; e.g., 'not hard to imagine/understand'.",
     "longExplanation": "The ～に難くない (～にかたくない) grammar is typically used in formal or literary contexts to indicate that something is not difficult. Common expressions include 想像に難くない ('not hard to imagine'), 理解に難くない ('not difficult to understand'), 察するに難くない, and so on.",
+    "zhShort": "正式或文學用法，表示「不難～」；如「不難想像」「不難理解」。",
+    "zhLong": "～に難くない（～にかたくない）文法通常用於正式或文學語境，表示某事不困難。常見表達包括 想像に難くない（不難想像）、理解に難くない（不難理解）、察するに難くない（不難察覺）等，多用於書面語。",
     "sentences": [
       {
         "jp": "彼の喜びは想像に難くない。",
@@ -1446,6 +1542,8 @@
     "formation": "Verb-casual + のは + Noun + ぐらいのものだ, い-Adjective + のは + Noun + ぐらいのものだ, etc.",
     "shortExplanation": "Conveys that 'only (Noun) is the case' or 'nothing but (Noun)'.",
     "longExplanation": "The ～のは Noun ぐらいのものだ pattern indicates that something is exclusively or solely that particular Noun, conveying the sense of 'That's the only thing...' or 'There's nothing but...' about a situation.",
+    "zhShort": "表示「只有～而已」或「不外乎～」。",
+    "zhLong": "～のは Noun ぐらいのものだ 句式表示某事物唯獨或僅限於該特定名詞，傳達「唯一的只是…」或「不外乎…」的意思，強調該情況的唯一性或局限性。",
     "sentences": [
       {
         "jp": "この小説を読むのは暇つぶしぐらいのものだ。",
@@ -1476,6 +1574,8 @@
     "formation": "Verb-ば + Verb-past + ものを, い-Adjective + ければ + ものを, な-Adjective/Noun + であれば + ものを, etc.",
     "shortExplanation": "Expresses regret or a missed opportunity: 'if only', 'had I but...'.",
     "longExplanation": "The ～ば～ものを grammar point shows regret about what could have been, often translated as 'if only...' or 'it would have been better if...'. It can be used with verbs, adjectives, or nouns, usually in a past or conditional form.",
+    "zhShort": "表達遺憾或錯失機會；「要是…就好了」「早知如此」。",
+    "zhLong": "～ば～ものを 文法點用於表達對本可能發生但未發生之事的遺憾，常譯為「要是…就好了」或「早知如此就…」。通常與動詞、形容詞或名詞搭配，多用於過去或假設形式，強調後悔或遺憾之情。",
     "sentences": [
       {
         "jp": "早く起きれば、遅刻しなかったものを。",
@@ -1506,6 +1606,8 @@
     "formation": "[Noun/Adjective stem] + びた (forms a 連体形 modifier, e.g., 大人びた人 “an adult-like person”)",
     "shortExplanation": "A suffix meaning “looking or seeming like ~” (often appears with nouns/adjectives).",
     "longExplanation": "The suffix ～びた attaches to certain words to mean “to have the look/feel of ~.” Common examples include 大人びた (adult-like), 古びた (old/worn), 田舎びた (countrified). It expresses that someone or something appears or has become like that noun/adjective.",
+    "zhShort": "後綴，表示「看起來像～」或「顯得～」。",
+    "zhLong": "後綴 ～びた 用於與某些詞語搭配，表示「具有…的外貌或感覺」。常見例子包括 大人びた（顯得成熟老練）、古びた（顯得陳舊破舊）、田舎びた（顯得鄉村風味），用於表達某人或某物呈現出該特徵的外觀或氣質。",
     "sentences": [
       {
         "jp": "大人びた考え方をする子供",
@@ -1536,6 +1638,8 @@
     "formation": "Adjective/Noun + びる (to form a verb)",
     "shortExplanation": "A suffix meaning “to appear/to become ~,” often used with certain adjectives or nouns.",
     "longExplanation": "The suffix ～びる is used to form verbs meaning 'to become like' or 'to seem like.' Typical examples include 大人びる (to become or behave like an adult), 古びる (to become old or look old), 田舎びる (to become rustic/countrified).",
+    "zhShort": "後綴，表示「變得～」或「顯得像～」。",
+    "zhLong": "後綴 ～びる 用於構成動詞，表示「變成…的樣子」或「看起來像…」。常見例子包括 大人びる（變得成熟）、古びる（變得陳舊）、田舎びる（變得鄉村風），用於描述人或事物發生的變化或顯現的特徵。",
     "sentences": [
       {
         "jp": "彼女は年齢より大人びている。",
@@ -1566,6 +1670,8 @@
     "formation": "Noun/Adjective + ぶる → ぶった (past tense), e.g., 偉そうぶった, 大人ぶった",
     "shortExplanation": "Often appears as a past form of ～ぶる, meaning 'acted/pretended like ~' (or literally 'hit/bashed', depending on context).",
     "longExplanation": "The verb ～ぶる means 'to act/behave as if one is ~' (e.g., 偉そうにぶる: 'to act all high and mighty'). In its past tense, ～ぶった can describe someone who acted or pretended in a certain way. Be aware that ぶった can also simply be 'hit' (past tense of 打つ/ぶつ) depending on the kanji/spelling, but as a grammar pattern, it’s about 'putting on airs.'",
+    "zhShort": "通常作為～ぶる 的過去式，表示「裝作～的樣子」或「擺出～的姿態」。",
+    "zhLong": "動詞 ～ぶる 的過去式 ～ぶった 用於描述某人曾經裝作或假裝成某種樣子。動詞 ～ぶる 本意為「擺出…的態度」（如 偉そうにぶる：擺出傲慢的態度）。注意 ぶった 在不同語境中也可能是「打」（～つ/ぶつ 的過去式），但作為文法模式時，主要表達「裝作」或「假裝」的含義。",
     "sentences": [
       {
         "jp": "彼は何でも知っているかのようにぶった態度を取る。",
@@ -1596,6 +1702,8 @@
     "formation": "Noun/Adjective + ぶる → ぶって (te-form)",
     "shortExplanation": "Te-form of ～ぶる, meaning 'acting/pretending to be ~'.",
     "longExplanation": "～ぶる (in te-form: ～ぶって) indicates 'behaving as if one were ~.' This is often used negatively to criticize someone for putting on airs or pretending to know more than they do (e.g., 知ったかぶって 'to act like a know-it-all').",
+    "zhShort": "～ぶる 的 te 型，表示「裝作～」或「假裝～」。",
+    "zhLong": "～ぶる 的 te 型 ～ぶって 用於表示「表現得像…」或「假裝…」。此用法通常帶有負面含義，用於批評某人故作姿態或裝模作樣（如 知ったかぶって：裝作什麼都懂的樣子）。",
     "sentences": [
       {
         "jp": "彼は何でも知ったかぶって話をする。",
@@ -1626,6 +1734,8 @@
     "formation": "Time expression + ぶり",
     "shortExplanation": "Expresses the amount of time elapsed since doing something last.",
     "longExplanation": "The ～ぶり grammar point is used to express that a certain amount of time has passed since you last did something. It often translates as 'for the first time in ~' or 'after (time period)'.",
+    "zhShort": "表示自上次做某事以來經過的時間長度。",
+    "zhLong": "～ぶり 文法點用於表達自上次做某事以來已經過去了多長時間。常譯為「…來首次」或「…來…」，強調時間間隔的長度和事情再次發生後的狀態。",
     "sentences": [
       {
         "jp": "三年ぶりに彼に会いました。",
@@ -1656,6 +1766,8 @@
     "formation": "Noun / (Adjective stem) + ぶる",
     "shortExplanation": "Used when someone is acting or pretending to be something they are not (often a negative connotation).",
     "longExplanation": "The ～ぶる grammar point is used when someone pretends or acts like something they aren't. It often has a negative nuance, suggesting insincerity or putting on airs. Common usage includes nouns or descriptive words before ぶる (e.g., 学者ぶる, 偉そうぶる, etc.).",
+    "zhShort": "用於表示某人假裝或冒充自己不是的東西（通常帶負面意涵）。",
+    "zhLong": "～ぶる 文法點用於表達某人假裝或冒充自己實際上不是的東西。通常帶有負面的含義，暗示不誠懇或擺架子。常見用法包括在名詞或形容詞後接 ぶる（如 學者ぶる：假裝學者，偉そうぶる：擺架子），用於批評故作姿態的行為。",
     "sentences": [
       {
         "jp": "彼はあたかも知っているかのように学者ぶる。",
@@ -1686,6 +1798,8 @@
     "formation": "Verb (dictionary/ない form) + までだ, い-Adjective + までだ, Noun + までだ",
     "shortExplanation": "Expresses a limit or extent; 'it's only up to...', 'no more than...'.",
     "longExplanation": "The ～までだ grammar point is used to emphasize that something goes only up to a certain limit or extent. It can also imply 'it's only this and nothing more.'",
+    "zhShort": "表示限度或程度；「只不過是…」「最多也只…」。",
+    "zhLong": "～までだ 文法點用於強調某事物只進行到某個特定限度或程度為止。可表示「只不過是…」「最多也只…」或「僅限於…」，用於指明事物的邊界或上限。",
     "sentences": [
       {
         "jp": "彼とは友達までだ。それ以上の関係ではありません。",
@@ -1716,6 +1830,8 @@
     "formation": "Verb-dictionary form + もなんでもない, い-Adjective + もなんでもない, な-Adjective + なもなんでもない, Noun + もなんでもない",
     "shortExplanation": "Used to dismiss or negate something’s importance; 'it’s nothing at all', 'it doesn’t matter'.",
     "longExplanation": "The ～もなんでもない pattern is used to deny or downplay the significance of something. It can mean 'it doesn’t matter at all' or 'it’s no big deal.'",
+    "zhShort": "用來否定或貶低某事物的重要性；『沒什麼』、『不重要』。",
+    "zhLong": "～もなんでもない 用於否定或輕視某事物的重要性。表示『根本不是問題』、『沒什麼大不了的』。可用於多種狀況中，以淡化事物的價值或影響。",
     "sentences": [
       {
         "jp": "100万円を負けるもなんでもない。",
@@ -1746,6 +1862,8 @@
     "formation": "Verb-casual + ものとして, い-Adjective + ものとして, な-Adjective + なものとして, Noun + のものとして",
     "shortExplanation": "Indicates an assumption or supposition; 'assuming', 'under the assumption that'.",
     "longExplanation": "The ～ものとして grammar pattern is used to express a supposition or assumption: 'assuming that ~', 'on the premise that ~'. It often sets up a condition or rule as the basis for some action or decision.",
+    "zhShort": "表示一種假設或推斷；『假設』、『以……為前提』。",
+    "zhLong": "～ものとして 文法用於表達假設或推斷：『假設～』、『在……的前提下』。它經常用來設定某一條件或規則作為行動或決定的基礎。",
     "sentences": [
       {
         "jp": "雨が降るものとして、傘を持って行きました。",
@@ -1776,6 +1894,8 @@
     "formation": "Verb-negative stem + んがために",
     "shortExplanation": "Emphasizes the reason or purpose for an action; 'in order to', 'for the sake of'.",
     "longExplanation": "The ～んがために form is a formal/literary expression meaning 'in order to' or 'for the purpose of.' It attaches to the negative stem (ない-form minus ない) of the verb: e.g., する→せん, 行く→いかん, 保つ→たもたん, etc.",
+    "zhShort": "強調行動的原因或目的；『為了』、『為了～的緣故』。",
+    "zhLong": "～んがために 是一種正式/文語表達，意為『為了』或『為了～的目的』。接在動詞的否定詞幹（ない形去掉ない）之後：例如 する→せん、行く→いかん、保つ→たもたん 等。",
     "sentences": [
       {
         "jp": "健康を保たんがために、毎日運動をしています。",
@@ -1806,6 +1926,8 @@
     "formation": "Verb-negative stem + ん + ばかりに",
     "shortExplanation": "Indicates 'as though about to ~' or 'as if to say ~'.",
     "longExplanation": "The ～んばかりに form is typically built on the negative stem of a verb (ない-form minus ない: 行か→行かん, 言わ→言わん, 知ら→知らん, etc.) + ばかり. It describes someone’s action or expression as though it were about to happen, or as though conveying a certain meaning without explicitly stating it.",
+    "zhShort": "表示『彷彿即將～』或『如同想說～一般』。",
+    "zhLong": "～んばかりに 形態通常建立在動詞的否定詞幹（ない形去掉ない：行か→行かん、言わ→言わん、知ら→知らん 等）+ ばかり。描述某人的動作或表情彷彿某事即將發生，或如同在傳達某種意思卻未明言。",
     "sentences": [
       {
         "jp": "彼は何も知らんばかりに、私の質問を無視した。",
@@ -1836,6 +1958,8 @@
     "formation": "Verb-て form + も差し支えない, Noun + が差し支えない",
     "shortExplanation": "Indicates no problem or obstacle; 'it’s fine if...', 'there’s no issue'.",
     "longExplanation": "The ～差し支えない grammar point expresses that doing something (or something occurring) is not a problem and causes no inconvenience. It’s often used in polite or formal situations.",
+    "zhShort": "表示沒有問題或障礙；『可以～』、『沒有不便』。",
+    "zhLong": "～差し支えない 文法表達做某事（或某事發生）並無問題且不會造成困擾。經常用於禮貌或正式場合，後接ない形或條件句，表示『沒有關係』、『可以接受』。",
     "sentences": [
       {
         "jp": "多少遅くても差し支えないです。",
@@ -1866,6 +1990,8 @@
     "formation": "Verb-dictionary form + 折に, Verb-た形 + 折に, Noun + の折に",
     "shortExplanation": "Indicates the time or occasion when something happens; 'when', 'at the time of'.",
     "longExplanation": "The ～折に grammar point is used in a somewhat formal register to express that one event or action takes place on the occasion of another. It essentially means 'when' or 'at the time of'.",
+    "zhShort": "表示事情發生的時刻或時機；『當……時』、『在……之際』。",
+    "zhLong": "～折に 文法用於較為正式的語境中，表達一件事或行動發生在另一件事的時機上。本質上意為『當……時』或『在……的時刻』。",
     "sentences": [
       {
         "jp": "父が病気の折に、私は留学していました。",
@@ -1896,6 +2022,8 @@
     "formation": "な-Adjective（語幹）+ 極まりない, い-Adjective（連用形）+ こと + 極まりない, Noun + の極まりない",
     "shortExplanation": "Expresses an extreme state, often negative; 'utterly', 'extremely', 'boundlessly'.",
     "longExplanation": "The ～極まりない grammar point indicates an extreme or utmost degree, most commonly with a negative nuance (e.g., 失礼極まりない, 危険極まりない). It can sometimes be used for positive contexts, but that usage is less common.",
+    "zhShort": "表示極端的狀態，通常帶有負面含義；『極其』、『非常』、『無比』。",
+    "zhLong": "～極まりない 文法用於表達極端或究竟的程度，最常見於帶有負面色彩的文脈（如 失礼極まりない、危険極まりない）。有時也可用於正面文脈，但較為少見。通常修飾い形容詞或な形容詞，強調程度的極致。",
     "sentences": [
       {
         "jp": "彼の失礼な態度は極まりない。",
@@ -1926,6 +2054,8 @@
     "formation": "な-Adjective（語幹）+ 極まる, い-Adjective（連用形）+ こと + 極まる, etc.",
     "shortExplanation": "Also expresses an extreme degree or state, typically negative.",
     "longExplanation": "The ～極まる form often appears with な-adjectives: e.g., 失礼極まる, 非常識極まる ('extremely rude/unreasonable'). It's largely synonymous with ～極まりない but tends to appear in set phrases. Both forms are quite formal and emphatic.",
+    "zhShort": "同樣表達極端的程度或狀態，通常帶負面含義。",
+    "zhLong": "～極まる 形式經常與な形容詞一起出現：例如 失礼極まる、非常識極まる（『極其失禮/缺乏常識』）。與 ～極まりない 大致同義，但往往出現在固定詞語中。兩種形式都相當正式且有力。",
     "sentences": [
       {
         "jp": "彼の言動は失礼極まる。",
@@ -1956,6 +2086,8 @@
     "formation": "Noun + (が) 足りない, Verb-casual + ほど/だけ + (が) 足りない",
     "shortExplanation": "Expresses insufficiency or lack; 'not enough', 'insufficient'.",
     "longExplanation": "The ～足りない pattern simply means that something is not sufficient in quantity, time, detail, ability, etc. It’s the negative form of 足りる ('to be enough').",
+    "zhShort": "表達不足或缺乏；『不夠』、『不足』。",
+    "zhLong": "～足りない 用於表示數量、時間、詳細程度、能力等方面的不足。是 足りる（『足夠』）的否定形式。可修飾名詞或單獨使用作為謂語。",
     "sentences": [
       {
         "jp": "私の日本語の能力はまだまだ足りない。",
@@ -1986,6 +2118,8 @@
     "formation": "Noun/Verb-dictionary form + に足る + Noun",
     "shortExplanation": "Indicates that something is worthy or sufficient to be called/used as ~; 'worthy of', 'enough to ~'.",
     "longExplanation": "The classical pattern 'Noun + に足る + Noun' or 'Verb + に足る + Noun' means 'something is worthy of or sufficient for ~.' For instance, '信頼に足る人物' means 'a person worthy of trust.' It’s different from the everyday verb 足りる ('to be enough').",
+    "zhShort": "表示某事物值得被稱為或使用為～；『配得上』、『足以～』。",
+    "zhLong": "古典形式『Noun + に足る + Noun』或『Verb + に足る + Noun』意為『某事值得或足以用於～』。例如『信頼に足る人物』意為『值得信任的人物』。此用法不同於日常動詞 足りる（『足夠』）。",
     "sentences": [
       {
         "jp": "彼は信頼に足る人物だ。",
@@ -2016,6 +2150,8 @@
     "formation": "い-Adjective + 限りだ, な-Adjective + な/である + 限りだ, Noun + の + 限りだ",
     "shortExplanation": "Expresses an extreme degree of emotion or reaction; 'I feel so ~', 'as ~ as can be'.",
     "longExplanation": "The ～限りだ structure is often used with adjectives describing the speaker's emotion, highlighting how strongly the speaker feels. Translations often include 'I’m as ~ as can be,' 'I feel so ~.'",
+    "zhShort": "表達極度的情感或反應；『我感到非常～』、『～得不能再～』。",
+    "zhLong": "～限りだ 結構經常與描述說話者情感的形容詞一起使用，強調說話者的感受程度。翻譯常包括『我～得不能再～』、『我感到非常～』的含義，表達情感的極致。",
     "sentences": [
       {
         "jp": "彼女が急に辞めてしまった。驚きの限りだ。",
@@ -2046,6 +2182,8 @@
     "formation": "Verb-volitional form + うが + Verb-volitional form + うが, or Adjective (-かろう) + が + Adjective (-かろう) + が",
     "shortExplanation": "Expresses the idea of 'no matter how... or', 'even if... or'.",
     "longExplanation": "The ～うが ～うが grammar pattern is used to express that regardless of the conditions in A and B, the result remains the same. Often you’ll see volitional forms or i-adjective '-かろうが' forms. It can be translated as 'no matter how... or...', 'even if... or...'.",
+    "zhShort": "表達『無論如何……或』、『即使……或』的概念。",
+    "zhLong": "～うが～うが 文法用於表達無論 A 或 B 的哪一種條件，結果都保持不變。常見形式包括意志形或い形容詞的『～かろうが』形。可譯為『無論～還是～』、『即使～或～』。",
     "sentences": [
       {
         "jp": "朝早かろうが夜遅かろうが、いつもバスが遅れる。",
@@ -2076,6 +2214,8 @@
     "formation": "い-adjective (-かろう) + と, な-adjective / Noun + であろうと",
     "shortExplanation": "Shows that the speaker is indifferent to both conditions; 'whether A or B'.",
     "longExplanation": "The うと うと pattern indicates that A and B are both possibilities, yet the speaker's stance or the outcome doesn’t change. It's often translated as 'whether A or B'. For i-adjectives, the '-かろうと' form is used. For nouns or な-adjectives, you’ll see 'Noun/な-adjective + であろうと'.",
+    "zhShort": "顯示說話者對兩種條件都無所謂；『不管 A 或 B』。",
+    "zhLong": "うと うと 形式表示 A 和 B 都是可能性，但說話者的立場或結果不變。常譯為『不管 A 或 B』。對於い形容詞，使用『～かろうと』形式；對於名詞或な形容詞，使用『Noun/な形容詞 + であろうと』。",
     "sentences": [
       {
         "jp": "雨が降ろうと晴れようと、私は毎日ジョギングをします。",
@@ -2106,6 +2246,8 @@
     "formation": "Verb-dictionary form + かたわら, Noun + のかたわら",
     "shortExplanation": "Expresses 'while also', 'at the same time as'.",
     "longExplanation": "The ～かたわら grammar point is used when someone is doing B while also doing A. It often implies that both tasks require considerable commitment or skill. It can be translated as 'while also' or 'at the same time as'.",
+    "zhShort": "表達『同時也』、『一邊……一邊』。",
+    "zhLong": "～かたわら 文法用於表示某人在做 B 的同時也在做 A。經常暗示兩項任務都需要相當的投入或技能。可譯為『同時也』或『一邊～一邊』。",
     "sentences": [
       {
         "jp": "彼は仕事をするかたわら、大学に通っている。",
@@ -2136,6 +2278,8 @@
     "formation": "Commonly i-adjective stems + かれ + i-adjective stems + かれ (e.g. 早かれ遅かれ). Also sometimes Noun + かれ + Noun + かれ in older usage.",
     "shortExplanation": "Expresses 'whether A or B'; both situations are included.",
     "longExplanation": "The grammar point ～AかれBかれ is a somewhat literary/old-fashioned pattern often seen with i-adjectives (e.g., 早かれ遅かれ). It can mean 'whether A or B'. Here it's shown with nouns or verbs, which is also possible in older or set expressions.",
+    "zhShort": "表達『無論 A 或 B』；兩種狀況都包含在內。",
+    "zhLong": "文法 ～AかれBかれ 是一種較為文語/舊式的形式，常見於い形容詞（如 早かれ遅かれ）。可意為『無論 A 或 B』。此處展示的是用於名詞或動詞的形式，在古文或固定表達中也有使用。",
     "sentences": [
       {
         "jp": "冬かれ夏かれ、毎日ジョギングする。",
@@ -2166,6 +2310,8 @@
     "formation": "Noun/Verb casual + だの + Noun/Verb casual + だの",
     "shortExplanation": "Used to list examples (often with a critical or complaining tone); 'things like A, B, etc.'.",
     "longExplanation": "The ～だの～だの grammar point is used to list examples, typically in a casual or complaining tone. It can be translated as 'things like... and so on'.",
+    "zhShort": "用於列舉例子，通常帶有抱怨或批評的語氣；『諸如 A、B 之類』。",
+    "zhLong": "～だの～だの 文法用於列舉例子，通常在隨意或抱怨的語氣中。可譯為『諸如……之類』、『什麼～啦、什麼～的』，暗示還有其他類似的例子。",
     "sentences": [
       {
         "jp": "彼はいつも遅刻だの、仕事を忘れるだので困る。",
@@ -2196,6 +2342,8 @@
     "formation": "Noun A + であれ + Noun B + であれ",
     "shortExplanation": "Indicates the same statement applies to both A and B; 'whether A or B'.",
     "longExplanation": "The grammar point A であれ B であれ is used to say a statement applies equally whether it's A or B. Often the nouns/conditions are contrasting pairs, and it's translated as 'whether A or B'.",
+    "zhShort": "表示同一個陳述適用於 A 和 B；『無論 A 或 B』。",
+    "zhLong": "文法 A であれ B であれ 用於表示一個陳述無論是 A 或 B 都同樣適用。通常名詞/條件是相對的對比對，譯為『無論 A 或 B』。強調該陳述在兩種情況下都成立。",
     "sentences": [
       {
         "jp": "雨であれ雪であれ、試合は中止にならない。",
@@ -2226,6 +2374,8 @@
     "formation": "Phrase A + というか + Phrase B + というか",
     "shortExplanation": "Means 'rather than say A, it's more like B', or 'whether to call it A or B'.",
     "longExplanation": "The grammar 'A というか B というか' is used when the speaker isn't sure which expression (A or B) describes the situation better. It can be translated as 'rather than A, it's more B' or 'should I call it A or B?'.",
+    "zhShort": "意為『與其說 A，不如說 B』，或『該叫 A 還是 B』。",
+    "zhLong": "文法『A というか B というか』用於說話者不確定哪個表達（A 或 B）更好地描述情況時。可譯為『與其說 A，不如說 B』或『該叫 A 還是 B？』，表達說話者在兩個描述之間的搖擺。",
     "sentences": [
       {
         "jp": "彼は無礼というか、直接的というか、とにかくはっきりしている。",
@@ -2256,6 +2406,8 @@
     "formation": "Noun + とも + Noun + とも (or sometimes Verb forms for each A, B)",
     "shortExplanation": "Expresses two possibilities; 'either A or B', 'whether A or B'.",
     "longExplanation": "The 'A とも B とも' grammar pattern indicates two possible scenarios. It can be translated as 'whether A or B' or 'either A or B'.",
+    "zhShort": "表達兩種可能性；『A 或 B』、『無論 A 或 B』。",
+    "zhLong": "『A とも B とも』文法表示兩種可能的情景。可譯為『無論 A 或 B』或『A 或 B』。常用於表達在兩種不同條件下都成立的事實或狀況。",
     "sentences": [
       {
         "jp": "決断とも誤りとも、結果は時間が教えてくれるでしょう。",
@@ -2286,6 +2438,8 @@
     "formation": "Noun A + にしろ + Noun B + にしろ, or Verb-casual A + にしろ + Verb-casual B + にしろ",
     "shortExplanation": "Means 'whether it is A or B'; 'regardless of A or B'.",
     "longExplanation": "A にしろ B にしろ is used to indicate that even though A and B are different possibilities, the statement or conclusion applies regardless. Often translated as 'whether it’s A or B' or 'regardless of A or B'.",
+    "zhShort": "意為『無論是 A 或 B』；『不管 A 或 B』。",
+    "zhLong": "A にしろ B にしろ 用於表示雖然 A 和 B 是不同的可能性，但陳述或結論無論如何都適用。常譯為『無論是 A 或 B』或『不管 A 或 B』，強調在兩種情況下該結論都成立。",
     "sentences": [
       {
         "jp": "暑いにしろ寒いにしろ、毎日運動するべきです。",
@@ -2316,6 +2470,8 @@
     "formation": "Noun + にせよ + Noun + にせよ (also works with verbs in dictionary form + にせよ)",
     "shortExplanation": "Either A or B; Regardless of whether it's A or B.",
     "longExplanation": "The 〜にせよ 〜にせよ grammar point is used to express two possibilities A and B, indicating that regardless of whether it is A or B, the statement remains valid. It can be translated as 'whether it's A or B.'",
+    "zhShort": "無論是A或B都一樣；無論A或B皆成立。",
+    "zhLong": "「〜にせよ〜にせよ」文法用來表達兩個可能性A和B，表示無論是A或B，後面的敘述都成立。可譯為「無論是A或B」、「無論A或B」。通常用於表達在兩種情況下結論相同或狀況相同的情況。",
     "sentences": [
       {
         "jp": "雨にせよ雪にせよ、試合は中止しない。",
@@ -2346,6 +2502,8 @@
     "formation": "Phrase A (dictionary/adjective form) + につけ、Phrase B (dictionary/adjective form) + につけ",
     "shortExplanation": "Expresses 'whether... or...', 'both... and...', 'in either case'.",
     "longExplanation": "The ～AにつけBにつけ pattern is used to show that some state or action applies in both situation A and situation B. It often pairs contrasting or related conditions and can be translated as 'whether A or B', 'in either case', etc.",
+    "zhShort": "無論是A或B皆…；A或B都…。",
+    "zhLong": "「〜AにつけBにつけ」句型用來表示某種狀態或動作在A和B兩種情況下都適用。常成對出現對照性或相關的條件，可譯為「無論A或B」、「A也…B也…」、「在任何情況下都…」等。",
     "sentences": [
       {
         "jp": "彼には笑うにつけ泣くにつけ、とても魅力的だ。",
@@ -2376,6 +2534,8 @@
     "formation": "Noun1 + のやら + Noun2 + のやら (also works with adjectives and verbs + のやら)",
     "shortExplanation": "Used when the speaker is unsure or confused between multiple possibilities.",
     "longExplanation": "The A のやら B のやら grammar expresses the speaker's confusion or inability to decide between possibility A and B. It can be translated roughly as 'whether it's A or B (I don't know).'",
+    "zhShort": "不知道是A還是B；表達說話者在多個可能性間的困惑。",
+    "zhLong": "「A のやら B のやら」文法用來表達說話者的困惑或無法在A和B的可能性間做出判斷。可粗略譯為「不知道是A還是B」、「是A呢還是B呢（搞不清楚）」，帶有不確定的語氣。",
     "sentences": [
       {
         "jp": "彼が怒っているのやら、悲しいのやら、私には分からない。",
@@ -2406,6 +2566,8 @@
     "formation": "Noun1 + あっての + Noun2",
     "shortExplanation": "Expresses 'B cannot exist without A'; 'B only exists because of A'.",
     "longExplanation": "The 'Noun + あっての + Noun' pattern emphasizes that the second noun (B) exists only thanks to, or on the foundation of, the first noun (A). It's often translated as 'B is nothing without A' or 'B exists only because of A'.",
+    "zhShort": "沒有A就沒有B；B只有在A的基礎上才成立。",
+    "zhLong": "「Noun + あっての + Noun」句型強調第二個名詞（B）的存在只有賴於第一個名詞（A），或只在A的基礎上才能成立。常譯為「沒有A就沒有B」、「B是建立在A的基礎上的」、「正因為有A才有B」等。",
     "sentences": [
       {
         "jp": "家族あっての私です。",
@@ -2436,6 +2598,8 @@
     "formation": "Noun + ぐるみ",
     "shortExplanation": "Describes 'entirely', 'all together', or 'as a whole group'.",
     "longExplanation": "「Noun + ぐるみ」emphasizes that an action or state involves the entire group or everything related to that noun. It can mean 'altogether', 'as a whole', or 'with everyone/everything included.'",
+    "zhShort": "整體、全部、連…一起；強調包括整個集團或所有相關的東西。",
+    "zhLong": "「Noun + ぐるみ」強調某個動作或狀態涉及該名詞的全體或全部相關事物。可表達「整體地」、「全部」、「連…一起」或「包括所有人/所有東西」等意思。常用來表示整個集團、公司或群體的整體行動。",
     "sentences": [
       {
         "jp": "家族ぐるみで旅行に行きました。",
@@ -2466,6 +2630,8 @@
     "formation": "Noun + というもの",
     "shortExplanation": "Used to express a generic concept: 'all ~', 'any ~ of that kind'.",
     "longExplanation": "The grammar pattern 'Noun + というもの' refers to the entirety or general nature of that noun—often implying 'all of this category' or 'this thing called...'. It can also highlight a universal truth about the noun mentioned.",
+    "zhShort": "所有的…；這類…；統稱為…的東西。",
+    "zhLong": "「Noun + というもの」文法指的是該名詞的整體或普遍性質，常帶有「這一類的所有東西」或「叫做…的東西」之意。也可用來突出關於該名詞的普遍真理或共同特性，表達「凡是…的…」、「所有的…」等。",
     "sentences": [
       {
         "jp": "子供というものは、毎日たくさん遊びます。",
@@ -2496,6 +2662,8 @@
     "formation": "Noun + ときたら",
     "shortExplanation": "Expresses strong feelings about a topic; 'speaking of', 'when it comes to'.",
     "longExplanation": "Noun + ときたら emphasizes strong feelings—often frustration, admiration, or surprise—about that noun. It can translate as 'when it comes to...', 'speaking of...', or 'honestly, about...'.",
+    "zhShort": "說起…就…；一提到…；關於…的話。",
+    "zhLong": "「Noun + ときたら」用來強調對某個話題的強烈感受，通常帶有挫折感、讚嘆或驚訝等情感色彩。可譯為「說起…」、「一提到…」、「關於…」、「講到…就…」等，強調說話者對該事物的情感反應。",
     "sentences": [
       {
         "jp": "寿司ときたら、彼は何も食べられない。",
@@ -2526,6 +2694,8 @@
     "formation": "Noun + ともあろう + Noun",
     "shortExplanation": "Used to criticize or question unbecoming behavior by someone of a certain status.",
     "longExplanation": "Noun + ともあろう + Noun is used to express that someone with a certain role or status has done something unbefitting their position. It often carries disapproval or surprise: 'For someone who is supposed to be X, how could they...?'",
+    "zhShort": "作為…的人卻…；身為…竟然…；豈有此理。",
+    "zhLong": "「Noun + ともあろう + Noun」用來對某人不符其身份或地位的言行舉止進行批評或質疑。常帶有不贊同或驚訝的語氣，可譯為「身為…的人竟然…」、「怎麼能…」、「這豈不有辱…」等。",
     "sentences": [
       {
         "jp": "先生ともあろう者が、そんな間違いをするなんて。",
@@ -2556,6 +2726,8 @@
     "formation": "Noun + ならでは",
     "shortExplanation": "Expresses something unique or characteristic only of that noun; 'only found in', 'only possible with'.",
     "longExplanation": "The pattern Noun + ならでは highlights something that is unique or distinctive to that noun, suggesting that only this place, person, or thing could possess or create it.",
+    "zhShort": "只有…才…；只有…特有的…；…獨有的。",
+    "zhLong": "「Noun + ならでは」句型用來突出某種特點或品質是只有該名詞才能具有或創造的，強調其獨特性或專屬性。可譯為「只有…才…」、「…獨有的」、「只有…能…」等，表達該名詞的獨特之處。",
     "sentences": [
       {
         "jp": "これは日本ならではの風景ですね。",
@@ -2586,6 +2758,8 @@
     "formation": "Noun + ぬいて",
     "shortExplanation": "This is a way to express 'minus' or 'except for' some specific noun.",
     "longExplanation": "The grammar point Noun + ぬいて is used when you want to exclude a certain noun from the whole or mention something about everything else except for a specific noun. It's usually translated in English as 'minus' or 'except for'. ",
+    "zhShort": "除了…以外；排除…；不包括…。",
+    "zhLong": "「Noun + ぬいて」文法用於從整體中排除某個名詞，或提及除了特定名詞以外的所有事物。可譯為「除了…以外」、「不包括…」、「除去…」等，強調某事物被排除在外。",
     "sentences": [
       {
         "jp": "私たちは、彼ぬいて全員が集まることができました。",
@@ -2616,6 +2790,8 @@
     "formation": "Noun + はどうであれ",
     "shortExplanation": "This phrase means 'regardless of' or 'no matter how…'.",
     "longExplanation": "It is used to convey indifference about the state or condition of a certain thing or matter. You can think of it as 'no matter what' or 'regardless of' in English. The phrase shows the speaker’s strong intention to do something or an assertion that doesn’t change regardless of the noun’s state or condition.",
+    "zhShort": "不管…怎樣；無論…如何；…如何都…。",
+    "zhLong": "「Noun + はどうであれ」用來表達對某事物的狀態或條件的無關緊要或冷淡態度。可譯為「不管…怎樣」、「無論…如何」、「…如何都…」等。後面通常跟著說話者的堅定意圖或立場，表示無論前述名詞的狀況如何都不會改變。",
     "sentences": [
       {
         "jp": "天候はどうであれ、試合は行われます。",
@@ -2646,6 +2822,8 @@
     "formation": "Noun + 前提で",
     "shortExplanation": "Expresses a condition or requirement for something to be established: 'on the assumption that', 'under the condition of'.",
     "longExplanation": "The Noun + 前提で grammar point is used to define the premise, assumption, or requirement necessary for some event or action. It translates to 'on the assumption that', 'under the condition of', or 'with the understanding that'. The following clause is based on that premise.",
+    "zhShort": "以…為前提；假設…；在…的條件下。",
+    "zhLong": "「Noun + 前提で」文法用來設定某件事件或動作成立所必需的前提、假設或條件。可譯為「以…為前提」、「假設…」、「在…的條件下」、「基於…」等。後面的句子是在該前提條件下成立的。",
     "sentences": [
       {
         "jp": "説明できる英語力がある前提で、この仕事を引き受けてください。",
@@ -2676,6 +2854,8 @@
     "formation": "Noun + かたがた",
     "shortExplanation": "Do one thing while also doing another; 'while', 'and at the same time'.",
     "longExplanation": "「Noun かたがた」 is a somewhat formal expression for doing one thing while also doing another. The first action is often the main purpose, and the second is done simultaneously or incidentally.",
+    "zhShort": "一邊…一邊…；邊…邊…；既…又…。",
+    "zhLong": "「Noun かたがた」是較為正式的表達方式，用來表示一邊進行某個動作一邊進行另一個動作。通常第一個動作是主要目的，第二個動作則是同時進行或附帶進行的。可譯為「邊…邊…」、「既…又…」、「一面…一面…」。",
     "sentences": [
       {
         "jp": "東京へ出張のかたがた、友人に会いに行った。",
@@ -2706,6 +2886,8 @@
     "formation": "Noun + がてら",
     "shortExplanation": "Means 'while...at the same time', 'on the occasion of', or 'along with'.",
     "longExplanation": "The suffix ～がてら is used to show doing one activity alongside another, taking advantage of the opportunity. It can often be translated as 'while', 'at the same time', 'along with', or 'on the occasion of'.",
+    "zhShort": "邊…邊…；趁著…的機會；利用…之際。",
+    "zhLong": "「〜がてら」後綴用來表示一邊進行某個活動一邊進行另一個活動，藉此利用機會進行兩件事。常可譯為「邊…邊…」、「同時…」、「趁著…的機會」、「利用…之際」等，強調一舉兩得或順便進行。",
     "sentences": [
       {
         "jp": "散歩がてらに、近くの公園で花を摘みました。",
@@ -2736,6 +2918,8 @@
     "formation": "Number + Counter + からある",
     "shortExplanation": "Used with large numbers or measurements to emphasize 'at least that many' or 'no less than.'",
     "longExplanation": "「Noun + Counter + からある」indicates a large or minimum number, emphasizing that the quantity is at least that high (often more). It conveys the idea that the figure is notably large or impressive.",
+    "zhShort": "至少有…；有…之多；少說也…。",
+    "zhLong": "「Noun + Counter + からある」用來表示一個很大的數字或至少達到的量，強調該數量至少有那麼多（通常還更多）。可譯為「至少有…」、「有…之多」、「少說也…」等，傳達該數字很龐大或令人印象深刻的意思。",
     "sentences": [
       {
         "jp": "彼のコレクションは500個からある。",
@@ -2766,6 +2950,8 @@
     "formation": "Noun + からする",
     "shortExplanation": "Used to indicate that something is judged, estimated, or considered from a certain point or aspect.",
     "longExplanation": "「Noun + からする」expresses a judgment or estimation based on a particular perspective or aspect. It translates to 'judging from', 'based on', or 'from the viewpoint of' in English, allowing the speaker to form an opinion or conclusion from that point.",
+    "zhShort": "從…的角度判斷；以…來看；根據…。",
+    "zhLong": "「Noun + からする」用來表達基於特定觀點或角度的判斷或評估。可譯為「從…的角度判斷」、「以…來看」、「根據…」、「按…的標準」等。允許說話者從該特定角度形成意見或結論。",
     "sentences": [
       {
         "jp": "彼の態度からすると、彼はその計画に反対しているようだ。",
@@ -2796,6 +2982,8 @@
     "formation": "Noun + からの",
     "shortExplanation": "Defines the starting point or the origin; 'from'.",
     "longExplanation": "「Noun + からの」indicates the place, source, or origin of something. It simply means 'from (Noun)'.",
+    "zhShort": "來自…；從…；…的。",
+    "zhLong": "「Noun + からの」用來表示某事物的出發點、來源或起點。可簡單譯為「來自…」、「從…」、「…的」等，表達起點或來源的意思。",
     "sentences": [
       {
         "jp": "日本からの手紙を受け取りました。",
@@ -2826,6 +3014,8 @@
     "formation": "Noun + から言わせれば",
     "shortExplanation": "Express the perspective of the noun; 'from ~'s point of view.'",
     "longExplanation": "「Noun + から言わせれば」is used to express an opinion or perspective from that noun's point of view. It can translate as 'from ~'s perspective' or 'if ~ had a say...'.",
+    "zhShort": "從…的立場來說；若讓…說的話；按…的看法。",
+    "zhLong": "「Noun + から言わせれば」用來表達從該名詞所代表者的立場或觀點出發的意見。可譯為「從…的立場來說」、「若讓…說的話」、「按…的看法」、「以…的角度看」等，強調從特定人物的角度來表達觀點。",
     "sentences": [
       {
         "jp": "先生から言わせれば、毎日勉強するべきだ。",
@@ -2856,6 +3046,8 @@
     "formation": "Noun + こそ + (statement) + が + (contrasting/additional statement)",
     "shortExplanation": "Emphasizes that 'it is precisely Noun that ...', then adds a contrasting or additional point.",
     "longExplanation": "「Noun こそ～が」highlights the importance or uniqueness of the noun. It often translates as 'Yes, Noun is indeed ... , but ...'. The 'が' introduces a second, sometimes contrasting statement.",
+    "zhShort": "正是…；…才…，但是…；雖然…卻…。",
+    "zhLong": "「Noun こそ～が」句型用來突出該名詞的重要性或獨特性，常可譯為「正是…」、「…才…」等。「が」引進第二個敘述，通常帶有轉折、對比或補充的意味，可譯為「但是…」、「卻…」等，表達先肯定後轉折的邏輯關係。",
     "sentences": [
       {
         "jp": "お金こそ必要だが、それだけが人生のすべてではない。",
@@ -2886,6 +3078,8 @@
     "formation": "Noun + こそあれ + (result/continuation)",
     "shortExplanation": "Expresses 'though there is ... (some negative or burdensome aspect), still ...'.",
     "longExplanation": "「Noun こそあれ」is a somewhat formal expression meaning 'Though there is X, (still) Y'. It acknowledges one (often negative) aspect while asserting that it does not prevent or change another fact or outcome.",
+    "zhShort": "雖然有…（缺點或負擔），但…；儘管…，仍…。",
+    "zhLong": "「Noun こそあれ」是較為正式的表達，意思為「雖然有X（通常是負面的），但Y仍然成立」。用來承認某個（常為負面或令人困擾的）方面，同時堅持它不會妨礙或改變另一事實或結果。可譯為「雖有…」、「儘管…」、「即便…也…」等。",
     "sentences": [
       {
         "jp": "問題こそあれ、プロジェクトは順調に進んでいます。",
@@ -2916,6 +3110,8 @@
     "formation": "Noun + こそすれ + (negative or contrasting statement)",
     "shortExplanation": "An emphatic pattern meaning 'it may be X, but definitely not Y.' Often pairs with a negative statement.",
     "longExplanation": "「Noun/Verb-ます形 + こそすれ」emphasizes that while one aspect (X) might exist or be true, another aspect (Y) absolutely does not. It's frequently used with negative expressions (e.g., 〜ない、〜できない) to strongly deny the second possibility.",
+    "zhShort": "強調性表達，表示「可能是X，但絕對不是Y」，常與否定句搭配。",
+    "zhLong": "「名詞/動詞ます形 + こそすれ」用來強調，雖然某一方面（X）可能存在或為真，但另一方面（Y）絕對不成立。常與否定表現（如～ない、～できない）搭配使用，以強烈否定第二種可能性。",
     "sentences": [
       {
         "jp": "感謝こそすれ、非難などできません。",
@@ -2946,6 +3142,8 @@
     "formation": "Noun + ごとき, Noun + ごとく, Verb-casual + ごとく, い-Adjective + ごとく",
     "shortExplanation": "Means 'like a...', 'as if...', expressing a simile or metaphor.",
     "longExplanation": "「〜ごとき／〜ごとく」conveys similarity, as if comparing one thing to another. ごとき often modifies nouns, while ごとく can modify verbs or adjectives as well. It's more formal and literary in tone than simple expressions like みたい or よう.",
+    "zhShort": "表示「像～一樣」、「彷彿～」，用來表達比喻或類比。",
+    "zhLong": "「～ごとき／～ごとく」表達相似性，如同將一事物與另一事物比較。ごとき常用來修飾名詞，ごとく也可修飾動詞或形容詞。其文體比みたい或よう等簡單表達更正式、文學化。",
     "sentences": [
       {
         "jp": "彼は天使のごとく純粋だ。",
@@ -2976,6 +3174,8 @@
     "formation": "Noun or Na-Adjective + じゃあるまいし",
     "shortExplanation": "Expressing that something 'is not'; 'it's not like...'. Colloquial/masculine form of ではあるまいし.",
     "longExplanation": "The phrase 「Noun (or Na-Adjective) + じゃあるまいし」 is a somewhat casual, sometimes masculine-sounding expression meaning 'it's not like...', 'it's not as if...', or 'there's no need to...' in certain contexts. It dismisses the idea that the noun or adjective is the reason or cause for something.",
+    "zhShort": "表達「並非」；「並不像～」，是ではあるまいし的非正式或男性用法。",
+    "zhLong": "「名詞（或Na形容詞）+ じゃあるまいし」是較為隨便、有時帶男性色彩的表達方式，表示「並不像～」、「並非如此」或「無需～」等。用來駁斥名詞或形容詞為某事原因或理由的想法。",
     "sentences": [
       {
         "jp": "彼は子供じゃあるまいし、その問題をしっかりと解決するべきだ。",
@@ -3006,6 +3206,8 @@
     "formation": "Noun + ずくめ",
     "shortExplanation": "Denotes 'entirely' or 'nothing but' the preceding noun.",
     "longExplanation": "「Noun + ずくめ」expresses that something consists entirely of that noun or is 'nothing but' that noun. It describes a situation with a predominance of one thing.",
+    "zhShort": "表示「全是～」、「盡是～」的前置名詞。",
+    "zhLong": "「名詞 + ずくめ」表達某物全部由該名詞組成或「盡是」該名詞。用來描述某種事物占絕對多數的情況。",
     "sentences": [
       {
         "jp": "彼は最近、失敗ずくめだ。",
@@ -3036,6 +3238,8 @@
     "formation": "Noun + だけではすまない",
     "shortExplanation": "Expresses 'it can't be settled with just...', 'cannot be resolved merely by...'.",
     "longExplanation": "「Noun + だけではすまない」indicates that simply doing or providing the noun is not sufficient to resolve or finish a matter. Something more is required.",
+    "zhShort": "表達「僅靠～無法解決」、「單憑～不夠」。",
+    "zhLong": "「名詞 + だけではすまない」表示僅僅做或提供該名詞無法解決或完成某事。需要進一步的行動或條件。",
     "sentences": [
       {
         "jp": "この問題は謝罪だけではすまない。",
@@ -3066,6 +3270,8 @@
     "formation": "Noun + たりとも + Negative Verb",
     "shortExplanation": "Used to show a strong negative: 'not even ~', 'not a single ~'.",
     "longExplanation": "「Noun + たりとも + Negative Verb」expresses a strong negation such as 'not even one', 'not even once', or 'none at all'.",
+    "zhShort": "用來表示強烈的否定：「連～都不」、「一個都不」。",
+    "zhLong": "「名詞 + たりとも + 否定動詞」表達強烈的否定，如「連一個都不」、「連一次都沒有」或「一點都沒有」。",
     "sentences": [
       {
         "jp": "一分たりとも無駄にするな。",
@@ -3096,6 +3302,8 @@
     "formation": "Noun1 + たる + Noun2",
     "shortExplanation": "Indicates 'being in the position/state of', used for roles or statuses.",
     "longExplanation": "「Noun1 たる Noun2」expresses that the second noun is in the 'role/state/condition' of the first. It often has a formal or literary tone, emphasizing that someone/something rightly holds or embodies that status.",
+    "zhShort": "表示「處於～的立場/狀態」，用於表達角色或身分。",
+    "zhLong": "「名詞1 たる 名詞2」表達第二個名詞處於第一個名詞的「角色/狀態/條件」之中。通常具有正式或文學色彩，強調某人或某物正當地擁有或體現該身分。",
     "sentences": [
       {
         "jp": "リーダーたる者は、常に先を見て行動すべきだ。",
@@ -3126,6 +3334,8 @@
     "formation": "Noun + ですら",
     "shortExplanation": "Means 'even', 'as much as', used for emphasis in formal contexts.",
     "longExplanation": "「Noun + ですら」emphasizes 'even' in a formal or literary tone. It can carry nuance similar to さえ or すら but is used more in writing or formal speech.",
+    "zhShort": "表示「連～都」、「甚至」，用於正式文脈的強調。",
+    "zhLong": "「名詞 + ですら」以正式或文學的語調強調「連～都」。其語氣類似さえ或すら，但多用於書寫或正式言談。",
     "sentences": [
       {
         "jp": "明日試験があるのに、彼はテキストですら読まない。",
@@ -3156,6 +3366,8 @@
     "formation": "Noun + でなくてなんだろう",
     "shortExplanation": "A strong rhetorical question: 'If not X, then what is it?'",
     "longExplanation": "「Noun + でなくてなんだろう」expresses the speaker’s strong conviction that something must be that noun—no other possibility. Literally, 'If it isn't Noun, then what is it?'",
+    "zhShort": "強烈的修辭疑問：「如果不是X，那是什麼呢？」",
+    "zhLong": "「名詞 + でなくてなんだろう」表達說話者的堅強信念，認為某物必定就是該名詞——沒有其他可能性。字面上意為「如果它不是名詞，那它是什麼呢？」",
     "sentences": [
       {
         "jp": "これが真実でなくてなんだろう。",
@@ -3186,6 +3398,8 @@
     "formation": "Noun + ではあるまいし",
     "shortExplanation": "Means 'it’s not as if...', 'it’s not that...', more formal than じゃあるまいし.",
     "longExplanation": "「Noun + ではあるまいし」indicates that the noun is not the situation or reason being implied. It dismisses a possibility or justification, e.g. 'It’s not as if X, so don’t worry/do that/etc.' This is the more formal counterpart to じゃあるまいし.",
+    "zhShort": "表示「並不像～」、「並非～」，較じゃあるまいし更正式。",
+    "zhLong": "「名詞 + ではあるまいし」表示該名詞並非當前的情況或理由。它駁斥某種可能性或正當化，如「並不像X，所以別擔心/別那樣做/等等」。此為じゃあるまいし的更正式對應表達。",
     "sentences": [
       {
         "jp": "彼女はプロの歌手ではあるまいし、完璧を求めるのは酷だ。",
@@ -3216,6 +3430,8 @@
     "formation": "Noun + と + Noun + を兼ねて",
     "shortExplanation": "Used to indicate doing two things at once or fulfilling two roles/purposes.",
     "longExplanation": "「Noun と Noun を兼ねて」means that one action or thing serves the purpose of both nouns. It can be translated as 'serving as both… and…', or 'for both… and…'.",
+    "zhShort": "用來表示同時做兩件事或同時履行兩種角色/目的。",
+    "zhLong": "「名詞 と 名詞 を兼ねて」表示一個行動或事物同時服務於兩個名詞的目的。可譯為「同時作為～和～」或「為了～和～」。",
     "sentences": [
       {
         "jp": "お父さんは社長と経理部長を兼ねています。",
@@ -3246,6 +3462,8 @@
     "formation": "Noun1 + といい + Noun2 + といい + Comment",
     "shortExplanation": "Used to express 'both A and B'; 'whether it's A or B'; 'not to mention A and also B'.",
     "longExplanation": "This grammar structure is used to provide two examples or two situations to demonstrate a certain characteristic or situation. It's a way of mentioning two items of the same theme to generalize or emphasize something applicable to them both. In English, it can be understood as 'both A and B', 'whether it's A or B', or 'not to mention A and also B'.",
+    "zhShort": "用來表達「A和B都」；「無論A還是B」；「A不用說，B也」。",
+    "zhLong": "此文法結構用來列舉兩個例子或兩種情況，以說明某種特徵或情況。藉由提及同一主題的兩個項目來概括或強調適用於它們兩者的特點。英文可理解為「A和B都」、「無論A還是B」或「A不用說，B也」。",
     "sentences": [
       {
         "jp": "日本の食べ物といい観光地といい、すべてが素晴らしいです。",
@@ -3276,6 +3494,8 @@
     "formation": "Noun1 という Noun2",
     "shortExplanation": "Used to specify or define one noun with another; 'the noun called', 'the noun that is', or 'a certain'.",
     "longExplanation": "The Noun という Noun construction is used to specify or define one noun with another. It usually translates as 'the noun called', 'the noun that is' or simply 'a certain'. It is a very common pattern for clarifying what something is named or known as.",
+    "zhShort": "用來用另一名詞說明或界定一個名詞；「稱為～的名詞」、「即為～的名詞」。",
+    "zhLong": "「名詞 という 名詞」結構用來用另一個名詞說明或界定一個名詞。通常譯為「稱為～的名詞」、「即為～的名詞」或簡單的「某個～」。是用來說明某物被稱為或已知的名稱非常常見的句型。",
     "sentences": [
       {
         "jp": "宮崎駿という人は有名なアニメーション監督です。",
@@ -3306,6 +3526,8 @@
     "formation": "Noun + というところだ",
     "shortExplanation": "Means 'it's approximately...' or 'it's about...'. Used to show approximation or a general assessment.",
     "longExplanation": "The というところだ grammar point is used to show an approximation or general assessment of something. It is often translated as 'it's approximately...', 'around...', or 'it's about...'.",
+    "zhShort": "表示「大約是～」或「差不多是～」，用來表達概略或總體評估。",
+    "zhLong": "「というところだ」文法用來表達某物的概略或總體評估。通常譯為「大約是～」、「差不多～」或「約～」。",
     "sentences": [
       {
         "jp": "今回の試験の合格者は半数というところだろう。",
@@ -3336,6 +3558,8 @@
     "formation": "Noun + といったところだ",
     "shortExplanation": "Expresses 'at most', 'as much as', or 'limited to'.",
     "longExplanation": "Noun といったところだ describes an upper limit or a maximum extent, often translating to 'at most' or 'around...'. It suggests the speaker doesn’t expect anything beyond that limit.",
+    "zhShort": "表達「最多～」、「不過就是～」或「限於～」。",
+    "zhLong": "「名詞 といったところだ」描述上限或最大限度，通常譯為「最多」或「差不多～」。暗示說話者預期不會超越那個限度。",
     "sentences": [
       {
         "jp": "彼の英語レベルは初級といったところだ。",
@@ -3366,6 +3590,8 @@
     "formation": "Noun1 + といわず + Noun2 + といわず + (rest of the sentence)",
     "shortExplanation": "Expresses 'both A and B' or 'be it A or B'; applies to both without distinction.",
     "longExplanation": "The grammar pattern AといわずBといわず means 'be it A or B' or 'both A and B.' It emphasizes that something applies widely, without distinguishing between A and B.",
+    "zhShort": "表達「A和B都」或「無論A還是B」；對兩者都適用且不加區別。",
+    "zhLong": "文法形式「AといわずBといわず」表示「無論A還是B」或「A和B都」。強調某事物廣泛適用，不區分A和B。",
     "sentences": [
       {
         "jp": "冬といわず夏といわず、彼はいつもアイスクリームを食べます。",
@@ -3396,6 +3622,8 @@
     "formation": "Noun + とは比べものにならない",
     "shortExplanation": "Indicates something is not comparable; 'beyond comparison'.",
     "longExplanation": "Use とは比べものにならない to emphasize that two things differ so greatly they cannot be compared—one is vastly superior or different in scale, quality, etc.",
+    "zhShort": "表示某物無可比較；「遠遠超出比較範圍」。",
+    "zhLong": "使用「とは比べものにならない」強調兩樣事物差異極大，根本無法比較——一方遠勝於另一方，或在規模、品質等方面差異巨大。",
     "sentences": [
       {
         "jp": "新しい車の速さは古い車とは比べものにならない。",
@@ -3426,6 +3654,8 @@
     "formation": "Noun + ともなると",
     "shortExplanation": "'When it comes to...', emphasizes a change of situation or status.",
     "longExplanation": "Noun + ともなると indicates a change of state or circumstances once that noun becomes relevant or once one attains that position. It conveys that 'once it’s X, things change' or 'when it comes to X...'.",
+    "zhShort": "「要是～的話」、「一旦～就」，強調情況或身分的變化。",
+    "zhLong": "「名詞 + ともなると」表示一旦該名詞變得相關或一旦達到該身分時，情況就會改變。傳達「一旦是X，事情就改變了」或「說到X時～」的含意。",
     "sentences": [
       {
         "jp": "クリスマスともなると、街中がきらきらと輝いて見えます。",
@@ -3456,6 +3686,8 @@
     "formation": "Noun + ともなれば",
     "shortExplanation": "Expresses 'if it comes to', 'when', or 'once'.",
     "longExplanation": "The grammar point ～ともなれば is used to stress the likelihood of a change or consequence that comes about due to the situation expressed before ともなれば. It can be translated as 'when it comes to', 'once', or 'if it comes to' in English. It's usually used with nouns.",
+    "zhShort": "表達「如果～的話」、「要是～」或「一旦～」。",
+    "zhLong": "文法「～ともなれば」用來強調由ともなれば前所述情況引起的變化或後果的可能性。英文可譯為「要是～的話」、「一旦～」或「如果～」。通常與名詞搭配使用。",
     "sentences": [
       {
         "jp": "試験ともなれば、大抵の人が緊張するものです。",
@@ -3486,6 +3718,8 @@
     "formation": "Noun + と相まって",
     "shortExplanation": "Used to express 'in combination with', 'together with', 'along with'.",
     "longExplanation": "The Noun と相まって grammar point is used to indicate that something happens or is the result of two or more factors working together. It can be translated as 'in combination with', 'together with' or 'along with' in English. It is used with nouns.",
+    "zhShort": "用來表達「結合～」、「與～一起」、「加上～」。",
+    "zhLong": "「名詞 と相まって」文法用來表示某事物發生或某結果是由兩個或多個因素共同作用而成。英文可譯為「結合～」、「與～一起」或「加上～」。與名詞搭配使用。",
     "sentences": [
       {
         "jp": "天気の良さと相まって、ピクニックは大成功でした。",
@@ -3516,6 +3750,8 @@
     "formation": "Noun + なくして + Sentence ～はない",
     "shortExplanation": "Expresses 'without ~, there can't be ~'; 'can't do ~ without first doing ~'.",
     "longExplanation": "The なくして grammar point is used to indicate that something is indispensable or necessary for something else to occur. 'Without' the first noun, the second part 'cannot exist/occur'. It demonstrates the principle of causality or necessity.",
+    "zhShort": "表示沒有某物就不能存在或進行；沒有～就不～。",
+    "zhLong": "なくして文法用來表示某事物是必不可少的或對於其他事物的發生是必要的。沒有第一個名詞，第二部分『就不能存在/發生』。它展示了因果關係或必要性的原理。用法為『名詞 + なくして + 不可能的事物』的形式。",
     "sentences": [
       {
         "jp": "努力なくして成功はない。",
@@ -3546,6 +3782,8 @@
     "formation": "Noun + なしでは～ない",
     "shortExplanation": "Expresses the necessity of something; 'cannot do without', 'not possible without'.",
     "longExplanation": "Noun なしでは～ない is used to emphasize that something is indispensable. It can be translated as 'cannot do without' or 'not possible without.'",
+    "zhShort": "表示某物是必不可少的；沒有～就不能～。",
+    "zhLong": "『名詞 + なしでは + ～ない』用來強調某物是不可或缺的。可譯為『沒有……就不能』或『沒有……就不可能』。常用於強調某事物的必要性。",
     "sentences": [
       {
         "jp": "水なしでは生きられない。",
@@ -3576,6 +3814,8 @@
     "formation": "Noun + なしには + Verb-negative",
     "shortExplanation": "Means 'without', 'cannot do without', 'not possible without'.",
     "longExplanation": "The なしには～ない grammar point is used to express that without the mentioned noun, something is not possible. It can be translated as 'cannot (do) without ~', or 'not possible without ~'.",
+    "zhShort": "表示沒有～；沒有～就不能～。",
+    "zhLong": "『名詞 + なしには + ～ない』文法用來表達沒有所述的名詞，就無法實現某事。可譯為『沒有～就不能（做）～』或『沒有～就不可能～』。強調某事物的必要性。",
     "sentences": [
       {
         "jp": "お金なしには生活ができない。",
@@ -3606,6 +3846,8 @@
     "formation": "Noun1 + ならいざ知らず + Noun2 (comment)",
     "shortExplanation": "Expresses 'maybe X is possible, but Y is definitely not'. Often 'let alone...'.",
     "longExplanation": "「Xならいざ知らず、Yは…」 emphasizes that while X might be possible or acceptable, Y is out of the question or even more difficult. It can be translated as 'I could understand X, but Y is impossible' or 'Maybe X, but definitely not Y.'",
+    "zhShort": "表示『也許X可能，但Y絕對不行』；『更不用說』。",
+    "zhLong": "『X + ならいざ知らず，Y + は……』用來強調雖然X可能是可能的或可接受的，但Y是不可能的或更加困難的。可譯為『X的話或許還可以，但Y是不行的』或『也許X，但絕對不是Y』。",
     "sentences": [
       {
         "jp": "数学ならいざ知らず、物理なんて全然わからない。",
@@ -3636,6 +3878,8 @@
     "formation": "Noun + なり + Noun + なり",
     "shortExplanation": "Lists alternatives of the same kind; 'either A or B', 'A or B, for example'.",
     "longExplanation": "The pattern AなりBなり is used to suggest alternatives or options, usually of the same category. It can be translated as 'whether A or B' or 'A or B, for example'.",
+    "zhShort": "列舉同類的選擇項；『A或B』、『例如A或B』。",
+    "zhLong": "『A + なり + B + なり』的模式用來提出選項或替代方案，通常屬於同一類別。可譯為『無論A或B』或『例如A或B』。常用來列舉同等級的多個例子。",
     "sentences": [
       {
         "jp": "映画なり、音楽なり、何か趣味はありますか。",
@@ -3666,6 +3910,8 @@
     "formation": "Noun + なりとも",
     "shortExplanation": "Indicates even a small amount or degree; 'at least', 'even a little'.",
     "longExplanation": "Noun + なりとも is used to show that even a small amount or degree is valuable or needed. It translates as 'at least' or 'even a little' in English.",
+    "zhShort": "表示即使是小量或某種程度；『至少』、『即便一點點』。",
+    "zhLong": "『名詞 + なりとも』用來表示即使是小量或小程度也是寶貴的或需要的。譯為『至少』或『即便一點點』。常用於強調即使數量或程度很小，也有其價值。",
     "sentences": [
       {
         "jp": "時間が限られているので、一時間なりとも練習すべきだ。",
@@ -3696,6 +3942,8 @@
     "formation": "Noun に Noun を重ねて",
     "shortExplanation": "This expression is used to describe repeated actions or states, 'one after another' or 'pile up'.",
     "longExplanation": "The structure Noun に Noun を重ねて is used to indicate the repetition of actions or states. In English, this could be translated as 'one after another' or 'pile up'. It's typically used to emphasize a great deal of continuation or accumulation of something.",
+    "zhShort": "用來描述重複的動作或狀態；『一個接一個』或『堆積』。",
+    "zhLong": "『名詞 + に + 名詞 + を重ねて』的結構用來表示動作或狀態的重複。英文可譯為『一個接一個』或『堆積』。通常用來強調某事物的大量持續或積累。",
     "sentences": [
       {
         "jp": "彼女は失敗に失敗を重ねて、とうとう会社を辞めた。",
@@ -3726,6 +3974,8 @@
     "formation": "Noun + にあっては",
     "shortExplanation": "Indicates a specific situation or environment in which something happens or is the case.",
     "longExplanation": "The にあっては grammar point is used after a noun that indicates a specific situation or environment. It expresses the context in which an event takes place, or the circumstances that pertain to the information to be explained or highlighted. It can be translated as 'in', 'at' or 'under' in English.",
+    "zhShort": "表示某事發生或成立的特定情況或環境。",
+    "zhLong": "『にあっては』文法點用於名詞之後，該名詞表示特定的情況或環境。它表達事件發生的背景，或與要解釋或強調的資訊相關的情況。英文可譯為『在……中』、『在……處』或『在……下』。常用於正式或書面語。",
     "sentences": [
       {
         "jp": "戦争時にあっては、すべての人々が困難に直面していました。",
@@ -3756,6 +4006,8 @@
     "formation": "Noun1 にあるまじき Noun2",
     "shortExplanation": "Expresses the idea of 'unfitting', 'unbecoming' or 'inappropriate'.",
     "longExplanation": "The grammar point Noun にあるまじき Noun is used to express that the noun doesn't fit or is inappropriate in some way for the other noun. It can translate loosely as 'unfitting for', 'unbecoming of' or 'something that must not be for a/ the noun'.",
+    "zhShort": "表示『不相稱』、『不得體』或『不適當』。",
+    "zhLong": "『名詞 + にあるまじき + 名詞』文法用來表達該名詞在某方面不符合或對另一名詞不適當。可譯為『與……相悖的』、『對……不得體的』或『對……不該存在的』。強調某物不符合或違背其身分、立場或原則。",
     "sentences": [
       {
         "jp": "彼は教師にあるまじき言動をとった。",
@@ -3786,6 +4038,8 @@
     "formation": "Noun + にして",
     "shortExplanation": "Expresses the idea 'even for', 'even though', or 'in spite of'.",
     "longExplanation": "The grammar point Noun にして expresses a sense of surprise, disbelief or unexpectedness in response to a situation or circumstance. Generally, it is used when the speaker wants to convey that something is unexpected even for someone (noun) or in their situation.",
+    "zhShort": "表示『即使對……』、『雖然……』或『儘管……』。",
+    "zhLong": "『名詞 + にして』文法用來表達對某一情況或環境的驚訝、懷疑或出乎意料之感。一般用於演講者想要表達某事即使對某人（名詞）或在其情況下也是出乎意料的時候。",
     "sentences": [
       {
         "jp": "彼は医者にしてその基本的な知識がないのが信じられない。",
@@ -3816,6 +4070,8 @@
     "formation": "Noun + にして初めて",
     "shortExplanation": "Expresses 'only when/after... for the first time'.",
     "longExplanation": "The phrase Noun にして初めて is used to express a sense of realization or experience that only came about or was felt after reaching that particular stage or status. In English, it could be translated as 'only when/after... for the first time'.",
+    "zhShort": "表示『只有當/在……時才首次』。",
+    "zhLong": "『名詞 + にして初めて』短語用來表達一種領悟或經驗，只有在達到那個特定的階段或地位後才出現或被感受到。英文可譯為『只有當/在……時才首次』或『直到……才第一次』。",
     "sentences": [
       {
         "jp": "大人にして初めて、親の苦労が分かった。",
@@ -3846,6 +4102,8 @@
     "formation": "Noun + にすら",
     "shortExplanation": "Expresses the concept of 'even'; 'even in', 'even as', 'even to'.",
     "longExplanation": "The 〜にすら grammar point is used to show surprise that an action or situation applies even to the noun in question. It can be translated into English as 'even in', 'even as', or 'even to'. It's often used with negative or unexpected statements, emphasizing that 'even' in this particular case something can't or doesn't happen.",
+    "zhShort": "表示『甚至』、『即使』的概念；『甚至在』、『甚至作為』、『甚至對』。",
+    "zhLong": "『～にすら』文法用來表示驚訝某動作或情況甚至適用於所述的名詞。可譯為『甚至在』、『甚至作為』或『甚至對』。常與否定句或出乎意料的陳述一起使用，強調『甚至』在這種特定情況下某事不能或不會發生。",
     "sentences": [
       {
         "jp": "彼にすらその問題は解けなかった。",
@@ -3876,6 +4134,8 @@
     "formation": "Noun + にとどまらず + Noun + も",
     "shortExplanation": "This expresses the idea of 'not only...but also', 'not stopping at...'.",
     "longExplanation": "This grammar point is used to express that something is not limited to just one thing (the thing before にとどまらず), but also includes other things (the thing after も). It can be translated as 'not only... but also...' or 'not stopping at...'.",
+    "zhShort": "表示『不僅……而且……』、『不限於……』。",
+    "zhLong": "這個文法用來表達某事物不限於一件事（にとどまらず之前的事物），還包括其他事物（も之後的事物）。可譯為『不僅……而且……』或『不限於……還……』。強調事物的範圍不止一個方面。",
     "sentences": [
       {
         "jp": "このアプリは、日本語にとどまらず、他の言語もサポートしています。",
@@ -3906,6 +4166,8 @@
     "formation": "Noun 1 + にひきかえ + Noun 2 + は",
     "shortExplanation": "Represents 'in contrast to', 'as opposed to'.",
     "longExplanation": "The grammar point Noun にひきかえ Noun は is used in Japanese to express contrast or opposition between two nouns. It translates to 'as opposed to' or 'in contrast to' in English. The first noun represents what is being contrasted against and the second noun represents the main subject.",
+    "zhShort": "表示『相比之下』、『與……相對』。",
+    "zhLong": "『名詞 + にひきかえ + 名詞 + は』文法在日文中用來表達兩個名詞之間的對比或對立。譯為『相比之下』或『與……相對』。第一個名詞代表被對比的對象，第二個名詞代表主要主題。",
     "sentences": [
       {
         "jp": "彼の親切さにひきかえ、彼女は無感情だ。",
@@ -3936,6 +4198,8 @@
     "formation": "Noun + にもまして",
     "shortExplanation": "This expresses 'Even more than; exceeding'.",
     "longExplanation": "The Nounにもまして grammar point is used to express that something is even more or exceeds the noun that it’s being compared to. It translates to expressions like 'even more than' or 'exceeding' in English. It is used when making a comparison to emphasize the greater degree of something.",
+    "zhShort": "表示『甚至比……更』、『超過』。",
+    "zhLong": "『名詞 + にもまして』文法用來表達某事物甚至比被比較的名詞更多或超過它。譯為『甚至比……更』或『超過』。用於進行比較以強調某事物的更高程度。",
     "sentences": [
       {
         "jp": "私は彼にもまして、音楽を愛しています。",
@@ -3966,6 +4230,8 @@
     "formation": "Noun + によらず",
     "shortExplanation": "Regardless of, irrespective of.",
     "longExplanation": "The ～によらず grammar point is used to express the meaning 'regardless of' or 'irrespective of' in English. It is used when the outcome does not change regardless of differences in conditions.",
+    "zhShort": "不論、不管、無論……與否。",
+    "zhLong": "『～によらず』文法用來表達『不論』或『不管』的含義。用於結果不因條件的差異而改變的情況。表示無論某種情況如何，結論或結果都是相同的。",
     "sentences": [
       {
         "jp": "結果は勉強時間によらず変わらないでしょう。",
@@ -3996,6 +4262,8 @@
     "formation": "Noun + に先駆けて",
     "shortExplanation": "Meaning 'ahead of', 'before', or 'preceding in time'.",
     "longExplanation": "The grammar point 〜に先駆けて indicates something happening ahead or before something else in terms of time. Typically used in written language or formal speech.",
+    "zhShort": "表示『在……之前』、『先於……』或『早於……發生』。",
+    "zhLong": "『～に先駆けて』文法表示某事在時間上先於其他事物發生或進行。通常用於書面語或正式場合。可譯為『在……之前』或『先於……』。",
     "sentences": [
       {
         "jp": "この映画は日本に先駆けて、アメリカで公開されました。",
@@ -4026,6 +4294,8 @@
     "formation": "Noun1 + に即した + Noun2",
     "shortExplanation": "Expresses the idea of 'in accordance with', 'based on'.",
     "longExplanation": "The grammar point 'Noun に即した Noun' is used to express the idea of something being done in accordance with or based on something else. Usually, the first noun is principle, rule, reality, etc. and the second noun could be action, method, plan, etc.",
+    "zhShort": "表示『符合……』、『根據……』。",
+    "zhLong": "『名詞 + に即した + 名詞』文法用來表達某物是按照或根據某事物進行的。通常第一個名詞是原則、規則、現實等，第二個名詞可以是行動、方法、計畫等。強調行動或計畫符合既定的原則或現實。",
     "sentences": [
       {
         "jp": "社会のニーズに即した教育改革が必要だ。",
@@ -4056,6 +4326,8 @@
     "formation": "Noun + に即して + Verb",
     "shortExplanation": "The grammar point Noun に即して Verb is used to mean 'to act in accordance with', 'in line with' or 'based on'.",
     "longExplanation": "The formation Noun に即して Verb is used when someone is doing something based on or in accordance with some norms, rules, decisions or principles. This structure is often used in business or official contexts.",
+    "zhShort": "『名詞 + に即して + 動詞』用來表示『按照……』、『符合……』或『基於……』。",
+    "zhLong": "『名詞 + に即して + 動詞』結構用於表達某人根據某些規範、規則、決定或原則在做某事。這個結構常用於商務或正式場合。可譯為『按照……』、『符合……』或『基於……』。",
     "sentences": [
       {
         "jp": "会社のポリシーに即して行動しましょう。",
@@ -4086,6 +4358,8 @@
     "formation": "Noun + に言わせれば",
     "shortExplanation": "Expresses 'according to', 'if you ask', 'in the opinion of'.",
     "longExplanation": "The に言わせれば grammar point is used when we want to express someone's opinion or viewpoint. It can be translated as 'according to', 'if you ask', or 'in the opinion of'. This form is mostly used in formal or written language.",
+    "zhShort": "表示『根據……』、『要說的話』、『在……看來』。",
+    "zhLong": "『に言わせれば』文法用於表達某人的觀點或意見。可譯為『根據』、『要說的話』或『在……看來』。這種形式多用於正式或書面語。表達根據某人的說法或想法。",
     "sentences": [
       {
         "jp": "先生に言わせれば、毎日勉強することが重要だと言う。",
@@ -4116,6 +4390,8 @@
     "formation": "Noun + に限ったことではない",
     "shortExplanation": "Indicates that something is not only limited to; 'not only', 'not just'.",
     "longExplanation": "This grammar point is used to express that the statement is not only limited to the noun mentioned before it. In English, it can be translated as 'not only', 'not just', or sometimes 'not necessarily'. It underscores that what is being said is also true for other things or situations, not just for the specific noun stated.",
+    "zhShort": "表示某事物並不只限於此；「不僅」、「不只」。",
+    "zhLong": "此文法用於表達敘述內容不只限定在前面提到的名詞。英文可翻譯為「not only」、「not just」或有時為「not necessarily」。它強調所述內容對其他事物或情況也成立，不只限於特定的名詞。",
     "sentences": [
       {
         "jp": "この問題は日本に限ったことではない。",
@@ -4146,6 +4422,8 @@
     "formation": "Noun + に限ったことでもない",
     "shortExplanation": "'Not limited to'; 'not just', 'not exclusively'.",
     "longExplanation": "The grammar point 'Noun に限ったことでもない' typically expresses that something is not only limited to a specific instance or category. It insinuates that there are also other instances or categories involved. In English, it can be translated as 'not limited to', 'not just', or 'not exclusively'.",
+    "zhShort": "表示「不限於」；「不只」、「不僅限於」。",
+    "zhLong": "此文法通常用於表達某事物不只限定在特定的例子或類別。它暗示也涉及其他例子或類別。英文可翻譯為「not limited to」、「not just」或「not exclusively」。",
     "sentences": [
       {
         "jp": "この試験が難しいのは、数学に限ったことでもない。",
@@ -4176,6 +4454,8 @@
     "formation": "Noun + に限る",
     "shortExplanation": "Expresses the idea that 'nothing but', 'nothing is better than'.",
     "longExplanation": "The noun に限る grammar point is used to express the idea that there is nothing better than the noun mentioned in the specific context. It is often used to give personal opinions, advice, or recommendations.",
+    "zhShort": "表示「無可奈何」、「最好的莫過於」。",
+    "zhLong": "此文法用於表達在特定脈絡中沒有比提到的名詞更好的東西。經常用來表達個人意見、建議或推薦。",
     "sentences": [
       {
         "jp": "こういう時には家族に話すに限る。",
@@ -4206,6 +4486,8 @@
     "formation": "Noun1 + をぬいた + Noun2",
     "shortExplanation": "Expresses the idea of 'taking something out from something else'.",
     "longExplanation": "This grammar point is used to denote the action of removing or taking out one thing from another. It is usually used with nouns.",
+    "zhShort": "表示「從某物中取出某物」的概念。",
+    "zhLong": "此文法用於表示從另一物中移除或取出一物的動作。通常與名詞一起使用。",
     "sentences": [
       {
         "jp": "このサラダはにんじんをぬいたサラダです。",
@@ -4236,6 +4518,8 @@
     "formation": "Noun + の嫌いがある",
     "shortExplanation": "Have a dislike for a particular Noun",
     "longExplanation": "The grammar point 'Nounの嫌いがある' is used to express a dislike for a particular thing, action or situation, indicated by the noun. This structure is somewhat formal or old-fashioned. In casual speech, people more commonly say 'Noun が嫌い'.",
+    "zhShort": "對特定名詞有厭惡感。",
+    "zhLong": "此文法用於表達對特定事物、動作或情況的厭惡感，由名詞表示。這個句型較為正式或舊式。在日常會話中，人們更常說「Noun が嫌い」。",
     "sentences": [
       {
         "jp": "彼は魚の嫌いがあるので、寿司を食べません。",
@@ -4266,6 +4550,8 @@
     "formation": "Noun + の至り",
     "shortExplanation": "Expresses 'the height of', 'the extreme of' something.",
     "longExplanation": "The 'Nounの至り' grammar point is used to emphasize an extreme or the highest level of something, often an emotional state or an honor. Common nouns include 光栄, 若気, 感激, 恥, etc.",
+    "zhShort": "表示「某事的頂峰」、「極致」。",
+    "zhLong": "此文法用於強調某事物的極端或最高程度，通常是情緒狀態或榮譽。常見名詞包括光栄、若気、感激、恥等。",
     "sentences": [
       {
         "jp": "彼の冗談には驚きの至りだ。",
@@ -4296,6 +4582,8 @@
     "formation": "Noun + のいかんでは",
     "shortExplanation": "It depends on the Noun",
     "longExplanation": "The のいかんでは grammar point is used when you want to express that the outcome or decision hinges on the condition described in the noun preceding this phrase. It can be translated as 'depending on ___' or 'it depends on ___' in English.",
+    "zhShort": "取決於該名詞。",
+    "zhLong": "此文法在想表達結果或決定取決於前面名詞所描述的條件時使用。英文可翻譯為「depending on ___」或「it depends on ___」。",
     "sentences": [
       {
         "jp": "試験の結果のいかんでは、大学の入学許可を得られるかどうかが決まります。",
@@ -4326,6 +4614,8 @@
     "formation": "Noun + のいかんにかかわらず",
     "shortExplanation": "Regardless of, irrespective of.",
     "longExplanation": "The phrase 'Noun のいかんにかかわらず' is used to express that something is the case irrespective of a certain condition. It can be translated as 'regardless of' or 'irrespective of' in English. This phrase is used with nouns.",
+    "zhShort": "不論、不管、無論。",
+    "zhLong": "此短語用於表達無論某特定條件如何，某事都成立。英文可翻譯為「regardless of」或「irrespective of」。此短語與名詞一起使用。",
     "sentences": [
       {
         "jp": "結果のいかんにかかわらず、彼は決定を後悔しなかった。",
@@ -4356,6 +4646,8 @@
     "formation": "Noun + のいかんによっては",
     "shortExplanation": "Depending on the matter; depending on noun",
     "longExplanation": "The phrase のいかんによっては (no ikan ni yotte wa) is used to express the concept of 'depending on the matter or situation'. It is used to indicate that the outcome may change based on the condition or quality of the noun (matter) in question.",
+    "zhShort": "根據事態；取決於名詞。",
+    "zhLong": "此短語用於表達「取決於事態或情況」的概念。它用於表示結果可能根據相關名詞（事態）的條件或品質而改變。",
     "sentences": [
       {
         "jp": "天気のいかんによっては、ピクニックを延期しましょう。",
@@ -4386,6 +4678,8 @@
     "formation": "Noun + のいかんによらず",
     "shortExplanation": "Means 'regardless of', 'irrespective of', or 'no matter'",
     "longExplanation": "The Noun のいかんによらず grammar point is used to express that something is happening, will occur, or is true, regardless of a particular situation or condition. It is often translated as 'irrespective of', 'regardless of', or 'no matter' in English.",
+    "zhShort": "意為「無論」、「不論」或「不管」。",
+    "zhLong": "此文法用於表達無論特定情況或條件如何，某事正在發生、將發生或確實成立。英文通常翻譯為「irrespective of」、「regardless of」或「no matter」。",
     "sentences": [
       {
         "jp": "試験の結果のいかんによらず、自分を信じ続けてください。",
@@ -4416,6 +4710,8 @@
     "formation": "Noun1 + のごとき + Noun2",
     "shortExplanation": "Expresses 'like' or 'as if'; something/someone resembles something else strongly.",
     "longExplanation": "The のごとき pattern is used to convey the concept of 'just like' or 'as if'. The comparison here is strong, indicating that the thing/person is very similar to or almost the same as the thing/person compared to. It is a bit archaic and thus is more often found in writings than in everyday conversation.",
+    "zhShort": "表示「如同」或「彷彿」；某事物/某人強烈類似於他物。",
+    "zhLong": "此模式用於傳達「就像」或「好像」的概念。這裡的比較很強烈，表示該事物/人與被比較的事物/人非常相似或幾乎相同。這個表達稍顯古舊，因此更常見於書面語而非日常會話。",
     "sentences": [
       {
         "jp": "彼は神のごとき存在だ。",
@@ -4446,6 +4742,8 @@
     "formation": "Noun + のことだから",
     "shortExplanation": "Because it is about ~, considering it's ~",
     "longExplanation": "The のことだから grammar point is used to express an expectation or decision that is made specifically because of the person or thing mentioned. Usually it implies that the speaker is familiar with the character or typical behavior of the person or thing being talked about.",
+    "zhShort": "因為是關於~、考慮到是~。",
+    "zhLong": "此文法用於表達因為提到的人或事物而做出的期望或決定。通常暗示說話者熟悉該人或事物的性格或典型行為。",
     "sentences": [
       {
         "jp": "彼のことだから、きっと大丈夫だと思う。",
@@ -4476,6 +4774,8 @@
     "formation": "Noun + の手前",
     "shortExplanation": "Expresses the idea of 'Before doing something; on the verge of'.",
     "longExplanation": "This grammar point is used to express the idea of being on the verge of doing something, or just before some major action/event. Nouns that are frequently used with this structure often denote an action or event (試験の手前, 選挙の手前, etc.).",
+    "zhShort": "表示「在做某事之前；在...邊緣」的概念。",
+    "zhLong": "此文法用於表達在即將做某事或某個重大動作/事件之前的狀態。與此結構頻繁搭配的名詞通常表示動作或事件（試験の手前、選挙の手前等）。",
     "sentences": [
       {
         "jp": "試験の手前、遊びに行くのはやめた方がいい。",
@@ -4506,6 +4806,8 @@
     "formation": "Noun + の極み",
     "shortExplanation": "Used to express the extreme or utmost point of something.",
     "longExplanation": "The の極み grammar point is used to express the highest level or the extreme of something. It often describes an extreme state or condition. The noun before の極み usually indicates some situation, state, or quality (e.g., 美の極み, 感動の極み).",
+    "zhShort": "用於表達某事物的極端或最高點。",
+    "zhLong": "此文法用於表達某事物的最高程度或極致。它經常描述極端的狀態或條件。の極み前面的名詞通常表示某個情況、狀態或品質（例如：美の極み、感動の極み）。",
     "sentences": [
       {
         "jp": "彼の料理の極みは、誰もマネできない。",
@@ -4536,6 +4838,8 @@
     "formation": "Noun + はいざ知らず, Noun + とは/なんて/しかし etc.",
     "shortExplanation": "‘I can understand it for ~, but for …? (surprising)’",
     "longExplanation": "The はいざ知らず grammar point is used when contrasting two scenarios: the first being understandable, and the second being unexpected or surprising by comparison. It often translates as “Well, for A, I can understand, but for B…?!”",
+    "zhShort": "「~我能理解，但是...？（令人驚訝）」",
+    "zhLong": "此文法在對比兩個情景時使用：第一個容易理解，第二個相比之下出人意料或令人驚訝。英文通常翻譯為「Well, for A, I can understand, but for B…?!」",
     "sentences": [
       {
         "jp": "彼が遅れるのはいざ知らず、彼女まで遅刻するとは意外だ。",
@@ -4566,6 +4870,8 @@
     "formation": "Noun1 はおろか, Noun2 すら/さえ ～",
     "shortExplanation": "Expresses 'not to mention ~, even ~'.",
     "longExplanation": "The grammar point Noun はおろか～すら is used to emphasize that a particular statement applies not only to the first noun mentioned, but even more so to what comes after すら or さえ. It can be translated as ‘let alone ~, even ~’.",
+    "zhShort": "表示「更不用說~，甚至~」。",
+    "zhLong": "此文法用於強調特定敘述不僅適用於先提到的第一個名詞，甚至更適用於すら或さえ之後的內容。英文可翻譯為「let alone ~, even ~」。",
     "sentences": [
       {
         "jp": "彼は走るはおろか、速く歩くことすらできない。",
@@ -4596,6 +4902,8 @@
     "formation": "Noun1 + はおろか + Noun2 + まで",
     "shortExplanation": "Means 'not just A, but even B'; 'let alone A, even B'.",
     "longExplanation": "The phrase 'Noun はおろか' emphasizes something beyond the obvious. It can be translated as 'not only ..., but even ...'. The '～まで' part extends that idea further to show an unexpected or more advanced case.",
+    "zhShort": "意為「不只A，甚至B」；「更不用說A，連B」。",
+    "zhLong": "短語「Noun はおろか」強調超越顯而易見的事物。英文可翻譯為「not only ...，but even ...」。「～まで」部分進一步延伸這個想法，以展示出人意料或更進一步的情況。",
     "sentences": [
       {
         "jp": "彼は英語はおろか、日本語までペラペラなんです。",
@@ -4626,6 +4934,8 @@
     "formation": "Noun + はおろか + Noun + も",
     "shortExplanation": "'Not only...but also', 'not to mention', 'to say nothing of'",
     "longExplanation": "The 'Noun はおろか～も' grammar point is used to list items with an emphasis on how far the situation extends. It often appears in negative contexts to show that something supposedly more advanced (first part) is out of the question, and even something simpler (second part) is also not possible. It can be translated as 'Needless to say X, (he/she) can't even do Y.'",
+    "zhShort": "「不只...而且...」、「更不用說」、「不但」。",
+    "zhLong": "此文法用於列舉項目，並強調情況延伸的程度。它經常出現在否定的語境中，以顯示某個假定更進步的事項（第一部分）是不可能的，甚至更簡單的事項（第二部分）也不可能。英文可翻譯為「Needless to say X, (he/she) can't even do Y.」",
     "sentences": [
       {
         "jp": "絵を描くことはおろか、字さえ書けない。",
@@ -4656,6 +4966,8 @@
     "formation": "Noun + はさておき",
     "shortExplanation": "Means 'putting aside', 'aside from', 'notwithstanding'.",
     "longExplanation": "The grammar point 'Noun はさておき' is used when highlighting something as an exception from an overall generalization, or when putting aside a particular matter before progressing to another point of discussion. The literal translation would be 'putting Noun aside', 'aside from Noun' or 'notwithstanding Noun.'",
+    "zhShort": "意為「姑且不論」、「撇開」、「不管」。",
+    "zhLong": "此文法用於突出某事物作為整體概括的例外，或在繼續討論另一點之前先暫且擱置某個事項。字面翻譯為「putting Noun aside」、「aside from Noun」或「notwithstanding Noun」。",
     "sentences": [
       {
         "jp": "試験の結果はさておき、この学期はとても学ぶことが多かった。",
@@ -4686,6 +4998,8 @@
     "formation": "Noun + まみれ",
     "shortExplanation": "Expresses a state in which something is entirely covered or filled with something else.",
     "longExplanation": "The まみれ grammar point is used to express a state where someone or something is completely covered, smeared, or filled with another thing. The noun before まみれ indicates what the person or thing is covered in. This grammar point often has a negative connotation.",
+    "zhShort": "表示某事物完全被其他東西覆蓋或充滿的狀態。",
+    "zhLong": "此文法用於表達某人或某物完全被覆蓋、沾滿或充滿另一物的狀態。まみれ前面的名詞表示該人或物被覆蓋的物質。此文法通常帶有負面含義。",
     "sentences": [
       {
         "jp": "彼は泥まみれになって帰ってきた。",
@@ -4716,6 +5030,8 @@
     "formation": "Noun1 + もさることながら + Noun2 + も",
     "shortExplanation": "Means 'not only... but also'; the second noun is especially emphasized.",
     "longExplanation": "The grammar point 'Noun もさることながら Noun も' is used to express that both Nouns are true, important, or relevant. It can be translated as 'not only... but also' in English. However, among the two nouns, the one coming after もさることながら is more emphasized in comparison to the one before it.",
+    "zhShort": "表示「不只…也…」，後面的名詞受到更強調。",
+    "zhLong": "「Noun もさることながら Noun も」文法用來表達兩個名詞都是真實、重要或相關的。可翻譯為「不只…也…」。其中，もさることながら後面的名詞相較於前面的名詞受到更強調。",
     "sentences": [
       {
         "jp": "彼の歌唱力もさることながら、ダンスも素晴らしい。",
@@ -4746,6 +5062,8 @@
     "formation": "Noun + も兼ねて",
     "shortExplanation": "Used to express 'as well as', 'also', or 'at the same time'.",
     "longExplanation": "The も兼ねて grammar point indicates that two actions or purposes are being served simultaneously. The noun before も兼ねて tells what the additional action or purpose is.",
+    "zhShort": "表示「同時兼具…」、「同時…」的意思。",
+    "zhLong": "「も兼ねて」文法表示同時進行兩個動作或目的。もさることながら前面的名詞說明附加的動作或目的是什麼。",
     "sentences": [
       {
         "jp": "散歩も兼ねて、公園に行きました。",
@@ -4776,6 +5094,8 @@
     "formation": "Noun + も相まって",
     "shortExplanation": "Used to express that combined with something else, it caused a certain outcome.",
     "longExplanation": "The grammar point Noun も相まって is used to express the meaning that, combined with something else, it caused a certain result. Literally, it translates to 'also contributes to'. It is generally used with nouns and points out that there are multiple contributing factors.",
+    "zhShort": "與其他因素結合導致某個結果。",
+    "zhLong": "「Noun も相まって」文法表達與其他因素結合導致某個結果。字面意思是「也貢獻於」。通常與名詞搭配使用，指出有多個貢獻因素。",
     "sentences": [
       {
         "jp": "気候も相まって、この地域は農業に適しています。",
@@ -4806,6 +5126,8 @@
     "formation": "Noun + をおいて他に + Verb negative form",
     "shortExplanation": "Means 'apart from ~ there's nothing else,' implying the Noun is the best or most suitable choice.",
     "longExplanation": "The structure Nounをおいて他に〜ない is used to express that there is no substitute for the Noun, no other choice, or that the Noun is the best or the only one to choose among various options. This form is often used in praising or making strong positive comments about someone or something.",
+    "zhShort": "表示「除了…別無他選」，暗示該名詞是最佳或最適合的選擇。",
+    "zhLong": "「Nounをおいて他に〜ない」用來表達沒有替代品、別無選擇，或該名詞是各種選項中最佳或唯一應選擇的對象。這種形式常用於讚美或對某人或某事做出強烈正面評價。",
     "sentences": [
       {
         "jp": "この仕事を彼に任せる人をおいて他にいない。",
@@ -4836,6 +5158,8 @@
     "formation": "Noun + をもって",
     "shortExplanation": "Used to indicate means, methods, or time; 'with', 'by means of', 'at'.",
     "longExplanation": "The をもって grammar is used to express a means or method to achieve something, or to indicate a point in time. It can be translated as 'with' or 'by means of' when indicating means, and 'at' when indicating a point in time.",
+    "zhShort": "表示手段、方法或時間點；「用…」、「藉由…」、「於…」。",
+    "zhLong": "「をもって」文法用來表達達成某事的手段或方法，或指示時間點。表示手段時可翻譯為「用…」或「藉由…」，表示時間點時可翻譯為「於…」。",
     "sentences": [
       {
         "jp": "彼は誠実さをもって人々に信頼されています。",
@@ -4866,6 +5190,8 @@
     "formation": "Noun + をものともせずに",
     "shortExplanation": "Expresses the idea that 'despite something, action was carried out', translating to 'without being fazed by something'.",
     "longExplanation": "The 'Nounをものともせずに' grammar point indicates that something which could potentially be a hindrance or challenge was not taken into account when carrying out an action. The literal idea is ‘not making something an obstacle’, meaning actions were performed without being fazed or distracted by it.",
+    "zhShort": "儘管…，仍然…；不為…所動地。",
+    "zhLong": "「Nounをものともせずに」文法表示儘管某個可能構成障礙或挑戰的事物存在，但在執行動作時並未考量它。字面意思是「不把某事當成障礙」，意味著動作的執行不受它影響或干擾。",
     "sentences": [
       {
         "jp": "彼女は怖さをものともせずに、暗闇の中へ進んで行った。",
@@ -4896,6 +5222,8 @@
     "formation": "Noun + をよそに",
     "shortExplanation": "Despite; Notwithstanding; Regardless of",
     "longExplanation": "The Japanese phrase 'Nounをよそに' is used to express a situation where, despite some circumstance (represented by the noun), a certain action takes place. It can convey a feeling of disregard or nonchalance. In English, it can be translated as 'despite', 'notwithstanding', or 'regardless of'.",
+    "zhShort": "儘管；不顧；無視。",
+    "zhLong": "「Nounをよそに」日語短語用來表達儘管某種情況（由名詞表示），某個動作仍然發生。可傳達出一種漠不關心或輕蔑的感覺。英文可翻譯為「儘管」、「不顧」或「無視」。",
     "sentences": [
       {
         "jp": "経済危機をよそに、彼は高級な車を買った。",
@@ -4926,6 +5254,8 @@
     "formation": "Noun + を + 余儀なくされる",
     "shortExplanation": "Expresses the idea of being forced into a certain situation, 'to be compelled', 'to be obliged'.",
     "longExplanation": "The grammar pattern 'Noun を余儀なくされる' is used to describe circumstances where a person or party is compelled or obliged to do something due to necessity or unavoidable circumstances. It translates as 'to be forced to', 'to be compelled to', or 'to have no choice but to'. This form is often used in formal or written Japanese.",
+    "zhShort": "被迫…；不得不…；被強制做某事。",
+    "zhLong": "「Noun を余儀なくされる」文法樣式用來描述一個人或團體因必要性或不可避免的情況而被迫或被強制做某事的情況。翻譯為「被迫…」、「不得不…」或「別無選擇只能…」。這種形式常用於正式或書面日語。",
     "sentences": [
       {
         "jp": "彼は経済的困難により、退学を余儀なくされた。",
@@ -4956,6 +5286,8 @@
     "formation": "Noun + を前提として",
     "shortExplanation": "Used to express 'on the assumption of', 'based on'.",
     "longExplanation": "The grammar point 'Noun を前提として' is used to convey that something is done based on or assuming something else. It indicates a preconceived condition or assumption on which the following action or plan relies.",
+    "zhShort": "以…為前提；基於…；假設…。",
+    "zhLong": "「Noun を前提として」文法用來表達基於或假設其他事物而進行某事。它表示以某個預先設定的條件或假設作為下文動作或計畫的基礎。",
     "sentences": [
       {
         "jp": "成功を前提として、ビジネスプランを作成しました。",
@@ -4986,6 +5318,8 @@
     "formation": "Noun + を前提にして",
     "shortExplanation": "Assuming; presupposing; on the assumption of.",
     "longExplanation": "The grammar point 'Noun を前提にして' is used to show that something is done assuming or presupposing the noun that comes before it. In English, it can be translated as 'on the assumption of', 'assuming', or 'presupposing'.",
+    "zhShort": "假設…；預設…；以…為前提。",
+    "zhLong": "「Noun を前提にして」文法用來表示基於或預設前面出現的名詞而進行某事。英文可翻譯為「以…為前提」、「假設…」或「預設…」。",
     "sentences": [
       {
         "jp": "好天を前提にして、明日のピクニックの計画を立てました。",
@@ -5016,6 +5350,8 @@
     "formation": "Noun + を境に(して)",
     "shortExplanation": "Means 'as a turning point', 'since (time)', or 'from (time) on'.",
     "longExplanation": "The grammar point 'Noun を境にして' is used to indicate a significant change or turning point marked by a specific event or time. It means that after this boundary, some situation changes or a new state begins.",
+    "zhShort": "以…為分界點；自…起；從…開始。",
+    "zhLong": "「Noun を境にして」文法用來表示由特定事件或時間標誌的重大變化或轉折點。意思是在這個分界點之後，某個情況會改變或新的狀態開始。",
     "sentences": [
       {
         "jp": "父の死を境にして、彼の性格が一変した。",
@@ -5046,6 +5382,8 @@
     "formation": "Noun + を機にして",
     "shortExplanation": "To take the opportunity to; taking the occasion to; on the occasion of.",
     "longExplanation": "The grammar pattern 'Noun を機にして' expresses the idea of using a certain event or situation as an opportunity to do something else. It is often used when some change or new step is taken as a result of a specific event.",
+    "zhShort": "藉著…的機會；以…為契機；趁…之際。",
+    "zhLong": "「Noun を機にして」文法樣式表達利用某個事件或情況作為做其他事的機會。常用於因特定事件而採取某種改變或新步驟的情況。",
     "sentences": [
       {
         "jp": "引っ越しを機にして、家具を新しくしました。",
@@ -5076,6 +5414,8 @@
     "formation": "Noun + を皮切りに / を皮切りにして",
     "shortExplanation": "Used to indicate the starting point of some series of events or actions; 'starting with', 'beginning with'.",
     "longExplanation": "The grammar point 'Noun を皮切りに / を皮切りにして' is used to convey the idea of something beginning or starting with a certain event or action. This pattern is often used when the speaker wants to highlight the starting point of a series or string of events.",
+    "zhShort": "以…為開端；自…開始；首先…。",
+    "zhLong": "「Noun を皮切りに / を皮切りにして」文法用來表達某事自某個事件或動作開始或啟動。當說話者想要強調一系列或一連串事件的起點時，常常使用這種樣式。",
     "sentences": [
       {
         "jp": "彼はその論文を皮切りにして複数の研究を開始した。",
@@ -5106,6 +5446,8 @@
     "formation": "Noun + を皮切りに (して)",
     "shortExplanation": "Used to express 'Starting with', 'Beginning with'",
     "longExplanation": "'Noun を皮切りにして' is a Japanese grammatical form used when one wants to express that something begins with a certain event or action, then continues on in a sequence. It is the same as saying 'starting with...' or 'beginning with...' in English.",
+    "zhShort": "以…為開端；自…開始；首先…。",
+    "zhLong": "「Noun を皮切りにして」日語文法形式用於表達某事自某個事件或動作開始，然後按順序繼續。相當於英文「starting with…」或「beginning with…」。",
     "sentences": [
       {
         "jp": "彼はその日を皮切りにして毎日ジムに通い始めました。",
@@ -5136,6 +5478,8 @@
     "formation": "Noun + を禁じ得ない",
     "shortExplanation": "'Cannot help but do', or 'inevitable'",
     "longExplanation": "The 〜を禁じ得ない (wo kinjienai) grammar point is used to express a situation or emotion that is so strong it can't be helped or is inevitable. It is used with nouns to express an uncontrollable feeling or action.",
+    "zhShort": "不禁…；避免不了…；不得不…。",
+    "zhLong": "「〜を禁じ得ない」文法用來表達某個情況或情感如此強烈以至於無法控制或不可避免。與名詞搭配使用，表達無法控制的感受或動作。",
     "sentences": [
       {
         "jp": "この結果には驚きを禁じ得ない。",
@@ -5166,6 +5510,8 @@
     "formation": "Noun + を経て",
     "shortExplanation": "Expresses the idea of 'through' or 'via'; going through some process or phase.",
     "longExplanation": "The を経て grammar point is used to express the concept of going through some process, phase, place, or period of time as a means of achieving something or reaching some end point. It can be literally translated as 'through' or 'via' in English, and can be used both literally and metaphorically.",
+    "zhShort": "經過…；經由…；透過…。",
+    "zhLong": "「を経て」文法用來表達作為達成某事或到達某個終點的手段而經過某個過程、階段、地點或時期的概念。可直譯為英文的「through」或「via」，可用於字面和隱喻意義。",
     "sentences": [
       {
         "jp": "彼は苦労を経て成功を手に入れた。",
@@ -5196,6 +5542,8 @@
     "formation": "Noun + を踏まえて",
     "shortExplanation": "Based on; taking into account; in light of",
     "longExplanation": "The verb 踏まえる (fumaeru) means 'to be based on' or 'to take into consideration'. When ～を踏まえて is connected with a noun, it implies that actions or decisions are made based on or taking into account the noun. It also expresses looking at a situation from the standpoint of the noun before proceeding to the following action.",
+    "zhShort": "基於…；考慮到…；鑑於…。",
+    "zhLong": "動詞「踏まえる」意思是「基於」或「考慮到」。當「〜を踏まえて」與名詞連接時，意味著動作或決定是基於或考慮了該名詞而做出的。也表示從該名詞的立場看待情況後再進行下列動作。",
     "sentences": [
       {
         "jp": "過去の結果を踏まえて、新たな計画を立てました。",
@@ -5226,6 +5574,8 @@
     "formation": "Noun + を限りに",
     "shortExplanation": "Expresses the idea of 'as of', 'with', or 'from', indicating the end of something or a point of change.",
     "longExplanation": "The grammar point Noun を限りに is used to indicate the end point of something or a point of change from that time onward. The noun preceding this expression usually refers to a point in time, signifying that something ends or changes starting at that point.",
+    "zhShort": "自…起；以…為期；至…為止。",
+    "zhLong": "「Noun を限りに」文法用來表示某事的終點或變化點。此表達式前面的名詞通常指時間點，表示自那個時刻起某事結束或改變。",
     "sentences": [
       {
         "jp": "今年度を限りに、この大学での教授活動を終えるつもりです。",
@@ -5256,6 +5606,8 @@
     "formation": "Noun + 並み",
     "shortExplanation": "Indicates 'like' or 'as' something or someone; 'equivalent to', 'around'.",
     "longExplanation": "The Noun 並み grammar point is used to show a comparison, often translated as 'like' or 'equivalent to'. It can also indicate approximate quantity or extent, similar to 'around'.",
+    "zhShort": "如同…；相當於…；約…。",
+    "zhLong": "「Noun 並み」文法用來表達比較，常翻譯為「如同」或「相當於」。也可表示近似的數量或程度，類似於「約…」。",
     "sentences": [
       {
         "jp": "彼はプロのボクサー並みの力を持っています。",
@@ -5286,6 +5638,8 @@
     "formation": "Noun + のいかんだ/Noun + のいかんでは",
     "shortExplanation": "Depends on; up to",
     "longExplanation": "The のいかんだ(Noun no ikan da) grammar point is used to express that something depends on a particular situation or fact. It can be translated as 'Depends on' or 'up to' in English. The construction no ikan is usually used with nouns and naru verbs.",
+    "zhShort": "取決於…；視…而定。",
+    "zhLong": "「のいかんだ」文法用來表達某事取決於特定情況或事實。可翻譯為英文的「Depends on」或「up to」。「no ikan」結構通常與名詞和「なる」動詞搭配使用。",
     "sentences": [
       {
         "jp": "彼が来るのいかんで決めよう。",
@@ -5316,6 +5670,8 @@
     "formation": "Noun1 + が + (repeat Noun1) + なら、Noun2 + も + (repeat Noun2) + だ",
     "shortExplanation": "Indicates a parallel or matching situation; 'if Noun1 is (truly) Noun1, then Noun2 is also Noun2'.",
     "longExplanation": "This structure conveys a comparison: 'If Noun1 is indeed that kind of thing (Noun1), then naturally Noun2 is also that kind of thing (Noun2)'. It’s often used to show parallels or equivalences in a rhetorical way.",
+    "zhShort": "表示並列或相應的情況；「若名詞1確實是名詞1，則名詞2也確實是名詞2」。",
+    "zhLong": "此句型表達比較的概念：「若名詞1確實是那種東西（名詞1），則自然地名詞2也是那種東西（名詞2）」。常用於修辭手法中表示並列或等價關係。",
     "sentences": [
       {
         "jp": "鬼が鬼なら、人間も人間だ。",
@@ -5346,6 +5702,8 @@
     "formation": "Noun1 + も + (repeat Noun1) + なら、Noun2 + も + (repeat Noun2) + だ",
     "shortExplanation": "Highlights two parallel facts or characteristics; 'if it’s said that ~, then it can also be said that ~'.",
     "longExplanation": "This grammar point sets two items or facts side by side, emphasizing that both follow a similar logic or share a parallel characteristic. Often it can be rendered as 'If you say Noun1 is Noun1, then Noun2 is also Noun2.'",
+    "zhShort": "強調兩個並列的事實或特徵；「如果說～，那麼也可以說～」。",
+    "zhLong": "此文法點將兩個項目或事實並列排列，強調兩者遵循相似的邏輯或具有並列的特徵。常可譯為「若你說名詞1是名詞1，那麼名詞2也是名詞2」。",
     "sentences": [
       {
         "jp": "君も君なら、私も私だ。",
@@ -5376,6 +5734,8 @@
     "formation": "Verb (dictionary or -ます stem) + がてら",
     "shortExplanation": "Expresses doing something while doing another; 'while', 'on the occasion of'.",
     "longExplanation": "The ～がてら grammar point is used to express doing something else in the middle of or on the occasion of another activity. Often used with verbs of movement or activities that easily combine with a second action.",
+    "zhShort": "表示在進行某活動的同時做別的事；「趁便」、「一邊～一邊」。",
+    "zhLong": "～がてら文法點用於表示在進行另一項活動過程中或利用另一項活動的機會進行其他事務。常與表示移動或易於與第二個動作結合的動詞搭配使用。",
     "sentences": [
       {
         "jp": "散歩がてらに郵便局へ行った。",
@@ -5406,6 +5766,8 @@
     "formation": "Verb-ますstem + こそすれ、(絶対に)～ない",
     "shortExplanation": "Often used in the pattern 'Xこそすれ、Y〜ない', meaning 'One might do X, but definitely not Y'.",
     "longExplanation": "Verb-ますstem + こそすれ is typically used to emphasize that while someone might certainly do or be X, there's no way they would do or be Y. The sentence that follows is usually a strong negative, denying the possibility of Y.",
+    "zhShort": "常用於「Xこそすれ、Y～ない」的搭配，意為「雖然可能做X，但絕對不會Y」。",
+    "zhLong": "動詞ます詞幹 + こそすれ 通常用於強調某人可能確實會做或是某事物，但絕不會做或是另一件事。句子後半通常是強烈的否定，否定Y的可能性。",
     "sentences": [
       {
         "jp": "彼は友達を助けこそすれ、自分を卑下することはありません。",
@@ -5436,6 +5798,8 @@
     "formation": "Verb-casual (non-past) + させられる",
     "shortExplanation": "Expresses 'being forced to do something' or 'being made to do something'.",
     "longExplanation": "The させられる grammar point is used to express the passive causative form in Japanese. This form is used when you are forced or made to do something by someone or something else. It's a combination of causative and passive form, and it often implies having been made to do something against one's will.",
+    "zhShort": "表示「被迫做某事」或「被強迫做某事」。",
+    "zhLong": "させられる文法點用於表達被動使役形態。此形式在某人或某事強迫你做某事時使用。它是使役形式和被動形式的組合，往往暗示被迫違背自己的意願做了某事。",
     "sentences": [
       {
         "jp": "彼に無理やり飲ませられた。",
@@ -5466,6 +5830,8 @@
     "formation": "Verb-dictionary form + ざるを得ない (する → せざるを得ない)",
     "shortExplanation": "'Cannot but', 'have no choice but to', 'forced to'",
     "longExplanation": "The Verb ざるを得ない construction is used when the subject is compelled or forced to do something out of necessity, leaving no other choice. It conveys the idea of 'cannot but...' or 'have no choice but...' in English.",
+    "zhShort": "「不得不」、「無可奈何地」、「被迫」。",
+    "zhLong": "Verb ざるを得ない 的構造用於表示主語出於必要或被迫做某事，沒有其他選擇。它傳達「不得不～」或「別無選擇而～」的含義。",
     "sentences": [
       {
         "jp": "この仕事が嫌ならもう辞めざるを得ない。",
@@ -5496,6 +5862,8 @@
     "formation": "Verb-ない form (remove ない) + ずじまい",
     "shortExplanation": "Expressing regret for not having done something; not being able to; missing the chance to do it.",
     "longExplanation": "The grammar point ～ずじまい (~zu jimai) is used to express regret for not doing something, not being able to do it, or not getting the chance to do it. It highlights an action that ultimately never happened, despite intentions or opportunities.",
+    "zhShort": "表示對沒有做某事的遺憾；無法做某事；錯過了做某事的機會。",
+    "zhLong": "文法點～ずじまい用於表達對沒有做某事、無法做某事或沒有機會做某事的遺憾。它強調某項行為最終未發生，儘管有意圖或機會。",
     "sentences": [
       {
         "jp": "日本へ来たのに、一度も富士山を見ずじまいで帰国してしまった。",
@@ -5526,6 +5894,8 @@
     "formation": "Verb-negative stem + ずとも",
     "shortExplanation": "Means 'Even without doing (X), (Y) can still happen'.",
     "longExplanation": "The ～ずとも grammar point is used to express that, even if something isn't done, the desired result can still be achieved or the situation remains unaffected. It can be translated as 'even without' or 'even if not'.",
+    "zhShort": "意為「即使不做（X），（Y）仍然可能發生」。",
+    "zhLong": "～ずとも文法點用於表達即使不做某事，所需結果仍然可能達成或情況保持不變。可譯為「即使不～」或「不～也」。",
     "sentences": [
       {
         "jp": "朝ごはんを食べずとも、働くことができます。",
@@ -5556,6 +5926,8 @@
     "formation": "Verb-ない form (remove ない) + ずにはおかない",
     "shortExplanation": "Expresses 'cannot help but...', 'will definitely...', or 'must do something'.",
     "longExplanation": "The ずにはおかない grammar point conveys the sentiment of an inevitable action or a strong emotional compulsion. It can mean 'I can’t let it pass without doing X' or 'I definitely will do X'.",
+    "zhShort": "表示「不得不～」、「一定會～」或「必須做某事」。",
+    "zhLong": "ずにはおかない文法點傳達必然的行動或強烈的情感驅動。可意為「我無法不做X而放過」或「我一定會做X」。",
     "sentences": [
       {
         "jp": "彼が困っていると聞いたら、助けずにはおかない。",
@@ -5586,6 +5958,8 @@
     "formation": "Verb-ない form (remove ない) + ずにはすまない",
     "shortExplanation": "'Cannot do without...', 'unavoidable', 'have to'.",
     "longExplanation": "The grammar point ずにはすまない is used when something must be done due to social/moral obligation, necessity, or rules. It implies that there is no way around taking that action.",
+    "zhShort": "「不～不行」、「無可避免」、「必須～」。",
+    "zhLong": "文法點ずにはすまない用於表示由於社會、道德義務、必要性或規則，必須做某事。暗示沒有辦法迴避採取那項行動。",
     "sentences": [
       {
         "jp": "この問題を解決しないと、社会全体が影響を受けるので、解決せずにはすまない。",
@@ -5616,6 +5990,8 @@
     "formation": "Verb-ますstem + そうにない",
     "shortExplanation": "Expresses unlikelihood or that something does not seem likely to happen.",
     "longExplanation": "The そうにない grammar point is typically formed from the verb’s ます-stem plus そうにない, and is used to express that something seems unlikely to happen or that someone seems unlikely to do something.",
+    "zhShort": "表示不太可能或某事似乎不太可能發生。",
+    "zhLong": "そうにない文法點通常由動詞的ます詞幹加上そうにない構成，用於表達某事似乎不太可能發生或某人似乎不太可能做某事。",
     "sentences": [
       {
         "jp": "彼はそんなに早く走れそうにない。",
@@ -5646,6 +6022,8 @@
     "formation": "Verb-ますstem + そうもない",
     "shortExplanation": "Expresses negative potential; 'it doesn't seem like...', 'it's not likely...'.",
     "longExplanation": "～そうもない is used to express a low possibility or unlikelihood of something happening. It is typically attached to the ます-stem of a verb, similar to そうにない but with an even stronger sense of improbability in many contexts.",
+    "zhShort": "表示負面可能性；「不像～」、「不大可能～」。",
+    "zhLong": "～そうもない用於表達某事發生的可能性很低或不太可能。通常接在動詞的ます詞幹後面，與そうにない類似，但在許多語境中帶有更強的不可能性感。",
     "sentences": [
       {
         "jp": "今日中に仕事を終えそうもない。",
@@ -5676,6 +6054,8 @@
     "formation": "Verb-ますstem + そばから",
     "shortExplanation": "Expresses that as soon as one action finishes, another begins immediately.",
     "longExplanation": "The 〜そばから grammar point is used to indicate that right after a certain action is completed, another action takes place—often suggesting a repetitive or frustrating cycle.",
+    "zhShort": "表示一個動作完成後，另一個動作立即開始。",
+    "zhLong": "〜そばから文法點用於表示緊接在某項動作完成後，另一項動作隨即發生—往往暗示重複或令人沮喪的循環。",
     "sentences": [
       {
         "jp": "掃除をするそばから子供たちが散らかす。",
@@ -5706,6 +6086,8 @@
     "formation": "Verb-casual, past (た form) + が最後",
     "shortExplanation": "Emphasizes 'once something happens, there is no going back'; 'once', 'as soon as', etc.",
     "longExplanation": "The 〜たが最後 grammar point indicates that once an action is taken or event occurs, some (often irreversible) consequence follows. In English, it can be translated as 'once', 'as soon as', or 'the moment that...'.",
+    "zhShort": "強調「一旦發生某事，就無法回頭」；「一旦～」、「一～就」等。",
+    "zhLong": "〜たが最後文法點表示一旦採取某項行動或發生某項事件，某些（通常是不可逆轉的）後果就會隨之而來。英文可譯為「once」、「as soon as」或「the moment that...」。",
     "sentences": [
       {
         "jp": "彼が一度怒ったが最後、誰も彼を止めることはできません。",
@@ -5736,6 +6118,8 @@
     "formation": "Verb (past, casual) + ことにしてください",
     "shortExplanation": "Asking someone to pretend or accept that something has already happened or taken a certain state.",
     "longExplanation": "The grammar point 'Verb たことにしてください' is used to request someone to act as if or pretend that a certain action has already occurred or a certain state exists. It is used in various contexts to express the idea of accepting a hypothetical situation for convenience or to avoid conflicts.",
+    "zhShort": "要求某人假裝或接受某事已經發生或處於某種狀態。",
+    "zhLong": "文法點「Verb たことにしてください」用於請求某人表現得彷彿或假裝某項行動已經發生或某種狀態已經存在。在各種語境中用於表達出於方便或避免衝突而接受假設情況的想法。",
     "sentences": [
       {
         "jp": "昨日のことは忘れたことにしてください。",
@@ -5766,6 +6150,8 @@
     "formation": "Verb-た form + ら + (same Verb-た form) + で",
     "shortExplanation": "Conveys that if something happens (or doesn’t happen), there is a particular consequence or situation either way.",
     "longExplanation": "The pattern VerbたらVerbたで is used for scenarios where doing something creates a certain issue or reaction, and not doing it also creates a different concern. It often shows that no matter which side of the condition you end up on, there’s some related result or trouble.",
+    "zhShort": "傳達無論某事發生與否，都會導致特定的後果或情況。",
+    "zhLong": "VerbたらVerbたで的搭配用於表達做某事會造成某些問題或反應，而不做它也會造成不同的顧慮。它通常表明無論你最終處於哪一邊的條件下，都會有某些相關的結果或麻煩。",
     "sentences": [
       {
         "jp": "行ったら行ったで大変だし、行かなかったら行かなかったで後悔しそうだ。",
@@ -5796,6 +6182,8 @@
     "formation": "Verb-た form + ら + きりがない",
     "shortExplanation": "Indicates an endless or unending cycle once an action is started; 'if one starts doing something, it will not stop.'",
     "longExplanation": "The たらきりがない grammar pattern is used when something negative or undesirable continues indefinitely once it begins. The implication is that you should avoid initiating the action because it’ll just go on and on.",
+    "zhShort": "表示一旦開始某項行動就會陷入無盡的循環；「一旦開始做某事就停不下來」。",
+    "zhLong": "たらきりがない文法模式用於某種負面的或不可取的事物一旦開始就會無限期地繼續時使用。暗示你應該避免啟動這項行動，因為它會持續不斷。",
     "sentences": [
       {
         "jp": "このエンジンを修理したら、またすぐ壊れて、直したらきりがない。",
@@ -5826,6 +6214,8 @@
     "formation": "Verb-た form + ら最後",
     "shortExplanation": "Expresses that once a certain action happens, the situation changes irreversibly—usually in a negative way.",
     "longExplanation": "The たら最後 grammar point indicates that once an action (in た-form) occurs, there is no going back and an unpleasant or unavoidable state follows. Often translated as 'once...then it's all over' or 'the moment...there’s no turning back.'",
+    "zhShort": "表示一旦某項行動發生，情況就會不可逆地改變—通常是負面的方式。",
+    "zhLong": "たら最後文法點表示一旦某項行動（以た形）發生，就無法回頭，一個不愉快或無可奈何的狀態隨之而來。常譯為「一～就完蛋了」或「一～就無法回頭」。",
     "sentences": [
       {
         "jp": "このゲームを始めたら最後、時間の経つのを忘れてしまいます。",
@@ -5856,6 +6246,8 @@
     "formation": "Verb-ますstem + つ + Verb-ますstem + つ",
     "shortExplanation": "Expresses two alternating actions happening repeatedly.",
     "longExplanation": "The 〜つ〜つ pattern is used with two verb ます-stems to express two ongoing, repeated or alternating actions. For example, 'push and pull,' 'go and come back,' 'eat and play,' etc. The same subject is typically implied for both verbs.",
+    "zhShort": "表示兩個交替動作重複發生。",
+    "zhLong": "〜つ〜つ的搭配與兩個動詞的ます詞幹一起使用，表達兩個持續進行、重複或交替的動作。例如「推和拉」、「往返」、「又吃又玩」等。同一主語通常暗示適用於兩個動詞。",
     "sentences": [
       {
         "jp": "朝から晩まで働きつ勉強しつで、疲れてしまった。",
@@ -5886,6 +6278,8 @@
     "formation": "Verb-て form + からというもの",
     "shortExplanation": "Expresses that ever since a certain event happened, a condition has continued until now.",
     "longExplanation": "The てからというもの grammar point indicates that from the time a certain action happened, a significant change or condition has persisted continuously. It emphasizes that the new situation contrasts with what came before.",
+    "zhShort": "表示自某項事件發生後，某種狀況一直延續到現在。",
+    "zhLong": "てからというもの文法點表示從某項行動發生的時刻起，某項重大變化或狀況一直持續著。它強調新的情況與之前的狀況形成對比。",
     "sentences": [
       {
         "jp": "彼女と別れてからというもの、一人で過ごす時間が増えました。",
@@ -5916,6 +6310,8 @@
     "formation": "Verb-て form + こそ",
     "shortExplanation": "Emphasizes 'only by doing something, a certain result or realization can occur.'",
     "longExplanation": "The ～てこそ grammar point is used to highlight that only by performing the verb in て-form can a certain important outcome be achieved or recognized. It often translates as 'only by (doing)' or 'only when (doing).'",
+    "zhShort": "強調「只有做～才能實現某個結果」。",
+    "zhLong": "～てこそ文法用於強調只有實行て形動詞才能達成或認識到某個重要結果。通常翻譯為「只有（做）」或「只有當（做）的時候」。強調特定行動的必要性與重要性。",
     "sentences": [
       {
         "jp": "実際に使ってこそ、その価値を理解できる。",
@@ -5946,6 +6342,8 @@
     "formation": "Verb-て form + は",
     "shortExplanation": "Expresses a repeated pattern or cycle, often implying a frustrating outcome; 'whenever X happens, Y happens again.'",
     "longExplanation": "The grammar ～ては is used to show that whenever one action or situation occurs, another action or situation repeatedly follows. It can also be used in an alternating pattern: 'do this, then that, then this, then that.'",
+    "zhShort": "表達重複的模式或循環，通常隱含令人沮喪的結果；「每當X發生，Y就再次發生」。",
+    "zhLong": "～ては文法用於表示每當某個行動或狀況發生時，另一個行動或狀況就會反覆跟隨。也可用於交替模式：「做這個，然後做那個，然後再做這個」。通常帶有無奈或循環重複的含義。",
     "sentences": [
       {
         "jp": "彼女に会っては、いつも緊張してしまいます。",
@@ -5976,6 +6374,8 @@
     "formation": "Verb-て form + は + Verb",
     "shortExplanation": "Expresses a repeated pattern of action; translates as 'every time', 'whenever', etc.",
     "longExplanation": "This grammar point is used when you want to express a repeated or cyclical pattern of actions or events. It can be translated as 'every time', 'whenever', or 'if at all'. The typical formation is a verb in the て-form, followed by は, and then another verb (often in the same tense or a continuing action).",
+    "zhShort": "表達重複的行動模式；翻譯為「每次」、「每當」等。",
+    "zhLong": "此文法點用於表達行動或事件的重複或循環模式。可翻譯為「每次」、「每當」或「如果有的話」。典型形式為て形動詞加は，然後是另一個動詞（通常為相同時態或持續動作）。",
     "sentences": [
       {
         "jp": "私が通勤しては、電子書籍を読んでいます。",
@@ -6006,6 +6406,8 @@
     "formation": "Verb-て form + までも",
     "shortExplanation": "Expresses 'even if it means doing...', 'no matter what it takes'.",
     "longExplanation": "This grammar point is used when the speaker wants to emphasize the lengths they would go to in order to achieve something. It attaches to the verb's て-form to mean 'even if it means doing X', 'even at the cost of X', or 'no matter what it takes'.",
+    "zhShort": "表示「即使要做～」、「無論代價多大」。",
+    "zhLong": "此文法點用於強調說話者願意為了達成某事而付出的努力程度。附加於動詞て形，意為「即使要做X」、「即使以X為代價」或「無論如何都要」。",
     "sentences": [
       {
         "jp": "試験に合格するために、寝る時間を削ってまでも勉強します。",
@@ -6036,6 +6438,8 @@
     "formation": "Verb-て form + みせる",
     "shortExplanation": "'Show by doing', 'demonstrate', 'prove by action'.",
     "longExplanation": "The ～てみせる grammar point is used to express the action of demonstrating or proving something by actually doing it. It can be translated as 'show by doing', 'demonstrate', or 'prove by action' in English.",
+    "zhShort": "「通過做來展示」、「證明」、「以行動証明」。",
+    "zhLong": "～てみせる文法用於表達通過實際行動來展示或証明某事。翻譯為「通過做來展示」、「証明」或「以行動証明」。帶有一種決心要通過實踐來達成目標的意味。",
     "sentences": [
       {
         "jp": "彼はそのパズルを解いてみせた。",
@@ -6066,6 +6470,8 @@
     "formation": "Verb-て form + やまない (common with certain verbs)",
     "shortExplanation": "Used with certain emotional/mental verbs to show a strong, unceasing emotion: 'can't stop', 'never cease to'.",
     "longExplanation": "The grammar ～てやまない is typically used with verbs like 願う, 祈る, 愛する, 尊敬する, 期待する, etc., expressing a deep, continuous emotional state (love, respect, hope, prayer). It emphasizes that the feeling 'never ceases.'",
+    "zhShort": "與特定情感／心理動詞搭配，表達強烈、不斷的情感：「不能停止」、「永遠不停止」。",
+    "zhLong": "～てやまない文法通常與願う、祈る、愛する、尊敬する、期待する等動詞搭配，表達深層、持續的情感狀態（愛、尊敬、希望、祈禱等）。強調該情感「永遠不停止」。",
     "sentences": [
       {
         "jp": "私は母を思ってやまない。",
@@ -6096,6 +6502,8 @@
     "formation": "Verb-ない form + ではおかない",
     "shortExplanation": "Means 'cannot help but do', 'will definitely do', or 'is bound to happen'.",
     "longExplanation": "The pattern Verb ないではおかない indicates that something definitely occurs as a logical or emotional consequence. It can be translated as 'cannot not do', 'can’t help but do', or 'will inevitably do'. The verb is put in the negative form followed by ないではおかない.",
+    "zhShort": "表示「不得不做」、「一定會做」或「必然發生」。",
+    "zhLong": "動詞ないではおかない模式表示某事一定會發生，作為邏輯或情感上的結果。翻譯為「不得不做」、「不能不做」或「必然會做」。動詞改為否定形後加ないではおかない。",
     "sentences": [
       {
         "jp": "彼女は毎回遅刻をしては、先生に怒られないではおかない。",
@@ -6126,6 +6534,8 @@
     "formation": "Verb-ない form + ではすまない",
     "shortExplanation": "'Cannot end without doing', 'must do'—an unavoidable moral or social necessity.",
     "longExplanation": "The grammar Verb ないではすまない expresses that something must be done (often for moral, social, or personal reasons) and cannot be left undone. It implies an obligation or inevitability, akin to 'I can't get away without doing it.'",
+    "zhShort": "「不做就無法結束」、「必須做」——一種不可避免的道德或社會責任。",
+    "zhLong": "文法Verb ないではすまない表達必須做某事（通常出於道德、社會或個人原因）且不能不做。暗含某種義務或必然性，相當於「我無法不去做它」。",
     "sentences": [
       {
         "jp": "失敗をしたら、謝らないではすまない。",
@@ -6156,6 +6566,8 @@
     "formation": "Verb-ない form + までも",
     "shortExplanation": "'Even if not to the extent of...', 'although not completely...'.",
     "longExplanation": "The pattern ないまでも is used when acknowledging that something doesn’t reach a certain extreme, but at least some part or degree of it applies. Often translated as 'even if not entirely...' or 'though not as far as...'.",
+    "zhShort": "「即使不至於……」、「雖然不完全……」。",
+    "zhLong": "ないまでも模式用於承認某事未達到某個極端程度，但至少該情況的某部分或某種程度適用。通常翻譯為「即使不完全……」或「雖然不像……那樣」。",
     "sentences": [
       {
         "jp": "全てを理解しないまでも、基本的なことは分かってほしい。",
@@ -6186,6 +6598,8 @@
     "formation": "Verb-negative (often negative potential) + ものだろうか",
     "shortExplanation": "Expressing hope or wonder if something can be done: 'Isn't there a way...?', 'Can't we...?'",
     "longExplanation": "This grammar point is used when the speaker expresses the hope, wish, or wonder if an action could be possible. It creates the nuance of 'Isn't there some way...?' or 'Can't I/you/we...?' in English, often with the negative potential form.",
+    "zhShort": "表達希望或疑惑是否能做某事：「沒有辦法……嗎？」、「難道不能……嗎？」",
+    "zhLong": "此文法點用於表達說話者的希望、願望或疑惑某行動是否可能。營造「沒有某種方法……嗎？」或「我們難道不能……嗎？」的語氣，通常帶有潛在否定可能形。",
     "sentences": [
       {
         "jp": "もっと時間があれば、ここに来られないものだろうか。",
@@ -6216,6 +6630,8 @@
     "formation": "Verb-negative form (ない form) + ものでもない",
     "shortExplanation": "Expresses the idea that it's not entirely impossible or non-existent: 'It's not that I don't...', 'It's not that there aren't...'",
     "longExplanation": "The grammar point Verbないものでもない is used to express that a situation is not completely impossible or nonexistent. Literally, it can be translated as 'it's not that there aren't...' or 'it's not that I never...'. It implies that some possibility or partial truth exists.",
+    "zhShort": "表達完全不可能或不存在並非絕對的想法：「並非不……」、「並非沒有……」。",
+    "zhLong": "文法點Verbないものでもない用於表達某情況並非完全不可能或完全不存在。字面上翻譯為「並非沒有……」或「並非我從不……」。暗示某種可能性或部分事實的存在。",
     "sentences": [
       {
         "jp": "旅行に行きたいと思わないものでもない。",
@@ -6246,6 +6662,8 @@
     "formation": "Verb in negative form + の + Noun",
     "shortExplanation": "Used to modify a noun with a negative verb form; 'a Noun without (Verb)'.",
     "longExplanation": "VerbのないNoun modifies a noun by describing the absence of the verb's action. It indicates 'a Noun where the action does not happen' or 'a Noun without that action.'",
+    "zhShort": "用否定動詞形式修飾名詞；「沒有（動詞）的名詞」。",
+    "zhLong": "VerbのないNoun通過否定的動詞形式來修飾名詞，描述動詞行動的缺失。表示「不執行該行動的名詞」或「沒有該行動的名詞」。",
     "sentences": [
       {
         "jp": "笑いのない人生は、つまらない。",
@@ -6276,6 +6694,8 @@
     "formation": "Verb-conditional form (ば) + きりがない",
     "shortExplanation": "Indicates there's no end once you start listing, doing, or saying something: 'If one starts to..., there will be no end.'",
     "longExplanation": "The pattern ～ばきりがない is used when expressing that if you start an action—like listing examples or complaining—there is no end. It literally means 'if (you) do X, there's no limit/end.'",
+    "zhShort": "表示一旦開始列舉、執行或說某事就沒有盡頭：「要是開始……就沒完沒了」。",
+    "zhLong": "～ばきりがない模式用於表達要是開始某個行動（如列舉例子或抱怨），就沒有終結。字面意思是「要是（做）X，就沒有限度／終結」。",
     "sentences": [
       {
         "jp": "悪口を言い始めればきりがない。",
@@ -6306,6 +6726,8 @@
     "formation": "Verb (masu stem) + もしないで",
     "shortExplanation": "Means 'without even doing'.",
     "longExplanation": "This pattern is used to express that one has not done (or not even tried to do) some action before proceeding to do something else. It emphasizes doing something 'without even' doing the prior action.",
+    "zhShort": "表示「甚至不做」、「未經過就……」。",
+    "zhLong": "此模式用於表達在進行某事之前根本沒有做（或甚至沒嘗試做）某個行動。強調「甚至不」做某事就進行下一步。",
     "sentences": [
       {
         "jp": "調べもしないで、答えを書きました。",
@@ -6336,6 +6758,8 @@
     "formation": "Verb (masu stem) + やしない",
     "shortExplanation": "Expresses a strong denial or refusal: 'I would never...', 'No way I would...'.",
     "longExplanation": "This grammar adds a nuance of strong denial or dismissal of the idea that the speaker (or someone) would do the action. Formed by adding やしない to the verb's stem, it often appears in casual or spoken language.",
+    "zhShort": "表達強烈的否定或拒絕：「我絕對不會……」、「怎麼可能……」。",
+    "zhLong": "此文法為動詞添加了強烈否定或駁斥說話者（或他人）會執行該行動的想法的語氣。由動詞詞幹加やしない構成，常出現在隨意或口語表達中。",
     "sentences": [
       {
         "jp": "こんな時に泣きやしない。",
@@ -6366,6 +6790,8 @@
     "formation": "Verb (dictionary or negative form) + ように (する / etc.)",
     "shortExplanation": "Expresses 'the way/manner of doing something' or 'in order to / so that / try to'.",
     "longExplanation": "This usage of よう most commonly appears as 「Verb辞書形 + ように」. It can mean 'in order to do something', 'so that something happens', or 'in the way someone does something'. It is also used in expressions like ～ようにする (to make an effort to) or ～ように言う (to tell someone to do something).",
+    "zhShort": "表示「做某事的方式／方法」或「為了／以便／試著」。",
+    "zhLong": "このよう的用法最常出現為「Verb辞書形 + ように」形式。可表示「為了做某事」、「以便某事發生」或「某人做某事的方式」。也用於～ようにする（努力去做）或～ように言う（告訴某人去做）等表達。",
     "sentences": [
       {
         "jp": "この問題を解くように努力します。",
@@ -6396,6 +6822,8 @@
     "formation": "Verb-volitional form + が + Verb-negative volitional form + が",
     "shortExplanation": "Expresses 'whether or not', 'no matter if something happens or not'.",
     "longExplanation": "Verbようが Verbるまいが indicates that whatever happens—whether the action is done or not—the outcome remains unchanged or the speaker's stance remains the same.",
+    "zhShort": "表示「無論是否」、「無論該事是否發生」。",
+    "zhLong": "Verbようが Verbるまいが表示無論會發生什麼——無論該行動是否被執行——結果都保持不變或說話者的態度不變。通常用於表達堅定的立場或某結果的不變性。",
     "sentences": [
       {
         "jp": "彼が来ようが来るまいが、パーティーは始まります。",
@@ -6426,6 +6854,8 @@
     "formation": "Verb-volitional form + か + Verb-volitional negative form (まい) + か",
     "shortExplanation": "Expresses indecision: 'Should I do it or not?'.",
     "longExplanation": "This grammar shows hesitation about whether to do something or not. The volitional form plus まい (negative volitional) suggests an internal debate about two opposite choices of the *same* verb.",
+    "zhShort": "表達猶豫不決：「該做還是不該做？」",
+    "zhLong": "此文法表達關於是否執行某事的猶豫。志願形加上まい（負志願）表達內心關於同一動詞兩個相反選擇的辯論。",
     "sentences": [
       {
         "jp": "彼に話そうか話すまいか、本当に迷っている。",
@@ -6456,6 +6886,8 @@
     "formation": "Verb (masu stem) + ようがない",
     "shortExplanation": "Expresses 'no way to do something,' 'impossible to do'.",
     "longExplanation": "〜ようがない is used to say that there's no way or method to do something, even if you wanted to.",
+    "zhShort": "表示「無法做某事」、「不可能做」。",
+    "zhLong": "〜ようがない用於表達即使您想做，也沒有辦法或方法去做某事。強調缺乏執行該行動的可能性或手段。",
     "sentences": [
       {
         "jp": "電車が混んでいて、動きようがない。",
@@ -6486,6 +6918,8 @@
     "formation": "Verb-volitional + と + Verb-negative volitional (～まい) + と",
     "shortExplanation": "This structure indicates that regardless of whether one does (verb) or not, the outcome/attitude remains unchanged.",
     "longExplanation": "The expression 'Verb-volitional form + と + Verb-negative volitional (～まい) + と' means 'regardless of whether one does X or not, it doesn't change the situation'. It shows the speaker's firm stance or the unchanging nature of some outcome.",
+    "zhShort": "此結構表示無論是否執行（該動詞），結果／態度都保持不變。",
+    "zhLong": "表達「Verb志願形 + と + Verb負志願形（～まい）+ と」意為「無論是否執行X，都不會改變情況」。表達說話者的堅定立場或某結果的不變性質。",
     "sentences": [
       {
         "jp": "あなたが来ようと来るまいと、パーティーは予定通りに始まります。",
@@ -6516,6 +6950,8 @@
     "formation": "Verb-volitional form + にも + (reason/potential negative, etc.)",
     "shortExplanation": "Used to express 'even though one wants to do something, one can't for some reason'.",
     "longExplanation": "The ～ようにも grammar point indicates that a person wants or tries to do something (volitional form), but for some reason cannot. Often, there's a second clause explaining what prevents the action.",
+    "zhShort": "表示「即使想做某事，但因為某些原因而無法做到」。",
+    "zhLong": "～ようにも文法用來表達某人想要或試著做某事（志願形），但因為某種原因而無法進行。通常會有第二個子句說明阻礙該動作的原因。",
     "sentences": [
       {
         "jp": "もう少し速く走ろうにも、足が痛くて無理だ。",
@@ -6546,6 +6982,8 @@
     "formation": "Verb-volitional form + にも + (potential negative form / reason)",
     "shortExplanation": "Expresses the inability to do something even if one wants/tries.",
     "longExplanation": "This grammar shows that you want (or try) to do something (volitional form), but cannot due to some obstacle. Often it appears as 'Verb-volitional + にも + Verb (potential negative)' or simply 'Verb-volitional + にも + (reason you can't)'.",
+    "zhShort": "表示「即使想做某事也無法做到」。",
+    "zhLong": "此文法用來表示想做（或試著做）某事但無法完成。常見形式為「Verb-志願形＋にも＋Verb（可能形否定）」或「Verb-志願形＋にも＋（無法做的理由）」。",
     "sentences": [
       {
         "jp": "彼を信じようにも信じられない証拠がある。",
@@ -6576,6 +7014,8 @@
     "formation": "Verb-ます stem + ようもない",
     "shortExplanation": "Expresses 'it's impossible to do something'.",
     "longExplanation": "～ようもない typically attaches to the verb's ます-stem, adding ようもない to indicate that there is 'no way' or 'no method' to perform the action. It’s the same nuance as 'Verbようがない' in many references.",
+    "zhShort": "表示「根本不可能做某事」。",
+    "zhLong": "～ようもない通常附加在動詞的ます詞幹上，加上ようもない來表示「沒有辦法」或「無法進行」該動作。意思與「Verbようがない」相同。",
     "sentences": [
       {
         "jp": "この問題は解きようもない。",
@@ -6606,6 +7046,8 @@
     "formation": "Verb-dictionary form + 限り(は)\nNoun(である) + 限り(は)",
     "shortExplanation": "Expresses 'as long as', 'while this condition is true'.",
     "longExplanation": "This grammar is used to express that something holds true as long as a particular condition remains in effect. When using a noun, it can appear as Noun(である) + 限り(は). With a verb, use the dictionary form + 限り(は).",
+    "zhShort": "表示「只要…」、「在…條件持續期間」。",
+    "zhLong": "此文法用來表達只要特定條件持續存在，某事就成立。使用名詞時可呈現為「Noun(である)＋限り(は)」；使用動詞時則用「辭書形＋限り(は)」。",
     "sentences": [
       {
         "jp": "私が生きている限りは、あなたを支えます。",
@@ -6636,6 +7078,8 @@
     "formation": "Verb-dictionary form + がままに",
     "shortExplanation": "Expresses 'letting something happen as it is'; 'just as something does'.",
     "longExplanation": "がままに describes an action happening exactly 'as is,' without intervention or change, often suggesting doing something passively or naturally.",
+    "zhShort": "表示「任其發展」、「按照…的樣子」。",
+    "zhLong": "がままに描述某動作完全「按原樣」發生，不經過干預或改變，常暗示被動地或自然地做某事。",
     "sentences": [
       {
         "jp": "窓を開けるがままにしておいたら、風が部屋に入ってきました。",
@@ -6666,6 +7110,8 @@
     "formation": "Verb-dictionary form + が早いか",
     "shortExplanation": "Expresses 'as soon as...' or 'the moment when...'.",
     "longExplanation": "Verbる が早いか indicates that something happens immediately after something else. It's similar to 'as soon as...' or 'no sooner than...'.",
+    "zhShort": "表示「一…就…」、「剛…就…」。",
+    "zhLong": "Verbるが早いか用來表達某事在另一件事之後立即發生。可譯為「一…就…」、「剛…就…」或「沒有比…更早」。",
     "sentences": [
       {
         "jp": "部屋に入るが早いか、彼はテレビをつけた。",
@@ -6696,6 +7142,8 @@
     "formation": "Verb-dictionary form + くらいなら",
     "shortExplanation": "Expresses preference to avoid something: 'rather than...', 'if it comes to doing X, I'd rather...'.",
     "longExplanation": "This grammar is used when the speaker would rather not do something or chooses another option rather than face the stated action. It’s often translated as 'rather than... I'd prefer...' or 'if it comes down to doing X, I'd rather...'.",
+    "zhShort": "表示寧可選擇其他方式，而不願意做某事。",
+    "zhLong": "此文法用在說話者寧可不做某事，或選擇其他方案而非面對所述的動作時。可譯為「與其…不如…」、「與其做X，我寧可…」。",
     "sentences": [
       {
         "jp": "一人で行くくらいなら、家にいるほうがましです。",
@@ -6726,6 +7174,8 @@
     "formation": "Verb-dictionary form + ことなしに",
     "shortExplanation": "Used to express 'without doing something'.",
     "longExplanation": "Verbることなしに indicates doing something else 'without' performing the stated action. It can imply skipping or omitting the verb action entirely.",
+    "zhShort": "表示「不做某事」、「沒有做過某事」。",
+    "zhLong": "Verbることなしに表示做某事「不經過」該述動作。可隱含省略或完全不進行該動詞動作的意思。",
     "sentences": [
       {
         "jp": "試験を勉強することなしに、合格しました。",
@@ -6756,6 +7206,8 @@
     "formation": "Verb-dictionary form + ことのないように",
     "shortExplanation": "Expresses the desire or effort to prevent something: 'so as not to...', 'to avoid...'.",
     "longExplanation": "Verbる ことのないように is used to show that one is trying or intending to prevent some action from happening. It's like 'so that this doesn't happen' or 'in order not to...'.",
+    "zhShort": "表示「為了不讓…發生」、「以免…」。",
+    "zhLong": "Verbることのないように用來表示努力或意圖防止某動作發生。可譯為「為了不讓…」、「以便不…」或「為了不要…」。",
     "sentences": [
       {
         "jp": "車をなくすことのないように、駐車場で必ずロックしましょう。",
@@ -6786,6 +7238,8 @@
     "formation": "Verb-casual + と + きりがない",
     "shortExplanation": "Used to indicate that something can go on endlessly or without limits.",
     "longExplanation": "The ～るときりがない grammar point is used to express that once you start doing the verb, there’s no end or limit. The phrase 'きりがない' means 'no end' or 'endless.'",
+    "zhShort": "表示「某事可以無限進行下去」、「沒完沒了」。",
+    "zhLong": "～るときりがない文法用來表示一旦開始做某動詞，就沒有結束或限制。「きりがない」意為「沒完沒了」或「無限的」。",
     "sentences": [
       {
         "jp": "彼の悪口を言うときりがない。",
@@ -6816,6 +7270,8 @@
     "formation": "Verb-dictionary form + ともなく + Verb",
     "shortExplanation": "Used to express 'without a particular intention', 'unconsciously', or 'before one knows it'.",
     "longExplanation": "The phrase VerbるともなくVerb indicates doing something unintentionally or unconsciously— you just find yourself doing it without a clear aim or intention.",
+    "zhShort": "表示「無意識地做某事」、「不知不覺地」。",
+    "zhLong": "VerbるともなくVerb表示無意中或下意識地做某事——你發現自己在做，但沒有明確的目的或意圖。",
     "sentences": [
       {
         "jp": "遠くを見るともなく窓の外を眺めた。",
@@ -6846,6 +7302,8 @@
     "formation": "Verb-dictionary form + ともなしに + Verb",
     "shortExplanation": "Expresses doing something unintentionally or without conscious thought.",
     "longExplanation": "VerbるともなしにVerb is used to show that you do some action without particularly intending to. Often you ‘end up doing’ something by habit or casually.",
+    "zhShort": "表示「不自覺地做某事」、「無意間做某事」。",
+    "zhLong": "VerbるともなしにVerb用來表示做某動作時並未特別打算。通常是「無意中做」某事，可能出於習慣或隨意。",
     "sentences": [
       {
         "jp": "本を読むともなしに眠ってしまった。",
@@ -6876,6 +7334,8 @@
     "formation": "Verb-dictionary form + なり",
     "shortExplanation": "Expresses 'as soon as' or 'the moment'.",
     "longExplanation": "Verbるなり indicates that the following action happens immediately after the verb action. It can be translated as 'no sooner than...', 'as soon as...', or 'the moment...'.",
+    "zhShort": "表示「一…就…」、「剛…就…」。",
+    "zhLong": "Verbるなり用來表達該動詞動作之後立即發生後續動作。可譯為「沒有比…更早」、「一…就…」或「剛…就…」。",
     "sentences": [
       {
         "jp": "家に帰るなり、すぐに寝た。",
@@ -6906,6 +7366,8 @@
     "formation": "Noun / Verb-dictionary form + にとどまらず + も/ほかのこと",
     "shortExplanation": "Expresses 'not only… but also', 'not limited to…'.",
     "longExplanation": "にとどまらず is used to indicate that something goes beyond just the stated verb or noun. It can be translated as 'not just… but also…' or 'not limited to…'.",
+    "zhShort": "表示「不僅…而且…」、「不限於…」。",
+    "zhLong": "にとどまらず用來表示某事超越了所述的動詞或名詞。可譯為「不只…而且…」或「不限於…」。",
     "sentences": [
       {
         "jp": "彼は仕事にとどまらず、ボランティア活動もしている。",
@@ -6936,6 +7398,8 @@
     "formation": "Verb-dictionary form + にはあたらない",
     "shortExplanation": "Used to say 'there is no need to...', 'it’s not necessary to...'.",
     "longExplanation": "Verbる にはあたらない expresses that something is not worth the reaction or there is no need to do the verb. It's somewhat formal and often used in writing.",
+    "zhShort": "表示「沒有必要…」、「不必…」。",
+    "zhLong": "Verbるにはあたらない表示做某事不值得有那樣的反應，或沒有必要進行該動詞。較為正式，常見於書寫文體。",
     "sentences": [
       {
         "jp": "パニックに陥るにはあたらない。",
@@ -6966,6 +7430,8 @@
     "formation": "Verb-dictionary form + にも + (reason it can't be done)",
     "shortExplanation": "Indicates that doing the verb is impossible or difficult, even if one wants to.",
     "longExplanation": "Verbる にも is often used with an additional clause explaining why the action can’t be done. It can be translated as 'even if (I) want to do X, I can’t (because...)'.",
+    "zhShort": "表示做某事不可能或困難，即使想做也做不到。",
+    "zhLong": "Verbるにも常與額外的子句搭配，解釋為何無法進行該動作。可譯為「即使（我）想做X，也無法做（因為…）」。",
     "sentences": [
       {
         "jp": "明日雨が降ったとしても、傘を持つにも荷物が多すぎる。",
@@ -6996,6 +7462,8 @@
     "formation": "Verb-volitional + にも + Verb-potential negative",
     "shortExplanation": "Expresses: 'Even if I try/want to do something, I cannot.'",
     "longExplanation": "This pattern emphasizes that a person wants or attempts to do something (often in volitional form), but is incapable of doing so. It is often used with potential verbs in negative form: 'Even if I try to ~, I can't ~.'",
+    "zhShort": "表示「即使試著或想做某事，也無法做到」。",
+    "zhLong": "此模式強調某人想或試著做某事（常用志願形），但卻無能為力。常與否定的可能動詞搭配：「即使試著～，也無法～」。",
     "sentences": [
       {
         "jp": "彼を理解しようにも理解できない。",
@@ -7026,6 +7494,8 @@
     "formation": "Verb-dictionary form + べからざる + Noun",
     "shortExplanation": "Used to express what should not be done; 'must not', 'should not'.",
     "longExplanation": "The Japanese grammar point Verbる べからざる Noun is used to indicate something that should not be done, or is not allowed to be done. It translates to 'must not' or 'should not' in English. It is often used in formal written Japanese or in formal speeches. It is constructed by using the verb in its dictionary form followed by 'べからざる' and a noun, usually related to behavior or events.",
+    "zhShort": "表示「不應該做…」、「禁止做…」。",
+    "zhLong": "Verbるべからざる Noun用來表示不應該或不被允許做某事。可譯為「禁止」或「不應該」。常見於正式書寫日文或正式演講中，由辭書形動詞加べからざる及名詞組成，通常與行為或事件相關。",
     "sentences": [
       {
         "jp": "人を裏切るべからざる行為だ。",
@@ -7056,6 +7526,8 @@
     "formation": "Verb-ru + べからず",
     "shortExplanation": "Expresses the idea of 'must not do' or 'should not do'.",
     "longExplanation": "The ～るべからず grammar point is used to express a strong prohibition or firmly established rule. It can be translated as 'must not do' or 'should not do'. It is common in formal or instructive settings (e.g., signs, notices). The formation is straightforward with verbs in dictionary form followed by べからず.",
+    "zhShort": "表示「禁止…」、「不可…」、「不應該…」。",
+    "zhLong": "～るべからず文法用來表達強烈的禁止或既定規則。可譯為「禁止…」或「不應該…」。常見於正式或說明性場合（如標誌、通告）。構成方式簡單，動詞辭書形加べからず。",
     "sentences": [
       {
         "jp": "嘘をつくべからず。",
@@ -7086,6 +7558,8 @@
     "formation": "Verb-dictionary form + べく",
     "shortExplanation": "Expresses the meaning of 'in order to', 'for the purpose of'.",
     "longExplanation": "The 'Verbる べく' grammar point is used to indicate a strong intention or purpose of the speaker. It can be translated as 'in order to' or 'for the purpose of' in English. It is more common in written language or formal contexts.",
+    "zhShort": "表示「為了…」、「以便…」。",
+    "zhLong": "「Verbるべく」文法用來表示說話者強烈的意圖或目的。可譯為「為了」或「以便」。較常見於書寫文體或正式場合。",
     "sentences": [
       {
         "jp": "成功するべく、日々努力しています。",
@@ -7116,6 +7590,8 @@
     "formation": "Verb-dictionary form + べくもない",
     "shortExplanation": "Means 'it's impossible to...' or 'there's no way to...'.",
     "longExplanation": "This grammar point is used when you want to express that something is impossible or there is no way to do something. The verb before 'べくもない' should be in its dictionary form.",
+    "zhShort": "表示「不可能…」、「沒有辦法…」。",
+    "zhLong": "此文法用於表達某事是不可能的或無法做到某事。動詞應使用字典形（る形）。表示客觀上無法實現或根本無法做到的事情。",
     "sentences": [
       {
         "jp": "その問題はとても難しく、解くべくもない。",
@@ -7146,6 +7622,8 @@
     "formation": "Verb-る + までもない",
     "shortExplanation": "It's not necessary to the extent of; no need to.",
     "longExplanation": "The 〜るまでもない grammar point is used to express that something is not necessary to the extent of doing that action. It can be translated as 'no need to' in English.",
+    "zhShort": "表示「沒有必要到…的程度」、「不必…」。",
+    "zhLong": "～るまでもない文法用於表達某事不必要到做那個動作的程度。可翻譯為「不必…」、「沒必要…」。常用於表示某個動作或程度已經不需要。",
     "sentences": [
       {
         "jp": "そんなに心配するまでもない。",
@@ -7176,6 +7654,8 @@
     "formation": "Verb-dictionary form + ものとする",
     "shortExplanation": "Assuming or deciding something as...",
     "longExplanation": "The ～るものとする grammar point is often used in formal or legal contexts to express a decision or assumption. It can be translated as 'it is decided/assumed that...' or 'shall be deemed that...'.",
+    "zhShort": "假定或決定為…；規定…。",
+    "zhLong": "～るものとする文法常用於正式或法律文件中，表示一種決定或假定。可翻譯為「規定…」、「視為…」、「假定…」。具有正式、規範性的特點。",
     "sentences": [
       {
         "jp": "ここでの話し合いは秘密とするものとします。",
@@ -7206,6 +7686,8 @@
     "formation": "Verb-dictionary form + や否や",
     "shortExplanation": "Expresses the idea of 'as soon as', 'the moment...'.",
     "longExplanation": "The grammar point Verbる や否や is used to express something happening immediately after another action or event. It can be translated as 'as soon as...' or 'the moment...'. The verb must be in dictionary form.",
+    "zhShort": "表示「一…就…」、「剛一…立刻…」。",
+    "zhLong": "Verbる や否や文法用於表達某事在另一個動作或事件發生後立即發生。可翻譯為「一…就…」、「剛…立刻…」、「甫一…即…」。動詞須為字典形（る形）。",
     "sentences": [
       {
         "jp": "彼女が家に帰るや否や、すぐにテレビをつけました。",
@@ -7236,6 +7718,8 @@
     "formation": "Verb-dictionary form + 始末だ",
     "shortExplanation": "Indicates a (often unfortunate) result or conclusion of an action.",
     "longExplanation": "The ～る始末だ grammar point expresses the outcome or conclusion of an action, typically a negative or unfortunate result. It can be translated as 'end up...', 'the result is...', or 'the conclusion is...'.",
+    "zhShort": "表示動作的結果或結局，常為不幸的結果。",
+    "zhLong": "～る始末だ文法表達某個動作的結果或結論，通常是負面或不幸的結果。可翻譯為「落得…」、「結果…」、「最後…」。強調最後演變成的糟糕結果。",
     "sentences": [
       {
         "jp": "忘れてしまって、パスポートを家に置いてくる始末だった。",
@@ -7266,6 +7750,8 @@
     "formation": "Verb-dictionary form + 嫌いがある",
     "shortExplanation": "Tendency to do a negative action; have a bad habit of ~.",
     "longExplanation": "The ～る嫌いがある grammar point is used to express a negative tendency or habit. It often carries a critical or disapproving tone and points out someone's habitual action.",
+    "zhShort": "表示傾向於做負面動作；有…的壞習慣。",
+    "zhLong": "～る嫌いがある文法用於表達負面的傾向或習慣。常帶有批評或不讚成的語氣，指出某人習慣性的動作或傾向。可翻譯為「容易…」、「往往…」、「有…的傾向」。",
     "sentences": [
       {
         "jp": "彼女は遅刻する嫌いがある。",
@@ -7296,6 +7782,8 @@
     "formation": "いつまで + Verb (dictionary form) + のやら",
     "shortExplanation": "Expresses uncertainty regarding duration; 'don't know when... will end'.",
     "longExplanation": "The いつまで～のやら grammar point is used to express uncertainty about when something will end or finish. It is often used in situations where the speaker is unsure about when a particular state of affairs or event will conclude.",
+    "zhShort": "表達對持續時間的不確定；「不知道什麼時候才會結束」。",
+    "zhLong": "いつまで～のやら文法用於表達對事物何時結束或完成的不確定性。常用於講者不確定某個特定狀況或事件何時會結束的情況。表示一種不確定、無奈或困擾的語氣。",
     "sentences": [
       {
         "jp": "この試験勉強はいつまで続くのやら。",
@@ -7326,6 +7814,8 @@
     "formation": "どんなに + Verb-volitional + うが, どんなに + い-Adjective(～かろう) + が, どんなに + な-Adjective + だろうが",
     "shortExplanation": "Expresses 'no matter how much...', 'even if...'.",
     "longExplanation": "The grammar point どんなに～うが is used to express a condition that is not affected by the degree of an action or state. It can be translated as 'no matter how much...' or 'even if...'. It is generally used with verbs, い-adjectives and な-adjectives in their volitional or かろう/だろう form.",
+    "zhShort": "表示「無論多麼…」、「即使…也…」。",
+    "zhLong": "どんなに～うが文法用於表達某個條件不受動作或狀態程度影響的情況。可翻譯為「無論多麼…」、「即使…也…」、「再…也…」。一般與動詞、い形容詞和な形容詞的願望形或かろう/だろう形搭配使用。",
     "sentences": [
       {
         "jp": "どんなに頑張ろうが、彼の速さには追いつけない。",

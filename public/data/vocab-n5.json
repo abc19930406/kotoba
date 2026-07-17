@@ -9,7 +9,7 @@
     "meaningEn": [
       "Yen"
     ],
-    "meaningZh": null,
+    "meaningZh": "～日圓（貨幣單位）",
     "sentences": []
   },
   {
@@ -22,7 +22,7 @@
     "meaningEn": [
       "counter for occurrences (~ times)"
     ],
-    "meaningZh": null,
+    "meaningZh": "～次、～回（次數）",
     "sentences": []
   },
   {
@@ -35,7 +35,7 @@
     "meaningEn": [
       "counter for stories (floors) of a building"
     ],
-    "meaningZh": null,
+    "meaningZh": "～樓（樓層計數）",
     "sentences": []
   },
   {
@@ -48,7 +48,7 @@
     "meaningEn": [
       "(number of) months"
     ],
-    "meaningZh": null,
+    "meaningZh": "～個月（期間）",
     "sentences": []
   },
   {
@@ -61,7 +61,7 @@
     "meaningEn": [
       "month of year"
     ],
-    "meaningZh": null,
+    "meaningZh": "～月（月份）",
     "sentences": []
   },
   {
@@ -74,7 +74,7 @@
     "meaningEn": [
       "feel"
     ],
-    "meaningZh": null,
+    "meaningZh": "感到～（接形容詞語幹）",
     "sentences": []
   },
   {
@@ -87,7 +87,7 @@
     "meaningEn": [
       "~ side"
     ],
-    "meaningZh": null,
+    "meaningZh": "～側、～邊",
     "sentences": []
   },
   {
@@ -100,7 +100,7 @@
     "meaningEn": [
       "approximate (quantity)"
     ],
-    "meaningZh": null,
+    "meaningZh": "大約～（數量）",
     "sentences": []
   },
   {
@@ -115,7 +115,7 @@
       "fruits",
       "cups)"
     ],
-    "meaningZh": null,
+    "meaningZh": "～個（小物品計數）",
     "sentences": []
   },
   {
@@ -129,7 +129,7 @@
       "word",
       "language"
     ],
-    "meaningZh": null,
+    "meaningZh": "～語（語言）",
     "sentences": []
   },
   {
@@ -144,7 +144,7 @@
       "toward",
       "approximately (time)"
     ],
-    "meaningZh": null,
+    "meaningZh": "大約～時（時間）",
     "sentences": []
   },
   {
@@ -157,7 +157,7 @@
     "meaningEn": [
       "~ years old"
     ],
-    "meaningZh": null,
+    "meaningZh": "～歲（年齡）",
     "sentences": []
   },
   {
@@ -170,7 +170,7 @@
     "meaningEn": [
       "counter for books"
     ],
-    "meaningZh": null,
+    "meaningZh": "～本、冊（書籍計數）",
     "sentences": []
   },
   {
@@ -184,7 +184,7 @@
       "Mr. ~",
       "Ms. ~"
     ],
-    "meaningZh": null,
+    "meaningZh": "～先生／小姐（敬稱）",
     "sentences": []
   },
   {
@@ -197,7 +197,7 @@
     "meaningEn": [
       "~ o'clock (time)"
     ],
-    "meaningZh": null,
+    "meaningZh": "～點鐘（時刻）",
     "sentences": []
   },
   {
@@ -210,7 +210,7 @@
     "meaningEn": [
       "~ hours"
     ],
-    "meaningZh": null,
+    "meaningZh": "～小時（時間長度）",
     "sentences": []
   },
   {
@@ -224,7 +224,7 @@
       "during",
       "while"
     ],
-    "meaningZh": null,
+    "meaningZh": "整個～、～全體",
     "sentences": []
   },
   {
@@ -237,7 +237,7 @@
     "meaningEn": [
       "~ weeks"
     ],
-    "meaningZh": null,
+    "meaningZh": "～週（期間）",
     "sentences": []
   },
   {
@@ -250,7 +250,7 @@
     "meaningEn": [
       "counter for people"
     ],
-    "meaningZh": null,
+    "meaningZh": "～人（人數，漢語讀音）",
     "sentences": []
   },
   {
@@ -264,7 +264,7 @@
       "past; to exceed",
       "~ too much"
     ],
-    "meaningZh": null,
+    "meaningZh": "過～；太過～",
     "sentences": []
   },
   {
@@ -277,7 +277,7 @@
     "meaningEn": [
       "at a time"
     ],
-    "meaningZh": null,
+    "meaningZh": "每次～、各～",
     "sentences": []
   },
   {
@@ -290,7 +290,7 @@
     "meaningEn": [
       "counter for vehicles; machines"
     ],
-    "meaningZh": null,
+    "meaningZh": "～台（車輛機器計數）",
     "sentences": []
   },
   {
@@ -305,7 +305,7 @@
       "just ~",
       "as ~"
     ],
-    "meaningZh": null,
+    "meaningZh": "只有～、僅～",
     "sentences": []
   },
   {
@@ -318,7 +318,7 @@
     "meaningEn": [
       "plural suffix"
     ],
-    "meaningZh": null,
+    "meaningZh": "～們（複數後綴）",
     "sentences": []
   },
   {
@@ -332,7 +332,7 @@
       "during",
       "while ~ing"
     ],
-    "meaningZh": null,
+    "meaningZh": "～中、～期間",
     "sentences": []
   },
   {
@@ -345,7 +345,7 @@
     "meaningEn": [
       "counter for occurrences; ~ degree; ~ point"
     ],
-    "meaningZh": null,
+    "meaningZh": "～度、～次、～度數",
     "sentences": []
   },
   {
@@ -358,7 +358,7 @@
     "meaningEn": [
       "at the time of ~"
     ],
-    "meaningZh": null,
+    "meaningZh": "～的時候",
     "sentences": []
   },
   {
@@ -371,7 +371,7 @@
     "meaningEn": [
       "et cetera"
     ],
-    "meaningZh": null,
+    "meaningZh": "～等、～之類",
     "sentences": []
   },
   {
@@ -385,7 +385,7 @@
       "~ day of the month",
       "for ~ days"
     ],
-    "meaningZh": null,
+    "meaningZh": "～日（日期或天數）",
     "sentences": []
   },
   {
@@ -398,7 +398,7 @@
     "meaningEn": [
       "counter for people"
     ],
-    "meaningZh": null,
+    "meaningZh": "～人（人數，訓讀）",
     "sentences": []
   },
   {
@@ -411,7 +411,7 @@
     "meaningEn": [
       "~ years"
     ],
-    "meaningZh": null,
+    "meaningZh": "～年（年份或年數）",
     "sentences": []
   },
   {
@@ -424,7 +424,7 @@
     "meaningEn": [
       "counter for cupfuls"
     ],
-    "meaningZh": null,
+    "meaningZh": "～杯（杯數計數）",
     "sentences": []
   },
   {
@@ -437,7 +437,7 @@
     "meaningEn": [
       "~st; ~th best"
     ],
-    "meaningZh": null,
+    "meaningZh": "第～名、第～號",
     "sentences": []
   },
   {
@@ -450,7 +450,7 @@
     "meaningEn": [
       "counter for small animals"
     ],
-    "meaningZh": null,
+    "meaningZh": "～隻（小動物計數）",
     "sentences": []
   },
   {
@@ -463,7 +463,7 @@
     "meaningEn": [
       "~ minutes"
     ],
-    "meaningZh": null,
+    "meaningZh": "～分鐘（時間）",
     "sentences": []
   },
   {
@@ -476,7 +476,7 @@
     "meaningEn": [
       "counter for long cylindrical things"
     ],
-    "meaningZh": null,
+    "meaningZh": "～條／支（細長物計數）",
     "sentences": []
   },
   {
@@ -489,7 +489,7 @@
     "meaningEn": [
       "counter for flat things"
     ],
-    "meaningZh": null,
+    "meaningZh": "～張／件（扁平物計數）",
     "sentences": []
   },
   {
@@ -502,7 +502,7 @@
     "meaningEn": [
       "in front of ~"
     ],
-    "meaningZh": null,
+    "meaningZh": "～前面、～之前",
     "sentences": []
   },
   {
@@ -515,7 +515,7 @@
     "meaningEn": [
       "~ shop"
     ],
-    "meaningZh": null,
+    "meaningZh": "～店、賣～的店",
     "sentences": []
   },
   {
@@ -531,7 +531,7 @@
       "Ah!",
       "Oh!"
     ],
-    "meaningZh": null,
+    "meaningZh": "啊！（感嘆詞）",
     "sentences": [
       {
         "jp": "こう言う人もいれば、ああ言う人もいる。",
@@ -589,7 +589,7 @@
       "to meet",
       "to see"
     ],
-    "meaningZh": null,
+    "meaningZh": "見面、碰面",
     "sentences": [
       {
         "jp": "前に彼にあったのを覚えている。",
@@ -617,7 +617,7 @@
     "meaningEn": [
       "blue"
     ],
-    "meaningZh": null,
+    "meaningZh": "藍色、青色",
     "sentences": [
       {
         "jp": "信号が青に変わったわよ。",
@@ -638,7 +638,7 @@
     "meaningEn": [
       "blue"
     ],
-    "meaningZh": null,
+    "meaningZh": "藍的、青的",
     "sentences": [
       {
         "jp": "なぜ空が青いか知っているか。",
@@ -670,7 +670,7 @@
     "meaningEn": [
       "red"
     ],
-    "meaningZh": null,
+    "meaningZh": "紅色",
     "sentences": [
       {
         "jp": "信号機が赤の間は道路を渡るな。",
@@ -696,7 +696,7 @@
     "meaningEn": [
       "red"
     ],
-    "meaningZh": null,
+    "meaningZh": "紅的",
     "sentences": [
       {
         "jp": "彼女は赤いスカートをはいていた。",
@@ -717,7 +717,7 @@
     "meaningEn": [
       "bright (in reference to personality or weather); cheerful"
     ],
-    "meaningZh": null,
+    "meaningZh": "明亮的；開朗的",
     "sentences": [
       {
         "jp": "君はなかなか地理に明るいな。",
@@ -754,7 +754,7 @@
     "meaningEn": [
       "fall (season)"
     ],
-    "meaningZh": null,
+    "meaningZh": "秋天",
     "sentences": [
       {
         "jp": "秋には木の葉が落ちる。",
@@ -778,7 +778,7 @@
       "to open",
       "to become open"
     ],
-    "meaningZh": null,
+    "meaningZh": "（門窗等）打開",
     "sentences": [
       {
         "jp": "その皮製の上着の両肘部分が擦り減って穴が空いた。",
@@ -821,7 +821,7 @@
     "meaningEn": [
       "to open (v.t.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "打開（他動詞）",
     "sentences": [
       {
         "jp": "あなたの手紙を間違ってあけてしまってすいませんでした。",
@@ -867,7 +867,7 @@
       "to raise",
       "to lift"
     ],
-    "meaningZh": null,
+    "meaningZh": "舉起、提高",
     "sentences": [
       {
         "jp": "その店は値段を全部上げた。",
@@ -924,7 +924,7 @@
     "meaningEn": [
       "morning"
     ],
-    "meaningZh": null,
+    "meaningZh": "早晨、上午",
     "sentences": [
       {
         "jp": "６月にしては寒い朝だ。",
@@ -945,7 +945,7 @@
     "meaningEn": [
       "breakfast"
     ],
-    "meaningZh": null,
+    "meaningZh": "早餐、早飯",
     "sentences": []
   },
   {
@@ -962,7 +962,7 @@
     "meaningEn": [
       "day after tomorrow"
     ],
-    "meaningZh": null,
+    "meaningZh": "後天",
     "sentences": [
       {
         "jp": "あさって彼にここへ来てもらうつもりです。",
@@ -981,7 +981,7 @@
     "meaningEn": [
       "foot; leg"
     ],
-    "meaningZh": null,
+    "meaningZh": "腳；腿",
     "sentences": []
   },
   {
@@ -997,7 +997,7 @@
     "meaningEn": [
       "tomorrow"
     ],
-    "meaningZh": null,
+    "meaningZh": "明天",
     "sentences": [
       {
         "jp": "あしたは一日中ひまです。",
@@ -1018,7 +1018,7 @@
       "over there",
       "that place"
     ],
-    "meaningZh": null,
+    "meaningZh": "那裡、那個地方",
     "sentences": []
   },
   {
@@ -1034,7 +1034,7 @@
     "meaningEn": [
       "to play; to spend time pleasantly; to hang out"
     ],
-    "meaningZh": null,
+    "meaningZh": "玩耍；消磨時光",
     "sentences": [
       {
         "jp": "２人の子供が通りで遊んでいた。",
@@ -1060,7 +1060,7 @@
     "meaningEn": [
       "warm"
     ],
-    "meaningZh": null,
+    "meaningZh": "溫暖的",
     "sentences": [
       {
         "jp": "だんだん暖かくなります。",
@@ -1086,7 +1086,7 @@
     "meaningEn": [
       "head"
     ],
-    "meaningZh": null,
+    "meaningZh": "頭部；頭腦",
     "sentences": [
       {
         "jp": "トムは先週の頭に車を盗まれた。",
@@ -1127,7 +1127,7 @@
     "meaningEn": [
       "new"
     ],
-    "meaningZh": null,
+    "meaningZh": "新的",
     "sentences": [
       {
         "jp": "明日、私は新しい車で母をつれて出かけます。",
@@ -1181,7 +1181,7 @@
     "meaningEn": [
       "this way (polite)"
     ],
-    "meaningZh": null,
+    "meaningZh": "那邊（禮貌說法）",
     "sentences": []
   },
   {
@@ -1199,7 +1199,7 @@
       "thick",
       "deep"
     ],
-    "meaningZh": null,
+    "meaningZh": "厚的；熱心的",
     "sentences": [
       {
         "jp": "氷は２インチの厚さだ。",
@@ -1226,7 +1226,7 @@
       "hot (in reference to weather)",
       "warm"
     ],
-    "meaningZh": null,
+    "meaningZh": "（天氣）炎熱的",
     "sentences": [
       {
         "jp": "この夏最高の暑さだ。",
@@ -1247,7 +1247,7 @@
     "meaningEn": [
       "hot (objects)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（物體）燙的、熱的",
     "sentences": [
       {
         "jp": "何か熱い飲み物を下さい。",
@@ -1301,7 +1301,7 @@
     "meaningEn": [
       "over there"
     ],
-    "meaningZh": null,
+    "meaningZh": "那邊、那裡",
     "sentences": []
   },
   {
@@ -1318,7 +1318,7 @@
     "meaningEn": [
       "afterwards (later); in the future; the rest; since then"
     ],
-    "meaningZh": null,
+    "meaningZh": "之後；其餘；此後",
     "sentences": [
       {
         "jp": "あと２通手紙を書かなくてはならない。",
@@ -1362,7 +1362,7 @@
     "meaningEn": [
       "you"
     ],
-    "meaningZh": null,
+    "meaningZh": "你、您",
     "sentences": []
   },
   {
@@ -1377,7 +1377,7 @@
     "meaningEn": [
       "(my) older brother (humble)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（自謙）哥哥",
     "sentences": [
       {
         "jp": "私の兄は技師になった。",
@@ -1398,7 +1398,7 @@
     "meaningEn": [
       "(my) older sister (humble)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（自謙）姊姊",
     "sentences": [
       {
         "jp": "姉は私のズボンにアイロンをかけてくれる。",
@@ -1425,7 +1425,7 @@
       "that over there; like that",
       "that way; um..."
     ],
-    "meaningZh": null,
+    "meaningZh": "那個；嗯…",
     "sentences": []
   },
   {
@@ -1440,7 +1440,7 @@
     "meaningEn": [
       "apartment (abbr.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "公寓",
     "sentences": [
       {
         "jp": "２部屋あるアパートを借りたいのですが。",
@@ -1468,7 +1468,7 @@
       "to bathe",
       "to shower"
     ],
-    "meaningZh": null,
+    "meaningZh": "沐浴；淋浴",
     "sentences": [
       {
         "jp": "屋根は日を浴びて輝いている。",
@@ -1491,7 +1491,7 @@
       "dangerous",
       "critical"
     ],
-    "meaningZh": null,
+    "meaningZh": "危險的",
     "sentences": [
       {
         "jp": "彼の命が危ない。",
@@ -1533,7 +1533,7 @@
       "generous",
       "sweet"
     ],
-    "meaningZh": null,
+    "meaningZh": "甜的；寬鬆的",
     "sentences": [
       {
         "jp": "ゆりは甘い香りがする。",
@@ -1573,7 +1573,7 @@
     "meaningEn": [
       "not very; surplus"
     ],
-    "meaningZh": null,
+    "meaningZh": "不太；剩餘",
     "sentences": [
       {
         "jp": "この手の本はあまり読まない。",
@@ -1614,7 +1614,7 @@
     "meaningEn": [
       "rain"
     ],
-    "meaningZh": null,
+    "meaningZh": "雨",
     "sentences": [
       {
         "jp": "夕方から雨だっていっていたよ。",
@@ -1670,7 +1670,7 @@
     "meaningEn": [
       "(hard) candy"
     ],
-    "meaningZh": null,
+    "meaningZh": "糖果",
     "sentences": [
       {
         "jp": "いい子にしていたら、あめをあげよう。",
@@ -1702,7 +1702,7 @@
     "meaningEn": [
       "to wash"
     ],
-    "meaningZh": null,
+    "meaningZh": "洗",
     "sentences": [
       {
         "jp": "そのバッグを洗うときは洗濯機に入れないでください。",
@@ -1726,7 +1726,7 @@
       "to be",
       "to have"
     ],
-    "meaningZh": null,
+    "meaningZh": "存在；有（無生命）",
     "sentences": []
   },
   {
@@ -1744,7 +1744,7 @@
       "to be",
       "to have"
     ],
-    "meaningZh": null,
+    "meaningZh": "有；存在",
     "sentences": [
       {
         "jp": "悪いけどほかに用事があるの。",
@@ -1771,7 +1771,7 @@
     "meaningEn": [
       "to walk"
     ],
-    "meaningZh": null,
+    "meaningZh": "走路、步行",
     "sentences": [
       {
         "jp": "歩いて行きますか？それともバスで行きますか？",
@@ -1792,7 +1792,7 @@
     "meaningEn": [
       "that one (over there)"
     ],
-    "meaningZh": null,
+    "meaningZh": "那個（較遠的事物）",
     "sentences": [
       {
         "jp": "あれ、そんなに近いとは知りませんでした。",
@@ -1811,7 +1811,7 @@
     "meaningEn": [
       "good"
     ],
-    "meaningZh": null,
+    "meaningZh": "好的",
     "sentences": []
   },
   {
@@ -1827,7 +1827,7 @@
       "no",
       "not at all"
     ],
-    "meaningZh": null,
+    "meaningZh": "不、不是",
     "sentences": [
       {
         "jp": "「机の中に本がありますか」「いいえ、ありません」",
@@ -1850,7 +1850,7 @@
     "meaningEn": [
       "to say"
     ],
-    "meaningZh": null,
+    "meaningZh": "說、講",
     "sentences": [
       {
         "jp": "この動物は日本語で何と言いますか。",
@@ -1877,7 +1877,7 @@
       "house",
       "home"
     ],
-    "meaningZh": null,
+    "meaningZh": "房子、家",
     "sentences": [
       {
         "jp": "うちには十頭の牛がいる。",
@@ -1922,7 +1922,7 @@
       "how",
       "in what way"
     ],
-    "meaningZh": null,
+    "meaningZh": "如何、怎麼樣",
     "sentences": []
   },
   {
@@ -1935,7 +1935,7 @@
     "meaningEn": [
       "to go"
     ],
-    "meaningZh": null,
+    "meaningZh": "去",
     "sentences": [
       {
         "jp": "あなたのおかげで仕事がうまく行きました。",
@@ -1970,7 +1970,7 @@
       "how many",
       "how old"
     ],
-    "meaningZh": null,
+    "meaningZh": "幾個；幾歲",
     "sentences": []
   },
   {
@@ -1986,7 +1986,7 @@
       "how much",
       "how many"
     ],
-    "meaningZh": null,
+    "meaningZh": "多少（錢、數量）",
     "sentences": []
   },
   {
@@ -2001,7 +2001,7 @@
     "meaningEn": [
       "pond"
     ],
-    "meaningZh": null,
+    "meaningZh": "池塘",
     "sentences": [
       {
         "jp": "池には橋がかかっている。",
@@ -2057,7 +2057,7 @@
     "meaningEn": [
       "doctor; physician"
     ],
-    "meaningZh": null,
+    "meaningZh": "醫生",
     "sentences": [
       {
         "jp": "母は私を医者にした。",
@@ -2113,7 +2113,7 @@
     "meaningEn": [
       "chair"
     ],
-    "meaningZh": null,
+    "meaningZh": "椅子",
     "sentences": [
       {
         "jp": "ちょっと椅子をずらしてくれない？",
@@ -2140,7 +2140,7 @@
       "busy (people",
       "days)"
     ],
-    "meaningZh": null,
+    "meaningZh": "忙碌的",
     "sentences": [
       {
         "jp": "あいつはのらりくらりの仕事にお忙しい事だ。",
@@ -2161,7 +2161,7 @@
     "meaningEn": [
       "hurt; painful; sore"
     ],
-    "meaningZh": null,
+    "meaningZh": "痛的、疼痛",
     "sentences": [
       {
         "jp": "噛むと痛いですか。",
@@ -2187,7 +2187,7 @@
     "meaningEn": [
       "one"
     ],
-    "meaningZh": null,
+    "meaningZh": "一",
     "sentences": [
       {
         "jp": "これは東京一のインドレストランです。",
@@ -2219,7 +2219,7 @@
     "meaningEn": [
       "one day (duration)"
     ],
-    "meaningZh": null,
+    "meaningZh": "一整天",
     "sentences": [
       {
         "jp": "その手紙の日付は１９８７年４月１日となっている。",
@@ -2254,7 +2254,7 @@
       "first",
       "number one"
     ],
-    "meaningZh": null,
+    "meaningZh": "第一；最",
     "sentences": [
       {
         "jp": "このネクタイにしましょう、一番よさそうだから。",
@@ -2278,7 +2278,7 @@
     "meaningEn": [
       "when"
     ],
-    "meaningZh": null,
+    "meaningZh": "什麼時候",
     "sentences": []
   },
   {
@@ -2293,7 +2293,7 @@
     "meaningEn": [
       "five days; fifth day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "五天；五號",
     "sentences": [
       {
         "jp": "１月５日から１月１５日までおねがいします。",
@@ -2315,7 +2315,7 @@
     "meaningEn": [
       "together"
     ],
-    "meaningZh": null,
+    "meaningZh": "一起",
     "sentences": [
       {
         "jp": "彼女が私といっしょに行きたがっているかどうか私は知りません。",
@@ -2372,7 +2372,7 @@
     "meaningEn": [
       "five things"
     ],
-    "meaningZh": null,
+    "meaningZh": "五個",
     "sentences": [
       {
         "jp": "ここに、今日の英語に関する５つの驚くべき事実があります。",
@@ -2429,7 +2429,7 @@
       "every time",
       "never (with neg. verb)"
     ],
-    "meaningZh": null,
+    "meaningZh": "總是；經常",
     "sentences": []
   },
   {
@@ -2445,7 +2445,7 @@
     "meaningEn": [
       "dog"
     ],
-    "meaningZh": null,
+    "meaningZh": "狗",
     "sentences": [
       {
         "jp": "彼女は吠える犬を怖がる。",
@@ -2473,7 +2473,7 @@
     "meaningEn": [
       "now"
     ],
-    "meaningZh": null,
+    "meaningZh": "現在",
     "sentences": [
       {
         "jp": "今のアナウンスは何だったのですか。",
@@ -2502,7 +2502,7 @@
       "meaning",
       "significance"
     ],
-    "meaningZh": null,
+    "meaningZh": "意思；含義",
     "sentences": [
       {
         "jp": "彼のいったことはいくつかの意味に解釈できます。",
@@ -2558,7 +2558,7 @@
     "meaningEn": [
       "younger sister (humble)"
     ],
-    "meaningZh": null,
+    "meaningZh": "妹妹（謙稱）",
     "sentences": [
       {
         "jp": "あのかわいい少女は私の妹です。",
@@ -2582,7 +2582,7 @@
       "detestable",
       "unpleasant"
     ],
-    "meaningZh": null,
+    "meaningZh": "討厭；不喜歡",
     "sentences": [
       {
         "jp": "この卵は嫌な匂いがする。",
@@ -2608,7 +2608,7 @@
     "meaningEn": [
       "entrance"
     ],
-    "meaningZh": null,
+    "meaningZh": "入口",
     "sentences": []
   },
   {
@@ -2626,7 +2626,7 @@
       "(humble) to be (animate)",
       "to exist"
     ],
-    "meaningZh": null,
+    "meaningZh": "在；存在（有生命）",
     "sentences": [
       {
         "jp": "おかげで元気にしております。",
@@ -2668,7 +2668,7 @@
     "meaningEn": [
       "to need"
     ],
-    "meaningZh": null,
+    "meaningZh": "需要",
     "sentences": [
       {
         "jp": "今のところお金はいらない。",
@@ -2690,7 +2690,7 @@
     "meaningEn": [
       "to put in"
     ],
-    "meaningZh": null,
+    "meaningZh": "放入；裝入",
     "sentences": [
       {
         "jp": "あなたは、私にコーヒーをいれてもらいたいですか。",
@@ -2726,7 +2726,7 @@
     "meaningEn": [
       "color"
     ],
-    "meaningZh": null,
+    "meaningZh": "顏色",
     "sentences": [
       {
         "jp": "その色は彼女の髪の毛とよく合った。",
@@ -2756,7 +2756,7 @@
     "meaningEn": [
       "various"
     ],
-    "meaningZh": null,
+    "meaningZh": "各種各樣",
     "sentences": [
       {
         "jp": "いろいろな国へ行ったがやっぱり日本が一番いい。",
@@ -2788,7 +2788,7 @@
       "over",
       "on top of"
     ],
-    "meaningZh": null,
+    "meaningZh": "上面；上方",
     "sentences": [
       {
         "jp": "寒かったうえに、風も強かった。",
@@ -2847,7 +2847,7 @@
       "behind",
       "rear"
     ],
-    "meaningZh": null,
+    "meaningZh": "後面；背後",
     "sentences": [
       {
         "jp": "彼の後ろにいる。",
@@ -2904,7 +2904,7 @@
       "thin",
       "weak"
     ],
-    "meaningZh": null,
+    "meaningZh": "薄的；淡的",
     "sentences": [
       {
         "jp": "肉を薄く切りなさい。",
@@ -2945,7 +2945,7 @@
     "meaningEn": [
       "a song"
     ],
-    "meaningZh": null,
+    "meaningZh": "歌曲",
     "sentences": [
       {
         "jp": "この歌を聞くと私はいつも、学生時代を思い出す。",
@@ -2968,7 +2968,7 @@
     "meaningEn": [
       "to sing"
     ],
-    "meaningZh": null,
+    "meaningZh": "唱歌",
     "sentences": [
       {
         "jp": "ジョンはステージで何を歌いましたか。",
@@ -2987,7 +2987,7 @@
     "meaningEn": [
       "home; house; my place"
     ],
-    "meaningZh": null,
+    "meaningZh": "家；我家",
     "sentences": []
   },
   {
@@ -3003,7 +3003,7 @@
     "meaningEn": [
       "to be born"
     ],
-    "meaningZh": null,
+    "meaningZh": "出生",
     "sentences": [
       {
         "jp": "あなたは何座生まれですか。",
@@ -3025,7 +3025,7 @@
       "sea",
       "beach"
     ],
-    "meaningZh": null,
+    "meaningZh": "海；海邊",
     "sentences": [
       {
         "jp": "冷たい風は海から吹いている。",
@@ -3082,7 +3082,7 @@
     "meaningEn": [
       "to sell (v.t.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "賣",
     "sentences": [
       {
         "jp": "ガソリンはリットル単位で売られる。",
@@ -3101,7 +3101,7 @@
     "meaningEn": [
       "noisy; annoying"
     ],
-    "meaningZh": null,
+    "meaningZh": "吵鬧的；煩人的",
     "sentences": []
   },
   {
@@ -3117,7 +3117,7 @@
       "coat",
       "jacket"
     ],
-    "meaningZh": null,
+    "meaningZh": "外套；上衣",
     "sentences": [
       {
         "jp": "上着を今着ているところだ。",
@@ -3173,7 +3173,7 @@
     "meaningEn": [
       "a painting; a picture; a drawing"
     ],
-    "meaningZh": null,
+    "meaningZh": "畫；圖畫",
     "sentences": [
       {
         "jp": "壁にたくさんの絵がかかっている。",
@@ -3230,7 +3230,7 @@
       "movie",
       "film"
     ],
-    "meaningZh": null,
+    "meaningZh": "電影",
     "sentences": [
       {
         "jp": "妹と私はときどき映画に行きます。",
@@ -3287,7 +3287,7 @@
       "movie theater",
       "cinema"
     ],
-    "meaningZh": null,
+    "meaningZh": "電影院",
     "sentences": [
       {
         "jp": "この近くに映画館はありますか。",
@@ -3343,7 +3343,7 @@
     "meaningEn": [
       "English (language)"
     ],
-    "meaningZh": null,
+    "meaningZh": "英語",
     "sentences": [
       {
         "jp": "誰か英語を話す人はいますか。",
@@ -3400,7 +3400,7 @@
     "meaningEn": [
       "yes"
     ],
-    "meaningZh": null,
+    "meaningZh": "是的（應答）",
     "sentences": [
       {
         "jp": "君、ええ仕事をしてるな。",
@@ -3432,7 +3432,7 @@
     "meaningEn": [
       "station"
     ],
-    "meaningZh": null,
+    "meaningZh": "車站",
     "sentences": [
       {
         "jp": "明日駅で会いましょう。",
@@ -3488,7 +3488,7 @@
     "meaningEn": [
       "elevator"
     ],
-    "meaningZh": null,
+    "meaningZh": "電梯",
     "sentences": [
       {
         "jp": "エレベーターの中でのタバコはご遠慮下さい。",
@@ -3509,7 +3509,7 @@
     "meaningEn": [
       "pencil"
     ],
-    "meaningZh": null,
+    "meaningZh": "鉛筆",
     "sentences": [
       {
         "jp": "彼は鉛筆を２本持っている。１本は長くあとの１本は短い。",
@@ -3563,7 +3563,7 @@
     "meaningEn": [
       "honorable ~ (honorific)"
     ],
-    "meaningZh": null,
+    "meaningZh": "表示尊敬的接頭詞",
     "sentences": []
   },
   {
@@ -3579,7 +3579,7 @@
       "delicious",
       "tasty"
     ],
-    "meaningZh": null,
+    "meaningZh": "好吃的；美味的",
     "sentences": [
       {
         "jp": "おいしい食事をありがとう。",
@@ -3600,7 +3600,7 @@
     "meaningEn": [
       "many; there are a lot"
     ],
-    "meaningZh": null,
+    "meaningZh": "多；很多",
     "sentences": [
       {
         "jp": "話すことが多すぎて、どこから話し始めたらいいか分からない。",
@@ -3657,7 +3657,7 @@
       "big",
       "large"
     ],
-    "meaningZh": null,
+    "meaningZh": "大的；巨大的",
     "sentences": [
       {
         "jp": "もっと大きい声で言ってください。",
@@ -3683,7 +3683,7 @@
     "meaningEn": [
       "big"
     ],
-    "meaningZh": null,
+    "meaningZh": "大的（連體詞）",
     "sentences": [
       {
         "jp": "彼女は大きな家に住んでいる。",
@@ -3741,7 +3741,7 @@
     "meaningEn": [
       "great number of people"
     ],
-    "meaningZh": null,
+    "meaningZh": "許多人；一大群人",
     "sentences": [
       {
         "jp": "そこには大勢の人がいた。",
@@ -3763,7 +3763,7 @@
     "meaningEn": [
       "mother (formal)"
     ],
-    "meaningZh": null,
+    "meaningZh": "媽媽（尊稱）",
     "sentences": [
       {
         "jp": "「どなたですか」「お母さんよ」",
@@ -3821,7 +3821,7 @@
       "sweets",
       "snack"
     ],
-    "meaningZh": null,
+    "meaningZh": "點心；糖果；零食",
     "sentences": [
       {
         "jp": "いろいろなお菓子があった。",
@@ -3877,7 +3877,7 @@
     "meaningEn": [
       "money"
     ],
-    "meaningZh": null,
+    "meaningZh": "錢",
     "sentences": [
       {
         "jp": "友達にお金を借りました。",
@@ -3935,7 +3935,7 @@
       "to get up (e.g.",
       "from sleeping); to happen"
     ],
-    "meaningZh": null,
+    "meaningZh": "起床；發生",
     "sentences": [
       {
         "jp": "「事故が起きれば、すぐにわかるよ」と彼は言う。",
@@ -3968,7 +3968,7 @@
     "meaningEn": [
       "to put; to lay; to place"
     ],
-    "meaningZh": null,
+    "meaningZh": "放置；擺放",
     "sentences": [
       {
         "jp": "それをテーブルの上に置きなさい。",
@@ -4014,7 +4014,7 @@
     "meaningEn": [
       "(someone else's) wife (hon.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "您太太（尊稱）",
     "sentences": [
       {
         "jp": "彼の奥さんはどんな人？",
@@ -4070,7 +4070,7 @@
     "meaningEn": [
       "sake; alcohol"
     ],
-    "meaningZh": null,
+    "meaningZh": "日本酒；酒",
     "sentences": [
       {
         "jp": "夫はたまに御酒をたしなみます。",
@@ -4092,7 +4092,7 @@
       "plate",
       "dish"
     ],
-    "meaningZh": null,
+    "meaningZh": "盤子；碟子",
     "sentences": [
       {
         "jp": "お皿に取ったものは全部食べなさい。",
@@ -4147,7 +4147,7 @@
       "grandfather",
       "male senior citizen"
     ],
-    "meaningZh": null,
+    "meaningZh": "爺爺；老先生",
     "sentences": []
   },
   {
@@ -4165,7 +4165,7 @@
       "to inform",
       "to instruct"
     ],
-    "meaningZh": null,
+    "meaningZh": "教；告知",
     "sentences": [
       {
         "jp": "地下鉄へ行く道を教えていただけませんか。",
@@ -4190,7 +4190,7 @@
       "uncle",
       "middle-aged man"
     ],
-    "meaningZh": null,
+    "meaningZh": "叔叔；伯伯；中年男性",
     "sentences": []
   },
   {
@@ -4210,7 +4210,7 @@
       "to stamp (e.g.",
       "a passport)"
     ],
-    "meaningZh": null,
+    "meaningZh": "推；按；蓋章",
     "sentences": [
       {
         "jp": "シャッターを押してくれますか。",
@@ -4236,7 +4236,7 @@
     "meaningEn": [
       "slow; (to be) late"
     ],
-    "meaningZh": null,
+    "meaningZh": "慢；遲；晚",
     "sentences": [
       {
         "jp": "今年は春の訪れが遅い。",
@@ -4274,7 +4274,7 @@
     "meaningEn": [
       "(green) tea"
     ],
-    "meaningZh": null,
+    "meaningZh": "（綠）茶",
     "sentences": [
       {
         "jp": "３時はお茶にしよう。",
@@ -4303,7 +4303,7 @@
       "bathroom (lit.",
       "a place to wash one's hands)"
     ],
-    "meaningZh": null,
+    "meaningZh": "廁所；洗手間",
     "sentences": [
       {
         "jp": "歴史の試験中、彼女は気分が悪くなったのでお手洗いにたたせてもらった。",
@@ -4350,7 +4350,7 @@
     "meaningEn": [
       "father (formal)"
     ],
-    "meaningZh": null,
+    "meaningZh": "父親（敬稱）",
     "sentences": [
       {
         "jp": "夕べお父さんが病院で死んだ。",
@@ -4406,7 +4406,7 @@
     "meaningEn": [
       "younger brother"
     ],
-    "meaningZh": null,
+    "meaningZh": "弟弟",
     "sentences": [
       {
         "jp": "彼は私と弟を取り違えた。",
@@ -4429,7 +4429,7 @@
       "man",
       "male"
     ],
-    "meaningZh": null,
+    "meaningZh": "男人；男性",
     "sentences": [
       {
         "jp": "あんな男見ても胸くそが悪い。",
@@ -4451,7 +4451,7 @@
     "meaningEn": [
       "boy"
     ],
-    "meaningZh": null,
+    "meaningZh": "男孩",
     "sentences": [
       {
         "jp": "あのハンサムな男の子を見て。",
@@ -4473,7 +4473,7 @@
     "meaningEn": [
       "the day before yesterday"
     ],
-    "meaningZh": null,
+    "meaningZh": "前天",
     "sentences": [
       {
         "jp": "おとといそこへ行きました。",
@@ -4527,7 +4527,7 @@
     "meaningEn": [
       "year before last"
     ],
-    "meaningZh": null,
+    "meaningZh": "前年",
     "sentences": []
   },
   {
@@ -4544,7 +4544,7 @@
     "meaningEn": [
       "adult"
     ],
-    "meaningZh": null,
+    "meaningZh": "大人；成人",
     "sentences": [
       {
         "jp": "大人だけこの映画が見える。",
@@ -4565,7 +4565,7 @@
     "meaningEn": [
       "stomach"
     ],
-    "meaningZh": null,
+    "meaningZh": "肚子；胃",
     "sentences": [
       {
         "jp": "お腹が痛いの。",
@@ -4624,7 +4624,7 @@
       "same",
       "identical"
     ],
-    "meaningZh": null,
+    "meaningZh": "相同；一樣",
     "sentences": [
       {
         "jp": "ジャズが使う音符は、バッハが使ったのと同じだ",
@@ -4645,7 +4645,7 @@
     "meaningEn": [
       "(someone else's) older brother (formal)"
     ],
-    "meaningZh": null,
+    "meaningZh": "哥哥（敬稱）",
     "sentences": [
       {
         "jp": "彼のお兄さんは有名なサッカーの選手です。",
@@ -4666,7 +4666,7 @@
     "meaningEn": [
       "older sister (formal)"
     ],
-    "meaningZh": null,
+    "meaningZh": "姊姊（敬稱）",
     "sentences": [
       {
         "jp": "ねえ蓮、お姉さんが手をつないであげようか？キミは毎年すぐにはぐれちゃうもんね。",
@@ -4691,7 +4691,7 @@
       "grandmother",
       "female senior-citizen"
     ],
-    "meaningZh": null,
+    "meaningZh": "祖母；老奶奶",
     "sentences": []
   },
   {
@@ -4704,7 +4704,7 @@
     "meaningEn": [
       "aunt"
     ],
-    "meaningZh": null,
+    "meaningZh": "阿姨；伯母",
     "sentences": []
   },
   {
@@ -4719,7 +4719,7 @@
     "meaningEn": [
       "a bath"
     ],
-    "meaningZh": null,
+    "meaningZh": "洗澡；浴缸",
     "sentences": [
       {
         "jp": "あっちっち！このお風呂、熱くて入れないよ。",
@@ -4775,7 +4775,7 @@
     "meaningEn": [
       "a boxed lunch"
     ],
-    "meaningZh": null,
+    "meaningZh": "便當",
     "sentences": [
       {
         "jp": "公園でお弁当を食べませんか。",
@@ -4830,7 +4830,7 @@
       "to remember",
       "to memorize"
     ],
-    "meaningZh": null,
+    "meaningZh": "記住；記憶；學習",
     "sentences": [
       {
         "jp": "あなたが知っている事を全部彼に話す事を覚えておいてください。",
@@ -4859,7 +4859,7 @@
     "meaningEn": [
       "policeman (friendly term)"
     ],
-    "meaningZh": null,
+    "meaningZh": "警察（親切說法）",
     "sentences": []
   },
   {
@@ -4874,7 +4874,7 @@
     "meaningEn": [
       "heavy; serious"
     ],
-    "meaningZh": null,
+    "meaningZh": "重；嚴重",
     "sentences": [
       {
         "jp": "「彼の病気は重いのかな」「そうでないといいね」",
@@ -4911,7 +4911,7 @@
       "interesting",
       "amusing"
     ],
-    "meaningZh": null,
+    "meaningZh": "有趣；好玩",
     "sentences": [
       {
         "jp": "これは私が読んだ中で一番面白い本です。",
@@ -4953,7 +4953,7 @@
     "meaningEn": [
       "to swim"
     ],
-    "meaningZh": null,
+    "meaningZh": "游泳",
     "sentences": [
       {
         "jp": "この湖で泳ぐのは危険だと思うんだ。",
@@ -4975,7 +4975,7 @@
     "meaningEn": [
       "to get off"
     ],
-    "meaningZh": null,
+    "meaningZh": "下車；下來",
     "sentences": [
       {
         "jp": "ここで降りましょう。",
@@ -5010,7 +5010,7 @@
       "to finish",
       "to close"
     ],
-    "meaningZh": null,
+    "meaningZh": "結束；完成",
     "sentences": []
   },
   {
@@ -5025,7 +5025,7 @@
     "meaningEn": [
       "Music"
     ],
-    "meaningZh": null,
+    "meaningZh": "音樂",
     "sentences": [
       {
         "jp": "「彼女は音楽が好きだ」「私もそうだ」",
@@ -5083,7 +5083,7 @@
       "woman",
       "female"
     ],
-    "meaningZh": null,
+    "meaningZh": "女人；女性",
     "sentences": [
       {
         "jp": "彼が戻ってきた時には、女は歩み去っていた。",
@@ -5105,7 +5105,7 @@
     "meaningEn": [
       "girl"
     ],
-    "meaningZh": null,
+    "meaningZh": "女孩",
     "sentences": [
       {
         "jp": "その女の子達は、とても忙しい。",
@@ -5127,7 +5127,7 @@
     "meaningEn": [
       "foreign country; abroad"
     ],
-    "meaningZh": null,
+    "meaningZh": "外國；國外",
     "sentences": [
       {
         "jp": "僕は将来、外国貿易をやりたい。",
@@ -5183,7 +5183,7 @@
     "meaningEn": [
       "foreigner"
     ],
-    "meaningZh": null,
+    "meaningZh": "外國人",
     "sentences": [
       {
         "jp": "彼が話すのを聞けば、彼を外国人と思うだろう。",
@@ -5240,7 +5240,7 @@
       "company",
       "corporation"
     ],
-    "meaningZh": null,
+    "meaningZh": "公司",
     "sentences": [
       {
         "jp": "父は今朝普段より遅く会社に着いた。",
@@ -5266,7 +5266,7 @@
     "meaningEn": [
       "stairs"
     ],
-    "meaningZh": null,
+    "meaningZh": "樓梯",
     "sentences": [
       {
         "jp": "誰かが階段を登ってくる。",
@@ -5324,7 +5324,7 @@
     "meaningEn": [
       "shopping"
     ],
-    "meaningZh": null,
+    "meaningZh": "購物",
     "sentences": [
       {
         "jp": "友達と買い物に行った。",
@@ -5381,7 +5381,7 @@
     "meaningEn": [
       "to buy"
     ],
-    "meaningZh": null,
+    "meaningZh": "買",
     "sentences": [
       {
         "jp": "彼のスキーヤーとしての優秀性は十分に買っています。",
@@ -5414,7 +5414,7 @@
     "meaningEn": [
       "to return something"
     ],
-    "meaningZh": null,
+    "meaningZh": "歸還；還給",
     "sentences": [
       {
         "jp": "お金は明日返すよ。",
@@ -5443,7 +5443,7 @@
       "to go home",
       "to return"
     ],
-    "meaningZh": null,
+    "meaningZh": "回去；回家",
     "sentences": [
       {
         "jp": "恋人よ、我に帰れ。",
@@ -5469,7 +5469,7 @@
     "meaningEn": [
       "face (body part)"
     ],
-    "meaningZh": null,
+    "meaningZh": "臉",
     "sentences": [
       {
         "jp": "ヘレンはみんなにほめられて顔を赤くした。",
@@ -5494,7 +5494,7 @@
       "it takes (amount of time",
       "money) (v.i.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "花費（時間或金錢）",
     "sentences": []
   },
   {
@@ -5509,7 +5509,7 @@
     "meaningEn": [
       "a lock; a key"
     ],
-    "meaningZh": null,
+    "meaningZh": "鑰匙；鎖",
     "sentences": [
       {
         "jp": "ドアを開ける際に、私は鍵を壊してしまった。",
@@ -5531,7 +5531,7 @@
     "meaningEn": [
       "to write"
     ],
-    "meaningZh": null,
+    "meaningZh": "寫",
     "sentences": [
       {
         "jp": "ここにあなたの名前をかいてくれませんか。",
@@ -5552,7 +5552,7 @@
     "meaningEn": [
       "student"
     ],
-    "meaningZh": null,
+    "meaningZh": "學生",
     "sentences": [
       {
         "jp": "学生の半数が休んでいた。",
@@ -5572,7 +5572,7 @@
       "to dial/call (e.g.",
       "phone); to sit down"
     ],
-    "meaningZh": null,
+    "meaningZh": "打（電話）；坐下",
     "sentences": []
   },
   {
@@ -5591,7 +5591,7 @@
       "glasses); to hang (e.g.",
       "on a wall)"
     ],
-    "meaningZh": null,
+    "meaningZh": "戴上；掛上",
     "sentences": [
       {
         "jp": "４掛ける２は８だ。",
@@ -5648,7 +5648,7 @@
       "umbrella",
       "parasol"
     ],
-    "meaningZh": null,
+    "meaningZh": "雨傘；陽傘",
     "sentences": [
       {
         "jp": "タクシーに傘を忘れてしまった。",
@@ -5670,7 +5670,7 @@
     "meaningEn": [
       "to lend"
     ],
-    "meaningZh": null,
+    "meaningZh": "借出；出借",
     "sentences": [
       {
         "jp": "夏の間彼らは家を人に貸した。",
@@ -5698,7 +5698,7 @@
       "wind",
       "breeze"
     ],
-    "meaningZh": null,
+    "meaningZh": "風；微風",
     "sentences": [
       {
         "jp": "あなたのサロン風のスカートが好きです。",
@@ -5730,7 +5730,7 @@
       "cold",
       "flu"
     ],
-    "meaningZh": null,
+    "meaningZh": "感冒",
     "sentences": [
       {
         "jp": "妹は悪い風邪にかかっている。",
@@ -5787,7 +5787,7 @@
       "family",
       "members of a family"
     ],
-    "meaningZh": null,
+    "meaningZh": "家人；家族",
     "sentences": [
       {
         "jp": "彼女は私の家族の中で一番早く起きる。",
@@ -5844,7 +5844,7 @@
     "meaningEn": [
       "-- honorific form for 人 (ひと) --; way of doing"
     ],
-    "meaningZh": null,
+    "meaningZh": "（人的敬稱）；做法",
     "sentences": [
       {
         "jp": "ジョンの方が二人のうちで背が高い。",
@@ -5875,7 +5875,7 @@
     "meaningEn": [
       "katakana"
     ],
-    "meaningZh": null,
+    "meaningZh": "片假名",
     "sentences": []
   },
   {
@@ -5890,7 +5890,7 @@
     "meaningEn": [
       "a school"
     ],
-    "meaningZh": null,
+    "meaningZh": "學校",
     "sentences": [
       {
         "jp": "明日は学校が休みです。",
@@ -5946,7 +5946,7 @@
     "meaningEn": [
       "cup"
     ],
-    "meaningZh": null,
+    "meaningZh": "杯子",
     "sentences": [
       {
         "jp": "テーブルの上にカップがある。",
@@ -6002,7 +6002,7 @@
     "meaningEn": [
       "home; family"
     ],
-    "meaningZh": null,
+    "meaningZh": "家庭；家",
     "sentences": [
       {
         "jp": "仕事と家庭どっちが大切なの？",
@@ -6060,7 +6060,7 @@
       "desk",
       "pavement)"
     ],
-    "meaningZh": null,
+    "meaningZh": "角落；轉角",
     "sentences": [
       {
         "jp": "次の角で右に曲がりなさい。",
@@ -6100,7 +6100,7 @@
       "bag",
       "basket"
     ],
-    "meaningZh": null,
+    "meaningZh": "包包；袋子",
     "sentences": []
   },
   {
@@ -6115,7 +6115,7 @@
     "meaningEn": [
       "(flower) vase"
     ],
-    "meaningZh": null,
+    "meaningZh": "花瓶",
     "sentences": [
       {
         "jp": "花びんは粉々になった。",
@@ -6136,7 +6136,7 @@
       "to put on (e.g.",
       "a hat on the head)"
     ],
-    "meaningZh": null,
+    "meaningZh": "戴（帽子等）；穿戴",
     "sentences": []
   },
   {
@@ -6151,7 +6151,7 @@
     "meaningEn": [
       "paper"
     ],
-    "meaningZh": null,
+    "meaningZh": "紙",
     "sentences": [
       {
         "jp": "書く紙がない。",
@@ -6207,7 +6207,7 @@
     "meaningEn": [
       "camera"
     ],
-    "meaningZh": null,
+    "meaningZh": "相機",
     "sentences": [
       {
         "jp": "父は私にカメラを買ってくれました。",
@@ -6264,7 +6264,7 @@
     "meaningEn": [
       "Tuesday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期二",
     "sentences": [
       {
         "jp": "できたら火曜日に来なさい。",
@@ -6320,7 +6320,7 @@
     "meaningEn": [
       "hot and spicy; salty"
     ],
-    "meaningZh": null,
+    "meaningZh": "辣的；鹹的",
     "sentences": [
       {
         "jp": "私は辛い食物はあまり好きではない。",
@@ -6346,7 +6346,7 @@
     "meaningEn": [
       "body; health"
     ],
-    "meaningZh": null,
+    "meaningZh": "身體；健康",
     "sentences": [
       {
         "jp": "あのころ、もっと一生懸命体を鍛えていたら、彼は今頃はもっと健康であろうに。",
@@ -6384,7 +6384,7 @@
       "to borrow",
       "to owe"
     ],
-    "meaningZh": null,
+    "meaningZh": "借入",
     "sentences": [
       {
         "jp": "２部屋あるアパートを借りたいのですが。",
@@ -6412,7 +6412,7 @@
       "non-serious",
       "minor"
     ],
-    "meaningZh": null,
+    "meaningZh": "輕的；輕微的",
     "sentences": [
       {
         "jp": "私は気が短いし、口も軽い男だ。",
@@ -6451,7 +6451,7 @@
     "meaningEn": [
       "curry (abbr. for curry and rice)"
     ],
-    "meaningZh": null,
+    "meaningZh": "咖哩飯",
     "sentences": [
       {
         "jp": "このカレーは辛すぎて食べられない。",
@@ -6507,7 +6507,7 @@
     "meaningEn": [
       "calendar"
     ],
-    "meaningZh": null,
+    "meaningZh": "日曆",
     "sentences": [
       {
         "jp": "整えられた長机、いくつかのパイプ椅子、壁の掲示板にはカレンダーとプリント数枚が張られている。",
@@ -6526,7 +6526,7 @@
     "meaningEn": [
       "river"
     ],
-    "meaningZh": null,
+    "meaningZh": "河川",
     "sentences": []
   },
   {
@@ -6542,7 +6542,7 @@
       "cute",
       "adorable"
     ],
-    "meaningZh": null,
+    "meaningZh": "可愛的",
     "sentences": [
       {
         "jp": "私にとって子供たちは目の中に入れてもいたくないほどかわいいのです。",
@@ -6568,7 +6568,7 @@
     "meaningEn": [
       "kanji; Chinese character"
     ],
-    "meaningZh": null,
+    "meaningZh": "漢字",
     "sentences": [
       {
         "jp": "この漢字はどういう意味ですか。",
@@ -6626,7 +6626,7 @@
       "wood",
       "timber"
     ],
-    "meaningZh": null,
+    "meaningZh": "樹；木材",
     "sentences": [
       {
         "jp": "その木には実がたわわになっていた。",
@@ -6649,7 +6649,7 @@
     "meaningEn": [
       "yellow"
     ],
-    "meaningZh": null,
+    "meaningZh": "黃色",
     "sentences": [
       {
         "jp": "私はたくさんの花を持っている。あるものは赤く、あるものは黄色である。",
@@ -6705,7 +6705,7 @@
     "meaningEn": [
       "yellow"
     ],
-    "meaningZh": null,
+    "meaningZh": "黃色的",
     "sentences": [
       {
         "jp": "秋になると葉は黄色くなる。",
@@ -6728,7 +6728,7 @@
       "to vanish",
       "to disappear"
     ],
-    "meaningZh": null,
+    "meaningZh": "消失；熄滅",
     "sentences": [
       {
         "jp": "たくさんの虫が一晩のうちに消えてしまった。",
@@ -6777,7 +6777,7 @@
       "to listen",
       "to ask"
     ],
-    "meaningZh": null,
+    "meaningZh": "聽；詢問",
     "sentences": [
       {
         "jp": "音楽が好きで、毎日聴いています。",
@@ -6803,7 +6803,7 @@
     "meaningEn": [
       "north"
     ],
-    "meaningZh": null,
+    "meaningZh": "北方",
     "sentences": [
       {
         "jp": "北から冷たい風が吹いていた。",
@@ -6859,7 +6859,7 @@
     "meaningEn": [
       "guitar"
     ],
-    "meaningZh": null,
+    "meaningZh": "吉他",
     "sentences": [
       {
         "jp": "私はギターをひきたい。",
@@ -6917,7 +6917,7 @@
       "unclean",
       "filthy"
     ],
-    "meaningZh": null,
+    "meaningZh": "髒的；不乾淨的",
     "sentences": [
       {
         "jp": "あのシャツは汚い。学校に行く前に洗う必要があります。",
@@ -6973,7 +6973,7 @@
     "meaningEn": [
       "café"
     ],
-    "meaningZh": null,
+    "meaningZh": "咖啡廳",
     "sentences": [
       {
         "jp": "あそこの喫茶店でコーヒーでも飲もう。",
@@ -7029,7 +7029,7 @@
     "meaningEn": [
       "postal (postage) stamps"
     ],
-    "meaningZh": null,
+    "meaningZh": "郵票",
     "sentences": [
       {
         "jp": "趣味は切手を集めることです。",
@@ -7050,7 +7050,7 @@
     "meaningEn": [
       "a ticket"
     ],
-    "meaningZh": null,
+    "meaningZh": "票",
     "sentences": [
       {
         "jp": "切符を手にいれてください。",
@@ -7107,7 +7107,7 @@
     "meaningEn": [
       "yesterday"
     ],
-    "meaningZh": null,
+    "meaningZh": "昨天",
     "sentences": [
       {
         "jp": "彼女は昨日背の高い男の人に会いました。",
@@ -7163,7 +7163,7 @@
     "meaningEn": [
       "nine"
     ],
-    "meaningZh": null,
+    "meaningZh": "九",
     "sentences": [
       {
         "jp": "彼は「九時だ」と言った。",
@@ -7184,7 +7184,7 @@
     "meaningEn": [
       "beef"
     ],
-    "meaningZh": null,
+    "meaningZh": "牛肉",
     "sentences": [
       {
         "jp": "牛肉にしてください。",
@@ -7240,7 +7240,7 @@
     "meaningEn": [
       "milk"
     ],
-    "meaningZh": null,
+    "meaningZh": "牛奶",
     "sentences": [
       {
         "jp": "子供は毎日牛乳を飲むべきだ。",
@@ -7298,7 +7298,7 @@
       "today",
       "this day"
     ],
-    "meaningZh": null,
+    "meaningZh": "今天",
     "sentences": [
       {
         "jp": "今日は何をしたいですか。",
@@ -7329,7 +7329,7 @@
     "meaningEn": [
       "classroom"
     ],
-    "meaningZh": null,
+    "meaningZh": "教室",
     "sentences": [
       {
         "jp": "教室は生徒でいっぱいだった。",
@@ -7361,7 +7361,7 @@
       "siblings (humble)",
       "brothers and sisters"
     ],
-    "meaningZh": null,
+    "meaningZh": "兄弟姊妹",
     "sentences": [
       {
         "jp": "女の兄弟がいますか。",
@@ -7418,7 +7418,7 @@
     "meaningEn": [
       "last year"
     ],
-    "meaningZh": null,
+    "meaningZh": "去年",
     "sentences": [
       {
         "jp": "私は去年医者に行きませんでした。",
@@ -7475,7 +7475,7 @@
     "meaningEn": [
       "dislike"
     ],
-    "meaningZh": null,
+    "meaningZh": "討厭；不喜歡",
     "sentences": [
       {
         "jp": "「あなたは仕事が気に入っていると思います」「いやそれどころか、嫌いです」",
@@ -7503,7 +7503,7 @@
     "meaningEn": [
       "to cut; to hang up (a phone)"
     ],
-    "meaningZh": null,
+    "meaningZh": "切；掛斷（電話）",
     "sentences": [
       {
         "jp": "エアコンを切ってもかまいませんか。",
@@ -7555,7 +7555,7 @@
     "meaningEn": [
       "to put on (clothes above your waist); to wear"
     ],
-    "meaningZh": null,
+    "meaningZh": "穿（上衣等）",
     "sentences": [
       {
         "jp": "「あの赤い服を着るのはよしなさい」「なぜいけないの」",
@@ -7583,7 +7583,7 @@
       "clean",
       "tidy"
     ],
-    "meaningZh": null,
+    "meaningZh": "漂亮的；整潔的",
     "sentences": []
   },
   {
@@ -7596,7 +7596,7 @@
     "meaningEn": [
       "(abbr.) kilo (kilogram)"
     ],
-    "meaningZh": null,
+    "meaningZh": "公斤（千克）",
     "sentences": []
   },
   {
@@ -7609,7 +7609,7 @@
     "meaningEn": [
       "(abbr.) kilo (kilometer)"
     ],
-    "meaningZh": null,
+    "meaningZh": "公里（千米）",
     "sentences": []
   },
   {
@@ -7624,7 +7624,7 @@
     "meaningEn": [
       "bank"
     ],
-    "meaningZh": null,
+    "meaningZh": "銀行",
     "sentences": [
       {
         "jp": "父は銀行に勤めています。",
@@ -7681,7 +7681,7 @@
     "meaningEn": [
       "Friday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期五",
     "sentences": [
       {
         "jp": "先週の金曜日この部屋で会合があった。",
@@ -7737,7 +7737,7 @@
     "meaningEn": [
       "nine"
     ],
-    "meaningZh": null,
+    "meaningZh": "九",
     "sentences": [
       {
         "jp": "彼は「九時だ」と言った。",
@@ -7758,7 +7758,7 @@
     "meaningEn": [
       "medicine"
     ],
-    "meaningZh": null,
+    "meaningZh": "藥",
     "sentences": [
       {
         "jp": "この薬を飲めば、あなたは頭痛が治るでしょう。",
@@ -7784,7 +7784,7 @@
     "meaningEn": [
       "(with te-form verb) please do for me"
     ],
-    "meaningZh": null,
+    "meaningZh": "請（做某事）",
     "sentences": [
       {
         "jp": "熱いココアを下さい。",
@@ -7810,7 +7810,7 @@
     "meaningEn": [
       "fruit"
     ],
-    "meaningZh": null,
+    "meaningZh": "水果",
     "sentences": [
       {
         "jp": "果物を何かいかがですか。",
@@ -7868,7 +7868,7 @@
     "meaningEn": [
       "job opening; mouth"
     ],
-    "meaningZh": null,
+    "meaningZh": "嘴巴；職缺",
     "sentences": [
       {
         "jp": "あの仕事の口はまだあるよ。",
@@ -7915,7 +7915,7 @@
       "shoes",
       "footwear"
     ],
-    "meaningZh": null,
+    "meaningZh": "鞋子",
     "sentences": [
       {
         "jp": "くつは革でつくられている。",
@@ -7936,7 +7936,7 @@
     "meaningEn": [
       "socks"
     ],
-    "meaningZh": null,
+    "meaningZh": "襪子",
     "sentences": [
       {
         "jp": "靴下を脱いでください。",
@@ -7992,7 +7992,7 @@
     "meaningEn": [
       "country; place of origin"
     ],
-    "meaningZh": null,
+    "meaningZh": "國家；故鄉",
     "sentences": [
       {
         "jp": "その王がその国を治めていた。",
@@ -8024,7 +8024,7 @@
       "cloudiness",
       "cloudy weather"
     ],
-    "meaningZh": null,
+    "meaningZh": "陰天",
     "sentences": [
       {
         "jp": "昨日、東京は曇りでしたか。",
@@ -8047,7 +8047,7 @@
       "to become cloudy",
       "to become dim"
     ],
-    "meaningZh": null,
+    "meaningZh": "變陰；變暗",
     "sentences": [
       {
         "jp": "蒸気でメガネが曇ってしまった。",
@@ -8069,7 +8069,7 @@
       "dark",
       "gloomy"
     ],
-    "meaningZh": null,
+    "meaningZh": "暗的；陰鬱的",
     "sentences": [
       {
         "jp": "あたりがもう暗くなっていることに気がついた。",
@@ -8090,7 +8090,7 @@
     "meaningEn": [
       "a class"
     ],
-    "meaningZh": null,
+    "meaningZh": "班級",
     "sentences": [
       {
         "jp": "僕と彼女は同じクラスだ。",
@@ -8144,7 +8144,7 @@
     "meaningEn": [
       "gram"
     ],
-    "meaningZh": null,
+    "meaningZh": "公克",
     "sentences": []
   },
   {
@@ -8161,7 +8161,7 @@
     "meaningEn": [
       "to come"
     ],
-    "meaningZh": null,
+    "meaningZh": "來",
     "sentences": [
       {
         "jp": "１０時までに来ます。",
@@ -8188,7 +8188,7 @@
       "car",
       "vehicle"
     ],
-    "meaningZh": null,
+    "meaningZh": "汽車；車輛",
     "sentences": [
       {
         "jp": "明日、私は新しい車で母をつれて出かけます。",
@@ -8245,7 +8245,7 @@
     "meaningEn": [
       "black"
     ],
-    "meaningZh": null,
+    "meaningZh": "黑色",
     "sentences": [
       {
         "jp": "２匹犬を飼っているが、１匹は白でもう１匹は黒だ。",
@@ -8266,7 +8266,7 @@
     "meaningEn": [
       "black; dark"
     ],
-    "meaningZh": null,
+    "meaningZh": "黑的；暗的",
     "sentences": [
       {
         "jp": "州知事は黒い金に手をつけました。",
@@ -8297,7 +8297,7 @@
     "meaningEn": [
       "police officer"
     ],
-    "meaningZh": null,
+    "meaningZh": "警察",
     "sentences": [
       {
         "jp": "彼は警官を見て逃げた。",
@@ -8354,7 +8354,7 @@
     "meaningEn": [
       "this morning"
     ],
-    "meaningZh": null,
+    "meaningZh": "今天早上",
     "sentences": [
       {
         "jp": "実は、今朝から何も食べてないのです。",
@@ -8413,7 +8413,7 @@
       "to delete",
       "to turn off power"
     ],
-    "meaningZh": null,
+    "meaningZh": "消除；關掉",
     "sentences": [
       {
         "jp": "寝る前に電気を消してください。",
@@ -8457,7 +8457,7 @@
       "splendid; enough",
       "tolerably"
     ],
-    "meaningZh": null,
+    "meaningZh": "很好；足夠了",
     "sentences": [
       {
         "jp": "いや結構です。たくさんいただきました。",
@@ -8495,7 +8495,7 @@
     "meaningEn": [
       "marriage (get married)"
     ],
-    "meaningZh": null,
+    "meaningZh": "結婚",
     "sentences": [
       {
         "jp": "結婚の申し込みが殺到した。",
@@ -8517,7 +8517,7 @@
     "meaningEn": [
       "Monday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期一",
     "sentences": [
       {
         "jp": "日曜日の次に月曜日がくる。",
@@ -8573,7 +8573,7 @@
     "meaningEn": [
       "entrance (to a house or a building)"
     ],
-    "meaningZh": null,
+    "meaningZh": "玄關；入口",
     "sentences": [
       {
         "jp": "コートは玄関のところにかけてください。",
@@ -8631,7 +8631,7 @@
       "health(y)",
       "energetic"
     ],
-    "meaningZh": null,
+    "meaningZh": "健康；有精神",
     "sentences": [
       {
         "jp": "妹さんは元気？",
@@ -8687,7 +8687,7 @@
     "meaningEn": [
       "five"
     ],
-    "meaningZh": null,
+    "meaningZh": "五",
     "sentences": [
       {
         "jp": "どこかは今五時だろう。",
@@ -8709,7 +8709,7 @@
       "coat; court (e.g.",
       "tennis)"
     ],
-    "meaningZh": null,
+    "meaningZh": "外套；球場",
     "sentences": [
       {
         "jp": "あなたが家を出た後で、私はあなたのコートに気づきました。",
@@ -8733,7 +8733,7 @@
     "meaningEn": [
       "coffee"
     ],
-    "meaningZh": null,
+    "meaningZh": "咖啡",
     "sentences": []
   },
   {
@@ -8748,7 +8748,7 @@
     "meaningEn": [
       "a park"
     ],
-    "meaningZh": null,
+    "meaningZh": "公園",
     "sentences": [
       {
         "jp": "彼は公園の中を散歩するのが好きだ。",
@@ -8804,7 +8804,7 @@
     "meaningEn": [
       "intersection"
     ],
-    "meaningZh": null,
+    "meaningZh": "十字路口",
     "sentences": [
       {
         "jp": "この交差点は何と呼ばれていますか。",
@@ -8860,7 +8860,7 @@
     "meaningEn": [
       "black tea"
     ],
-    "meaningZh": null,
+    "meaningZh": "紅茶",
     "sentences": [
       {
         "jp": "コーヒーよりは紅茶を飲みたい。",
@@ -8917,7 +8917,7 @@
     "meaningEn": [
       "police box"
     ],
-    "meaningZh": null,
+    "meaningZh": "派出所",
     "sentences": [
       {
         "jp": "向こうの交番で聞いてください。",
@@ -8938,7 +8938,7 @@
     "meaningEn": [
       "voice"
     ],
-    "meaningZh": null,
+    "meaningZh": "聲音",
     "sentences": [
       {
         "jp": "日本人は鳥や虫の声を楽しむ。",
@@ -8968,7 +8968,7 @@
       "here",
       "this place"
     ],
-    "meaningZh": null,
+    "meaningZh": "這裡",
     "sentences": []
   },
   {
@@ -8985,7 +8985,7 @@
       "afternoon",
       "P.M."
     ],
-    "meaningZh": null,
+    "meaningZh": "下午",
     "sentences": [
       {
         "jp": "明日の午後あいてる？",
@@ -9041,7 +9041,7 @@
     "meaningEn": [
       "nine days; ninth day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "九天；九號",
     "sentences": [
       {
         "jp": "スピーチコンテストは１１月９日に行われた。",
@@ -9068,7 +9068,7 @@
     "meaningEn": [
       "nine things"
     ],
-    "meaningZh": null,
+    "meaningZh": "九個",
     "sentences": [
       {
         "jp": "太陽をまわる惑星は９つもあり、地球もその１つである。",
@@ -9091,7 +9091,7 @@
       "morning",
       "A.M."
     ],
-    "meaningZh": null,
+    "meaningZh": "上午",
     "sentences": [
       {
         "jp": "その銀行は午前９時に開き、午後３時に閉まる。",
@@ -9149,7 +9149,7 @@
       "to answer",
       "to reply"
     ],
-    "meaningZh": null,
+    "meaningZh": "回答",
     "sentences": [
       {
         "jp": "「はい、ありません」とジョーダンさんは答えた。",
@@ -9168,7 +9168,7 @@
     "meaningEn": [
       "this person (polite); this way (polite)"
     ],
-    "meaningZh": null,
+    "meaningZh": "這位；這邊（敬語）",
     "sentences": []
   },
   {
@@ -9181,7 +9181,7 @@
     "meaningEn": [
       "this person; this direction; this side"
     ],
-    "meaningZh": null,
+    "meaningZh": "這邊；這個人",
     "sentences": []
   },
   {
@@ -9196,7 +9196,7 @@
     "meaningEn": [
       "a tumbler; a glass"
     ],
-    "meaningZh": null,
+    "meaningZh": "杯子",
     "sentences": [
       {
         "jp": "ガラスのコップを流しにおこうとしたら手が滑って、ガシャッと割れた。",
@@ -9218,7 +9218,7 @@
     "meaningEn": [
       "this year"
     ],
-    "meaningZh": null,
+    "meaningZh": "今年",
     "sentences": [
       {
         "jp": "先週の会議は今年の会議の中で最高に長かった。",
@@ -9274,7 +9274,7 @@
     "meaningEn": [
       "language; word(s); expression(s)"
     ],
-    "meaningZh": null,
+    "meaningZh": "語言；詞語",
     "sentences": [
       {
         "jp": "言葉が出てこなかった。",
@@ -9305,7 +9305,7 @@
     "meaningEn": [
       "child(ren)"
     ],
-    "meaningZh": null,
+    "meaningZh": "小孩",
     "sentences": [
       {
         "jp": "来月子供を生みます。",
@@ -9359,7 +9359,7 @@
     "meaningEn": [
       "this"
     ],
-    "meaningZh": null,
+    "meaningZh": "這個（修飾名詞）",
     "sentences": []
   },
   {
@@ -9374,7 +9374,7 @@
     "meaningEn": [
       "rice (cooked); meal"
     ],
-    "meaningZh": null,
+    "meaningZh": "白飯；餐食",
     "sentences": []
   },
   {
@@ -9387,7 +9387,7 @@
     "meaningEn": [
       "to copy"
     ],
-    "meaningZh": null,
+    "meaningZh": "影印；複製",
     "sentences": []
   },
   {
@@ -9404,7 +9404,7 @@
       "to be bothered",
       "to have difficulty"
     ],
-    "meaningZh": null,
+    "meaningZh": "困擾；傷腦筋",
     "sentences": [
       {
         "jp": "僕はしばしばお金に困る。",
@@ -9435,7 +9435,7 @@
     "meaningEn": [
       "this one"
     ],
-    "meaningZh": null,
+    "meaningZh": "這個",
     "sentences": []
   },
   {
@@ -9451,7 +9451,7 @@
     "meaningEn": [
       "this month"
     ],
-    "meaningZh": null,
+    "meaningZh": "這個月",
     "sentences": [
       {
         "jp": "今月は雨が多かった。",
@@ -9508,7 +9508,7 @@
     "meaningEn": [
       "this week"
     ],
-    "meaningZh": null,
+    "meaningZh": "這個星期",
     "sentences": [
       {
         "jp": "今週はたくさん物を食べた。",
@@ -9565,7 +9565,7 @@
       "such",
       "like this"
     ],
-    "meaningZh": null,
+    "meaningZh": "這樣的；如此的",
     "sentences": [
       {
         "jp": "夜のこんな時間に電話をかけるものではない。",
@@ -9623,7 +9623,7 @@
       "tonight",
       "this evening"
     ],
-    "meaningZh": null,
+    "meaningZh": "今晚",
     "sentences": [
       {
         "jp": "今晩誰がくるかお分かりですか。",
@@ -9680,7 +9680,7 @@
       "come now",
       "well"
     ],
-    "meaningZh": null,
+    "meaningZh": "好吧；那麼",
     "sentences": [
       {
         "jp": "さあどうぞお入りください。",
@@ -9736,7 +9736,7 @@
     "meaningEn": [
       "wallet"
     ],
-    "meaningZh": null,
+    "meaningZh": "錢包",
     "sentences": [
       {
         "jp": "病気は財布を空にする。",
@@ -9792,7 +9792,7 @@
     "meaningEn": [
       "fish"
     ],
-    "meaningZh": null,
+    "meaningZh": "魚",
     "sentences": [
       {
         "jp": "肉と魚どちらが好きですか。",
@@ -9851,7 +9851,7 @@
       "future; recent",
       "previous"
     ],
-    "meaningZh": null,
+    "meaningZh": "前方；之前；未來",
     "sentences": [
       {
         "jp": "ここから先には行けません。",
@@ -9908,7 +9908,7 @@
     "meaningEn": [
       "to bloom"
     ],
-    "meaningZh": null,
+    "meaningZh": "（花）開放",
     "sentences": [
       {
         "jp": "庭のあちらこちらにきれいな花が咲いている。",
@@ -9966,7 +9966,7 @@
     "meaningEn": [
       "essay; composition"
     ],
-    "meaningZh": null,
+    "meaningZh": "作文；寫作",
     "sentences": [
       {
         "jp": "「友情」という題で作文を書きなさい。",
@@ -9992,7 +9992,7 @@
       "to raise (e.g.",
       "umbrella)"
     ],
-    "meaningZh": null,
+    "meaningZh": "撐（傘）；伸出（手）",
     "sentences": [
       {
         "jp": "彼は雨の中を傘もささずに歩きつづけた。",
@@ -10019,7 +10019,7 @@
       "magazine",
       "journal"
     ],
-    "meaningZh": null,
+    "meaningZh": "雜誌",
     "sentences": [
       {
         "jp": "母は雑誌を読んでいる。",
@@ -10075,7 +10075,7 @@
     "meaningEn": [
       "sugar"
     ],
-    "meaningZh": null,
+    "meaningZh": "砂糖",
     "sentences": [
       {
         "jp": "砂糖は入れますか。",
@@ -10131,7 +10131,7 @@
     "meaningEn": [
       "cold (in reference to weather)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（天氣）寒冷",
     "sentences": [
       {
         "jp": "この寒さにはもう耐えられない。",
@@ -10153,7 +10153,7 @@
     "meaningEn": [
       "year after next"
     ],
-    "meaningZh": null,
+    "meaningZh": "後年",
     "sentences": []
   },
   {
@@ -10168,7 +10168,7 @@
     "meaningEn": [
       "three"
     ],
-    "meaningZh": null,
+    "meaningZh": "三",
     "sentences": [
       {
         "jp": "毎日三時間英語を勉強することにしている。",
@@ -10227,7 +10227,7 @@
       "walk",
       "stroll"
     ],
-    "meaningZh": null,
+    "meaningZh": "散步",
     "sentences": [
       {
         "jp": "ちょっとそこまで散歩に出よう。",
@@ -10283,7 +10283,7 @@
     "meaningEn": [
       "four"
     ],
-    "meaningZh": null,
+    "meaningZh": "四",
     "sentences": [
       {
         "jp": "私の父は四年前に死にました。",
@@ -10340,7 +10340,7 @@
     "meaningEn": [
       "salt"
     ],
-    "meaningZh": null,
+    "meaningZh": "鹽",
     "sentences": [
       {
         "jp": "このスープは塩が少し足りない。",
@@ -10359,7 +10359,7 @@
     "meaningEn": [
       "however; but"
     ],
-    "meaningZh": null,
+    "meaningZh": "但是；然而",
     "sentences": []
   },
   {
@@ -10374,7 +10374,7 @@
     "meaningEn": [
       "time"
     ],
-    "meaningZh": null,
+    "meaningZh": "時間",
     "sentences": [
       {
         "jp": "いつだって読書の時間は見つけられる。",
@@ -10405,7 +10405,7 @@
       "occupation",
       "employment"
     ],
-    "meaningZh": null,
+    "meaningZh": "工作；職業",
     "sentences": [
       {
         "jp": "「あなたは仕事が気に入っていると思います」「いやそれどころか、嫌いです」",
@@ -10426,7 +10426,7 @@
     "meaningEn": [
       "dictionary"
     ],
-    "meaningZh": null,
+    "meaningZh": "字典",
     "sentences": [
       {
         "jp": "正確なつづりは辞書で調べなさい。",
@@ -10448,7 +10448,7 @@
       "quiet",
       "calm"
     ],
-    "meaningZh": null,
+    "meaningZh": "安靜；平靜",
     "sentences": [
       {
         "jp": "頼むから静かにしてよ。",
@@ -10508,7 +10508,7 @@
       "below",
       "beneath"
     ],
-    "meaningZh": null,
+    "meaningZh": "下方；下面",
     "sentences": [
       {
         "jp": "下に署名してください。",
@@ -10549,7 +10549,7 @@
     "meaningEn": [
       "seven"
     ],
-    "meaningZh": null,
+    "meaningZh": "七",
     "sentences": [
       {
         "jp": "私は今朝7時に起きた。",
@@ -10575,7 +10575,7 @@
       "question",
       "inquiry"
     ],
-    "meaningZh": null,
+    "meaningZh": "提問；發問",
     "sentences": [
       {
         "jp": "料理について何か質問がありますか。",
@@ -10631,7 +10631,7 @@
     "meaningEn": [
       "bicycle"
     ],
-    "meaningZh": null,
+    "meaningZh": "腳踏車",
     "sentences": [
       {
         "jp": "歩いて行くものもいれば、自転車で行くものもいた。",
@@ -10687,7 +10687,7 @@
     "meaningEn": [
       "automobile"
     ],
-    "meaningZh": null,
+    "meaningZh": "汽車",
     "sentences": [
       {
         "jp": "新しい自動車が銀行の前で止まった。",
@@ -10744,7 +10744,7 @@
     "meaningEn": [
       "to die"
     ],
-    "meaningZh": null,
+    "meaningZh": "死亡",
     "sentences": [
       {
         "jp": "その少年は死んだものとしてあきらめられた。",
@@ -10765,7 +10765,7 @@
     "meaningEn": [
       "dictionary"
     ],
-    "meaningZh": null,
+    "meaningZh": "字典",
     "sentences": []
   },
   {
@@ -10781,7 +10781,7 @@
       "myself",
       "oneself"
     ],
-    "meaningZh": null,
+    "meaningZh": "自己；本身",
     "sentences": [
       {
         "jp": "矛盾する報告を受けて、その役員は自分の立場を考え直した。",
@@ -10809,7 +10809,7 @@
       "to close",
       "to be closed"
     ],
-    "meaningZh": null,
+    "meaningZh": "（自動）關閉",
     "sentences": [
       {
         "jp": "あいにく店は閉まっていた。",
@@ -10839,7 +10839,7 @@
       "to fasten",
       "to tighten"
     ],
-    "meaningZh": null,
+    "meaningZh": "綁緊；繫緊",
     "sentences": [
       {
         "jp": "離陸の際は、シートベルトを締めなくてはならない。",
@@ -10862,7 +10862,7 @@
       "to close",
       "to shut"
     ],
-    "meaningZh": null,
+    "meaningZh": "關上；閉上",
     "sentences": [
       {
         "jp": "どうかドアを閉めてくれませんか。",
@@ -10882,7 +10882,7 @@
       "well",
       "well then"
     ],
-    "meaningZh": null,
+    "meaningZh": "那麼；好吧",
     "sentences": []
   },
   {
@@ -10897,7 +10897,7 @@
     "meaningEn": [
       "a picture; a photograph"
     ],
-    "meaningZh": null,
+    "meaningZh": "照片",
     "sentences": [
       {
         "jp": "あなたに何枚かの写真を見せましょう。",
@@ -10918,7 +10918,7 @@
     "meaningEn": [
       "shirt"
     ],
-    "meaningZh": null,
+    "meaningZh": "襯衫",
     "sentences": [
       {
         "jp": "白いシャツはありますか。",
@@ -10974,7 +10974,7 @@
     "meaningEn": [
       "shower"
     ],
-    "meaningZh": null,
+    "meaningZh": "淋浴",
     "sentences": [
       {
         "jp": "シャワーにするわ。",
@@ -11031,7 +11031,7 @@
     "meaningEn": [
       "ten"
     ],
-    "meaningZh": null,
+    "meaningZh": "十",
     "sentences": [
       {
         "jp": "父が死んで十年になる。",
@@ -11089,7 +11089,7 @@
     "meaningEn": [
       "a class (of school)"
     ],
-    "meaningZh": null,
+    "meaningZh": "課程；上課",
     "sentences": [
       {
         "jp": "よくあることだが、彼は今日も授業に遅れた。",
@@ -11145,7 +11145,7 @@
     "meaningEn": [
       "homework"
     ],
-    "meaningZh": null,
+    "meaningZh": "家庭作業",
     "sentences": [
       {
         "jp": "明日までに宿題をしなければならない。",
@@ -11203,7 +11203,7 @@
       "be good at",
       "skillful"
     ],
-    "meaningZh": null,
+    "meaningZh": "擅長；技術好",
     "sentences": [
       {
         "jp": "あなたは上手にバスケットボールができますか。",
@@ -11231,7 +11231,7 @@
       "solid",
       "durable"
     ],
-    "meaningZh": null,
+    "meaningZh": "堅固；耐用",
     "sentences": [
       {
         "jp": "彼は丈夫だったそうです。",
@@ -11252,7 +11252,7 @@
     "meaningEn": [
       "soy sauce"
     ],
-    "meaningZh": null,
+    "meaningZh": "醬油",
     "sentences": []
   },
   {
@@ -11268,7 +11268,7 @@
       "cafeteria",
       "dining hall"
     ],
-    "meaningZh": null,
+    "meaningZh": "食堂；餐廳",
     "sentences": [
       {
         "jp": "私は角を曲がって、開店早々の食堂を見つけた。",
@@ -11296,7 +11296,7 @@
       "to know",
       "to understand"
     ],
-    "meaningZh": null,
+    "meaningZh": "知道；了解",
     "sentences": [
       {
         "jp": "あなたは１９９０年から彼女を知っているのですか？",
@@ -11323,7 +11323,7 @@
     "meaningEn": [
       "white"
     ],
-    "meaningZh": null,
+    "meaningZh": "白色",
     "sentences": [
       {
         "jp": "２匹犬を飼っているが、１匹は白でもう１匹は黒だ。",
@@ -11344,7 +11344,7 @@
     "meaningEn": [
       "white"
     ],
-    "meaningZh": null,
+    "meaningZh": "白色的",
     "sentences": [
       {
         "jp": "ケンは自転車を白く塗りました。",
@@ -11365,7 +11365,7 @@
     "meaningEn": [
       "newspaper"
     ],
-    "meaningZh": null,
+    "meaningZh": "報紙",
     "sentences": [
       {
         "jp": "母は、新聞から目を上げて私を見た。",
@@ -11422,7 +11422,7 @@
     "meaningEn": [
       "Wednesday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期三",
     "sentences": [
       {
         "jp": "今度の水曜日何か予定がありますか。",
@@ -11480,7 +11480,7 @@
       "to breathe in",
       "to suck"
     ],
-    "meaningZh": null,
+    "meaningZh": "吸入；抽（菸）",
     "sentences": [
       {
         "jp": "この紙はインクを吸わない。",
@@ -11506,7 +11506,7 @@
     "meaningEn": [
       "skirt"
     ],
-    "meaningZh": null,
+    "meaningZh": "裙子",
     "sentences": [
       {
         "jp": "このスカートは体にちょうどよくあう。",
@@ -11565,7 +11565,7 @@
       "fondness",
       "love"
     ],
-    "meaningZh": null,
+    "meaningZh": "喜歡、愛好",
     "sentences": [
       {
         "jp": "「ケーキはお好きですか」「はい、好きです」",
@@ -11596,7 +11596,7 @@
     "meaningEn": [
       "a little; a few"
     ],
-    "meaningZh": null,
+    "meaningZh": "少、不多",
     "sentences": [
       {
         "jp": "彼は言葉少ないが、必ず約束を守る人です。",
@@ -11651,7 +11651,7 @@
       "immediately",
       "soon"
     ],
-    "meaningZh": null,
+    "meaningZh": "立刻、馬上",
     "sentences": []
   },
   {
@@ -11667,7 +11667,7 @@
       "little",
       "few"
     ],
-    "meaningZh": null,
+    "meaningZh": "一點、少許",
     "sentences": [
       {
         "jp": "少しテレビを見てもいいですか。",
@@ -11694,7 +11694,7 @@
       "cool",
       "refreshing (in reference to weather)"
     ],
-    "meaningZh": null,
+    "meaningZh": "涼爽、清涼",
     "sentences": [
       {
         "jp": "日増しに涼しくなっていく。",
@@ -11715,7 +11715,7 @@
     "meaningEn": [
       "heater (lit: stove)"
     ],
-    "meaningZh": null,
+    "meaningZh": "暖爐、電暖器",
     "sentences": [
       {
         "jp": "私たちの電気ストーブはどこか故障している。",
@@ -11771,7 +11771,7 @@
     "meaningEn": [
       "spoon"
     ],
-    "meaningZh": null,
+    "meaningZh": "湯匙",
     "sentences": [
       {
         "jp": "スプーンがありません。",
@@ -11827,7 +11827,7 @@
     "meaningEn": [
       "sport(s)"
     ],
-    "meaningZh": null,
+    "meaningZh": "運動",
     "sentences": [
       {
         "jp": "妹は脚が長くて、スポーツが好きです。",
@@ -11881,7 +11881,7 @@
     "meaningEn": [
       "trousers"
     ],
-    "meaningZh": null,
+    "meaningZh": "長褲",
     "sentences": [
       {
         "jp": "そのズボンは大きすぎます。",
@@ -11939,7 +11939,7 @@
       "to reside",
       "to live in"
     ],
-    "meaningZh": null,
+    "meaningZh": "居住、住在",
     "sentences": [
       {
         "jp": "あなたはどのくらいの間、神戸に住んでいますか。",
@@ -11962,7 +11962,7 @@
       "watch",
       "etc.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "做、嘗試",
     "sentences": []
   },
   {
@@ -11978,7 +11978,7 @@
     "meaningEn": [
       "to sit"
     ],
-    "meaningZh": null,
+    "meaningZh": "坐下",
     "sentences": [
       {
         "jp": "数人の学生がベンチに座り、昼食を食べていた。",
@@ -11999,7 +11999,7 @@
     "meaningEn": [
       "sweater"
     ],
-    "meaningZh": null,
+    "meaningZh": "毛衣",
     "sentences": [
       {
         "jp": "寒くなるにつれて、セーターがほしくなった。",
@@ -12056,7 +12056,7 @@
       "(one's) height",
       "stature"
     ],
-    "meaningZh": null,
+    "meaningZh": "身高、個子",
     "sentences": [
       {
         "jp": "彼はいすの背にもたれている。",
@@ -12092,7 +12092,7 @@
     "meaningEn": [
       "student; pupil"
     ],
-    "meaningZh": null,
+    "meaningZh": "學生",
     "sentences": [
       {
         "jp": "彼は生徒たちに静かにするように言った。",
@@ -12148,7 +12148,7 @@
     "meaningEn": [
       "soap"
     ],
-    "meaningZh": null,
+    "meaningZh": "肥皂",
     "sentences": [
       {
         "jp": "ひげをそる前に石けんをつける。",
@@ -12169,7 +12169,7 @@
     "meaningEn": [
       "men's suit"
     ],
-    "meaningZh": null,
+    "meaningZh": "男士西裝",
     "sentences": [
       {
         "jp": "彼のネクタイは背広によく合っている。",
@@ -12225,7 +12225,7 @@
     "meaningEn": [
       "narrow; not spacious"
     ],
-    "meaningZh": null,
+    "meaningZh": "狹窄、不寬敞",
     "sentences": [
       {
         "jp": "この部屋は私たちにとって狭すぎる。",
@@ -12249,7 +12249,7 @@
     "meaningEn": [
       "zero"
     ],
-    "meaningZh": null,
+    "meaningZh": "零",
     "sentences": []
   },
   {
@@ -12264,7 +12264,7 @@
     "meaningEn": [
       "thousand"
     ],
-    "meaningZh": null,
+    "meaningZh": "千",
     "sentences": [
       {
         "jp": "千人くらいの人がいた。",
@@ -12321,7 +12321,7 @@
     "meaningEn": [
       "last month"
     ],
-    "meaningZh": null,
+    "meaningZh": "上個月",
     "sentences": [
       {
         "jp": "先月その町では生まれたものが死んだものより２０人多かった。",
@@ -12378,7 +12378,7 @@
     "meaningEn": [
       "last week"
     ],
-    "meaningZh": null,
+    "meaningZh": "上週",
     "sentences": [
       {
         "jp": "先週彼は病気だった。",
@@ -12436,7 +12436,7 @@
       "teacher",
       "professor; master; doctor"
     ],
-    "meaningZh": null,
+    "meaningZh": "老師、醫生",
     "sentences": [
       {
         "jp": "ぼくはジョーンズ先生に作文を直してもらった。",
@@ -12465,7 +12465,7 @@
       "washing",
       "laundry"
     ],
-    "meaningZh": null,
+    "meaningZh": "洗衣、洗滌",
     "sentences": [
       {
         "jp": "そうですね、部屋の掃除をしたり、洗濯したり、豪華な晩御飯を作ったり、します。",
@@ -12525,7 +12525,7 @@
       "entire",
       "whole"
     ],
-    "meaningZh": null,
+    "meaningZh": "全部、全體",
     "sentences": [
       {
         "jp": "卵が全部で１０個あった。",
@@ -12580,7 +12580,7 @@
       "yes; appears",
       "to be the case"
     ],
-    "meaningZh": null,
+    "meaningZh": "是的、好像是這樣",
     "sentences": []
   },
   {
@@ -12598,7 +12598,7 @@
       "cleaning",
       "sweeping"
     ],
-    "meaningZh": null,
+    "meaningZh": "打掃、清潔",
     "sentences": [
       {
         "jp": "彼女は誰の手も借りず家を掃除した。",
@@ -12653,7 +12653,7 @@
       "and",
       "like that"
     ],
-    "meaningZh": null,
+    "meaningZh": "然後、接著",
     "sentences": []
   },
   {
@@ -12668,7 +12668,7 @@
       "there; bottom",
       "sole"
     ],
-    "meaningZh": null,
+    "meaningZh": "那裡、那個地方",
     "sentences": []
   },
   {
@@ -12681,7 +12681,7 @@
     "meaningEn": [
       "over there"
     ],
-    "meaningZh": null,
+    "meaningZh": "那邊、那個方向",
     "sentences": []
   },
   {
@@ -12694,7 +12694,7 @@
     "meaningEn": [
       "over there"
     ],
-    "meaningZh": null,
+    "meaningZh": "那邊、那裡",
     "sentences": []
   },
   {
@@ -12710,7 +12710,7 @@
       "outside",
       "exterior"
     ],
-    "meaningZh": null,
+    "meaningZh": "外面、外部",
     "sentences": [
       {
         "jp": "いつもと変えてたまに外で食事しよう。",
@@ -12744,7 +12744,7 @@
     "meaningEn": [
       "that"
     ],
-    "meaningZh": null,
+    "meaningZh": "那個",
     "sentences": []
   },
   {
@@ -12759,7 +12759,7 @@
       "close",
       "beside; Japanese traditional buckwheat noodle"
     ],
-    "meaningZh": null,
+    "meaningZh": "旁邊；蕎麥麵",
     "sentences": []
   },
   {
@@ -12775,7 +12775,7 @@
     "meaningEn": [
       "sky"
     ],
-    "meaningZh": null,
+    "meaningZh": "天空",
     "sentences": [
       {
         "jp": "ほとんど空なのでガソリンを入れなくてはなりません。",
@@ -12806,7 +12806,7 @@
     "meaningEn": [
       "that one"
     ],
-    "meaningZh": null,
+    "meaningZh": "那個",
     "sentences": []
   },
   {
@@ -12820,7 +12820,7 @@
       "and then",
       "after that"
     ],
-    "meaningZh": null,
+    "meaningZh": "然後、之後",
     "sentences": []
   },
   {
@@ -12834,7 +12834,7 @@
       "in that situation",
       "well then..."
     ],
-    "meaningZh": null,
+    "meaningZh": "那麼、好那麼",
     "sentences": [
       {
         "jp": "それでは私の立つ瀬がない。",
@@ -12855,7 +12855,7 @@
     "meaningEn": [
       "college; university"
     ],
-    "meaningZh": null,
+    "meaningZh": "大學",
     "sentences": [
       {
         "jp": "あなたは理科系の大学に進んだほうがいいよ。",
@@ -12881,7 +12881,7 @@
     "meaningEn": [
       "embassy"
     ],
-    "meaningZh": null,
+    "meaningZh": "大使館",
     "sentences": [
       {
         "jp": "日本大使館はどこにありますか。",
@@ -12925,7 +12925,7 @@
     "meaningEn": [
       "It's ok (all right); No need to worry; Everything is under control"
     ],
-    "meaningZh": null,
+    "meaningZh": "沒問題、不要緊",
     "sentences": [
       {
         "jp": "いや、大丈夫だ。",
@@ -12952,7 +12952,7 @@
       "very like-able",
       "like very much"
     ],
-    "meaningZh": null,
+    "meaningZh": "非常喜歡",
     "sentences": [
       {
         "jp": "僕は犬が大好きです。",
@@ -13008,7 +13008,7 @@
     "meaningEn": [
       "important"
     ],
-    "meaningZh": null,
+    "meaningZh": "重要、珍貴",
     "sentences": [
       {
         "jp": "大切なものはここに置かないで下さい。",
@@ -13039,7 +13039,7 @@
     "meaningEn": [
       "kitchen"
     ],
-    "meaningZh": null,
+    "meaningZh": "廚房",
     "sentences": [
       {
         "jp": "台所にあります。",
@@ -13098,7 +13098,7 @@
       "very; difficult",
       "hard"
     ],
-    "meaningZh": null,
+    "meaningZh": "非常；困難、辛苦",
     "sentences": [
       {
         "jp": "１日中歩き回って大変疲れた。",
@@ -13130,7 +13130,7 @@
       "tall",
       "high; expensive"
     ],
-    "meaningZh": null,
+    "meaningZh": "高的；昂貴的",
     "sentences": [
       {
         "jp": "そんな高い車を買う余裕はありません。",
@@ -13171,7 +13171,7 @@
       "many",
       "much"
     ],
-    "meaningZh": null,
+    "meaningZh": "很多、大量",
     "sentences": [
       {
         "jp": "お父さんは煙草の煙でたくさん輪を作れる。",
@@ -13192,7 +13192,7 @@
     "meaningEn": [
       "taxi"
     ],
-    "meaningZh": null,
+    "meaningZh": "計程車",
     "sentences": [
       {
         "jp": "彼はタクシーでちょうどここへ来たところだ。",
@@ -13250,7 +13250,7 @@
     "meaningEn": [
       "to take (something) out; to hand in (something)"
     ],
-    "meaningZh": null,
+    "meaningZh": "取出；提交",
     "sentences": [
       {
         "jp": "ここではおいしい食べ物が出されます。",
@@ -13307,7 +13307,7 @@
     "meaningEn": [
       "to stand up"
     ],
-    "meaningZh": null,
+    "meaningZh": "站起來",
     "sentences": [
       {
         "jp": "失礼しますといって席を立った。",
@@ -13362,7 +13362,7 @@
       "length",
       "height"
     ],
-    "meaningZh": null,
+    "meaningZh": "長度；高度",
     "sentences": []
   },
   {
@@ -13377,7 +13377,7 @@
     "meaningEn": [
       "building"
     ],
-    "meaningZh": null,
+    "meaningZh": "建築物",
     "sentences": [
       {
         "jp": "二つの建物は隣りあっている。",
@@ -13434,7 +13434,7 @@
       "enjoyable",
       "fun"
     ],
-    "meaningZh": null,
+    "meaningZh": "快樂的；有趣的",
     "sentences": [
       {
         "jp": "あなたと一緒にいて楽しかった。",
@@ -13458,7 +13458,7 @@
       "to request",
       "to ask (a favor)"
     ],
-    "meaningZh": null,
+    "meaningZh": "請求；拜託",
     "sentences": [
       {
         "jp": "あなたに頼んでもよろしいですか。",
@@ -13488,7 +13488,7 @@
       "tobacco",
       "cigarettes"
     ],
-    "meaningZh": null,
+    "meaningZh": "香菸；菸草",
     "sentences": []
   },
   {
@@ -13507,7 +13507,7 @@
       "probably",
       "maybe"
     ],
-    "meaningZh": null,
+    "meaningZh": "大概；也許",
     "sentences": [
       {
         "jp": "君にはたぶんみんなわかっていることでしょう。",
@@ -13528,7 +13528,7 @@
     "meaningEn": [
       "food"
     ],
-    "meaningZh": null,
+    "meaningZh": "食物",
     "sentences": [
       {
         "jp": "冷蔵庫にはほとんど食べ物がありません。",
@@ -13585,7 +13585,7 @@
     "meaningEn": [
       "to eat"
     ],
-    "meaningZh": null,
+    "meaningZh": "吃",
     "sentences": [
       {
         "jp": "もっと果物を食べるべきです。",
@@ -13611,7 +13611,7 @@
     "meaningEn": [
       "egg"
     ],
-    "meaningZh": null,
+    "meaningZh": "蛋；雞蛋",
     "sentences": [
       {
         "jp": "彼は医者の卵だ。",
@@ -13642,7 +13642,7 @@
     "meaningEn": [
       "who"
     ],
-    "meaningZh": null,
+    "meaningZh": "誰",
     "sentences": [
       {
         "jp": "あそこに立ってる女の人はだれですか。",
@@ -13663,7 +13663,7 @@
     "meaningEn": [
       "someone"
     ],
-    "meaningZh": null,
+    "meaningZh": "某人；有人",
     "sentences": [
       {
         "jp": "誰か英語を話す人はいますか。",
@@ -13719,7 +13719,7 @@
     "meaningEn": [
       "birthday"
     ],
-    "meaningZh": null,
+    "meaningZh": "生日",
     "sentences": [
       {
         "jp": "彼は必ず彼女に誕生日のプレゼントをする。",
@@ -13778,7 +13778,7 @@
       "gradually",
       "by degrees"
     ],
-    "meaningZh": null,
+    "meaningZh": "漸漸地；逐漸",
     "sentences": [
       {
         "jp": "だんだん暖かくなります。",
@@ -13800,7 +13800,7 @@
       "small",
       "little"
     ],
-    "meaningZh": null,
+    "meaningZh": "小的；微小的",
     "sentences": [
       {
         "jp": "その机はメグには小さすぎる。",
@@ -13822,7 +13822,7 @@
       "small",
       "little"
     ],
-    "meaningZh": null,
+    "meaningZh": "小的；小小的",
     "sentences": [
       {
         "jp": "彼は小さな家を建てることができました。",
@@ -13880,7 +13880,7 @@
       "close by",
       "short"
     ],
-    "meaningZh": null,
+    "meaningZh": "近的；距離短的",
     "sentences": [
       {
         "jp": "クリスマスが近くなってきた。",
@@ -13903,7 +13903,7 @@
     "meaningEn": [
       "to be different; to differ; wrong"
     ],
-    "meaningZh": null,
+    "meaningZh": "不同；有誤",
     "sentences": [
       {
         "jp": "その点では私は君と意見が違う。",
@@ -13942,7 +13942,7 @@
     "meaningEn": [
       "nearby; in the neighborhood"
     ],
-    "meaningZh": null,
+    "meaningZh": "附近；鄰近處",
     "sentences": [
       {
         "jp": "７時近くだ。学校へ行かなくては。",
@@ -13974,7 +13974,7 @@
       "underground train",
       "subway"
     ],
-    "meaningZh": null,
+    "meaningZh": "地鐵；捷運",
     "sentences": [
       {
         "jp": "タクシーと地下鉄とどっちが速いですか。",
@@ -14030,7 +14030,7 @@
     "meaningEn": [
       "a map"
     ],
-    "meaningZh": null,
+    "meaningZh": "地圖",
     "sentences": [
       {
         "jp": "二十五ページの地図を見なさい。",
@@ -14086,7 +14086,7 @@
     "meaningEn": [
       "(my) father"
     ],
-    "meaningZh": null,
+    "meaningZh": "（自己的）父親",
     "sentences": [
       {
         "jp": "来週、忘れずに父に会って下さい。",
@@ -14143,7 +14143,7 @@
     "meaningEn": [
       "brown"
     ],
-    "meaningZh": null,
+    "meaningZh": "棕色；褐色",
     "sentences": [
       {
         "jp": "そのうちのいくつかは赤く、いくつかは茶色だ。",
@@ -14199,7 +14199,7 @@
     "meaningEn": [
       "rice bowl"
     ],
-    "meaningZh": null,
+    "meaningZh": "飯碗",
     "sentences": [
       {
         "jp": "テーブルの上に小さな茶碗と卵がある。",
@@ -14257,7 +14257,7 @@
       "right",
       "exactly"
     ],
-    "meaningZh": null,
+    "meaningZh": "恰好；正好",
     "sentences": [
       {
         "jp": "私達はちょうど食事を終えた所です。",
@@ -14278,7 +14278,7 @@
       "somewhat; just a little",
       "somewhat"
     ],
-    "meaningZh": null,
+    "meaningZh": "稍微；一點點",
     "sentences": []
   },
   {
@@ -14293,7 +14293,7 @@
     "meaningEn": [
       "one day; first day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "一日；每月第一天",
     "sentences": [
       {
         "jp": "その手紙の日付は１９８７年４月１日となっている。",
@@ -14325,7 +14325,7 @@
     "meaningEn": [
       "to use"
     ],
-    "meaningZh": null,
+    "meaningZh": "使用；運用",
     "sentences": [
       {
         "jp": "「あなたの辞書を使ってもいいですか」「はい、どうぞ」",
@@ -14357,7 +14357,7 @@
     "meaningEn": [
       "to get (become) tired; to become fatigued"
     ],
-    "meaningZh": null,
+    "meaningZh": "疲累；感到疲倦",
     "sentences": [
       {
         "jp": "そのとき、彼らは、ブラックベリーの林の周りをつかれて、のどがかわくまで競争して遊んでいました。",
@@ -14379,7 +14379,7 @@
     "meaningEn": [
       "next"
     ],
-    "meaningZh": null,
+    "meaningZh": "下一個；其次",
     "sentences": [
       {
         "jp": "この次来るときは、花を持ってきてあげよう。",
@@ -14412,7 +14412,7 @@
       "to arrive at",
       "to reach"
     ],
-    "meaningZh": null,
+    "meaningZh": "抵達；到達",
     "sentences": [
       {
         "jp": "あなたがロンドンに着く頃には晩秋となっているだろう。",
@@ -14438,7 +14438,7 @@
     "meaningEn": [
       "desk"
     ],
-    "meaningZh": null,
+    "meaningZh": "書桌",
     "sentences": [
       {
         "jp": "上着を机の上に置いた。",
@@ -14496,7 +14496,7 @@
       "to make",
       "to create"
     ],
-    "meaningZh": null,
+    "meaningZh": "製作；創造",
     "sentences": [
       {
         "jp": "どこへ行っても、彼は必ず友達を作る。",
@@ -14541,7 +14541,7 @@
       "to turn on (e.g.",
       "a light); to take"
     ],
-    "meaningZh": null,
+    "meaningZh": "開（電器等）；附上",
     "sentences": []
   },
   {
@@ -14558,7 +14558,7 @@
     "meaningEn": [
       "to work (for)"
     ],
-    "meaningZh": null,
+    "meaningZh": "上班；任職",
     "sentences": [
       {
         "jp": "私の父は外務省に勤めている。",
@@ -14583,7 +14583,7 @@
       "boring",
       "dull; insignificant"
     ],
-    "meaningZh": null,
+    "meaningZh": "無聊的；無意義的",
     "sentences": []
   },
   {
@@ -14599,7 +14599,7 @@
       "cold (things",
       "people)"
     ],
-    "meaningZh": null,
+    "meaningZh": "冰冷的（物或人）",
     "sentences": [
       {
         "jp": "もう手が冷たくって。",
@@ -14626,7 +14626,7 @@
       "strong",
       "powerful"
     ],
-    "meaningZh": null,
+    "meaningZh": "強壯的；強大的",
     "sentences": [
       {
         "jp": "象というものは強い動物である。",
@@ -14659,7 +14659,7 @@
     "meaningEn": [
       "hand"
     ],
-    "meaningZh": null,
+    "meaningZh": "手",
     "sentences": [
       {
         "jp": "ここに手のないナベがある。",
@@ -14700,7 +14700,7 @@
     "meaningEn": [
       "tape"
     ],
-    "meaningZh": null,
+    "meaningZh": "膠帶；錄音帶",
     "sentences": [
       {
         "jp": "そのテープをかけてくれませんか。",
@@ -14756,7 +14756,7 @@
     "meaningEn": [
       "table"
     ],
-    "meaningZh": null,
+    "meaningZh": "桌子",
     "sentences": [
       {
         "jp": "部屋の中にテーブルはありません。",
@@ -14812,7 +14812,7 @@
     "meaningEn": [
       "tape recorder"
     ],
-    "meaningZh": null,
+    "meaningZh": "錄音機",
     "sentences": [
       {
         "jp": "テープレコーダーはテーブルの上に置いてあった。",
@@ -14869,7 +14869,7 @@
     "meaningEn": [
       "to go out; to depart"
     ],
-    "meaningZh": null,
+    "meaningZh": "外出；出門",
     "sentences": [
       {
         "jp": "１０分前に出かけました。",
@@ -14890,7 +14890,7 @@
     "meaningEn": [
       "letter"
     ],
-    "meaningZh": null,
+    "meaningZh": "信；書信",
     "sentences": [
       {
         "jp": "忘れずにその手紙をポストに入れなさい。",
@@ -14944,7 +14944,7 @@
     "meaningEn": [
       "to be able to (to accomplish)"
     ],
-    "meaningZh": null,
+    "meaningZh": "能夠；做得到",
     "sentences": []
   },
   {
@@ -14959,7 +14959,7 @@
     "meaningEn": [
       "an exit"
     ],
-    "meaningZh": null,
+    "meaningZh": "出口",
     "sentences": [
       {
         "jp": "出口はどちらですか。",
@@ -15017,7 +15017,7 @@
     "meaningEn": [
       "test"
     ],
-    "meaningZh": null,
+    "meaningZh": "測驗；考試",
     "sentences": [
       {
         "jp": "新しいエンジンは必要なテストをすべて受けなければならない。",
@@ -15047,7 +15047,7 @@
       "well",
       "so"
     ],
-    "meaningZh": null,
+    "meaningZh": "那麼；好的",
     "sentences": [
       {
         "jp": "選挙では、保守派と革新派がせめぎ合った。",
@@ -15068,7 +15068,7 @@
     "meaningEn": [
       "(abbr.) department store"
     ],
-    "meaningZh": null,
+    "meaningZh": "百貨公司",
     "sentences": [
       {
         "jp": "あのデパートで新しいコートを買いたい。",
@@ -15127,7 +15127,7 @@
       "but",
       "however"
     ],
-    "meaningZh": null,
+    "meaningZh": "但是；不過",
     "sentences": [
       {
         "jp": "「そうしたわよ」彼女は文句を言った。「でも水なんかなかったわよ」",
@@ -15160,7 +15160,7 @@
       "to appear",
       "to leave"
     ],
-    "meaningZh": null,
+    "meaningZh": "出現；離開",
     "sentences": [
       {
         "jp": "電話には出なかったからメールしておきました。",
@@ -15192,7 +15192,7 @@
       "television",
       "TV"
     ],
-    "meaningZh": null,
+    "meaningZh": "電視",
     "sentences": [
       {
         "jp": "父の日曜日は、ただテレビを見るだけだ。",
@@ -15248,7 +15248,7 @@
     "meaningEn": [
       "weather"
     ],
-    "meaningZh": null,
+    "meaningZh": "天氣",
     "sentences": [
       {
         "jp": "彼は天気のよい日を利用して壁を塗った。",
@@ -15275,7 +15275,7 @@
       "electricity",
       "(electric) light"
     ],
-    "meaningZh": null,
+    "meaningZh": "電、電燈",
     "sentences": [
       {
         "jp": "電気を消すのを忘れないで。",
@@ -15301,7 +15301,7 @@
     "meaningEn": [
       "electric train"
     ],
-    "meaningZh": null,
+    "meaningZh": "電車",
     "sentences": [
       {
         "jp": "僕は、飛行機より電車で旅をする方が好きだ。",
@@ -15360,7 +15360,7 @@
     "meaningEn": [
       "a telephone"
     ],
-    "meaningZh": null,
+    "meaningZh": "電話",
     "sentences": [
       {
         "jp": "夜遅く電話しないでください。",
@@ -15416,7 +15416,7 @@
     "meaningEn": [
       "door (Japanese style)"
     ],
-    "meaningZh": null,
+    "meaningZh": "日式拉門",
     "sentences": [
       {
         "jp": "きのうの火事で２００戸が全焼した。",
@@ -15442,7 +15442,7 @@
     "meaningEn": [
       "door (Western style)"
     ],
-    "meaningZh": null,
+    "meaningZh": "西式門",
     "sentences": [
       {
         "jp": "忘れずにドアに鍵をかけて下さい。",
@@ -15498,7 +15498,7 @@
     "meaningEn": [
       "bathroom; toilet"
     ],
-    "meaningZh": null,
+    "meaningZh": "廁所",
     "sentences": [
       {
         "jp": "ここから、一番近いトイレは、どこですか。",
@@ -15555,7 +15555,7 @@
       "how",
       "in what way"
     ],
-    "meaningZh": null,
+    "meaningZh": "如何、怎麼樣",
     "sentences": []
   },
   {
@@ -15569,7 +15569,7 @@
       "why",
       "for what reason"
     ],
-    "meaningZh": null,
+    "meaningZh": "為什麼",
     "sentences": []
   },
   {
@@ -15587,7 +15587,7 @@
       "kindly",
       "by all means"
     ],
-    "meaningZh": null,
+    "meaningZh": "請、請便",
     "sentences": [
       {
         "jp": "「塩を取って下さい」「はい、どうぞ」",
@@ -15618,7 +15618,7 @@
     "meaningEn": [
       "animal"
     ],
-    "meaningZh": null,
+    "meaningZh": "動物",
     "sentences": [
       {
         "jp": "夜に活動する動物もいる。",
@@ -15675,7 +15675,7 @@
     "meaningEn": [
       "Thank you; somehow; no matter how hard one may try"
     ],
-    "meaningZh": null,
+    "meaningZh": "謝謝；總覺得",
     "sentences": [
       {
         "jp": "お土産を頂いてご親切にどうも。",
@@ -15712,7 +15712,7 @@
     "meaningEn": [
       "ten (~)"
     ],
-    "meaningZh": null,
+    "meaningZh": "十",
     "sentences": [
       {
         "jp": "父が死んで十年になる。",
@@ -15769,7 +15769,7 @@
       "far (away)",
       "distant"
     ],
-    "meaningZh": null,
+    "meaningZh": "遠的",
     "sentences": [
       {
         "jp": "彼の家はここから遠くない。",
@@ -15800,7 +15800,7 @@
     "meaningEn": [
       "ten days; tenth day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "十天；十號",
     "sentences": [
       {
         "jp": "会議は１０日後です。",
@@ -15828,7 +15828,7 @@
     "meaningEn": [
       "sometimes"
     ],
-    "meaningZh": null,
+    "meaningZh": "有時候",
     "sentences": [
       {
         "jp": "ジェーンはときどき学校まで走っていく。",
@@ -15849,7 +15849,7 @@
     "meaningEn": [
       "a watch; a clock"
     ],
-    "meaningZh": null,
+    "meaningZh": "手錶；時鐘",
     "sentences": [
       {
         "jp": "僕の時計どこにあるか知らない。",
@@ -15904,7 +15904,7 @@
       "where",
       "what place"
     ],
-    "meaningZh": null,
+    "meaningZh": "哪裡",
     "sentences": []
   },
   {
@@ -15921,7 +15921,7 @@
     "meaningEn": [
       "place"
     ],
-    "meaningZh": null,
+    "meaningZh": "地方、場所",
     "sentences": [
       {
         "jp": "「そのうちに、あなたのところにお邪魔してもいいですか」「どうぞ、どうぞ」",
@@ -15963,7 +15963,7 @@
       "year",
       "age"
     ],
-    "meaningZh": null,
+    "meaningZh": "年；年齡",
     "sentences": [
       {
         "jp": "カレンダーの日付は１９６４年９月２３日でした。",
@@ -15999,7 +15999,7 @@
     "meaningEn": [
       "library"
     ],
-    "meaningZh": null,
+    "meaningZh": "圖書館",
     "sentences": [
       {
         "jp": "すみません、図書館はどこにありますか？",
@@ -16053,7 +16053,7 @@
     "meaningEn": [
       "which (one) (way); where (polite)"
     ],
-    "meaningZh": null,
+    "meaningZh": "哪一個、哪邊（敬語）",
     "sentences": []
   },
   {
@@ -16067,7 +16067,7 @@
       "which one",
       "which way"
     ],
-    "meaningZh": null,
+    "meaningZh": "哪一個、哪邊",
     "sentences": []
   },
   {
@@ -16082,7 +16082,7 @@
       "greatly",
       "exceedingly"
     ],
-    "meaningZh": null,
+    "meaningZh": "非常、很",
     "sentences": []
   },
   {
@@ -16095,7 +16095,7 @@
     "meaningEn": [
       "who"
     ],
-    "meaningZh": null,
+    "meaningZh": "哪位（敬語）",
     "sentences": []
   },
   {
@@ -16112,7 +16112,7 @@
       "next to",
       "next door to"
     ],
-    "meaningZh": null,
+    "meaningZh": "隔壁、旁邊",
     "sentences": [
       {
         "jp": "隣の村までどのくらいありますか。",
@@ -16166,7 +16166,7 @@
     "meaningEn": [
       "which"
     ],
-    "meaningZh": null,
+    "meaningZh": "哪個",
     "sentences": []
   },
   {
@@ -16183,7 +16183,7 @@
       "to fly",
       "to hop"
     ],
-    "meaningZh": null,
+    "meaningZh": "飛、跳",
     "sentences": [
       {
         "jp": "彼の話はいろいろなところへ飛ぶ。",
@@ -16230,7 +16230,7 @@
     "meaningEn": [
       "to come to a halt"
     ],
-    "meaningZh": null,
+    "meaningZh": "停下來",
     "sentences": [
       {
         "jp": "あの木の枝に数羽の鳥がとまっている。",
@@ -16266,7 +16266,7 @@
     "meaningEn": [
       "friend"
     ],
-    "meaningZh": null,
+    "meaningZh": "朋友",
     "sentences": [
       {
         "jp": "友達に図書館の前で待ってもらっています。",
@@ -16323,7 +16323,7 @@
     "meaningEn": [
       "Saturday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期六",
     "sentences": [
       {
         "jp": "土曜日に学校はありますか。",
@@ -16380,7 +16380,7 @@
       "chicken (lit.",
       "bird)"
     ],
-    "meaningZh": null,
+    "meaningZh": "鳥；雞",
     "sentences": [
       {
         "jp": "彼は森の中を歩いた。頭上では鳥が楽しくさえずっていた。",
@@ -16406,7 +16406,7 @@
     "meaningEn": [
       "chicken meat"
     ],
-    "meaningZh": null,
+    "meaningZh": "雞肉",
     "sentences": [
       {
         "jp": "鶏肉を３ポンド分ください。",
@@ -16428,7 +16428,7 @@
     "meaningEn": [
       "to take (a class); to get (a grade)"
     ],
-    "meaningZh": null,
+    "meaningZh": "取得；修（課）",
     "sentences": [
       {
         "jp": "どんな雑誌をとっていますか。",
@@ -16486,7 +16486,7 @@
       "to take (a photo)",
       "to make (a film)"
     ],
-    "meaningZh": null,
+    "meaningZh": "拍照；拍影片",
     "sentences": [
       {
         "jp": "これは私の妹を撮った写真です。",
@@ -16510,7 +16510,7 @@
     "meaningEn": [
       "which one"
     ],
-    "meaningZh": null,
+    "meaningZh": "哪一個",
     "sentences": []
   },
   {
@@ -16526,7 +16526,7 @@
       "what",
       "what kind of"
     ],
-    "meaningZh": null,
+    "meaningZh": "什麼樣的",
     "sentences": [
       {
         "jp": "どんな所がお好きですか。",
@@ -16559,7 +16559,7 @@
       "there isn't",
       "doesn't have"
     ],
-    "meaningZh": null,
+    "meaningZh": "沒有；不～",
     "sentences": [
       {
         "jp": "あの二人、元に戻すつもりなんて更々ないみたいだし・・・。",
@@ -16580,7 +16580,7 @@
     "meaningEn": [
       "knife"
     ],
-    "meaningZh": null,
+    "meaningZh": "刀子",
     "sentences": [
       {
         "jp": "台所にナイフがありますか。",
@@ -16640,7 +16640,7 @@
       "middle",
       "among"
     ],
-    "meaningZh": null,
+    "meaningZh": "裡面；中間",
     "sentences": [
       {
         "jp": "彼は自分のお金を全部箱の中に入れた。",
@@ -16697,7 +16697,7 @@
       "long",
       "lengthy"
     ],
-    "meaningZh": null,
+    "meaningZh": "長的",
     "sentences": [
       {
         "jp": "だんだん日が長くなっています。",
@@ -16734,7 +16734,7 @@
     "meaningEn": [
       "to make sound (animal)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（動物）鳴叫",
     "sentences": [
       {
         "jp": "カエルが鳴いたら帰ろう。",
@@ -16766,7 +16766,7 @@
     "meaningEn": [
       "to lose something"
     ],
-    "meaningZh": null,
+    "meaningZh": "弄丟",
     "sentences": [
       {
         "jp": "彼女は新しい時計をなくした。",
@@ -16790,7 +16790,7 @@
     "meaningEn": [
       "why (same as どうして)"
     ],
-    "meaningZh": null,
+    "meaningZh": "為什麼",
     "sentences": []
   },
   {
@@ -16806,7 +16806,7 @@
     "meaningEn": [
       "summer"
     ],
-    "meaningZh": null,
+    "meaningZh": "夏天",
     "sentences": [
       {
         "jp": "この夏最高の暑さだ。",
@@ -16827,7 +16827,7 @@
     "meaningEn": [
       "summer vacation"
     ],
-    "meaningZh": null,
+    "meaningZh": "暑假",
     "sentences": [
       {
         "jp": "夏休み、私といっしょに旅行しませんか？",
@@ -16884,7 +16884,7 @@
     "meaningEn": [
       "seven things"
     ],
-    "meaningZh": null,
+    "meaningZh": "七個",
     "sentences": [
       {
         "jp": "海賊たちは７つの海を航海した。",
@@ -16905,7 +16905,7 @@
     "meaningEn": [
       "seven days; seventh day (of the month)"
     ],
-    "meaningZh": null,
+    "meaningZh": "七天；七號",
     "sentences": [
       {
         "jp": "１月７日付けのお手紙、ありがとうございました。",
@@ -16931,7 +16931,7 @@
     "meaningEn": [
       "name"
     ],
-    "meaningZh": null,
+    "meaningZh": "名字",
     "sentences": [
       {
         "jp": "あなたの名前はリストからはずされた。",
@@ -16958,7 +16958,7 @@
     "meaningEn": [
       "to learn"
     ],
-    "meaningZh": null,
+    "meaningZh": "學習",
     "sentences": [
       {
         "jp": "車の運転を習っています。",
@@ -16981,7 +16981,7 @@
       "to line up",
       "to stand in a line (v.i.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "排列；並排",
     "sentences": [
       {
         "jp": "彼は古今に並ぶ者のない偉大な政治家である。",
@@ -17008,7 +17008,7 @@
     "meaningEn": [
       "to put (things) side by side; to line up"
     ],
-    "meaningZh": null,
+    "meaningZh": "並排放置",
     "sentences": [
       {
         "jp": "メイドはテーブルにナイフとフォークを並べた。",
@@ -17036,7 +17036,7 @@
     "meaningEn": [
       "to become"
     ],
-    "meaningZh": null,
+    "meaningZh": "變成",
     "sentences": [
       {
         "jp": "ちまたではインターネットなるものがはやっています。",
@@ -17060,7 +17060,7 @@
     "meaningEn": [
       "what"
     ],
-    "meaningZh": null,
+    "meaningZh": "什麼",
     "sentences": [
       {
         "jp": "ここの家、何匹猫がいるの？",
@@ -17109,7 +17109,7 @@
     "meaningEn": [
       "what sort of ~"
     ],
-    "meaningZh": null,
+    "meaningZh": "什麼樣的～",
     "sentences": []
   },
   {
@@ -17124,7 +17124,7 @@
     "meaningEn": [
       "two"
     ],
-    "meaningZh": null,
+    "meaningZh": "二；2",
     "sentences": [
       {
         "jp": "僕は一月の二十五日までに図書館の本を返却しなければならない。",
@@ -17179,7 +17179,7 @@
       "bustling",
       "busy"
     ],
-    "meaningZh": null,
+    "meaningZh": "熱鬧；繁華",
     "sentences": []
   },
   {
@@ -17194,7 +17194,7 @@
     "meaningEn": [
       "meat"
     ],
-    "meaningZh": null,
+    "meaningZh": "肉",
     "sentences": [
       {
         "jp": "肉によって生まれたものは肉です。御霊によって生まれたものは霊です。",
@@ -17225,7 +17225,7 @@
     "meaningEn": [
       "west"
     ],
-    "meaningZh": null,
+    "meaningZh": "西；西方",
     "sentences": [
       {
         "jp": "列車は西へ走っていた。",
@@ -17247,7 +17247,7 @@
     "meaningEn": [
       "Sunday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期日",
     "sentences": [
       {
         "jp": "明日は日曜日です。",
@@ -17303,7 +17303,7 @@
     "meaningEn": [
       "luggage; baggage"
     ],
-    "meaningZh": null,
+    "meaningZh": "行李；包裹",
     "sentences": [
       {
         "jp": "彼は前もって荷物を送った。",
@@ -17324,7 +17324,7 @@
     "meaningEn": [
       "news"
     ],
-    "meaningZh": null,
+    "meaningZh": "新聞",
     "sentences": [
       {
         "jp": "夕食後テレビのニュースを見た。",
@@ -17380,7 +17380,7 @@
     "meaningEn": [
       "garden"
     ],
-    "meaningZh": null,
+    "meaningZh": "庭院",
     "sentences": [
       {
         "jp": "母と私は庭にいました。",
@@ -17437,7 +17437,7 @@
     "meaningEn": [
       "to take off (clothes)"
     ],
-    "meaningZh": null,
+    "meaningZh": "脫掉（衣物）",
     "sentences": [
       {
         "jp": "ここで靴を脱がなければなりませんか。",
@@ -17458,7 +17458,7 @@
     "meaningEn": [
       "lukewarm"
     ],
-    "meaningZh": null,
+    "meaningZh": "微溫的；不夠熱的",
     "sentences": [
       {
         "jp": "このコーヒーはぬるいです。",
@@ -17480,7 +17480,7 @@
       "tie",
       "necktie"
     ],
-    "meaningZh": null,
+    "meaningZh": "領帶",
     "sentences": [
       {
         "jp": "ネクタイを見せて下さい。",
@@ -17536,7 +17536,7 @@
     "meaningEn": [
       "cat"
     ],
-    "meaningZh": null,
+    "meaningZh": "貓",
     "sentences": [
       {
         "jp": "あなたのサイトは、猫に興味のある人達にとって魅力的です。",
@@ -17558,7 +17558,7 @@
     "meaningEn": [
       "to sleep; to go to sleep; to go to bed"
     ],
-    "meaningZh": null,
+    "meaningZh": "睡覺；就寢",
     "sentences": [
       {
         "jp": "寝る前に歯を磨きなさい。",
@@ -17586,7 +17586,7 @@
     "meaningEn": [
       "notebook"
     ],
-    "meaningZh": null,
+    "meaningZh": "筆記本",
     "sentences": [
       {
         "jp": "アップルの新型ノートは予定通りに発表されるだろうか。",
@@ -17618,7 +17618,7 @@
     "meaningEn": [
       "to climb"
     ],
-    "meaningZh": null,
+    "meaningZh": "攀登；爬上",
     "sentences": [
       {
         "jp": "そのとき太陽がのぼるところだった。",
@@ -17660,7 +17660,7 @@
       "drink",
       "beverage"
     ],
-    "meaningZh": null,
+    "meaningZh": "飲料",
     "sentences": [
       {
         "jp": "何か冷たい飲みものでもどうですか。",
@@ -17717,7 +17717,7 @@
     "meaningEn": [
       "to drink"
     ],
-    "meaningZh": null,
+    "meaningZh": "喝",
     "sentences": [
       {
         "jp": "この薬を飲まなければ行けませんか。",
@@ -17741,7 +17741,7 @@
       "to ride in",
       "to board"
     ],
-    "meaningZh": null,
+    "meaningZh": "搭乘；乘坐",
     "sentences": [
       {
         "jp": "１１時の列車に乗るつもりです。",
@@ -17772,7 +17772,7 @@
     "meaningEn": [
       "tooth"
     ],
-    "meaningZh": null,
+    "meaningZh": "牙齒",
     "sentences": [
       {
         "jp": "その赤ちゃんは歯が生えはじめている。",
@@ -17793,7 +17793,7 @@
     "meaningEn": [
       "a party"
     ],
-    "meaningZh": null,
+    "meaningZh": "派對；宴會",
     "sentences": [
       {
         "jp": "忙しいのでパーティーには出られません。",
@@ -17849,7 +17849,7 @@
     "meaningEn": [
       "yes"
     ],
-    "meaningZh": null,
+    "meaningZh": "是；好的",
     "sentences": [
       {
         "jp": "はいどうぞ、君が飛行機の中で読む雑誌です。",
@@ -17875,7 +17875,7 @@
     "meaningEn": [
       "ashtray"
     ],
-    "meaningZh": null,
+    "meaningZh": "菸灰缸",
     "sentences": [
       {
         "jp": "灰皿を下さい。",
@@ -17924,7 +17924,7 @@
       "to contain",
       "to hold"
     ],
-    "meaningZh": null,
+    "meaningZh": "進入；容納",
     "sentences": [
       {
         "jp": "目に砂が入りました。",
@@ -17980,7 +17980,7 @@
     "meaningEn": [
       "postcard"
     ],
-    "meaningZh": null,
+    "meaningZh": "明信片",
     "sentences": [
       {
         "jp": "はがきにこの切手を貼って郵便箱に投函しなさい。",
@@ -17999,7 +17999,7 @@
     "meaningEn": [
       "to put on (items below your waist)"
     ],
-    "meaningZh": null,
+    "meaningZh": "穿（褲子、鞋等下半身衣物）",
     "sentences": []
   },
   {
@@ -18016,7 +18016,7 @@
     "meaningEn": [
       "box"
     ],
-    "meaningZh": null,
+    "meaningZh": "箱子；盒子",
     "sentences": [
       {
         "jp": "その取っ手を右にねじると箱は開きます。",
@@ -18037,7 +18037,7 @@
     "meaningEn": [
       "bridge"
     ],
-    "meaningZh": null,
+    "meaningZh": "橋",
     "sentences": [
       {
         "jp": "あの橋は大変美しい。",
@@ -18058,7 +18058,7 @@
     "meaningEn": [
       "chopsticks"
     ],
-    "meaningZh": null,
+    "meaningZh": "筷子",
     "sentences": [
       {
         "jp": "私達はじっと押し黙っておはしを使って食事をした。",
@@ -18080,7 +18080,7 @@
     "meaningEn": [
       "(something) begins"
     ],
-    "meaningZh": null,
+    "meaningZh": "（某事）開始",
     "sentences": [
       {
         "jp": "その試合は何時に始まりますか。",
@@ -18100,7 +18100,7 @@
       "beginning",
       "start"
     ],
-    "meaningZh": null,
+    "meaningZh": "開始；起初",
     "sentences": []
   },
   {
@@ -18117,7 +18117,7 @@
     "meaningEn": [
       "for the first time"
     ],
-    "meaningZh": null,
+    "meaningZh": "第一次；初次",
     "sentences": [
       {
         "jp": "１６歳の時、初めてテニスをした。",
@@ -18144,7 +18144,7 @@
     "meaningEn": [
       "to run"
     ],
-    "meaningZh": null,
+    "meaningZh": "跑步",
     "sentences": [
       {
         "jp": "この列車は東京と大阪の間を走ります。",
@@ -18200,7 +18200,7 @@
     "meaningEn": [
       "bus; bath; bass"
     ],
-    "meaningZh": null,
+    "meaningZh": "公車",
     "sentences": [
       {
         "jp": "バス付きになさいますか、シャワーだけでよろしいですか。",
@@ -18231,7 +18231,7 @@
     "meaningEn": [
       "butter"
     ],
-    "meaningZh": null,
+    "meaningZh": "奶油",
     "sentences": [
       {
         "jp": "バターを全部使ってしまったの？",
@@ -18287,7 +18287,7 @@
     "meaningEn": [
       "20 years old"
     ],
-    "meaningZh": null,
+    "meaningZh": "二十歲",
     "sentences": [
       {
         "jp": "彼女は二十歳だと言ったが、それは嘘だった。",
@@ -18309,7 +18309,7 @@
     "meaningEn": [
       "to work"
     ],
-    "meaningZh": null,
+    "meaningZh": "工作；勞動",
     "sentences": [
       {
         "jp": "スイッチは時間通りに働かなかった。",
@@ -18335,7 +18335,7 @@
     "meaningEn": [
       "eight"
     ],
-    "meaningZh": null,
+    "meaningZh": "八；8",
     "sentences": [
       {
         "jp": "十中八、九まで彼は彼女と結婚するだろう。",
@@ -18392,7 +18392,7 @@
       "twenty days",
       "twentieth (day of the month)"
     ],
-    "meaningZh": null,
+    "meaningZh": "二十天；二十日",
     "sentences": [
       {
         "jp": "私は二十日までに帰るつもりです。",
@@ -18414,7 +18414,7 @@
     "meaningEn": [
       "flower"
     ],
-    "meaningZh": null,
+    "meaningZh": "花",
     "sentences": [
       {
         "jp": "私たちは梅の花で有名な水戸公園を見に行った。",
@@ -18435,7 +18435,7 @@
     "meaningEn": [
       "nose"
     ],
-    "meaningZh": null,
+    "meaningZh": "鼻子",
     "sentences": [
       {
         "jp": "鼻がでているよ。",
@@ -18492,7 +18492,7 @@
       "talk (chat)",
       "story"
     ],
-    "meaningZh": null,
+    "meaningZh": "話題；故事",
     "sentences": [
       {
         "jp": "人の話に水を差さないでくれ。",
@@ -18539,7 +18539,7 @@
     "meaningEn": [
       "to speak"
     ],
-    "meaningZh": null,
+    "meaningZh": "說話；講述",
     "sentences": [
       {
         "jp": "あなたの趣味について話してください。",
@@ -18570,7 +18570,7 @@
     "meaningEn": [
       "(my) mother"
     ],
-    "meaningZh": null,
+    "meaningZh": "（自己的）母親",
     "sentences": [
       {
         "jp": "でもさ、母を連れて行かなくてはいけないんだ。",
@@ -18591,7 +18591,7 @@
     "meaningEn": [
       "early"
     ],
-    "meaningZh": null,
+    "meaningZh": "早；快",
     "sentences": [
       {
         "jp": "あれは世界で最も速い電車です。",
@@ -18628,7 +18628,7 @@
       "fast",
       "quick"
     ],
-    "meaningZh": null,
+    "meaningZh": "快的、迅速的",
     "sentences": [
       {
         "jp": "ショットはとても速いものもある。",
@@ -18670,7 +18670,7 @@
     "meaningEn": [
       "spring"
     ],
-    "meaningZh": null,
+    "meaningZh": "春天、春季",
     "sentences": [
       {
         "jp": "多くの植物は春に花をつける。",
@@ -18693,7 +18693,7 @@
     "meaningEn": [
       "to post; to paste; to attach"
     ],
-    "meaningZh": null,
+    "meaningZh": "張貼、黏貼、附上",
     "sentences": [
       {
         "jp": "その写真はアルバムに貼ったほうがよい。",
@@ -18720,7 +18720,7 @@
     "meaningEn": [
       "clear (sunny) weather"
     ],
-    "meaningZh": null,
+    "meaningZh": "晴天、好天氣",
     "sentences": [
       {
         "jp": "その日は晴れだったので、私たちは泳ぎに行った。",
@@ -18742,7 +18742,7 @@
     "meaningEn": [
       "to be sunny"
     ],
-    "meaningZh": null,
+    "meaningZh": "天氣放晴",
     "sentences": [
       {
         "jp": "明日は晴れるだろう。",
@@ -18776,7 +18776,7 @@
       "half (e.g.",
       "にじはん | half-past two)"
     ],
-    "meaningZh": null,
+    "meaningZh": "半、一半（時刻等）",
     "sentences": [
       {
         "jp": "その学校は私の家から半マイル歩いたところにあります。",
@@ -18834,7 +18834,7 @@
     "meaningEn": [
       "evening"
     ],
-    "meaningZh": null,
+    "meaningZh": "傍晚、晚上",
     "sentences": [
       {
         "jp": "グロリアは断然その晩のピカ一の歌手であった。",
@@ -18855,7 +18855,7 @@
     "meaningEn": [
       "bread"
     ],
-    "meaningZh": null,
+    "meaningZh": "麵包",
     "sentences": [
       {
         "jp": "私は今朝バターつきのパンを食べた。",
@@ -18876,7 +18876,7 @@
     "meaningEn": [
       "handkerchief"
     ],
-    "meaningZh": null,
+    "meaningZh": "手帕",
     "sentences": [
       {
         "jp": "いつもポケットにハンカチを入れておきなさい。",
@@ -18933,7 +18933,7 @@
       "number",
       "series of digits"
     ],
-    "meaningZh": null,
+    "meaningZh": "號碼、編號",
     "sentences": [
       {
         "jp": "彼女の電話番号を知らなかったので、私は電話をかけられなかった。",
@@ -18990,7 +18990,7 @@
       "dinner",
       "evening meal"
     ],
-    "meaningZh": null,
+    "meaningZh": "晚餐、晚飯",
     "sentences": [
       {
         "jp": "おいしい晩御飯をありがとうございました。",
@@ -19027,7 +19027,7 @@
     "meaningEn": [
       "half"
     ],
-    "meaningZh": null,
+    "meaningZh": "一半",
     "sentences": [
       {
         "jp": "エミーはナプキンを半分に折りたたんだ。",
@@ -19048,7 +19048,7 @@
     "meaningEn": [
       "east"
     ],
-    "meaningZh": null,
+    "meaningZh": "東方、東邊",
     "sentences": [
       {
         "jp": "名古屋は京都の東の方にある。",
@@ -19072,7 +19072,7 @@
       "to pull",
       "to draw; subtract"
     ],
-    "meaningZh": null,
+    "meaningZh": "拉、拔；減去",
     "sentences": [
       {
         "jp": "１０から２を引くと、８残る。",
@@ -19129,7 +19129,7 @@
     "meaningEn": [
       "to play (a string instrument or piano)"
     ],
-    "meaningZh": null,
+    "meaningZh": "彈奏（鋼琴、弦樂器）",
     "sentences": [
       {
         "jp": "誰かがピアノを弾いている。",
@@ -19161,7 +19161,7 @@
       "short",
       "low"
     ],
-    "meaningZh": null,
+    "meaningZh": "低的、矮的",
     "sentences": [
       {
         "jp": "飛行機は大変低く飛んでいた。",
@@ -19217,7 +19217,7 @@
     "meaningEn": [
       "airplane"
     ],
-    "meaningZh": null,
+    "meaningZh": "飛機",
     "sentences": [
       {
         "jp": "今、飛行機の乗り換えだ。今まで飛行機８時間乗って、乗り換えてこれから又２時間だ。",
@@ -19274,7 +19274,7 @@
     "meaningEn": [
       "left hand side"
     ],
-    "meaningZh": null,
+    "meaningZh": "左邊、左側",
     "sentences": [
       {
         "jp": "フランスは左に、イギリスは右に揺れているように思われる。",
@@ -19301,7 +19301,7 @@
       "man",
       "person"
     ],
-    "meaningZh": null,
+    "meaningZh": "人、人類",
     "sentences": [
       {
         "jp": "２００人の人が昨年コレラで死んだ。",
@@ -19345,7 +19345,7 @@
     "meaningEn": [
       "one thing"
     ],
-    "meaningZh": null,
+    "meaningZh": "一個（東西）",
     "sentences": [
       {
         "jp": "一つには、私は貧しいし、それにまた忙しくもある。",
@@ -19376,7 +19376,7 @@
     "meaningEn": [
       "one month"
     ],
-    "meaningZh": null,
+    "meaningZh": "一個月",
     "sentences": [
       {
         "jp": "私は１９６８年の１月２日に生まれた。",
@@ -19398,7 +19398,7 @@
     "meaningEn": [
       "one person"
     ],
-    "meaningZh": null,
+    "meaningZh": "一個人",
     "sentences": [
       {
         "jp": "私は一人の弟がいます。",
@@ -19433,7 +19433,7 @@
       "free time",
       "leisure"
     ],
-    "meaningZh": null,
+    "meaningZh": "空閒、閒暇時間",
     "sentences": [
       {
         "jp": "今晩暇かな？",
@@ -19479,7 +19479,7 @@
     "meaningEn": [
       "hundred"
     ],
-    "meaningZh": null,
+    "meaningZh": "一百",
     "sentences": [
       {
         "jp": "百年後にはみな同じになる。",
@@ -19535,7 +19535,7 @@
     "meaningEn": [
       "hospital"
     ],
-    "meaningZh": null,
+    "meaningZh": "醫院",
     "sentences": [
       {
         "jp": "夕べお父さんが病院で死んだ。",
@@ -19592,7 +19592,7 @@
     "meaningEn": [
       "illness; sickness"
     ],
-    "meaningZh": null,
+    "meaningZh": "疾病、生病",
     "sentences": [
       {
         "jp": "母が病気だったので、私は学校を休んだ。",
@@ -19648,7 +19648,7 @@
     "meaningEn": [
       "hiragana"
     ],
-    "meaningZh": null,
+    "meaningZh": "平假名",
     "sentences": []
   },
   {
@@ -19665,7 +19665,7 @@
       "noon",
       "daytime"
     ],
-    "meaningZh": null,
+    "meaningZh": "中午、白天",
     "sentences": [
       {
         "jp": "ケンは昼まで家にいるでしょう。",
@@ -19697,7 +19697,7 @@
       "lunch",
       "midday meal"
     ],
-    "meaningZh": null,
+    "meaningZh": "午餐、午飯",
     "sentences": []
   },
   {
@@ -19712,7 +19712,7 @@
     "meaningEn": [
       "spacious; wide; broad"
     ],
-    "meaningZh": null,
+    "meaningZh": "寬廣的、寬敞的",
     "sentences": [
       {
         "jp": "彼は自分の国の中を広く旅行した。",
@@ -19770,7 +19770,7 @@
     "meaningEn": [
       "swimming pool"
     ],
-    "meaningZh": null,
+    "meaningZh": "游泳池",
     "sentences": [
       {
         "jp": "私はプールで泳ぐのは好きではない。",
@@ -19791,7 +19791,7 @@
     "meaningEn": [
       "film (roll of)"
     ],
-    "meaningZh": null,
+    "meaningZh": "底片、膠捲",
     "sentences": [
       {
         "jp": "カメラにフィルムを入れるのを忘れた。",
@@ -19847,7 +19847,7 @@
     "meaningEn": [
       "envelope"
     ],
-    "meaningZh": null,
+    "meaningZh": "信封",
     "sentences": [
       {
         "jp": "この紙は大きすぎて封筒に入らない。",
@@ -19903,7 +19903,7 @@
     "meaningEn": [
       "fork"
     ],
-    "meaningZh": null,
+    "meaningZh": "叉子",
     "sentences": [
       {
         "jp": "その子はナイフとフォークをうまく使う。",
@@ -19932,7 +19932,7 @@
       "to blow (wind",
       "etc.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（風）吹、吹奏",
     "sentences": [
       {
         "jp": "あの日は強い風が吹いていました。",
@@ -19970,7 +19970,7 @@
     "meaningEn": [
       "clothes"
     ],
-    "meaningZh": null,
+    "meaningZh": "衣服、服裝",
     "sentences": [
       {
         "jp": "彼は濡れた服を火にあぶってかわかした。",
@@ -19991,7 +19991,7 @@
     "meaningEn": [
       "two things"
     ],
-    "meaningZh": null,
+    "meaningZh": "兩個（東西）",
     "sentences": [
       {
         "jp": "２つの質問をしてもよいですか。",
@@ -20012,7 +20012,7 @@
     "meaningEn": [
       "pork"
     ],
-    "meaningZh": null,
+    "meaningZh": "豬肉",
     "sentences": [
       {
         "jp": "私について言えば、豚肉より鶏肉のほうが好きです。",
@@ -20048,7 +20048,7 @@
     "meaningEn": [
       "two people"
     ],
-    "meaningZh": null,
+    "meaningZh": "兩個人",
     "sentences": [
       {
         "jp": "夫の死後、彼女は一人で二人の子供を育てた。",
@@ -20104,7 +20104,7 @@
     "meaningEn": [
       "two days; second day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "兩天；每月二日",
     "sentences": [
       {
         "jp": "それは１週間前、すなわち４月２日に行われた。",
@@ -20131,7 +20131,7 @@
       "fat",
       "thick"
     ],
-    "meaningZh": null,
+    "meaningZh": "粗的、胖的",
     "sentences": [
       {
         "jp": "彼は太い首をしている。",
@@ -20153,7 +20153,7 @@
     "meaningEn": [
       "winter"
     ],
-    "meaningZh": null,
+    "meaningZh": "冬天、冬季",
     "sentences": [
       {
         "jp": "冬は疲れる。",
@@ -20214,7 +20214,7 @@
       "snow",
       "etc.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "（雨雪等）降下、落下",
     "sentences": [
       {
         "jp": "シカゴのあたりでは雨が降っていました。",
@@ -20238,7 +20238,7 @@
       "aged",
       "ancient"
     ],
-    "meaningZh": null,
+    "meaningZh": "舊的（指物品）",
     "sentences": [
       {
         "jp": "母は頭が古い。",
@@ -20295,7 +20295,7 @@
       "sentence",
       "text"
     ],
-    "meaningZh": null,
+    "meaningZh": "文章、句子",
     "sentences": [
       {
         "jp": "次の文章を日本語に直しなさい。",
@@ -20319,7 +20319,7 @@
     "meaningEn": [
       "a page"
     ],
-    "meaningZh": null,
+    "meaningZh": "頁、頁碼",
     "sentences": [
       {
         "jp": "あなたのページに、私どもの会社のウェブリンクを貼り付けていただけませんか。",
@@ -20342,7 +20342,7 @@
       "unskillful",
       "poor"
     ],
-    "meaningZh": null,
+    "meaningZh": "不擅長、拙劣",
     "sentences": [
       {
         "jp": "下手な動き方をしない様に気をつけなさい。",
@@ -20373,7 +20373,7 @@
     "meaningEn": [
       "bed"
     ],
-    "meaningZh": null,
+    "meaningZh": "床",
     "sentences": [
       {
         "jp": "静かにベッドに横になってください。",
@@ -20429,7 +20429,7 @@
     "meaningEn": [
       "pet"
     ],
-    "meaningZh": null,
+    "meaningZh": "寵物",
     "sentences": [
       {
         "jp": "その人たちはココに新しいペットをあげようとしました。",
@@ -20450,7 +20450,7 @@
     "meaningEn": [
       "a room"
     ],
-    "meaningZh": null,
+    "meaningZh": "房間",
     "sentences": [
       {
         "jp": "私の部屋は４階にあります。",
@@ -20477,7 +20477,7 @@
       "area",
       "vicinity"
     ],
-    "meaningZh": null,
+    "meaningZh": "附近、一帶",
     "sentences": [
       {
         "jp": "正方形には四つの辺がある。",
@@ -20508,7 +20508,7 @@
     "meaningEn": [
       "pen"
     ],
-    "meaningZh": null,
+    "meaningZh": "筆",
     "sentences": [
       {
         "jp": "例えば、これは一本のペンです。",
@@ -20567,7 +20567,7 @@
     "meaningEn": [
       "study"
     ],
-    "meaningZh": null,
+    "meaningZh": "學習、讀書",
     "sentences": [
       {
         "jp": "学校ではどんな科目を勉強しますか。",
@@ -20589,7 +20589,7 @@
       "convenient",
       "handy"
     ],
-    "meaningZh": null,
+    "meaningZh": "方便的",
     "sentences": [
       {
         "jp": "電話は便利なものである。",
@@ -20610,7 +20610,7 @@
     "meaningEn": [
       "ball-point pen"
     ],
-    "meaningZh": null,
+    "meaningZh": "原子筆",
     "sentences": [
       {
         "jp": "ボールペンで書いていただけませんか？",
@@ -20668,7 +20668,7 @@
     "meaningEn": [
       "hat; cap"
     ],
-    "meaningZh": null,
+    "meaningZh": "帽子",
     "sentences": [
       {
         "jp": "帽子をかぶりなさい。",
@@ -20727,7 +20727,7 @@
       "other",
       "the rest"
     ],
-    "meaningZh": null,
+    "meaningZh": "其他、其餘",
     "sentences": [
       {
         "jp": "いつもと変えてたまに外で食事しよう。",
@@ -20763,7 +20763,7 @@
     "meaningEn": [
       "pocket"
     ],
-    "meaningZh": null,
+    "meaningZh": "口袋",
     "sentences": [
       {
         "jp": "ポケットの中にはお金が入っていない。",
@@ -20821,7 +20821,7 @@
       "to want",
       "in need of"
     ],
-    "meaningZh": null,
+    "meaningZh": "想要的",
     "sentences": [
       {
         "jp": "私は鉛筆をけずるナイフがほしい。",
@@ -20851,7 +20851,7 @@
       "mailbox; post",
       "position"
     ],
-    "meaningZh": null,
+    "meaningZh": "郵筒；職位",
     "sentences": [
       {
         "jp": "いったんポストに入れたものは、郵便局の所轄になる。",
@@ -20874,7 +20874,7 @@
       "slender",
       "fine"
     ],
-    "meaningZh": null,
+    "meaningZh": "細的、纖細的",
     "sentences": [
       {
         "jp": "彼は先の細い鉛筆を使う。",
@@ -20928,7 +20928,7 @@
     "meaningEn": [
       "button"
     ],
-    "meaningZh": null,
+    "meaningZh": "鈕扣",
     "sentences": []
   },
   {
@@ -20943,7 +20943,7 @@
     "meaningEn": [
       "hotel"
     ],
-    "meaningZh": null,
+    "meaningZh": "飯店",
     "sentences": [
       {
         "jp": "彼はホテルの部屋を知らない人と一緒に使わねばならなかった。",
@@ -21001,7 +21001,7 @@
     "meaningEn": [
       "book"
     ],
-    "meaningZh": null,
+    "meaningZh": "書",
     "sentences": [
       {
         "jp": "昨日はその本を８０ページまで読んだ。",
@@ -21032,7 +21032,7 @@
     "meaningEn": [
       "bookshelf"
     ],
-    "meaningZh": null,
+    "meaningZh": "書架",
     "sentences": [
       {
         "jp": "私は父の本棚にある本はどれもみんな読みました。",
@@ -21091,7 +21091,7 @@
       "real",
       "true"
     ],
-    "meaningZh": null,
+    "meaningZh": "真實的、真正的",
     "sentences": [
       {
         "jp": "本当の話をしなさい。",
@@ -21148,7 +21148,7 @@
     "meaningEn": [
       "every morning"
     ],
-    "meaningZh": null,
+    "meaningZh": "每天早上",
     "sentences": [
       {
         "jp": "母は毎朝いちばん早く起きます。",
@@ -21203,7 +21203,7 @@
       "every month",
       "monthly"
     ],
-    "meaningZh": null,
+    "meaningZh": "每個月",
     "sentences": [
       {
         "jp": "この雑誌は毎月出る。",
@@ -21260,7 +21260,7 @@
     "meaningEn": [
       "every week"
     ],
-    "meaningZh": null,
+    "meaningZh": "每週",
     "sentences": [
       {
         "jp": "毎週日曜日の朝にします。",
@@ -21317,7 +21317,7 @@
     "meaningEn": [
       "every day"
     ],
-    "meaningZh": null,
+    "meaningZh": "每天",
     "sentences": [
       {
         "jp": "毎日三時間英語を勉強することにしている。",
@@ -21373,7 +21373,7 @@
       "yearly",
       "annually"
     ],
-    "meaningZh": null,
+    "meaningZh": "每年",
     "sentences": [
       {
         "jp": "毎年ここに来なきゃ。",
@@ -21430,7 +21430,7 @@
     "meaningEn": [
       "every night"
     ],
-    "meaningZh": null,
+    "meaningZh": "每天晚上",
     "sentences": [
       {
         "jp": "毎晩遅くまで起きていてはいけない。",
@@ -21490,7 +21490,7 @@
       "before",
       "in front"
     ],
-    "meaningZh": null,
+    "meaningZh": "前面；之前",
     "sentences": [
       {
         "jp": "まっすぐ前を見てください。",
@@ -21548,7 +21548,7 @@
       "to turn",
       "to bend"
     ],
-    "meaningZh": null,
+    "meaningZh": "轉彎、彎曲",
     "sentences": []
   },
   {
@@ -21563,7 +21563,7 @@
       "unappetizing",
       "unpleasant (taste)"
     ],
-    "meaningZh": null,
+    "meaningZh": "難吃的、令人不快的",
     "sentences": []
   },
   {
@@ -21576,7 +21576,7 @@
     "meaningEn": [
       "and; furthermore"
     ],
-    "meaningZh": null,
+    "meaningZh": "而且、還有",
     "sentences": []
   },
   {
@@ -21591,7 +21591,7 @@
       "still",
       "besides"
     ],
-    "meaningZh": null,
+    "meaningZh": "還、仍然",
     "sentences": []
   },
   {
@@ -21606,7 +21606,7 @@
     "meaningEn": [
       "town; city"
     ],
-    "meaningZh": null,
+    "meaningZh": "城鎮、市區",
     "sentences": [
       {
         "jp": "楽隊が町をパレードした。",
@@ -21634,7 +21634,7 @@
     "meaningEn": [
       "to wait"
     ],
-    "meaningZh": null,
+    "meaningZh": "等待",
     "sentences": [
       {
         "jp": "しばらく電話を切らずにお待ちください。",
@@ -21654,7 +21654,7 @@
       "straight (ahead)",
       "direct"
     ],
-    "meaningZh": null,
+    "meaningZh": "筆直地、直接",
     "sentences": []
   },
   {
@@ -21671,7 +21671,7 @@
     "meaningEn": [
       "match"
     ],
-    "meaningZh": null,
+    "meaningZh": "火柴",
     "sentences": []
   },
   {
@@ -21686,7 +21686,7 @@
     "meaningEn": [
       "window"
     ],
-    "meaningZh": null,
+    "meaningZh": "窗戶",
     "sentences": [
       {
         "jp": "風邪をひくといけないから窓を閉めて下さい。",
@@ -21741,7 +21741,7 @@
       "round",
       "circular"
     ],
-    "meaningZh": null,
+    "meaningZh": "圓形的",
     "sentences": []
   },
   {
@@ -21759,7 +21759,7 @@
     "meaningEn": [
       "ten thousand"
     ],
-    "meaningZh": null,
+    "meaningZh": "一萬",
     "sentences": [
       {
         "jp": "４０万ガロンの石油がパイプラインから溢れ出た。",
@@ -21780,7 +21780,7 @@
     "meaningEn": [
       "fountain pen"
     ],
-    "meaningZh": null,
+    "meaningZh": "鋼筆",
     "sentences": [
       {
         "jp": "万年筆を持っていますか。",
@@ -21827,7 +21827,7 @@
     "meaningEn": [
       "to brush (teeth); to polish"
     ],
-    "meaningZh": null,
+    "meaningZh": "刷（牙）、磨光",
     "sentences": [
       {
         "jp": "学生は読書の技能を磨くべきだ。",
@@ -21854,7 +21854,7 @@
     "meaningEn": [
       "right hand side"
     ],
-    "meaningZh": null,
+    "meaningZh": "右邊",
     "sentences": [
       {
         "jp": "２つ目の角を右に曲がりなさい。",
@@ -21875,7 +21875,7 @@
     "meaningEn": [
       "short (length)"
     ],
-    "meaningZh": null,
+    "meaningZh": "短的",
     "sentences": [
       {
         "jp": "彼は私に短い手紙をくれた。",
@@ -21906,7 +21906,7 @@
     "meaningEn": [
       "water"
     ],
-    "meaningZh": null,
+    "meaningZh": "水",
     "sentences": [
       {
         "jp": "私は、月・水・金と一日おきに仕事をします。",
@@ -21933,7 +21933,7 @@
       "store",
       "shop"
     ],
-    "meaningZh": null,
+    "meaningZh": "店、商店",
     "sentences": [
       {
         "jp": "あの店はサービスが良い。",
@@ -21962,7 +21962,7 @@
       "to show",
       "to display"
     ],
-    "meaningZh": null,
+    "meaningZh": "展示、給人看",
     "sentences": [
       {
         "jp": "あなたに何枚かの写真を見せましょう。",
@@ -21990,7 +21990,7 @@
       "street; way",
       "directions"
     ],
-    "meaningZh": null,
+    "meaningZh": "道路、方向",
     "sentences": [
       {
         "jp": "人生は重い荷を背負って遠い道を行くようなものだ。",
@@ -22017,7 +22017,7 @@
       "three days",
       "third day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "三天；三號",
     "sentences": [
       {
         "jp": "彼女には３日前に会ったよ。",
@@ -22044,7 +22044,7 @@
     "meaningEn": [
       "three things"
     ],
-    "meaningZh": null,
+    "meaningZh": "三個",
     "sentences": [
       {
         "jp": "ボーイさん、コーヒー３つください。",
@@ -22066,7 +22066,7 @@
     "meaningEn": [
       "green"
     ],
-    "meaningZh": null,
+    "meaningZh": "綠色",
     "sentences": [
       {
         "jp": "あなたは緑と青を見分けることができますか。",
@@ -22093,7 +22093,7 @@
       "all of you",
       "everyone"
     ],
-    "meaningZh": null,
+    "meaningZh": "各位、大家",
     "sentences": [
       {
         "jp": "皆さんお乗りください。",
@@ -22149,7 +22149,7 @@
     "meaningEn": [
       "South"
     ],
-    "meaningZh": null,
+    "meaningZh": "南方",
     "sentences": [
       {
         "jp": "風は南へ吹く。",
@@ -22205,7 +22205,7 @@
     "meaningEn": [
       "ear"
     ],
-    "meaningZh": null,
+    "meaningZh": "耳朵",
     "sentences": [
       {
         "jp": "彼等には音楽を聴く耳がない。",
@@ -22239,7 +22239,7 @@
       "to see",
       "to look"
     ],
-    "meaningZh": null,
+    "meaningZh": "看、觀看",
     "sentences": [
       {
         "jp": "１０ページの５行目をみなさい。",
@@ -22280,7 +22280,7 @@
       "everyone",
       "everybody"
     ],
-    "meaningZh": null,
+    "meaningZh": "全部、大家",
     "sentences": []
   },
   {
@@ -22295,7 +22295,7 @@
     "meaningEn": [
       "six days; sixth day of month"
     ],
-    "meaningZh": null,
+    "meaningZh": "六天；每月第六天",
     "sentences": [
       {
         "jp": "４月５日か６日に会っていただけませんか。",
@@ -22322,7 +22322,7 @@
       "beyond",
       "over there"
     ],
-    "meaningZh": null,
+    "meaningZh": "對面；那邊；彼方",
     "sentences": [
       {
         "jp": "その男の子は向こうにいます。",
@@ -22353,7 +22353,7 @@
     "meaningEn": [
       "difficult"
     ],
-    "meaningZh": null,
+    "meaningZh": "困難的",
     "sentences": [
       {
         "jp": "私は彼女に難しい質問をした。",
@@ -22375,7 +22375,7 @@
     "meaningEn": [
       "six things"
     ],
-    "meaningZh": null,
+    "meaningZh": "六個",
     "sentences": [
       {
         "jp": "６つの先端技術の会社がその県に支社を設立した。",
@@ -22396,7 +22396,7 @@
     "meaningEn": [
       "village"
     ],
-    "meaningZh": null,
+    "meaningZh": "村莊",
     "sentences": [
       {
         "jp": "隣の村までどのくらいありますか。",
@@ -22453,7 +22453,7 @@
     "meaningEn": [
       "eye(s)"
     ],
-    "meaningZh": null,
+    "meaningZh": "眼睛",
     "sentences": [
       {
         "jp": "２つ目の角を右に曲がりなさい。",
@@ -22487,7 +22487,7 @@
     "meaningEn": [
       "meter"
     ],
-    "meaningZh": null,
+    "meaningZh": "公尺；米",
     "sentences": [
       {
         "jp": "前の人から1メートル離れて並んでください。",
@@ -22508,7 +22508,7 @@
     "meaningEn": [
       "eye glasses"
     ],
-    "meaningZh": null,
+    "meaningZh": "眼鏡",
     "sentences": [
       {
         "jp": "私はメガネがなくては読めない。",
@@ -22530,7 +22530,7 @@
     "meaningEn": [
       "already; again; more"
     ],
-    "meaningZh": null,
+    "meaningZh": "已經；再；更",
     "sentences": [
       {
         "jp": "もうそろそろ帰る時間だ。",
@@ -22577,7 +22577,7 @@
     "meaningEn": [
       "Thursday"
     ],
-    "meaningZh": null,
+    "meaningZh": "星期四",
     "sentences": [
       {
         "jp": "昨日は木曜日だった。",
@@ -22633,7 +22633,7 @@
     "meaningEn": [
       "Hello? (used on the phone)"
     ],
-    "meaningZh": null,
+    "meaningZh": "喂（電話用語）",
     "sentences": [
       {
         "jp": "もしもし、何かお役に立ちましょうか。",
@@ -22662,7 +22662,7 @@
       "to hold",
       "to carry; to possess"
     ],
-    "meaningZh": null,
+    "meaningZh": "拿；持有；擁有",
     "sentences": [
       {
         "jp": "コートを持ちましょうか。",
@@ -22693,7 +22693,7 @@
     "meaningEn": [
       "more"
     ],
-    "meaningZh": null,
+    "meaningZh": "更多；再多一點",
     "sentences": [
       {
         "jp": "母は私にもっと野菜を食べろと言う。",
@@ -22751,7 +22751,7 @@
     "meaningEn": [
       "thing (concrete object)"
     ],
-    "meaningZh": null,
+    "meaningZh": "事物；物品",
     "sentences": [
       {
         "jp": "あなたの妹さんに会いたいものです。",
@@ -22794,7 +22794,7 @@
     "meaningEn": [
       "gate"
     ],
-    "meaningZh": null,
+    "meaningZh": "大門",
     "sentences": [
       {
         "jp": "２人の兵士が、門のところで見張りをしていた。",
@@ -22815,7 +22815,7 @@
     "meaningEn": [
       "a problem"
     ],
-    "meaningZh": null,
+    "meaningZh": "問題",
     "sentences": [
       {
         "jp": "そこに問題がある。",
@@ -22871,7 +22871,7 @@
     "meaningEn": [
       "greengrocer"
     ],
-    "meaningZh": null,
+    "meaningZh": "蔬果行；蔬菜店",
     "sentences": [
       {
         "jp": "私は八百屋の外で彼に出会った。",
@@ -22892,7 +22892,7 @@
     "meaningEn": [
       "vegetable"
     ],
-    "meaningZh": null,
+    "meaningZh": "蔬菜",
     "sentences": [
       {
         "jp": "母は私にもっと野菜を食べろと言う。",
@@ -22950,7 +22950,7 @@
       "plain",
       "simple"
     ],
-    "meaningZh": null,
+    "meaningZh": "容易的；簡單的",
     "sentences": [
       {
         "jp": "この仕事は決してやさしくない。",
@@ -22971,7 +22971,7 @@
     "meaningEn": [
       "inexpensive; cheap (things)"
     ],
-    "meaningZh": null,
+    "meaningZh": "便宜的",
     "sentences": [
       {
         "jp": "これはバーゲン商品なので定価よりやすくなっているんじゃないですか。",
@@ -22992,7 +22992,7 @@
     "meaningEn": [
       "holiday; day off; absence"
     ],
-    "meaningZh": null,
+    "meaningZh": "假日；休息；缺席",
     "sentences": [
       {
         "jp": "今度の休みはどこへ行くの？",
@@ -23021,7 +23021,7 @@
       "to have a break",
       "to get time off"
     ],
-    "meaningZh": null,
+    "meaningZh": "休息；請假",
     "sentences": [
       {
         "jp": "父はまだ休んでいる。",
@@ -23053,7 +23053,7 @@
     "meaningEn": [
       "eight things"
     ],
-    "meaningZh": null,
+    "meaningZh": "八個",
     "sentences": [
       {
         "jp": "この真っ赤なりんごを８つ下さい。",
@@ -23096,7 +23096,7 @@
     "meaningEn": [
       "mountain"
     ],
-    "meaningZh": null,
+    "meaningZh": "山",
     "sentences": [
       {
         "jp": "うまくあの先生のやまを当てたわね。",
@@ -23133,7 +23133,7 @@
       "siblings",
       "etc.)"
     ],
-    "meaningZh": null,
+    "meaningZh": "做；給（動植物等）",
     "sentences": []
   },
   {
@@ -23150,7 +23150,7 @@
       "late afternoon (typically just before dinner time)",
       "evening"
     ],
-    "meaningZh": null,
+    "meaningZh": "傍晚",
     "sentences": [
       {
         "jp": "夕方から雨だっていっていたよ。",
@@ -23208,7 +23208,7 @@
       "supper",
       "evening meal"
     ],
-    "meaningZh": null,
+    "meaningZh": "晚餐",
     "sentences": [
       {
         "jp": "夕飯の時間ですよ。",
@@ -23264,7 +23264,7 @@
     "meaningEn": [
       "post office"
     ],
-    "meaningZh": null,
+    "meaningZh": "郵局",
     "sentences": [
       {
         "jp": "切手はどの郵便局でも買える。",
@@ -23321,7 +23321,7 @@
     "meaningEn": [
       "last night"
     ],
-    "meaningZh": null,
+    "meaningZh": "昨晚",
     "sentences": [
       {
         "jp": "朝は４脚、昼は２脚、そして夕は３脚で歩くものは何か。",
@@ -23342,7 +23342,7 @@
     "meaningEn": [
       "famous"
     ],
-    "meaningZh": null,
+    "meaningZh": "有名的；著名的",
     "sentences": [
       {
         "jp": "これは芭蕉の非常に有名な俳句です。",
@@ -23363,7 +23363,7 @@
     "meaningEn": [
       "snow"
     ],
-    "meaningZh": null,
+    "meaningZh": "雪",
     "sentences": [
       {
         "jp": "明日、雪が降るだろう。",
@@ -23418,7 +23418,7 @@
       "slowly",
       "at ease"
     ],
-    "meaningZh": null,
+    "meaningZh": "慢慢地；從容地",
     "sentences": []
   },
   {
@@ -23433,7 +23433,7 @@
     "meaningEn": [
       "eight days; eighth day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "八天；每月第八天",
     "sentences": [
       {
         "jp": "学校は４月８日から始まります。",
@@ -23454,7 +23454,7 @@
     "meaningEn": [
       "Western-style clothes"
     ],
-    "meaningZh": null,
+    "meaningZh": "西式服裝",
     "sentences": [
       {
         "jp": "その赤い帽子はあなたの洋服とよくあっている。",
@@ -23510,7 +23510,7 @@
       "often (much); well",
       "skillfully"
     ],
-    "meaningZh": null,
+    "meaningZh": "經常；擅長地",
     "sentences": []
   },
   {
@@ -23525,7 +23525,7 @@
     "meaningEn": [
       "beside; side; width"
     ],
-    "meaningZh": null,
+    "meaningZh": "旁邊；側面；寬度",
     "sentences": [
       {
         "jp": "あの人は眼の横にほくろがある。",
@@ -23561,7 +23561,7 @@
     "meaningEn": [
       "four days; fourth day of the month"
     ],
-    "meaningZh": null,
+    "meaningZh": "四天；每月第四天",
     "sentences": [
       {
         "jp": "７月４日はアメリカでは記念すべき日だ。",
@@ -23588,7 +23588,7 @@
     "meaningEn": [
       "four things"
     ],
-    "meaningZh": null,
+    "meaningZh": "四個",
     "sentences": [
       {
         "jp": "この国は季節が４つあります。",
@@ -23610,7 +23610,7 @@
     "meaningEn": [
       "to call (one's name); to invite"
     ],
-    "meaningZh": null,
+    "meaningZh": "呼叫；邀請",
     "sentences": [
       {
         "jp": "あなたが呼べば、彼は来るでしょう。",
@@ -23652,7 +23652,7 @@
     "meaningEn": [
       "to read"
     ],
-    "meaningZh": null,
+    "meaningZh": "閱讀；讀",
     "sentences": [
       {
         "jp": "彼女の心の動きを読むことさえできなかった。",
@@ -23685,7 +23685,7 @@
       "evening",
       "night"
     ],
-    "meaningZh": null,
+    "meaningZh": "夜晚；晚上",
     "sentences": [
       {
         "jp": "あなたは夜よく寝れませんか。",
@@ -23706,7 +23706,7 @@
     "meaningEn": [
       "weak"
     ],
-    "meaningZh": null,
+    "meaningZh": "軟弱的；虛弱的",
     "sentences": [
       {
         "jp": "人は年をとればとるほど記憶力が弱くなる。",
@@ -23763,7 +23763,7 @@
     "meaningEn": [
       "next month"
     ],
-    "meaningZh": null,
+    "meaningZh": "下個月",
     "sentences": [
       {
         "jp": "来月お会いしましょう。",
@@ -23820,7 +23820,7 @@
     "meaningEn": [
       "next week"
     ],
-    "meaningZh": null,
+    "meaningZh": "下週",
     "sentences": [
       {
         "jp": "来週の今日は学校は休みだ。",
@@ -23877,7 +23877,7 @@
     "meaningEn": [
       "next year"
     ],
-    "meaningZh": null,
+    "meaningZh": "明年",
     "sentences": [
       {
         "jp": "来年、私は外国に留学したい。",
@@ -23933,7 +23933,7 @@
     "meaningEn": [
       "radio"
     ],
-    "meaningZh": null,
+    "meaningZh": "收音機",
     "sentences": [
       {
         "jp": "夕べラジオを消し忘れたでしょう。",
@@ -23987,7 +23987,7 @@
     "meaningEn": [
       "radio cassette player"
     ],
-    "meaningZh": null,
+    "meaningZh": "收錄音機",
     "sentences": []
   },
   {
@@ -24001,7 +24001,7 @@
       "splendid",
       "fine"
     ],
-    "meaningZh": null,
+    "meaningZh": "出色的；堂皇的",
     "sentences": []
   },
   {
@@ -24016,7 +24016,7 @@
     "meaningEn": [
       "international student"
     ],
-    "meaningZh": null,
+    "meaningZh": "留學生",
     "sentences": [
       {
         "jp": "アジアからの留学生は日本語同様に英語も話す。",
@@ -24048,7 +24048,7 @@
       "parents (lit.",
       "both parents)"
     ],
-    "meaningZh": null,
+    "meaningZh": "雙親；父母",
     "sentences": [
       {
         "jp": "両親は歳を取っている。",
@@ -24106,7 +24106,7 @@
     "meaningEn": [
       "cooking; cuisine"
     ],
-    "meaningZh": null,
+    "meaningZh": "料理；烹飪",
     "sentences": [
       {
         "jp": "良い所：様々なコンボで自由に敵を料理する楽しさ。",
@@ -24135,7 +24135,7 @@
       "travel",
       "trip"
     ],
-    "meaningZh": null,
+    "meaningZh": "旅行；出遊",
     "sentences": [
       {
         "jp": "旅行に行こう。",
@@ -24192,7 +24192,7 @@
       "zero",
       "nought"
     ],
-    "meaningZh": null,
+    "meaningZh": "零；0",
     "sentences": [
       {
         "jp": "ゼロという概念はヒンドゥー文化に由来している。",
@@ -24213,7 +24213,7 @@
     "meaningEn": [
       "refrigerator"
     ],
-    "meaningZh": null,
+    "meaningZh": "冰箱",
     "sentences": [
       {
         "jp": "冷蔵庫にバターはありますか。",
@@ -24269,7 +24269,7 @@
     "meaningEn": [
       "record"
     ],
-    "meaningZh": null,
+    "meaningZh": "唱片；紀錄",
     "sentences": [
       {
         "jp": "ＣＤはすっかりレコードに取って代わった。",
@@ -24290,7 +24290,7 @@
     "meaningEn": [
       "restaurant"
     ],
-    "meaningZh": null,
+    "meaningZh": "西餐廳",
     "sentences": [
       {
         "jp": "彼はお金を払わずにレストランを出ました。",
@@ -24348,7 +24348,7 @@
     "meaningEn": [
       "(to) practice"
     ],
-    "meaningZh": null,
+    "meaningZh": "練習",
     "sentences": [
       {
         "jp": "僕は彼を相手にして英語を練習した。",
@@ -24404,7 +24404,7 @@
     "meaningEn": [
       "corridor"
     ],
-    "meaningZh": null,
+    "meaningZh": "走廊",
     "sentences": [
       {
         "jp": "偶然、廊下でいじめを目撃した。",
@@ -24460,7 +24460,7 @@
     "meaningEn": [
       "six"
     ],
-    "meaningZh": null,
+    "meaningZh": "六",
     "sentences": [
       {
         "jp": "九引く六はいくつですか。",
@@ -24515,7 +24515,7 @@
       "shirt (lit: white shirt)",
       "business shirt"
     ],
-    "meaningZh": null,
+    "meaningZh": "襯衫；白襯衫",
     "sentences": []
   },
   {
@@ -24530,7 +24530,7 @@
     "meaningEn": [
       "young"
     ],
-    "meaningZh": null,
+    "meaningZh": "年輕的",
     "sentences": [
       {
         "jp": "例えばあなたのような若い人たちがこの仕事には必要だ。",
@@ -24588,7 +24588,7 @@
     "meaningEn": [
       "to understand"
     ],
-    "meaningZh": null,
+    "meaningZh": "明白；理解",
     "sentences": [
       {
         "jp": "「博、君の気持ちは分かるよ」とマイクが言います。",
@@ -24615,7 +24615,7 @@
     "meaningEn": [
       "to forget"
     ],
-    "meaningZh": null,
+    "meaningZh": "忘記",
     "sentences": [
       {
         "jp": "夕べラジオを消し忘れたでしょう。",
@@ -24675,7 +24675,7 @@
       "myself",
       "private affairs"
     ],
-    "meaningZh": null,
+    "meaningZh": "我（正式）；私事",
     "sentences": [
       {
         "jp": "騒がしいホームで誰かが私の名前を呼んでいるのが聞こえた。",
@@ -24702,7 +24702,7 @@
       "I",
       "myself"
     ],
-    "meaningZh": null,
+    "meaningZh": "我",
     "sentences": [
       {
         "jp": "騒がしいホームで誰かが私の名前を呼んでいるのが聞こえた。",
@@ -24729,7 +24729,7 @@
     "meaningEn": [
       "to hand (something) over (v.t.); to get across"
     ],
-    "meaningZh": null,
+    "meaningZh": "交出；遞給",
     "sentences": [
       {
         "jp": "わたしを向こう側へわたしてください。",
@@ -24762,7 +24762,7 @@
       "to cross over",
       "to go across"
     ],
-    "meaningZh": null,
+    "meaningZh": "渡過；穿越",
     "sentences": [
       {
         "jp": "この儀式は幾世代にもわたって伝わってきた。",
@@ -24790,7 +24790,7 @@
       "bad",
       "sinful; inferior"
     ],
-    "meaningZh": null,
+    "meaningZh": "壞的；差的",
     "sentences": [
       {
         "jp": "これは悪い話ではないでしょう？",

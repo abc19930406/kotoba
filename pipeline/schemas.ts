@@ -40,6 +40,8 @@ export const grammarEntrySchema = z.object({
   formation: z.string().min(1),
   shortExplanation: z.string().min(1),
   longExplanation: z.string().min(1),
+  zhShort: z.string().nullable(),
+  zhLong: z.string().nullable(),
   sentences: z.array(gradedSentenceSchema),
 })
 export type GrammarEntry = z.infer<typeof grammarEntrySchema>

@@ -2,6 +2,8 @@ import path from 'node:path'
 import { fetchAll } from './fetch.ts'
 import { buildLinkedData } from './link.ts'
 import { emit } from './emit.ts'
+import { translateMissing } from './translate.ts'
+import { translateGrammarMissing } from './translateGrammar.ts'
 import { sampleDeterministic, writeGradingReport, type GrammarDifficultyStat } from './report.ts'
 import { LEVEL_ORDER } from './schemas.ts'
 
@@ -34,6 +36,16 @@ async function main() {
 
   console.log('=== 2/4 grade + 3/4 link ===')
   const linked = await buildLinkedData()
+
+  if (process.argv.includes('--translate')) {
+    console.log('=== translate (zh-TW meanings) ===')
+    await translateMissing(linked.vocab)
+  }
+
+  if (process.argv.includes('--translate-grammar')) {
+    console.log('=== translate-grammar (zh-TW explanations) ===')
+    await translateGrammarMissing(linked.grammar)
+  }
 
   console.log('=== 4/4 emit ===')
   const index = await emit(linked, sourceVersions)

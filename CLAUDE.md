@@ -20,7 +20,8 @@ npm run dev          # 開發伺服器
 npm test             # Vitest 單元測試
 npm run build        # 產出 dist/
 npm run pipeline     # 執行完整資料管線（fetch → grade → link → emit）
-npm run pipeline -- --translate   # 含繁中釋義生成（需 ANTHROPIC_API_KEY）
+npm run pipeline -- --translate   # 含單字繁中釋義生成（需 ANTHROPIC_API_KEY）
+npm run pipeline -- --translate-grammar   # 含文法解說繁中翻譯（需 ANTHROPIC_API_KEY）
 ```
 
 ## 目錄結構
@@ -100,3 +101,5 @@ About 頁文法內容區塊標註文字：
 ## 累積規則
 
 - 資料源的路徑、格式、授權以探查結果為準；與 CLAUDE.md 記載不一致時，先回報並修正 CLAUDE.md，再繼續實作。
+- 批次呼叫 LLM 時，識別碼一律用本地索引對應，不得要求模型原樣抄寫任何 id 或長字串。原因：文法翻譯曾要求模型把組合出來的長 id（含羅馬拼音括號）原樣抄回，模型會悄悄簡化掉部分內容，導致翻譯結果存進快取時對不回原始 id，78 筆翻譯變孤兒資料且無報錯。改用 batch 內純數字索引（0,1,2...）送給模型、本地端用索引映射回真正的 id/物件後，問題不再發生。
+- 管線輸出的驗證必須包含跨筆 invariant（如 id 全域唯一性、跨檔重複 id 的內容一致性），不能只驗證單筆的 schema 結構。原因：`grade.ts`/`link.ts` 用「等級-標題」組字串當文法 id，來源資料裡有同標題但內容不同的 3 筆文法點（N3「～ように」），id 撞在一起導致其中 2 筆的翻譯被覆蓋成另一筆的內容，且 zod 單筆 schema 驗證完全抓不到（每筆自己的欄位都合法）。修法：`emit.ts` 在寫檔後對整批資料額外做跨筆檢查——文法 id 全域唯一（違反即中止），單字 id 若跨檔重複則要求其代表單字本身的欄位（不含 `level`／`sentences`，這兩者跨等級本來就會不同）逐筆比對必須一致。

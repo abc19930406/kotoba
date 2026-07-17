@@ -135,19 +135,29 @@ export async function buildLinkedData(): Promise<LinkedData> {
   for (const level of LEVEL_ORDER) {
     const file = level.toLowerCase() as 'n1' | 'n2' | 'n3' | 'n4' | 'n5'
     const raw = JSON.parse(await readFile(RAW_PATHS.grammarJson(file), 'utf-8')) as HanabiraGrammarRaw[]
+    // Titles are usually unique within a level, but the source data has at
+    // least one exception — disambiguate by source-file order so id stays
+    // stable across reruns instead of silently colliding.
+    const titleOccurrences = new Map<string, number>()
     for (const g of raw) {
+      const occurrence = (titleOccurrences.get(g.title) ?? 0) + 1
+      titleOccurrences.set(g.title, occurrence)
+      const id = occurrence === 1 ? `${level}-${g.title}` : `${level}-${g.title}-${occurrence}`
+
       const gradedSentences: GradedSentence[] = g.examples.map((ex) => ({
         jp: ex.jp,
         en: ex.en,
         difficulty: gradeCached(ex.jp).difficulty,
       }))
       grammar[level].push({
-        id: `${level}-${g.title}`,
+        id,
         level,
         title: g.title,
         formation: g.formation,
         shortExplanation: g.short_explanation,
         longExplanation: g.long_explanation,
+        zhShort: null,
+        zhLong: null,
         sentences: gradedSentences,
       })
     }
