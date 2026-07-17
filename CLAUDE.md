@@ -31,7 +31,9 @@ pipeline/            # 資料管線（僅建置期執行，不打包進前端）
   fetch.ts           # 下載原始資料至 pipeline/raw/（raw/ 加入 .gitignore）
   grade.ts           # 例句難度自動分級
   link.ts            # 單字↔例句、文法↔例句 對應
-  translate.ts       # （可選）呼叫 Anthropic API 生成繁中釋義
+  translate.ts       # （可選）呼叫 Anthropic API 生成單字繁中釋義
+  translateGrammar.ts # （可選）呼叫 Anthropic API 生成文法解說繁中翻譯
+  llmBatch.ts        # translate*.ts 共用的批次呼叫/重試/backoff 工具
   emit.ts            # 輸出 public/data/*.json
 src/
   db/                # Dexie schema、FSRS 卡片狀態、review log
