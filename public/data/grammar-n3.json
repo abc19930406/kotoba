@@ -1,0 +1,3962 @@
+[
+  {
+    "id": "N3-～？それとも～？ (～? sore tomo ～?)",
+    "level": "N3",
+    "title": "～？それとも～？ (～? sore tomo ～?)",
+    "formation": "Verb-casual + ？それとも + Verb-casual + ？, etc.",
+    "shortExplanation": "Presents two alternatives or choices; 'or', 'either...or'.",
+    "longExplanation": "The ～？それとも～？ grammar point is used to present two alternatives or choices in a single sentence. It is similar to 'or' or 'either...or' in English. It can be used with verbs, adjectives, or nouns.",
+    "sentences": [
+      {
+        "jp": "コーヒーを飲む？それとも紅茶を飲む？",
+        "en": "Do you want to drink coffee? Or tea?",
+        "difficulty": 1
+      },
+      {
+        "jp": "この映画は面白い？それともつまらない？",
+        "en": "Is this movie interesting? Or is it boring?",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は日本人だ？それとも外国人だ？",
+        "en": "Is he Japanese? Or is he a foreigner?",
+        "difficulty": 3
+      },
+      {
+        "jp": "寿司を食べに行く？それともラーメンを食べに行く？",
+        "en": "Are we going to eat sushi? Or are we going to eat ramen?",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～うちに (〜uchi ni)",
+    "level": "N3",
+    "title": "～うちに (〜uchi ni)",
+    "formation": "Verb-てform + いる + うちに, い-Adjective + い + うちに, な-Adjective + な + うちに",
+    "shortExplanation": "Express 'while', 'before', or 'during' a certain condition or situation.",
+    "longExplanation": "The ～うちに grammar point is used to express the idea of doing something while a certain condition or situation is still present or before it changes. It can be translated as 'while', 'before', or 'during' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "sentences": [
+      {
+        "jp": "若いうちに、いろいろな経験をしておくことが大切です。",
+        "en": "It is important to have various experiences while you are young.",
+        "difficulty": 2
+      },
+      {
+        "jp": "雨が降っていないうちに、買い物に行こう。",
+        "en": "Let's go shopping before it starts raining.",
+        "difficulty": 1
+      },
+      {
+        "jp": "料理が熱いうちに食べましょう。",
+        "en": "Let's eat while the food is still hot.",
+        "difficulty": 1
+      },
+      {
+        "jp": "休みのうちに、旅行の計画を立てたいです。",
+        "en": "I want to plan a trip during the holidays.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～うとした (〜uto shita)",
+    "level": "N3",
+    "title": "～うとした (〜uto shita)",
+    "formation": "Verb-う stem + とした",
+    "shortExplanation": "Express an action someone tried to do but couldn't; 'tried to', 'attempted to'.",
+    "longExplanation": "The ～うとした grammar point is used to express an action that someone tried to do but couldn't complete, for various reasons. The formation differs depending on whether it is used with verbs. This grammar point can be translated as 'tried to' or 'attempted to' in English.",
+    "sentences": [
+      {
+        "jp": "電話に出ようとしたが、相手は切ってしまった。",
+        "en": "I tried to answer the phone, but the other person hung up.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は大声で話そうとしたが、言葉が出なかった。",
+        "en": "He tried to speak loudly, but no words came out.",
+        "difficulty": 3
+      },
+      {
+        "jp": "ケーキを作ろうとしたが、材料が足りなかった。",
+        "en": "I tried to make a cake, but I didn't have enough ingredients.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は泳ごうとしたが、怖くて水に入れなかった。",
+        "en": "She tried to swim, but she was scared and couldn't get in the water.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～おかげで (〜okagede)",
+    "level": "N3",
+    "title": "～おかげで (〜okagede)",
+    "formation": "Verb-casual + おかげで, い-Adjective + おかげで, な-Adjective + だおかげで, Noun + のおかげで",
+    "shortExplanation": "Expresses gratitude or shows a positive result due to a certain factor; 'thanks to', 'because of'.",
+    "longExplanation": "The ～おかげで grammar point is used to express gratitude or show a positive outcome resulting from a certain factor, event or person. It can be translated as 'thanks to' or 'because of' in English. The formation is straightforward and can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "お母さんのおかげで、私は元気になりました。",
+        "en": "Thanks to my mother, I became healthy.",
+        "difficulty": 2
+      },
+      {
+        "jp": "先生の助けのおかげで、試験に合格しました。",
+        "en": "Thanks to the teacher's help, I passed the exam.",
+        "difficulty": 4
+      },
+      {
+        "jp": "日本語の勉強のおかげで、この映画が理解できました。",
+        "en": "Thanks to studying Japanese, I was able to understand this movie.",
+        "difficulty": 3
+      },
+      {
+        "jp": "晴れた天気のおかげで、ピクニックが楽しかったです。",
+        "en": "Thanks to the sunny weather, the picnic was enjoyable.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～かけ (〜kake)",
+    "level": "N3",
+    "title": "～かけ (〜kake)",
+    "formation": "Verb-ますstem + かけ",
+    "shortExplanation": "Expresses the meaning of being in the middle of doing something or of something being partway done.",
+    "longExplanation": "The ～かけ grammar point is used to indicate that something is in the process of being done or is partway completed. This is often used with verbs to describe an action that is not yet finished or is ongoing. The verb should be in its ます-form, and かけ is added after removing the ます.",
+    "sentences": [
+      {
+        "jp": "彼は食事を食べかけです。",
+        "en": "He is in the middle of eating his meal.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この本は読みかけで、まだ終わっていません。",
+        "en": "This book is partway read, and it is not yet finished.",
+        "difficulty": 5
+      },
+      {
+        "jp": "この部屋は掃除しかけで、まだ片づいていません。",
+        "en": "This room is partway cleaned, and it's not yet tidied up.",
+        "difficulty": 4
+      },
+      {
+        "jp": "プロジェクトは進行しかけで、来週には完了する予定です。",
+        "en": "The project is in progress and is scheduled to be completed next week.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～かなあ (〜kanaa)",
+    "level": "N3",
+    "title": "～かなあ (〜kanaa)",
+    "formation": "Verb-casual + かなあ, い-Adjective + かなあ, な-Adjective + だかなあ, Noun + だかなあ",
+    "shortExplanation": "Expressing uncertainty or a mild wish; 'I wonder', 'maybe'.",
+    "longExplanation": "The ～かなあ grammar point is used to express uncertainty or a mild wish. It can be translated as 'I wonder' or 'maybe' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "明日晴れるかなあ。",
+        "en": "I wonder if it will be sunny tomorrow.",
+        "difficulty": 1
+      },
+      {
+        "jp": "このスープ、辛いかなあ。",
+        "en": "I wonder if this soup is spicy.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は静かだかなあ。",
+        "en": "I wonder if he is quiet.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は医者だかなあ。",
+        "en": "I wonder if she is a doctor.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～から～にかけて (〜kara 〜ni kakete)",
+    "level": "N3",
+    "title": "～から～にかけて (〜kara 〜ni kakete)",
+    "formation": "Noun (time, place, or measure) + から + Noun (time, place or measure) + にかけて",
+    "shortExplanation": "Expresses a range of something, such as time or space; 'from...to', 'between'.",
+    "longExplanation": "The ～から～にかけて grammar point is used to show a range, whether it is a range of time, space, or another measure. It can be translated as 'from...to' or 'between' in English. This grammar point is commonly used with nouns indicating time or place.",
+    "sentences": [
+      {
+        "jp": "午前８時から午後５時にかけて働いています。",
+        "en": "I work from 8 am to 5 pm.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この地域は、北から南にかけて狭いです。",
+        "en": "This area is narrow from north to south.",
+        "difficulty": 2
+      },
+      {
+        "jp": "１０歳から２０歳にかけて成長が早いです。",
+        "en": "Growth is rapid from 10 to 20 years of age.",
+        "difficulty": 3
+      },
+      {
+        "jp": "今年の夏は、６月から８月にかけて雨が多かった。",
+        "en": "This summer, there was a lot of rain from June to August.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～かわりに (〜kawari ni)",
+    "level": "N3",
+    "title": "～かわりに (〜kawari ni)",
+    "formation": "Verb-casual + かわりに, い-Adjective + かわりに, な-Adjective + だかわりに, Noun + だかわりに",
+    "shortExplanation": "In place of; instead of; as a substitute for.",
+    "longExplanation": "The ～かわりに grammar point is used to express doing something in place of or as a substitute for something else. It can be translated as 'instead of', 'in place of', or 'as a substitute for' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "映画を見るかわりに、本を読んだ。",
+        "en": "Instead of watching a movie, I read a book.",
+        "difficulty": 2
+      },
+      {
+        "jp": "お酒を飲むかわりに、水を飲んでください。",
+        "en": "Please drink water instead of alcohol.",
+        "difficulty": 3
+      },
+      {
+        "jp": "犬のかわりに、猫を飼いたいです。",
+        "en": "I want to keep a cat instead of a dog.",
+        "difficulty": 3
+      },
+      {
+        "jp": "電車を使わないかわりに、自転車で行くことにしました。",
+        "en": "I decided to go by bicycle instead of using the train.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～きり (〜kiri)",
+    "level": "N3",
+    "title": "～きり (〜kiri)",
+    "formation": "Verb-past + きり, Verb-てform + きり (less common), Noun + きり",
+    "shortExplanation": "Expresses the idea of 'only', 'since', or 'after'.",
+    "longExplanation": "The ～きり grammar point is used to express the idea of 'only', 'since', or 'after'. It indicates that a certain action or state continues without any change since a specific point in time or after a certain event. It is commonly used with verbs in the past tense, but can also be used with other forms.",
+    "sentences": [
+      {
+        "jp": "彼は出かけたきり帰ってきません。",
+        "en": "He went out and hasn't come back since.",
+        "difficulty": 3
+      },
+      {
+        "jp": "昨日コーヒーを飲んだきり、何も飲まなかった。",
+        "en": "I haven't had anything to drink since the coffee I had yesterday.",
+        "difficulty": 2
+      },
+      {
+        "jp": "卒業したきり、彼女に会っていません。",
+        "en": "I haven't seen her since we graduated.",
+        "difficulty": 3
+      },
+      {
+        "jp": "その映画を見たきり、もう一度見たいと思っています。",
+        "en": "I've wanted to watch that movie again ever since I saw it.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～くせに (〜kuse ni)",
+    "level": "N3",
+    "title": "～くせに (〜kuse ni)",
+    "formation": "Verb-casual + くせに, い-Adjective + くせに, な-Adjective + な/のくせに, Noun + のくせに",
+    "shortExplanation": "Used to express criticism or disapproval; 'even though', 'despite', 'in spite of'.",
+    "longExplanation": "The ～くせに grammar point is used to express criticism or disapproval in a sentence. It can be translated as 'even though', 'despite', or 'in spite of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼はお金持ちのくせに、ケチです。",
+        "en": "Even though he's rich, he's stingy.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋が汚いくせに、文句を言うな。",
+        "en": "Don't complain even though this room is dirty. (criticizing)",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は暇なくせに、手伝ってくれません。",
+        "en": "Even though he's free, he won't help me.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は美人なくせに、デートが続かない。",
+        "en": "Even though she's beautiful, she can't keep a date going.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～くらい (〜kurai)",
+    "level": "N3",
+    "title": "～くらい (〜kurai)",
+    "formation": "Verb-casual + くらい, い-Adjective + くらい, な-Adjective + くらい, Noun + くらい",
+    "shortExplanation": "Expresses an approximate quantity or degree; 'about', 'approximately', or 'to the extent of'.",
+    "longExplanation": "The ～くらい grammar point is used to express an approximate quantity, degree, or extent. It can be translated as 'about', 'approximately', or 'to the extent of' in English. The formation is straightforward and can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "１０分くらい待ちましょう。",
+        "en": "Let's wait for about 10 minutes.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女はその映画を５回くらい見ました。",
+        "en": "She watched that movie about five times.",
+        "difficulty": 3
+      },
+      {
+        "jp": "その本は面白いくらい難しいです。",
+        "en": "That book is so difficult that it’s interesting.",
+        "difficulty": 1
+      },
+      {
+        "jp": "この部屋はきれいなくらい広いです。",
+        "en": "This room is spacious to the extent of being beautiful.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～くらい～は～ない (〜kurai 〜wa 〜nai)",
+    "level": "N3",
+    "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
+    "formation": "Verb-casual (non-past) + くらい + は + Verb-casual (negative), Adjective (non-past) + くらい + は + Adjective (negative)",
+    "shortExplanation": "Express the least one can do; 'at least', 'the least', 'no less than'.",
+    "longExplanation": "The ～くらい～は～ない grammar point is used to emphasize the minimum expectation in a situation or the least one can do. It can be translated as 'at least', 'the least', or 'no less than' in English. The formation differs depending on whether it is used with a verb or an adjective.",
+    "sentences": [
+      {
+        "jp": "週に一度くらいはジムに行かないと。",
+        "en": "I have to go to the gym at least once a week.",
+        "difficulty": 3
+      },
+      {
+        "jp": "毎日くらいは歯を磨かないと。",
+        "en": "I have to brush my teeth at least every day.",
+        "difficulty": 1
+      },
+      {
+        "jp": "この問題くらいは解決しないと。",
+        "en": "I have to solve at least this problem.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女が泣いているくらいなら慰めないと。",
+        "en": "If she is crying that much, I should at least try to comfort her.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～こそ (〜koso)",
+    "level": "N3",
+    "title": "～こそ (〜koso)",
+    "formation": "Noun + こそ, (Verb-て + こそ)",
+    "shortExplanation": "Emphasizes the importance or uniqueness of something or someone; 'precisely', 'exactly', 'it is...', 'of all...'.",
+    "longExplanation": "The ～こそ grammar point is used to emphasize the importance, uniqueness, or the most suitable thing or person in a specific situation. It can be translated as 'precisely', 'exactly', or 'it is...' in English. In practice, it most often appears after a noun (e.g. 今日こそ), or with verbs in the て-form (e.g. 頑張ってこそ).",
+    "sentences": [
+      {
+        "jp": "今日こそ勉強しなければなりません。",
+        "en": "Today, of all days, I must study.",
+        "difficulty": 1
+      },
+      {
+        "jp": "あなたこそ私の一番の友達です。",
+        "en": "You are precisely my best friend.",
+        "difficulty": 1
+      },
+      {
+        "jp": "お金がないことこそ幸せの秘訣ではないか。",
+        "en": "Isn't not having money exactly the key to happiness?",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼こそまさにプロの歌手のように歌える。",
+        "en": "He can sing precisely like a professional singer.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～こと (〜koto)",
+    "level": "N3",
+    "title": "～こと (〜koto)",
+    "formation": "Verb-plain form + こと, Verb-phrase in plain form + こと",
+    "shortExplanation": "Express an action in a nominal (noun-like) form or state fact or experience.",
+    "longExplanation": "The ～こと grammar point is used to turn a verb or verb phrase into a noun or noun phrase. This allows the verb to be talked about as a general concept, fact, or experience. The formation varies slightly depending on whether it is used with a verb or a verb phrase.",
+    "sentences": [
+      {
+        "jp": "日本語を話すことができます。",
+        "en": "I can speak Japanese.",
+        "difficulty": 3
+      },
+      {
+        "jp": "毎日運動することは健康に良いです。",
+        "en": "Exercising every day is good for your health.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼はピアノを弾くことが大好きです。",
+        "en": "He loves to play the piano.",
+        "difficulty": 2
+      },
+      {
+        "jp": "映画を見ることに時間を使いたくない。",
+        "en": "I don't want to spend time watching movies.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ことだ (〜koto da)",
+    "level": "N3",
+    "title": "～ことだ (〜koto da)",
+    "formation": "Verb-ますstem + ことだ, い-Adjective + ことだ, な-Adjective + なことだ, Noun + のことだ",
+    "shortExplanation": "Expresses advice or recommendation; 'should', 'it is important', 'it is necessary'.",
+    "longExplanation": "The ～ことだ grammar point is used to express a piece of advice or recommendation to someone. It can be translated as 'should', 'it is important', or 'it is necessary' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "毎日運動することだ。",
+        "en": "You should exercise every day.",
+        "difficulty": 2
+      },
+      {
+        "jp": "健康のために、野菜をたくさん食べることだ。",
+        "en": "For your health, you should eat lots of vegetables.",
+        "difficulty": 3
+      },
+      {
+        "jp": "勉強しているとき、静かな場所を選ぶことだ。",
+        "en": "When studying, you should choose a quiet place.",
+        "difficulty": 2
+      },
+      {
+        "jp": "辞書を使って、新しい言葉を覚えることだ。",
+        "en": "You should use a dictionary to learn new words.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ことにしている (〜koto ni shite iru)",
+    "level": "N3",
+    "title": "～ことにしている (〜koto ni shite iru)",
+    "formation": "Verb-casual + ことにしている",
+    "shortExplanation": "Express a personal rule or habit; 'I make it a rule to', 'I always make sure to'.",
+    "longExplanation": "The ～ことにしている grammar point is used to express a personal rule, habit, or decision that the speaker has made for themselves. It can be translated as 'I make it a rule to' or 'I always make sure to' in English. This grammar point is formed by attaching ことにしている to the casual form of a verb.",
+    "sentences": [
+      {
+        "jp": "毎日運動することにしている。",
+        "en": "I make it a rule to exercise every day.",
+        "difficulty": 2
+      },
+      {
+        "jp": "夜遅くまで働かないことにしている。",
+        "en": "I make it a rule not to work late into the night.",
+        "difficulty": 2
+      },
+      {
+        "jp": "食事の後、歯を磨くことにしている。",
+        "en": "I always make sure to brush my teeth after meals.",
+        "difficulty": 2
+      },
+      {
+        "jp": "会議には必ず10分前に着くことにしている。",
+        "en": "I always make sure to arrive 10 minutes early for meetings.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ことになっている (〜koto ni natte iru)",
+    "level": "N3",
+    "title": "～ことになっている (〜koto ni natte iru)",
+    "formation": "Verb-dictionary form + ことになっている",
+    "shortExplanation": "Describes something that is decided, arranged, or expected.",
+    "longExplanation": "The ～ことになっている grammar point is used to express that something has been decided or arranged, or is expected as a rule or custom. It can be translated as 'it is decided that...', 'it is arranged that...', or 'it is expected to...' in English. The formation is used with verbs in their dictionary form.",
+    "sentences": [
+      {
+        "jp": "この会社では、20時には仕事を終えることになっている。",
+        "en": "In this company, it is decided that work will end at 8 pm.",
+        "difficulty": 3
+      },
+      {
+        "jp": "日本では、18歳以上の人が選挙に投票することになっている。",
+        "en": "In Japan, it is decided that people 18 years old and above will vote in elections.",
+        "difficulty": 3
+      },
+      {
+        "jp": "学校では、制服を着ることになっている。",
+        "en": "At school, it is decided that students will wear uniforms.",
+        "difficulty": 4
+      },
+      {
+        "jp": "田中さんが今回のプロジェクトリーダーになることになっている。",
+        "en": "It is decided that Tanaka will be the project leader this time.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～ことは…が (～koto wa... ga)",
+    "level": "N3",
+    "title": "～ことは…が (～koto wa... ga)",
+    "formation": "Verb-casual + ことは + が, い-Adjective + ことは + が, な-Adjective + だ + ことは + が, Noun + だ + ことは + が",
+    "shortExplanation": "Indicates that while something may be true or valid, there is another contrasting point.",
+    "longExplanation": "The ～ことは…が grammar point is used to express that although something might be true, there is another point or fact that is being contrasted with it. It can be translated as 'it may be true but...', 'it is that... however...', etc. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "この映画は面白いことは面白いが、ちょっと長すぎる。",
+        "en": "This movie may be interesting, but it is a bit too long.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は親切なことは親切だが、少し無口だ。",
+        "en": "He may be kind, but he is a bit quiet.",
+        "difficulty": 4
+      },
+      {
+        "jp": "このゲームは難しいことは難しいが、やめられない。",
+        "en": "This game may be difficult, but I can't stop playing.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は美しいことは美しいが、ちょっと高飛車だ。",
+        "en": "She may be beautiful, but she is a bit arrogant.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～ことはない (〜koto wa nai)",
+    "level": "N3",
+    "title": "～ことはない (〜koto wa nai)",
+    "formation": "Verb-dictionary form + ことはない, い-Adjective + ことはない, な-Adjective + であることはない, Noun + であることはない",
+    "shortExplanation": "Expresses that something doesn't need to be done or there's no occasion to do it; 'don't have to', 'not necessary'.",
+    "longExplanation": "The ～ことはない grammar point is used to express that doing something is not necessary, or there's no occasion to do it. It implies that although a certain action might not be needed, it does not mean it is forbidden. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "お金があるから、無理に貯金することはない。",
+        "en": "Since I have enough money, there's no need to force myself to save.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この本は簡単だから、辞書を使うことはない。",
+        "en": "Since this book is easy, there's no need to use a dictionary.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は海外旅行に行きたくなければ、行くことはない。",
+        "en": "If she doesn't want to go on an overseas trip, she doesn't have to go.",
+        "difficulty": 3
+      },
+      {
+        "jp": "寒くなければ、コートを着ることはない。",
+        "en": "If it's not cold, there's no need to wear a coat.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～さ (〜sa)",
+    "level": "N3",
+    "title": "～さ (〜sa)",
+    "formation": "い-Adjective (drop い) + さ, な-Adjective + さ",
+    "shortExplanation": "Express the degree or extent of a quality; '-ness', 'degree of'.",
+    "longExplanation": "The ～さ grammar point is used to express the degree or extent of a certain quality or characteristic. It is often translated as '-ness' or 'degree of' in English. The formation differs depending on whether it is used with an い-adjective or a な-adjective.",
+    "sentences": [
+      {
+        "jp": "この料理は辛さが強い。",
+        "en": "The spiciness of this dish is strong.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女の美しさは皆に憧れられる。",
+        "en": "Her beauty is admired by everyone.",
+        "difficulty": 4
+      },
+      {
+        "jp": "山田さんの親切さで、困っている人を助けてくれる。",
+        "en": "Yamada-san's kindness helps people in trouble.",
+        "difficulty": 4
+      },
+      {
+        "jp": "この部屋の広さは十分だと思う。",
+        "en": "I think the size of this room is enough.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～さえ (～sae)",
+    "level": "N3",
+    "title": "～さえ (～sae)",
+    "formation": "Noun + さえ, Verb-casual + さえ, い-Adjective + さえ, な-Adjective + でさえ",
+    "shortExplanation": "Emphasizes a specific item or action; 'even', 'if only', 'as long as'.",
+    "longExplanation": "The ～さえ grammar point is used to emphasize a specific item, person, or action, implying that it alone is sufficient, remarkable, or an exception. It can be translated as 'even', 'if only', or 'as long as' in English. The formation differs slightly depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "お金さえあれば、世界中を旅行できる。",
+        "en": "If only I have money, I can travel around the world.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は英語さえ話せれば、その仕事ができるだろう。",
+        "en": "As long as he can speak English, he can do that job.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼女は頭がいいだけでなく、運動も上手だ。テニスさえできる。",
+        "en": "Not only is she smart, she is also good at sports. She can even play tennis.",
+        "difficulty": 2
+      },
+      {
+        "jp": "明るい場所で本を読むのが好きだ。部屋の電気さえつけなくても大丈夫だ。",
+        "en": "I like reading books in bright places. I'm fine even if I don't turn on the room light.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～しかない (〜shika nai)",
+    "level": "N3",
+    "title": "～しかない (〜shika nai)",
+    "formation": "Verb-casual + しかない, い-Adjective + しかない, な-Adjective + しかない, Noun + しかない",
+    "shortExplanation": "Express the idea of 'only', 'no other option but', 'nothing else but'.",
+    "longExplanation": "The ～しかない grammar point is used to emphasize that there are no other options or possibilities, and the subject must follow a specified action or state. It can be translated as 'only', 'no other option but', or 'nothing else but' in English.",
+    "sentences": [
+      {
+        "jp": "この問題を解決する方法は一つしかない。",
+        "en": "There is only one way to solve this problem.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼が出て行ったら、泣くしかない。",
+        "en": "If he leaves, there's nothing else to do but cry.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女にはあと一月しかない。",
+        "en": "She has only one month left.",
+        "difficulty": 2
+      },
+      {
+        "jp": "僕には君を信じるしかない。",
+        "en": "I have no choice but to trust you.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ずに (〜zu ni)",
+    "level": "N3",
+    "title": "～ずに (〜zu ni)",
+    "formation": "Verb-ない form (Remove ない) + ずに",
+    "shortExplanation": "Express 'without doing' something or 'not doing' something.",
+    "longExplanation": "The ～ずに grammar point is used to express the meaning of not doing something or doing an action without doing another action first. It is similar to the negative ないで form (～ないで) but ～ずに is considered slightly more formal.",
+    "sentences": [
+      {
+        "jp": "彼は笑わずに話を聞いていました。",
+        "en": "He was listening to the story without laughing.",
+        "difficulty": 2
+      },
+      {
+        "jp": "食べずに寝るのは良くないです。",
+        "en": "It's not good to go to bed without eating.",
+        "difficulty": 3
+      },
+      {
+        "jp": "コーヒーを飲まずに仕事を始めました。",
+        "en": "I started working without drinking coffee.",
+        "difficulty": 2
+      },
+      {
+        "jp": "誰にも言わずに出かけました。",
+        "en": "I went out without telling anyone.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～せいで (〜sei de)",
+    "level": "N3",
+    "title": "～せいで (〜sei de)",
+    "formation": "Verb-casual + せいで, い-Adjective + せいで, な-Adjective + なせいで, Noun + のせいで",
+    "shortExplanation": "Indicates that something or someone caused an unfortunate result.",
+    "longExplanation": "The ～せいで grammar point is used to express that something or someone is the reason or cause of an unfortunate result or situation. It can be translated as 'because of' or 'due to' in English.",
+    "sentences": [
+      {
+        "jp": "雨のせいで試合が中止になりました。",
+        "en": "The game was cancelled because of the rain.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼の遅刻のせいで、みんな待たされました。",
+        "en": "Everyone had to wait because of his lateness.",
+        "difficulty": 3
+      },
+      {
+        "jp": "病気のせいで休日が台無しになった。",
+        "en": "My holiday was ruined due to illness.",
+        "difficulty": 4
+      },
+      {
+        "jp": "仕事が忙しくて寝不足なせいで、集中できない。",
+        "en": "I can't concentrate because I'm sleep-deprived due to busy work.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～せてください (〜sete kudasai)",
+    "level": "N3",
+    "title": "～せてください (〜sete kudasai)",
+    "formation": "Verb-causative (させ) + て + ください",
+    "shortExplanation": "Requesting someone to allow or let you do something (causative request).",
+    "longExplanation": "The せてください grammar point is used to request permission or ask someone to allow you to do something. It is a polite way of making a request and can be translated as 'please let me...' or 'please allow me...' in English. It is formed by using the causative form of the verb (Verb-させる) in the て-form, plus ください (e.g. 帰らせる → 帰らせて → 帰らせてください).",
+    "sentences": [
+      {
+        "jp": "もう一度説明させてください。",
+        "en": "Please let me explain it once more.",
+        "difficulty": 3
+      },
+      {
+        "jp": "帰らせてください。",
+        "en": "Please let me go home.",
+        "difficulty": 1
+      },
+      {
+        "jp": "その本を見せてください。",
+        "en": "Please let me see that book.",
+        "difficulty": 1
+      },
+      {
+        "jp": "ここで待たせてください。",
+        "en": "Please let me wait here.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～そのために (〜sono tame ni)",
+    "level": "N3",
+    "title": "～そのために (〜sono tame ni)",
+    "formation": "Sentence/phrase 1 + そのために + Sentence/phrase 2",
+    "shortExplanation": "For the purpose of; because of; in order to.",
+    "longExplanation": "The ～そのために grammar point is used to convey the purpose or reason behind an action or situation. It can be translated as 'for that reason', 'for the purpose of', or 'in order to' in English. It connects two sentences, where the first sentence gives a goal or reason, and the second sentence shows the resulting action.",
+    "sentences": [
+      {
+        "jp": "試験に合格するために、毎日勉強しています。そのために、早く寝て早く起きるようにしています。",
+        "en": "I study every day to pass the exam. For that reason, I go to bed early and wake up early.",
+        "difficulty": 3
+      },
+      {
+        "jp": "健康的な生活を送りたい。そのために、ジムに通って運動しています。",
+        "en": "I want to lead a healthy lifestyle. For that reason, I go to the gym and exercise.",
+        "difficulty": 3
+      },
+      {
+        "jp": "環境を守るために、リサイクルに取り組んでいます。そのために、ゴミを分別して捨てています。",
+        "en": "I'm working on recycling to protect the environment. Therefore, I separate and dispose of trash properly.",
+        "difficulty": 4
+      },
+      {
+        "jp": "新しい仕事を見つけたい。そのために、履歴書を書いて応募しています。",
+        "en": "I want to find a new job. So, I'm writing my resume and applying.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～その結果 (〜sono kekka)",
+    "level": "N3",
+    "title": "～その結果 (〜sono kekka)",
+    "formation": "Situation/ACTION 1 + その結果 + RESULT",
+    "shortExplanation": "Shows the result or consequence of a previous action or situation; 'as a result', 'in consequence'.",
+    "longExplanation": "The ～その結果 grammar point is used to show the result, outcome, or consequence of a previous action or situation. It can be translated as 'as a result', 'in consequence', or 'therefore' in English. It is typically placed between two statements to link cause and effect.",
+    "sentences": [
+      {
+        "jp": "彼女は毎日練習した。その結果、試合に勝った。",
+        "en": "She practiced every day. As a result, she won the match.",
+        "difficulty": 2
+      },
+      {
+        "jp": "会社が倒産した。その結果、彼は仕事を失った。",
+        "en": "The company went bankrupt. As a result, he lost his job.",
+        "difficulty": 3
+      },
+      {
+        "jp": "私たちは遅刻した。その結果、電車に乗れなかった。",
+        "en": "We were late. As a result, we couldn't catch the train.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼は勉強を怠った。その結果、試験に落ちた。",
+        "en": "He neglected his studies. As a result, he failed the exam.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～それと～ (〜sore to〜)",
+    "level": "N3",
+    "title": "～それと～ (〜sore to〜)",
+    "formation": "Item1 + それと + Item2",
+    "shortExplanation": "Used to link two or more items; 'and', 'also'.",
+    "longExplanation": "The ～それと～ grammar point is used to connect two or more items or actions, similar to how 'and' or 'also' is used in English. The expression それと can appear at the start of a new sentence or between items in a list to add another point.",
+    "sentences": [
+      {
+        "jp": "買い物に行くつもりです。それと、郵便局にも行かなくては。",
+        "en": "I plan to go shopping, and I also have to go to the post office.",
+        "difficulty": 3
+      },
+      {
+        "jp": "今日はタコスを作りました。それと、サラダも作りました。",
+        "en": "Today, I made tacos, and I also made a salad.",
+        "difficulty": 3
+      },
+      {
+        "jp": "出かける前に、部屋を掃除してください。それと、ゴミを捨ててください。",
+        "en": "Please clean the room before you go out, and also throw away the trash.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼はフランス語が話せます。それと、スペイン語も話せます。",
+        "en": "He can speak French, and he can also speak Spanish.",
+        "difficulty": 6
+      }
+    ]
+  },
+  {
+    "id": "N3-～だけしか (～dake shika)",
+    "level": "N3",
+    "title": "～だけしか (～dake shika)",
+    "formation": "Noun/Quantity + だけ + しか + Negative Verb",
+    "shortExplanation": "Emphasizes the scarcity or insufficiency of something; 'only', 'nothing but'.",
+    "longExplanation": "The ～だけしか grammar point is used to emphasize that there is nothing except what is mentioned, and it requires a negative verb. It can be translated as 'only' or 'nothing but' in English.",
+    "sentences": [
+      {
+        "jp": "今日は1時間だけしか勉強できなかった。",
+        "en": "Today, I could study for only one hour.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼はカレーだけしか食べない。",
+        "en": "He eats only curry.",
+        "difficulty": 2
+      },
+      {
+        "jp": "田中さんは5人だけしか招待しなかった。",
+        "en": "Tanaka only invited five people.",
+        "difficulty": 4
+      },
+      {
+        "jp": "あのレストランでは野菜だけしか売っていない。",
+        "en": "That restaurant sells only vegetables.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～たて (～tate)",
+    "level": "N3",
+    "title": "～たて (～tate)",
+    "formation": "Verb-stem + たて",
+    "shortExplanation": "Indicates an action that has just been completed; 'freshly', 'just'.",
+    "longExplanation": "The ～たて grammar point is used to express that an action has just been completed, and the result or condition is still fresh or new. This is often used with verbs like 焼く (bake), 作る (make), or 洗う (wash).",
+    "sentences": [
+      {
+        "jp": "このパンは焼きたてで、まだ温かいです。",
+        "en": "This bread is freshly baked and still warm.",
+        "difficulty": 3
+      },
+      {
+        "jp": "作りたてのお弁当が美味しい。",
+        "en": "A freshly made bento is delicious.",
+        "difficulty": 5
+      },
+      {
+        "jp": "洗いたてのシャツはいい匂いがする。",
+        "en": "Freshly washed shirts smell nice.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼女は切りたての野菜をサラダに入れました。",
+        "en": "She added freshly cut vegetables to the salad.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～たとえ～ても (〜tatoe〜temo)",
+    "level": "N3",
+    "title": "～たとえ～ても (〜tatoe〜temo)",
+    "formation": "たとえ + Verb-casual + ても, たとえ + い-Adjective + くても, たとえ + な-Adjective + であっても, たとえ + Noun + であっても",
+    "shortExplanation": "Express a condition with 'even if'; 'no matter how'.",
+    "longExplanation": "The ～たとえ～ても grammar point is used to express a hypothetical or conditional situation where the outcome remains the same even if the condition is met. It can be translated as 'even if' or 'no matter how' in English.",
+    "sentences": [
+      {
+        "jp": "たとえ雨が降っても、出かけましょう。",
+        "en": "Even if it rains, let's go out.",
+        "difficulty": 2
+      },
+      {
+        "jp": "たとえ彼が怒っても、本当のことを言いましょう。",
+        "en": "Even if he gets angry, let's tell the truth.",
+        "difficulty": 3
+      },
+      {
+        "jp": "たとえ寒くても、散歩に行きたい。",
+        "en": "Even if it's cold, I want to go for a walk.",
+        "difficulty": 2
+      },
+      {
+        "jp": "たとえ彼が有名であっても、彼には興味がありません。",
+        "en": "Even if he's famous, I'm not interested in him.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～たところ (〜ta tokoro)",
+    "level": "N3",
+    "title": "～たところ (〜ta tokoro)",
+    "formation": "Verb-た form + ところ",
+    "shortExplanation": "Expresses the result or outcome of an action; 'after', 'just when', 'upon'.",
+    "longExplanation": "The ～たところ grammar point is used to indicate the result or outcome right after performing an action. It can be translated as 'after', 'just when', or 'upon' in English. It is formed by attaching ところ to the past tense (た-form) of verbs.",
+    "sentences": [
+      {
+        "jp": "宿題をしたところ、先生からもう一つ課題が出された。",
+        "en": "Just when I finished my homework, the teacher gave us another assignment.",
+        "difficulty": 2
+      },
+      {
+        "jp": "友達に会ったところ、彼が海外に行くと言った。",
+        "en": "Upon meeting my friend, he told me he's going abroad.",
+        "difficulty": 2
+      },
+      {
+        "jp": "食事を食べ終わったところ、電話がかかってきた。",
+        "en": "Just when I finished eating, I got a phone call.",
+        "difficulty": 2
+      },
+      {
+        "jp": "机を整理したところ、忘れていたメモが見つかった。",
+        "en": "After organizing my desk, I found a memo I had forgotten about.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～たとたん (〜ta totan)",
+    "level": "N3",
+    "title": "～たとたん (〜ta totan)",
+    "formation": "Verb-た form + とたん",
+    "shortExplanation": "Express the moment something happens; 'as soon as', 'the moment', 'the instant'.",
+    "longExplanation": "The ～たとたん grammar point is used to express that something occurs immediately at the exact moment another action is completed. It can be translated as 'as soon as', 'the moment', or 'the instant' in English. It is attached to the past tense (た-form) of a verb.",
+    "sentences": [
+      {
+        "jp": "ドアを開けたとたん、猫が逃げ出した。",
+        "en": "As soon as I opened the door, the cat ran away.",
+        "difficulty": 4
+      },
+      {
+        "jp": "電話をかけたとたん、電池が切れた。",
+        "en": "The moment I made the phone call, the battery died.",
+        "difficulty": 4
+      },
+      {
+        "jp": "雨が降り始めたとたん、みんなが傘をさした。",
+        "en": "The instant it started raining, everyone put up their umbrellas.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼に会ったとたん、彼の笑顔が消えた。",
+        "en": "As soon as he met me, his smile disappeared.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～たびに (〜tabi ni)",
+    "level": "N3",
+    "title": "～たびに (〜tabi ni)",
+    "formation": "Verb-dictionary form + たびに, Noun + のたびに",
+    "shortExplanation": "Express 'every time' or 'whenever'.",
+    "longExplanation": "The ～たびに grammar point is used to express that an action or event occurs every time or whenever something else happens. It can be translated as 'every time', 'whenever', or 'each time' in English. Typically, you attach たびに to a verb in its dictionary form, or to a noun plus の.",
+    "sentences": [
+      {
+        "jp": "彼女に会うたびに、心が弾む。",
+        "en": "Every time I meet her, my heart leaps.",
+        "difficulty": 4
+      },
+      {
+        "jp": "雨が降るたびに、懐かしい思い出がよみがえる。",
+        "en": "Whenever it rains, nostalgic memories come back.",
+        "difficulty": 4
+      },
+      {
+        "jp": "この歌を聴くたびに、幸せな気分になる。",
+        "en": "Every time I listen to this song, I feel happy.",
+        "difficulty": 3
+      },
+      {
+        "jp": "家に帰るたびに、猫が出迎えてくれる。",
+        "en": "Every time I return home, the cat greets me.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～だものだ (〜da mono da)",
+    "level": "N3",
+    "title": "～だものだ (〜da mono da)",
+    "formation": "Verb-casual + んだものだ, い-Adjective + んだものだ, な-Adjective + なんだものだ, Noun + なんだものだ (often with から as んだものだから)",
+    "shortExplanation": "Express the reason or cause, often used to justify something.",
+    "longExplanation": "The ～だものだ grammar point is used to explain a reason or cause in a subjective, explanatory tone (e.g. 'because... after all'). Often, you'll see it used as ～だものだから ('because... after all').",
+    "sentences": [
+      {
+        "jp": "疲れたんだものだから、休みたい。",
+        "en": "I want to rest because I'm tired.",
+        "difficulty": 5
+      },
+      {
+        "jp": "お腹が空いたんだものだから、何か食べたい。",
+        "en": "I want to eat something because I'm hungry.",
+        "difficulty": 4
+      },
+      {
+        "jp": "忙しいんだものだから、来られない。",
+        "en": "I can't come because I'm busy.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼は親切なんだものだから、誰も彼が好きだ。",
+        "en": "Everyone likes him because he is kind.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～ちゃった (〜chatta)",
+    "level": "N3",
+    "title": "～ちゃった (〜chatta)",
+    "formation": "Verb-て/で form → ちゃった/じゃった (e.g. 食べてしまった → 食べちゃった)",
+    "shortExplanation": "Express an unintentional action or a regretful action; 'ended up doing', 'did accidentally'.",
+    "longExplanation": "The ～ちゃった grammar point is the informal, colloquial version of ～てしまった. It expresses unintentional or regretful actions and can be translated as 'ended up doing' or 'did accidentally'.",
+    "sentences": [
+      {
+        "jp": "忘れ物をしちゃった。",
+        "en": "I accidentally left something behind.",
+        "difficulty": 2
+      },
+      {
+        "jp": "寝坊して遅刻しちゃった。",
+        "en": "I overslept and ended up being late.",
+        "difficulty": 3
+      },
+      {
+        "jp": "ケーキを全部食べちゃった。",
+        "en": "I ended up eating the whole cake.",
+        "difficulty": 2
+      },
+      {
+        "jp": "言わないつもりだったけど、言っちゃった。",
+        "en": "I wasn't planning to say it, but I ended up saying it.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ついでに (〜tsuide ni)",
+    "level": "N3",
+    "title": "～ついでに (〜tsuide ni)",
+    "formation": "Verb (dictionary or た-form) + ついでに, Noun + の + ついでに, or Verb-て form + いる + ついでに",
+    "shortExplanation": "Do something while or after completing another action; 'while', 'by the way'.",
+    "longExplanation": "The ～ついでに grammar point is used to express doing something 'on the occasion of' another action. It can mean 'while you're at it', 'by the way', or 'in passing'.",
+    "sentences": [
+      {
+        "jp": "買い物に行くついでに、郵便局で手紙を出しましょう。",
+        "en": "Let's drop off a letter at the post office while going shopping.",
+        "difficulty": 3
+      },
+      {
+        "jp": "図書館で本を借りたついでに、友達に会いました。",
+        "en": "I met my friend while borrowing a book from the library.",
+        "difficulty": 3
+      },
+      {
+        "jp": "日本に来たついでに、有名な観光地を訪れたいです。",
+        "en": "While visiting Japan, I'd like to see some famous tourist spots.",
+        "difficulty": 4
+      },
+      {
+        "jp": "映画館に行ったついでに、新作のポスターを見ました。",
+        "en": "While going to the movie theater, I saw a poster for a new film.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～っけ？ (〜kke?)",
+    "level": "N3",
+    "title": "～っけ？ (〜kke?)",
+    "formation": "Verb-casual + っけ?, い-Adjective + かったっけ?, な-Adjective/Noun + だっけ?",
+    "shortExplanation": "Used to express that one is trying to recall some information.",
+    "longExplanation": "The ～っけ？ grammar point is added at the end of a sentence when the speaker is trying to recall something or confirm a memory. It can be used with verbs, adjectives, or nouns in casual form.",
+    "sentences": [
+      {
+        "jp": "彼は何時に来るっけ？",
+        "en": "What time is he coming again?",
+        "difficulty": 2
+      },
+      {
+        "jp": "この映画、面白かったっけ？",
+        "en": "Was this movie interesting?",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は学生だっけ？",
+        "en": "She was a student, right?",
+        "difficulty": 2
+      },
+      {
+        "jp": "すし屋はどこだっけ？",
+        "en": "Where was the sushi place again?",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～っぱい (〜ppai)",
+    "level": "N3",
+    "title": "～っぱい (〜ppai)",
+    "formation": "Noun + で + いっぱい (Note: written as いっぱい, read as 'ippai')",
+    "shortExplanation": "Expresses fullness or completeness; 'full', 'full of', 'filled with'.",
+    "longExplanation": "The ～っぱい grammar point is used to convey that something is filled or packed with something else. Commonly used as 『Noun + でいっぱい』 (e.g., 荷物でいっぱい) to mean 'full of X'.",
+    "sentences": [
+      {
+        "jp": "部屋が荷物でいっぱいです。",
+        "en": "The room is full of luggage.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は笑顔でいっぱいでした。",
+        "en": "She was full of smiles.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は仕事でいっぱいです。",
+        "en": "He is completely busy with work.",
+        "difficulty": 2
+      },
+      {
+        "jp": "公園は花でいっぱいです。",
+        "en": "The park is filled with flowers.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～っぱなし (〜ppanashi)",
+    "level": "N3",
+    "title": "～っぱなし (〜ppanashi)",
+    "formation": "Verb-ますstem + っぱなし",
+    "shortExplanation": "Indicate a state where an action is left as is (unchanged or unfinished).",
+    "longExplanation": "The ～っぱなし grammar point is used to express that an action happened and was left in that state, unattended or unchanged. It is formed by taking the ます-stem of a verb and adding ～っぱなし.",
+    "sentences": [
+      {
+        "jp": "窓を開けっぱなしにすると、虫が入ってくる。",
+        "en": "If you leave the window open, bugs will come in.",
+        "difficulty": 4
+      },
+      {
+        "jp": "洗濯物を干しっぱなしで、雨に濡れた。",
+        "en": "I left the laundry hanging out, and it got wet in the rain.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼はドアを開けっぱなしにして出かけた。",
+        "en": "He went out leaving the door open.",
+        "difficulty": 4
+      },
+      {
+        "jp": "テレビをつけっぱなしにして寝てしまった。",
+        "en": "I fell asleep with the TV left on.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～つまり (〜tsumari)",
+    "level": "N3",
+    "title": "～つまり (〜tsumari)",
+    "formation": "Sentence A + つまり + Sentence B (rephrasing)",
+    "shortExplanation": "Summarizing, restating, or clarifying a point: 'in other words', 'that is to say'.",
+    "longExplanation": "The ～つまり grammar point is used to restate or clarify in a concise way what has been said. It can be translated as 'in other words', 'that is to say', or 'in short'.",
+    "sentences": [
+      {
+        "jp": "彼は大学の教授です。つまり、専門家です。",
+        "en": "He is a university professor. In other words, he is an expert.",
+        "difficulty": 3
+      },
+      {
+        "jp": "今日は土曜日だ。つまり、明日は日曜日だ。",
+        "en": "Today is Saturday. That is to say, tomorrow is Sunday.",
+        "difficulty": 1
+      },
+      {
+        "jp": "山田さんは友達のお姉さんです。つまり、私たちの知り合いです。",
+        "en": "Ms. Yamada is my friend's older sister. In short, she's someone we know.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼女はフランス出身です。つまり、フランス語が話せます。",
+        "en": "She is from France. In other words, she can speak French.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～つもりでした (〜tsumori deshita)",
+    "level": "N3",
+    "title": "～つもりでした (〜tsumori deshita)",
+    "formation": "Verb-casual (dictionary form) + つもりでした",
+    "shortExplanation": "Expressing a past intention or plan; 'was planning to', 'meant to'.",
+    "longExplanation": "The ～つもりでした grammar point is used to express a past intention or plan that did not happen, or a past belief that turned out incorrect. It can be translated as 'was planning to', 'intended to', or 'meant to'.",
+    "sentences": [
+      {
+        "jp": "昨日は友達に会うつもりでしたが、風邪を引いてしまいました。",
+        "en": "I was planning to meet my friend yesterday, but I caught a cold.",
+        "difficulty": 2
+      },
+      {
+        "jp": "映画を見るつもりでしたが、時間がなくなりました。",
+        "en": "I intended to watch a movie, but I ran out of time.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼らが来るつもりでしたが、電話でキャンセルされました。",
+        "en": "They were supposed to come, but they canceled by phone.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この本を読むつもりでしたが、もう読み終わっていました。",
+        "en": "I meant to read this book, but I realized I'd already finished it.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ている (〜te iru)",
+    "level": "N3",
+    "title": "～ている (〜te iru)",
+    "formation": "Verb-て form + いる",
+    "shortExplanation": "Expresses a continuing action or a resulting state; 'is ~ing', 'has been', 'has'.",
+    "longExplanation": "The ～ている grammar point is used to describe a continuing or repeated action, or the result/state of a completed action. Depending on the context, it can be translated as 'is ~ing', 'has been ~ed', or simply 'has/are/is'. In passive contexts (e.g., 食べられている, 開けられている), it shows that something has been done and remains in that state. With intransitive or non-passive verbs, it shows an ongoing or resultant state (e.g., 寝込んでいる, 終わっている).",
+    "sentences": [
+      {
+        "jp": "窓が開けられている。",
+        "en": "The window is open (someone opened it and it remains open).",
+        "difficulty": 1
+      },
+      {
+        "jp": "ケーキが全部食べられている。",
+        "en": "The whole cake has been eaten.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は病気で寝込んでいる。",
+        "en": "She is bedridden due to illness.",
+        "difficulty": 5
+      },
+      {
+        "jp": "宿題が終わっている。",
+        "en": "The homework is finished (has been done).",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～てくれと (〜te kureto)",
+    "level": "N3",
+    "title": "～てくれと (〜te kureto)",
+    "formation": "Verb-て form + くれと (言う / 頼む / 伝える, etc.)",
+    "shortExplanation": "Quote someone's request (telling someone to do something).",
+    "longExplanation": "The ～てくれと grammar point is used when quoting a request or command made by someone else. It literally means 'someone said “please do …”'. Typically used as 「～てくれと頼む/言う」 to indicate being asked or told to do something.",
+    "sentences": [
+      {
+        "jp": "電話をかけてくれと言われました。",
+        "en": "I was told to make a phone call.",
+        "difficulty": 1
+      },
+      {
+        "jp": "この荷物を運んでくれと頼まれました。",
+        "en": "I was asked to carry this luggage.",
+        "difficulty": 2
+      },
+      {
+        "jp": "最後まで待ってくれとお願いされました。",
+        "en": "I was asked to wait until the end.",
+        "difficulty": 3
+      },
+      {
+        "jp": "休んでくれと言われました。",
+        "en": "I was told to please take a rest.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～てごらん (〜te goran)",
+    "level": "N3",
+    "title": "～てごらん (〜te goran)",
+    "formation": "Verb-て form + ごらん",
+    "shortExplanation": "Suggest or invite someone to try doing something; 'Why don't you try...'.",
+    "longExplanation": "The ～てごらん grammar point is used to gently suggest or invite someone to try doing something. It is softer and more casual than ～てみて, and is used among friends or family.",
+    "sentences": [
+      {
+        "jp": "そのゲームをやってごらん。",
+        "en": "Why don't you try playing that game?",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼に話してごらん。",
+        "en": "Try talking to him.",
+        "difficulty": 4
+      },
+      {
+        "jp": "新しいレシピを作ってごらん。",
+        "en": "Why don't you try making a new recipe?",
+        "difficulty": 4
+      },
+      {
+        "jp": "そのドレスを着てごらん。",
+        "en": "Try putting on that dress.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～てはじめて (〜te hajimete)",
+    "level": "N3",
+    "title": "～てはじめて (〜te hajimete)",
+    "formation": "Verb-て form + はじめて",
+    "shortExplanation": "Realization or action done for the first time; 'only after', 'not until'.",
+    "longExplanation": "The ～てはじめて grammar point indicates that something is realized or happens for the first time only after another action is completed. It can be translated as 'only after' or 'not until'.",
+    "sentences": [
+      {
+        "jp": "海外に行ってはじめて、日本の良さが分かりました。",
+        "en": "Only after going abroad did I realize how great Japan is.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女と別れてはじめて、彼女の大切さに気づいた。",
+        "en": "I realized her importance only after breaking up with her.",
+        "difficulty": 3
+      },
+      {
+        "jp": "大学を卒業してはじめて、学生時代の楽しさが分かった。",
+        "en": "I understood how fun my student days were only after graduating from university.",
+        "difficulty": 2
+      },
+      {
+        "jp": "子供ができてはじめて、親の気持ちが分かった。",
+        "en": "I understood how parents feel only after I had a child.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～てほしい (〜te hoshii)",
+    "level": "N3",
+    "title": "～てほしい (〜te hoshii)",
+    "formation": "Verb-て form + ほしい",
+    "shortExplanation": "Express a desire for someone else to do something; 'I want you to do...'.",
+    "longExplanation": "The ～てほしい grammar point is used to express a desire that someone else perform an action. It is formed by attaching ほしい to the て-form of a verb. It can be translated as 'I want you to...' in English.",
+    "sentences": [
+      {
+        "jp": "子供にもっと勉強してほしい。",
+        "en": "I want my child to study more.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼に私に電話してほしい。",
+        "en": "I want him to call me.",
+        "difficulty": 2
+      },
+      {
+        "jp": "友達に手伝ってほしい。",
+        "en": "I want my friend to help me.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女に明日ここに来てほしい。",
+        "en": "I want her to come here tomorrow.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～てみる (〜te miru)",
+    "level": "N3",
+    "title": "～てみる (〜te miru)",
+    "formation": "Verb-て form + みる",
+    "shortExplanation": "A grammar structure used to express the action of trying or attempting something to see what happens.",
+    "longExplanation": "The 〜てみる grammar point is used with a verb in the 〜て form followed by みる. It emphasizes doing something as a trial or to see the result. It often translates as 'to try doing something' or 'try it out'.",
+    "sentences": [
+      {
+        "jp": "彼は走ってみたが、まだ膝が痛いと感じた。",
+        "en": "He tried running, but he still felt pain in his knee.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は料理を作ってみたが、失敗してしまった。",
+        "en": "She tried cooking but ended up failing.",
+        "difficulty": 2
+      },
+      {
+        "jp": "初めてのデートで、彼は彼女にサプライズをしようと考え、歌ってみた。",
+        "en": "On their first date, he thought of surprising her and tried singing.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このケーキは美味しそうだから、味見に食べてみる。",
+        "en": "Since this cake looks delicious, I will try tasting it.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～ても (〜temo)",
+    "level": "N3",
+    "title": "～ても (〜temo)",
+    "formation": "Verb-て form + も, い-Adjective (～く) + ても, な-Adjective/Noun (～で) + も",
+    "shortExplanation": "'Even if', 'even though', or 'although'.",
+    "longExplanation": "The ～ても grammar point expresses that even if a certain condition holds, the outcome or situation doesn't change. It can be translated as 'even if' or 'even though'.",
+    "sentences": [
+      {
+        "jp": "雨が降っても、運動会は開催されます。",
+        "en": "Even if it rains, the sports festival will be held.",
+        "difficulty": 4
+      },
+      {
+        "jp": "忙しくても、毎日勉強する時間を作る。",
+        "en": "Even though I'm busy, I make time to study every day.",
+        "difficulty": 1
+      },
+      {
+        "jp": "高くても、良い品質のものを買います。",
+        "en": "Even if it's expensive, I'll buy something of good quality.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼女が有名人でも、私は彼女のことを知らない。",
+        "en": "Even if she's famous, I don't know her.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～といいなあ (〜to ii naa)",
+    "level": "N3",
+    "title": "～といいなあ (〜to ii naa)",
+    "formation": "Verb-casual + といいなあ, い-Adjective + といいなあ, な-Adjective + だといいなあ, Noun + だといいなあ",
+    "shortExplanation": "Express a wish or hope; 'it would be nice if', 'I hope that'.",
+    "longExplanation": "The ～といいなあ grammar point is used to express a wish or hope for something to happen or to be in a certain way. It can be translated as 'it would be nice if' or 'I hope that' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "明日晴れるといいなあ。",
+        "en": "I hope it's sunny tomorrow.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この試験に合格するといいなあ。",
+        "en": "I hope I pass this exam.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女が元気だといいなあ。",
+        "en": "I hope she is doing well.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼が新しい仕事が見つかるといいなあ。",
+        "en": "I hope he finds a new job.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～という (〜to iu)",
+    "level": "N3",
+    "title": "～という (〜to iu)",
+    "formation": "Noun + という + Noun, Verb-casual + という + Noun, い-Adjective + という + Noun, な-Adjective + という + Noun",
+    "shortExplanation": "Used for quoting, defining, or giving an example; 'called', 'that is to say', 'like'.",
+    "longExplanation": "The ～という grammar point is used to quote, define, or give an example of something. It can be translated as 'called', 'that is to say', or 'like' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "本屋で「ハリー・ポッター」という本を買いました。",
+        "en": "I bought a book called 'Harry Potter' at the bookstore.",
+        "difficulty": 6
+      },
+      {
+        "jp": "昨日、美味しいというケーキを食べました。",
+        "en": "Yesterday, I ate a cake that is said to be delicious.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼はとても親切だという評判です。",
+        "en": "He has a reputation for being very kind.",
+        "difficulty": 3
+      },
+      {
+        "jp": "今年の夏、東京にある「ディズニーランド」というテーマパークに行きたいです。",
+        "en": "I want to go to a theme park called 'Disneyland' in Tokyo this summer.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ということだ (〜to iu koto da)",
+    "level": "N3",
+    "title": "～ということだ (〜to iu koto da)",
+    "formation": "Verb-casual + ということだ, い-Adjective + ということだ, な-Adjective + だということだ, Noun + だということだ",
+    "shortExplanation": "Express a conclusion or hearsay; 'I heard', 'it means', 'it can be said'.",
+    "longExplanation": "The ～ということだ grammar point is used to express a conclusion, summary, or hearsay about a certain situation or statement. It can be translated as 'I heard', 'it means', or 'it can be said' in English. This grammar point is often used with verbs, adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "彼は来週結婚するということだ。",
+        "en": "I heard that he is getting married next week.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この試験は難しいということだ。",
+        "en": "It means this exam is difficult.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女が引っ越したということだ。",
+        "en": "I heard that she has moved.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は仕事がうまくいかないだということだ。",
+        "en": "It can be said that his work is not going well.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～というと (〜to iu to)",
+    "level": "N3",
+    "title": "～というと (〜to iu to)",
+    "formation": "Noun + というと",
+    "shortExplanation": "Used to provide an example or characteristic related to the topic; 'when it comes to', 'speaking of'.",
+    "longExplanation": "The ～というと grammar point is used to indicate an example, characteristic, or association related to the topic being discussed. It can be translated as 'when it comes to', 'speaking of', or 'in terms of' in English.",
+    "sentences": [
+      {
+        "jp": "日本料理というと、寿司が思い浮かぶ。",
+        "en": "When it comes to Japanese cuisine, sushi comes to mind.",
+        "difficulty": 4
+      },
+      {
+        "jp": "パリというと、エッフェル塔を思い出す。",
+        "en": "Speaking of Paris, I recall the Eiffel Tower.",
+        "difficulty": 3
+      },
+      {
+        "jp": "夏休みというと、海に行くことが楽しみだ。",
+        "en": "When it comes to summer vacation, I look forward to going to the beach.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼というと、いつも元気な人だと思う。",
+        "en": "Speaking of him, I think he's always energetic.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～というの～ (〜to iu no〜)",
+    "level": "N3",
+    "title": "～というの～ (〜to iu no〜)",
+    "formation": "Verb-casual + というの, い-Adjective + というの, な-Adjective + だというの, Noun + だというの",
+    "shortExplanation": "Explain or emphasize the reason for a situation or action.",
+    "longExplanation": "The ～というの〜 grammar point is used to provide an explanation or emphasize the reason for a certain situation or action. It can be translated as 'the reason is that...', or 'it's because...'.",
+    "sentences": [
+      {
+        "jp": "遅刻したのは、電車が遅れたというのだ。",
+        "en": "The reason I was late is because the train was delayed.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋が汚いのは、掃除をしなかったというのだ。",
+        "en": "The reason this room is dirty is because I didn't clean it.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女が怒っているのは、彼が約束を破ったというのだ。",
+        "en": "The reason she is angry is that he broke his promise.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼が成功したのは、努力して勉強したというのだ。",
+        "en": "The reason he succeeded is because he studied hard.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～というのは (〜to iu no wa)",
+    "level": "N3",
+    "title": "～というのは (〜to iu no wa)",
+    "formation": "Phrase/sentence + というのは + explanation/definition",
+    "shortExplanation": "Used to provide an explanation or definition; 'that is to say...', 'by that, I mean...'.",
+    "longExplanation": "The ～というのは grammar point is used to provide an explanation or definition of the preceding statement or word. It can be translated as 'that is to say...', 'by that, I mean...', or 'what I mean by...'.",
+    "sentences": [
+      {
+        "jp": "日本に行くというのは、日本に旅行することです。",
+        "en": "Going to Japan, that is to say, traveling to Japan.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この問題は難しいというのは、解決に時間がかかるということです。",
+        "en": "When I say this problem is difficult, I mean it takes time to solve.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼が怒っているというのは、彼が不満を感じているということです。",
+        "en": "By saying that he's angry, I mean he's feeling dissatisfied.",
+        "difficulty": 3
+      },
+      {
+        "jp": "太るというのは、体重が増えるということです。",
+        "en": "Gaining weight, that is to say, increasing one's body weight.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～というより (〜to iu yori)",
+    "level": "N3",
+    "title": "～というより (〜to iu yori)",
+    "formation": "Verb-casual + というより, い-Adjective + というより, な-Adjective + だというより, Noun + だというより",
+    "shortExplanation": "Express a comparison with preference; 'rather than', 'more like', 'instead of'.",
+    "longExplanation": "The ～というより grammar point is used to express a comparison where one description is more accurate than another. Translated as 'rather than', 'more like', or 'instead of'.",
+    "sentences": [
+      {
+        "jp": "この部屋は狭いというより、居心地がいい。",
+        "en": "Rather than saying this room is small, it's more like it's cozy.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は怖いというより、頼りがいがある。",
+        "en": "Instead of saying he's scary, he's more like a reliable person.",
+        "difficulty": 3
+      },
+      {
+        "jp": "映画はつまらないというより、ちょっと長かった。",
+        "en": "Rather than calling the movie boring, I'd say it was a bit long.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は友達だというより、家族のような存在だ。",
+        "en": "Rather than a friend, she's more like family.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～といっても (〜to ittemo)",
+    "level": "N3",
+    "title": "～といっても (〜to ittemo)",
+    "formation": "Verb-casual + といっても, い-Adjective + といっても, な-Adjective + だといっても, Noun + だといっても",
+    "shortExplanation": "Express the meaning 'even though', 'although', 'but'.",
+    "longExplanation": "The ～といっても grammar point is used to show a contrast or clarify that 'even though' something is the case, it does not necessarily lead to the expected result. It can be translated as 'even though', 'although', or 'but'.",
+    "sentences": [
+      {
+        "jp": "彼は有名だといっても、みんなに知られているわけではありません。",
+        "en": "Even though he's famous, it doesn't mean everyone knows him.",
+        "difficulty": 2
+      },
+      {
+        "jp": "このスープは辛いといっても、私にはちょうどいいです。",
+        "en": "Although this soup is spicy, it's just right for me.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は若いですが、経験があるといっても、まだ新人です。",
+        "en": "She's young, and although she has some experience, she's still a newcomer.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このレストランは高いだといっても、美味しい料理が食べられるので価値があります。",
+        "en": "Even though this restaurant is expensive, it's worth it because you can enjoy delicious dishes.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～とおり (〜toori)",
+    "level": "N3",
+    "title": "～とおり (〜toori)",
+    "formation": "Verb-て form + とおり, Noun + のとおり",
+    "shortExplanation": "Expresses that something is done 'as is', 'as stated', or 'as instructed'.",
+    "longExplanation": "The ～とおり grammar point is used to express that something is done exactly as stated, instructed, or shown. It is commonly used with verbs and nouns, and can be translated as 'just like', 'as per', or 'according to'.",
+    "sentences": [
+      {
+        "jp": "先生が言ったとおり、宿題をやりました。",
+        "en": "I did my homework exactly as the teacher said.",
+        "difficulty": 2
+      },
+      {
+        "jp": "地図に書いてあるとおりに行けば、駅に着きます。",
+        "en": "If you follow what's written on the map, you'll arrive at the station.",
+        "difficulty": 2
+      },
+      {
+        "jp": "レシピのとおりにケーキを作った。",
+        "en": "I baked the cake according to the recipe.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は約束したとおりに時間通りに来ました。",
+        "en": "She arrived on time, just as she promised.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～とく (〜toku)",
+    "level": "N3",
+    "title": "～とく (〜toku)",
+    "formation": "Verb-て form + とく (e.g., 食べておく→食べとく, 読んでおく→読んどく)",
+    "shortExplanation": "Express doing something in advance or for future convenience (casual form of ～ておく).",
+    "longExplanation": "The ～とく grammar point (from ～ておく) is used to express doing something in advance or preparing for something. It implies you're performing an action now to avoid inconvenience later. It is a casual, colloquial contraction of ～ておく.",
+    "sentences": [
+      {
+        "jp": "夜遅くなるから、今晩のご飯を作っとく。",
+        "en": "Since it will be late tonight, I'll prepare dinner in advance.",
+        "difficulty": 1
+      },
+      {
+        "jp": "傘が必要かもしれないので、持っておく。",
+        "en": "I might need an umbrella, so I'll bring one along (just in case).",
+        "difficulty": 3
+      },
+      {
+        "jp": "試験が近いから、今から勉強しとこう。",
+        "en": "The exam is coming up, so I'll start studying now.",
+        "difficulty": 2
+      },
+      {
+        "jp": "明日は忙しいので、洗濯をしとく。",
+        "en": "Since I'll be busy tomorrow, I'll do the laundry in advance.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～ところが (〜tokoro ga)",
+    "level": "N3",
+    "title": "～ところが (〜tokoro ga)",
+    "formation": "Phrase 1 (expected situation) + ところが + Phrase 2 (unexpected result)",
+    "shortExplanation": "Expresses a contrast or unexpected outcome; 'however', 'but', 'even though'.",
+    "longExplanation": "The ～ところが grammar point is used to express a contrast or an unexpected outcome. It can be translated as 'however', 'but', or 'even though' in English. It emphasizes a situation that contradicts what was expected.",
+    "sentences": [
+      {
+        "jp": "彼はいつも遅刻するところが、今日は早く来ました。",
+        "en": "He's always late, but today he arrived early.",
+        "difficulty": 2
+      },
+      {
+        "jp": "昨日は暑かったところが、今日は寒くなりました。",
+        "en": "Yesterday was hot, but today it got cold.",
+        "difficulty": 1
+      },
+      {
+        "jp": "試合で負けると思ったところが、意外にも勝ちました。",
+        "en": "I thought we would lose the match, but surprisingly we won.",
+        "difficulty": 3
+      },
+      {
+        "jp": "決勝戦で優勝するところが、最後のポイントで負けました。",
+        "en": "We were about to win the final, but we lost at the last point.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～ところだった (〜tokoro datta)",
+    "level": "N3",
+    "title": "～ところだった (〜tokoro datta)",
+    "formation": "Verb (dictionary form or ている form) + ところだった",
+    "shortExplanation": "Expresses a near miss or a situation that almost happened; 'was just about to', 'almost', 'nearly'.",
+    "longExplanation": "The ～ところだった grammar point is used to express a situation that almost occurred or something that the speaker was just about to do. It can be translated as 'was just about to', 'almost', or 'nearly' in English. Typically, it is formed with the dictionary form or ている form of a verb + ところだった.",
+    "sentences": [
+      {
+        "jp": "もう少しで遅れるところだった。",
+        "en": "I was just about to be late.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼が危うく事故にあうところだった。",
+        "en": "He almost had an accident.",
+        "difficulty": 3
+      },
+      {
+        "jp": "電車に乗るところだったが、ドアが閉まってしまった。",
+        "en": "I was just about to get on the train, but the door closed.",
+        "difficulty": 1
+      },
+      {
+        "jp": "忘れ物をするところだった。",
+        "en": "I almost forgot my belongings.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～としたら (〜to shitara)",
+    "level": "N3",
+    "title": "～としたら (〜to shitara)",
+    "formation": "Verb-casual + としたら, い-Adjective + としたら, な-Adjective + だとしたら, Noun + だとしたら",
+    "shortExplanation": "Express a hypothetical situation; 'if', 'suppose', 'assuming'.",
+    "longExplanation": "The ～としたら grammar point is used to express a hypothetical situation or assumption. It can be translated as 'if', 'suppose', or 'assuming' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "明日雨が降るとしたら、傘を持って行きましょう。",
+        "en": "If it rains tomorrow, let's bring an umbrella.",
+        "difficulty": 1
+      },
+      {
+        "jp": "このケーキが美味しくないとしたら、誰も食べないでしょう。",
+        "en": "If this cake is not delicious, nobody will eat it.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼が病気だとしたら、すぐに病院に行かせてあげてください。",
+        "en": "If he is sick, please take him to the hospital right away.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女が学生だとしたら、このレストランは割引があるでしょう。",
+        "en": "If she is a student, there will be a discount at this restaurant.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～として (〜to shite)",
+    "level": "N3",
+    "title": "～として (〜to shite)",
+    "formation": "Verb-casual + として, い-Adjective + として, な-Adjective + だとして, Noun + だとして",
+    "shortExplanation": "Indicates a role, capacity, or identity; 'as', 'in the capacity of'.",
+    "longExplanation": "The ～として grammar point is used to express a role, capacity, or identity in which someone or something functions. It can be translated as 'as' or 'in the capacity of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼は弁護士として働いています。",
+        "en": "He is working as a lawyer.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この料理はスナックとして食べられます。",
+        "en": "This dish can be eaten as a snack.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女はリーダーとして尊敬されている。",
+        "en": "She is respected as a leader.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この本は参考書として使われます。",
+        "en": "This book is used as a reference.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～どんなに～ことか (〜donna ni〜koto ka)",
+    "level": "N3",
+    "title": "～どんなに～ことか (〜donna ni〜koto ka)",
+    "formation": "どんなに + Adjective + ことか, どんなに + Verb + ことか",
+    "shortExplanation": "Expresses the extent of something or emphasizes the degree of a condition or situation.",
+    "longExplanation": "The ～どんなに～ことか grammar point is used to emphasize the extent of a condition or circumstance, and to express how much or to what degree something is happening. It is often translated as 'how much', 'how greatly', or 'to what extent' in English. This pattern is usually used with an adjective or verb in a sentence.",
+    "sentences": [
+      {
+        "jp": "どんなに疲れたことか、言葉では表せません。",
+        "en": "I can't put into words how tired I am.",
+        "difficulty": 5
+      },
+      {
+        "jp": "どんなに辛いことか、彼女は毎日頑張って働いています。",
+        "en": "How hard it must be, she works hard every day.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼の成功はどんなに喜ばしいことか。",
+        "en": "How happy his success must be.",
+        "difficulty": 3
+      },
+      {
+        "jp": "どんなに楽しいことか、みんなで旅行に行く。",
+        "en": "How fun it is to go on a trip with everyone.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ないことはない (〜nai koto wa nai)",
+    "level": "N3",
+    "title": "～ないことはない (〜nai koto wa nai)",
+    "formation": "Verb-ない form + ことはない",
+    "shortExplanation": "Express the idea that 'it's not that it's impossible' or 'it's not that it cannot be done'.",
+    "longExplanation": "The ～ないことはない grammar point is used to express that something is not impossible, or not that it cannot be done. It creates a softer, more indirect way of saying that something is possible or can be done, but not necessarily easy or preferred.",
+    "sentences": [
+      {
+        "jp": "この問題を解けないことはないが、時間がかかりそうだ。",
+        "en": "It's not that I can't solve this problem, but it seems like it will take time.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼に会わないことはないけど、あまり話したくない。",
+        "en": "It's not that I can't meet him, but I don't really want to talk.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この映画を見ないことはないけれど、他の映画がもっと面白いと思う。",
+        "en": "It's not that I cannot watch this movie, but I think other movies are more interesting.",
+        "difficulty": 2
+      },
+      {
+        "jp": "その本を読まないことはないが、長いので気をつけてください。",
+        "en": "It's not that I can't read that book, but it's long, so be careful.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ないで (〜naide)",
+    "level": "N3",
+    "title": "～ないで (〜naide)",
+    "formation": "Verb-ない-form + で",
+    "shortExplanation": "Express 'without doing ~' or 'without ~ing'.",
+    "longExplanation": "The ～ないで grammar point is used to express the idea of 'without doing something' or 'without ~ing' in English. It is formed by attaching the ない-form of the verb and adding で (de). This is used for expressing when an action is not taken or avoided, without interfering with the main action.",
+    "sentences": [
+      {
+        "jp": "会わないでその電話をかけました。",
+        "en": "I made the phone call without meeting them.",
+        "difficulty": 1
+      },
+      {
+        "jp": "雨が降るのを待たないで、家を出ました。",
+        "en": "I left the house without waiting for it to rain.",
+        "difficulty": 2
+      },
+      {
+        "jp": "誰にも聞かないで、その秘密を知りました。",
+        "en": "I found out the secret without asking anyone.",
+        "difficulty": 2
+      },
+      {
+        "jp": "遅れることを知らないで、駅に向かいました。",
+        "en": "I headed to the station without knowing I was late.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ないと (〜nai to)",
+    "level": "N3",
+    "title": "～ないと (〜nai to)",
+    "formation": "Verb-negative form + ないと",
+    "shortExplanation": "Express a condition; 'if... not', 'unless', 'must'.",
+    "longExplanation": "The ～ないと grammar point is used to express a condition, focusing on the negative consequences if the action is not performed. It can be translated as 'if... not', 'unless', or 'must' in English. The formation is simply attaching ないと to the negative form of a verb.",
+    "sentences": [
+      {
+        "jp": "朝食を食べないと、お腹が空く。",
+        "en": "If I don't eat breakfast, I will be hungry.",
+        "difficulty": 3
+      },
+      {
+        "jp": "宿題をしないと、先生に怒られる。",
+        "en": "If I don't do my homework, the teacher will be angry.",
+        "difficulty": 2
+      },
+      {
+        "jp": "充電をしないと、電話が使えなくなる。",
+        "en": "If I don't charge it, I won't be able to use the phone.",
+        "difficulty": 5
+      },
+      {
+        "jp": "この事故を報告しないと、問題が大きくなる。",
+        "en": "If I don't report this accident, the problem will become bigger.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～なぜなら (〜nazenara)",
+    "level": "N3",
+    "title": "～なぜなら (〜nazenara)",
+    "formation": "Sentence/Statement + なぜなら + Reason + から/だから",
+    "shortExplanation": "Express a reason or explanation; 'because', 'the reason is'.",
+    "longExplanation": "The ～なぜなら grammar point is used to provide a reason or explanation for a preceding statement or situation. It can be translated as 'because' or 'the reason is' in English. It is often followed by から or だから to emphasize the reason or cause.",
+    "sentences": [
+      {
+        "jp": "このレストランが大好きだ。なぜなら料理が美味しいから。",
+        "en": "I love this restaurant because the food is delicious.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は試験に合格しなかった。なぜなら勉強しなかったから。",
+        "en": "She didn't pass the exam because she didn't study.",
+        "difficulty": 3
+      },
+      {
+        "jp": "私は映画を見に行かない。なぜなら今日は忙しいから。",
+        "en": "I won't go to see a movie because I am busy today.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼はこのプロジェクトを任せられる。なぜなら経験が豊富だから。",
+        "en": "He can be trusted with this project because he has a wealth of experience.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～など (〜nado)",
+    "level": "N3",
+    "title": "～など (〜nado)",
+    "formation": "Noun + など",
+    "shortExplanation": "Indicates a non-exhaustive list of examples; 'such as', 'things like', 'among others'.",
+    "longExplanation": "The ～など grammar point is used to give a non-exhaustive list of examples, meaning the mentioned items are only some of many possibilities. It can be translated as 'such as', 'things like', or 'among others' in English. This grammar point can be used with nouns.",
+    "sentences": [
+      {
+        "jp": "魚、果物などを市場で買いました。",
+        "en": "I bought fish, fruits, and such at the market.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は日本語、英語、中国語などを話せます。",
+        "en": "He can speak languages such as Japanese, English, and Chinese.",
+        "difficulty": 5
+      },
+      {
+        "jp": "美術館では絵画、彫刻などの作品を見ました。",
+        "en": "At the art museum, I saw works like paintings, sculptures, and others.",
+        "difficulty": 4
+      },
+      {
+        "jp": "この店ではパン、ケーキなどのお菓子を売っています。",
+        "en": "This store sells sweets such as bread, cakes, and so on.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～なんか (〜nanka)",
+    "level": "N3",
+    "title": "～なんか (〜nanka)",
+    "formation": "Noun + なんか, Verb-casual + なんか, い-Adjective + なんか, な-Adjective + なんか",
+    "shortExplanation": "Expresses the idea of 'things like' or 'something like', used for listing examples or downplaying something.",
+    "longExplanation": "The ～なんか grammar point is used for listing examples by indicating 'things like' or 'something like'. It can also be used to downplay or devalue something, making it seem less important or less significant than it really is.",
+    "sentences": [
+      {
+        "jp": "お金なんかいらない。",
+        "en": "I don't need money or anything like that.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼はピアノなんかも弾けます。",
+        "en": "He can play things like the piano.",
+        "difficulty": 5
+      },
+      {
+        "jp": "忙しいなんかじゃないよ。",
+        "en": "I'm not really busy or anything like that.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は親切なんかじゃない。",
+        "en": "She's not kind or anything like that.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～において (〜ni oite)",
+    "level": "N3",
+    "title": "～において (〜ni oite)",
+    "formation": "Noun (Place/Time/Context) + において",
+    "shortExplanation": "Indicates the place, time, or context where an action or situation takes place.",
+    "longExplanation": "The ～において grammar point is used to indicate where an action or situation occurs. It can often be translated as 'in', 'at', or 'on' in English. In some cases, it can also express a specific context or aspect. This grammar point can be used with verbs, adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "日本において、お盆は家族が集まる大切な行事です。",
+        "en": "In Japan, Obon is an important event where families gather.",
+        "difficulty": 5
+      },
+      {
+        "jp": "会議において、彼の意見が一番説得力がありました。",
+        "en": "In the meeting, his opinion was the most persuasive.",
+        "difficulty": 3
+      },
+      {
+        "jp": "科学の分野において、研究が日々進んでいます。",
+        "en": "In the field of science, research is advancing daily.",
+        "difficulty": 4
+      },
+      {
+        "jp": "幼少期において、子供たちは勢いよく物を覚えます。",
+        "en": "During early childhood, children learn things rapidly.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～にかわって (〜ni kawatte)",
+    "level": "N3",
+    "title": "～にかわって (〜ni kawatte)",
+    "formation": "Noun + にかわって",
+    "shortExplanation": "Expresses 'in place of', 'on behalf of', or 'instead of'.",
+    "longExplanation": "The ～にかわって grammar point is used to express that someone or something is acting in place of, on behalf of, or instead of someone or something else. Typically used with nouns (e.g., 人, 会社, etc.).",
+    "sentences": [
+      {
+        "jp": "彼が病気なので、私が会議に出席することになりました。私が彼にかわって会議に出席します。",
+        "en": "He is sick, so I will attend the meeting. I will attend the meeting on his behalf.",
+        "difficulty": 3
+      },
+      {
+        "jp": "母は忙しいので、私が母にかわって料理を作ります。",
+        "en": "My mother is busy, so I will cook the meal instead of her.",
+        "difficulty": 1
+      },
+      {
+        "jp": "今度の旅行は妹にかわって、私が一緒に行きます。",
+        "en": "For this trip, I will go together instead of my younger sister.",
+        "difficulty": 2
+      },
+      {
+        "jp": "先生が出張中でいないので、助手が先生にかわってクラスを担当します。",
+        "en": "The teacher is not here because of a business trip, so the assistant will take charge of the class instead of the teacher.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～にしては (〜ni shite wa)",
+    "level": "N3",
+    "title": "～にしては (〜ni shite wa)",
+    "formation": "Verb-casual + にしては, い-Adjective + にしては, な-Adjective + にしては, Noun + にしては",
+    "shortExplanation": "Express 'for' or 'considering' in the sense of being unusual or unexpected.",
+    "longExplanation": "The ～にしては grammar point is used to express that something is unusual or unexpected considering a specific condition or context. It can be translated as 'for' or 'considering' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼女は初心者にしては、上手に水泳ができる。",
+        "en": "Considering she is a beginner, she can swim well.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このお寿司は安いにしては、とても美味しい。",
+        "en": "Considering this sushi is cheap, it's very delicious.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は若いにしては、とても落ち着いている。",
+        "en": "Considering he is young, he is very calm.",
+        "difficulty": 3
+      },
+      {
+        "jp": "あの人は外国人にしては、日本語がうまい。",
+        "en": "For a foreigner, that person is good at Japanese.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～にしても (〜ni shitemo)",
+    "level": "N3",
+    "title": "～にしても (〜ni shitemo)",
+    "formation": "Verb-casual + にしても, い-Adjective + にしても, な-Adjective + だにしても, Noun + だにしても",
+    "shortExplanation": "Expresses 'even if', 'no matter', 'regardless of'.",
+    "longExplanation": "The ～にしても grammar point is used to express that even if a certain condition is true or a certain situation occurs, the outcome will not change. It can be translated as 'even if', 'no matter', or 'regardless of' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "雨が降るにしても、学校へ行かなければなりません。",
+        "en": "Even if it rains, I have to go to school.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女が怒っているにしても、話し合いは避けられない。",
+        "en": "Even if she is angry, we can't avoid talking.",
+        "difficulty": 4
+      },
+      {
+        "jp": "このレストランが高いにしても、料理の質がよくておすすめです。",
+        "en": "Even if this restaurant is expensive, I recommend it because the quality of the food is good.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼が有名だにしても、彼の私生活について話すのは失礼だ。",
+        "en": "Even if he is famous, it's rude to talk about his private life.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～について (〜ni tsuite)",
+    "level": "N3",
+    "title": "～について (〜ni tsuite)",
+    "formation": "Noun + について",
+    "shortExplanation": "Expressing 'about', 'concerning', or 'regarding'.",
+    "longExplanation": "The ～について grammar point is used to express 'about', 'concerning', or 'regarding' a certain topic or subject. It is often used in both casual and formal contexts. The formation is simple – just add について after the noun that represents the topic you are discussing.",
+    "sentences": [
+      {
+        "jp": "日本の文化について学びたいです。",
+        "en": "I want to learn about Japanese culture.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼の意見について話し合いましょう。",
+        "en": "Let's discuss his opinion.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この問題について詳しく教えてください。",
+        "en": "Please explain this issue in detail.",
+        "difficulty": 3
+      },
+      {
+        "jp": "子供たちの教育について考えなければなりません。",
+        "en": "We have to think about the children's education.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～にとって (〜ni totte)",
+    "level": "N3",
+    "title": "～にとって (〜ni totte)",
+    "formation": "Noun (person or thing) + にとって + Verb/Adjective/Noun",
+    "shortExplanation": "Express the meaning 'for', 'to', 'from the perspective of'.",
+    "longExplanation": "The ～にとって grammar point is used to express the meaning 'for', 'to', or 'from the perspective of' when describing someone or something's point of view, feelings, benefits, or importance. It is used with all types of words, such as verbs, adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "私にとって、健康は一番大切なことです。",
+        "en": "For me, health is the most important thing.",
+        "difficulty": 3
+      },
+      {
+        "jp": "あの会社にとって、このプロジェクトは重要な意味があります。",
+        "en": "For that company, this project has significant meaning.",
+        "difficulty": 3
+      },
+      {
+        "jp": "子供たちにとって、おもちゃは楽しいものです。",
+        "en": "For children, toys are fun things.",
+        "difficulty": 3
+      },
+      {
+        "jp": "外国人にとって、日本語は難しい言語の一つです。",
+        "en": "For foreigners, Japanese is one of the difficult languages.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～によって (〜ni yotte)",
+    "level": "N3",
+    "title": "～によって (〜ni yotte)",
+    "formation": "Verb-casual + によって, い-Adjective + によって, な-Adjective + によって, Noun + によって",
+    "shortExplanation": "Indicates the reason or cause, difference depending on a factor, or methods used.",
+    "longExplanation": "The ～によって grammar point is used to express the reason or cause of something, to show a difference depending on a certain factor, or to indicate the method or means by which something is done. It can be translated as 'by', 'depending on', 'due to', or 'according to' in English. The formation is the same for verbs, い-adjectives, な-adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "その事故は悪天候によって引き起こされた。",
+        "en": "The accident was caused by bad weather.",
+        "difficulty": 5
+      },
+      {
+        "jp": "生活習慣によって、健康状態が変わります。",
+        "en": "Health conditions change depending on lifestyle habits.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼の成功は努力によって得られたものだ。",
+        "en": "His success was achieved through hard work.",
+        "difficulty": 3
+      },
+      {
+        "jp": "結果は試験の難易度によって異なります。",
+        "en": "The results vary depending on the difficulty of the exam.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～によれば (〜ni yoreba)",
+    "level": "N3",
+    "title": "～によれば (〜ni yoreba)",
+    "formation": "Noun + によれば",
+    "shortExplanation": "Means 'according to', 'based on' or 'by'.",
+    "longExplanation": "The ～によれば grammar point is used to express information, opinions or a judgement made based on a certain source. It can be translated as 'according to', 'based on', or 'by' in English. This grammar point is typically used with a noun that represents the source of information.",
+    "sentences": [
+      {
+        "jp": "天気予報によれば、明日は晴れるでしょう。",
+        "en": "According to the weather forecast, it will be sunny tomorrow.",
+        "difficulty": 2
+      },
+      {
+        "jp": "先生によれば、この問題は簡単だそうです。",
+        "en": "According to the teacher, this problem seems to be easy.",
+        "difficulty": 2
+      },
+      {
+        "jp": "調査によれば、若者の喫煙率が減っているということです。",
+        "en": "According to the survey, the smoking rate among young people is decreasing.",
+        "difficulty": 3
+      },
+      {
+        "jp": "新聞記事によれば、その企業は倒産の危機にあるらしい。",
+        "en": "According to the newspaper article, the company appears to be on the verge of bankruptcy.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～に対して (～ni taishite)",
+    "level": "N3",
+    "title": "～に対して (～ni taishite)",
+    "formation": "Verb-casual + に対して, い-Adjective + に対して, な-Adjective + に対して, Noun + に対して",
+    "shortExplanation": "Indicates a target or contrast; 'toward', 'against', 'in contrast to', 'in response to'.",
+    "longExplanation": "The ～に対して grammar point is used to indicate the target or direction of an action, or to show a contrast between two situations or objects. It can be translated as 'toward', 'against', 'in contrast to', or 'in response to' in English. It can be used with verbs, adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "子供たちに対して、親は常にやさしくあるべきです。",
+        "en": "Parents should always be kind towards their children.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は質問に対して正直に答えました。",
+        "en": "He answered the questions honestly.",
+        "difficulty": 3
+      },
+      {
+        "jp": "田中さんは成功したに対して、佐藤さんは失敗しました。",
+        "en": "In contrast to Tanaka-san's success, Satou-san failed.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼の意見に対して、私は反対の立場を取りました。",
+        "en": "In response to his opinion, I took an opposing stance.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～に比べて (〜ni kurabete)",
+    "level": "N3",
+    "title": "～に比べて (〜ni kurabete)",
+    "formation": "Verb-casual + に比べて, い-Adjective + に比べて, な-Adjective + だ/である + に比べて, Noun + だ/である + に比べて",
+    "shortExplanation": "Comparing to; in comparison with; as opposed to.",
+    "longExplanation": "The ～に比べて grammar point is used to compare two things or situations by highlighting their differences. It can be translated as 'comparing to', 'in comparison with', or 'as opposed to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "夏に比べて、冬は寒いです。",
+        "en": "Winter is cold compared to summer.",
+        "difficulty": 2
+      },
+      {
+        "jp": "このトマトは赤いトマトに比べて美味しくない。",
+        "en": "This tomato is not as delicious compared to the red tomatoes.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は私に比べて英語が上手です。",
+        "en": "He is better at English compared to me.",
+        "difficulty": 2
+      },
+      {
+        "jp": "東京に比べて、京都は静かな町です。",
+        "en": "Kyoto is a quieter city compared to Tokyo.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～に関して (〜ni kanshite)",
+    "level": "N3",
+    "title": "～に関して (〜ni kanshite)",
+    "formation": "Noun + に関して",
+    "shortExplanation": "Regarding, concerning, about, with respect to.",
+    "longExplanation": "The ～に関して grammar point is used to express the topic or subject matter one is talking about. It can be translated as 'regarding', 'concerning', 'about', or 'with respect to' in English. The formation is simple and remains the same regardless of it being used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "健康に関して気を付けることが大切です。",
+        "en": "It is important to be careful regarding health.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このプロジェクトに関しては、彼がすべての詳細を知っています。",
+        "en": "Regarding this project, he knows all the details.",
+        "difficulty": 4
+      },
+      {
+        "jp": "環境問題に関して、私たちはもっと責任を持たなければなりません。",
+        "en": "Concerning environmental issues, we must take more responsibility.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この事件に関しての情報はまだ十分ではありません。",
+        "en": "The information regarding this incident is still insufficient.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～の～ (〜no 〜)",
+    "level": "N3",
+    "title": "～の～ (〜no 〜)",
+    "formation": "Noun1 + の + Noun2",
+    "shortExplanation": "Indicates possession, attribution, or connection between two nouns.",
+    "longExplanation": "The ～の～ grammar point is used to show the relationship between two nouns in Japanese. It can be translated as 'of', 'in', or 'the' in English. This grammar point is used to indicate possession, attribution, or connection between the two nouns.",
+    "sentences": [
+      {
+        "jp": "これは私の傘です。",
+        "en": "This is my umbrella.",
+        "difficulty": 1
+      },
+      {
+        "jp": "あのビルは東京の有名な観光スポットです。",
+        "en": "That building is a famous tourist spot in Tokyo.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は部長の秘書です。",
+        "en": "He is the chief's secretary.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼女は音楽の先生です。",
+        "en": "She is a music teacher.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ば～のに (〜ba 〜noni)",
+    "level": "N3",
+    "title": "～ば～のに (〜ba 〜noni)",
+    "formation": "Verb-ば form + ～のに, い-Adjective-ば form + ～のに, な-Adjective + であれば + ～のに, Noun + であれば + ～のに",
+    "shortExplanation": "Expresses regret or dissatisfaction; 'if only', 'wish'.",
+    "longExplanation": "The ～ば～のに grammar point is used to express regret or dissatisfaction about a situation that didn't happen or to express a contrary view of the actual situation. It can be translated as 'if only' or 'wish' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "もっと早く来れば、電車に間に合ったのに。",
+        "en": "If only I had come earlier, I would have made it to the train.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もっと勉強すれば、試験に合格したのに。",
+        "en": "I wish I had studied more, I would have passed the exam.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女がもっと優しければ、彼と上手くいくのに。",
+        "en": "If only she were kinder, she would get along with him.",
+        "difficulty": 3
+      },
+      {
+        "jp": "日本語が上手であれば、この本が読めるのに。",
+        "en": "I wish I were good at Japanese, then I could read this book.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～ば～ほど (〜ba 〜hodo)",
+    "level": "N3",
+    "title": "～ば～ほど (〜ba 〜hodo)",
+    "formation": "Verb-casual + ば + Verb-casual + ほど, い-Adjective + ば + い-Adjective + ほど, な-Adjective + であれば + な-Adjective + ほど",
+    "shortExplanation": "Expresses 'the more ~, the more ~'; a proportional relationship between two phrases.",
+    "longExplanation": "The ～ば～ほど grammar point is used to express a proportional relationship between two phrases, meaning 'the more A, the more B'. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "sentences": [
+      {
+        "jp": "早く起きれば起きるほど、時間がたくさんある。",
+        "en": "The earlier you wake up, the more time you have.",
+        "difficulty": 1
+      },
+      {
+        "jp": "練習すればするほど、上達します。",
+        "en": "The more you practice, the more you will improve.",
+        "difficulty": 2
+      },
+      {
+        "jp": "料理が美味しければ美味しいほど、皆が喜びます。",
+        "en": "The more delicious the food is, the happier everyone will be.",
+        "difficulty": 2
+      },
+      {
+        "jp": "日本語が上手であれば上手なほど、日本の生活が楽になります。",
+        "en": "The better your Japanese is, the easier life in Japan will be.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ばかり (〜bakari)",
+    "level": "N3",
+    "title": "～ばかり (〜bakari)",
+    "formation": "Verb-ますstem + ばかり, い-Adjective + ばかり, な-Adjective + ばかり, Noun + ばかり",
+    "shortExplanation": "Expresses 'only', 'nothing but', 'always', 'just'.",
+    "longExplanation": "The ～ばかり grammar point is used to express that something is only, nothing but, always, or just a certain way. It emphasizes the repeated or continuous nature of an action or state. It can be used with verbs, い-adjectives, な-adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "彼はゲームばかりしている。",
+        "en": "He is always playing games.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋は綺麗なものばかりだ。",
+        "en": "This room has nothing but clean things.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は勉強ばかりしていて、遊んでいる暇がない。",
+        "en": "She is always studying and has no time to play.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼の話は嘘ばかりで、信じることができない。",
+        "en": "His words are nothing but lies, and I cannot believe them.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ばかりか (〜bakarika) ～も (mo)",
+    "level": "N3",
+    "title": "～ばかりか (〜bakarika) ～も (mo)",
+    "formation": "Verb-casual + ばかりか/も, い-Adjective + ばかりか/も, な-Adjective + だ + ばかりか/も, Noun + だ + ばかりか/も",
+    "shortExplanation": "Not only... but also; more than just; not just",
+    "longExplanation": "The grammar point ～ばかりか ～も is used to emphasize that something is not limited to only one thing, but also includes another thing. It can be translated as 'not only... but also', 'more than just', or 'not just' in English. This expression is typically used with verbs, adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "彼女は英語ばかりか、フランス語も話せます。",
+        "en": "Not only can she speak English, but she can also speak French.",
+        "difficulty": 5
+      },
+      {
+        "jp": "このレストランは味が良いばかりか、サービスも素晴らしい。",
+        "en": "Not only does this restaurant have great taste, but the service is also wonderful.",
+        "difficulty": 3
+      },
+      {
+        "jp": "パーティは楽しかったばかりか、料理も美味しかった。",
+        "en": "Not only was the party fun, but the food was also delicious.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は頭がいいばかりか、スポーツも得意だ。",
+        "en": "Not only is he smart, but he is also good at sports.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～はずだ (〜hazu da)",
+    "level": "N3",
+    "title": "～はずだ (〜hazu da)",
+    "formation": "Verb-casual + はずだ, い-Adjective + はずだ, な-Adjective + なはずだ, Noun + のはずだ",
+    "shortExplanation": "Expresses an expectation, 'should' or 'it is supposed to'.",
+    "longExplanation": "The ～はずだ grammar point is used to express an expectation or belief that something is true, even if it has not been confirmed. It can be translated as 'should', 'it is supposed to', or 'ought to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼はもう着いたはずだ。",
+        "en": "He should have arrived by now.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この薬を飲むと、痛みがなくなるはずだ。",
+        "en": "If you take this medicine, the pain should go away.",
+        "difficulty": 3
+      },
+      {
+        "jp": "明日は晴れるはずだ。",
+        "en": "It is supposed to be sunny tomorrow.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は元気なはずだ。",
+        "en": "She is supposed to be well.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～はもちろん～も (〜wa mochiron 〜mo)",
+    "level": "N3",
+    "title": "～はもちろん～も (〜wa mochiron 〜mo)",
+    "formation": "Noun1 + はもちろん + Noun2 + も",
+    "shortExplanation": "Used for emphasizing that not only one thing but also another thing is included. It means 'not only... but also' or 'of course... and...'.",
+    "longExplanation": "The ～はもちろん～も grammar point is used to emphasize that not only the first thing mentioned is included, but also the second thing. It can be translated as 'not only... but also' or 'of course... and...' in English. This grammar phrase can be used with nouns.",
+    "sentences": [
+      {
+        "jp": "彼は数学はもちろん、英語も得意です。",
+        "en": "Not only is he good at math, but he is also good at English.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このレストランは和食はもちろん、洋食も美味しいです。",
+        "en": "This restaurant not only has delicious Japanese food but also delicious Western food.",
+        "difficulty": 3
+      },
+      {
+        "jp": "私の趣味は音楽はもちろん、読書も大好きです。",
+        "en": "My hobbies are not only listening to music, but I also love reading.",
+        "difficulty": 3
+      },
+      {
+        "jp": "東京は観光はもちろん、ビジネスも盛んです。",
+        "en": "Tokyo is not only famous for sightseeing but also has a thriving business scene.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～ばよかった (〜ba yokatta)",
+    "level": "N3",
+    "title": "～ばよかった (〜ba yokatta)",
+    "formation": "Verb-ば-form + よかった, い-Adjective-く + ばよかった, な-Adjective + ならよかった",
+    "shortExplanation": "Express a sense of regret; 'I wish', 'it would have been better if'.",
+    "longExplanation": "The ～ばよかった grammar point is used to express a sense of regret or to convey that one wishes something had been done differently. It can be translated as 'I wish' or 'it would have been better if' in English. The formation differs depending on whether it is used with a verb, い-adjective, or な-adjective.",
+    "sentences": [
+      {
+        "jp": "もっと早く起きればよかった。",
+        "en": "I wish I had woken up earlier.",
+        "difficulty": 2
+      },
+      {
+        "jp": "昨日のパーティーに行けばよかった。",
+        "en": "I wish I had gone to yesterday's party.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もっと安いものを買えばよかった。",
+        "en": "I wish I had bought something cheaper.",
+        "difficulty": 2
+      },
+      {
+        "jp": "あの時、もっと勉強すればよかった。",
+        "en": "I wish I had studied more at that time.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ふりをする (〜furi wo suru)",
+    "level": "N3",
+    "title": "～ふりをする (〜furi wo suru)",
+    "formation": "Verb (dictionary form) + ふりをする, い-Adjective + ふりをする, な-Adjective + ふりをする, Noun + ふりをする",
+    "shortExplanation": "Pretending or acting as if; 'pretend', 'act like'.",
+    "longExplanation": "The ～ふりをする grammar point is used to express that someone is pretending or acting as if they are doing something, feeling a certain way, or possessing a certain quality. It can be translated as 'pretend' or 'act like' in English. The formation is the same for verbs, い-adjectives, な-adjectives, and nouns.",
+    "sentences": [
+      {
+        "jp": "彼は知らないふりをしました。",
+        "en": "He pretended not to know.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は病気のふりをして、学校を休みました。",
+        "en": "She pretended to be sick and skipped school.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は嬉しいふりをしていますが、本当は悲しいです。",
+        "en": "He is pretending to be happy, but he is actually sad.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼女はリーダーのふりをして、チームを率いました。",
+        "en": "She pretended to be a leader and led the team.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～べきだ (〜beki da)",
+    "level": "N3",
+    "title": "～べきだ (〜beki da)",
+    "formation": "Verb-dictionary form + べきだ",
+    "shortExplanation": "Express an obligation or something that should be done (mainly with verbs).",
+    "longExplanation": "The ～べきだ grammar point is used to express a sense of obligation or to indicate something that should be done. In modern Japanese, it is almost always used with verbs in the dictionary form. In English, it can be translated as 'should' or 'ought to'.",
+    "sentences": [
+      {
+        "jp": "勉強するべきだ。",
+        "en": "You should study.",
+        "difficulty": 1
+      },
+      {
+        "jp": "早く寝るべきだ。",
+        "en": "You should sleep early.",
+        "difficulty": 1
+      },
+      {
+        "jp": "静かにするべきだ。",
+        "en": "You should be quiet.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼に謝るべきだ。",
+        "en": "You should apologize to him.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ほど～ (〜hodo〜)",
+    "level": "N3",
+    "title": "～ほど～ (〜hodo〜)",
+    "formation": "Verb-casual + ほど, い-Adjective + ほど, な-Adjective + ほど, Noun + ほど",
+    "shortExplanation": "Expresses the degree or extent; 'about', 'to the extent', 'as much as'.",
+    "longExplanation": "The ～ほど grammar point is used to express the degree or extent of something. It can be translated as 'about', 'to the extent', or 'as much as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼女は私ほど速く走ることができません。",
+        "en": "She cannot run as fast as me.",
+        "difficulty": 2
+      },
+      {
+        "jp": "このケーキはあのケーキほど美味しくない。",
+        "en": "This cake is not as delicious as that cake.",
+        "difficulty": 2
+      },
+      {
+        "jp": "日本ほど四季がはっきりしている国はない。",
+        "en": "There is no country with as distinct seasons as Japan.",
+        "difficulty": 3
+      },
+      {
+        "jp": "東京は大阪ほど人が多くない。",
+        "en": "Tokyo does not have as many people as Osaka.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ますように (〜masu you ni)",
+    "level": "N3",
+    "title": "～ますように (〜masu you ni)",
+    "formation": "Verb-ます form, remove final る + ように",
+    "shortExplanation": "Used to express a wish or hope for oneself or someone else.",
+    "longExplanation": "The ～ますように grammar point is used to express a wish or hope. It is often used as a closing phrase in letters or messages, and can be applied to both oneself and others. The phrase is typically used with the ます form of the verb, with the final る replaced by ように.",
+    "sentences": [
+      {
+        "jp": "明日のテストで良い点をとりますように。",
+        "en": "I hope I get good grades on tomorrow's test.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼が無事に帰ってきますように。",
+        "en": "I hope he comes back safely.",
+        "difficulty": 3
+      },
+      {
+        "jp": "みんなが健康でいられますように。",
+        "en": "I hope everyone stays healthy.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女に幸せになりますように。",
+        "en": "I hope she becomes happy.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～まで (〜made)",
+    "level": "N3",
+    "title": "～まで (〜made)",
+    "formation": "Verb-casual + まで, い-Adjective + まで, な-Adjective + まで, Noun + まで",
+    "shortExplanation": "Express 'until', 'up to', or 'as far as' to indicate the end point of an action or range.",
+    "longExplanation": "The ～まで grammar point is used to express the end point, limit, or extent of an action or range in terms of time, space, or quantity. It can be translated as 'until', 'up to', or 'as far as' in English. The formation depends on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "10時まで働きます。",
+        "en": "I will work until 10 o'clock.",
+        "difficulty": 2
+      },
+      {
+        "jp": "東京まで電車で行きます。",
+        "en": "I will go by train as far as Tokyo.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼は疲れるまで走りました。",
+        "en": "He ran until he got tired.",
+        "difficulty": 2
+      },
+      {
+        "jp": "5ページまで読んでください。",
+        "en": "Please read up to page 5.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～まま (〜mama)",
+    "level": "N3",
+    "title": "～まま (〜mama)",
+    "formation": "Verb-ます stem + まま, い-Adjective + まま, な-Adjective + なまま, Noun + のまま",
+    "shortExplanation": "Expresses the state or condition remaining unchanged.",
+    "longExplanation": "The 〜まま grammar point is used to indicate that a state or condition remains unchanged or continues as it is, without any change or intervention. It can be used with verbs, い-adjectives, な-adjectives, and nouns to express the idea of something being left, kept, or maintained in its current state.",
+    "sentences": [
+      {
+        "jp": "部屋の窓を開けたまま寝ました。",
+        "en": "I slept with the window of the room open.",
+        "difficulty": 2
+      },
+      {
+        "jp": "熱いままのコーヒーを飲んで、舌を焦がしました。",
+        "en": "I drank the coffee while it was still hot and burned my tongue.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼は忙しいなまま、休みの日も仕事をしています。",
+        "en": "He continues to be busy, working even on his days off.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は故郷にいるまま、外国に行かないで仕事を見つけた。",
+        "en": "She found a job without going abroad, staying in her hometown.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～みたいだ (〜mitai da)",
+    "level": "N3",
+    "title": "～みたいだ (〜mitai da)",
+    "formation": "Verb-casual + みたいだ, い-Adjective + みたいだ, な-Adjective + みたいだ, Noun + みたいだ",
+    "shortExplanation": "Express similarity or appearance; 'like', 'seems', 'looks'.",
+    "longExplanation": "The ～みたいだ grammar point is used to express similarity, appearance or resemblance to something. It can be translated as 'like', 'seems', or 'looks' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼は怒っているみたいだ。",
+        "en": "He seems to be angry.",
+        "difficulty": 3
+      },
+      {
+        "jp": "そのビルは古いみたいだ。",
+        "en": "That building looks old.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は疲れているみたいだ。",
+        "en": "She seems to be tired.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この料理は辛いみたいだ。",
+        "en": "This dish seems to be spicy.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～めったに～ない (〜metta ni 〜nai)",
+    "level": "N3",
+    "title": "～めったに～ない (〜metta ni 〜nai)",
+    "formation": "めったに + Verb[ない-form] / めったに + い-Adjective[ない-form] / めったに + な-Adjective[じゃない/ではない-form]",
+    "shortExplanation": "Used to express that something rarely, hardly ever or seldom happens.",
+    "longExplanation": "The ～めったに～ない grammar point is used to express that something rarely, hardly ever or seldom happens. It is a negative expression and always needs to be used with ～ない (negative form) at the end.",
+    "sentences": [
+      {
+        "jp": "彼はめったに外食しない。",
+        "en": "He hardly ever eats out.",
+        "difficulty": 3
+      },
+      {
+        "jp": "私はめったに寿司を食べない。",
+        "en": "I seldom eat sushi.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この地域はめったに雪が降らない。",
+        "en": "It hardly ever snows in this area.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女はめったに怒らない。",
+        "en": "She hardly ever gets angry.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～めったにない (〜metta ni nai)",
+    "level": "N3",
+    "title": "～めったにない (〜metta ni nai)",
+    "formation": "Verb-negative + めったにない, い-Adjective-negative + めったにない, な-Adjective-negative + めったにない, Noun-negative + めったにない",
+    "shortExplanation": "Expresses the rarity of an action, event or state; 'hardly', 'rarely', 'seldom'.",
+    "longExplanation": "The ～めったにない grammar point is used to express that an action, event or state rarely, hardly, or seldom happens. It is usually combined with a negative verb form. Though it can be used with positive verbs, it is uncommon and sounds unnatural.",
+    "sentences": [
+      {
+        "jp": "この町では雪が降ることはめったにない。",
+        "en": "It hardly ever snows in this town.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼はめったに外食しない。",
+        "en": "He rarely eats out.",
+        "difficulty": 3
+      },
+      {
+        "jp": "友達が遊びに来るのはめったにない。",
+        "en": "Friends seldom come to visit.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女はめったに怒らない。",
+        "en": "She hardly ever gets angry.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ようとしない (〜you to shinai)",
+    "level": "N3",
+    "title": "～ようとしない (〜you to shinai)",
+    "formation": "Verb-volitional form + としない",
+    "shortExplanation": "Not showing any sign or intention to do something.",
+    "longExplanation": "The ～ようとしない grammar point indicates that someone is not showing any sign or intention of doing an action. It is used to express a refusal or unwillingness to do something. It is formed by using the volitional form of a verb followed by としない.",
+    "sentences": [
+      {
+        "jp": "彼は勉強しようとしない。",
+        "en": "He doesn't show any sign of trying to study.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は謝ろうとしない。",
+        "en": "She doesn't show any intention of apologizing.",
+        "difficulty": 2
+      },
+      {
+        "jp": "息子は部屋を片付けようとしない。",
+        "en": "My son doesn't show any intention of cleaning his room.",
+        "difficulty": 2
+      },
+      {
+        "jp": "犬は散歩に行こうとしない。",
+        "en": "The dog doesn't show any sign of wanting to go for a walk.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-～ようと思う (〜you to omou)",
+    "level": "N3",
+    "title": "～ようと思う (〜you to omou)",
+    "formation": "Verb-volitional + と思う",
+    "shortExplanation": "Expresses the speaker's intention or plan to do something.",
+    "longExplanation": "The ～ようと思う grammar point is used to express the speaker's intention or plan to do something in the future. It can be translated as 'I think I will...' or 'I am planning to...' in English. It is formed by taking the volitional form of a verb and adding と思う.",
+    "sentences": [
+      {
+        "jp": "今日は早く寝ようと思います。",
+        "en": "I think I will go to bed early today.",
+        "difficulty": 2
+      },
+      {
+        "jp": "明日美術館に行こうと思っています。",
+        "en": "I am planning to go to the art museum tomorrow.",
+        "difficulty": 2
+      },
+      {
+        "jp": "新しいカメラを買おうと思います。",
+        "en": "I think I will buy a new camera.",
+        "difficulty": 2
+      },
+      {
+        "jp": "来週友達と映画を見ようと思っています。",
+        "en": "I am planning to watch a movie with my friend next week.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～ように (〜you ni)",
+    "level": "N3",
+    "title": "～ように (〜you ni)",
+    "formation": "Verb-casual + ように, い-Adjective + ように, な-Adjective + に, Noun + のように",
+    "shortExplanation": "Expressing a purpose, a goal or a way of doing something; 'in order to', 'so that', 'like', 'as'",
+    "longExplanation": "The ～ように grammar point is used to express a purpose, a goal, or a way of doing something. It can be translated as 'in order to', 'so that', 'like', or 'as' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "早く家に帰るように、仕事を急いで終わらせました。",
+        "en": "In order to get home early, I hurried to finish my work.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は美しい花のように見えました。",
+        "en": "She looked like a beautiful flower.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この部屋がきれいになるように、掃除をしましょう。",
+        "en": "Let's clean so that this room becomes clean.",
+        "difficulty": 2
+      },
+      {
+        "jp": "山田さんは元気なように振る舞っていましたが、実際は疲れているらしいです。",
+        "en": "Yamada-san was acting as if he was energetic, but he actually seems to be tired.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～ように (〜you ni)",
+    "level": "N3",
+    "title": "～ように (〜you ni)",
+    "formation": "Verb-casual + ように, い-Adjective + ように, な-Adjective + だように, Noun + のように",
+    "shortExplanation": "Used to express a purpose, a way, or a natural tendency.",
+    "longExplanation": "The ～ように grammar point is used to express a purpose, a way or a method, or a natural tendency. It can be used with verbs, い-adjectives, な-adjectives, or nouns. It is frequently used with the verb する (to do) to express the purpose or method.",
+    "sentences": [
+      {
+        "jp": "子供が安全に過ごせるように、家の中を整理します。",
+        "en": "I will organize the inside of the house so that the children can spend time safely.",
+        "difficulty": 4
+      },
+      {
+        "jp": "美しい花のように、彼女は笑顔が素敵です。",
+        "en": "Like a beautiful flower, her smile is lovely.",
+        "difficulty": 3
+      },
+      {
+        "jp": "自然に英語を話せるように、毎日練習しています。",
+        "en": "I practice every day to be able to speak English naturally.",
+        "difficulty": 4
+      },
+      {
+        "jp": "成功するように、計画を立てましょう。",
+        "en": "Let's make a plan to succeed.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ように (〜you ni)",
+    "level": "N3",
+    "title": "～ように (〜you ni)",
+    "formation": "Verb-casual + ように, い-Adjective + ように, な-Adjective + に, Noun + のように",
+    "shortExplanation": "Used to express purpose or how something is done; 'like', 'as if', 'in order to'.",
+    "longExplanation": "The ～ように grammar point is used to express the purpose of an action or the manner in which something is done. It can be translated as 'like', 'as if', or 'in order to' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "分かりやすいように説明してください。",
+        "en": "Please explain it in a way that is easy to understand.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は鳥のように歌います。",
+        "en": "He sings like a bird.",
+        "difficulty": 2
+      },
+      {
+        "jp": "友達と仲良くするように努めています。",
+        "en": "I am trying to get along well with my friends.",
+        "difficulty": 4
+      },
+      {
+        "jp": "日本語が上手になるように勉強しています。",
+        "en": "I am studying to become better at Japanese.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ようにしましょう (〜you ni shimashou)",
+    "level": "N3",
+    "title": "～ようにしましょう (〜you ni shimashou)",
+    "formation": "Verb-dictionary form + ようにしましょう / Verb-negative form + ようにしましょう",
+    "shortExplanation": "A suggestion to make an effort or try to do something; 'let's try to', 'let's make sure to'.",
+    "longExplanation": "The ～ようにしましょう grammar point is used to suggest making an effort or trying to do something. It can be translated as 'let's try to' or 'let's make sure to' in English. Typically, we use the dictionary or negative form of the verb with ようにする/ようにしましょう to show the effort we want to make.",
+    "sentences": [
+      {
+        "jp": "毎日運動するようにしましょう。",
+        "en": "Let's try to exercise every day.",
+        "difficulty": 2
+      },
+      {
+        "jp": "早く寝るようにしましょう。",
+        "en": "Let's make sure to go to bed early.",
+        "difficulty": 2
+      },
+      {
+        "jp": "親切にするようにしましょう。",
+        "en": "Let's try to be kind.",
+        "difficulty": 2
+      },
+      {
+        "jp": "時間を無駄にしないようにしましょう。",
+        "en": "Let's make sure not to waste time.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ようになった (〜you ni natta)",
+    "level": "N3",
+    "title": "～ようになった (〜you ni natta)",
+    "formation": "Verb-casual + ようになった",
+    "shortExplanation": "Express an event or state that became possible; 'became able to', 'started to', 'now can'.",
+    "longExplanation": "The ～ようになった grammar point is used to express that an event, ability, or state has become possible or started to occur. It can be translated as 'became able to', 'started to', or 'now can' in English. Usually this is used with verbs in their dictionary or potential form (e.g., 食べられるようになった).",
+    "sentences": [
+      {
+        "jp": "彼は料理を作るようになった。",
+        "en": "He became able to cook.",
+        "difficulty": 2
+      },
+      {
+        "jp": "その子は読めるようになった。",
+        "en": "That child started to be able to read.",
+        "difficulty": 5
+      },
+      {
+        "jp": "会議は週に一度開催されるようになった。",
+        "en": "The meeting started to be held once a week.",
+        "difficulty": 4
+      },
+      {
+        "jp": "日本語がわかるようになった。",
+        "en": "I became able to understand Japanese.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～ように言う (〜you ni iu)",
+    "level": "N3",
+    "title": "～ように言う (〜you ni iu)",
+    "formation": "Verb-dictionary form + ように言う / Verb-nai form + ように言う",
+    "shortExplanation": "To convey a message, instruction or request to someone; 'to tell (someone) to', 'to say to (someone)'.",
+    "longExplanation": "The ～ように言う grammar point is used to convey a message, instruction or request to someone. It can be translated as 'to tell (someone) to' or 'to say to (someone)'. It is commonly formed by taking the dictionary (or negative) form of the verb plus ように言う.",
+    "sentences": [
+      {
+        "jp": "先生は私にもっと勉強するように言った。",
+        "en": "The teacher told me to study more.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は彼に待つように言いました。",
+        "en": "She told him to wait.",
+        "difficulty": 2
+      },
+      {
+        "jp": "母は私に部屋を片付けるように言いました。",
+        "en": "My mother told me to clean my room.",
+        "difficulty": 2
+      },
+      {
+        "jp": "先生は生徒に質問をするように言った。",
+        "en": "The teacher told the student to ask a question.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～らしい (〜rashii)",
+    "level": "N3",
+    "title": "～らしい (〜rashii)",
+    "formation": "Verb-casual + らしい, い-Adjective + らしい, な-Adjective + だらしい, Noun + だらしい",
+    "shortExplanation": "Expresses hearsay; 'I heard', 'it seems', 'apparently'.",
+    "longExplanation": "The ～らしい grammar point is used to indicate that the information provided is based on hearsay or an indirect source. In English, this can be translated as 'I heard', 'it seems', or 'apparently'. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "彼はインフルエンザらしい。",
+        "en": "Apparently, he has the flu.",
+        "difficulty": 3
+      },
+      {
+        "jp": "明日雪が降るらしい。",
+        "en": "I heard it will snow tomorrow.",
+        "difficulty": 1
+      },
+      {
+        "jp": "このレストランは美味しいらしい。",
+        "en": "I heard that this restaurant is delicious.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女は医者だらしい。",
+        "en": "It seems that she is a doctor.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-～られた (〜rareta)",
+    "level": "N3",
+    "title": "～られた (〜rareta)",
+    "formation": "Verb (passive form, past tense) + られた",
+    "shortExplanation": "Express a passive action, 'was/were', 'has/have been'.",
+    "longExplanation": "The ～られた grammar point is used to express a passive action or situation. It is formed by conjugating the verb into its passive form in the past tense, which can be translated into English as 'was/were' or 'has/have been'. This grammar is used in situations where the subject is affected by an action rather than performing the action itself.",
+    "sentences": [
+      {
+        "jp": "この本はたくさんの人に読まれた。",
+        "en": "This book was read by many people.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼は友達に騙された。",
+        "en": "He was deceived by his friend.",
+        "difficulty": 3
+      },
+      {
+        "jp": "昨日、私の財布が盗まれました。",
+        "en": "Yesterday, my wallet was stolen.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は映画に感動させられた。",
+        "en": "She was deeply moved by the movie.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～わけがない (〜wake ga nai)",
+    "level": "N3",
+    "title": "～わけがない (〜wake ga nai)",
+    "formation": "Verb-casual + わけがない, い-Adjective + わけがない, な-Adjective + なわけがない, Noun + のわけがない",
+    "shortExplanation": "Expresses that something is impossible or unreasonable; 'there's no way', 'can't be'.",
+    "longExplanation": "The ～わけがない grammar point is used to show that something is impossible, non-existent, or unreasonable based on logic or context. It is often translated as 'there's no way' or 'it's impossible'.",
+    "sentences": [
+      {
+        "jp": "彼がそんなことを言うわけがない。",
+        "en": "There's no way he would say something like that.",
+        "difficulty": 2
+      },
+      {
+        "jp": "あのレストランがまずいわけがない。",
+        "en": "There's no way that restaurant tastes bad.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女が優しくないわけがない。",
+        "en": "There's no way she's not kind.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼が試験に合格しないわけがない。",
+        "en": "There's no way he won't pass the exam.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～わけだ (〜wake da)",
+    "level": "N3",
+    "title": "～わけだ (〜wake da)",
+    "formation": "Verb-casual + わけだ, い-Adjective + わけだ, な-Adjective + なわけだ, Noun + のわけだ",
+    "shortExplanation": "Expresses a logical conclusion or reason based on information; 'that's why', 'no wonder', 'it means'.",
+    "longExplanation": "The ～わけだ grammar point is used to express a conclusion, reason, or interpretation based on a certain situation or piece of information. It can be translated as 'that's why', 'no wonder', or 'it means'.",
+    "sentences": [
+      {
+        "jp": "彼は風邪を引いている。だから、声がかすれているわけだ。",
+        "en": "He has a cold. That's why his voice is hoarse.",
+        "difficulty": 4
+      },
+      {
+        "jp": "今日は忙しかった。だから、疲れたわけだ。",
+        "en": "Today was busy. No wonder I'm tired.",
+        "difficulty": 2
+      },
+      {
+        "jp": "田中さんはたくさん勉強している。だから、試験に合格したわけだ。",
+        "en": "Tanaka has been studying a lot. It means he passed the exam.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼女は有名な歌手の娘なんだ。だから、歌が上手なわけだ。",
+        "en": "She's the daughter of a famous singer. That's why she's good at singing.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～わけではない (〜wake dewa nai)",
+    "level": "N3",
+    "title": "～わけではない (〜wake dewa nai)",
+    "formation": "Verb-casual + わけではない, い-Adjective + わけではない, な-Adjective + だわけではない, Noun + だわけではない",
+    "shortExplanation": "Denies a general assumption; 'it does not mean that', 'it's not the case'.",
+    "longExplanation": "The ～わけではない grammar point is used to deny or correct a general assumption or statement without completely negating the situation. It often emphasizes one particular point that is not true, while acknowledging other possibilities.",
+    "sentences": [
+      {
+        "jp": "彼が忙しいからといって、友達がいないわけではない。",
+        "en": "Just because he's busy doesn't mean he has no friends.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この映画は面白くないわけではないが、好みではない。",
+        "en": "It's not that this movie isn't interesting; it's just not my taste.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女が病気だからといって、毎日寝ているわけではない。",
+        "en": "Just because she's sick doesn't mean she's in bed all day.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼が大学に行っていないからといって、バカだわけではない。",
+        "en": "Just because he didn't go to college doesn't mean he's stupid.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～わけにはいかない (〜wake ni wa ikanai)",
+    "level": "N3",
+    "title": "～わけにはいかない (〜wake ni wa ikanai)",
+    "formation": "Verb-casual + わけにはいかない",
+    "shortExplanation": "Expresses that something cannot be allowed or permitted due to social/moral obligations.",
+    "longExplanation": "The ～わけにはいかない grammar point is used to express that a particular action cannot be taken due to social or moral obligations, responsibilities, or natural consequences. It often translates as 'I can't afford to...' or 'I can't just...' in English.",
+    "sentences": [
+      {
+        "jp": "こんなところで寝るわけにはいかない。",
+        "en": "I can't possibly sleep in a place like this.",
+        "difficulty": 2
+      },
+      {
+        "jp": "試験が明日だから、遊びに行くわけにはいかない。",
+        "en": "I can't afford to go out to have fun, since the exam is tomorrow.",
+        "difficulty": 2
+      },
+      {
+        "jp": "こんなに高いものを買うわけにはいかない。",
+        "en": "I can't allow myself to purchase something so expensive.",
+        "difficulty": 3
+      },
+      {
+        "jp": "体調が悪いから、パーティーに参加するわけにはいかない。",
+        "en": "Since I'm not feeling well, I can't attend the party.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～わりには (〜wari ni wa)",
+    "level": "N3",
+    "title": "～わりには (〜wari ni wa)",
+    "formation": "Verb-casual + わりには, い-Adjective + わりには, な-Adjective + だわりには, Noun + だわりには",
+    "shortExplanation": "Expresses contrast between expectation and reality; 'despite', 'considering', 'even though'.",
+    "longExplanation": "The ～わりには grammar point is used to highlight a contrast between what is expected from a certain condition and the actual result. It can be translated as 'despite', 'considering', or 'even though'.",
+    "sentences": [
+      {
+        "jp": "彼はあまり勉強しないわりには、テストの点数が高いです。",
+        "en": "Despite not studying much, he gets high scores on tests.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この料理は見た目が悪いわりには、味は美味しいです。",
+        "en": "Even though this dish doesn't look good, it tastes delicious.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は若いわりには、とても落ち着いていますね。",
+        "en": "Considering she's young, she's very calm.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋は狭いわりには、家賃が高いです。",
+        "en": "Despite being small, this room’s rent is high.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～んだって (〜n datte)",
+    "level": "N3",
+    "title": "～んだって (〜n datte)",
+    "formation": "Verb-casual + んだって, い-Adjective + んだって, な-Adjective + なんだって, Noun + なんだって",
+    "shortExplanation": "Conveys information heard from someone else; 'I heard', 'They said'.",
+    "longExplanation": "The ～んだって grammar point is used to relay information the speaker has heard from someone else. It's a casual way of quoting what was said, effectively combining explanatory のだ (んだ) with the informal quoting particle って. It can be translated as 'I heard...' or 'They said...'.",
+    "sentences": [
+      {
+        "jp": "彼は東京に行くんだって。",
+        "en": "I heard he's going to Tokyo.",
+        "difficulty": 5
+      },
+      {
+        "jp": "この映画、面白いんだって。",
+        "en": "They said this movie is interesting.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼女は有名な歌手なんだって。",
+        "en": "I heard she's a famous singer.",
+        "difficulty": 5
+      },
+      {
+        "jp": "あのレストラン、夜景がきれいなんだって。",
+        "en": "They said the night view at that restaurant is beautiful.",
+        "difficulty": 5
+      }
+    ]
+  },
+  {
+    "id": "N3-～んだもん (〜nda mon)",
+    "level": "N3",
+    "title": "～んだもん (〜nda mon)",
+    "formation": "Verb-casual + んだもん, い-Adjective + んだもん, な-Adjective + なんだもん, Noun + なんだもん",
+    "shortExplanation": "Used to convey a sense of justification; 'because', 'that's why', 'it's just that'.",
+    "longExplanation": "The ～んだもん grammar point is used when someone wants to give a reason, justification, or explanatory information in a more casual and emphatic way. It can be translated as 'because', 'that's why', or 'it's just that' in English. The formation differs depending on whether it is used with a verb, い-adjective, な-adjective, or noun.",
+    "sentences": [
+      {
+        "jp": "遅れたんだもん、ごめん。",
+        "en": "I was late, that's why I'm sorry.",
+        "difficulty": 5
+      },
+      {
+        "jp": "おいしいんだもん、もうちょっと食べたい。",
+        "en": "It's delicious, that's why I want to eat more.",
+        "difficulty": 4
+      },
+      {
+        "jp": "疲れているんだもん、早く寝たい。",
+        "en": "I'm tired, that's why I want to go to bed early.",
+        "difficulty": 4
+      },
+      {
+        "jp": "彼は友達なんだもん、手伝わないわけにはいかない。",
+        "en": "He's my friend, that's why I can't not help him.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-～上げる (〜ageru)",
+    "level": "N3",
+    "title": "～上げる (〜ageru)",
+    "formation": "Verb-ますstem + 上げる",
+    "shortExplanation": "Indicates to finish doing something completely.",
+    "longExplanation": "The ～上げる grammar point is used to express that an action has been completed or finished entirely. It's often used with verbs that have a ます stem, and can be translated as 'to finish (doing something)', 'to complete', or 'to get something done'.",
+    "sentences": [
+      {
+        "jp": "レポートを書き上げるまで、寝られません。",
+        "en": "I cannot sleep until I finish writing the report.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は早速部屋の掃除を始め、一時間で掃除をやり上げた。",
+        "en": "She started cleaning the room right away and finished cleaning it in an hour.",
+        "difficulty": 3
+      },
+      {
+        "jp": "試験前夜、勉強をやり上げてから寝た。",
+        "en": "I went to bed after finishing studying on the night before the exam.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このプロジェクトをやり上げるためには、みんなの協力が必要です。",
+        "en": "To finish this project, everyone's cooperation is needed.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～最中に (～saichuu ni)",
+    "level": "N3",
+    "title": "～最中に (～saichuu ni)",
+    "formation": "Verb-て form + いる + 最中に, Noun + の + 最中に",
+    "shortExplanation": "In the middle of / while doing something.",
+    "longExplanation": "The ～最中に grammar point is used to indicate that something happens during the middle of an action or situation. It can be translated as 'in the middle of' or 'while' in English. It often involves appending 最中に to a verb in 〜ている form or a noun plus の.",
+    "sentences": [
+      {
+        "jp": "昼寝をしている最中に電話が鳴った。",
+        "en": "The phone rang while I was taking a nap.",
+        "difficulty": 4
+      },
+      {
+        "jp": "料理を作っている最中に火事が起こった。",
+        "en": "A fire broke out in the middle of cooking.",
+        "difficulty": 3
+      },
+      {
+        "jp": "会議の最中に急な用事で出なければならなかった。",
+        "en": "I had to leave during the meeting because of an urgent matter.",
+        "difficulty": 3
+      },
+      {
+        "jp": "試験の最中に地震が起こった。",
+        "en": "An earthquake occurred during the exam.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-～切れない (～kirenai)",
+    "level": "N3",
+    "title": "～切れない (～kirenai)",
+    "formation": "Verb-stem + 切れない",
+    "shortExplanation": "Expresses inability to completely finish or do something.",
+    "longExplanation": "The ～切れない grammar point is used to express the inability to fully complete, finish, or do something. It is formed by attaching 切れない to the stem of a verb. It often implies that some portion of the action is done, but finishing it entirely is not possible for some reason.",
+    "sentences": [
+      {
+        "jp": "この本を一晩で読み切れない。",
+        "en": "I cannot finish reading this book in one night.",
+        "difficulty": 5
+      },
+      {
+        "jp": "彼は泣き切れないほど嬉しかった。",
+        "en": "He was so happy that he couldn't stop crying.",
+        "difficulty": 2
+      },
+      {
+        "jp": "この部屋を一日で掃除し切れない。",
+        "en": "I cannot finish cleaning this room in one day.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は話し切れないほどの悩みがある。",
+        "en": "She has so many worries that she can't finish talking about them.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-A その上 B (A sono ue B)",
+    "level": "N3",
+    "title": "A その上 B (A sono ue B)",
+    "formation": "A [sentence/clause] + その上 + B [sentence/clause]",
+    "shortExplanation": "Used to express 'in addition to', 'besides', or 'furthermore' when adding information or making a suggestion.",
+    "longExplanation": "The grammar point A その上 B is used to connect two statements, where B is an additional piece of information, a suggestion or reason that is related to statement A. The expression can be translated as 'in addition to', 'besides', or 'furthermore'.",
+    "sentences": [
+      {
+        "jp": "彼は頭が良い。その上、スポーツも得意だ。",
+        "en": "He is smart. In addition, he is also good at sports.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このカフェは雰囲気がいい。その上、料理も美味しい。",
+        "en": "This cafe has a nice atmosphere. Besides, the food is delicious.",
+        "difficulty": 3
+      },
+      {
+        "jp": "このアパートは駅に近い。その上、家賃も安い。",
+        "en": "This apartment is close to the station. Furthermore, the rent is also cheap.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼女は仕事ができる。その上、誰とでも仲良くなれる。",
+        "en": "She is competent at work. In addition, she can get along with anyone.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-すこしも〜ない (sukoshimo~nai)",
+    "level": "N3",
+    "title": "すこしも〜ない (sukoshimo~nai)",
+    "formation": "すこしも + Verb-negative",
+    "shortExplanation": "Express a negative state or action; 'not at all', 'none whatsoever'.",
+    "longExplanation": "The すこしも〜ない grammar point is used to emphasize a negative state or action, indicating that something does not exist or happen even a little bit. It can be translated as 'not at all', 'none whatsoever', or 'not one bit' in English. This expression is used with negative verbs.",
+    "sentences": [
+      {
+        "jp": "彼はすこしも悲しそうに見えません。",
+        "en": "He doesn't look sad at all.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋はすこしも寒くない。",
+        "en": "This room is not cold at all.",
+        "difficulty": 1
+      },
+      {
+        "jp": "彼女はすこしも心配していない。",
+        "en": "She is not worried at all.",
+        "difficulty": 3
+      },
+      {
+        "jp": "まったく知らない人と話すのは怖い。",
+        "en": "It's scary to talk to someone I don't know at all.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-だけど (dakedo)",
+    "level": "N3",
+    "title": "だけど (dakedo)",
+    "formation": "Sentence 1 + だけど + Sentence 2, or Sentence 1 + 。だけど、Sentence 2",
+    "shortExplanation": "Expresses a contrast or contradiction; 'but', 'however', 'even though'.",
+    "longExplanation": "The だけど grammar point is used to express a contrast or contradiction between two statements. In written or spoken Japanese, だけど is often placed at the start of a new sentence (after a period) to mean 'however'. Within a single sentence, speakers often just say けど without だ.",
+    "sentences": [
+      {
+        "jp": "試験に合格したけど、まだ勉強しなければならない。",
+        "en": "I passed the exam, but I still have to study.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋は広いけど、家賃が高いです。",
+        "en": "This room is spacious, but the rent is high.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は優しいけど、時々厳しいです。",
+        "en": "He is kind, but sometimes strict.",
+        "difficulty": 2
+      },
+      {
+        "jp": "朝ごはんは作りたいけど、時間がない。",
+        "en": "I want to make breakfast, but there's no time.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "N3-ですから～ (desu kara)",
+    "level": "N3",
+    "title": "ですから～ (desu kara)",
+    "formation": "Sentence A + ですから + Sentence B",
+    "shortExplanation": "Expresses reason or cause; 'because', 'since', 'so'.",
+    "longExplanation": "The ですから grammar point is used to indicate the reason or cause for a statement, often in polite speech. It can be translated as 'because', 'since', or 'so'.",
+    "sentences": [
+      {
+        "jp": "今日は寒いですから、コートを着てください。",
+        "en": "It's cold today, so please wear a coat.",
+        "difficulty": 1
+      },
+      {
+        "jp": "この映画は面白いですから、ぜひ見てください。",
+        "en": "This movie is interesting, so please watch it.",
+        "difficulty": 2
+      },
+      {
+        "jp": "明日は休みですから、ゆっくり休んでください。",
+        "en": "Tomorrow is a day off, so please take your time to rest.",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼は親切ですから、手伝ってくれるでしょう。",
+        "en": "He's kind, so he'll probably help you.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-ところで (tokorode)",
+    "level": "N3",
+    "title": "ところで (tokorode)",
+    "formation": "ところで + new topic or question",
+    "shortExplanation": "Used for changing the topic or bringing up a new topic; 'by the way', 'speaking of'.",
+    "longExplanation": "The ところで (tokorode) grammar point is used to change the topic of conversation or introduce a new topic. It can be translated as 'by the way' or 'speaking of' in English. It is often used when the speaker wants to ask a question or share some information on a different subject. It can be placed at the beginning or in the middle of a sentence.",
+    "sentences": [
+      {
+        "jp": "ところで、昨日の宿題はもう終わりましたか？",
+        "en": "By the way, did you finish yesterday's homework?",
+        "difficulty": 2
+      },
+      {
+        "jp": "彼はプールで泳いでいます。ところで、お昼ご飯は何にしますか？",
+        "en": "He is swimming in the pool. By the way, what do you want for lunch?",
+        "difficulty": 2
+      },
+      {
+        "jp": "昨日は楽しかったですね。ところで、この写真を見ましたか？",
+        "en": "Yesterday was fun, wasn't it? By the way, did you see this photo?",
+        "difficulty": 1
+      },
+      {
+        "jp": "ところで、明日の会議の時間を知っていますか？",
+        "en": "By the way, do you know the time of tomorrow's meeting?",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-どんなに～ても (donna ni ~ temo)",
+    "level": "N3",
+    "title": "どんなに～ても (donna ni ~ temo)",
+    "formation": "どんなに + Verb-てform + も, どんなに + い-Adjective-てform + も, どんなに + な-Adjective + でも",
+    "shortExplanation": "Expresses 'no matter how much' or 'even if'; emphasizes the degree of a situation.",
+    "longExplanation": "The どんなに～ても grammar point is used to emphasize the degree of a situation or condition, often translated as 'no matter how much' or 'even if' in English. It can be used with verbs, い-adjectives, and な-adjectives.",
+    "sentences": [
+      {
+        "jp": "どんなに勉強しても、まだわからないことがある。",
+        "en": "No matter how much I study, there are still things I don't understand.",
+        "difficulty": 2
+      },
+      {
+        "jp": "どんなに速く走っても、彼には勝てません。",
+        "en": "No matter how fast I run, I can't beat him.",
+        "difficulty": 5
+      },
+      {
+        "jp": "どんなに疲れても、仕事を終わらせるまで帰れません。",
+        "en": "No matter how tired I am, I can't go home until I finish my work.",
+        "difficulty": 5
+      },
+      {
+        "jp": "どんなに美味しくても、これ以上食べられない。",
+        "en": "No matter how delicious it is, I can't eat any more.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-まったく～ない (mattaku ~nai)",
+    "level": "N3",
+    "title": "まったく～ない (mattaku ~nai)",
+    "formation": "まったく + Verb-negative, まったく + い-Adjective-negative, まったく + な-Adjective-negative",
+    "shortExplanation": "Completely not; not at all.",
+    "longExplanation": "The まったく～ない grammar point is used to express that something is not the case at all, or to emphasize the negativity of a situation or action. It is used with negative forms of verbs, い-adjectives, and な-adjectives. It can be translated as 'completely not' or 'not at all' in English.",
+    "sentences": [
+      {
+        "jp": "彼は、まったく覚えていない。",
+        "en": "He doesn't remember at all.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この部屋はまったく暖かくない。",
+        "en": "This room is not warm at all.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女はまったく遅れていない。",
+        "en": "She is not late at all.",
+        "difficulty": 3
+      },
+      {
+        "jp": "これはまったく便利ではない。",
+        "en": "This is not convenient at all.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-まるで～よう (maru de ~ you)",
+    "level": "N3",
+    "title": "まるで～よう (maru de ~ you)",
+    "formation": "まるで + phrase/sentence + よう",
+    "shortExplanation": "Used to express a strong resemblance or similarity; 'as if', 'just like', 'as though'.",
+    "longExplanation": "The まるで～よう grammar point is used to emphasize a strong resemblance or similarity between two things or situations. It can be translated as 'as if', 'just like', or 'as though' in English. The formation is まるで + phrase/sentence + よう.",
+    "sentences": [
+      {
+        "jp": "彼女はまるで天使のように美しい。",
+        "en": "She is as beautiful as an angel.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼はまるでロボットのように仕事をしている。",
+        "en": "He works as if he is a robot.",
+        "difficulty": 3
+      },
+      {
+        "jp": "あの家はまるでお城のようだ。",
+        "en": "That house is just like a castle.",
+        "difficulty": 3
+      },
+      {
+        "jp": "ここはまるで楽園のような場所です。",
+        "en": "This place is as though it's a paradise.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-もし～たなら (moshi ~ tanara)",
+    "level": "N3",
+    "title": "もし～たなら (moshi ~ tanara)",
+    "formation": "もし + Verb-casual past + なら, もし + い-Adjective-casual past + なら, もし + な-Adjective + だったなら, もし + Noun + だったなら",
+    "shortExplanation": "Express a hypothetical condition, 'if' or 'in case'.",
+    "longExplanation": "The もし～たなら grammar point is used to express a hypothetical condition or situation in a more polite manner. It emphasizes the conditional part of a sentence and can be translated as 'if' or 'in case' in English. It is mainly used with verbs in the past tense, casual form.",
+    "sentences": [
+      {
+        "jp": "もし雨が降ったなら、傘を持って行きましょう。",
+        "en": "If it rains, let's bring an umbrella.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もしケーキが美味しくなかったなら、誰も食べないでしょう。",
+        "en": "If the cake was not delicious, nobody would eat it.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もし彼が病気だったなら、すぐに病院に行かせてあげてください。",
+        "en": "If he was sick, please take him to the hospital right away.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もし彼女が学生だったなら、このレストランは割引があるでしょう。",
+        "en": "If she were a student, there would be a discount at this restaurant.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-もし～ても (moshi ~ temo)",
+    "level": "N3",
+    "title": "もし～ても (moshi ~ temo)",
+    "formation": "もし + Verb-て form + も / もし + い-Adjective(く) + ても / もし + な-Adjective/Noun + でも",
+    "shortExplanation": "Express a hypothetical situation or assumption with the nuance of 'even if'.",
+    "longExplanation": "The もし～ても grammar point is used to describe a situation in which even if the stated condition is true, the result or decision does not change. It can be translated as 'even if', 'no matter if', or 'suppose ~'.",
+    "sentences": [
+      {
+        "jp": "もし雨が降っても、ピクニックに行きます。",
+        "en": "Even if it rains, we will go on a picnic.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もし彼が謝っても、まだ怒っているでしょう。",
+        "en": "Even if he apologizes, I will still be angry.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もし試験に合格しても、まだ勉強を続けます。",
+        "en": "Even if I pass the exam, I will still continue studying.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もし彼女が遅く来ても、待っています。",
+        "en": "Even if she comes late, I will wait.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "N3-もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+    "level": "N3",
+    "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
+    "formation": "もしかすると + Sentence + かもしれない",
+    "shortExplanation": "Express the possibility of something; 'maybe', 'perhaps', 'might'.",
+    "longExplanation": "The もしかすると〜かもしれない grammar point is used to indicate that there might be a possibility of a certain situation happening or someone feeling a certain way. This structure is often used to describe uncertain situations and can be translated into English as 'maybe', 'perhaps', or 'might'.",
+    "sentences": [
+      {
+        "jp": "もしかすると彼は遅刻するかもしれない。",
+        "en": "Maybe he might be late.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もしかすると彼女は疲れているかもしれない。",
+        "en": "Perhaps she might be tired.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もしかすると雨が降るかもしれない。",
+        "en": "It might rain, maybe.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もしかすると彼らはその映画が好きじゃないかもしれない。",
+        "en": "Maybe they might not like that movie.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-もしも～なら (moshimo ~ nara)",
+    "level": "N3",
+    "title": "もしも～なら (moshimo ~ nara)",
+    "formation": "Verb-casual + なら, い-Adjective + なら, な-Adjective + なら, Noun + なら",
+    "shortExplanation": "Express a hypothetical condition or situation; 'if', 'in case', 'suppose'.",
+    "longExplanation": "The もしも～なら grammar point is used to express a hypothetical condition or situation, often with a sense of uncertainty. It can be translated as 'if', 'in case', or 'suppose'. The formation varies slightly based on whether it is used with a verb, an い-adjective, a な-adjective, or a noun.",
+    "sentences": [
+      {
+        "jp": "もしも明日雨が降ったなら、出かけません。",
+        "en": "If it rains tomorrow, I won't go out.",
+        "difficulty": 2
+      },
+      {
+        "jp": "もしも彼が来なかったなら、私たちだけでパーティーをします。",
+        "en": "If he doesn't come, we'll have the party just by ourselves.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もしも彼女が疲れているなら、休ませてあげてください。",
+        "en": "If she is tired, please let her rest.",
+        "difficulty": 3
+      },
+      {
+        "jp": "もしもそれが真実なら、認めなければなりません。",
+        "en": "If that is true, we have to admit it.",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "id": "N3-必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+    "level": "N3",
+    "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
+    "formation": "必ずしも + Statement + とは限らない",
+    "shortExplanation": "Not necessarily; not always.",
+    "longExplanation": "The 必ずしも～とは限らない grammar point is used to express that something is not necessarily or not always the case, indicating that a certain assumption may not hold true in all situations.",
+    "sentences": [
+      {
+        "jp": "高いものが必ずしも良いとは限らない。",
+        "en": "Expensive things are not necessarily better.",
+        "difficulty": 3
+      },
+      {
+        "jp": "有名な人が必ずしも幸せとは限らない。",
+        "en": "Famous people are not necessarily happy.",
+        "difficulty": 3
+      },
+      {
+        "jp": "外国語が話せる人が必ずしも英語が得意とは限らない。",
+        "en": "People who can speak a foreign language are not always good at English.",
+        "difficulty": 4
+      },
+      {
+        "jp": "勉強時間が多い生徒が必ずしも試験で点数が高いとは限らない。",
+        "en": "Students who study a lot are not necessarily scoring high on exams.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "N3-決して～ない (kesshite ~ nai)",
+    "level": "N3",
+    "title": "決して～ない (kesshite ~ nai)",
+    "formation": "決して + Verb (negative form)",
+    "shortExplanation": "Express 'never', 'by no means', or 'not at all' when negating a statement.",
+    "longExplanation": "The 決して～ない grammar point is used to emphasize a negative statement or action. It can be translated as 'never', 'by no means', or 'not at all'. This grammar point must be paired with a negative verb form to maintain its negative meaning.",
+    "sentences": [
+      {
+        "jp": "彼は決して遅刻しない。",
+        "en": "He never arrives late.",
+        "difficulty": 3
+      },
+      {
+        "jp": "この秘密を決して誰にも言わないでください。",
+        "en": "Please never tell this secret to anyone.",
+        "difficulty": 3
+      },
+      {
+        "jp": "決して諦めないで、最後までがんばりましょう。",
+        "en": "Never give up and keep trying until the end.",
+        "difficulty": 3
+      },
+      {
+        "jp": "彼女は決して嘘をつかない人です。",
+        "en": "She is a person who never lies.",
+        "difficulty": 2
+      }
+    ]
+  }
+]

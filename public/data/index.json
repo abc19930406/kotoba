@@ -1,0 +1,87 @@
+{
+  "vocab": [
+    {
+      "file": "vocab-n5.json",
+      "level": "N5",
+      "count": 718,
+      "withSentences": 582
+    },
+    {
+      "file": "vocab-n4.json",
+      "level": "N4",
+      "count": 666,
+      "withSentences": 554
+    },
+    {
+      "file": "vocab-n3.json",
+      "level": "N3",
+      "count": 2140,
+      "withSentences": 1917
+    },
+    {
+      "file": "vocab-n2.json",
+      "level": "N2",
+      "count": 1906,
+      "withSentences": 1254
+    },
+    {
+      "file": "vocab-n1.json",
+      "level": "N1",
+      "count": 2699,
+      "withSentences": 1860
+    }
+  ],
+  "grammar": [
+    {
+      "file": "grammar-n5.json",
+      "level": "N5",
+      "count": 136
+    },
+    {
+      "file": "grammar-n4.json",
+      "level": "N4",
+      "count": 124
+    },
+    {
+      "file": "grammar-n3.json",
+      "level": "N3",
+      "count": 132
+    },
+    {
+      "file": "grammar-n2.json",
+      "level": "N2",
+      "count": 191
+    },
+    {
+      "file": "grammar-n1.json",
+      "level": "N1",
+      "count": 245
+    }
+  ],
+  "sources": {
+    "vocab": {
+      "name": "JLPT 單字 N5–N1",
+      "repo": "jamsinclair/open-anki-jlpt-decks",
+      "license": "開源（見來源 repo）"
+    },
+    "sentences": {
+      "name": "日英例句",
+      "repo": "mwhirls/tatoeba-json",
+      "license": "CC BY 2.0 FR"
+    },
+    "grammar": {
+      "name": "文法點內容",
+      "repo": "tristcoil/hanabira.org-japanese-content",
+      "license": "Creative Commons（從嚴依 CC BY-SA 4.0 對待）"
+    },
+    "dictionary": {
+      "name": "字典補充",
+      "repo": "scriptin/jmdict-simplified",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  "sourceVersions": {
+    "tatoebaRelease": "v0.0.52",
+    "jmdictVersion": "3.6.2+20260713141310"
+  }
+}
