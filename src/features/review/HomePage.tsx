@@ -11,6 +11,7 @@ import {
   DEFAULT_SHOW_FURIGANA,
 } from '../../db/cards.ts'
 import { LEVEL_ORDER, type JlptLevel } from '../../shared/contentTypes.ts'
+import type { ThemePreference } from '../../shared/theme.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
 interface HomePageProps {
@@ -19,9 +20,21 @@ interface HomePageProps {
   onBrowseGrammar: () => void
   onOpenSuspended: () => void
   onOpenAbout: () => void
+  onOpenStats: () => void
+  theme: ThemePreference
+  onThemeChange: (theme: ThemePreference) => void
 }
 
-export function HomePage({ onStartReview, onBrowseVocab, onBrowseGrammar, onOpenSuspended, onOpenAbout }: HomePageProps) {
+export function HomePage({
+  onStartReview,
+  onBrowseVocab,
+  onBrowseGrammar,
+  onOpenSuspended,
+  onOpenAbout,
+  onOpenStats,
+  theme,
+  onThemeChange,
+}: HomePageProps) {
   const [stats, setStats] = useState<HomeReviewStats | null>(null)
   const [dailyLimit, setDailyLimitState] = useState(DEFAULT_DAILY_NEW_CARD_LIMIT)
   const [currentLevel, setCurrentLevelState] = useState<JlptLevel>(DEFAULT_CURRENT_LEVEL)
@@ -118,11 +131,22 @@ export function HomePage({ onStartReview, onBrowseVocab, onBrowseGrammar, onOpen
         />
         例句顯示假名注音
       </label>
+      <label className="theme-setting">
+        外觀：
+        <select value={theme} onChange={(e) => onThemeChange(e.target.value as ThemePreference)}>
+          <option value="system">跟隨系統</option>
+          <option value="light">淺色</option>
+          <option value="dark">深色</option>
+        </select>
+      </label>
       {loaded && stats.suspendedCount > 0 && (
         <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
           已熟悉清單（{stats.suspendedCount}）
         </button>
       )}
+      <button type="button" className="suspended-list-link" onClick={onOpenStats}>
+        統計
+      </button>
       <button type="button" className="suspended-list-link" onClick={onOpenAbout}>
         關於
       </button>

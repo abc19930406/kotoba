@@ -1,6 +1,7 @@
 import { fsrs, createEmptyCard, State, type Card as FsrsCard, type Grade } from 'ts-fsrs'
 import { db, type CardRecord, type ItemType, type QueuedItemRecord } from './schema.ts'
 import { LEVEL_ORDER, LEVEL_TO_DIFFICULTY, type JlptLevel } from '../shared/contentTypes.ts'
+import type { ThemePreference } from '../shared/theme.ts'
 
 const scheduler = fsrs()
 
@@ -12,6 +13,10 @@ export const DEFAULT_CURRENT_LEVEL: JlptLevel = 'N5'
 
 const SHOW_FURIGANA_KEY = 'showFurigana'
 export const DEFAULT_SHOW_FURIGANA = true
+
+const THEME_KEY = 'theme'
+export const DEFAULT_THEME: ThemePreference = 'system'
+const THEME_VALUES: ThemePreference[] = ['system', 'light', 'dark']
 
 function toFsrsCard(record: CardRecord): FsrsCard {
   return {
@@ -182,13 +187,13 @@ export async function addManyToReviewQueue(
   return added
 }
 
-function startOfDay(date: Date): Date {
+export function startOfDay(date: Date): Date {
   const d = new Date(date)
   d.setHours(0, 0, 0, 0)
   return d
 }
 
-function endOfDay(date: Date): Date {
+export function endOfDay(date: Date): Date {
   const d = new Date(date)
   d.setHours(23, 59, 59, 999)
   return d
@@ -239,6 +244,16 @@ export async function getShowFurigana(): Promise<boolean> {
 
 export async function setShowFurigana(value: boolean): Promise<void> {
   await db.settings.put({ key: SHOW_FURIGANA_KEY, value: value ? 1 : 0 })
+}
+
+/** Global appearance setting (跟隨系統/淺色/深色), default 跟隨系統. Encoded as an index into THEME_VALUES to fit the `settings` table's `value: number` shape. */
+export async function getTheme(): Promise<ThemePreference> {
+  const setting = await db.settings.get(THEME_KEY)
+  return THEME_VALUES[setting?.value ?? 0] ?? DEFAULT_THEME
+}
+
+export async function setTheme(value: ThemePreference): Promise<void> {
+  await db.settings.put({ key: THEME_KEY, value: THEME_VALUES.indexOf(value) })
 }
 
 /**

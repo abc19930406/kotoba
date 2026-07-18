@@ -1,10 +1,76 @@
 :root {
   color-scheme: light dark;
   font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --page-bg: #ffffff;
+  --text: #1a1a1a;
+  --border: #e5e4e7;
+  --accent: #6b46c1;
+  --accent-contrast: #ffffff;
+  --accent-tint-text: #6b46c1;
+  --accent-tint-bg: rgba(107, 70, 193, 0.12);
+  --accent-tint-bg-soft: rgba(107, 70, 193, 0.06);
+  --muted-link: rgba(0, 0, 0, 0.5);
+  --muted-strong: #4b5563;
+  --disabled: #9ca3af;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --success-tint-bg: rgba(22, 163, 74, 0.1);
+  --warning-border: #d97706;
+  --warning-tint-bg: rgba(217, 119, 6, 0.12);
+  --overlay: rgba(0, 0, 0, 0.4);
+  --button-secondary-bg: #e5e4e7;
+  --button-secondary-text: #1a1a1a;
+}
+
+/* "跟隨系統" (theme === 'system', i.e. no data-theme override) picking up OS dark mode. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --page-bg: #121212;
+    --text: #ececec;
+    --border: #3f3f46;
+    --accent-tint-text: #b9a4f0;
+    --accent-tint-bg: rgba(167, 139, 250, 0.22);
+    --accent-tint-bg-soft: rgba(167, 139, 250, 0.12);
+    --muted-link: rgba(255, 255, 255, 0.6);
+    --muted-strong: #c7ccd4;
+    --disabled: #71717a;
+    --danger: #f87171;
+    --success: #4ade80;
+    --success-tint-bg: rgba(74, 222, 128, 0.16);
+    --warning-border: #f59e0b;
+    --warning-tint-bg: rgba(245, 158, 11, 0.18);
+    --overlay: rgba(0, 0, 0, 0.6);
+    --button-secondary-bg: #2c2c31;
+    --button-secondary-text: #ececec;
+  }
+}
+
+/* Manual override to 深色, regardless of OS preference. */
+:root[data-theme='dark'] {
+  --page-bg: #121212;
+  --text: #ececec;
+  --border: #3f3f46;
+  --accent-tint-text: #b9a4f0;
+  --accent-tint-bg: rgba(167, 139, 250, 0.22);
+  --accent-tint-bg-soft: rgba(167, 139, 250, 0.12);
+  --muted-link: rgba(255, 255, 255, 0.6);
+  --muted-strong: #c7ccd4;
+  --disabled: #71717a;
+  --danger: #f87171;
+  --success: #4ade80;
+  --success-tint-bg: rgba(74, 222, 128, 0.16);
+  --warning-border: #f59e0b;
+  --warning-tint-bg: rgba(245, 158, 11, 0.18);
+  --overlay: rgba(0, 0, 0, 0.6);
+  --button-secondary-bg: #2c2c31;
+  --button-secondary-text: #ececec;
 }
 
 body {
   margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
 }
 
 button {
@@ -50,23 +116,23 @@ button {
   min-height: 48px;
   border-radius: 8px;
   border: none;
-  background: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-contrast);
   font-size: 1.125rem;
   font-weight: 600;
 }
 
 .start-review:disabled {
-  background: #9ca3af;
+  background: var(--disabled);
 }
 
 .browse-vocab {
   width: 100%;
   min-height: 44px;
   border-radius: 8px;
-  border: 1px solid #6b46c1;
+  border: 1px solid var(--accent-tint-text);
   background: none;
-  color: #6b46c1;
+  color: var(--accent-tint-text);
   font-size: 1rem;
   font-weight: 600;
 }
@@ -93,8 +159,8 @@ button {
 .daily-limit-setting.emphasized {
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: rgba(217, 119, 6, 0.12);
-  border: 1px solid #d97706;
+  background: var(--warning-tint-bg);
+  border: 1px solid var(--warning-border);
 }
 
 .current-level-setting {
@@ -105,6 +171,18 @@ button {
 }
 
 .current-level-setting select {
+  min-height: 44px;
+  font-size: 1rem;
+}
+
+.theme-setting {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.theme-setting select {
   min-height: 44px;
   font-size: 1rem;
 }
@@ -127,7 +205,7 @@ button {
   padding: 0 0.75rem;
   border: none;
   background: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--muted-link);
   font-size: 0.875rem;
   text-decoration: underline;
 }
@@ -160,8 +238,8 @@ button {
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
   border: none;
-  background: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .review-card {
@@ -175,7 +253,7 @@ button {
   margin: 0.5rem 1rem;
   padding: 1.5rem 1rem;
   border-radius: 12px;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
   background: none;
   font: inherit;
   text-align: center;
@@ -242,8 +320,8 @@ button {
   margin: 0 1rem;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: rgba(22, 163, 74, 0.1);
-  color: #16a34a;
+  background: var(--success-tint-bg);
+  color: var(--success);
   font-size: 0.875rem;
   text-align: center;
 }
@@ -253,7 +331,7 @@ button {
   padding: 0 0.5rem;
   border: none;
   background: none;
-  color: #16a34a;
+  color: var(--success);
   font-weight: 700;
   text-decoration: underline;
 }
@@ -266,7 +344,8 @@ button {
   padding: 0 1rem;
   border: none;
   background: none;
-  color: rgba(107, 70, 193, 0.6);
+  color: var(--accent-tint-text);
+  opacity: 0.7;
   font-size: 0.8125rem;
 }
 
@@ -279,7 +358,7 @@ button {
   padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
   position: sticky;
   bottom: 0;
-  background: var(--page-bg, Canvas);
+  background: var(--page-bg);
 }
 
 .grade-buttons button {
@@ -331,7 +410,7 @@ button {
   padding: 0 0.5rem;
   border: none;
   background: none;
-  color: #6b46c1;
+  color: var(--accent-tint-text);
   font-size: 1rem;
 }
 
@@ -343,10 +422,10 @@ button {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--page-bg, Canvas);
+  background: var(--page-bg);
   padding-top: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #e5e4e7;
+  border-bottom: 1px solid var(--border);
 }
 
 .level-tabs {
@@ -360,16 +439,16 @@ button {
   flex: 1;
   min-height: 44px;
   min-width: 44px;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
   border-radius: 8px;
   background: none;
   font-size: 1rem;
 }
 
 .level-tab.active {
-  background: #6b46c1;
-  border-color: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
   font-weight: 600;
 }
 
@@ -383,7 +462,7 @@ button {
 .vocab-search {
   min-height: 44px;
   padding: 0 0.75rem;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 1rem;
 }
@@ -404,16 +483,16 @@ button {
 .pos-chip {
   min-height: 32px;
   padding: 0 0.625rem;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
   border-radius: 999px;
   background: none;
   font-size: 0.8125rem;
 }
 
 .pos-chip.active {
-  background: #6b46c1;
-  border-color: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .vocab-batch-add {
@@ -424,15 +503,15 @@ button {
   width: 100%;
   min-height: 44px;
   border-radius: 8px;
-  border: 1px solid #6b46c1;
+  border: 1px solid var(--accent-tint-text);
   background: none;
-  color: #6b46c1;
+  color: var(--accent-tint-text);
   font-size: 0.9375rem;
 }
 
 .vocab-batch-add button:disabled {
-  border-color: #9ca3af;
-  color: #9ca3af;
+  border-color: var(--disabled);
+  color: var(--disabled);
 }
 
 .vocab-status,
@@ -449,7 +528,7 @@ button {
 
 .vocab-error-inline {
   font-size: 0.8125rem;
-  color: #dc2626;
+  color: var(--danger);
   opacity: 0.85;
   margin: -0.25rem 0 0.5rem;
 }
@@ -461,8 +540,8 @@ button {
   padding: 0 1rem;
   border-radius: 8px;
   border: none;
-  background: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .vocab-list {
@@ -479,7 +558,7 @@ button {
   min-height: 48px;
   padding: 0.5rem 0.25rem;
   border: none;
-  border-bottom: 1px solid #e5e4e7;
+  border-bottom: 1px solid var(--border);
   background: none;
   font: inherit;
   text-align: left;
@@ -490,8 +569,8 @@ button {
   min-width: 1.75rem;
   padding: 0.0625rem 0.25rem;
   border-radius: 4px;
-  background: rgba(107, 70, 193, 0.12);
-  color: #6b46c1;
+  background: var(--accent-tint-bg);
+  color: var(--accent-tint-text);
   font-size: 0.6875rem;
   font-weight: 700;
   text-align: center;
@@ -530,13 +609,13 @@ button {
 .vocab-list-added {
   flex-shrink: 0;
   font-size: 0.75rem;
-  color: #16a34a;
+  color: var(--success);
 }
 
 .vocab-list-suspended {
   flex-shrink: 0;
   font-size: 0.75rem;
-  color: #4b5563;
+  color: var(--muted-strong);
 }
 
 .suspended-list {
@@ -552,7 +631,7 @@ button {
   gap: 0.75rem;
   min-height: 48px;
   padding: 0.5rem 0.25rem;
-  border-bottom: 1px solid #e5e4e7;
+  border-bottom: 1px solid var(--border);
 }
 
 .suspended-list-text {
@@ -567,8 +646,8 @@ button {
   min-width: 2.5rem;
   padding: 0.0625rem 0.25rem;
   border-radius: 4px;
-  background: rgba(107, 70, 193, 0.12);
-  color: #6b46c1;
+  background: var(--accent-tint-bg);
+  color: var(--accent-tint-text);
   font-size: 0.6875rem;
   font-weight: 700;
   text-align: center;
@@ -593,9 +672,9 @@ button {
   min-height: 44px;
   padding: 0 0.75rem;
   border-radius: 8px;
-  border: 1px solid #6b46c1;
+  border: 1px solid var(--accent-tint-text);
   background: none;
-  color: #6b46c1;
+  color: var(--accent-tint-text);
   font-size: 0.875rem;
 }
 
@@ -630,7 +709,7 @@ button {
   margin: 0 0 0.75rem;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: rgba(107, 70, 193, 0.06);
+  background: var(--accent-tint-bg-soft);
 }
 
 .grammar-detail-long-explanation {
@@ -669,24 +748,24 @@ button {
   min-height: 48px;
   border-radius: 8px;
   border: none;
-  background: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-contrast);
   font-size: 1.0625rem;
   font-weight: 600;
   margin: 0.75rem 0 1.25rem;
 }
 
 .vocab-add-button:disabled {
-  background: #9ca3af;
+  background: var(--disabled);
 }
 
 .vocab-suspend-toggle {
   width: 100%;
   min-height: 44px;
   border-radius: 8px;
-  border: 1px solid #9ca3af;
+  border: 1px solid var(--disabled);
   background: none;
-  color: #4b5563;
+  color: var(--muted-strong);
   font-size: 0.9375rem;
   margin: -0.5rem 0 1.25rem;
 }
@@ -709,7 +788,7 @@ button {
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 3rem;
   border-radius: 8px;
-  background: rgba(107, 70, 193, 0.06);
+  background: var(--accent-tint-bg-soft);
 }
 
 .sentence-difficulty {
@@ -761,7 +840,7 @@ button {
 }
 
 .about-source a {
-  color: #6b46c1;
+  color: var(--accent-tint-text);
 }
 
 /* Batch add confirm dialog */
@@ -772,14 +851,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--overlay);
   padding: 1rem;
 }
 
 .batch-add-dialog {
   width: 100%;
   max-width: 360px;
-  background: var(--page-bg, Canvas);
+  background: var(--page-bg);
   border-radius: 12px;
   padding: 1.25rem;
 }
@@ -799,10 +878,142 @@ button {
 }
 
 .batch-add-cancel {
-  background: #e5e4e7;
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
 }
 
 .batch-add-confirm {
-  background: #6b46c1;
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* Stats page */
+
+.streak-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0 1rem;
+}
+
+.stats-section {
+  margin: 0 0 1.5rem;
+}
+
+.stats-section h2 {
+  font-size: 1.0625rem;
+  margin: 0 0 0.5rem;
+}
+
+.daily-chart {
+  width: 100%;
+  height: auto;
+}
+
+.level-progress-group {
+  margin: 0 0 1rem;
+}
+
+.level-progress-group h3 {
+  font-size: 0.9375rem;
+  margin: 0 0 0.5rem;
+  opacity: 0.8;
+}
+
+.level-progress-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.level-progress-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem 0.5rem;
+}
+
+.level-progress-label {
+  flex-shrink: 0;
+  width: 1.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.level-progress-bar {
+  flex: 1;
+  min-width: 4rem;
+  display: flex;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.level-progress-segment {
+  height: 100%;
+}
+
+.level-progress-segment.active {
+  background: var(--accent);
+}
+
+.level-progress-segment.suspended {
+  background: var(--muted-strong);
+}
+
+.level-progress-segment.not-started {
+  background: transparent;
+}
+
+.level-progress-numbers {
+  flex-basis: 100%;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  padding-left: 2.25rem;
+}
+
+.backup-section {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.backup-export-button,
+.backup-import-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  margin: 0 0.5rem 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--accent-tint-text);
+  background: none;
+  color: var(--accent-tint-text);
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.backup-import-button input[type='file'] {
+  /* Visually hidden but still reachable/clickable via the wrapping label — keeps the native file picker's accessibility semantics. */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.backup-confirm-list {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.backup-warning {
+  font-weight: 600;
+  color: var(--danger);
 }

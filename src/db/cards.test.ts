@@ -18,6 +18,9 @@ import {
   getItemStatuses,
   getCurrentLevel,
   setCurrentLevel,
+  getTheme,
+  setTheme,
+  DEFAULT_THEME,
 } from './cards.ts'
 
 beforeEach(async () => {
@@ -304,5 +307,23 @@ describe('Phase 4.5: detail-page 標記已熟悉 on a "queued but never reviewed
     expect((await getItemStatuses('grammar')).get('g-queued-only')).toBe('active')
     const due = await listDueCards(new Date('2099-01-01T00:00:00Z'))
     expect(due.map((c) => c.itemId)).toContain('g-queued-only')
+  })
+})
+
+describe('theme setting', () => {
+  it('defaults to 跟隨系統 (system) when never set', async () => {
+    expect(await getTheme()).toBe(DEFAULT_THEME)
+    expect(await getTheme()).toBe('system')
+  })
+
+  it('round-trips light and dark through setTheme/getTheme', async () => {
+    await setTheme('dark')
+    expect(await getTheme()).toBe('dark')
+
+    await setTheme('light')
+    expect(await getTheme()).toBe('light')
+
+    await setTheme('system')
+    expect(await getTheme()).toBe('system')
   })
 })

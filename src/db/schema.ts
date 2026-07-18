@@ -95,3 +95,9 @@ export class KotobaDB extends Dexie {
 }
 
 export const db = new KotobaDB()
+
+// Mirrors the highest `.version(N)` above — bump alongside any future schema
+// migration. Written into backup exports (src/db/backup.ts) as an FYI for
+// the import confirmation screen; import validates the *current* row shape
+// via zod rather than branching on this number.
+export const DB_SCHEMA_VERSION = 3
