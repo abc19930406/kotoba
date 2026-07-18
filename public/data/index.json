@@ -83,5 +83,6 @@
   "sourceVersions": {
     "tatoebaRelease": "v0.0.52",
     "jmdictVersion": "3.6.2+20260713141310"
-  }
+  },
+  "dataVersion": "92ced9dfbbca7c3f"
 }

@@ -1,6 +1,6 @@
 # kotoba — 日文學習 PWA
 
-個人使用的日文單字與文法學習 PWA。以 JLPT N5–N1 分級單字為主軸，搭配自動分級的例句與文法點，使用 FSRS 間隔重複演算法排程複習。純前端、無後端、部署於 GitHub Pages，主要於手機瀏覽器使用。
+個人使用的日文單字與文法學習 PWA。以 JLPT N5–N1 分級單字為主軸，搭配自動分級的例句與文法點，使用 FSRS 間隔重複演算法排程複習。純前端、無後端、部署於 Vercel，主要於手機瀏覽器使用。
 
 ## 技術棧
 
@@ -11,7 +11,7 @@
 - PWA：`vite-plugin-pwa`（Workbox）
 - 測試：Vitest + @testing-library/react
 - 資料管線：Node.js scripts（`pipeline/`），形態素分析用 `kuromoji`
-- 部署：GitHub Pages（GitHub Actions）
+- 部署：Vercel（zero-config Vite preset，push `main` 自動重新部署）
 
 ## 常用指令
 
@@ -67,6 +67,14 @@ About 頁文法內容區塊標註文字：
 3. 句子難度 = 實詞等級的 90th percentile（四捨五入）。
 4. 句長修正：詞素數 > 25 時難度 +1（上限 6）。
 5. 難度 1–5 對應 N5–N1 標籤，6 標為 "N1+"。
+
+## 部署（Vercel）
+
+- 部署平台為 Vercel，獨立專案，zero-config（自動偵測 Vite framework preset，build command `npm run build`，output `dist/`）。
+- `vite.config.ts` 的 `base` 為 `/`（Vercel 部署在網域根路徑，非子路徑）。
+- push GitHub `main` 分支會觸發 Vercel 自動重新部署。
+- **部署網域即 IndexedDB 資料的永久住址，不得隨意更換**。使用者的複習進度（FSRS 卡片狀態、複習紀錄、已熟悉清單、所有設定）全部存在瀏覽器的 IndexedDB，而 IndexedDB 是依「來源網域」隔離的——換一個部署網域（例如從 Vercel 預設網域改綁自訂網域、或建立新的 Vercel 專案）會讓使用者在舊網域累積的所有複習資料變得無法存取，等同資料遺失。若未來真的需要換網域，必須先設計資料遷移方案（例如匯出/匯入），不能直接切換。
+- Workbox 快取策略：app shell（HTML/CSS/JS/icons/manifest）走 precache；`public/data/*.json`「不」進 precache，改用 CacheFirst 執行期快取，快取名稱綁定 `pipeline/emit.ts` 算出的 `dataVersion`（所有 vocab/grammar 檔案內容的 hash），資料實際變更時才會失效，單純重新部署不會讓使用者已快取的等級重新下載。
 
 ## 開發規則
 

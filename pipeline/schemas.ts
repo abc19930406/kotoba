@@ -90,6 +90,8 @@ export const indexFileSchema = z.object({
     tatoebaRelease: z.string(),
     jmdictVersion: z.string(),
   }),
+  /** sha256 (truncated) of every emitted vocab/grammar file's exact bytes, in stable order — changes only when data content actually changes. Used by vite.config.ts to version the frontend's Workbox runtime cache for public/data/*.json. */
+  dataVersion: z.string().min(1),
 })
 export type IndexFile = z.infer<typeof indexFileSchema>
 

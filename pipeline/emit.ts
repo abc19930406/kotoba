@@ -1,4 +1,5 @@
 import { mkdir, writeFile } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import path from 'node:path'
 import { ZodError } from 'zod'
 import type { LinkedData } from './link.ts'
@@ -83,6 +84,11 @@ export async function emit(data: LinkedData, sourceVersions: SourceVersions): Pr
   const grammarIndexEntries: IndexFile['grammar'] = []
   const allVocabEntries: VocabEntry[] = []
   const allGrammarEntries: GrammarEntry[] = []
+  // Hashes the exact bytes written for every vocab/grammar file, in stable
+  // (LEVEL_ORDER) order, so it's deterministic across reruns with unchanged
+  // data — used as a Workbox runtime-cache version key on the frontend so
+  // the browser cache invalidates only when the actual content changes.
+  const dataVersionHash = createHash('sha256')
 
   for (const level of LEVEL_ORDER) {
     const file = `vocab-${level.toLowerCase()}.json`
@@ -97,7 +103,9 @@ export async function emit(data: LinkedData, sourceVersions: SourceVersions): Pr
       if (err instanceof ZodError) throw new Error(describeZodError(file, err))
       throw err
     }
-    await writeFile(path.join(DATA_DIR, file), `${JSON.stringify(validated, null, 2)}\n`, 'utf-8')
+    const serialized = `${JSON.stringify(validated, null, 2)}\n`
+    await writeFile(path.join(DATA_DIR, file), serialized, 'utf-8')
+    dataVersionHash.update(serialized)
     allVocabEntries.push(...validated)
     const withSentences = validated.filter((v) => v.sentences.length > 0).length
     const withZhCount = validated.filter((v) => v.meaningZh !== null).length
@@ -125,7 +133,9 @@ export async function emit(data: LinkedData, sourceVersions: SourceVersions): Pr
       if (err instanceof ZodError) throw new Error(describeZodError(file, err))
       throw err
     }
-    await writeFile(path.join(DATA_DIR, file), `${JSON.stringify(validated, null, 2)}\n`, 'utf-8')
+    const serialized = `${JSON.stringify(validated, null, 2)}\n`
+    await writeFile(path.join(DATA_DIR, file), serialized, 'utf-8')
+    dataVersionHash.update(serialized)
     allGrammarEntries.push(...validated)
     const withZhCount = validated.filter((g) => g.zhShort !== null && g.zhLong !== null).length
     grammarIndexEntries.push({ file, level, count: validated.length })
@@ -140,6 +150,7 @@ export async function emit(data: LinkedData, sourceVersions: SourceVersions): Pr
     grammar: grammarIndexEntries,
     sources: SOURCE_ATTRIBUTION,
     sourceVersions,
+    dataVersion: dataVersionHash.digest('hex').slice(0, 16),
   }
   const validatedIndex = indexFileSchema.parse(index)
   await writeFile(
