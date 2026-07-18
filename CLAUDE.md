@@ -70,7 +70,7 @@ About 頁文法內容區塊標註文字：
 
 ## 部署（Vercel）
 
-- 部署平台為 Vercel，獨立專案，zero-config（自動偵測 Vite framework preset，build command `npm run build`，output `dist/`）。
+- 部署平台為 Vercel，獨立專案，zero-config（自動偵測 Vite framework preset，build command `npm run build`，output `dist/`）。正式網址：https://kotoba-delta.vercel.app
 - `vite.config.ts` 的 `base` 為 `/`（Vercel 部署在網域根路徑，非子路徑）。
 - push GitHub `main` 分支會觸發 Vercel 自動重新部署。
 - **部署網域即 IndexedDB 資料的永久住址，不得隨意更換**。使用者的複習進度（FSRS 卡片狀態、複習紀錄、已熟悉清單、所有設定）全部存在瀏覽器的 IndexedDB，而 IndexedDB 是依「來源網域」隔離的——換一個部署網域（例如從 Vercel 預設網域改綁自訂網域、或建立新的 Vercel 專案）會讓使用者在舊網域累積的所有複習資料變得無法存取，等同資料遺失。若未來真的需要換網域，必須先設計資料遷移方案（例如匯出/匯入），不能直接切換。
