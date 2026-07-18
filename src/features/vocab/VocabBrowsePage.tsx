@@ -11,6 +11,7 @@ import {
   DEFAULT_SHOW_FURIGANA,
   type ItemStatus,
 } from '../../db/cards.ts'
+import { saveScrollPosition, useScrollRestore } from '../../shared/useScrollRestore.ts'
 import { LevelTabs } from './LevelTabs.tsx'
 import { VocabFilters } from './VocabFilters.tsx'
 import { VocabList } from './VocabList.tsx'
@@ -20,6 +21,16 @@ import { filterVocab, collectPosCodes } from './filterVocab.ts'
 
 interface VocabBrowsePageProps {
   onBack: () => void
+}
+
+// Module-level (not component state) so it survives this component
+// unmounting/remounting within the same app session (e.g. leaving to Home
+// and back to 瀏覽單字) — deliberately never persisted, so a real page
+// reload starts fresh (see Phase 5.x "捲動位置保留" spec, step 2d).
+const scrollPositions = new Map<string, number>()
+
+export function browseSignature(level: JlptLevel, search: string, selectedPos: Set<string>): string {
+  return `${level}::${search}::${[...selectedPos].sort().join(',')}`
 }
 
 export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
@@ -96,6 +107,13 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
   const pendingLevels = isSearching ? LEVEL_ORDER.filter((lvl) => !levelData[lvl] && !levelErrors[lvl]) : []
   const erroredLevels = isSearching ? LEVEL_ORDER.filter((lvl) => levelErrors[lvl]) : []
 
+  const currentLevelReady = levelData[level] !== undefined
+  const currentLevelError = levelErrors[level]
+  const contentReady = isSearching || currentLevelReady
+
+  const signature = browseSignature(level, search, selectedPos)
+  useScrollRestore(scrollPositions, signature, contentReady, selectedEntry === null)
+
   function togglePos(code: string) {
     setSelectedPos((prev) => {
       const next = new Set(prev)
@@ -123,6 +141,16 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
     await refreshStatuses()
   }
 
+  function handleSelectEntry(entry: VocabEntry) {
+    saveScrollPosition(scrollPositions, signature)
+    setSelectedEntry(entry)
+  }
+
+  function handleLevelChange(newLevel: JlptLevel) {
+    saveScrollPosition(scrollPositions, signature)
+    setLevel(newLevel)
+  }
+
   if (selectedEntry) {
     return (
       <VocabDetail
@@ -136,9 +164,6 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
     )
   }
 
-  const currentLevelReady = levelData[level] !== undefined
-  const currentLevelError = levelErrors[level]
-
   return (
     <div className="vocab-browse-page">
       <div className="vocab-browse-header">
@@ -148,7 +173,19 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
         <h1>單字瀏覽</h1>
       </div>
 
-      <LevelTabs current={level} onChange={setLevel} />
+      <div className="vocab-browse-sticky-bar">
+        <LevelTabs current={level} onChange={handleLevelChange} />
+
+        {(isSearching || (currentLevelReady && !currentLevelError)) && (
+          <VocabFilters
+            search={search}
+            onSearchChange={setSearch}
+            posCodes={posCodes}
+            selectedPos={selectedPos}
+            onTogglePos={togglePos}
+          />
+        )}
+      </div>
 
       {!isSearching && currentLevelError && (
         <div className="vocab-error">
@@ -163,14 +200,6 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
 
       {(isSearching || (currentLevelReady && !currentLevelError)) && (
         <>
-          <VocabFilters
-            search={search}
-            onSearchChange={setSearch}
-            posCodes={posCodes}
-            selectedPos={selectedPos}
-            onTogglePos={togglePos}
-          />
-
           {isSearching && pendingLevels.length > 0 && (
             <p className="vocab-status">搜尋中…（載入中：{pendingLevels.join('、')}）</p>
           )}
@@ -184,7 +213,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
             </button>
           </div>
 
-          <VocabList entries={filtered} statuses={statuses} showLevel={isSearching} onSelect={setSelectedEntry} />
+          <VocabList entries={filtered} statuses={statuses} showLevel={isSearching} onSelect={handleSelectEntry} />
         </>
       )}
 

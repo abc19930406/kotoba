@@ -335,10 +335,24 @@ button {
   font-size: 1rem;
 }
 
+/* Sticks the level tabs + search/filter bar to the top of the viewport
+   while the list scrolls underneath — matches .grade-buttons' sticky
+   pattern (review flow): solid background so list text doesn't show
+   through, and a z-index high enough to sit above the scrolling list. */
+.vocab-browse-sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--page-bg, Canvas);
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e4e7;
+}
+
 .level-tabs {
   display: flex;
   gap: 0.25rem;
-  margin: 0.75rem 0;
+  margin: 0 0 0.75rem;
   overflow-x: auto;
 }
 
