@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Grade } from 'ts-fsrs'
 import { buildReviewQueue, type QueueItem } from './queue.ts'
-import { gradeItem, suspendCard, resumeCard } from '../../db/cards.ts'
+import { gradeItem, suspendCard, resumeCard, getShowFurigana, DEFAULT_SHOW_FURIGANA } from '../../db/cards.ts'
 import type { ItemType } from '../../db/schema.ts'
 import { findVocabEntry, findGrammarEntry } from '../../shared/contentLoader.ts'
 import { ReviewCard, type ReviewCardContent } from './ReviewCard.tsx'
@@ -44,10 +44,12 @@ export function ReviewSession({ onComplete }: ReviewSessionProps) {
   const [content, setContent] = useState<ReviewCardContent | null>(null)
   const [grading, setGrading] = useState(false)
   const [suspendToast, setSuspendToast] = useState<SuspendToastState | null>(null)
+  const [showFurigana, setShowFurigana] = useState(DEFAULT_SHOW_FURIGANA)
   const toastTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
     buildReviewQueue().then(setQueue)
+    getShowFurigana().then(setShowFurigana)
   }, [])
 
   useEffect(() => {
@@ -146,7 +148,7 @@ export function ReviewSession({ onComplete }: ReviewSessionProps) {
         {currentIndex + 1} / {queue.length}
       </p>
       {content ? (
-        <ReviewCard content={content} flipped={flipped} onFlip={() => setFlipped(true)} />
+        <ReviewCard content={content} flipped={flipped} showFurigana={showFurigana} onFlip={() => setFlipped(true)} />
       ) : (
         <p className="review-status">載入卡片內容中…</p>
       )}

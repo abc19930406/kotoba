@@ -64,7 +64,10 @@ function selectSentencesForWord(
     if (seenText.has(sentence.text)) continue
     seenText.add(sentence.text)
     const result = gradeCached(sentence.text)
-    graded.push({ jp: sentence.text, en: sentence.translation, difficulty: result.difficulty })
+    // jpSegments is filled in by the furigana pipeline step (pipeline/furigana.ts)
+    // after linking; the empty-array placeholder makes a forgotten fill-in
+    // fail loudly at emit-time schema validation (requires .min(1)).
+    graded.push({ jp: sentence.text, en: sentence.translation, difficulty: result.difficulty, jpSegments: [] })
   }
 
   graded.sort((a, b) => {
@@ -148,6 +151,7 @@ export async function buildLinkedData(): Promise<LinkedData> {
         jp: ex.jp,
         en: ex.en,
         difficulty: gradeCached(ex.jp).difficulty,
+        jpSegments: [], // filled in by the furigana pipeline step after linking
       }))
       grammar[level].push({
         id,

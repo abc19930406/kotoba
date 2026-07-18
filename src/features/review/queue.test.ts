@@ -174,3 +174,28 @@ describe('getHomeReviewStats', () => {
     expect(stats.budgetExhausted).toBe(false) // nothing waiting, so no "額度用完" message needed
   })
 })
+
+describe('buildReviewQueue — mixed vocab + grammar (Phase 4)', () => {
+  it('mixes due vocab and grammar cards together, sorted by due date regardless of itemType', async () => {
+    const now = new Date('2026-01-06T12:00:00Z')
+    const yesterday = new Date('2026-01-05T10:00:00Z')
+    await gradeItem('grammar', 'g-earlier', 'N4', Rating.Good, yesterday)
+    await gradeItem('grammar', 'g-earlier', 'N4', Rating.Again, new Date('2026-01-06T10:00:00Z')) // due ~10:01
+    await gradeItem('vocab', 'v-later', 'N5', Rating.Good, yesterday)
+    await gradeItem('vocab', 'v-later', 'N5', Rating.Again, new Date('2026-01-06T11:00:00Z')) // due ~11:01
+
+    await setDailyNewCardLimit(0) // isolate this assertion to the due cards only
+    const queue = await buildReviewQueue(now)
+
+    expect(queue.map((q) => `${q.itemType}:${q.itemId}`)).toEqual(['grammar:g-earlier', 'vocab:v-later'])
+  })
+
+  it('lets manually-queued vocab and grammar items compete for the same new-card slots, oldest first', async () => {
+    await addToReviewQueue('grammar', 'g-manual', 'N3', new Date('2026-01-01T00:00:00Z'))
+    await addToReviewQueue('vocab', 'v-manual', 'N3', new Date('2026-01-01T00:01:00Z'))
+
+    const candidates = await getNewCardCandidates(2)
+
+    expect(candidates.map((c) => `${c.itemType}:${c.itemId}`)).toEqual(['grammar:g-manual', 'vocab:v-manual'])
+  })
+})

@@ -1,4 +1,5 @@
 import type { VocabEntry, GrammarEntry } from '../../shared/contentTypes.ts'
+import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 
 interface VocabCardContent {
   itemType: 'vocab'
@@ -13,14 +14,16 @@ export type ReviewCardContent = VocabCardContent | GrammarCardContent
 interface ReviewCardProps {
   content: ReviewCardContent
   flipped: boolean
+  showFurigana: boolean
   onFlip: () => void
 }
 
-const MAX_SENTENCES_SHOWN = 2
+// Vocab shows 2 sentences; grammar shows just 1, per Phase 4 spec ("翻面為意義+一句例句").
+const MAX_SENTENCES_SHOWN: Record<ReviewCardContent['itemType'], number> = { vocab: 2, grammar: 1 }
 
-export function ReviewCard({ content, flipped, onFlip }: ReviewCardProps) {
+export function ReviewCard({ content, flipped, showFurigana, onFlip }: ReviewCardProps) {
   const front = content.itemType === 'vocab' ? content.entry.kanji : content.entry.title
-  const sentences = content.entry.sentences.slice(0, MAX_SENTENCES_SHOWN)
+  const sentences = content.entry.sentences.slice(0, MAX_SENTENCES_SHOWN[content.itemType])
 
   return (
     <button type="button" className="review-card" onClick={onFlip} aria-pressed={flipped}>
@@ -32,7 +35,7 @@ export function ReviewCard({ content, flipped, onFlip }: ReviewCardProps) {
             <ul className="review-card-sentences">
               {sentences.map((s) => (
                 <li key={s.jp}>
-                  <p className="jp">{s.jp}</p>
+                  <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
                   <p className="en">{s.en}</p>
                 </li>
               ))}

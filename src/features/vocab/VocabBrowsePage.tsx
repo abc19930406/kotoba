@@ -7,6 +7,8 @@ import {
   getItemStatuses,
   suspendCard,
   resumeCard,
+  getShowFurigana,
+  DEFAULT_SHOW_FURIGANA,
   type ItemStatus,
 } from '../../db/cards.ts'
 import { LevelTabs } from './LevelTabs.tsx'
@@ -29,6 +31,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
   const [statuses, setStatuses] = useState<Map<string, ItemStatus>>(new Map())
   const [selectedEntry, setSelectedEntry] = useState<VocabEntry | null>(null)
   const [confirmingBatch, setConfirmingBatch] = useState(false)
+  const [showFurigana, setShowFurigana] = useState(DEFAULT_SHOW_FURIGANA)
 
   // Tracks levels whose fetch has been kicked off, so repeated effect firings
   // don't re-trigger it — loadVocabLevel() itself also caches, this ref just
@@ -77,6 +80,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
 
   useEffect(() => {
     refreshStatuses()
+    getShowFurigana().then(setShowFurigana)
   }, [])
 
   const sourceEntries = useMemo(
@@ -115,7 +119,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
   async function handleToggleSuspend(entry: VocabEntry) {
     const status = statuses.get(entry.id)
     if (status === 'suspended') await resumeCard('vocab', entry.id)
-    else if (status === 'active') await suspendCard('vocab', entry.id, entry.level)
+    else if (status === 'active' || status === 'queued') await suspendCard('vocab', entry.id, entry.level)
     await refreshStatuses()
   }
 
@@ -124,6 +128,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
       <VocabDetail
         entry={selectedEntry}
         status={statuses.get(selectedEntry.id) ?? 'none'}
+        showFurigana={showFurigana}
         onAdd={() => handleAdd(selectedEntry)}
         onToggleSuspend={() => handleToggleSuspend(selectedEntry)}
         onBack={() => setSelectedEntry(null)}

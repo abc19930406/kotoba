@@ -1,20 +1,42 @@
 import { useEffect, useState } from 'react'
-import { getDailyNewCardLimit, setDailyNewCardLimit, DEFAULT_DAILY_NEW_CARD_LIMIT } from '../../db/cards.ts'
+import {
+  getDailyNewCardLimit,
+  setDailyNewCardLimit,
+  DEFAULT_DAILY_NEW_CARD_LIMIT,
+  getCurrentLevel,
+  setCurrentLevel,
+  DEFAULT_CURRENT_LEVEL,
+  getShowFurigana,
+  setShowFurigana,
+  DEFAULT_SHOW_FURIGANA,
+} from '../../db/cards.ts'
+import { LEVEL_ORDER, type JlptLevel } from '../../shared/contentTypes.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
 interface HomePageProps {
   onStartReview: () => void
   onBrowseVocab: () => void
+  onBrowseGrammar: () => void
   onOpenSuspended: () => void
+  onOpenAbout: () => void
 }
 
-export function HomePage({ onStartReview, onBrowseVocab, onOpenSuspended }: HomePageProps) {
+export function HomePage({ onStartReview, onBrowseVocab, onBrowseGrammar, onOpenSuspended, onOpenAbout }: HomePageProps) {
   const [stats, setStats] = useState<HomeReviewStats | null>(null)
   const [dailyLimit, setDailyLimitState] = useState(DEFAULT_DAILY_NEW_CARD_LIMIT)
+  const [currentLevel, setCurrentLevelState] = useState<JlptLevel>(DEFAULT_CURRENT_LEVEL)
+  const [showFurigana, setShowFuriganaState] = useState(DEFAULT_SHOW_FURIGANA)
 
   async function refresh() {
-    const [limit, homeStats] = await Promise.all([getDailyNewCardLimit(), getHomeReviewStats()])
+    const [limit, level, furigana, homeStats] = await Promise.all([
+      getDailyNewCardLimit(),
+      getCurrentLevel(),
+      getShowFurigana(),
+      getHomeReviewStats(),
+    ])
     setDailyLimitState(limit)
+    setCurrentLevelState(level)
+    setShowFuriganaState(furigana)
     setStats(homeStats)
   }
 
@@ -25,6 +47,16 @@ export function HomePage({ onStartReview, onBrowseVocab, onOpenSuspended }: Home
   async function handleLimitChange(value: number) {
     if (!Number.isFinite(value) || value < 0) return
     await setDailyNewCardLimit(value)
+    await refresh()
+  }
+
+  async function handleCurrentLevelChange(level: JlptLevel) {
+    await setCurrentLevel(level)
+    await refresh()
+  }
+
+  async function handleShowFuriganaChange(value: boolean) {
+    await setShowFurigana(value)
     await refresh()
   }
 
@@ -56,6 +88,9 @@ export function HomePage({ onStartReview, onBrowseVocab, onOpenSuspended }: Home
       <button type="button" className="browse-vocab" onClick={onBrowseVocab}>
         瀏覽單字
       </button>
+      <button type="button" className="browse-vocab" onClick={onBrowseGrammar}>
+        瀏覽文法
+      </button>
       <label className={loaded && stats.budgetExhausted ? 'daily-limit-setting emphasized' : 'daily-limit-setting'}>
         每日新卡上限：
         <input
@@ -65,11 +100,32 @@ export function HomePage({ onStartReview, onBrowseVocab, onOpenSuspended }: Home
           onChange={(e) => handleLimitChange(e.target.valueAsNumber)}
         />
       </label>
+      <label className="current-level-setting">
+        目前主要學習等級：
+        <select value={currentLevel} onChange={(e) => handleCurrentLevelChange(e.target.value as JlptLevel)}>
+          {LEVEL_ORDER.map((level) => (
+            <option key={level} value={level}>
+              {level}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className="show-furigana-setting">
+        <input
+          type="checkbox"
+          checked={showFurigana}
+          onChange={(e) => handleShowFuriganaChange(e.target.checked)}
+        />
+        例句顯示假名注音
+      </label>
       {loaded && stats.suspendedCount > 0 && (
         <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
           已熟悉清單（{stats.suspendedCount}）
         </button>
       )}
+      <button type="button" className="suspended-list-link" onClick={onOpenAbout}>
+        關於
+      </button>
     </main>
   )
 }

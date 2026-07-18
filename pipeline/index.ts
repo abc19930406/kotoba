@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { fetchAll } from './fetch.ts'
 import { buildLinkedData } from './link.ts'
+import { addFurigana } from './furigana.ts'
 import { emit } from './emit.ts'
 import { translateMissing } from './translate.ts'
 import { translateGrammarMissing } from './translateGrammar.ts'
@@ -36,6 +37,9 @@ async function main() {
 
   console.log('=== 2/4 grade + 3/4 link ===')
   const linked = await buildLinkedData()
+
+  console.log('=== furigana ===')
+  await addFurigana(linked)
 
   if (process.argv.includes('--translate')) {
     console.log('=== translate (zh-TW meanings) ===')

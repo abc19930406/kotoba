@@ -16,6 +16,8 @@ import {
   resumeCard,
   listSuspendedCards,
   getItemStatuses,
+  getCurrentLevel,
+  setCurrentLevel,
 } from './cards.ts'
 
 beforeEach(async () => {
@@ -225,5 +227,82 @@ describe('suspendCard / resumeCard ("已熟悉" retirement)', () => {
 
     const due = await listDueCards(new Date('2099-01-01T00:00:00Z'))
     expect(due.map((c) => c.itemId)).not.toContain('never-reviewed') // never surfaces despite the far-future check time
+  })
+
+  it('suspend/resume work identically for itemType grammar (Phase 4 addendum)', async () => {
+    const now = new Date('2026-01-01T00:00:00Z')
+    const graded = await gradeItem('grammar', 'g1', 'N4', Rating.Good, now)
+
+    await suspendCard('grammar', 'g1', 'N4')
+    expect((await getCard('grammar', 'g1'))?.suspended).toBe(true)
+    const dueAfterSuspend = await listDueCards(new Date(now.getTime() + 365 * 24 * 60 * 60 * 1000))
+    expect(dueAfterSuspend.map((c) => c.itemId)).not.toContain('g1')
+
+    await resumeCard('grammar', 'g1')
+    const resumed = await getCard('grammar', 'g1')
+    expect(resumed?.suspended).toBe(false)
+    expect(resumed?.stability).toBe(graded.stability) // FSRS state continues, not reset
+
+    const statuses = await getItemStatuses('grammar')
+    expect(statuses.get('g1')).toBe('active')
+  })
+
+  it('已熟悉清單 (listSuspendedCards) mixes vocab and grammar, distinguishable by itemType', async () => {
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    await gradeItem('grammar', 'g1', 'N4', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    await suspendCard('vocab', 'v1', 'N5')
+    await suspendCard('grammar', 'g1', 'N4')
+
+    const suspended = await listSuspendedCards()
+    expect(suspended).toHaveLength(2)
+    expect(suspended.find((c) => c.itemId === 'v1')?.itemType).toBe('vocab')
+    expect(suspended.find((c) => c.itemId === 'g1')?.itemType).toBe('grammar')
+  })
+})
+
+describe('getCurrentLevel / setCurrentLevel', () => {
+  it('defaults to N5 and round-trips through every level', async () => {
+    expect(await getCurrentLevel()).toBe('N5')
+
+    for (const level of ['N4', 'N3', 'N2', 'N1', 'N5'] as const) {
+      await setCurrentLevel(level)
+      expect(await getCurrentLevel()).toBe(level)
+    }
+  })
+})
+
+describe('Phase 4.5: detail-page 標記已熟悉 on a "queued but never reviewed" item', () => {
+  it('vocab: 標記→退役→恢復 works for an item that was only 加入複習, never graded', async () => {
+    await addToReviewQueue('vocab', 'v-queued-only', 'N4')
+    expect((await getItemStatuses('vocab')).get('v-queued-only')).toBe('queued')
+
+    // Detail page's "標記已熟悉" click on a queued item — routes through the
+    // same new-card retirement path as the review-flow suspend button.
+    await suspendCard('vocab', 'v-queued-only', 'N4')
+
+    expect(await cardExists('vocab', 'v-queued-only')).toBe(true)
+    expect(await listQueuedCandidates(10)).toHaveLength(0)
+    expect((await getItemStatuses('vocab')).get('v-queued-only')).toBe('suspended')
+
+    await resumeCard('vocab', 'v-queued-only')
+    expect((await getItemStatuses('vocab')).get('v-queued-only')).toBe('active')
+    const due = await listDueCards(new Date('2099-01-01T00:00:00Z'))
+    expect(due.map((c) => c.itemId)).toContain('v-queued-only') // recovered, immediately eligible
+  })
+
+  it('grammar: 標記→退役→恢復 works for an item that was only 加入複習, never graded', async () => {
+    await addToReviewQueue('grammar', 'g-queued-only', 'N3')
+    expect((await getItemStatuses('grammar')).get('g-queued-only')).toBe('queued')
+
+    await suspendCard('grammar', 'g-queued-only', 'N3')
+
+    expect(await cardExists('grammar', 'g-queued-only')).toBe(true)
+    expect(await listQueuedCandidates(10)).toHaveLength(0)
+    expect((await getItemStatuses('grammar')).get('g-queued-only')).toBe('suspended')
+
+    await resumeCard('grammar', 'g-queued-only')
+    expect((await getItemStatuses('grammar')).get('g-queued-only')).toBe('active')
+    const due = await listDueCards(new Date('2099-01-01T00:00:00Z'))
+    expect(due.map((c) => c.itemId)).toContain('g-queued-only')
   })
 })

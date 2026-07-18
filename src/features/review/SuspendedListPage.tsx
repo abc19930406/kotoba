@@ -58,6 +58,7 @@ export function SuspendedListPage({ onBack }: SuspendedListPageProps) {
           {rows.map(({ card, label, sublabel }) => (
             <li key={`${card.itemType}-${card.itemId}`} className="suspended-list-item">
               <div className="suspended-list-text">
+                <span className="suspended-list-type">{card.itemType === 'vocab' ? '單字' : '文法'}</span>
                 <span className="suspended-list-label">{label}</span>
                 {sublabel && <span className="suspended-list-sublabel">{sublabel}</span>}
               </div>

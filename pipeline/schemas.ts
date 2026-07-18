@@ -12,10 +12,20 @@ export const LEVEL_TO_NUMBER: Record<JlptLevel, number> = {
   N1: 5,
 }
 
+/**
+ * A furigana segment: `[text]` for a plain (unannotated) span, or
+ * `[text, reading]` for a kanji span with its hiragana reading. Produced by
+ * pipeline/furigana.ts from kuroshiro (mode: furigana, to: hiragana).
+ */
+export const furiganaSegmentSchema = z.union([z.tuple([z.string()]), z.tuple([z.string(), z.string()])])
+export type FuriganaSegment = z.infer<typeof furiganaSegmentSchema>
+
 export const gradedSentenceSchema = z.object({
   jp: z.string().min(1),
   en: z.string().min(1),
   difficulty: z.number().int().min(1).max(6),
+  /** Required so a forgotten furigana fill-in aborts the build instead of shipping an empty value. */
+  jpSegments: z.array(furiganaSegmentSchema).min(1),
 })
 export type GradedSentence = z.infer<typeof gradedSentenceSchema>
 

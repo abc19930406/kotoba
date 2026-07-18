@@ -1,11 +1,17 @@
 import { fsrs, createEmptyCard, State, type Card as FsrsCard, type Grade } from 'ts-fsrs'
 import { db, type CardRecord, type ItemType, type QueuedItemRecord } from './schema.ts'
-import type { JlptLevel } from '../shared/contentTypes.ts'
+import { LEVEL_ORDER, LEVEL_TO_DIFFICULTY, type JlptLevel } from '../shared/contentTypes.ts'
 
 const scheduler = fsrs()
 
 const DAILY_NEW_CARD_LIMIT_KEY = 'dailyNewCardLimit'
 export const DEFAULT_DAILY_NEW_CARD_LIMIT = 10
+
+const CURRENT_LEVEL_KEY = 'currentLevel'
+export const DEFAULT_CURRENT_LEVEL: JlptLevel = 'N5'
+
+const SHOW_FURIGANA_KEY = 'showFurigana'
+export const DEFAULT_SHOW_FURIGANA = true
 
 function toFsrsCard(record: CardRecord): FsrsCard {
   return {
@@ -208,6 +214,31 @@ export async function getDailyNewCardLimit(): Promise<number> {
 
 export async function setDailyNewCardLimit(value: number): Promise<void> {
   await db.settings.put({ key: DAILY_NEW_CARD_LIMIT_KEY, value })
+}
+
+/**
+ * The user's current main study level — used to sort grammar example
+ * sentences by closeness to it. Stored as its numeric difficulty (N5=1..N1=5)
+ * so it fits the existing `settings` table's `value: number` shape.
+ */
+export async function getCurrentLevel(): Promise<JlptLevel> {
+  const setting = await db.settings.get(CURRENT_LEVEL_KEY)
+  const difficulty = setting?.value ?? LEVEL_TO_DIFFICULTY[DEFAULT_CURRENT_LEVEL]
+  return LEVEL_ORDER[difficulty - 1] ?? DEFAULT_CURRENT_LEVEL
+}
+
+export async function setCurrentLevel(level: JlptLevel): Promise<void> {
+  await db.settings.put({ key: CURRENT_LEVEL_KEY, value: LEVEL_TO_DIFFICULTY[level] })
+}
+
+/** Global "例句顯示假名注音" toggle, default on. Encoded as 1/0 to fit the `settings` table's `value: number` shape. */
+export async function getShowFurigana(): Promise<boolean> {
+  const setting = await db.settings.get(SHOW_FURIGANA_KEY)
+  return setting === undefined ? DEFAULT_SHOW_FURIGANA : setting.value === 1
+}
+
+export async function setShowFurigana(value: boolean): Promise<void> {
+  await db.settings.put({ key: SHOW_FURIGANA_KEY, value: value ? 1 : 0 })
 }
 
 /**

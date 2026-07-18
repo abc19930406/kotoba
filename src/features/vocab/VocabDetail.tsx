@@ -1,16 +1,18 @@
 import { posLabel } from '../../shared/posLabels.ts'
 import type { VocabEntry } from '../../shared/contentTypes.ts'
 import type { ItemStatus } from '../../db/cards.ts'
+import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 
 interface VocabDetailProps {
   entry: VocabEntry
   status: ItemStatus | 'none'
+  showFurigana: boolean
   onAdd: () => void
   onToggleSuspend: () => void
   onBack: () => void
 }
 
-export function VocabDetail({ entry, status, onAdd, onToggleSuspend, onBack }: VocabDetailProps) {
+export function VocabDetail({ entry, status, showFurigana, onAdd, onToggleSuspend, onBack }: VocabDetailProps) {
   const addLabel = status === 'none' ? '加入複習' : status === 'suspended' ? '已熟悉' : '已加入複習'
 
   return (
@@ -40,7 +42,7 @@ export function VocabDetail({ entry, status, onAdd, onToggleSuspend, onBack }: V
         {addLabel}
       </button>
 
-      {(status === 'active' || status === 'suspended') && (
+      {status !== 'none' && (
         <button type="button" className="vocab-suspend-toggle" onClick={onToggleSuspend}>
           {status === 'suspended' ? '恢復複習' : '標記已熟悉'}
         </button>
@@ -53,7 +55,7 @@ export function VocabDetail({ entry, status, onAdd, onToggleSuspend, onBack }: V
             {entry.sentences.map((s) => (
               <li key={s.jp}>
                 <span className="sentence-difficulty">{s.difficulty >= 6 ? 'N1+' : `L${s.difficulty}`}</span>
-                <p className="jp">{s.jp}</p>
+                <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
                 <p className="en">{s.en}</p>
               </li>
             ))}
