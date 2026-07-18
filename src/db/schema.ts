@@ -23,6 +23,8 @@ export interface CardRecord {
   lapses: number
   state: number
   last_review?: Date
+  /** User marked this item "已熟悉" — excluded from due/new queues but scheduling data is kept intact so resuming continues the same FSRS schedule. */
+  suspended: boolean
 }
 
 /** Mirrors ts-fsrs's `ReviewLog` shape, one row per grading event. */
@@ -79,6 +81,16 @@ export class KotobaDB extends Dexie {
       settings: 'key',
       queuedItems: '[itemType+itemId], addedAt',
     })
+    this.version(3)
+      .stores({
+        cards: '[itemType+itemId], due, state',
+        reviewLogs: '++id, [itemType+itemId], review',
+        settings: 'key',
+        queuedItems: '[itemType+itemId], addedAt',
+      })
+      .upgrade(async (tx) => {
+        await tx.table<CardRecord, [ItemType, string]>('cards').toCollection().modify({ suspended: false })
+      })
   }
 }
 

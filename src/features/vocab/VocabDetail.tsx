@@ -1,14 +1,18 @@
 import { posLabel } from '../../shared/posLabels.ts'
 import type { VocabEntry } from '../../shared/contentTypes.ts'
+import type { ItemStatus } from '../../db/cards.ts'
 
 interface VocabDetailProps {
   entry: VocabEntry
-  added: boolean
+  status: ItemStatus | 'none'
   onAdd: () => void
+  onToggleSuspend: () => void
   onBack: () => void
 }
 
-export function VocabDetail({ entry, added, onAdd, onBack }: VocabDetailProps) {
+export function VocabDetail({ entry, status, onAdd, onToggleSuspend, onBack }: VocabDetailProps) {
+  const addLabel = status === 'none' ? '加入複習' : status === 'suspended' ? '已熟悉' : '已加入複習'
+
   return (
     <div className="vocab-detail">
       <button type="button" className="vocab-detail-back" onClick={onBack}>
@@ -32,9 +36,15 @@ export function VocabDetail({ entry, added, onAdd, onBack }: VocabDetailProps) {
       <p className="vocab-detail-meaning">{entry.meaningZh ?? entry.meaningEn.join('；')}</p>
       {entry.meaningZh && <p className="vocab-detail-meaning-en">{entry.meaningEn.join('; ')}</p>}
 
-      <button type="button" className="vocab-add-button" onClick={onAdd} disabled={added}>
-        {added ? '已加入複習' : '加入複習'}
+      <button type="button" className="vocab-add-button" onClick={onAdd} disabled={status !== 'none'}>
+        {addLabel}
       </button>
+
+      {(status === 'active' || status === 'suspended') && (
+        <button type="button" className="vocab-suspend-toggle" onClick={onToggleSuspend}>
+          {status === 'suspended' ? '恢復複習' : '標記已熟悉'}
+        </button>
+      )}
 
       {entry.sentences.length > 0 && (
         <div className="vocab-detail-sentences">

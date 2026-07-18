@@ -30,12 +30,14 @@ export async function cardExists(itemType: ItemType, itemId: string): Promise<bo
   return (await getCard(itemType, itemId)) !== undefined
 }
 
+/** Due cards, excluding suspended ("已熟悉") ones. */
 export async function listDueCards(now: Date = new Date()): Promise<CardRecord[]> {
-  return db.cards.where('due').belowOrEqual(now).toArray()
+  const cards = await db.cards.where('due').belowOrEqual(now).toArray()
+  return cards.filter((c) => !c.suspended)
 }
 
 export async function countDueCards(now: Date = new Date()): Promise<number> {
-  return db.cards.where('due').belowOrEqual(now).count()
+  return (await listDueCards(now)).length
 }
 
 export async function listExistingItemIds(itemType: ItemType): Promise<Set<string>> {
@@ -69,6 +71,11 @@ export async function listQueuedCandidates(limit: number): Promise<QueuedItemRec
   return db.queuedItems.orderBy('addedAt').limit(limit).toArray()
 }
 
+/** Total manually-queued items awaiting their first review, regardless of today's new-card quota. */
+export async function countQueuedItems(): Promise<number> {
+  return db.queuedItems.count()
+}
+
 /** itemIds that already have review progress or are queued, for a given itemType (cards ∪ queuedItems). */
 export async function listAddedItemIds(itemType: ItemType): Promise<Set<string>> {
   const [cards, queued] = await Promise.all([
@@ -76,6 +83,77 @@ export async function listAddedItemIds(itemType: ItemType): Promise<Set<string>>
     db.queuedItems.where('itemType').equals(itemType).toArray(),
   ])
   return new Set([...cards.map((c) => c.itemId), ...queued.map((q) => q.itemId)])
+}
+
+export type ItemStatus = 'queued' | 'active' | 'suspended'
+
+/**
+ * Per-item progress status for a given itemType, for the browse page's
+ * three-state display (未加入 = absent from the map / 已加入複習 = 'queued'
+ * or 'active' / 已熟悉 = 'suspended').
+ */
+export async function getItemStatuses(itemType: ItemType): Promise<Map<string, ItemStatus>> {
+  const [cards, queued] = await Promise.all([
+    db.cards.where('itemType').equals(itemType).toArray(),
+    db.queuedItems.where('itemType').equals(itemType).toArray(),
+  ])
+  const statuses = new Map<string, ItemStatus>()
+  for (const c of cards) statuses.set(c.itemId, c.suspended ? 'suspended' : 'active')
+  for (const q of queued) if (!statuses.has(q.itemId)) statuses.set(q.itemId, 'queued')
+  return statuses
+}
+
+/**
+ * Marks an item "已熟悉" — excluded from due/new queues from now on. If it
+ * already has a card, its FSRS schedule and review history are left
+ * untouched so resuming continues exactly where it left off. If it doesn't
+ * yet (e.g. suspended straight out of the review flow before ever being
+ * graded — a "new" queue item is never granted a review just by suspending
+ * it), a fresh un-scheduled card is created so it's still tracked and
+ * excluded going forward, without writing a reviewLog entry.
+ */
+export async function suspendCard(itemType: ItemType, itemId: string, level: JlptLevel, now: Date = new Date()): Promise<void> {
+  await db.transaction('rw', db.cards, db.queuedItems, async () => {
+    const existing = await getCard(itemType, itemId)
+    if (existing) {
+      await db.cards.update([itemType, itemId], { suspended: true })
+      return
+    }
+    const empty = createEmptyCard(now)
+    await db.cards.put({
+      itemId,
+      itemType,
+      level,
+      due: empty.due,
+      stability: empty.stability,
+      difficulty: empty.difficulty,
+      elapsed_days: empty.elapsed_days,
+      scheduled_days: empty.scheduled_days,
+      learning_steps: empty.learning_steps,
+      reps: empty.reps,
+      lapses: empty.lapses,
+      state: empty.state,
+      last_review: empty.last_review,
+      suspended: true,
+    })
+    // Was queued but never reviewed — it now has a real card row instead.
+    await db.queuedItems.delete([itemType, itemId])
+  })
+}
+
+/** Reverses suspendCard — the card resumes its existing schedule, not a fresh one. */
+export async function resumeCard(itemType: ItemType, itemId: string): Promise<void> {
+  await db.cards.update([itemType, itemId], { suspended: false })
+}
+
+/** All suspended cards ("已熟悉清單"), across both item types. */
+export async function listSuspendedCards(): Promise<CardRecord[]> {
+  const cards = await db.cards.toArray()
+  return cards.filter((c) => c.suspended)
+}
+
+export async function countSuspendedCards(): Promise<number> {
+  return (await listSuspendedCards()).length
 }
 
 /**
@@ -162,6 +240,7 @@ export async function gradeItem(
     lapses: nextCard.lapses,
     state: nextCard.state,
     last_review: nextCard.last_review,
+    suspended: existing?.suspended ?? false,
   }
 
   await db.transaction('rw', db.cards, db.reviewLogs, db.queuedItems, async () => {

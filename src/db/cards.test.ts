@@ -12,6 +12,10 @@ import {
   isInReviewQueueOrCards,
   listQueuedCandidates,
   listAddedItemIds,
+  suspendCard,
+  resumeCard,
+  listSuspendedCards,
+  getItemStatuses,
 } from './cards.ts'
 
 beforeEach(async () => {
@@ -132,5 +136,94 @@ describe('listDueCards / countDueCards', () => {
     expect(dueIds).toContain('due-soon')
     expect(dueIds).not.toContain('not-due-yet')
     expect(await countDueCards(checkTime)).toBe(due.length)
+  })
+})
+
+describe('suspendCard / resumeCard ("已熟悉" retirement)', () => {
+  it('excludes a suspended card from listDueCards even though its due date has passed', async () => {
+    const now = new Date('2026-01-01T00:00:00Z')
+    await gradeItem('vocab', 'due-soon', 'N5', Rating.Again, now)
+    const checkTime = new Date(now.getTime() + 5 * 60 * 1000)
+
+    expect((await listDueCards(checkTime)).map((c) => c.itemId)).toContain('due-soon')
+
+    await suspendCard('vocab', 'due-soon', 'N5')
+
+    const due = await listDueCards(checkTime)
+    expect(due.map((c) => c.itemId)).not.toContain('due-soon')
+    expect(await countDueCards(checkTime)).toBe(due.length)
+    // The card row itself still exists — this is retirement, not deletion.
+    expect(await cardExists('vocab', 'due-soon')).toBe(true)
+  })
+
+  it('resuming continues the same FSRS schedule instead of resetting to a new card', async () => {
+    const now = new Date('2026-01-01T00:00:00Z')
+    const first = await gradeItem('vocab', 'v1', 'N5', Rating.Good, now)
+    const second = await gradeItem('vocab', 'v1', 'N5', Rating.Good, first.due)
+
+    await suspendCard('vocab', 'v1', 'N5')
+    await resumeCard('vocab', 'v1')
+
+    const resumed = await getCard('vocab', 'v1')
+    expect(resumed?.suspended).toBe(false)
+    expect(resumed?.state).toBe(second.state)
+    expect(resumed?.stability).toBe(second.stability)
+    expect(resumed?.difficulty).toBe(second.difficulty)
+    expect(resumed?.due.getTime()).toBe(second.due.getTime())
+    expect(resumed?.reps).toBe(second.reps) // not reset to 0 like a fresh card
+  })
+
+  it('a suspend followed immediately by resume (simulating an undo) leaves the card exactly as it was', async () => {
+    const now = new Date('2026-01-01T00:00:00Z')
+    const graded = await gradeItem('vocab', 'v1', 'N5', Rating.Good, now)
+
+    await suspendCard('vocab', 'v1', 'N5')
+    await resumeCard('vocab', 'v1') // the "撤銷" action
+
+    const restored = await getCard('vocab', 'v1')
+    expect(restored).toEqual(graded)
+  })
+
+  it('listSuspendedCards / getItemStatuses reflect suspended items separately from active ones', async () => {
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    await gradeItem('vocab', 'v2', 'N5', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    await addToReviewQueue('vocab', 'v3', 'N5')
+    await suspendCard('vocab', 'v1', 'N5')
+
+    const suspended = await listSuspendedCards()
+    expect(suspended.map((c) => c.itemId)).toEqual(['v1'])
+
+    const statuses = await getItemStatuses('vocab')
+    expect(statuses.get('v1')).toBe('suspended')
+    expect(statuses.get('v2')).toBe('active')
+    expect(statuses.get('v3')).toBe('queued')
+    expect(statuses.get('v4')).toBeUndefined() // never added — "未加入"
+  })
+
+  it('a regrade after resuming keeps suspended=false (does not silently re-suspend)', async () => {
+    const now = new Date('2026-01-01T00:00:00Z')
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, now)
+    await suspendCard('vocab', 'v1', 'N5')
+    await resumeCard('vocab', 'v1')
+
+    const regraded = await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date('2026-01-02T00:00:00Z'))
+    expect(regraded.suspended).toBe(false)
+  })
+
+  it('suspending a brand-new item (never graded, e.g. straight from the review flow) still creates a tracked, excluded card instead of silently no-op-ing', async () => {
+    // Reachable in practice: a "new" queue item (isNew: true) has no cards
+    // row yet — suspendCard must not depend on one already existing.
+    await addToReviewQueue('vocab', 'never-reviewed', 'N4')
+    expect(await listQueuedCandidates(10)).toHaveLength(1)
+
+    await suspendCard('vocab', 'never-reviewed', 'N4')
+
+    expect(await cardExists('vocab', 'never-reviewed')).toBe(true)
+    expect(await listQueuedCandidates(10)).toHaveLength(0) // moved out of the queued-holding table
+    const suspended = await listSuspendedCards()
+    expect(suspended.map((c) => c.itemId)).toContain('never-reviewed')
+
+    const due = await listDueCards(new Date('2099-01-01T00:00:00Z'))
+    expect(due.map((c) => c.itemId)).not.toContain('never-reviewed') // never surfaces despite the far-future check time
   })
 })

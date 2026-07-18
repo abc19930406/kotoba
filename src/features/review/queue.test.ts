@@ -20,7 +20,9 @@ vi.mock('../../shared/contentLoader.ts', () => ({
   loadVocabLevel: vi.fn(async () => mockN5Vocab),
 }))
 
-const { buildReviewQueue, getNewCardCandidates } = await import('./queue.ts')
+const { buildReviewQueue, getNewCardCandidates, getRemainingNewCardSlots, getHomeReviewStats } = await import(
+  './queue.ts'
+)
 
 beforeEach(async () => {
   await db.cards.clear()
@@ -109,5 +111,66 @@ describe('getNewCardCandidates', () => {
     const candidates = await getNewCardCandidates(20)
     const occurrences = candidates.filter((c) => c.itemId === 'n5-0').length
     expect(occurrences).toBe(1)
+  })
+
+  it('ROOT CAUSE REPRO: a manually-queued item is invisible once today\'s new-card quota is exhausted', async () => {
+    const today = new Date('2026-01-06T09:00:00Z')
+    await setDailyNewCardLimit(10)
+    // Exhaust today's default quota of 10 with 10 distinct first-time reviews.
+    for (let i = 0; i < 10; i++) {
+      await gradeItem('vocab', `quota-filler-${i}`, 'N5', Rating.Good, new Date(today.getTime() + i * 1000))
+    }
+    // User then manually adds an 11th word from the browse page.
+    await addToReviewQueue('vocab', 'manually-added-11th', 'N3', today)
+
+    const candidates = await getNewCardCandidates(await getRemainingNewCardSlots(today))
+    // Confirms the hypothesis: the queued item exists but never surfaces because
+    // getRemainingNewCardSlots() is 0, and getNewCardCandidates(0) short-circuits
+    // to [] before ever consulting queuedItems.
+    expect(candidates).toEqual([])
+  })
+})
+
+describe('getHomeReviewStats', () => {
+  it('reports queuedCount honestly and flags budgetExhausted when quota is used up but items are waiting', async () => {
+    const today = new Date('2026-01-06T09:00:00Z')
+    await setDailyNewCardLimit(10)
+    for (let i = 0; i < 10; i++) {
+      await gradeItem('vocab', `quota-filler-${i}`, 'N5', Rating.Good, new Date(today.getTime() + i * 1000))
+    }
+    await addToReviewQueue('vocab', 'manually-added-11th', 'N3', today)
+
+    const stats = await getHomeReviewStats(today)
+
+    expect(stats.queuedCount).toBe(1) // still visible, unlike newCount
+    expect(stats.newCount).toBe(0) // quota gate unchanged — still 0 offered today
+    expect(stats.remainingNewSlots).toBe(0)
+    expect(stats.budgetExhausted).toBe(true)
+  })
+
+  it('is not exhausted when slots remain, even with items queued', async () => {
+    const today = new Date('2026-01-06T09:00:00Z')
+    await setDailyNewCardLimit(10)
+    await addToReviewQueue('vocab', 'manually-added-1', 'N3', today)
+
+    const stats = await getHomeReviewStats(today)
+
+    expect(stats.queuedCount).toBe(1)
+    expect(stats.newCount).toBe(10) // the queued item plus N5 auto-pool backfill, since quota is available
+    expect(stats.remainingNewSlots).toBe(10)
+    expect(stats.budgetExhausted).toBe(false)
+  })
+
+  it('is not exhausted when the queue is empty, even if quota happens to be used up', async () => {
+    const today = new Date('2026-01-06T09:00:00Z')
+    await setDailyNewCardLimit(10)
+    for (let i = 0; i < 10; i++) {
+      await gradeItem('vocab', `quota-filler-${i}`, 'N5', Rating.Good, new Date(today.getTime() + i * 1000))
+    }
+
+    const stats = await getHomeReviewStats(today)
+
+    expect(stats.queuedCount).toBe(0)
+    expect(stats.budgetExhausted).toBe(false) // nothing waiting, so no "額度用完" message needed
   })
 })

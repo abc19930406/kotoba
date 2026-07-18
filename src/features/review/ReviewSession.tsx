@@ -1,13 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Grade } from 'ts-fsrs'
 import { buildReviewQueue, type QueueItem } from './queue.ts'
-import { gradeItem } from '../../db/cards.ts'
+import { gradeItem, suspendCard, resumeCard } from '../../db/cards.ts'
+import type { ItemType } from '../../db/schema.ts'
 import { findVocabEntry, findGrammarEntry } from '../../shared/contentLoader.ts'
 import { ReviewCard, type ReviewCardContent } from './ReviewCard.tsx'
 import { GradeButtons } from './GradeButtons.tsx'
 
 interface ReviewSessionProps {
   onComplete: () => void
+}
+
+interface SuspendToastState {
+  itemType: ItemType
+  itemId: string
 }
 
 async function loadContent(item: QueueItem): Promise<ReviewCardContent | undefined> {
@@ -19,15 +25,35 @@ async function loadContent(item: QueueItem): Promise<ReviewCardContent | undefin
   return entry ? { itemType: 'grammar', entry } : undefined
 }
 
+function SuspendToast({ toast, onUndo }: { toast: SuspendToastState | null; onUndo: () => void }) {
+  if (!toast) return null
+  return (
+    <p className="suspend-toast">
+      已標記熟悉{' '}
+      <button type="button" onClick={onUndo}>
+        撤銷
+      </button>
+    </p>
+  )
+}
+
 export function ReviewSession({ onComplete }: ReviewSessionProps) {
   const [queue, setQueue] = useState<QueueItem[] | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [content, setContent] = useState<ReviewCardContent | null>(null)
   const [grading, setGrading] = useState(false)
+  const [suspendToast, setSuspendToast] = useState<SuspendToastState | null>(null)
+  const toastTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
     buildReviewQueue().then(setQueue)
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      if (toastTimeoutRef.current !== null) window.clearTimeout(toastTimeoutRef.current)
+    }
   }, [])
 
   const currentItem = queue?.[currentIndex]
@@ -46,32 +72,6 @@ export function ReviewSession({ onComplete }: ReviewSessionProps) {
     }
   }, [currentItem])
 
-  if (queue === null) {
-    return <p className="review-status">載入複習佇列中…</p>
-  }
-
-  if (queue.length === 0) {
-    return (
-      <div className="review-complete">
-        <p>目前沒有到期或新卡，今天複習完成了！</p>
-        <button type="button" onClick={onComplete}>
-          回首頁
-        </button>
-      </div>
-    )
-  }
-
-  if (currentIndex >= queue.length) {
-    return (
-      <div className="review-complete">
-        <p>本輪複習完成，共 {queue.length} 張卡片。</p>
-        <button type="button" onClick={onComplete}>
-          回首頁
-        </button>
-      </div>
-    )
-  }
-
   async function handleGrade(grade: Grade) {
     if (!currentItem || grading) return
     setGrading(true)
@@ -81,8 +81,67 @@ export function ReviewSession({ onComplete }: ReviewSessionProps) {
     setCurrentIndex((i) => i + 1)
   }
 
+  async function handleSuspend() {
+    if (!currentItem || grading) return
+    setGrading(true)
+    await suspendCard(currentItem.itemType, currentItem.itemId, currentItem.level)
+    setGrading(false)
+
+    if (toastTimeoutRef.current !== null) window.clearTimeout(toastTimeoutRef.current)
+    setSuspendToast({ itemType: currentItem.itemType, itemId: currentItem.itemId })
+    toastTimeoutRef.current = window.setTimeout(() => setSuspendToast(null), 5000)
+
+    setFlipped(false)
+    setCurrentIndex((i) => i + 1)
+  }
+
+  async function handleUndoSuspend() {
+    if (!suspendToast) return
+    if (toastTimeoutRef.current !== null) window.clearTimeout(toastTimeoutRef.current)
+    await resumeCard(suspendToast.itemType, suspendToast.itemId)
+    setSuspendToast(null)
+  }
+
+  if (queue === null) {
+    return (
+      <>
+        <SuspendToast toast={suspendToast} onUndo={handleUndoSuspend} />
+        <p className="review-status">載入複習佇列中…</p>
+      </>
+    )
+  }
+
+  if (queue.length === 0) {
+    return (
+      <>
+        <SuspendToast toast={suspendToast} onUndo={handleUndoSuspend} />
+        <div className="review-complete">
+          <p>目前沒有到期或新卡，今天複習完成了！</p>
+          <button type="button" onClick={onComplete}>
+            回首頁
+          </button>
+        </div>
+      </>
+    )
+  }
+
+  if (currentIndex >= queue.length) {
+    return (
+      <>
+        <SuspendToast toast={suspendToast} onUndo={handleUndoSuspend} />
+        <div className="review-complete">
+          <p>本輪複習完成，共 {queue.length} 張卡片。</p>
+          <button type="button" onClick={onComplete}>
+            回首頁
+          </button>
+        </div>
+      </>
+    )
+  }
+
   return (
     <div className="review-session">
+      <SuspendToast toast={suspendToast} onUndo={handleUndoSuspend} />
       <p className="review-progress">
         {currentIndex + 1} / {queue.length}
       </p>
@@ -91,7 +150,14 @@ export function ReviewSession({ onComplete }: ReviewSessionProps) {
       ) : (
         <p className="review-status">載入卡片內容中…</p>
       )}
-      {flipped && content && <GradeButtons onGrade={handleGrade} />}
+      {flipped && content && (
+        <>
+          <button type="button" className="suspend-link" onClick={handleSuspend} disabled={grading}>
+            已熟悉，不再出現
+          </button>
+          <GradeButtons onGrade={handleGrade} />
+        </>
+      )}
     </div>
   )
 }

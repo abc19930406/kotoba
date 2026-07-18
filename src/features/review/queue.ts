@@ -1,9 +1,12 @@
 import {
   listDueCards,
+  countDueCards,
   listExistingItemIds,
   getDailyNewCardLimit,
   countNewCardsIntroducedToday,
   listQueuedCandidates,
+  countQueuedItems,
+  countSuspendedCards,
 } from '../../db/cards.ts'
 import { loadVocabLevel } from '../../shared/contentLoader.ts'
 import type { ItemType } from '../../db/schema.ts'
@@ -82,4 +85,35 @@ export async function buildReviewQueue(now: Date = new Date()): Promise<QueueIte
     merged.push(item)
   }
   return merged
+}
+
+export interface HomeReviewStats {
+  dueCount: number
+  /** New cards actually offered today, capped at the remaining daily quota. */
+  newCount: number
+  /** Everything sitting in the manually-queued pool, regardless of today's quota. */
+  queuedCount: number
+  remainingNewSlots: number
+  /** Queued items exist but today's quota is used up — the queue isn't empty, it's just blocked until tomorrow (or a higher limit). */
+  budgetExhausted: boolean
+  /** Cards marked "已熟悉" — excluded from the queue but not deleted. */
+  suspendedCount: number
+}
+
+export async function getHomeReviewStats(now: Date = new Date()): Promise<HomeReviewStats> {
+  const [dueCount, remainingNewSlots, queuedCount, suspendedCount] = await Promise.all([
+    countDueCards(now),
+    getRemainingNewCardSlots(now),
+    countQueuedItems(),
+    countSuspendedCards(),
+  ])
+  const newCount = (await getNewCardCandidates(remainingNewSlots)).length
+  return {
+    dueCount,
+    newCount,
+    queuedCount,
+    remainingNewSlots,
+    budgetExhausted: remainingNewSlots <= 0 && queuedCount > 0,
+    suspendedCount,
+  }
 }
