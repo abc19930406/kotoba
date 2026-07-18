@@ -12,6 +12,7 @@ import {
   type ItemStatus,
 } from '../../db/cards.ts'
 import { saveScrollPosition, useScrollRestore } from '../../shared/useScrollRestore.ts'
+import { pushLayer, goBack } from '../../shared/backStack.ts'
 import { LevelTabs } from './LevelTabs.tsx'
 import { VocabFilters } from './VocabFilters.tsx'
 import { VocabList } from './VocabList.tsx'
@@ -143,6 +144,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
 
   function handleSelectEntry(entry: VocabEntry) {
     saveScrollPosition(scrollPositions, signature)
+    pushLayer(() => setSelectedEntry(null))
     setSelectedEntry(entry)
   }
 
@@ -159,7 +161,7 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
         showFurigana={showFurigana}
         onAdd={() => handleAdd(selectedEntry)}
         onToggleSuspend={() => handleToggleSuspend(selectedEntry)}
-        onBack={() => setSelectedEntry(null)}
+        onBack={goBack}
       />
     )
   }

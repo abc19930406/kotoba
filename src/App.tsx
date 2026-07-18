@@ -8,6 +8,7 @@ import { AboutPage } from './features/about/AboutPage.tsx'
 import { StatsPage } from './features/stats/StatsPage.tsx'
 import { getTheme, setTheme, DEFAULT_THEME } from './db/cards.ts'
 import { applyTheme, type ThemePreference } from './shared/theme.ts'
+import { pushLayer, goBack } from './shared/backStack.ts'
 
 type View = 'home' | 'review' | 'vocab' | 'grammar' | 'suspended' | 'about' | 'stats'
 
@@ -33,32 +34,40 @@ function App() {
     setThemeState(next)
   }
 
+  // Pushes a history entry before switching away from home, so the system
+  // back gesture/button (or an in-app "← 首頁" button via goBack()) can undo
+  // it — see src/shared/backStack.ts.
+  function navigate(next: View) {
+    pushLayer(() => setView('home'))
+    setView(next)
+  }
+
   if (view === 'review') {
-    return <ReviewSession onComplete={() => setView('home')} />
+    return <ReviewSession onComplete={goBack} />
   }
   if (view === 'vocab') {
-    return <VocabBrowsePage onBack={() => setView('home')} />
+    return <VocabBrowsePage onBack={goBack} />
   }
   if (view === 'grammar') {
-    return <GrammarBrowsePage onBack={() => setView('home')} />
+    return <GrammarBrowsePage onBack={goBack} />
   }
   if (view === 'suspended') {
-    return <SuspendedListPage onBack={() => setView('home')} />
+    return <SuspendedListPage onBack={goBack} />
   }
   if (view === 'about') {
-    return <AboutPage onBack={() => setView('home')} />
+    return <AboutPage onBack={goBack} />
   }
   if (view === 'stats') {
-    return <StatsPage onBack={() => setView('home')} />
+    return <StatsPage onBack={goBack} />
   }
   return (
     <HomePage
-      onStartReview={() => setView('review')}
-      onBrowseVocab={() => setView('vocab')}
-      onBrowseGrammar={() => setView('grammar')}
-      onOpenSuspended={() => setView('suspended')}
-      onOpenAbout={() => setView('about')}
-      onOpenStats={() => setView('stats')}
+      onStartReview={() => navigate('review')}
+      onBrowseVocab={() => navigate('vocab')}
+      onBrowseGrammar={() => navigate('grammar')}
+      onOpenSuspended={() => navigate('suspended')}
+      onOpenAbout={() => navigate('about')}
+      onOpenStats={() => navigate('stats')}
       theme={theme}
       onThemeChange={handleThemeChange}
     />

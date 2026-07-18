@@ -4,13 +4,19 @@ import { Rating } from 'ts-fsrs'
 import { db } from '../../db/schema.ts'
 import { gradeItem, setDailyNewCardLimit } from '../../db/cards.ts'
 import { exportBackup } from '../../db/backup.ts'
+import { resetBackStackForTests } from '../../shared/backStack.ts'
 import { BackupSection } from './BackupSection.tsx'
+
+function dispatchPop(depth: number) {
+  window.dispatchEvent(new PopStateEvent('popstate', { state: { depth } }))
+}
 
 beforeEach(async () => {
   await db.cards.clear()
   await db.reviewLogs.clear()
   await db.settings.clear()
   await db.queuedItems.clear()
+  resetBackStackForTests()
 })
 
 describe('BackupSection import flow', () => {
@@ -64,5 +70,27 @@ describe('BackupSection import flow', () => {
     const cards = await db.cards.toArray()
     expect(cards).toHaveLength(1)
     expect(cards[0].itemId).toBe('keep-me')
+  })
+
+  it('system back on the confirm screen acts as cancel — dialog closes, data untouched', async () => {
+    await gradeItem('vocab', 'keep-me', 'N5', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    const backup = await exportBackup()
+    const file = new File([JSON.stringify(backup)], 'backup.json', { type: 'application/json' })
+    const pushSpy = vi.spyOn(history, 'pushState')
+
+    render(<BackupSection />)
+    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
+    fireEvent.change(fileInput, { target: { files: [file] } })
+
+    await waitFor(() => expect(screen.getByText(/現有進度將被清除且無法復原/)).toBeInTheDocument())
+    expect(pushSpy).toHaveBeenCalledWith({ depth: 1 }, '')
+
+    dispatchPop(0) // system back — one step back from depth 1
+
+    await waitFor(() => expect(screen.queryByText(/現有進度將被清除且無法復原/)).not.toBeInTheDocument())
+
+    const cards = await db.cards.toArray()
+    expect(cards).toHaveLength(1)
+    expect(cards[0].itemId).toBe('keep-me') // untouched — nothing was imported
   })
 })

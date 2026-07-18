@@ -13,6 +13,7 @@ import {
   type ItemStatus,
 } from '../../db/cards.ts'
 import { saveScrollPosition, useScrollRestore } from '../../shared/useScrollRestore.ts'
+import { pushLayer, goBack } from '../../shared/backStack.ts'
 import { LevelTabs } from '../vocab/LevelTabs.tsx'
 import { GrammarList } from './GrammarList.tsx'
 import { GrammarDetail } from './GrammarDetail.tsx'
@@ -76,6 +77,7 @@ export function GrammarBrowsePage({ onBack }: GrammarBrowsePageProps) {
 
   function handleSelectEntry(entry: GrammarEntry) {
     saveScrollPosition(scrollPositions, signature)
+    pushLayer(() => setSelectedEntry(null))
     setSelectedEntry(entry)
   }
 
@@ -93,7 +95,7 @@ export function GrammarBrowsePage({ onBack }: GrammarBrowsePageProps) {
         showFurigana={showFurigana}
         onAdd={() => handleAdd(selectedEntry)}
         onToggleSuspend={() => handleToggleSuspend(selectedEntry)}
-        onBack={() => setSelectedEntry(null)}
+        onBack={goBack}
       />
     )
   }

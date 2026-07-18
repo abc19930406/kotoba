@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from 'react'
 import { exportBackup, importBackup } from '../../db/backup.ts'
 import { backupSchema, type BackupData } from '../../db/backupSchema.ts'
+import { pushLayer, goBack } from '../../shared/backStack.ts'
 
 type ImportStage =
   | { type: 'idle' }
@@ -33,6 +34,7 @@ export function BackupSection() {
         setStage({ type: 'error', message: parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`).join('; ') })
         return
       }
+      pushLayer(() => setStage({ type: 'idle' }))
       setStage({ type: 'confirm', data: parsed.data })
     } catch (err) {
       setStage({ type: 'error', message: err instanceof Error ? err.message : String(err) })
@@ -74,7 +76,7 @@ export function BackupSection() {
             </ul>
             <p className="backup-warning">匯入將完全取代目前所有資料，現有進度將被清除且無法復原。</p>
             <div className="batch-add-actions">
-              <button type="button" className="batch-add-cancel" onClick={() => setStage({ type: 'idle' })}>
+              <button type="button" className="batch-add-cancel" onClick={goBack}>
                 取消
               </button>
               <button type="button" className="batch-add-confirm" onClick={handleConfirmImport}>
