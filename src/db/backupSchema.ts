@@ -46,6 +46,23 @@ const settingRecordSchema = z.object({
   value: z.number(),
 })
 
+const noteRecordSchema = z.object({
+  itemId: z.string(),
+  itemType: itemTypeSchema,
+  text: z.string(),
+  updatedAt: z.coerce.date(),
+})
+
+// Blobs can't survive JSON — images are carried as base64 (see src/db/backup.ts's
+// blobToBase64/base64ToBlob) alongside the original MIME type.
+const noteImageRecordSchema = z.object({
+  id: z.number().optional(),
+  noteKey: z.string(),
+  sort: z.number(),
+  imageBase64: z.string(),
+  mimeType: z.string(),
+})
+
 export const backupSchema = z.object({
   schemaVersion: z.number(),
   exportedAt: z.string(),
@@ -53,6 +70,11 @@ export const backupSchema = z.object({
   reviewLogs: z.array(reviewLogRecordSchema),
   queuedItems: z.array(queuedItemRecordSchema),
   settings: z.array(settingRecordSchema),
+  // .default([]) is what makes importing an old (pre-Phase-8) backup work —
+  // its JSON simply has no notes/noteImages keys, and zod fills these in
+  // rather than failing validation.
+  notes: z.array(noteRecordSchema).default([]),
+  noteImages: z.array(noteImageRecordSchema).default([]),
 })
 
 export type BackupData = z.infer<typeof backupSchema>

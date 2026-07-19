@@ -3,6 +3,7 @@ import type { GrammarEntry, JlptLevel } from '../../shared/contentTypes.ts'
 import type { ItemStatus } from '../../db/cards.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 import { SpeakButton } from '../../shared/SpeakButton.tsx'
+import { NoteSection } from '../notes/NoteSection.tsx'
 import { sortSentencesByCurrentLevel } from './sortSentences.ts'
 
 interface GrammarDetailProps {
@@ -69,6 +70,8 @@ export function GrammarDetail({
           </ul>
         </div>
       )}
+
+      <NoteSection itemType="grammar" itemId={entry.id} />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import type { VocabEntry } from '../../shared/contentTypes.ts'
 import type { ItemStatus } from '../../db/cards.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 import { SpeakButton } from '../../shared/SpeakButton.tsx'
+import { NoteSection } from '../notes/NoteSection.tsx'
 
 interface VocabDetailProps {
   entry: VocabEntry
@@ -69,6 +70,8 @@ export function VocabDetail({ entry, status, showFurigana, onAdd, onToggleSuspen
           </ul>
         </div>
       )}
+
+      <NoteSection itemType="vocab" itemId={entry.id} />
     </div>
   )
 }

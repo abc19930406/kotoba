@@ -854,6 +854,152 @@ button {
   opacity: 0.7;
 }
 
+/* Notes (vocab/grammar detail + review card back) */
+
+.note-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.note-section h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.note-text {
+  white-space: pre-wrap;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+}
+
+.note-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.note-image-thumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.note-image-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.note-image-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 22px;
+  min-height: 22px;
+  line-height: 1;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.note-add-button,
+.note-add-image-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-tint-text);
+  background: none;
+  color: var(--accent-tint-text);
+  font-size: 0.9375rem;
+  margin: 0 0 0.75rem;
+  cursor: pointer;
+}
+
+.note-add-image-button input[type='file'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.note-actions,
+.note-edit-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem;
+}
+
+.note-edit-actions button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9375rem;
+}
+
+.note-actions button {
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: none;
+  font-size: 0.875rem;
+}
+
+.note-delete-button {
+  color: var(--danger);
+  border: none;
+  background: none;
+  min-height: 44px;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+}
+
+.note-textarea {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  color: inherit;
+  background: none;
+  margin: 0 0 0.75rem;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.note-disclosure {
+  margin-top: 0.75rem;
+}
+
+.note-disclosure summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--accent-tint-text);
+}
+
+.note-disclosure .note-text,
+.note-disclosure .note-images {
+  margin-top: 0.5rem;
+}
+
 /* About page */
 
 .about-title {

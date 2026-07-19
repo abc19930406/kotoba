@@ -2,7 +2,8 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { Rating } from 'ts-fsrs'
 import { db } from './schema.ts'
 import { gradeItem, suspendCard, addToReviewQueue, setDailyNewCardLimit, setCurrentLevel, setShowFurigana, setTheme } from './cards.ts'
-import { exportBackup, importBackup } from './backup.ts'
+import { saveNoteText } from './notes.ts'
+import { exportBackup, importBackup, blobToBase64, base64ToBlob } from './backup.ts'
 import { backupSchema } from './backupSchema.ts'
 
 beforeEach(async () => {
@@ -10,6 +11,8 @@ beforeEach(async () => {
   await db.reviewLogs.clear()
   await db.settings.clear()
   await db.queuedItems.clear()
+  await db.notes.clear()
+  await db.noteImages.clear()
 })
 
 function sortBy<T>(arr: T[], key: (t: T) => string): T[] {
@@ -53,6 +56,77 @@ describe('exportBackup / importBackup round trip', () => {
     const originalSettings = sortBy(exported.settings, (s) => s.key)
     expect(restoredSettings).toEqual(originalSettings)
     expect(restoredSettings.find((s) => s.key === 'dailyNewCardLimit')?.value).toBe(25)
+  })
+
+  it('fully restores note text after export → clear → import', async () => {
+    await saveNoteText('vocab', 'v1', '這是我的筆記')
+
+    const exported = await exportBackup()
+    expect(exported.notes).toHaveLength(1)
+
+    await db.notes.clear()
+
+    const parsed = backupSchema.parse(JSON.parse(JSON.stringify(exported)))
+    await importBackup(parsed)
+
+    const restoredNote = await db.notes.get(['vocab', 'v1'])
+    expect(restoredNote?.text).toBe('這是我的筆記')
+  })
+
+  // fake-indexeddb (as used here, under jsdom) doesn't structured-clone Blob
+  // values correctly — a stored Blob comes back out of db.noteImages as a
+  // plain empty object, not a usable Blob (confirmed by direct inspection;
+  // this is a test-environment gap, not a product bug — real IndexedDB in
+  // actual browsers preserves Blobs correctly, which is why the feature
+  // still needs real-device/browser verification per the plan). So instead
+  // of round-tripping an image through the database, this exercises the
+  // actual byte-preserving logic directly: blobToBase64/base64ToBlob is
+  // exactly what exportBackup/importBackup use to carry image bytes through
+  // JSON, and this proves it's lossless byte-for-byte, including a size well
+  // past the 32KB chunking boundary (catches any off-by-one in the chunk loop).
+  it('blobToBase64 → base64ToBlob round-trips image bytes exactly, including across the chunk boundary', async () => {
+    const bytes = new Uint8Array(100_000)
+    for (let i = 0; i < bytes.length; i++) bytes[i] = i % 256
+
+    const original = new Blob([bytes], { type: 'image/jpeg' })
+    const encoded = await blobToBase64(original)
+    const decoded = base64ToBlob(encoded, 'image/jpeg')
+
+    expect(decoded.type).toBe('image/jpeg')
+    const decodedBytes = new Uint8Array(await decoded.arrayBuffer())
+    expect(Array.from(decodedBytes)).toEqual(Array.from(bytes))
+  })
+
+  it('accepts an old (pre-Phase-8) backup that has no notes/noteImages fields, defaulting them to empty', () => {
+    const oldBackup = {
+      schemaVersion: 3,
+      exportedAt: new Date().toISOString(),
+      cards: [],
+      reviewLogs: [],
+      queuedItems: [],
+      settings: [],
+    }
+    const parsed = backupSchema.safeParse(oldBackup)
+    expect(parsed.success).toBe(true)
+    if (parsed.success) {
+      expect(parsed.data.notes).toEqual([])
+      expect(parsed.data.noteImages).toEqual([])
+    }
+  })
+
+  it('importing an old backup with no notes fields creates no notes and does not throw', async () => {
+    await saveNoteText('vocab', 'stale', '應該被清空')
+    const oldBackup = {
+      schemaVersion: 3,
+      exportedAt: new Date().toISOString(),
+      cards: [],
+      reviewLogs: [],
+      queuedItems: [],
+      settings: [],
+    }
+    const parsed = backupSchema.parse(oldBackup)
+    await expect(importBackup(parsed)).resolves.toBeUndefined()
+    expect(await db.notes.count()).toBe(0)
   })
 
   it('rejects a malformed backup missing required card fields', () => {

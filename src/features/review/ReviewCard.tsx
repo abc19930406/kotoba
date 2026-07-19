@@ -2,6 +2,7 @@ import type { KeyboardEvent } from 'react'
 import type { VocabEntry, GrammarEntry } from '../../shared/contentTypes.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 import { SpeakButton } from '../../shared/SpeakButton.tsx'
+import { NoteDisclosure } from '../notes/NoteDisclosure.tsx'
 
 interface VocabCardContent {
   itemType: 'vocab'
@@ -45,6 +46,7 @@ export function ReviewCard({ content, flipped, showFurigana, onFlip }: ReviewCar
       {flipped && (
         <div className="review-card-back">
           {content.itemType === 'vocab' ? <VocabBack entry={content.entry} /> : <GrammarBack entry={content.entry} />}
+          <NoteDisclosure itemType={content.itemType} itemId={content.entry.id} />
           {sentences.length > 0 && (
             <ul className="review-card-sentences">
               {sentences.map((s) => (

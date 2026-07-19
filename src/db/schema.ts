@@ -62,11 +62,33 @@ export interface QueuedItemRecord {
   addedAt: Date
 }
 
+/** One personal note per item (1:1 via compound key), 文字 + up to 4 images (see NoteImageRecord). */
+export interface NoteRecord {
+  itemId: string
+  itemType: ItemType
+  text: string
+  updatedAt: Date
+}
+
+/**
+ * `noteKey` is `${itemType}:${itemId}` — a plain string link back to the
+ * owning NoteRecord rather than a compound key, since a note can have
+ * several images (Dexie has no real foreign keys either way).
+ */
+export interface NoteImageRecord {
+  id?: number
+  noteKey: string
+  blob: Blob
+  sort: number
+}
+
 export class KotobaDB extends Dexie {
   cards!: Table<CardRecord, [ItemType, string]>
   reviewLogs!: Table<ReviewLogRecord, number>
   settings!: Table<SettingRecord, string>
   queuedItems!: Table<QueuedItemRecord, [ItemType, string]>
+  notes!: Table<NoteRecord, [ItemType, string]>
+  noteImages!: Table<NoteImageRecord, number>
 
   constructor() {
     super('kotoba')
@@ -91,6 +113,16 @@ export class KotobaDB extends Dexie {
       .upgrade(async (tx) => {
         await tx.table<CardRecord, [ItemType, string]>('cards').toCollection().modify({ suspended: false })
       })
+    // Only adds new stores — existing tables' definitions are untouched, so
+    // this never affects data already in cards/reviewLogs/settings/queuedItems.
+    this.version(4).stores({
+      cards: '[itemType+itemId], due, state',
+      reviewLogs: '++id, [itemType+itemId], review',
+      settings: 'key',
+      queuedItems: '[itemType+itemId], addedAt',
+      notes: '[itemType+itemId]',
+      noteImages: '++id, noteKey',
+    })
   }
 }
 
@@ -100,4 +132,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 3
+export const DB_SCHEMA_VERSION = 4
