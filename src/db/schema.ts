@@ -1,5 +1,5 @@
 import Dexie, { type Table } from 'dexie'
-import type { JlptLevel } from '../shared/contentTypes.ts'
+import type { FuriganaSegment, JlptLevel } from '../shared/contentTypes.ts'
 
 export type ItemType = 'vocab' | 'grammar'
 
@@ -90,6 +90,23 @@ export interface StandaloneNoteRecord {
   updatedAt: Date
 }
 
+/**
+ * Cached AI-generated "今日短文" — one row per date+level, primary-keyed by
+ * `dateLevel` (`${date}:${level}`) for direct lookup. Deliberately excluded
+ * from backup export/import (src/db/backup.ts): this is regeneratable cache,
+ * not precious user data.
+ */
+export interface DailyMaterialCacheRecord {
+  dateLevel: string
+  date: string
+  level: JlptLevel
+  paragraphs: FuriganaSegment[][]
+  zh: string
+  comprehensionPoints: string[]
+  regenerateCount: number
+  createdAt: Date
+}
+
 export class KotobaDB extends Dexie {
   cards!: Table<CardRecord, [ItemType, string]>
   reviewLogs!: Table<ReviewLogRecord, number>
@@ -98,6 +115,7 @@ export class KotobaDB extends Dexie {
   notes!: Table<NoteRecord, [ItemType, string]>
   noteImages!: Table<NoteImageRecord, number>
   standaloneNotes!: Table<StandaloneNoteRecord, number>
+  dailyMaterialCache!: Table<DailyMaterialCacheRecord, string>
 
   constructor() {
     super('kotoba')
@@ -142,6 +160,17 @@ export class KotobaDB extends Dexie {
       noteImages: '++id, noteKey',
       standaloneNotes: '++id, updatedAt',
     })
+    // Again, only a new store — nothing else is touched.
+    this.version(6).stores({
+      cards: '[itemType+itemId], due, state',
+      reviewLogs: '++id, [itemType+itemId], review',
+      settings: 'key',
+      queuedItems: '[itemType+itemId], addedAt',
+      notes: '[itemType+itemId]',
+      noteImages: '++id, noteKey',
+      standaloneNotes: '++id, updatedAt',
+      dailyMaterialCache: 'dateLevel',
+    })
   }
 }
 
@@ -151,4 +180,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 5
+export const DB_SCHEMA_VERSION = 6

@@ -1278,6 +1278,101 @@ button {
   padding-left: 1.25rem;
 }
 
+.daily-passcode-setting {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.daily-passcode-setting input {
+  min-height: 44px;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.daily-package-section {
+  margin: 0 0 1.5rem;
+}
+
+.daily-package-section h2 {
+  font-size: 1.0625rem;
+  margin: 0 0 0.5rem;
+}
+
+.daily-package-section h3 {
+  font-size: 0.9375rem;
+  margin: 0.75rem 0 0.25rem;
+  opacity: 0.8;
+}
+
+.daily-package-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.daily-package-list li {
+  padding: 0.375rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9375rem;
+}
+
+.daily-essay-section {
+  margin: 0 0 1.5rem;
+}
+
+.daily-essay-section h2 {
+  font-size: 1.0625rem;
+  margin: 0 0 0.5rem;
+}
+
+.daily-essay-paragraph {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.daily-essay-paragraph .jp {
+  flex: 1;
+  margin: 0;
+  line-height: 1.9;
+}
+
+.daily-essay-meta {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: var(--accent-tint-bg-soft);
+}
+
+.daily-essay-meta h3 {
+  font-size: 0.875rem;
+  margin: 0 0 0.25rem;
+  opacity: 0.8;
+}
+
+.daily-essay-meta ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.daily-regenerate-button {
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-tint-text);
+  background: none;
+  color: var(--accent-tint-text);
+  font-size: 0.9375rem;
+}
+
+.daily-regenerate-button:disabled {
+  border-color: var(--disabled);
+  color: var(--disabled);
+}
+
 .backup-warning {
   font-weight: 600;
   color: var(--danger);

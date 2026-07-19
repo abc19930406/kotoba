@@ -7,11 +7,12 @@ import { GrammarBrowsePage } from './features/grammar/GrammarBrowsePage.tsx'
 import { AboutPage } from './features/about/AboutPage.tsx'
 import { StatsPage } from './features/stats/StatsPage.tsx'
 import { NotebookListPage } from './features/notebook/NotebookListPage.tsx'
+import { DailyMaterialPage } from './features/daily/DailyMaterialPage.tsx'
 import { getTheme, setTheme, DEFAULT_THEME } from './db/cards.ts'
 import { applyTheme, type ThemePreference } from './shared/theme.ts'
 import { pushLayer, goBack } from './shared/backStack.ts'
 
-type View = 'home' | 'review' | 'vocab' | 'grammar' | 'suspended' | 'about' | 'stats' | 'notebook'
+type View = 'home' | 'review' | 'vocab' | 'grammar' | 'suspended' | 'about' | 'stats' | 'notebook' | 'daily'
 
 function App() {
   const [view, setView] = useState<View>('home')
@@ -64,6 +65,9 @@ function App() {
   if (view === 'notebook') {
     return <NotebookListPage onBack={goBack} />
   }
+  if (view === 'daily') {
+    return <DailyMaterialPage onBack={goBack} />
+  }
   return (
     <HomePage
       onStartReview={() => navigate('review')}
@@ -73,6 +77,7 @@ function App() {
       onOpenAbout={() => navigate('about')}
       onOpenStats={() => navigate('stats')}
       onOpenNotebook={() => navigate('notebook')}
+      onOpenDaily={() => navigate('daily')}
       theme={theme}
       onThemeChange={handleThemeChange}
     />

@@ -16,6 +16,7 @@ import {
 import { LEVEL_ORDER, type JlptLevel } from '../../shared/contentTypes.ts'
 import type { ThemePreference } from '../../shared/theme.ts'
 import { useSpeechAvailable, setSpeechRatePreset, type SpeechRatePreset } from '../../shared/speech.ts'
+import { getDailyPasscode, setDailyPasscode } from '../../shared/dailyPasscode.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
 interface HomePageProps {
@@ -26,6 +27,7 @@ interface HomePageProps {
   onOpenAbout: () => void
   onOpenStats: () => void
   onOpenNotebook: () => void
+  onOpenDaily: () => void
   theme: ThemePreference
   onThemeChange: (theme: ThemePreference) => void
 }
@@ -38,6 +40,7 @@ export function HomePage({
   onOpenAbout,
   onOpenStats,
   onOpenNotebook,
+  onOpenDaily,
   theme,
   onThemeChange,
 }: HomePageProps) {
@@ -46,6 +49,7 @@ export function HomePage({
   const [currentLevel, setCurrentLevelState] = useState<JlptLevel>(DEFAULT_CURRENT_LEVEL)
   const [showFurigana, setShowFuriganaState] = useState(DEFAULT_SHOW_FURIGANA)
   const [speechRate, setSpeechRateState] = useState<SpeechRatePreset>(DEFAULT_SPEECH_RATE)
+  const [dailyPasscode, setDailyPasscodeState] = useState(() => getDailyPasscode())
   const speechAvailable = useSpeechAvailable()
 
   async function refresh() {
@@ -95,6 +99,11 @@ export function HomePage({
     setSpeechRateState(rate)
   }
 
+  function handleDailyPasscodeChange(value: string) {
+    setDailyPasscode(value)
+    setDailyPasscodeState(value)
+  }
+
   const loaded = stats !== null
   const hasWork = loaded && (stats.dueCount > 0 || stats.newCount > 0)
 
@@ -128,6 +137,9 @@ export function HomePage({
       </button>
       <button type="button" className="browse-vocab" onClick={onOpenNotebook}>
         筆記本
+      </button>
+      <button type="button" className="browse-vocab" onClick={onOpenDaily}>
+        今日教材
       </button>
       <label className={loaded && stats.budgetExhausted ? 'daily-limit-setting emphasized' : 'daily-limit-setting'}>
         每日新卡上限：
@@ -176,6 +188,15 @@ export function HomePage({
       ) : (
         <p className="speech-unavailable-note">此裝置沒有偵測到可用的日文語音，發音功能已隱藏。</p>
       )}
+      <label className="daily-passcode-setting">
+        每日教材通行碼：
+        <input
+          type="password"
+          autoComplete="off"
+          value={dailyPasscode}
+          onChange={(e) => handleDailyPasscodeChange(e.target.value)}
+        />
+      </label>
       {loaded && stats.suspendedCount > 0 && (
         <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
           已熟悉清單（{stats.suspendedCount}）

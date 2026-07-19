@@ -4,7 +4,7 @@ import { LEVEL_ORDER, LEVEL_TO_DIFFICULTY, type JlptLevel } from '../shared/cont
 import type { ThemePreference } from '../shared/theme.ts'
 import type { SpeechRatePreset } from '../shared/speech.ts'
 
-const scheduler = fsrs()
+export const scheduler = fsrs()
 
 const DAILY_NEW_CARD_LIMIT_KEY = 'dailyNewCardLimit'
 export const DEFAULT_DAILY_NEW_CARD_LIMIT = 10
@@ -23,7 +23,7 @@ const SPEECH_RATE_KEY = 'speechRate'
 export const DEFAULT_SPEECH_RATE: SpeechRatePreset = 'standard'
 const SPEECH_RATE_VALUES: SpeechRatePreset[] = ['slow', 'standard', 'fast']
 
-function toFsrsCard(record: CardRecord): FsrsCard {
+export function toFsrsCard(record: CardRecord): FsrsCard {
   return {
     due: record.due,
     stability: record.stability,
