@@ -2,6 +2,7 @@ import { posLabel } from '../../shared/posLabels.ts'
 import type { VocabEntry } from '../../shared/contentTypes.ts'
 import type { ItemStatus } from '../../db/cards.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
+import { SpeakButton } from '../../shared/SpeakButton.tsx'
 
 interface VocabDetailProps {
   entry: VocabEntry
@@ -21,7 +22,10 @@ export function VocabDetail({ entry, status, showFurigana, onAdd, onToggleSuspen
         ← 返回列表
       </button>
 
-      <h2 className="vocab-detail-kanji">{entry.kanji}</h2>
+      <div className="vocab-detail-kanji-row">
+        <h2 className="vocab-detail-kanji">{entry.kanji}</h2>
+        <SpeakButton text={entry.kana} label="播放單字發音" />
+      </div>
       <p className="vocab-detail-kana">{entry.kana}</p>
       {entry.usageNote && <p className="vocab-detail-usage-note">{entry.usageNote}</p>}
 
@@ -55,7 +59,10 @@ export function VocabDetail({ entry, status, showFurigana, onAdd, onToggleSuspen
             {entry.sentences.map((s) => (
               <li key={s.jp}>
                 <span className="sentence-difficulty">{s.difficulty >= 6 ? 'N1+' : `L${s.difficulty}`}</span>
-                <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
+                <div className="sentence-jp-row">
+                  <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
+                  <SpeakButton text={s.jp} />
+                </div>
                 <p className="en">{s.en}</p>
               </li>
             ))}

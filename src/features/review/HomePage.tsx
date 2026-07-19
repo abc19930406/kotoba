@@ -12,6 +12,7 @@ import {
 } from '../../db/cards.ts'
 import { LEVEL_ORDER, type JlptLevel } from '../../shared/contentTypes.ts'
 import type { ThemePreference } from '../../shared/theme.ts'
+import { useSpeechAvailable } from '../../shared/speech.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
 interface HomePageProps {
@@ -39,6 +40,7 @@ export function HomePage({
   const [dailyLimit, setDailyLimitState] = useState(DEFAULT_DAILY_NEW_CARD_LIMIT)
   const [currentLevel, setCurrentLevelState] = useState<JlptLevel>(DEFAULT_CURRENT_LEVEL)
   const [showFurigana, setShowFuriganaState] = useState(DEFAULT_SHOW_FURIGANA)
+  const speechAvailable = useSpeechAvailable()
 
   async function refresh() {
     const [limit, level, furigana, homeStats] = await Promise.all([
@@ -139,6 +141,7 @@ export function HomePage({
           <option value="dark">深色</option>
         </select>
       </label>
+      {!speechAvailable && <p className="speech-unavailable-note">此裝置沒有偵測到可用的日文語音，發音功能已隱藏。</p>}
       {loaded && stats.suspendedCount > 0 && (
         <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
           已熟悉清單（{stats.suspendedCount}）

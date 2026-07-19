@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import type { GrammarEntry, JlptLevel } from '../../shared/contentTypes.ts'
 import type { ItemStatus } from '../../db/cards.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
+import { SpeakButton } from '../../shared/SpeakButton.tsx'
 import { sortSentencesByCurrentLevel } from './sortSentences.ts'
 
 interface GrammarDetailProps {
@@ -58,7 +59,10 @@ export function GrammarDetail({
             {sortedSentences.map((s) => (
               <li key={s.jp}>
                 <span className="sentence-difficulty">{s.difficulty >= 6 ? 'N1+' : `L${s.difficulty}`}</span>
-                <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
+                <div className="sentence-jp-row">
+                  <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
+                  <SpeakButton text={s.jp} />
+                </div>
                 <p className="en">{s.en}</p>
               </li>
             ))}
