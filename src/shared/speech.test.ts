@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
-import { speak, useSpeechAvailable, resetSpeechForTests } from './speech.ts'
+import { speak, useSpeechAvailable, resetSpeechForTests, setSpeechRatePreset } from './speech.ts'
 
 class MockUtterance {
   lang = ''
@@ -143,6 +143,60 @@ describe('bounded timeout when voiceschanged never fires', () => {
     expect(synth.removeEventListener).not.toHaveBeenCalled()
     vi.advanceTimersByTime(1000)
     expect(synth.removeEventListener).toHaveBeenCalledWith('voiceschanged', expect.any(Function))
+  })
+})
+
+describe('speech rate', () => {
+  function speakAndGetRate(text: string, context?: 'word' | 'sentence'): number {
+    const { synth } = install(() => [makeVoice({ lang: 'ja-JP', localService: true })])
+    resetSpeechForTests()
+    speak(text, context)
+    return (synth.speak.mock.calls[0][0] as SpeechSynthesisUtterance).rate
+  }
+
+  it('defaults to the standard preset when setSpeechRatePreset was never called', () => {
+    setSpeechRatePreset('standard')
+    const sentenceRate = speakAndGetRate('文', 'sentence')
+    expect(sentenceRate).toBeCloseTo(0.85)
+  })
+
+  it('applies a slower rate to word context than sentence context, under every preset', () => {
+    for (const preset of ['slow', 'standard', 'fast'] as const) {
+      setSpeechRatePreset(preset)
+      const wordRate = speakAndGetRate('語', 'word')
+      setSpeechRatePreset(preset)
+      const sentenceRate = speakAndGetRate('文章です', 'sentence')
+      expect(wordRate).toBeLessThanOrEqual(sentenceRate)
+    }
+  })
+
+  it('scales both rates proportionally when the preset changes', () => {
+    setSpeechRatePreset('standard')
+    const standardSentence = speakAndGetRate('文章です', 'sentence')
+    const standardWord = speakAndGetRate('語', 'word')
+
+    setSpeechRatePreset('slow')
+    const slowSentence = speakAndGetRate('文章です', 'sentence')
+    const slowWord = speakAndGetRate('語', 'word')
+
+    setSpeechRatePreset('fast')
+    const fastSentence = speakAndGetRate('文章です', 'sentence')
+    const fastWord = speakAndGetRate('語', 'word')
+
+    expect(slowSentence).toBeLessThan(standardSentence)
+    expect(fastSentence).toBeGreaterThan(standardSentence)
+    expect(slowWord).toBeLessThan(standardWord)
+    expect(fastWord).toBeGreaterThan(standardWord)
+    // Proportional scaling: the word/sentence ratio stays constant across presets.
+    expect(slowWord / slowSentence).toBeCloseTo(standardWord / standardSentence)
+    expect(fastWord / fastSentence).toBeCloseTo(standardWord / standardSentence)
+  })
+
+  it('defaults to sentence context when none is given', () => {
+    setSpeechRatePreset('standard')
+    const defaultRate = speakAndGetRate('文章です')
+    const sentenceRate = speakAndGetRate('文章です', 'sentence')
+    expect(defaultRate).toBe(sentenceRate)
   })
 })
 

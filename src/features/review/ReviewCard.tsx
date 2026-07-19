@@ -71,7 +71,7 @@ function VocabBack({ entry }: { entry: VocabEntry }) {
     <div className="review-card-meaning">
       <div className="review-card-kana-row">
         <p className="kana">{entry.kana}</p>
-        <SpeakButton text={entry.kana} label="播放單字發音" />
+        <SpeakButton text={entry.kana} label="播放單字發音" context="word" />
       </div>
       {entry.usageNote && <p className="usage-note">{entry.usageNote}</p>}
       <p className="meaning">{entry.meaningZh ?? entry.meaningEn.join('；')}</p>
@@ -84,7 +84,7 @@ function GrammarBack({ entry }: { entry: GrammarEntry }) {
     <div className="review-card-meaning">
       <div className="review-card-kana-row">
         <p className="formation">{entry.formation}</p>
-        <SpeakButton text={entry.title} label={`播放「${entry.title}」發音`} />
+        <SpeakButton text={entry.title} label={`播放「${entry.title}」發音`} context="word" />
       </div>
       <p className="meaning">{entry.zhShort ?? entry.shortExplanation}</p>
     </div>

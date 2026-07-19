@@ -2,6 +2,7 @@ import { fsrs, createEmptyCard, State, type Card as FsrsCard, type Grade } from 
 import { db, type CardRecord, type ItemType, type QueuedItemRecord } from './schema.ts'
 import { LEVEL_ORDER, LEVEL_TO_DIFFICULTY, type JlptLevel } from '../shared/contentTypes.ts'
 import type { ThemePreference } from '../shared/theme.ts'
+import type { SpeechRatePreset } from '../shared/speech.ts'
 
 const scheduler = fsrs()
 
@@ -17,6 +18,10 @@ export const DEFAULT_SHOW_FURIGANA = true
 const THEME_KEY = 'theme'
 export const DEFAULT_THEME: ThemePreference = 'system'
 const THEME_VALUES: ThemePreference[] = ['system', 'light', 'dark']
+
+const SPEECH_RATE_KEY = 'speechRate'
+export const DEFAULT_SPEECH_RATE: SpeechRatePreset = 'standard'
+const SPEECH_RATE_VALUES: SpeechRatePreset[] = ['slow', 'standard', 'fast']
 
 function toFsrsCard(record: CardRecord): FsrsCard {
   return {
@@ -254,6 +259,16 @@ export async function getTheme(): Promise<ThemePreference> {
 
 export async function setTheme(value: ThemePreference): Promise<void> {
   await db.settings.put({ key: THEME_KEY, value: THEME_VALUES.indexOf(value) })
+}
+
+/** Global "發音語速" setting (慢/標準/快), default 標準. Encoded as an index into SPEECH_RATE_VALUES to fit the `settings` table's `value: number` shape. */
+export async function getSpeechRate(): Promise<SpeechRatePreset> {
+  const setting = await db.settings.get(SPEECH_RATE_KEY)
+  return SPEECH_RATE_VALUES[setting?.value ?? 1] ?? DEFAULT_SPEECH_RATE
+}
+
+export async function setSpeechRate(value: SpeechRatePreset): Promise<void> {
+  await db.settings.put({ key: SPEECH_RATE_KEY, value: SPEECH_RATE_VALUES.indexOf(value) })
 }
 
 /**

@@ -1,5 +1,33 @@
 import { useSyncExternalStore } from 'react'
 
+export type SpeechContext = 'word' | 'sentence'
+export type SpeechRatePreset = 'slow' | 'standard' | 'fast'
+
+// "標準" 起點：例句 0.85、單字 0.8（單字略慢於例句，抵銷 TTS 對孤立短詞偏快
+// 的韻律處理，讓兩者聽感一致）。最終數值由真機聽感定案——如需微調，只改這
+// 兩個常數，不要動 PRESET_MULTIPLIER 的比例關係。
+const BASE_RATE: Record<SpeechContext, number> = { sentence: 0.85, word: 0.8 }
+
+// 三段選項等比縮放上面兩個基準值，慢/快互為倒數關係，標準 = 不縮放。
+const PRESET_MULTIPLIER: Record<SpeechRatePreset, number> = { slow: 0.8, standard: 1, fast: 1.25 }
+
+// The public default (used to seed React state before the persisted value
+// loads) lives in db/cards.ts as DEFAULT_SPEECH_RATE, matching how
+// DEFAULT_THEME lives in cards.ts rather than theme.ts — this module just
+// needs *a* starting value for its own cache.
+let currentRatePreset: SpeechRatePreset = 'standard'
+
+/**
+ * Syncs the module-level rate cache used by speak() — call this on app start
+ * and whenever the persisted setting changes (see HomePage.tsx). Kept
+ * separate from persistence itself (db/cards.ts owns getSpeechRate/
+ * setSpeechRate) so this file stays DB-agnostic, matching how theme.ts/
+ * cards.ts split applyTheme() from getTheme()/setTheme().
+ */
+export function setSpeechRatePreset(preset: SpeechRatePreset): void {
+  currentRatePreset = preset
+}
+
 let resolvedVoice: SpeechSynthesisVoice | null = null
 let settled = false
 const listeners = new Set<() => void>()
@@ -75,12 +103,13 @@ export function useSpeechAvailable(): boolean {
  * default voice — SpeakButton being hidden should already prevent this from
  * being reachable, but speak() itself must never do it either.
  */
-export function speak(text: string): void {
+export function speak(text: string, context: SpeechContext = 'sentence'): void {
   if (!window.speechSynthesis || !resolvedVoice) return
   window.speechSynthesis.cancel() // stop whatever's currently playing — no overlapping audio on repeated taps
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = 'ja-JP'
   utterance.voice = resolvedVoice
+  utterance.rate = BASE_RATE[context] * PRESET_MULTIPLIER[currentRatePreset]
   window.speechSynthesis.speak(utterance)
 }
 

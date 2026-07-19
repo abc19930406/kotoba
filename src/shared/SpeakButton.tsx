@@ -1,19 +1,20 @@
 import type { MouseEvent } from 'react'
-import { speak, useSpeechAvailable } from './speech.ts'
+import { speak, useSpeechAvailable, type SpeechContext } from './speech.ts'
 
 interface SpeakButtonProps {
   text: string
   label?: string
+  context?: SpeechContext
 }
 
-export function SpeakButton({ text, label = '播放發音' }: SpeakButtonProps) {
+export function SpeakButton({ text, label = '播放發音', context = 'sentence' }: SpeakButtonProps) {
   const available = useSpeechAvailable()
   if (!available) return null
 
   function handleClick(e: MouseEvent) {
     // Never let this bubble into an ancestor's own click handler (e.g. ReviewCard's flip-on-tap).
     e.stopPropagation()
-    speak(text)
+    speak(text, context)
   }
 
   return (

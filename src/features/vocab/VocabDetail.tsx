@@ -25,7 +25,7 @@ export function VocabDetail({ entry, status, showFurigana, onAdd, onToggleSuspen
 
       <div className="vocab-detail-kanji-row">
         <h2 className="vocab-detail-kanji">{entry.kanji}</h2>
-        <SpeakButton text={entry.kana} label="播放單字發音" />
+        <SpeakButton text={entry.kana} label="播放單字發音" context="word" />
       </div>
       <p className="vocab-detail-kana">{entry.kana}</p>
       {entry.usageNote && <p className="vocab-detail-usage-note">{entry.usageNote}</p>}

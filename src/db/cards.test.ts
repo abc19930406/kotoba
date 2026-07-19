@@ -21,6 +21,9 @@ import {
   getTheme,
   setTheme,
   DEFAULT_THEME,
+  getSpeechRate,
+  setSpeechRate,
+  DEFAULT_SPEECH_RATE,
 } from './cards.ts'
 
 beforeEach(async () => {
@@ -325,5 +328,23 @@ describe('theme setting', () => {
 
     await setTheme('system')
     expect(await getTheme()).toBe('system')
+  })
+})
+
+describe('speech rate setting', () => {
+  it('defaults to 標準 (standard) when never set', async () => {
+    expect(await getSpeechRate()).toBe(DEFAULT_SPEECH_RATE)
+    expect(await getSpeechRate()).toBe('standard')
+  })
+
+  it('round-trips slow and fast through setSpeechRate/getSpeechRate', async () => {
+    await setSpeechRate('slow')
+    expect(await getSpeechRate()).toBe('slow')
+
+    await setSpeechRate('fast')
+    expect(await getSpeechRate()).toBe('fast')
+
+    await setSpeechRate('standard')
+    expect(await getSpeechRate()).toBe('standard')
   })
 })

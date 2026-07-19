@@ -224,6 +224,18 @@ button {
   font-size: 1rem;
 }
 
+.speech-rate-setting {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.speech-rate-setting select {
+  min-height: 44px;
+  font-size: 1rem;
+}
+
 .show-furigana-setting {
   display: flex;
   align-items: center;
