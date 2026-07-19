@@ -25,6 +25,7 @@ interface HomePageProps {
   onOpenSuspended: () => void
   onOpenAbout: () => void
   onOpenStats: () => void
+  onOpenNotebook: () => void
   theme: ThemePreference
   onThemeChange: (theme: ThemePreference) => void
 }
@@ -36,6 +37,7 @@ export function HomePage({
   onOpenSuspended,
   onOpenAbout,
   onOpenStats,
+  onOpenNotebook,
   theme,
   onThemeChange,
 }: HomePageProps) {
@@ -123,6 +125,9 @@ export function HomePage({
       </button>
       <button type="button" className="browse-vocab" onClick={onBrowseGrammar}>
         瀏覽文法
+      </button>
+      <button type="button" className="browse-vocab" onClick={onOpenNotebook}>
+        筆記本
       </button>
       <label className={loaded && stats.budgetExhausted ? 'daily-limit-setting emphasized' : 'daily-limit-setting'}>
         每日新卡上限：

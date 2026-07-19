@@ -82,6 +82,14 @@ export interface NoteImageRecord {
   sort: number
 }
 
+/** A standalone note (not tied to any vocab/grammar item) — a plain notebook entry. Images share the same `noteImages` table via the `standalone:{id}` noteKey namespace (see src/db/noteImages.ts). */
+export interface StandaloneNoteRecord {
+  id?: number
+  title: string
+  text: string
+  updatedAt: Date
+}
+
 export class KotobaDB extends Dexie {
   cards!: Table<CardRecord, [ItemType, string]>
   reviewLogs!: Table<ReviewLogRecord, number>
@@ -89,6 +97,7 @@ export class KotobaDB extends Dexie {
   queuedItems!: Table<QueuedItemRecord, [ItemType, string]>
   notes!: Table<NoteRecord, [ItemType, string]>
   noteImages!: Table<NoteImageRecord, number>
+  standaloneNotes!: Table<StandaloneNoteRecord, number>
 
   constructor() {
     super('kotoba')
@@ -123,6 +132,16 @@ export class KotobaDB extends Dexie {
       notes: '[itemType+itemId]',
       noteImages: '++id, noteKey',
     })
+    // Again, only a new store — notes/noteImages/everything else untouched.
+    this.version(5).stores({
+      cards: '[itemType+itemId], due, state',
+      reviewLogs: '++id, [itemType+itemId], review',
+      settings: 'key',
+      queuedItems: '[itemType+itemId], addedAt',
+      notes: '[itemType+itemId]',
+      noteImages: '++id, noteKey',
+      standaloneNotes: '++id, updatedAt',
+    })
   }
 }
 
@@ -132,4 +151,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 4
+export const DB_SCHEMA_VERSION = 5

@@ -19,15 +19,16 @@ export function base64ToBlob(base64: string, mimeType: string): Blob {
   return new Blob([bytes], { type: mimeType })
 }
 
-/** Full snapshot of all six tables, for the 資料備份 export/import feature. */
+/** Full snapshot of all seven tables, for the 資料備份 export/import feature. */
 export async function exportBackup(): Promise<BackupData> {
-  const [cards, reviewLogs, queuedItems, settings, notes, noteImages] = await Promise.all([
+  const [cards, reviewLogs, queuedItems, settings, notes, noteImages, standaloneNotes] = await Promise.all([
     db.cards.toArray(),
     db.reviewLogs.toArray(),
     db.queuedItems.toArray(),
     db.settings.toArray(),
     db.notes.toArray(),
     db.noteImages.toArray(),
+    db.standaloneNotes.toArray(),
   ])
   const encodedImages = await Promise.all(
     noteImages.map(async (img) => ({
@@ -47,14 +48,16 @@ export async function exportBackup(): Promise<BackupData> {
     settings,
     notes,
     noteImages: encodedImages,
+    standaloneNotes,
   }
 }
 
 /**
- * Replaces (not merges) all six tables with `data`'s contents, in one
- * transaction. `reviewLogs`/`noteImages` rows keep their original `id` —
- * IndexedDB's auto-increment key generator tracks the highest key ever
- * inserted, so future rows still get fresh, non-colliding ids after this.
+ * Replaces (not merges) all seven tables with `data`'s contents, in one
+ * transaction. `reviewLogs`/`noteImages`/`standaloneNotes` rows keep their
+ * original `id` — IndexedDB's auto-increment key generator tracks the
+ * highest key ever inserted, so future rows still get fresh, non-colliding
+ * ids after this.
  */
 export async function importBackup(data: BackupData): Promise<void> {
   const decodedImages: NoteImageRecord[] = data.noteImages.map((img) => ({
@@ -66,7 +69,7 @@ export async function importBackup(data: BackupData): Promise<void> {
 
   await db.transaction(
     'rw',
-    [db.cards, db.reviewLogs, db.queuedItems, db.settings, db.notes, db.noteImages],
+    [db.cards, db.reviewLogs, db.queuedItems, db.settings, db.notes, db.noteImages, db.standaloneNotes],
     async () => {
       await Promise.all([
         db.cards.clear(),
@@ -75,6 +78,7 @@ export async function importBackup(data: BackupData): Promise<void> {
         db.settings.clear(),
         db.notes.clear(),
         db.noteImages.clear(),
+        db.standaloneNotes.clear(),
       ])
       await Promise.all([
         db.cards.bulkAdd(data.cards),
@@ -83,6 +87,7 @@ export async function importBackup(data: BackupData): Promise<void> {
         db.settings.bulkAdd(data.settings),
         db.notes.bulkAdd(data.notes),
         db.noteImages.bulkAdd(decodedImages),
+        db.standaloneNotes.bulkAdd(data.standaloneNotes),
       ])
     },
   )

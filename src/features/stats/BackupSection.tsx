@@ -75,6 +75,7 @@ export function BackupSection() {
               <li>{stage.data.settings.length} 項設定</li>
               <li>{stage.data.notes.length} 則筆記</li>
               <li>{stage.data.noteImages.length} 張筆記圖片</li>
+              <li>{stage.data.standaloneNotes.length} 篇獨立筆記</li>
             </ul>
             <p className="backup-warning">匯入將完全取代目前所有資料，現有進度將被清除且無法復原。</p>
             <div className="batch-add-actions">

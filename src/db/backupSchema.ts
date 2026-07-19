@@ -63,6 +63,13 @@ const noteImageRecordSchema = z.object({
   mimeType: z.string(),
 })
 
+const standaloneNoteRecordSchema = z.object({
+  id: z.number().optional(),
+  title: z.string(),
+  text: z.string(),
+  updatedAt: z.coerce.date(),
+})
+
 export const backupSchema = z.object({
   schemaVersion: z.number(),
   exportedAt: z.string(),
@@ -70,11 +77,12 @@ export const backupSchema = z.object({
   reviewLogs: z.array(reviewLogRecordSchema),
   queuedItems: z.array(queuedItemRecordSchema),
   settings: z.array(settingRecordSchema),
-  // .default([]) is what makes importing an old (pre-Phase-8) backup work —
-  // its JSON simply has no notes/noteImages keys, and zod fills these in
-  // rather than failing validation.
+  // .default([]) is what makes importing an old backup work — its JSON
+  // simply has no notes/noteImages/standaloneNotes keys, and zod fills
+  // these in rather than failing validation.
   notes: z.array(noteRecordSchema).default([]),
   noteImages: z.array(noteImageRecordSchema).default([]),
+  standaloneNotes: z.array(standaloneNoteRecordSchema).default([]),
 })
 
 export type BackupData = z.infer<typeof backupSchema>

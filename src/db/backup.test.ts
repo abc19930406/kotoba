@@ -3,6 +3,7 @@ import { Rating } from 'ts-fsrs'
 import { db } from './schema.ts'
 import { gradeItem, suspendCard, addToReviewQueue, setDailyNewCardLimit, setCurrentLevel, setShowFurigana, setTheme } from './cards.ts'
 import { saveNoteText } from './notes.ts'
+import { createStandaloneNote } from './standaloneNotes.ts'
 import { exportBackup, importBackup, blobToBase64, base64ToBlob } from './backup.ts'
 import { backupSchema } from './backupSchema.ts'
 
@@ -13,6 +14,7 @@ beforeEach(async () => {
   await db.queuedItems.clear()
   await db.notes.clear()
   await db.noteImages.clear()
+  await db.standaloneNotes.clear()
 })
 
 function sortBy<T>(arr: T[], key: (t: T) => string): T[] {
@@ -97,7 +99,23 @@ describe('exportBackup / importBackup round trip', () => {
     expect(Array.from(decodedBytes)).toEqual(Array.from(bytes))
   })
 
-  it('accepts an old (pre-Phase-8) backup that has no notes/noteImages fields, defaulting them to empty', () => {
+  it('fully restores a standalone note after export → clear → import', async () => {
+    await createStandaloneNote('購物清單', '牛奶、雞蛋、麵包')
+
+    const exported = await exportBackup()
+    expect(exported.standaloneNotes).toHaveLength(1)
+
+    await db.standaloneNotes.clear()
+
+    const parsed = backupSchema.parse(JSON.parse(JSON.stringify(exported)))
+    await importBackup(parsed)
+
+    const restored = await db.standaloneNotes.toArray()
+    expect(restored).toHaveLength(1)
+    expect(restored[0]).toMatchObject({ title: '購物清單', text: '牛奶、雞蛋、麵包' })
+  })
+
+  it('accepts an old (pre-Phase-8) backup that has no notes/noteImages/standaloneNotes fields, defaulting them to empty', () => {
     const oldBackup = {
       schemaVersion: 3,
       exportedAt: new Date().toISOString(),
@@ -111,11 +129,13 @@ describe('exportBackup / importBackup round trip', () => {
     if (parsed.success) {
       expect(parsed.data.notes).toEqual([])
       expect(parsed.data.noteImages).toEqual([])
+      expect(parsed.data.standaloneNotes).toEqual([])
     }
   })
 
-  it('importing an old backup with no notes fields creates no notes and does not throw', async () => {
+  it('importing an old backup with no notes fields creates no notes/standaloneNotes and does not throw', async () => {
     await saveNoteText('vocab', 'stale', '應該被清空')
+    await createStandaloneNote('也應該被清空', '')
     const oldBackup = {
       schemaVersion: 3,
       exportedAt: new Date().toISOString(),
@@ -127,6 +147,7 @@ describe('exportBackup / importBackup round trip', () => {
     const parsed = backupSchema.parse(oldBackup)
     await expect(importBackup(parsed)).resolves.toBeUndefined()
     expect(await db.notes.count()).toBe(0)
+    expect(await db.standaloneNotes.count()).toBe(0)
   })
 
   it('rejects a malformed backup missing required card fields', () => {
