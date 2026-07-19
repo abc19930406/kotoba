@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { DAILY_PASSCODE_HEADER } from '../src/shared/dailyMaterialTypes.ts'
+import { DAILY_PASSCODE_HEADER } from './dailyMaterialTypes.ts'
 
 const mockCreate = vi.fn()
 

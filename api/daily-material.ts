@@ -4,7 +4,7 @@ import {
   DAILY_PASSCODE_HEADER,
   type DailyMaterialRequestBody,
   type DailyMaterialResponseBody,
-} from '../src/shared/dailyMaterialTypes.ts'
+} from './dailyMaterialTypes.ts'
 
 const MODEL = 'claude-sonnet-4-6'
 const MAX_ATTEMPTS = 2 // 1 initial + 1 retry on parse/validation failure

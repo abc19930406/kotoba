@@ -19,5 +19,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [".", "../src/shared/dailyMaterialTypes.ts", "../src/shared/contentTypes.ts"]
+  "include": ["."]
 }
