@@ -1,6 +1,4 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { DAILY_PASSCODE_HEADER } from './dailyMaterialTypes.ts'
-
 const mockCreate = vi.fn()
 
 vi.mock('@anthropic-ai/sdk', () => ({
@@ -9,7 +7,7 @@ vi.mock('@anthropic-ai/sdk', () => ({
   },
 }))
 
-const { default: handler, resetDailyMaterialRateLimitForTests } = await import('./daily-material.ts')
+const { default: handler, resetDailyMaterialRateLimitForTests, DAILY_PASSCODE_HEADER } = await import('./daily-material.ts')
 
 function textResponse(json: unknown) {
   return {

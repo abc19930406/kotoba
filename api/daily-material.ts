@@ -1,10 +1,31 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { z } from 'zod'
-import {
-  DAILY_PASSCODE_HEADER,
-  type DailyMaterialRequestBody,
-  type DailyMaterialResponseBody,
-} from './dailyMaterialTypes.ts'
+
+// This file is deliberately fully self-contained (no relative imports) —
+// Vercel's Node function builder compiles api/*.ts per-file but leaves
+// import specifiers untouched, so this project's `.ts`-extension import
+// convention (fine under Vite/Vitest) fails at runtime on Vercel with
+// ERR_MODULE_NOT_FOUND. The shapes below mirror
+// src/shared/dailyMaterialTypes.ts and contentTypes.ts's FuriganaSegment/
+// JlptLevel; both sides are small and stable, so the duplication is a
+// deliberate trade-off. Keep them in sync if either ever changes.
+
+export type FuriganaSegment = [string] | [string, string]
+export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1'
+
+export interface DailyMaterialRequestBody {
+  level: JlptLevel
+  knownWords: { kanji: string; kana: string }[]
+  newWords: { kanji: string; kana: string }[]
+}
+
+export interface DailyMaterialResponseBody {
+  paragraphs: FuriganaSegment[][]
+  zh: string
+  comprehensionPoints: string[]
+}
+
+export const DAILY_PASSCODE_HEADER = 'X-Daily-Passcode'
 
 const MODEL = 'claude-sonnet-4-6'
 const MAX_ATTEMPTS = 2 // 1 initial + 1 retry on parse/validation failure
