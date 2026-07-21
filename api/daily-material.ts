@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { z } from 'zod'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 
 // This file is deliberately fully self-contained (no relative imports) —
 // Vercel's Node function builder compiles api/*.ts per-file but leaves
@@ -9,6 +10,11 @@ import { z } from 'zod'
 // src/shared/dailyMaterialTypes.ts and contentTypes.ts's FuriganaSegment/
 // JlptLevel; both sides are small and stable, so the duplication is a
 // deliberate trade-off. Keep them in sync if either ever changes.
+//
+// The handler uses the Node-style (req, res) signature: Vercel's Node
+// runtime invokes default exports with IncomingMessage/ServerResponse
+// (confirmed via production logs — a Web-standard Request handler crashed
+// with "req.headers.get is not a function").
 
 export type FuriganaSegment = [string] | [string, string]
 export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1'
@@ -51,10 +57,6 @@ export function resetDailyMaterialRateLimitForTests(): void {
 
 function todayKey(): string {
   return new Date().toISOString().slice(0, 10)
-}
-
-function jsonResponse(status: number, body: unknown): Response {
-  return new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } })
 }
 
 const SYSTEM_PROMPT = `你是專業的日文短文寫作老師，服務對象是台灣的日文學習者。
@@ -104,32 +106,62 @@ async function requestOnce(client: Anthropic, body: DailyMaterialRequestBody): P
   return responseSchema.parse(extractJsonObject(text))
 }
 
-export default async function handler(req: Request): Promise<Response> {
+function sendJson(res: ServerResponse, status: number, body: unknown): void {
+  res.statusCode = status
+  res.setHeader('content-type', 'application/json')
+  res.end(JSON.stringify(body))
+}
+
+function headerValue(req: IncomingMessage, name: string): string | undefined {
+  const value = req.headers[name.toLowerCase()]
+  return Array.isArray(value) ? value[0] : value
+}
+
+async function readJsonBody(req: IncomingMessage): Promise<unknown> {
+  // Vercel's Node bridge may have already consumed the stream and attached
+  // the parsed body — prefer that when present, else read the raw stream.
+  const preParsed = (req as IncomingMessage & { body?: unknown }).body
+  if (preParsed !== undefined) {
+    return typeof preParsed === 'string' ? JSON.parse(preParsed) : preParsed
+  }
+  const chunks: Buffer[] = []
+  for await (const chunk of req as AsyncIterable<Buffer | string>) {
+    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)
+  }
+  return JSON.parse(Buffer.concat(chunks).toString('utf-8'))
+}
+
+export default async function handler(req: IncomingMessage, res: ServerResponse): Promise<void> {
   if (req.method !== 'POST') {
-    return jsonResponse(405, { error: 'method not allowed' })
+    sendJson(res, 405, { error: 'method not allowed' })
+    return
   }
 
-  const passcode = req.headers.get(DAILY_PASSCODE_HEADER)
+  const passcode = headerValue(req, DAILY_PASSCODE_HEADER)
   if (!process.env.DAILY_SECRET || passcode !== process.env.DAILY_SECRET) {
-    return jsonResponse(401, { error: '通行碼錯誤' })
+    sendJson(res, 401, { error: '通行碼錯誤' })
+    return
   }
 
   const key = todayKey()
   const count = dailyCounts[key] ?? 0
   if (count >= DAILY_GENERATION_LIMIT) {
-    return jsonResponse(429, { error: '已達今日生成次數上限' })
+    sendJson(res, 429, { error: '已達今日生成次數上限' })
+    return
   }
   dailyCounts[key] = count + 1
 
   let body: DailyMaterialRequestBody
   try {
-    body = (await req.json()) as DailyMaterialRequestBody
+    body = (await readJsonBody(req)) as DailyMaterialRequestBody
   } catch {
-    return jsonResponse(400, { error: '請求格式錯誤' })
+    sendJson(res, 400, { error: '請求格式錯誤' })
+    return
   }
 
   if (!process.env.ANTHROPIC_API_KEY) {
-    return jsonResponse(500, { error: '伺服器未設定 ANTHROPIC_API_KEY' })
+    sendJson(res, 500, { error: '伺服器未設定 ANTHROPIC_API_KEY' })
+    return
   }
 
   const client = new Anthropic()
@@ -137,11 +169,12 @@ export default async function handler(req: Request): Promise<Response> {
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     try {
       const result = await requestOnce(client, body)
-      return jsonResponse(200, result)
+      sendJson(res, 200, result)
+      return
     } catch (err) {
       lastError = err
     }
   }
   console.error('daily-material: generation failed after retries', lastError)
-  return jsonResponse(422, { error: '生成失敗，請稍後再試' })
+  sendJson(res, 422, { error: '生成失敗，請稍後再試' })
 }
