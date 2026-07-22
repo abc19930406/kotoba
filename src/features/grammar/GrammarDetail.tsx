@@ -4,7 +4,7 @@ import type { ItemStatus } from '../../db/cards.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 import { SpeakButton } from '../../shared/SpeakButton.tsx'
 import { NoteSection } from '../notes/NoteSection.tsx'
-import { sortSentencesByCurrentLevel } from './sortSentences.ts'
+import { sortSentencesByCurrentLevel } from '../../shared/sortSentences.ts'
 
 interface GrammarDetailProps {
   entry: GrammarEntry

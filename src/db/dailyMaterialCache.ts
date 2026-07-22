@@ -2,8 +2,16 @@ import { db, type DailyMaterialCacheRecord } from './schema.ts'
 import type { JlptLevel } from '../shared/contentTypes.ts'
 import type { DailyMaterialResponseBody } from '../shared/dailyMaterialTypes.ts'
 
+// Bump whenever DailyMaterialResponseBody's shape changes — this makes any
+// cache row written under the old key format simply unreachable (not read
+// back as malformed data), so a same-day reload after a schema change
+// naturally falls through to fresh generation instead of crashing on
+// missing fields. Old rows are harmless orphans (this table is excluded
+// from backups), not worth a migration/cleanup routine.
+const CACHE_CONTENT_VERSION = 2
+
 function toDateLevel(date: string, level: JlptLevel): string {
-  return `${date}:${level}`
+  return `${date}:${level}:v${CACHE_CONTENT_VERSION}`
 }
 
 export async function getCachedMaterial(date: string, level: JlptLevel): Promise<DailyMaterialCacheRecord | null> {
@@ -24,6 +32,7 @@ export async function saveCachedMaterial(
     paragraphs: data.paragraphs,
     zh: data.zh,
     comprehensionPoints: data.comprehensionPoints,
+    grammarNotes: data.grammarNotes ?? [],
     regenerateCount: 0,
     createdAt: now,
   })
@@ -45,6 +54,7 @@ export async function incrementRegenerateCount(
     paragraphs: data.paragraphs,
     zh: data.zh,
     comprehensionPoints: data.comprehensionPoints,
+    grammarNotes: data.grammarNotes ?? [],
     regenerateCount: nextCount,
     createdAt: now,
   })

@@ -1307,15 +1307,45 @@ button {
 }
 
 .daily-package-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.daily-package-list li {
-  padding: 0.375rem 0.25rem;
+.daily-package-item {
   border-bottom: 1px solid var(--border);
+  padding: 0.25rem 0;
+}
+
+.daily-package-item summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.daily-package-item-formation,
+.daily-package-item-meaning,
+.daily-package-item-long {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+.daily-package-item-sentences {
+  list-style: none;
+  margin: 0.5rem 0 0.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.daily-package-item-sentences li {
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: var(--accent-tint-bg-soft);
 }
 
 .daily-essay-section {
@@ -1356,6 +1386,40 @@ button {
 .daily-essay-meta ul {
   margin: 0.25rem 0 0;
   padding-left: 1.25rem;
+}
+
+.daily-grammar-notes {
+  margin: 1rem 0;
+}
+
+.daily-grammar-notes h3 {
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem;
+  opacity: 0.8;
+}
+
+.daily-grammar-note {
+  margin: 0 0 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: var(--accent-tint-bg-soft);
+}
+
+.daily-grammar-note .jp {
+  margin: 0;
+}
+
+.daily-grammar-note-point {
+  margin: 0.375rem 0 0.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-tint-text);
+}
+
+.daily-grammar-note-explanation {
+  margin: 0;
+  font-size: 0.8125rem;
+  opacity: 0.85;
 }
 
 .daily-regenerate-button {

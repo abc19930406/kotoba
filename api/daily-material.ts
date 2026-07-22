@@ -25,10 +25,17 @@ export interface DailyMaterialRequestBody {
   newWords: { kanji: string; kana: string }[]
 }
 
+export interface GrammarNote {
+  sentence: FuriganaSegment[]
+  grammarPoint: string
+  explanation: string
+}
+
 export interface DailyMaterialResponseBody {
   paragraphs: FuriganaSegment[][]
   zh: string
   comprehensionPoints: string[]
+  grammarNotes?: GrammarNote[]
 }
 
 export const DAILY_PASSCODE_HEADER = 'X-Daily-Passcode'
@@ -36,13 +43,26 @@ export const DAILY_PASSCODE_HEADER = 'X-Daily-Passcode'
 const MODEL = 'claude-sonnet-4-6'
 const MAX_ATTEMPTS = 2 // 1 initial + 1 retry on parse/validation failure
 const DAILY_GENERATION_LIMIT = 5
+const PRICING_PER_MTOK = { input: 3, output: 15 } // claude-sonnet-4-6, matches pipeline/translate.ts's assumption
 
 const furiganaSegmentSchema = z.union([z.tuple([z.string()]), z.tuple([z.string(), z.string()])])
+
+const grammarNoteSchema = z.object({
+  sentence: z.array(furiganaSegmentSchema).min(1),
+  grammarPoint: z.string().min(1),
+  explanation: z.string().min(1),
+})
 
 const responseSchema = z.object({
   paragraphs: z.array(z.array(furiganaSegmentSchema)).min(1),
   zh: z.string().min(1),
   comprehensionPoints: z.array(z.string()).length(3),
+  // Loose bounds deliberately — the prompt asks for "2 到 4 則" as guidance,
+  // not a hard contract; a short/simple essay may genuinely have only 1
+  // clear teachable grammar point, and requiring 2+ here would cause
+  // spurious retries over count alone. Verbatim-quote filtering (see
+  // verifyGrammarNotes) is what actually enforces quality, not this schema.
+  grammarNotes: z.array(grammarNoteSchema).min(1).max(6),
 })
 
 // Best-effort only — resets on serverless cold start, so this is a guard
@@ -65,12 +85,24 @@ const SYSTEM_PROMPT = `你是專業的日文短文寫作老師，服務對象是
 {
   "paragraphs": [ [ ["純文字片段"], ["漢字片段","讀音"], ... ], ... ],
   "zh": "整篇的繁體中文翻譯",
-  "comprehensionPoints": ["讀解要點1", "讀解要點2", "讀解要點3"]
+  "comprehensionPoints": ["讀解要點1", "讀解要點2", "讀解要點3"],
+  "grammarNotes": [ {"sentence": [ ["純文字片段"], ["漢字片段","讀音"], ... ], "grammarPoint": "文法點名稱", "explanation": "繁體中文簡短說明"}, ... ]
 }
 paragraphs 是段落陣列，每個段落是「片段」陣列——每個片段若不含漢字就只有一個元素
 [純文字]，若含漢字則為 [漢字片段, 讀音（平假名）]；同一段落所有片段依序拼接第一個
 元素後必須完全等於該段落的原文，不可省略或調換順序。comprehensionPoints 必須剛好
-3 個。`
+3 個。
+
+grammarNotes 是文法解析陣列，目標 2 到 4 則（若短文真的只有 1 個明顯文法點也可以
+只給 1 則，不要為了湊數硬找不相關的文法）：
+- sentence 的格式跟 paragraphs 的段落完全一樣（同一種片段陣列），但內容必須「逐字」
+  取自你剛剛寫的 paragraphs——可以是某個段落的完整句子或自然的子句，但每個片段的
+  第一個元素依序拼起來，必須是 paragraphs 拼出來的原文的連續子字串，不可以自己
+  另外造句、意譯、精簡或改寫。
+- grammarPoint 是該句實際使用的文法點名稱（例如「〜てしまう」「〜ように」）。
+- explanation 是繁體中文簡短說明，40 字以內。
+- 只解析短文裡真的用到、對學習者有價值的文法點，不要泛談短文沒出現的文法規則；
+  優先挑選難度接近使用者指定等級的句型。`
 
 function buildUserPrompt(body: DailyMaterialRequestBody): string {
   const known = body.knownWords.map((w) => `${w.kanji}(${w.kana})`).join('、')
@@ -93,6 +125,26 @@ function extractJsonObject(text: string): unknown {
   return JSON.parse(trimmed.slice(start, end + 1))
 }
 
+function segmentsToPlainText(segments: FuriganaSegment[]): string {
+  return segments.map((s) => s[0]).join('')
+}
+
+/**
+ * Drops any grammarNotes entry whose quoted sentence isn't a verbatim
+ * substring of the essay it supposedly came from — cheaper and more
+ * reliable than trusting the prompt alone, and doesn't require a retry:
+ * the essay/translation/comprehension points can still be good even if a
+ * quote is a paraphrase, so a bad note is filtered out rather than failing
+ * the whole generation. Caps at 4 (the top of the prompt's target range).
+ */
+function verifyGrammarNotes(parsed: DailyMaterialResponseBody): DailyMaterialResponseBody {
+  const essayText = parsed.paragraphs.map(segmentsToPlainText).join('')
+  const verified = (parsed.grammarNotes ?? [])
+    .filter((note) => essayText.includes(segmentsToPlainText(note.sentence)))
+    .slice(0, 4)
+  return { ...parsed, grammarNotes: verified }
+}
+
 async function requestOnce(client: Anthropic, body: DailyMaterialRequestBody): Promise<DailyMaterialResponseBody> {
   const response = await client.messages.create({
     model: MODEL,
@@ -103,7 +155,14 @@ async function requestOnce(client: Anthropic, body: DailyMaterialRequestBody): P
   })
   const textBlock = response.content.find((b) => b.type === 'text')
   const text = textBlock && textBlock.type === 'text' ? textBlock.text : ''
-  return responseSchema.parse(extractJsonObject(text))
+  const parsed = responseSchema.parse(extractJsonObject(text))
+
+  const inputTokens = response.usage.input_tokens
+  const outputTokens = response.usage.output_tokens
+  const cost = (inputTokens / 1_000_000) * PRICING_PER_MTOK.input + (outputTokens / 1_000_000) * PRICING_PER_MTOK.output
+  console.log(`daily-material: usage — input ${inputTokens} tokens, output ${outputTokens} tokens, cost $${cost.toFixed(4)}`)
+
+  return verifyGrammarNotes(parsed)
 }
 
 function sendJson(res: ServerResponse, status: number, body: unknown): void {

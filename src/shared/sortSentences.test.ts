@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { sortSentencesByCurrentLevel } from './sortSentences.ts'
-import type { GradedSentence } from '../../shared/contentTypes.ts'
+import { sortSentencesByCurrentLevel, pickDisplaySentences } from './sortSentences.ts'
+import type { GradedSentence } from './contentTypes.ts'
 
 const sentences: GradedSentence[] = [
   { jp: 'L1 sentence', en: 'L1', difficulty: 1, jpSegments: [['L1 sentence']] },
@@ -28,5 +28,26 @@ describe('sortSentencesByCurrentLevel', () => {
 
   it('returns an empty array unchanged', () => {
     expect(sortSentencesByCurrentLevel([], 'N5')).toEqual([])
+  })
+})
+
+describe('pickDisplaySentences', () => {
+  it('returns the top `count` sentences sorted by closeness to the current level', () => {
+    const picked = pickDisplaySentences(sentences, 'N3', 3)
+    expect(picked.map((s) => s.difficulty)).toEqual([3, 2, 1])
+  })
+
+  it('defaults to count=3', () => {
+    const picked = pickDisplaySentences(sentences, 'N3')
+    expect(picked).toHaveLength(3)
+  })
+
+  it('gracefully degrades when fewer sentences than count exist', () => {
+    const picked = pickDisplaySentences(sentences.slice(0, 2), 'N3', 3)
+    expect(picked).toHaveLength(2)
+  })
+
+  it('returns an empty array when given no sentences', () => {
+    expect(pickDisplaySentences([], 'N5')).toEqual([])
   })
 })

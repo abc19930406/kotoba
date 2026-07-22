@@ -1,5 +1,6 @@
 import Dexie, { type Table } from 'dexie'
 import type { FuriganaSegment, JlptLevel } from '../shared/contentTypes.ts'
+import type { GrammarNote } from '../shared/dailyMaterialTypes.ts'
 
 export type ItemType = 'vocab' | 'grammar'
 
@@ -103,6 +104,7 @@ export interface DailyMaterialCacheRecord {
   paragraphs: FuriganaSegment[][]
   zh: string
   comprehensionPoints: string[]
+  grammarNotes: GrammarNote[]
   regenerateCount: number
   createdAt: Date
 }

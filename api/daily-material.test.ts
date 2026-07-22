@@ -25,6 +25,7 @@ const validResponse = {
   paragraphs: [[['テスト']]],
   zh: '測試',
   comprehensionPoints: ['a', 'b', 'c'],
+  grammarNotes: [{ sentence: [['テスト']], grammarPoint: '文法點', explanation: '說明' }],
 }
 
 const sampleBody = { level: 'N5', knownWords: [], newWords: [] }
@@ -122,6 +123,67 @@ describe('api/daily-material handler', () => {
     const { res, state } = makeRes()
     await handler(makeReq(sampleBody), res)
     expect(state.status).toBe(429)
+  })
+
+  it('filters out grammarNotes whose sentence is not a verbatim substring of the essay, keeping the rest, without retrying', async () => {
+    mockCreate.mockResolvedValueOnce(
+      textResponse({
+        paragraphs: [[['今日は'], ['テスト', 'てすと'], ['です。']]],
+        zh: '測試',
+        comprehensionPoints: ['a', 'b', 'c'],
+        grammarNotes: [
+          { sentence: [['今日は'], ['テスト', 'てすと']], grammarPoint: '真的有用到', explanation: '說明' },
+          { sentence: [['造假的句子']], grammarPoint: '編造的', explanation: '說明' },
+        ],
+      }),
+    )
+
+    const { res, state } = makeRes()
+    await handler(makeReq(sampleBody), res)
+
+    expect(state.status).toBe(200)
+    expect(mockCreate).toHaveBeenCalledTimes(1)
+    const body = JSON.parse(state.data) as { grammarNotes: { grammarPoint: string }[] }
+    expect(body.grammarNotes).toHaveLength(1)
+    expect(body.grammarNotes[0].grammarPoint).toBe('真的有用到')
+  })
+
+  it('caps grammarNotes at 4 even when more survive verbatim filtering', async () => {
+    const note = { sentence: [['テスト']], grammarPoint: '點', explanation: '說明' }
+    mockCreate.mockResolvedValueOnce(
+      textResponse({
+        paragraphs: [[['テスト']]],
+        zh: '測試',
+        comprehensionPoints: ['a', 'b', 'c'],
+        grammarNotes: [note, note, note, note, note, note],
+      }),
+    )
+
+    const { res, state } = makeRes()
+    await handler(makeReq(sampleBody), res)
+
+    expect(state.status).toBe(200)
+    const body = JSON.parse(state.data) as { grammarNotes: unknown[] }
+    expect(body.grammarNotes).toHaveLength(4)
+  })
+
+  it('still succeeds (200) with an empty grammarNotes array when every note fails verbatim filtering', async () => {
+    mockCreate.mockResolvedValueOnce(
+      textResponse({
+        paragraphs: [[['テスト']]],
+        zh: '測試',
+        comprehensionPoints: ['a', 'b', 'c'],
+        grammarNotes: [{ sentence: [['完全編造']], grammarPoint: '點', explanation: '說明' }],
+      }),
+    )
+
+    const { res, state } = makeRes()
+    await handler(makeReq(sampleBody), res)
+
+    expect(state.status).toBe(200)
+    expect(mockCreate).toHaveBeenCalledTimes(1)
+    const body = JSON.parse(state.data) as { grammarNotes: unknown[] }
+    expect(body.grammarNotes).toEqual([])
   })
 
   it('resetDailyMaterialRateLimitForTests clears the counter between tests', async () => {

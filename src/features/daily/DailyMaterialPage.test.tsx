@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { db } from '../../db/schema.ts'
+import { db, type DailyMaterialCacheRecord } from '../../db/schema.ts'
 import { setCurrentLevel } from '../../db/cards.ts'
 import { setDailyPasscode } from '../../shared/dailyPasscode.ts'
 import { saveCachedMaterial } from '../../db/dailyMaterialCache.ts'
-import type { VocabEntry } from '../../shared/contentTypes.ts'
+import type { VocabEntry, GrammarEntry } from '../../shared/contentTypes.ts'
 
 const mockNewVocab: VocabEntry[] = [
   {
@@ -16,7 +16,21 @@ const mockNewVocab: VocabEntry[] = [
     partOfSpeech: [],
     meaningEn: [],
     meaningZh: null,
-    sentences: [],
+    sentences: [{ jp: '新字例句です。', en: 'a new-word example sentence', difficulty: 1, jpSegments: [['新字例句です。']] }],
+  },
+]
+
+const mockNewGrammar: GrammarEntry[] = [
+  {
+    id: 'g0',
+    level: 'N5',
+    title: '文法0',
+    formation: '動詞て形',
+    shortExplanation: 'short',
+    longExplanation: 'long',
+    zhShort: '簡短說明',
+    zhLong: '詳細說明',
+    sentences: [{ jp: '文法例句です。', en: 'a grammar example sentence', difficulty: 1, jpSegments: [['文法例句です。']] }],
   },
 ]
 
@@ -24,7 +38,7 @@ const mockPkg = {
   date: '2026-03-01',
   level: 'N5' as const,
   newVocab: mockNewVocab,
-  newGrammar: [],
+  newGrammar: mockNewGrammar,
   reviewVocab: [],
 }
 
@@ -61,6 +75,26 @@ describe('DailyMaterialPage', () => {
     expect(mockFetchDailyMaterial).not.toHaveBeenCalled()
   })
 
+  it('renders vocab/grammar package items as collapsed-by-default <details> with their sentences already in the DOM', async () => {
+    await setCurrentLevel('N5')
+
+    render(<DailyMaterialPage onBack={() => {}} />)
+
+    const vocabSummary = await screen.findByText('字0（かな0）')
+    const vocabDetails = vocabSummary.closest('details')
+    expect(vocabDetails).not.toBeNull()
+    expect(vocabDetails).not.toHaveAttribute('open')
+    expect(screen.getByText('新字例句です。')).toBeInTheDocument()
+
+    const grammarSummary = screen.getByText('文法0')
+    const grammarDetails = grammarSummary.closest('details')
+    expect(grammarDetails).not.toBeNull()
+    expect(grammarDetails).not.toHaveAttribute('open')
+    expect(screen.getByText('動詞て形')).toBeInTheDocument()
+    expect(screen.getByText('簡短說明')).toBeInTheDocument()
+    expect(screen.getByText('文法例句です。')).toBeInTheDocument()
+  })
+
   it('does not call fetchDailyMaterial when the essay is already cached for today+level (cache hit)', async () => {
     await setCurrentLevel('N5')
     setDailyPasscode('secret')
@@ -87,7 +121,7 @@ describe('DailyMaterialPage', () => {
     expect(screen.getByText('字0（かな0）')).toBeInTheDocument()
   })
 
-  it('shows generated content on a successful fetch and caches it', async () => {
+  it('shows generated content on a successful fetch and caches it under the versioned key', async () => {
     await setCurrentLevel('N5')
     setDailyPasscode('secret')
     mockFetchDailyMaterial.mockResolvedValue({
@@ -98,7 +132,48 @@ describe('DailyMaterialPage', () => {
     render(<DailyMaterialPage onBack={() => {}} />)
 
     await screen.findByText('生成成功')
-    const cached = await db.dailyMaterialCache.get('2026-03-01:N5')
+    const cached = await db.dailyMaterialCache.get('2026-03-01:N5:v2')
     expect(cached?.zh).toBe('生成成功')
+  })
+
+  it('shows the grammar-notes section with the quoted sentence when the essay includes them', async () => {
+    await setCurrentLevel('N5')
+    setDailyPasscode('secret')
+    mockFetchDailyMaterial.mockResolvedValue({
+      ok: true,
+      data: {
+        paragraphs: [[['テストの文です。']]],
+        zh: '生成成功',
+        comprehensionPoints: ['a', 'b', 'c'],
+        grammarNotes: [{ sentence: [['テストの文']], grammarPoint: '〜の', explanation: '連體修飾' }],
+      },
+    })
+
+    render(<DailyMaterialPage onBack={() => {}} />)
+
+    await screen.findByText('文法解析')
+    expect(screen.getByText('〜の')).toBeInTheDocument()
+    expect(screen.getByText('連體修飾')).toBeInTheDocument()
+  })
+
+  it('renders without crashing and hides the grammar-notes section when a cached row is missing grammarNotes', async () => {
+    await setCurrentLevel('N5')
+    setDailyPasscode('secret')
+    const rowWithoutGrammarNotes = {
+      dateLevel: '2026-03-01:N5:v2',
+      date: '2026-03-01',
+      level: 'N5',
+      paragraphs: [[['快取無文法解析']]],
+      zh: '快取內容',
+      comprehensionPoints: ['a', 'b', 'c'],
+      regenerateCount: 0,
+      createdAt: new Date(),
+    }
+    await db.dailyMaterialCache.put(rowWithoutGrammarNotes as unknown as DailyMaterialCacheRecord)
+
+    render(<DailyMaterialPage onBack={() => {}} />)
+
+    await screen.findByText('快取內容')
+    expect(screen.queryByText('文法解析')).not.toBeInTheDocument()
   })
 })

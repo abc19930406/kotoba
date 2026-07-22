@@ -6,6 +6,8 @@ import { fetchDailyMaterial, type DailyMaterialErrorReason } from '../../shared/
 import { getDailyPasscode } from '../../shared/dailyPasscode.ts'
 import { JapaneseSentence } from '../../shared/JapaneseSentence.tsx'
 import { SpeakButton } from '../../shared/SpeakButton.tsx'
+import { DailyPackageVocabItem } from './DailyPackageVocabItem.tsx'
+import { DailyPackageGrammarItem } from './DailyPackageGrammarItem.tsx'
 import type { DailyMaterialResponseBody } from '../../shared/dailyMaterialTypes.ts'
 import type { JlptLevel } from '../../shared/contentTypes.ts'
 
@@ -79,7 +81,14 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
       const cached = await getCachedMaterial(builtPkg.date, currentLevel)
       if (cancelled) return
       if (cached) {
-        setEssayData({ paragraphs: cached.paragraphs, zh: cached.zh, comprehensionPoints: cached.comprehensionPoints })
+        setEssayData({
+          paragraphs: cached.paragraphs,
+          zh: cached.zh,
+          comprehensionPoints: cached.comprehensionPoints,
+          // Defensive — a cache row matching the current versioned key should
+          // always have this, but don't trust the type over runtime reality.
+          grammarNotes: cached.grammarNotes ?? [],
+        })
         setRegenerateCount(cached.regenerateCount)
         setEssayState('success')
         return
@@ -116,7 +125,7 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
 
       {!pkg && <p className="vocab-status">載入中…</p>}
 
-      {pkg && (
+      {pkg && level && (
         <section className="daily-package-section">
           <h2>今日學習包</h2>
           <div>
@@ -124,13 +133,11 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
             {pkg.newVocab.length === 0 ? (
               <p className="vocab-status">目前沒有未開始的新字。</p>
             ) : (
-              <ul className="daily-package-list">
+              <div className="daily-package-list">
                 {pkg.newVocab.map((v) => (
-                  <li key={v.id}>
-                    {v.kanji}（{v.kana}）
-                  </li>
+                  <DailyPackageVocabItem key={v.id} entry={v} currentLevel={level} showFurigana={showFurigana} />
                 ))}
-              </ul>
+              </div>
             )}
           </div>
           <div>
@@ -138,11 +145,11 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
             {pkg.newGrammar.length === 0 ? (
               <p className="vocab-status">目前沒有未開始的新文法點。</p>
             ) : (
-              <ul className="daily-package-list">
+              <div className="daily-package-list">
                 {pkg.newGrammar.map((g) => (
-                  <li key={g.id}>{g.title}</li>
+                  <DailyPackageGrammarItem key={g.id} entry={g} currentLevel={level} showFurigana={showFurigana} />
                 ))}
-              </ul>
+              </div>
             )}
           </div>
           <div>
@@ -150,13 +157,11 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
             {pkg.reviewVocab.length === 0 ? (
               <p className="vocab-status">目前沒有需要加強複習的到期字。</p>
             ) : (
-              <ul className="daily-package-list">
+              <div className="daily-package-list">
                 {pkg.reviewVocab.map((v) => (
-                  <li key={v.id}>
-                    {v.kanji}（{v.kana}）
-                  </li>
+                  <DailyPackageVocabItem key={v.id} entry={v} currentLevel={level} showFurigana={showFurigana} />
                 ))}
-              </ul>
+              </div>
             )}
           </div>
         </section>
@@ -196,6 +201,21 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
                 ))}
               </ul>
             </div>
+            {(essayData.grammarNotes?.length ?? 0) > 0 && (
+              <div className="daily-grammar-notes">
+                <h3>文法解析</h3>
+                {essayData.grammarNotes!.map((note, i) => (
+                  <div className="daily-grammar-note" key={i}>
+                    <div className="sentence-jp-row">
+                      <JapaneseSentence jpSegments={note.sentence} showFurigana={showFurigana} className="jp" />
+                      <SpeakButton text={note.sentence.map((s) => s[0]).join('')} context="sentence" />
+                    </div>
+                    <p className="daily-grammar-note-point">{note.grammarPoint}</p>
+                    <p className="daily-grammar-note-explanation">{note.explanation}</p>
+                  </div>
+                ))}
+              </div>
+            )}
             <button
               type="button"
               className="daily-regenerate-button"
