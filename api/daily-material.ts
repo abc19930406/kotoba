@@ -148,7 +148,11 @@ function verifyGrammarNotes(parsed: DailyMaterialResponseBody): DailyMaterialRes
 async function requestOnce(client: Anthropic, body: DailyMaterialRequestBody): Promise<DailyMaterialResponseBody> {
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 4096,
+    // Headroom bumped from 4096 after Phase 10.5 added grammarNotes (each
+    // note repeats a furigana-segment array like paragraphs' own) — the
+    // response is structurally more complex now, more room reduces the
+    // chance of a cut-off/malformed JSON on a longer essay+notes combo.
+    max_tokens: 6144,
     system: SYSTEM_PROMPT,
     output_config: { effort: 'low' },
     messages: [{ role: 'user', content: buildUserPrompt(body) }],
