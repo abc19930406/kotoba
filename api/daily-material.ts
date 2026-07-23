@@ -27,6 +27,7 @@ export interface DailyMaterialRequestBody {
 
 export interface GrammarNote {
   sentence: FuriganaSegment[]
+  zh?: string
   grammarPoint: string
   explanation: string
 }
@@ -49,6 +50,7 @@ const furiganaSegmentSchema = z.union([z.tuple([z.string()]), z.tuple([z.string(
 
 const grammarNoteSchema = z.object({
   sentence: z.array(furiganaSegmentSchema).min(1),
+  zh: z.string().min(1),
   grammarPoint: z.string().min(1),
   explanation: z.string().min(1),
 })
@@ -86,7 +88,7 @@ const SYSTEM_PROMPT = `你是專業的日文短文寫作老師，服務對象是
   "paragraphs": [ [ ["純文字片段"], ["漢字片段","讀音"], ... ], ... ],
   "zh": "整篇的繁體中文翻譯",
   "comprehensionPoints": ["讀解要點1", "讀解要點2", "讀解要點3"],
-  "grammarNotes": [ {"sentence": [ ["純文字片段"], ["漢字片段","讀音"], ... ], "grammarPoint": "文法點名稱", "explanation": "繁體中文簡短說明"}, ... ]
+  "grammarNotes": [ {"sentence": [ ["純文字片段"], ["漢字片段","讀音"], ... ], "zh": "該引用句的繁體中文翻譯", "grammarPoint": "文法點名稱", "explanation": "繁體中文簡短說明"}, ... ]
 }
 paragraphs 是段落陣列，每個段落是「片段」陣列——每個片段若不含漢字就只有一個元素
 [純文字]，若含漢字則為 [漢字片段, 讀音（平假名）]；同一段落所有片段依序拼接第一個
@@ -99,6 +101,9 @@ grammarNotes 是文法解析陣列，目標 2 到 4 則（若短文真的只有 
   取自你剛剛寫的 paragraphs——可以是某個段落的完整句子或自然的子句，但每個片段的
   第一個元素依序拼起來，必須是 paragraphs 拼出來的原文的連續子字串，不可以自己
   另外造句、意譯、精簡或改寫。
+- zh 是「這一句引用（sentence）自己」的繁體中文翻譯，只翻譯這一句，不是從整篇
+  短文的 zh 翻譯裡節錄一段——引用句常常只是段落裡的一個子句，必須是那個子句
+  本身精確對應的翻譯。
 - grammarPoint 是該句實際使用的文法點名稱（例如「〜てしまう」「〜ように」）。
 - explanation 是繁體中文簡短說明，40 字以內。
 - 只解析短文裡真的用到、對學習者有價值的文法點，不要泛談短文沒出現的文法規則；

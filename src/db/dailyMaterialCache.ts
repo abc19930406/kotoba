@@ -8,7 +8,7 @@ import type { DailyMaterialResponseBody } from '../shared/dailyMaterialTypes.ts'
 // naturally falls through to fresh generation instead of crashing on
 // missing fields. Old rows are harmless orphans (this table is excluded
 // from backups), not worth a migration/cleanup routine.
-const CACHE_CONTENT_VERSION = 2
+const CACHE_CONTENT_VERSION = 3
 
 function toDateLevel(date: string, level: JlptLevel): string {
   return `${date}:${level}:v${CACHE_CONTENT_VERSION}`

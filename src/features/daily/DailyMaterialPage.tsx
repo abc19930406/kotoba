@@ -210,6 +210,7 @@ export function DailyMaterialPage({ onBack }: DailyMaterialPageProps) {
                       <JapaneseSentence jpSegments={note.sentence} showFurigana={showFurigana} className="jp" />
                       <SpeakButton text={note.sentence.map((s) => s[0]).join('')} context="sentence" />
                     </div>
+                    {note.zh && <p className="daily-grammar-note-translation">{note.zh}</p>}
                     <p className="daily-grammar-note-point">{note.grammarPoint}</p>
                     <p className="daily-grammar-note-explanation">{note.explanation}</p>
                   </div>

@@ -26,6 +26,7 @@ export function DailyPackageVocabItem({ entry, currentLevel, showFurigana }: Dai
                 <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
                 <SpeakButton text={s.jp} />
               </div>
+              {s.en && <p className="en">{s.en}</p>}
             </li>
           ))}
         </ul>

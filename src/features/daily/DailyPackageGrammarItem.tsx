@@ -27,6 +27,7 @@ export function DailyPackageGrammarItem({ entry, currentLevel, showFurigana }: D
                 <JapaneseSentence jpSegments={s.jpSegments} showFurigana={showFurigana} className="jp" />
                 <SpeakButton text={s.jp} />
               </div>
+              {s.en && <p className="en">{s.en}</p>}
             </li>
           ))}
         </ul>

@@ -13,6 +13,8 @@ export interface DailyMaterialRequestBody {
 
 export interface GrammarNote {
   sentence: FuriganaSegment[]
+  /** Optional — older cached rows may not have this field. Translation of `sentence` only, not an excerpt of the whole essay's zh. */
+  zh?: string
   grammarPoint: string
   explanation: string
 }

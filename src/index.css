@@ -1348,6 +1348,12 @@ button {
   background: var(--accent-tint-bg-soft);
 }
 
+.daily-package-item-sentences .en {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
 .daily-essay-section {
   margin: 0 0 1.5rem;
 }
@@ -1407,6 +1413,12 @@ button {
 
 .daily-grammar-note .jp {
   margin: 0;
+}
+
+.daily-grammar-note-translation {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  opacity: 0.7;
 }
 
 .daily-grammar-note-point {

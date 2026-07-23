@@ -25,7 +25,7 @@ const validResponse = {
   paragraphs: [[['テスト']]],
   zh: '測試',
   comprehensionPoints: ['a', 'b', 'c'],
-  grammarNotes: [{ sentence: [['テスト']], grammarPoint: '文法點', explanation: '說明' }],
+  grammarNotes: [{ sentence: [['テスト']], zh: '測試翻譯', grammarPoint: '文法點', explanation: '說明' }],
 }
 
 const sampleBody = { level: 'N5', knownWords: [], newWords: [] }
@@ -132,8 +132,8 @@ describe('api/daily-material handler', () => {
         zh: '測試',
         comprehensionPoints: ['a', 'b', 'c'],
         grammarNotes: [
-          { sentence: [['今日は'], ['テスト', 'てすと']], grammarPoint: '真的有用到', explanation: '說明' },
-          { sentence: [['造假的句子']], grammarPoint: '編造的', explanation: '說明' },
+          { sentence: [['今日は'], ['テスト', 'てすと']], zh: '今天測試', grammarPoint: '真的有用到', explanation: '說明' },
+          { sentence: [['造假的句子']], zh: '編造的翻譯', grammarPoint: '編造的', explanation: '說明' },
         ],
       }),
     )
@@ -143,13 +143,14 @@ describe('api/daily-material handler', () => {
 
     expect(state.status).toBe(200)
     expect(mockCreate).toHaveBeenCalledTimes(1)
-    const body = JSON.parse(state.data) as { grammarNotes: { grammarPoint: string }[] }
+    const body = JSON.parse(state.data) as { grammarNotes: { grammarPoint: string; zh: string }[] }
     expect(body.grammarNotes).toHaveLength(1)
     expect(body.grammarNotes[0].grammarPoint).toBe('真的有用到')
+    expect(body.grammarNotes[0].zh).toBe('今天測試')
   })
 
   it('caps grammarNotes at 4 even when more survive verbatim filtering', async () => {
-    const note = { sentence: [['テスト']], grammarPoint: '點', explanation: '說明' }
+    const note = { sentence: [['テスト']], zh: '測試翻譯', grammarPoint: '點', explanation: '說明' }
     mockCreate.mockResolvedValueOnce(
       textResponse({
         paragraphs: [[['テスト']]],
@@ -173,7 +174,7 @@ describe('api/daily-material handler', () => {
         paragraphs: [[['テスト']]],
         zh: '測試',
         comprehensionPoints: ['a', 'b', 'c'],
-        grammarNotes: [{ sentence: [['完全編造']], grammarPoint: '點', explanation: '說明' }],
+        grammarNotes: [{ sentence: [['完全編造']], zh: '無關翻譯', grammarPoint: '點', explanation: '說明' }],
       }),
     )
 

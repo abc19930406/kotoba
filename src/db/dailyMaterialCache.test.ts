@@ -7,7 +7,7 @@ const sample: DailyMaterialResponseBody = {
   paragraphs: [[['今日は'], ['天気', 'てんき'], ['がいいです。']]],
   zh: '今天天氣很好。',
   comprehensionPoints: ['要點1', '要點2', '要點3'],
-  grammarNotes: [{ sentence: [['今日は'], ['天気', 'てんき']], grammarPoint: '〜が', explanation: '主語標記' }],
+  grammarNotes: [{ sentence: [['今日は'], ['天気', 'てんき']], zh: '今天天氣', grammarPoint: '〜が', explanation: '主語標記' }],
 }
 
 beforeEach(async () => {
@@ -51,6 +51,26 @@ describe('dailyMaterialCache', () => {
       createdAt: new Date(),
     }
     await db.dailyMaterialCache.put(oldFormatRow as unknown as DailyMaterialCacheRecord)
+
+    expect(await getCachedMaterial('2026-03-01', 'N5')).toBeNull()
+  })
+
+  it('does not find a row written under the Phase 10.5 (:v2) key format now that the version is v3', async () => {
+    // Simulates a Phase 10.5 cache row (grammarNotes existed, but without
+    // the new zh field) left over in a real user's IndexedDB — Phase 10.6
+    // bumped CACHE_CONTENT_VERSION again, so this is unreachable too.
+    const phase10_5Row = {
+      dateLevel: '2026-03-01:N5:v2',
+      date: '2026-03-01',
+      level: 'N5',
+      paragraphs: sample.paragraphs,
+      zh: 'Phase 10.5 格式資料',
+      comprehensionPoints: sample.comprehensionPoints,
+      grammarNotes: [{ sentence: sample.grammarNotes![0].sentence, grammarPoint: '〜が', explanation: '主語標記' }],
+      regenerateCount: 0,
+      createdAt: new Date(),
+    }
+    await db.dailyMaterialCache.put(phase10_5Row as unknown as DailyMaterialCacheRecord)
 
     expect(await getCachedMaterial('2026-03-01', 'N5')).toBeNull()
   })

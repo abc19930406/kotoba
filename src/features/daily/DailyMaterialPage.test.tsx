@@ -4,6 +4,7 @@ import { db, type DailyMaterialCacheRecord } from '../../db/schema.ts'
 import { setCurrentLevel } from '../../db/cards.ts'
 import { setDailyPasscode } from '../../shared/dailyPasscode.ts'
 import { saveCachedMaterial } from '../../db/dailyMaterialCache.ts'
+import { buildDailyPackage } from '../../db/dailyPackage.ts'
 import type { VocabEntry, GrammarEntry } from '../../shared/contentTypes.ts'
 
 const mockNewVocab: VocabEntry[] = [
@@ -19,6 +20,18 @@ const mockNewVocab: VocabEntry[] = [
     sentences: [{ jp: '新字例句です。', en: 'a new-word example sentence', difficulty: 1, jpSegments: [['新字例句です。']] }],
   },
 ]
+
+const mockVocabWithNoTranslation: VocabEntry = {
+  id: 'v1',
+  level: 'N5',
+  kanji: '字1',
+  kana: 'かな1',
+  usageNote: null,
+  partOfSpeech: [],
+  meaningEn: [],
+  meaningZh: null,
+  sentences: [{ jp: '翻訳なしの例句。', en: '', difficulty: 1, jpSegments: [['翻訳なしの例句。']] }],
+}
 
 const mockNewGrammar: GrammarEntry[] = [
   {
@@ -85,6 +98,7 @@ describe('DailyMaterialPage', () => {
     expect(vocabDetails).not.toBeNull()
     expect(vocabDetails).not.toHaveAttribute('open')
     expect(screen.getByText('新字例句です。')).toBeInTheDocument()
+    expect(screen.getByText('a new-word example sentence')).toBeInTheDocument()
 
     const grammarSummary = screen.getByText('文法0')
     const grammarDetails = grammarSummary.closest('details')
@@ -93,6 +107,18 @@ describe('DailyMaterialPage', () => {
     expect(screen.getByText('動詞て形')).toBeInTheDocument()
     expect(screen.getByText('簡短說明')).toBeInTheDocument()
     expect(screen.getByText('文法例句です。')).toBeInTheDocument()
+    expect(screen.getByText('a grammar example sentence')).toBeInTheDocument()
+  })
+
+  it('does not render a translation line for a sentence whose en field is empty (no fallback available)', async () => {
+    await setCurrentLevel('N5')
+    vi.mocked(buildDailyPackage).mockResolvedValueOnce({ ...mockPkg, newVocab: [mockVocabWithNoTranslation] })
+
+    render(<DailyMaterialPage onBack={() => {}} />)
+
+    const sentence = await screen.findByText('翻訳なしの例句。')
+    const li = sentence.closest('li')
+    expect(li?.querySelector('.en')).toBeNull()
   })
 
   it('does not call fetchDailyMaterial when the essay is already cached for today+level (cache hit)', async () => {
@@ -132,11 +158,11 @@ describe('DailyMaterialPage', () => {
     render(<DailyMaterialPage onBack={() => {}} />)
 
     await screen.findByText('生成成功')
-    const cached = await db.dailyMaterialCache.get('2026-03-01:N5:v2')
+    const cached = await db.dailyMaterialCache.get('2026-03-01:N5:v3')
     expect(cached?.zh).toBe('生成成功')
   })
 
-  it('shows the grammar-notes section with the quoted sentence when the essay includes them', async () => {
+  it('shows the grammar-notes section with the quoted sentence and its translation when the essay includes them', async () => {
     await setCurrentLevel('N5')
     setDailyPasscode('secret')
     mockFetchDailyMaterial.mockResolvedValue({
@@ -145,13 +171,14 @@ describe('DailyMaterialPage', () => {
         paragraphs: [[['テストの文です。']]],
         zh: '生成成功',
         comprehensionPoints: ['a', 'b', 'c'],
-        grammarNotes: [{ sentence: [['テストの文']], grammarPoint: '〜の', explanation: '連體修飾' }],
+        grammarNotes: [{ sentence: [['テストの文']], zh: '測試的句子', grammarPoint: '〜の', explanation: '連體修飾' }],
       },
     })
 
     render(<DailyMaterialPage onBack={() => {}} />)
 
     await screen.findByText('文法解析')
+    expect(screen.getByText('測試的句子')).toBeInTheDocument()
     expect(screen.getByText('〜の')).toBeInTheDocument()
     expect(screen.getByText('連體修飾')).toBeInTheDocument()
   })
@@ -160,7 +187,7 @@ describe('DailyMaterialPage', () => {
     await setCurrentLevel('N5')
     setDailyPasscode('secret')
     const rowWithoutGrammarNotes = {
-      dateLevel: '2026-03-01:N5:v2',
+      dateLevel: '2026-03-01:N5:v3',
       date: '2026-03-01',
       level: 'N5',
       paragraphs: [[['快取無文法解析']]],
@@ -175,5 +202,28 @@ describe('DailyMaterialPage', () => {
 
     await screen.findByText('快取內容')
     expect(screen.queryByText('文法解析')).not.toBeInTheDocument()
+  })
+
+  it('renders without crashing and hides the translation line when a cached grammarNote is missing zh', async () => {
+    await setCurrentLevel('N5')
+    setDailyPasscode('secret')
+    const rowWithNoteMissingZh = {
+      dateLevel: '2026-03-01:N5:v3',
+      date: '2026-03-01',
+      level: 'N5',
+      paragraphs: [[['例文です。']]],
+      zh: '整篇翻譯內容',
+      comprehensionPoints: ['a', 'b', 'c'],
+      grammarNotes: [{ sentence: [['例文']], grammarPoint: '文法點', explanation: '說明文字' }],
+      regenerateCount: 0,
+      createdAt: new Date(),
+    }
+    await db.dailyMaterialCache.put(rowWithNoteMissingZh as unknown as DailyMaterialCacheRecord)
+
+    render(<DailyMaterialPage onBack={() => {}} />)
+
+    await screen.findByText('文法點')
+    expect(screen.getByText('說明文字')).toBeInTheDocument()
+    expect(document.querySelector('.daily-grammar-note-translation')).toBeNull()
   })
 })
