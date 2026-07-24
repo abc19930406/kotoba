@@ -5,6 +5,7 @@ import { compressImage } from '../../shared/imageCompression.ts'
 import { pushLayer } from '../../shared/backStack.ts'
 import { NoteImageThumb } from './NoteImageThumb.tsx'
 import { DeleteNoteConfirm } from './DeleteNoteConfirm.tsx'
+import { ImageLightbox } from './ImageLightbox.tsx'
 
 const MAX_IMAGES = 4
 
@@ -20,6 +21,7 @@ export function NoteSection({ itemType, itemId }: NoteSectionProps) {
   const [draftText, setDraftText] = useState('')
   const [confirmingDelete, setConfirmingDelete] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   async function refresh() {
     const result = await getNote(itemType, itemId)
@@ -77,6 +79,11 @@ export function NoteSection({ itemType, itemId }: NoteSectionProps) {
     setConfirmingDelete(true)
   }
 
+  function openLightbox(i: number) {
+    pushLayer(() => setLightboxIndex(null))
+    setLightboxIndex(i)
+  }
+
   async function handleConfirmDelete() {
     await deleteNote(itemType, itemId)
     setConfirmingDelete(false)
@@ -101,8 +108,8 @@ export function NoteSection({ itemType, itemId }: NoteSectionProps) {
           {note.text && <p className="note-text">{note.text}</p>}
           {note.images.length > 0 && (
             <div className="note-images">
-              {note.images.map((img) => (
-                <NoteImageThumb key={img.id} blob={img.blob} />
+              {note.images.map((img, i) => (
+                <NoteImageThumb key={img.id} blob={img.blob} onOpen={() => openLightbox(i)} />
               ))}
             </div>
           )}
@@ -128,8 +135,13 @@ export function NoteSection({ itemType, itemId }: NoteSectionProps) {
           />
           {note && note.images.length > 0 && (
             <div className="note-images">
-              {note.images.map((img) => (
-                <NoteImageThumb key={img.id} blob={img.blob} onRemove={() => handleRemoveImage(img.id)} />
+              {note.images.map((img, i) => (
+                <NoteImageThumb
+                  key={img.id}
+                  blob={img.blob}
+                  onRemove={() => handleRemoveImage(img.id)}
+                  onOpen={() => openLightbox(i)}
+                />
               ))}
             </div>
           )}
@@ -157,6 +169,9 @@ export function NoteSection({ itemType, itemId }: NoteSectionProps) {
       )}
 
       {confirmingDelete && <DeleteNoteConfirm onConfirm={handleConfirmDelete} />}
+      {lightboxIndex !== null && note && (
+        <ImageLightbox images={note.images.map((img) => img.blob)} initialIndex={lightboxIndex} />
+      )}
     </div>
   )
 }

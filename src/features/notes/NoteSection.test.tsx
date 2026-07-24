@@ -2,11 +2,13 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { db } from '../../db/schema.ts'
 import { getNote } from '../../db/notes.ts'
+import { resetBackStackForTests } from '../../shared/backStack.ts'
 import { NoteSection } from './NoteSection.tsx'
 
 beforeEach(async () => {
   await db.notes.clear()
   await db.noteImages.clear()
+  resetBackStackForTests()
 })
 
 describe('NoteSection', () => {

@@ -12,6 +12,7 @@ import { compressImage } from '../../shared/imageCompression.ts'
 import { pushLayer } from '../../shared/backStack.ts'
 import { NoteImageThumb } from '../notes/NoteImageThumb.tsx'
 import { DeleteNoteConfirm } from '../notes/DeleteNoteConfirm.tsx'
+import { ImageLightbox } from '../notes/ImageLightbox.tsx'
 
 const MAX_IMAGES = 4
 
@@ -28,6 +29,7 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
   const [titleError, setTitleError] = useState<string | null>(null)
   const [imageError, setImageError] = useState<string | null>(null)
   const [confirmingDelete, setConfirmingDelete] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   useEffect(() => {
     if (noteId === null) return
@@ -85,6 +87,11 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
     setConfirmingDelete(true)
   }
 
+  function openLightbox(i: number) {
+    pushLayer(() => setLightboxIndex(null))
+    setLightboxIndex(i)
+  }
+
   async function handleConfirmDelete() {
     if (!note) return
     await deleteStandaloneNote(note.id)
@@ -116,8 +123,13 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
 
       {note && note.images.length > 0 && (
         <div className="note-images">
-          {note.images.map((img) => (
-            <NoteImageThumb key={img.id} blob={img.blob} onRemove={() => handleRemoveImage(img.id)} />
+          {note.images.map((img, i) => (
+            <NoteImageThumb
+              key={img.id}
+              blob={img.blob}
+              onRemove={() => handleRemoveImage(img.id)}
+              onOpen={() => openLightbox(i)}
+            />
           ))}
         </div>
       )}
@@ -144,6 +156,9 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
       )}
 
       {confirmingDelete && note && <DeleteNoteConfirm onConfirm={handleConfirmDelete} summary={note.title} />}
+      {lightboxIndex !== null && note && (
+        <ImageLightbox images={note.images.map((img) => img.blob)} initialIndex={lightboxIndex} />
+      )}
     </div>
   )
 }
