@@ -1,0 +1,17 @@
+# 大型衍生檔/依賴 — 已 gitignore，隨時可重新產生，讀了對理解程式碼沒有幫助
+node_modules/
+dist/
+coverage/
+
+# 原始下載資料（175MB，已 gitignore）——欄位/來源說明見 pipeline/fetch.ts、
+# pipeline/schemas.ts，讀腳本等於讀 schema，不需要整批讀原始檔。真的需要
+# 查證實際內容時（僅限異動 pipeline），改用 Bash python3/jq 精準查詢單一檔案。
+pipeline/raw/
+
+# 內容資料（管線產物，23MB／11 檔，已 commit）——schema 見
+# src/shared/contentTypes.ts、樣本見 PROJECT_PROGRESS.md。需要查證真實資料
+# 時，改用 Bash python3/jq 對單一檔案做精準查詢，不整檔讀入 context。
+public/data/*.json
+
+# 大型自動產生鎖定檔，只在查特定套件版本時有用，改用 `npm ls <pkg>`
+package-lock.json

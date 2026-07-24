@@ -1,17 +1,20 @@
 # kotoba — 日文學習 PWA
 
-個人使用的日文單字與文法學習 PWA。以 JLPT N5–N1 分級單字為主軸，搭配自動分級的例句與文法點，使用 FSRS 間隔重複演算法排程複習。純前端、無後端、部署於 Vercel，主要於手機瀏覽器使用。
+> 新任務開工前，先讀 [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md)（進度、架構決策、資料層現況）。
+
+個人使用的日文單字與文法學習 PWA。以 JLPT N5–N1 分級單字為主軸，搭配自動分級的例句與文法點，使用 FSRS 間隔重複演算法排程複習。前端為主，另有一個 Vercel serverless function（`api/daily-material.ts`，每日教材 AI 短文生成）；部署於 Vercel，主要於手機瀏覽器使用。
 
 ## 技術棧
 
-- Vite + React 18 + TypeScript（strict mode）
+- Vite + React 19 + TypeScript（strict mode）
 - SRS：`ts-fsrs`（不得自行實作排程演算法）
 - 使用者資料：IndexedDB via `dexie`
 - 內容資料：建置期產出的靜態 JSON，位於 `public/data/`，按等級分塊
 - PWA：`vite-plugin-pwa`（Workbox）
 - 測試：Vitest + @testing-library/react
 - 資料管線：Node.js scripts（`pipeline/`），形態素分析用 `kuromoji`
-- 部署：Vercel（zero-config Vite preset，push `main` 自動重新部署）
+- AI：`@anthropic-ai/sdk`（管線翻譯 `pipeline/translate*.ts` 與 `api/daily-material.ts` 每日短文共用）；`zod`（管線輸出驗證 + API 請求/回應驗證）
+- 部署：Vercel（zero-config Vite preset，push `main` 自動重新部署；另含 `api/` 底下的 serverless function，見下方「部署」段落的特殊限制）
 
 ## 常用指令
 
@@ -27,6 +30,9 @@ npm run pipeline -- --translate-grammar   # 含文法解說繁中翻譯（需 AN
 ## 目錄結構
 
 ```
+api/                 # Vercel serverless functions（見「部署」段落的自足性限制）
+  daily-material.ts  # 每日教材 AI 短文生成，通行碼驗證 + 每日次數上限
+  tsconfig.json      # 獨立於 src/ 的 TS 專案（api/ 必須完全自足，見下方）
 pipeline/            # 資料管線（僅建置期執行，不打包進前端）
   fetch.ts           # 下載原始資料至 pipeline/raw/（raw/ 加入 .gitignore）
   grade.ts           # 例句難度自動分級
@@ -36,12 +42,15 @@ pipeline/            # 資料管線（僅建置期執行，不打包進前端）
   llmBatch.ts        # translate*.ts 共用的批次呼叫/重試/backoff 工具
   emit.ts            # 輸出 public/data/*.json
 src/
-  db/                # Dexie schema、FSRS 卡片狀態、review log
+  db/                # Dexie schema、FSRS 卡片狀態、review log、筆記、每日教材快取
   features/
     review/          # SRS 複習流程（核心功能）
     vocab/           # 單字瀏覽：等級/詞性篩選、搜尋、加入複習佇列
     grammar/         # 文法點列表、解說頁、分級例句
-    stats/           # 學習統計
+    stats/           # 學習統計、資料備份匯出/匯入
+    notes/           # 單字/文法個人筆記（文字 + 圖片）
+    notebook/        # 獨立筆記本（不綁定單字/文法項目）
+    daily/           # 每日教材：本地學習包 + AI 短文（呼叫 api/daily-material.ts）
   shared/            # 共用 UI 元件、hooks、utils
 public/data/         # 管線產物（commit 進 repo）
 ```
@@ -75,6 +84,9 @@ About 頁文法內容區塊標註文字：
 - push GitHub `main` 分支會觸發 Vercel 自動重新部署。
 - **部署網域即 IndexedDB 資料的永久住址，不得隨意更換**。使用者的複習進度（FSRS 卡片狀態、複習紀錄、已熟悉清單、所有設定）全部存在瀏覽器的 IndexedDB，而 IndexedDB 是依「來源網域」隔離的——換一個部署網域（例如從 Vercel 預設網域改綁自訂網域、或建立新的 Vercel 專案）會讓使用者在舊網域累積的所有複習資料變得無法存取，等同資料遺失。若未來真的需要換網域，必須先設計資料遷移方案（例如匯出/匯入），不能直接切換。
 - Workbox 快取策略：app shell（HTML/CSS/JS/icons/manifest）走 precache；`public/data/*.json`「不」進 precache，改用 CacheFirst 執行期快取，快取名稱綁定 `pipeline/emit.ts` 算出的 `dataVersion`（所有 vocab/grammar 檔案內容的 hash），資料實際變更時才會失效，單純重新部署不會讓使用者已快取的等級重新下載。
+- **`api/` 目錄必須完全自足，禁止任何相對 import**（Phase 10 三次部署事故換來的教訓，見 `api/daily-material.ts` 檔頭註解）：Vercel 的 Node function builder 只打包 `api/` 內的檔案，且不處理 `.ts` 副檔名的 import specifier——跨目錄 import 部署後直接 `ERR_MODULE_NOT_FOUND`，同目錄但保留 `.ts` 副檔名一樣抓不到檔案。所有型別/常數一律內聯進該檔案本身，需要與 `src/shared/` 對應型別手動保持同步（刻意接受的重複，不是疏漏）。
+- **`api/` 的 handler 簽名是 Node 式 `(req: IncomingMessage, res: ServerResponse)`**，不是 Web 標準 `Request`/`Response`（實測過，用 Web 標準簽名會在執行期噴 `req.headers.get is not a function`）。
+- **本地 `npm run dev`（Vite dev server）無法執行 `api/*.ts`**——那是 Vercel 專屬的 serverless 執行環境。本地開發只能驗證離線可用的部分（前端 UI、本地資料組裝、錯誤/降級路徑）；`api/` 本身的邏輯正確性靠 Vitest 單元測試涵蓋，實際生成流程只能在真正部署到 Vercel 後才能驗證。
 
 ## 開發規則
 
