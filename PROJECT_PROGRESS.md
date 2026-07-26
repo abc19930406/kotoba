@@ -78,6 +78,13 @@
 - 本階段僅驗證 Auth 本身可用，**不接任何資料同步**——見下方架構決策 #7
 - **開發時發現並修正一個嚴重的離線優先違規**：`createClient()` 在環境變數缺漏時會同步拋錯，而 `src/db/supabase.ts` 原本在模組層級無條件呼叫它、又被首頁無條件 import，等於「只要沒設定 Supabase 環境變數，整個 app 一載入就白屏」——不只是登入功能失效，是所有功能全滅。修正為 `supabase: SupabaseClient | null`（環境變數缺任一個就是 `null`），`useAuthSession()`/`LoginPage.tsx`/`HomePage.tsx` 對應加上 null 防護，在 dev server 用今天實際尚未設定 `.env` 的環境驗證過修正前會崩潰、修正後不會
 
+### ✅ Phase C2：kotoba 資料表 + RLS（2026-07-26）
+- 在主站 Supabase 專案（ref `ltmrkdldmgysczfnidra`）建立 6 張 `kotoba_` 前綴資料表：`kotoba_cards`／`kotoba_review_logs`／`kotoba_queued_items`／`kotoba_notes`／`kotoba_standalone_notes`／`kotoba_settings`，欄位對應 IndexedDB 現有結構，每張表加 `updated_at`（timestamptz，C3 同步「最後寫入勝」依據）
+- 主鍵設計：有天然邏輯鍵的表（`cards`/`queued_items`/`notes`）沿用本地複合鍵 `(item_type, item_id)`；沒有天然鍵的表（`review_logs`/`standalone_notes`，本地是裝置內 auto-increment 整數、跨裝置必撞）改用 `uuid`（`gen_random_uuid()`），本地 id 與遠端 uuid 目前並存，對應邏輯留給 C3
+- 此階段只建表與 RLS，不接前端、不做任何同步邏輯（純後端結構）
+- **規劃階段的錯誤**：原本假設主站現成的 `public.is_admin()` helper function 存在，直接寫進 RLS policy——使用者實際執行時才發現這個函式根本不存在（文件推斷有誤）。改為 RLS 直接用 `auth.uid() = 固定 uid` 判斷，不依賴任何主站 helper function，kotoba 的權限模型完全自成一格
+- 六張表的 RLS 全部啟用，四個操作（SELECT/INSERT/UPDATE/DELETE）都限本人，連 SELECT 都不對外開放——學習資料視為純私人資料
+
 ---
 
 ## 二、關鍵架構決策與理由
@@ -173,10 +180,12 @@
 
 **IndexedDB 資料是網域鎖定的**——部署網域不得隨意更換，換網域等同使用者複習進度全部遺失（詳見 CLAUDE.md）。
 
-**連主站 Supabase**（Phase C1 起）：
-- 專案 ref：**TODO：待補**
-- Auth 與主站共用同一個 Supabase 專案——同一組 email/password 在 kotoba 與主站都能登入，kotoba 目前只用 Auth，不建立/讀寫任何資料表
-- 未來資料表命名慣例：`kotoba_` 前綴；RLS 走 `is_admin()`（沿用主站慣例）——這些是規格要求先寫下的未來意圖，Phase C1 尚未實作任何資料表或同步邏輯
+**連主站 Supabase**（Phase C1 起，Phase C2 建表）：
+- 專案 ref：`ltmrkdldmgysczfnidra`（主站專案，與 kotoba 共用）
+- Auth 與主站共用同一個 Supabase 專案——同一組 email/password 在 kotoba 與主站都能登入
+- 資料表已建立（Phase C2）：`kotoba_cards`／`kotoba_review_logs`／`kotoba_queued_items`／`kotoba_notes`／`kotoba_standalone_notes`／`kotoba_settings`，`kotoba_` 前綴與主站既有表完全隔離；`noteImages`（圖片）走 Storage，留給 C4 處理，尚未建立
+- **RLS 不依賴 `is_admin()`**——Phase C1 原文件推斷主站有現成的 `public.is_admin()` helper function 可用，Phase C2 實際操作時發現它不存在。六張表的 RLS 改用 `auth.uid() = 固定 uid` 直接判斷，四個操作（SELECT/INSERT/UPDATE/DELETE）都限本人，連 SELECT 都不對外開放
+- 目前僅完成後端結構，前端尚未接上任何同步邏輯（C3 才開始）
 - `supabase` client（`src/db/supabase.ts`）在 `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` 任一缺漏時是 `null`（不會讓 app 崩潰），此時登入功能不可用但其餘既有功能不受影響——這是 offline-first 承諾的直接延伸，不只涵蓋離線，也涵蓋「雲端服務尚未設定/連不上」
 
 ---
