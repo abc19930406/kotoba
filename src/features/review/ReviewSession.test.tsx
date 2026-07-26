@@ -44,6 +44,7 @@ beforeEach(async () => {
     lapses: 0,
     state: 2,
     suspended: false,
+    updatedAt: new Date('2020-01-01T00:00:00Z'),
   })
 })
 

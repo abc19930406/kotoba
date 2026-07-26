@@ -9,7 +9,7 @@ import { NotebookEditorPage } from './NotebookEditorPage.tsx'
 // real 5s debounce timer — irrelevant to these tests.
 vi.mock('../../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 

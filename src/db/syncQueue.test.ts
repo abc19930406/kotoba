@@ -6,7 +6,7 @@ import { db } from './schema.ts'
 // would leave a dangling timer in every test that calls a write function.
 vi.mock('../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 
@@ -28,7 +28,6 @@ describe('enqueueSync', () => {
     const rows = await db.syncQueue.toArray()
     expect(rows).toHaveLength(1)
     expect(rows[0]).toMatchObject({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
-    expect(rows[0].queuedAt).toBeInstanceOf(Date)
   })
 
   it('does not dedupe — repeated enqueues for the same key each become their own row (coalescing happens at push time)', async () => {

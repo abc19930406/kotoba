@@ -13,7 +13,7 @@ beforeEach(async () => {
 
 describe('pushPendingChanges (Supabase not configured)', () => {
   it('resolves without throwing and leaves the queue untouched', async () => {
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
 
     await expect(pushPendingChanges()).resolves.toBeUndefined()
 

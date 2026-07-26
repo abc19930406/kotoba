@@ -18,6 +18,9 @@ const cardRecordSchema = z.object({
   state: z.number(),
   last_review: z.coerce.date().optional(),
   suspended: z.boolean(),
+  // .default(...) covers importing a pre-Phase-C3b backup that predates
+  // this field — same rationale as reviewLogRecordSchema.remoteId below.
+  updatedAt: z.coerce.date().default(() => new Date()),
 })
 
 const reviewLogRecordSchema = z.object({
@@ -49,6 +52,8 @@ const queuedItemRecordSchema = z.object({
 const settingRecordSchema = z.object({
   key: z.string(),
   value: z.number(),
+  // Same rationale as cardRecordSchema.updatedAt above.
+  updatedAt: z.coerce.date().default(() => new Date()),
 })
 
 const noteRecordSchema = z.object({

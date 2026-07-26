@@ -137,7 +137,7 @@ export async function suspendCard(itemType: ItemType, itemId: string, level: Jlp
     const existing = await getCard(itemType, itemId)
     const key = compositeKey(itemType, itemId)
     if (existing) {
-      await db.cards.update([itemType, itemId], { suspended: true })
+      await db.cards.update([itemType, itemId], { suspended: true, updatedAt: new Date() })
       await enqueueSync('cards', key, 'upsert')
       return
     }
@@ -157,6 +157,7 @@ export async function suspendCard(itemType: ItemType, itemId: string, level: Jlp
       state: empty.state,
       last_review: empty.last_review,
       suspended: true,
+      updatedAt: new Date(),
     })
     await enqueueSync('cards', key, 'upsert')
     // Was queued but never reviewed — it now has a real card row instead.
@@ -168,7 +169,7 @@ export async function suspendCard(itemType: ItemType, itemId: string, level: Jlp
 /** Reverses suspendCard — the card resumes its existing schedule, not a fresh one. */
 export async function resumeCard(itemType: ItemType, itemId: string): Promise<void> {
   await db.transaction('rw', db.cards, db.syncQueue, async () => {
-    await db.cards.update([itemType, itemId], { suspended: false })
+    await db.cards.update([itemType, itemId], { suspended: false, updatedAt: new Date() })
     await enqueueSync('cards', compositeKey(itemType, itemId), 'upsert')
   })
 }
@@ -236,7 +237,7 @@ export async function getDailyNewCardLimit(): Promise<number> {
 
 export async function setDailyNewCardLimit(value: number): Promise<void> {
   await db.transaction('rw', db.settings, db.syncQueue, async () => {
-    await db.settings.put({ key: DAILY_NEW_CARD_LIMIT_KEY, value })
+    await db.settings.put({ key: DAILY_NEW_CARD_LIMIT_KEY, value, updatedAt: new Date() })
     await enqueueSync('settings', DAILY_NEW_CARD_LIMIT_KEY, 'upsert')
   })
 }
@@ -254,7 +255,7 @@ export async function getCurrentLevel(): Promise<JlptLevel> {
 
 export async function setCurrentLevel(level: JlptLevel): Promise<void> {
   await db.transaction('rw', db.settings, db.syncQueue, async () => {
-    await db.settings.put({ key: CURRENT_LEVEL_KEY, value: LEVEL_TO_DIFFICULTY[level] })
+    await db.settings.put({ key: CURRENT_LEVEL_KEY, value: LEVEL_TO_DIFFICULTY[level], updatedAt: new Date() })
     await enqueueSync('settings', CURRENT_LEVEL_KEY, 'upsert')
   })
 }
@@ -267,7 +268,7 @@ export async function getShowFurigana(): Promise<boolean> {
 
 export async function setShowFurigana(value: boolean): Promise<void> {
   await db.transaction('rw', db.settings, db.syncQueue, async () => {
-    await db.settings.put({ key: SHOW_FURIGANA_KEY, value: value ? 1 : 0 })
+    await db.settings.put({ key: SHOW_FURIGANA_KEY, value: value ? 1 : 0, updatedAt: new Date() })
     await enqueueSync('settings', SHOW_FURIGANA_KEY, 'upsert')
   })
 }
@@ -280,7 +281,7 @@ export async function getTheme(): Promise<ThemePreference> {
 
 export async function setTheme(value: ThemePreference): Promise<void> {
   await db.transaction('rw', db.settings, db.syncQueue, async () => {
-    await db.settings.put({ key: THEME_KEY, value: THEME_VALUES.indexOf(value) })
+    await db.settings.put({ key: THEME_KEY, value: THEME_VALUES.indexOf(value), updatedAt: new Date() })
     await enqueueSync('settings', THEME_KEY, 'upsert')
   })
 }
@@ -293,7 +294,7 @@ export async function getSpeechRate(): Promise<SpeechRatePreset> {
 
 export async function setSpeechRate(value: SpeechRatePreset): Promise<void> {
   await db.transaction('rw', db.settings, db.syncQueue, async () => {
-    await db.settings.put({ key: SPEECH_RATE_KEY, value: SPEECH_RATE_VALUES.indexOf(value) })
+    await db.settings.put({ key: SPEECH_RATE_KEY, value: SPEECH_RATE_VALUES.indexOf(value), updatedAt: new Date() })
     await enqueueSync('settings', SPEECH_RATE_KEY, 'upsert')
   })
 }
@@ -329,6 +330,7 @@ export async function gradeItem(
     state: nextCard.state,
     last_review: nextCard.last_review,
     suspended: existing?.suspended ?? false,
+    updatedAt: now,
   }
 
   const key = compositeKey(itemType, itemId)

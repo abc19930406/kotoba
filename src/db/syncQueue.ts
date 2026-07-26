@@ -13,6 +13,6 @@ export function compositeKey(itemType: ItemType, itemId: string): string {
  * write and its outbox entry commit atomically.
  */
 export async function enqueueSync(table: SyncTable, key: string, op: 'upsert' | 'delete'): Promise<void> {
-  await db.syncQueue.add({ table, key, op, queuedAt: new Date() })
+  await db.syncQueue.add({ table, key, op })
   scheduleSyncPush()
 }

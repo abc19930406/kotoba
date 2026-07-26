@@ -11,7 +11,7 @@ import { backupSchema } from './backupSchema.ts'
 // otherwise — irrelevant to these tests and would leave a dangling timer.
 vi.mock('../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 
@@ -121,6 +121,45 @@ describe('exportBackup / importBackup round trip', () => {
     const restored = await db.standaloneNotes.toArray()
     expect(restored).toHaveLength(1)
     expect(restored[0]).toMatchObject({ title: '購物清單', text: '牛奶、雞蛋、麵包' })
+  })
+
+  it('accepts an old (pre-Phase-C3b) backup whose cards/settings rows have no updatedAt, defaulting each to a fresh timestamp', async () => {
+    const before = new Date()
+    const oldBackup = {
+      schemaVersion: 7,
+      exportedAt: new Date().toISOString(),
+      cards: [
+        {
+          itemId: 'v1',
+          itemType: 'vocab',
+          level: 'N5',
+          due: new Date().toISOString(),
+          stability: 1,
+          difficulty: 1,
+          elapsed_days: 0,
+          scheduled_days: 0,
+          learning_steps: 0,
+          reps: 1,
+          lapses: 0,
+          state: 1,
+          suspended: false,
+          // no updatedAt — matches a real pre-C3b export
+        },
+      ],
+      reviewLogs: [],
+      queuedItems: [],
+      settings: [{ key: 'theme', value: 1 }], // no updatedAt either
+    }
+
+    const parsed = backupSchema.parse(oldBackup)
+    expect(parsed.cards[0].updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+    expect(parsed.settings[0].updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+
+    await expect(importBackup(parsed)).resolves.toBeUndefined()
+    const restoredCard = await db.cards.get(['vocab', 'v1'])
+    expect(restoredCard!.updatedAt).toBeInstanceOf(Date)
+    const restoredSetting = await db.settings.get('theme')
+    expect(restoredSetting!.updatedAt).toBeInstanceOf(Date)
   })
 
   it('accepts an old (pre-Phase-8) backup that has no notes/noteImages/standaloneNotes fields, defaulting them to empty', () => {

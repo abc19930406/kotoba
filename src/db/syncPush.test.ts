@@ -34,7 +34,7 @@ beforeEach(async () => {
   mockFrom.mockClear()
 })
 
-async function seedCard() {
+async function seedCard(updatedAt: Date = new Date('2026-01-02T03:04:05Z')) {
   await db.cards.put({
     itemId: 'v1',
     itemType: 'vocab',
@@ -49,13 +49,14 @@ async function seedCard() {
     lapses: 0,
     state: 1,
     suspended: false,
+    updatedAt,
   })
 }
 
 describe('pushPendingChanges — not logged in', () => {
   it('no-ops and leaves the queue untouched', async () => {
     await seedCard()
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
     mockGetSession.mockResolvedValue({ data: { session: null } })
 
     await pushPendingChanges()
@@ -66,10 +67,10 @@ describe('pushPendingChanges — not logged in', () => {
 })
 
 describe('pushPendingChanges — upsert success', () => {
-  it('sends the correct kotoba_cards payload and clears the queue entry', async () => {
-    await seedCard()
-    const queuedAt = new Date('2026-01-02T03:04:05Z')
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt })
+  it('sends the correct kotoba_cards payload (updated_at from the row itself) and clears the queue entry', async () => {
+    const updatedAt = new Date('2026-01-02T03:04:05Z')
+    await seedCard(updatedAt)
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
 
     await pushPendingChanges()
 
@@ -92,15 +93,16 @@ describe('pushPendingChanges — upsert success', () => {
         state: 1,
         last_review: null,
         suspended: false,
-        updated_at: queuedAt.toISOString(),
+        updated_at: updatedAt.toISOString(),
       },
     ])
     expect(opts).toEqual({ onConflict: 'item_type,item_id' })
     expect(await db.syncQueue.count()).toBe(0)
   })
 
-  it('sends reviewLogs keyed by remoteId, not the local auto-increment id', async () => {
+  it('sends reviewLogs keyed by remoteId, not the local auto-increment id, with updated_at from its own review time', async () => {
     const remoteId = 'aaaa-bbbb-cccc'
+    const reviewTime = new Date('2026-01-01T00:00:00Z')
     await db.reviewLogs.add({
       remoteId,
       itemId: 'v1',
@@ -112,21 +114,21 @@ describe('pushPendingChanges — upsert success', () => {
       difficulty: 2,
       scheduled_days: 1,
       learning_steps: 0,
-      review: new Date('2026-01-01T00:00:00Z'),
+      review: reviewTime,
     })
-    await db.syncQueue.add({ table: 'reviewLogs', key: remoteId, op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'reviewLogs', key: remoteId, op: 'upsert' })
 
     await pushPendingChanges()
 
     const [table, rows, opts] = mockUpsert.mock.calls[0]!
     expect(table).toBe('kotoba_review_logs')
-    expect((rows as Array<{ id: string }>)[0]!.id).toBe(remoteId)
+    expect((rows as Array<{ id: string; updated_at: string }>)[0]).toMatchObject({ id: remoteId, updated_at: reviewTime.toISOString() })
     expect(opts).toEqual({ onConflict: 'id' })
   })
 
   it('a table with no pending entries is never queried', async () => {
     await seedCard()
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
 
     await pushPendingChanges()
 
@@ -138,7 +140,7 @@ describe('pushPendingChanges — upsert success', () => {
 describe('pushPendingChanges — failure', () => {
   it('leaves the queue entry when the API call throws', async () => {
     await seedCard()
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
     mockUpsert.mockRejectedValue(new Error('network down'))
 
     await expect(pushPendingChanges()).resolves.toBeUndefined()
@@ -148,7 +150,7 @@ describe('pushPendingChanges — failure', () => {
 
   it('leaves the queue entry when the API returns an error object', async () => {
     await seedCard()
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
     mockUpsert.mockResolvedValue({ error: { message: 'rejected' } })
 
     await pushPendingChanges()
@@ -160,8 +162,8 @@ describe('pushPendingChanges — failure', () => {
     await seedCard()
     await db.notes.put({ itemType: 'vocab', itemId: 'v1', text: '筆記', updatedAt: new Date() })
     await db.syncQueue.bulkAdd([
-      { table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() },
-      { table: 'notes', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() },
+      { table: 'cards', key: 'vocab:v1', op: 'upsert' },
+      { table: 'notes', key: 'vocab:v1', op: 'upsert' },
     ])
     mockUpsert.mockImplementation(async (table) => (table === 'kotoba_cards' ? Promise.reject(new Error('down')) : { error: null }))
 
@@ -175,8 +177,8 @@ describe('pushPendingChanges — failure', () => {
 describe('pushPendingChanges — coalescing', () => {
   it('collapses repeated upserts for the same key into a single API call', async () => {
     await seedCard()
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date('2026-01-01T00:00:00Z') })
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date('2026-01-01T00:00:05Z') })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
 
     await pushPendingChanges()
 
@@ -185,8 +187,8 @@ describe('pushPendingChanges — coalescing', () => {
   })
 
   it('an upsert followed by a delete for the same key only sends the delete', async () => {
-    await db.syncQueue.add({ table: 'notes', key: 'vocab:v1', op: 'upsert', queuedAt: new Date('2026-01-01T00:00:00Z') })
-    await db.syncQueue.add({ table: 'notes', key: 'vocab:v1', op: 'delete', queuedAt: new Date('2026-01-01T00:00:05Z') })
+    await db.syncQueue.add({ table: 'notes', key: 'vocab:v1', op: 'upsert' })
+    await db.syncQueue.add({ table: 'notes', key: 'vocab:v1', op: 'delete' })
 
     await pushPendingChanges()
 
@@ -201,11 +203,11 @@ describe('pushPendingChanges — never touches local data tables', () => {
   it('leaves cards/notes/standaloneNotes/settings row counts and content unchanged', async () => {
     await seedCard()
     await db.notes.put({ itemType: 'vocab', itemId: 'v1', text: '筆記', updatedAt: new Date() })
-    await db.settings.put({ key: 'theme', value: 1 })
+    await db.settings.put({ key: 'theme', value: 1, updatedAt: new Date() })
     await db.syncQueue.bulkAdd([
-      { table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() },
-      { table: 'notes', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() },
-      { table: 'settings', key: 'theme', op: 'upsert', queuedAt: new Date() },
+      { table: 'cards', key: 'vocab:v1', op: 'upsert' },
+      { table: 'notes', key: 'vocab:v1', op: 'upsert' },
+      { table: 'settings', key: 'theme', op: 'upsert' },
     ])
 
     const before = {

@@ -20,7 +20,7 @@ describe('useSyncStatus', () => {
   })
 
   it('reports pending with the queue count', async () => {
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
     const { result } = renderHook(() => useSyncStatus())
     await waitFor(() => expect(result.current).toEqual({ kind: 'pending', count: 1 }))
   })
@@ -38,7 +38,7 @@ describe('useSyncStatus', () => {
     // A failed push leaves items queued either way — the growing/stuck
     // count already tells the user something isn't syncing, so a non-empty
     // queue always wins over the offline label rather than showing both.
-    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
     setOnline(false)
     const { result } = renderHook(() => useSyncStatus())
     await waitFor(() => expect(result.current).toEqual({ kind: 'pending', count: 1 }))

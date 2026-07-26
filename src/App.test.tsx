@@ -41,7 +41,7 @@ vi.mock('./db/supabase.ts', () => ({
 // debounce timer on every write made during these tests — irrelevant here.
 vi.mock('./shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 
@@ -82,6 +82,7 @@ describe('App', () => {
       lapses: 0,
       state: 2,
       suspended: false,
+      updatedAt: seededDue,
     })
 
     render(<App />)

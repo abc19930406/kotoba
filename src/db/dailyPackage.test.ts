@@ -8,7 +8,7 @@ import type { VocabEntry, GrammarEntry } from '../shared/contentTypes.ts'
 // otherwise — irrelevant to these tests and would leave a dangling timer.
 vi.mock('../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 
@@ -68,6 +68,7 @@ async function putReviewCard(itemId: string, stability: number, now: Date): Prom
     state: State.Review,
     last_review: lastReview,
     suspended: false,
+    updatedAt: now,
   })
 }
 

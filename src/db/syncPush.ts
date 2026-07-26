@@ -1,24 +1,6 @@
-import { db, type SyncTable, type SyncQueueRecord, type ItemType } from './schema.ts'
+import { db, type SyncTable, type SyncQueueRecord } from './schema.ts'
 import { supabase } from './supabase.ts'
-
-interface CompositeKey {
-  itemType: ItemType
-  itemId: string
-}
-
-function decodeCompositeKey(key: string): CompositeKey {
-  const sep = key.indexOf(':')
-  return { itemType: key.slice(0, sep) as ItemType, itemId: key.slice(sep + 1) }
-}
-
-const CLOUD_TABLE: Record<SyncTable, string> = {
-  cards: 'kotoba_cards',
-  reviewLogs: 'kotoba_review_logs',
-  queuedItems: 'kotoba_queued_items',
-  notes: 'kotoba_notes',
-  standaloneNotes: 'kotoba_standalone_notes',
-  settings: 'kotoba_settings',
-}
+import { CLOUD_TABLE, decodeCompositeKey } from './syncShared.ts'
 
 const ON_CONFLICT: Record<SyncTable, string> = {
   cards: 'item_type,item_id',
@@ -29,8 +11,14 @@ const ON_CONFLICT: Record<SyncTable, string> = {
   settings: 'key',
 }
 
-/** Builds the kotoba_* row payload for one pending upsert, or `null` if the local row no longer exists (nothing left to push — treat as resolved). */
-async function buildUpsertRow(table: SyncTable, key: string, updatedAt: string): Promise<Record<string, unknown> | null> {
+/**
+ * Builds the kotoba_* row payload for one pending upsert, or `null` if the
+ * local row no longer exists (nothing left to push — treat as resolved).
+ * `updated_at` always comes from the row's own persisted timestamp field —
+ * the same field pull (src/db/syncPull.ts) compares against for
+ * last-write-wins, so both directions agree on what "last modified" means.
+ */
+async function buildUpsertRow(table: SyncTable, key: string): Promise<Record<string, unknown> | null> {
   if (table === 'cards') {
     const { itemType, itemId } = decodeCompositeKey(key)
     const row = await db.cards.get([itemType, itemId])
@@ -50,7 +38,7 @@ async function buildUpsertRow(table: SyncTable, key: string, updatedAt: string):
       state: row.state,
       last_review: row.last_review ? row.last_review.toISOString() : null,
       suspended: row.suspended,
-      updated_at: updatedAt,
+      updated_at: row.updatedAt.toISOString(),
     }
   }
   if (table === 'reviewLogs') {
@@ -68,7 +56,9 @@ async function buildUpsertRow(table: SyncTable, key: string, updatedAt: string):
       scheduled_days: row.scheduled_days,
       learning_steps: row.learning_steps,
       review: row.review.toISOString(),
-      updated_at: updatedAt,
+      // Append-only history — no separate "last modified" concept, so this
+      // just reuses the review event's own timestamp.
+      updated_at: row.review.toISOString(),
     }
   }
   if (table === 'queuedItems') {
@@ -80,24 +70,26 @@ async function buildUpsertRow(table: SyncTable, key: string, updatedAt: string):
       item_type: row.itemType,
       level: row.level,
       added_at: row.addedAt.toISOString(),
-      updated_at: updatedAt,
+      // Never updated in place locally (only created/deleted — see
+      // src/db/cards.ts), so addedAt already doubles as "last modified".
+      updated_at: row.addedAt.toISOString(),
     }
   }
   if (table === 'notes') {
     const { itemType, itemId } = decodeCompositeKey(key)
     const row = await db.notes.get([itemType, itemId])
     if (!row) return null
-    return { item_id: row.itemId, item_type: row.itemType, text: row.text, updated_at: updatedAt }
+    return { item_id: row.itemId, item_type: row.itemType, text: row.text, updated_at: row.updatedAt.toISOString() }
   }
   if (table === 'standaloneNotes') {
     const row = await db.standaloneNotes.where('remoteId').equals(key).first()
     if (!row) return null
-    return { id: row.remoteId, title: row.title, text: row.text, updated_at: updatedAt }
+    return { id: row.remoteId, title: row.title, text: row.text, updated_at: row.updatedAt.toISOString() }
   }
   // settings
   const row = await db.settings.get(key)
   if (!row) return null
-  return { key: row.key, value: row.value, updated_at: updatedAt }
+  return { key: row.key, value: row.value, updated_at: row.updatedAt.toISOString() }
 }
 
 function deleteMatch(table: SyncTable, key: string): Record<string, unknown> {
@@ -111,7 +103,6 @@ interface Group {
   table: SyncTable
   key: string
   op: 'upsert' | 'delete'
-  queuedAt: Date
   entryIds: number[]
 }
 
@@ -125,7 +116,6 @@ function coalesce(entries: SyncQueueRecord[]): Group[] {
         table: entry.table,
         key: entry.key,
         op: entry.op,
-        queuedAt: entry.queuedAt,
         entryIds: existing ? [...existing.entryIds, entry.id!] : [entry.id!],
       })
     } else {
@@ -164,9 +154,9 @@ export async function pushPendingChanges(): Promise<void> {
 
     if (upsertGroups.length > 0) {
       try {
-        const rows = (
-          await Promise.all(upsertGroups.map((g) => buildUpsertRow(table, g.key, g.queuedAt.toISOString())))
-        ).filter((row): row is Record<string, unknown> => row !== null)
+        const rows = (await Promise.all(upsertGroups.map((g) => buildUpsertRow(table, g.key)))).filter(
+          (row): row is Record<string, unknown> => row !== null,
+        )
         if (rows.length > 0) {
           const { error } = await supabase.from(CLOUD_TABLE[table]).upsert(rows, { onConflict: ON_CONFLICT[table] })
           if (error) throw error

@@ -24,13 +24,15 @@ import {
   getSpeechRate,
   setSpeechRate,
   DEFAULT_SPEECH_RATE,
+  setDailyNewCardLimit,
+  setShowFurigana,
 } from './cards.ts'
 
 // enqueueSync's scheduleSyncPush() side effect fires a real 5s debounce timer
 // otherwise — irrelevant to these tests and would leave a dangling timer.
 vi.mock('../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 
@@ -190,7 +192,7 @@ describe('suspendCard / resumeCard ("已熟悉" retirement)', () => {
     expect(resumed?.reps).toBe(second.reps) // not reset to 0 like a fresh card
   })
 
-  it('a suspend followed immediately by resume (simulating an undo) leaves the card exactly as it was', async () => {
+  it('a suspend followed immediately by resume (simulating an undo) leaves the FSRS schedule exactly as it was', async () => {
     const now = new Date('2026-01-01T00:00:00Z')
     const graded = await gradeItem('vocab', 'v1', 'N5', Rating.Good, now)
 
@@ -198,7 +200,10 @@ describe('suspendCard / resumeCard ("已熟悉" retirement)', () => {
     await resumeCard('vocab', 'v1') // the "撤銷" action
 
     const restored = await getCard('vocab', 'v1')
-    expect(restored).toEqual(graded)
+    // updatedAt legitimately moves forward — both suspend and resume are real
+    // local writes that need to sync — so it's excluded from this comparison.
+    expect({ ...restored, updatedAt: undefined }).toEqual({ ...graded, updatedAt: undefined })
+    expect(restored!.updatedAt.getTime()).toBeGreaterThanOrEqual(graded.updatedAt.getTime())
   })
 
   it('listSuspendedCards / getItemStatuses reflect suspended items separately from active ones', async () => {
@@ -437,5 +442,52 @@ describe('sync queue', () => {
 
     const rows = await db.syncQueue.where('table').equals('settings').toArray()
     expect(rows.map((r) => r.key).sort()).toEqual(['currentLevel', 'speechRate', 'theme'])
+  })
+})
+
+describe('updatedAt (Phase C3b: local freshness marker for pull comparison)', () => {
+  it('gradeItem sets updatedAt on the card', async () => {
+    const before = new Date()
+    const record = await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date())
+    expect(record.updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+  })
+
+  it('suspendCard sets updatedAt, both on an existing card and a brand-new one', async () => {
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    const before = new Date()
+
+    await suspendCard('vocab', 'v1', 'N5')
+    const existing = await getCard('vocab', 'v1')
+    expect(existing!.updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+
+    await suspendCard('vocab', 'v2', 'N5') // never graded — the "brand-new" branch
+    const fresh = await getCard('vocab', 'v2')
+    expect(fresh!.updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+  })
+
+  it('resumeCard sets updatedAt', async () => {
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date('2026-01-01T00:00:00Z'))
+    await suspendCard('vocab', 'v1', 'N5')
+    const before = new Date()
+
+    await resumeCard('vocab', 'v1')
+
+    const record = await getCard('vocab', 'v1')
+    expect(record!.updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+  })
+
+  it('every settings setter sets updatedAt', async () => {
+    const before = new Date()
+    await setDailyNewCardLimit(20)
+    await setCurrentLevel('N3')
+    await setShowFurigana(false)
+    await setTheme('dark')
+    await setSpeechRate('fast')
+
+    const rows = await db.settings.toArray()
+    expect(rows).toHaveLength(5)
+    for (const row of rows) {
+      expect(row.updatedAt.getTime()).toBeGreaterThanOrEqual(before.getTime())
+    }
   })
 })

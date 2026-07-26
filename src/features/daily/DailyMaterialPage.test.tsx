@@ -10,7 +10,7 @@ import type { VocabEntry, GrammarEntry } from '../../shared/contentTypes.ts'
 // setCurrentLevel's enqueueSync() otherwise fires a real 5s debounce timer.
 vi.mock('../../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 

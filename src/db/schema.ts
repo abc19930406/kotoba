@@ -26,6 +26,8 @@ export interface CardRecord {
   last_review?: Date
   /** User marked this item "已熟悉" — excluded from due/new queues but scheduling data is kept intact so resuming continues the same FSRS schedule. */
   suspended: boolean
+  /** Last local modification — the authoritative source for push's kotoba_cards.updated_at and pull's last-write-wins comparison (Phase C3b). */
+  updatedAt: Date
 }
 
 /** Mirrors ts-fsrs's `ReviewLog` shape, one row per grading event. */
@@ -48,6 +50,8 @@ export interface ReviewLogRecord {
 export interface SettingRecord {
   key: string
   value: number
+  /** Last local modification — see CardRecord.updatedAt for why this exists (Phase C3b). */
+  updatedAt: Date
 }
 
 /**
@@ -128,8 +132,6 @@ export interface SyncQueueRecord {
   table: SyncTable
   key: string
   op: 'upsert' | 'delete'
-  /** When this local mutation happened — pushed as kotoba_*.updated_at. */
-  queuedAt: Date
 }
 
 export class KotobaDB extends Dexie {
@@ -235,7 +237,11 @@ export class KotobaDB extends Dexie {
           const rows = await tx.table(table).toArray()
           const now = new Date()
           for (const row of rows) {
-            await tx.table<SyncQueueRecord, number>('syncQueue').add({ table, key: keyOf(row), op: 'upsert', queuedAt: now })
+            // Untyped .table() call deliberately — this is historical
+            // migration code writing the *v7-era* syncQueue row shape
+            // (which included `queuedAt`, since removed in v8), not the
+            // current SyncQueueRecord interface.
+            await tx.table('syncQueue').add({ table, key: keyOf(row), op: 'upsert', queuedAt: now })
           }
         }
         await enqueueAll('cards', (row) => keyOfComposite(row as { itemType: ItemType; itemId: string }))
@@ -244,6 +250,40 @@ export class KotobaDB extends Dexie {
         await enqueueAll('notes', (row) => keyOfComposite(row as { itemType: ItemType; itemId: string }))
         await enqueueAll('standaloneNotes', (row) => (row as StandaloneNoteRecord).remoteId)
         await enqueueAll('settings', (row) => (row as SettingRecord).key)
+      })
+    // Phase C3b: cards/settings need their own persisted "last modified"
+    // timestamp so pull can compare it against kotoba_*.updated_at — push
+    // previously derived that value from the sync queue's own transient
+    // queuedAt, which never survived past a successful push, leaving pull
+    // with nothing to compare against. Backfilled to "now": existing local
+    // data should win against any older cloud state after this upgrade,
+    // not be silently overwritten by a stale pull.
+    this.version(8)
+      .stores({
+        cards: '[itemType+itemId], due, state',
+        reviewLogs: '++id, [itemType+itemId], review, remoteId',
+        settings: 'key',
+        queuedItems: '[itemType+itemId], addedAt',
+        notes: '[itemType+itemId]',
+        noteImages: '++id, noteKey',
+        standaloneNotes: '++id, updatedAt, remoteId',
+        dailyMaterialCache: 'dateLevel',
+        syncQueue: '++id, table, key',
+      })
+      .upgrade(async (tx) => {
+        const now = new Date()
+        await tx
+          .table<CardRecord, [ItemType, string]>('cards')
+          .toCollection()
+          .modify((row) => {
+            row.updatedAt = now
+          })
+        await tx
+          .table<SettingRecord, string>('settings')
+          .toCollection()
+          .modify((row) => {
+            row.updatedAt = now
+          })
       })
   }
 }
@@ -254,4 +294,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 7
+export const DB_SCHEMA_VERSION = 8

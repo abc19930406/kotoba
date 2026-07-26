@@ -9,7 +9,7 @@ import { NotebookListPage } from './NotebookListPage.tsx'
 // timer — irrelevant to these tests.
 vi.mock('../../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 

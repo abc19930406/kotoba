@@ -8,7 +8,7 @@ import { getDailyReviewCounts, getLevelProgress, getStreakDays } from './stats.t
 // otherwise — irrelevant to these tests and would leave a dangling timer.
 vi.mock('../shared/syncEngine.ts', () => ({
   scheduleSyncPush: vi.fn(),
-  pushNow: vi.fn(),
+  syncNow: vi.fn(),
   initSyncEngine: vi.fn(),
 }))
 
