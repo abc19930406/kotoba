@@ -1,14 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-const mockPushPendingChanges = vi.fn(async (): Promise<'no-op' | 'reached' | 'unreachable'> => 'reached')
+const mockPushPendingChanges = vi.fn(async () => {})
 vi.mock('../db/syncPush.ts', () => ({ pushPendingChanges: mockPushPendingChanges }))
-
-const mockReportPushOutcome = vi.fn()
-vi.mock('./syncStatus.ts', () => ({
-  setSyncing: vi.fn(),
-  refreshPendingCount: vi.fn(async () => {}),
-  reportPushOutcome: mockReportPushOutcome,
-}))
 
 const mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }))
 vi.mock('../db/supabase.ts', () => ({
@@ -18,8 +11,7 @@ vi.mock('../db/supabase.ts', () => ({
 const { scheduleSyncPush, pushNow, initSyncEngine } = await import('./syncEngine.ts')
 
 beforeEach(() => {
-  mockPushPendingChanges.mockClear().mockResolvedValue('reached')
-  mockReportPushOutcome.mockClear()
+  mockPushPendingChanges.mockClear().mockResolvedValue(undefined)
 })
 
 afterEach(() => {
@@ -46,27 +38,19 @@ describe('pushNow', () => {
   })
 
   it('skips a concurrent call while a push is already in flight', async () => {
-    let resolvePush: (outcome: 'reached') => void = () => {}
+    let resolvePush: () => void = () => {}
     mockPushPendingChanges.mockImplementation(
       () =>
-        new Promise<'reached'>((resolve) => {
+        new Promise<void>((resolve) => {
           resolvePush = resolve
         }),
     )
 
     pushNow()
     pushNow()
-    resolvePush('reached')
+    resolvePush()
 
     await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
-  })
-
-  it('reports the push outcome to syncStatus', async () => {
-    mockPushPendingChanges.mockResolvedValue('unreachable')
-
-    pushNow()
-
-    await vi.waitFor(() => expect(mockReportPushOutcome).toHaveBeenCalledWith('unreachable'))
   })
 })
 

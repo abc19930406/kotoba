@@ -1,6 +1,6 @@
 import { supabase } from '../db/supabase.ts'
 import { pushPendingChanges } from '../db/syncPush.ts'
-import { setSyncing, refreshPendingCount, reportPushOutcome } from './syncStatus.ts'
+import { setSyncing, refreshPendingCount } from './syncStatus.ts'
 
 const DEBOUNCE_MS = 5000
 
@@ -13,8 +13,7 @@ async function runPush(): Promise<void> {
   pushing = true
   setSyncing(true)
   try {
-    const outcome = await pushPendingChanges()
-    reportPushOutcome(outcome)
+    await pushPendingChanges()
   } finally {
     pushing = false
     setSyncing(false)

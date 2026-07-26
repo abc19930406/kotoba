@@ -15,7 +15,7 @@ describe('pushPendingChanges (Supabase not configured)', () => {
   it('resolves without throwing and leaves the queue untouched', async () => {
     await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
 
-    await expect(pushPendingChanges()).resolves.toBe('no-op')
+    await expect(pushPendingChanges()).resolves.toBeUndefined()
 
     expect(await db.syncQueue.count()).toBe(1)
   })

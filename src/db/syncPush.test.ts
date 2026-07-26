@@ -58,9 +58,8 @@ describe('pushPendingChanges — not logged in', () => {
     await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
     mockGetSession.mockResolvedValue({ data: { session: null } })
 
-    const outcome = await pushPendingChanges()
+    await pushPendingChanges()
 
-    expect(outcome).toBe('no-op')
     expect(mockFrom).not.toHaveBeenCalled()
     expect(await db.syncQueue.count()).toBe(1)
   })
@@ -72,9 +71,8 @@ describe('pushPendingChanges — upsert success', () => {
     const queuedAt = new Date('2026-01-02T03:04:05Z')
     await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt })
 
-    const outcome = await pushPendingChanges()
+    await pushPendingChanges()
 
-    expect(outcome).toBe('reached')
     expect(mockUpsert).toHaveBeenCalledTimes(1)
     const [table, rows, opts] = mockUpsert.mock.calls[0]!
     expect(table).toBe('kotoba_cards')
@@ -138,42 +136,39 @@ describe('pushPendingChanges — upsert success', () => {
 })
 
 describe('pushPendingChanges — failure', () => {
-  it('leaves the queue entry when the API call throws, and reports the outcome as unreachable', async () => {
+  it('leaves the queue entry when the API call throws', async () => {
     await seedCard()
     await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
     mockUpsert.mockRejectedValue(new Error('network down'))
 
-    const outcome = await pushPendingChanges()
+    await expect(pushPendingChanges()).resolves.toBeUndefined()
 
-    expect(outcome).toBe('unreachable')
     expect(await db.syncQueue.count()).toBe(1)
   })
 
-  it('leaves the queue entry when the API returns an error object, but still reports reached (the call did get a response)', async () => {
+  it('leaves the queue entry when the API returns an error object', async () => {
     await seedCard()
     await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() })
     mockUpsert.mockResolvedValue({ error: { message: 'rejected' } })
 
-    const outcome = await pushPendingChanges()
+    await pushPendingChanges()
 
-    expect(outcome).toBe('reached')
     expect(await db.syncQueue.count()).toBe(1)
   })
 
-  it('reports unreachable overall when every table fails to connect, but reached when at least one does', async () => {
+  it('a failure in one table does not block other tables from pushing', async () => {
     await seedCard()
     await db.notes.put({ itemType: 'vocab', itemId: 'v1', text: '筆記', updatedAt: new Date() })
     await db.syncQueue.bulkAdd([
       { table: 'cards', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() },
       { table: 'notes', key: 'vocab:v1', op: 'upsert', queuedAt: new Date() },
     ])
-    mockUpsert.mockRejectedValue(new Error('network down'))
+    mockUpsert.mockImplementation(async (table) => (table === 'kotoba_cards' ? Promise.reject(new Error('down')) : { error: null }))
 
-    expect(await pushPendingChanges()).toBe('unreachable')
+    await pushPendingChanges()
 
-    // One of the two tables now connects — overall outcome flips to reached.
-    mockUpsert.mockImplementation(async (table) => (table === 'kotoba_cards' ? { error: null } : Promise.reject(new Error('still down'))))
-    expect(await pushPendingChanges()).toBe('reached')
+    const remaining = await db.syncQueue.toArray()
+    expect(remaining).toEqual([expect.objectContaining({ table: 'cards' })])
   })
 })
 

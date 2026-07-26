@@ -136,20 +136,6 @@ function coalesce(entries: SyncQueueRecord[]): Group[] {
 }
 
 /**
- * Whether pushPendingChanges() actually made network contact with Supabase —
- * distinct from whether every individual upsert/delete succeeded. Used by
- * src/shared/syncStatus.ts as a fallback offline signal alongside
- * navigator.onLine (which isn't reliable everywhere, notably iOS Safari):
- * - 'no-op': nothing to push, or not logged in/configured — no attempt made,
- *   so this tells us nothing about connectivity either way
- * - 'reached': at least one call got a response from the server (even if
- *   that response was an application-level error) — we're online
- * - 'unreachable': every attempted call failed before getting a response
- *   (the fetch itself rejected) — looks like we're offline
- */
-export type PushOutcome = 'no-op' | 'reached' | 'unreachable'
-
-/**
  * Pushes everything in the outbox to Supabase. Silently no-ops when not
  * logged in / not configured / offline — this is the only entry point that
  * touches `kotoba_*` tables, and it only ever reads local tables and deletes
@@ -157,13 +143,13 @@ export type PushOutcome = 'no-op' | 'reached' | 'unreachable'
  * queuedItems/notes/standaloneNotes/settings — that's the whole reason local
  * data can't be altered by a push, structurally, not by a runtime check.
  */
-export async function pushPendingChanges(): Promise<PushOutcome> {
-  if (!supabase) return 'no-op'
+export async function pushPendingChanges(): Promise<void> {
+  if (!supabase) return
   const { data } = await supabase.auth.getSession()
-  if (!data.session) return 'no-op'
+  if (!data.session) return
 
   const entries = await db.syncQueue.toArray()
-  if (entries.length === 0) return 'no-op'
+  if (entries.length === 0) return
 
   const byTable = new Map<SyncTable, Group[]>()
   for (const group of coalesce(entries)) {
@@ -171,9 +157,6 @@ export async function pushPendingChanges(): Promise<PushOutcome> {
     list.push(group)
     byTable.set(group.table, list)
   }
-
-  let attempted = false
-  let reached = false
 
   for (const [table, groups] of byTable) {
     const upsertGroups = groups.filter((g) => g.op === 'upsert')
@@ -185,11 +168,7 @@ export async function pushPendingChanges(): Promise<PushOutcome> {
           await Promise.all(upsertGroups.map((g) => buildUpsertRow(table, g.key, g.queuedAt.toISOString())))
         ).filter((row): row is Record<string, unknown> => row !== null)
         if (rows.length > 0) {
-          attempted = true
           const { error } = await supabase.from(CLOUD_TABLE[table]).upsert(rows, { onConflict: ON_CONFLICT[table] })
-          // Reaching this line means the call resolved — the fetch itself
-          // succeeded, whether or not Supabase reported an application error.
-          reached = true
           if (error) throw error
         }
         const clearedIds = upsertGroups.flatMap((g) => g.entryIds)
@@ -200,10 +179,8 @@ export async function pushPendingChanges(): Promise<PushOutcome> {
     }
 
     for (const group of deleteGroups) {
-      attempted = true
       try {
         const { error } = await supabase.from(CLOUD_TABLE[table]).delete().match(deleteMatch(table, group.key))
-        reached = true
         if (error) throw error
         await db.syncQueue.bulkDelete(group.entryIds)
       } catch {
@@ -211,7 +188,4 @@ export async function pushPendingChanges(): Promise<PushOutcome> {
       }
     }
   }
-
-  if (!attempted) return 'no-op'
-  return reached ? 'reached' : 'unreachable'
 }
