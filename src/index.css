@@ -1420,8 +1420,14 @@ button {
 .auth-setting {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
   font-size: 0.875rem;
+}
+
+.sync-status {
+  font-size: 0.8125rem;
+  opacity: 0.6;
 }
 
 .login-form {

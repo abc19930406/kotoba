@@ -37,6 +37,14 @@ vi.mock('./db/supabase.ts', () => ({
   },
 }))
 
+// initSyncEngine() (called from App.tsx on mount) otherwise fires a real 5s
+// debounce timer on every write made during these tests — irrelevant here.
+vi.mock('./shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 const { default: App } = await import('./App.tsx')
 
 function dispatchPop(depth: number) {
@@ -48,6 +56,7 @@ beforeEach(async () => {
   await db.reviewLogs.clear()
   await db.settings.clear()
   await db.queuedItems.clear()
+  await db.syncQueue.clear()
   resetBackStackForTests()
 })
 

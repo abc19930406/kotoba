@@ -4,6 +4,14 @@ import { db } from './schema.ts'
 import { gradeItem, getCard } from './cards.ts'
 import { getNote, saveNoteText, addNoteImage, removeNoteImage, deleteNote } from './notes.ts'
 
+// enqueueSync's scheduleSyncPush() side effect fires a real 5s debounce timer
+// otherwise — irrelevant to these tests and would leave a dangling timer.
+vi.mock('../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 function makeBlob(byte: number): Blob {
   return new Blob([new Uint8Array([byte])], { type: 'image/jpeg' })
 }
@@ -15,6 +23,7 @@ beforeEach(async () => {
   await db.queuedItems.clear()
   await db.notes.clear()
   await db.noteImages.clear()
+  await db.syncQueue.clear()
 })
 
 describe('getNote', () => {
@@ -124,6 +133,33 @@ describe('navigator.storage.persist() best-effort request', () => {
 
     await expect(addNoteImage('vocab', 'v2', makeBlob(1))).resolves.toEqual({ ok: true })
     expect(persist).toHaveBeenCalled()
+  })
+})
+
+describe('sync queue', () => {
+  it('saveNoteText enqueues a notes upsert', async () => {
+    await saveNoteText('vocab', 'v1', 'hello')
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual(expect.arrayContaining([expect.objectContaining({ table: 'notes', key: 'vocab:v1', op: 'upsert' })]))
+  })
+
+  it('addNoteImage enqueues a notes upsert only when it creates a new note row', async () => {
+    await addNoteImage('vocab', 'v1', makeBlob(1))
+    expect(await db.syncQueue.where('table').equals('notes').count()).toBe(1)
+
+    await db.syncQueue.clear()
+    await addNoteImage('vocab', 'v1', makeBlob(2)) // note already exists — no text change, no enqueue
+    expect(await db.syncQueue.where('table').equals('notes').count()).toBe(0)
+  })
+
+  it('deleteNote enqueues a notes delete', async () => {
+    await saveNoteText('vocab', 'v1', 'delete me')
+    await db.syncQueue.clear()
+
+    await deleteNote('vocab', 'v1')
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual(expect.arrayContaining([expect.objectContaining({ table: 'notes', key: 'vocab:v1', op: 'delete' })]))
   })
 })
 

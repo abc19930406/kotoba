@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { Rating, State } from 'ts-fsrs'
 import { db } from './schema.ts'
 import {
@@ -26,11 +26,20 @@ import {
   DEFAULT_SPEECH_RATE,
 } from './cards.ts'
 
+// enqueueSync's scheduleSyncPush() side effect fires a real 5s debounce timer
+// otherwise — irrelevant to these tests and would leave a dangling timer.
+vi.mock('../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 beforeEach(async () => {
   await db.cards.clear()
   await db.reviewLogs.clear()
   await db.settings.clear()
   await db.queuedItems.clear()
+  await db.syncQueue.clear()
 })
 
 describe('gradeItem', () => {
@@ -346,5 +355,87 @@ describe('speech rate setting', () => {
 
     await setSpeechRate('standard')
     expect(await getSpeechRate()).toBe('standard')
+  })
+})
+
+describe('sync queue', () => {
+  it('gradeItem enqueues cards + reviewLogs upserts and a queuedItems delete', async () => {
+    await addToReviewQueue('vocab', 'v1', 'N5')
+    await db.syncQueue.clear()
+
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date())
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ table: 'cards', key: 'vocab:v1', op: 'upsert' }),
+        expect.objectContaining({ table: 'queuedItems', key: 'vocab:v1', op: 'delete' }),
+      ]),
+    )
+    const reviewLogEntry = rows.find((r) => r.table === 'reviewLogs')
+    expect(reviewLogEntry?.op).toBe('upsert')
+    const savedLog = await db.reviewLogs.where('remoteId').equals(reviewLogEntry!.key).first()
+    expect(savedLog).toBeDefined()
+  })
+
+  it('suspendCard on an existing card enqueues a cards upsert', async () => {
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date())
+    await db.syncQueue.clear()
+
+    await suspendCard('vocab', 'v1', 'N5')
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual([expect.objectContaining({ table: 'cards', key: 'vocab:v1', op: 'upsert' })])
+  })
+
+  it('suspendCard on a never-reviewed queued item enqueues cards upsert + queuedItems delete', async () => {
+    await addToReviewQueue('vocab', 'v1', 'N5')
+    await db.syncQueue.clear()
+
+    await suspendCard('vocab', 'v1', 'N5')
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ table: 'cards', key: 'vocab:v1', op: 'upsert' }),
+        expect.objectContaining({ table: 'queuedItems', key: 'vocab:v1', op: 'delete' }),
+      ]),
+    )
+  })
+
+  it('resumeCard enqueues a cards upsert', async () => {
+    await gradeItem('vocab', 'v1', 'N5', Rating.Good, new Date())
+    await suspendCard('vocab', 'v1', 'N5')
+    await db.syncQueue.clear()
+
+    await resumeCard('vocab', 'v1')
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual([expect.objectContaining({ table: 'cards', key: 'vocab:v1', op: 'upsert' })])
+  })
+
+  it('addToReviewQueue enqueues a queuedItems upsert', async () => {
+    await addToReviewQueue('vocab', 'v1', 'N5')
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual([expect.objectContaining({ table: 'queuedItems', key: 'vocab:v1', op: 'upsert' })])
+  })
+
+  it('addManyToReviewQueue enqueues one queuedItems upsert per newly added item', async () => {
+    const added = await addManyToReviewQueue([
+      { itemType: 'vocab', itemId: 'v1', level: 'N5' },
+      { itemType: 'vocab', itemId: 'v2', level: 'N5' },
+    ])
+    expect(added).toBe(2)
+    const rows = await db.syncQueue.where('table').equals('queuedItems').toArray()
+    expect(rows.map((r) => r.key).sort()).toEqual(['vocab:v1', 'vocab:v2'])
+  })
+
+  it('each settings setter enqueues a settings upsert keyed by its own setting key', async () => {
+    await setCurrentLevel('N4')
+    await setTheme('dark')
+    await setSpeechRate('fast')
+
+    const rows = await db.syncQueue.where('table').equals('settings').toArray()
+    expect(rows.map((r) => r.key).sort()).toEqual(['currentLevel', 'speechRate', 'theme'])
   })
 })

@@ -31,6 +31,8 @@ export interface CardRecord {
 /** Mirrors ts-fsrs's `ReviewLog` shape, one row per grading event. */
 export interface ReviewLogRecord {
   id?: number
+  /** Client-generated at creation — this row's primary key in kotoba_review_logs (Phase C2). Local `id` is a per-device auto-increment and would collide across devices, so sync keys off this instead. */
+  remoteId: string
   itemId: string
   itemType: ItemType
   rating: number
@@ -86,6 +88,8 @@ export interface NoteImageRecord {
 /** A standalone note (not tied to any vocab/grammar item) — a plain notebook entry. Images share the same `noteImages` table via the `standalone:{id}` noteKey namespace (see src/db/noteImages.ts). */
 export interface StandaloneNoteRecord {
   id?: number
+  /** Client-generated at creation — this row's primary key in kotoba_standalone_notes (Phase C2). Same rationale as ReviewLogRecord.remoteId. */
+  remoteId: string
   title: string
   text: string
   updatedAt: Date
@@ -109,6 +113,25 @@ export interface DailyMaterialCacheRecord {
   createdAt: Date
 }
 
+/** The six tables that push to Supabase (Phase C3a) — noteImages/dailyMaterialCache are excluded (image sync is C4; cache is regeneratable). */
+export type SyncTable = 'cards' | 'reviewLogs' | 'queuedItems' | 'notes' | 'standaloneNotes' | 'settings'
+
+/**
+ * Outbox entry: "this (table, key) needs an upsert or delete pushed to
+ * Supabase." `key` is always the row's *remote* primary key shape (not
+ * necessarily its local one) — see src/db/syncQueue.ts for the encoding per
+ * table. Deliberately not a `dirty` flag per table: deletes need something to
+ * survive the local row being gone, which a flag on the row itself can't do.
+ */
+export interface SyncQueueRecord {
+  id?: number
+  table: SyncTable
+  key: string
+  op: 'upsert' | 'delete'
+  /** When this local mutation happened — pushed as kotoba_*.updated_at. */
+  queuedAt: Date
+}
+
 export class KotobaDB extends Dexie {
   cards!: Table<CardRecord, [ItemType, string]>
   reviewLogs!: Table<ReviewLogRecord, number>
@@ -118,6 +141,7 @@ export class KotobaDB extends Dexie {
   noteImages!: Table<NoteImageRecord, number>
   standaloneNotes!: Table<StandaloneNoteRecord, number>
   dailyMaterialCache!: Table<DailyMaterialCacheRecord, string>
+  syncQueue!: Table<SyncQueueRecord, number>
 
   constructor() {
     super('kotoba')
@@ -173,6 +197,54 @@ export class KotobaDB extends Dexie {
       standaloneNotes: '++id, updatedAt',
       dailyMaterialCache: 'dateLevel',
     })
+    // Phase C3a: adds the sync outbox + remoteId on the two tables whose
+    // local primary key is a per-device auto-increment integer (cards/
+    // queuedItems/notes already have a stable composite key and need none).
+    this.version(7)
+      .stores({
+        cards: '[itemType+itemId], due, state',
+        reviewLogs: '++id, [itemType+itemId], review, remoteId',
+        settings: 'key',
+        queuedItems: '[itemType+itemId], addedAt',
+        notes: '[itemType+itemId]',
+        noteImages: '++id, noteKey',
+        standaloneNotes: '++id, updatedAt, remoteId',
+        dailyMaterialCache: 'dateLevel',
+        syncQueue: '++id, table, key',
+      })
+      .upgrade(async (tx) => {
+        // Backfill remoteId on pre-existing rows of the two uuid-keyed tables.
+        await tx
+          .table<ReviewLogRecord, number>('reviewLogs')
+          .toCollection()
+          .modify((row) => {
+            row.remoteId = crypto.randomUUID()
+          })
+        await tx
+          .table<StandaloneNoteRecord, number>('standaloneNotes')
+          .toCollection()
+          .modify((row) => {
+            row.remoteId = crypto.randomUUID()
+          })
+
+        // Enqueue every existing row across all six syncable tables — without
+        // this, only *future* writes would ever get queued, and pre-existing
+        // local data from Phases 2–10 would never sync after login.
+        const keyOfComposite = (row: { itemType: ItemType; itemId: string }) => `${row.itemType}:${row.itemId}`
+        const enqueueAll = async (table: SyncTable, keyOf: (row: unknown) => string) => {
+          const rows = await tx.table(table).toArray()
+          const now = new Date()
+          for (const row of rows) {
+            await tx.table<SyncQueueRecord, number>('syncQueue').add({ table, key: keyOf(row), op: 'upsert', queuedAt: now })
+          }
+        }
+        await enqueueAll('cards', (row) => keyOfComposite(row as { itemType: ItemType; itemId: string }))
+        await enqueueAll('reviewLogs', (row) => (row as ReviewLogRecord).remoteId)
+        await enqueueAll('queuedItems', (row) => keyOfComposite(row as { itemType: ItemType; itemId: string }))
+        await enqueueAll('notes', (row) => keyOfComposite(row as { itemType: ItemType; itemId: string }))
+        await enqueueAll('standaloneNotes', (row) => (row as StandaloneNoteRecord).remoteId)
+        await enqueueAll('settings', (row) => (row as SettingRecord).key)
+      })
   }
 }
 
@@ -182,4 +254,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 6
+export const DB_SCHEMA_VERSION = 7

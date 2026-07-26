@@ -1,9 +1,17 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { db } from '../../db/schema.ts'
 import { resetBackStackForTests } from '../../shared/backStack.ts'
 import { getStandaloneNote } from '../../db/standaloneNotes.ts'
 import { NotebookEditorPage } from './NotebookEditorPage.tsx'
+
+// createStandaloneNote/updateStandaloneNote's enqueueSync() otherwise fires a
+// real 5s debounce timer — irrelevant to these tests.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
 
 beforeEach(async () => {
   await db.standaloneNotes.clear()

@@ -4,6 +4,14 @@ import { db } from '../../db/schema.ts'
 import { gradeItem, setDailyNewCardLimit, addToReviewQueue } from '../../db/cards.ts'
 import type { VocabEntry } from '../../shared/contentTypes.ts'
 
+// enqueueSync's scheduleSyncPush() side effect fires a real 5s debounce timer
+// otherwise — irrelevant to these tests and would leave a dangling timer.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 const mockN5Vocab: VocabEntry[] = Array.from({ length: 15 }, (_, i) => ({
   id: `n5-${i}`,
   level: 'N5',

@@ -1,5 +1,6 @@
 import { db, type ItemType, type NoteImageRecord } from './schema.ts'
 import { addNoteImageByKey, listNoteImages, removeNoteImage as removeNoteImageShared, deleteNoteImagesByKey, requestPersistentStorage, type AddImageResult } from './noteImages.ts'
+import { enqueueSync, compositeKey } from './syncQueue.ts'
 
 function noteKeyOf(itemType: ItemType, itemId: string): string {
   return `${itemType}:${itemId}`
@@ -20,7 +21,10 @@ export async function getNote(itemType: ItemType, itemId: string): Promise<NoteW
 
 export async function saveNoteText(itemType: ItemType, itemId: string, text: string): Promise<void> {
   const existing = await db.notes.get([itemType, itemId])
-  await db.notes.put({ itemType, itemId, text, updatedAt: new Date() })
+  await db.transaction('rw', db.notes, db.syncQueue, async () => {
+    await db.notes.put({ itemType, itemId, text, updatedAt: new Date() })
+    await enqueueSync('notes', compositeKey(itemType, itemId), 'upsert')
+  })
   if (!existing) await requestPersistentStorage()
 }
 
@@ -28,9 +32,10 @@ export type { AddImageResult }
 
 export async function addNoteImage(itemType: ItemType, itemId: string, blob: Blob): Promise<AddImageResult> {
   const existingNote = await db.notes.get([itemType, itemId])
-  const result = await db.transaction('rw', db.notes, db.noteImages, async () => {
+  const result = await db.transaction('rw', db.notes, db.noteImages, db.syncQueue, async () => {
     if (!existingNote) {
       await db.notes.put({ itemType, itemId, text: '', updatedAt: new Date() })
+      await enqueueSync('notes', compositeKey(itemType, itemId), 'upsert')
     }
     return addNoteImageByKey(noteKeyOf(itemType, itemId), blob)
   })
@@ -42,8 +47,9 @@ export const removeNoteImage = removeNoteImageShared
 
 export async function deleteNote(itemType: ItemType, itemId: string): Promise<void> {
   const noteKey = noteKeyOf(itemType, itemId)
-  await db.transaction('rw', db.notes, db.noteImages, async () => {
+  await db.transaction('rw', db.notes, db.noteImages, db.syncQueue, async () => {
     await db.notes.delete([itemType, itemId])
+    await enqueueSync('notes', compositeKey(itemType, itemId), 'delete')
     await deleteNoteImagesByKey(noteKey)
   })
 }

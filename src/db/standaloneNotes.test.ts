@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { db } from './schema.ts'
 import {
   listStandaloneNotes,
@@ -10,6 +10,14 @@ import {
   deleteStandaloneNote,
 } from './standaloneNotes.ts'
 
+// enqueueSync's scheduleSyncPush() side effect fires a real 5s debounce timer
+// otherwise — irrelevant to these tests and would leave a dangling timer.
+vi.mock('../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 function makeBlob(byte: number): Blob {
   return new Blob([new Uint8Array([byte])], { type: 'image/jpeg' })
 }
@@ -17,6 +25,7 @@ function makeBlob(byte: number): Blob {
 beforeEach(async () => {
   await db.standaloneNotes.clear()
   await db.noteImages.clear()
+  await db.syncQueue.clear()
 })
 
 describe('createStandaloneNote / getStandaloneNote', () => {
@@ -121,5 +130,39 @@ describe('deleteStandaloneNote', () => {
     const kept = await getStandaloneNote(id2)
     expect(kept?.title).toBe('要保留')
     expect(kept?.images).toHaveLength(1)
+  })
+})
+
+describe('sync queue', () => {
+  it('createStandaloneNote assigns a remoteId and enqueues an upsert keyed by it', async () => {
+    const id = await createStandaloneNote('標題', '內文')
+    const saved = await db.standaloneNotes.get(id)
+    expect(saved?.remoteId).toEqual(expect.any(String))
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual([expect.objectContaining({ table: 'standaloneNotes', key: saved!.remoteId, op: 'upsert' })])
+  })
+
+  it('updateStandaloneNote reuses the same remoteId across edits', async () => {
+    const id = await createStandaloneNote('標題', '內文')
+    const remoteId = (await db.standaloneNotes.get(id))!.remoteId
+    await db.syncQueue.clear()
+
+    await updateStandaloneNote(id, '新標題', '新內文')
+
+    expect((await db.standaloneNotes.get(id))!.remoteId).toBe(remoteId)
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual([expect.objectContaining({ table: 'standaloneNotes', key: remoteId, op: 'upsert' })])
+  })
+
+  it('deleteStandaloneNote enqueues a delete keyed by the remoteId it had before deletion', async () => {
+    const id = await createStandaloneNote('要刪除', '')
+    const remoteId = (await db.standaloneNotes.get(id))!.remoteId
+    await db.syncQueue.clear()
+
+    await deleteStandaloneNote(id)
+
+    const rows = await db.syncQueue.toArray()
+    expect(rows).toEqual([expect.objectContaining({ table: 'standaloneNotes', key: remoteId, op: 'delete' })])
   })
 })

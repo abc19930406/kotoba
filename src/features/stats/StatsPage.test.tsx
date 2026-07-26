@@ -4,6 +4,14 @@ import { Rating } from 'ts-fsrs'
 import { db } from '../../db/schema.ts'
 import { gradeItem, suspendCard } from '../../db/cards.ts'
 
+// gradeItem/suspendCard's enqueueSync() otherwise fires a real 5s debounce
+// timer — irrelevant to these tests.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 vi.mock('../../shared/contentLoader.ts', () => ({
   loadContentIndex: vi.fn(async () => ({
     vocab: [

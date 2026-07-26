@@ -12,6 +12,7 @@ import { LoginPage } from './features/auth/LoginPage.tsx'
 import { getTheme, setTheme, DEFAULT_THEME } from './db/cards.ts'
 import { applyTheme, type ThemePreference } from './shared/theme.ts'
 import { pushLayer, goBack } from './shared/backStack.ts'
+import { initSyncEngine } from './shared/syncEngine.ts'
 
 type View = 'home' | 'review' | 'vocab' | 'grammar' | 'suspended' | 'about' | 'stats' | 'notebook' | 'daily' | 'login'
 
@@ -21,6 +22,10 @@ function App() {
 
   useEffect(() => {
     getTheme().then(setThemeState)
+  }, [])
+
+  useEffect(() => {
+    initSyncEngine()
   }, [])
 
   useEffect(() => {

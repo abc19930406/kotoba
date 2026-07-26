@@ -7,6 +7,13 @@ import { saveCachedMaterial } from '../../db/dailyMaterialCache.ts'
 import { buildDailyPackage } from '../../db/dailyPackage.ts'
 import type { VocabEntry, GrammarEntry } from '../../shared/contentTypes.ts'
 
+// setCurrentLevel's enqueueSync() otherwise fires a real 5s debounce timer.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 const mockNewVocab: VocabEntry[] = [
   {
     id: 'v0',

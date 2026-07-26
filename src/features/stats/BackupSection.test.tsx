@@ -7,6 +7,14 @@ import { exportBackup } from '../../db/backup.ts'
 import { resetBackStackForTests } from '../../shared/backStack.ts'
 import { BackupSection } from './BackupSection.tsx'
 
+// gradeItem/setDailyNewCardLimit's enqueueSync() otherwise fires a real 5s
+// debounce timer — irrelevant to these tests.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 function dispatchPop(depth: number) {
   window.dispatchEvent(new PopStateEvent('popstate', { state: { depth } }))
 }

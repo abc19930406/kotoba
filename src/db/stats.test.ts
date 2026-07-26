@@ -1,8 +1,16 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { db } from './schema.ts'
 import { gradeItem, suspendCard } from './cards.ts'
 import { Rating } from 'ts-fsrs'
 import { getDailyReviewCounts, getLevelProgress, getStreakDays } from './stats.ts'
+
+// enqueueSync's scheduleSyncPush() side effect fires a real 5s debounce timer
+// otherwise — irrelevant to these tests and would leave a dangling timer.
+vi.mock('../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  pushNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
 
 beforeEach(async () => {
   await db.cards.clear()

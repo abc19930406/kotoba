@@ -18,6 +18,7 @@ import type { ThemePreference } from '../../shared/theme.ts'
 import { useSpeechAvailable, setSpeechRatePreset, type SpeechRatePreset } from '../../shared/speech.ts'
 import { getDailyPasscode, setDailyPasscode } from '../../shared/dailyPasscode.ts'
 import { useAuthSession } from '../../shared/authSession.ts'
+import { useSyncStatus, type SyncStatus } from '../../shared/syncStatus.ts'
 import { supabase } from '../../db/supabase.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
@@ -35,6 +36,19 @@ interface HomePageProps {
   onThemeChange: (theme: ThemePreference) => void
 }
 
+function syncStatusLabel(status: SyncStatus): string {
+  switch (status.kind) {
+    case 'syncing':
+      return '同步中…'
+    case 'pending':
+      return `${status.count} 筆待同步`
+    case 'offline':
+      return '離線'
+    case 'synced':
+      return '已同步'
+  }
+}
+
 export function HomePage({
   onStartReview,
   onBrowseVocab,
@@ -49,6 +63,7 @@ export function HomePage({
   onThemeChange,
 }: HomePageProps) {
   const session = useAuthSession()
+  const syncStatus = useSyncStatus()
   const [stats, setStats] = useState<HomeReviewStats | null>(null)
   const [dailyLimit, setDailyLimitState] = useState(DEFAULT_DAILY_NEW_CARD_LIMIT)
   const [currentLevel, setCurrentLevelState] = useState<JlptLevel>(DEFAULT_CURRENT_LEVEL)
@@ -213,6 +228,7 @@ export function HomePage({
             <button type="button" className="suspended-list-link" onClick={handleLogout}>
               登出
             </button>
+            <p className="sync-status">{syncStatusLabel(syncStatus)}</p>
           </>
         ) : (
           <button type="button" className="suspended-list-link" onClick={onOpenLogin}>

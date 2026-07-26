@@ -22,6 +22,11 @@ const cardRecordSchema = z.object({
 
 const reviewLogRecordSchema = z.object({
   id: z.number().optional(),
+  // .default(...) covers importing a pre-Phase-C3a backup that predates this
+  // field — each row missing it gets its own fresh id (the function is
+  // re-invoked per row), not one shared value; a backup that already has it
+  // keeps its original id so re-importing doesn't orphan already-synced rows.
+  remoteId: z.string().default(() => crypto.randomUUID()),
   itemId: z.string(),
   itemType: itemTypeSchema,
   rating: z.number(),
@@ -65,6 +70,8 @@ const noteImageRecordSchema = z.object({
 
 const standaloneNoteRecordSchema = z.object({
   id: z.number().optional(),
+  // Same rationale as reviewLogRecordSchema.remoteId above.
+  remoteId: z.string().default(() => crypto.randomUUID()),
   title: z.string(),
   text: z.string(),
   updatedAt: z.coerce.date(),

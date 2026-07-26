@@ -3,6 +3,7 @@ import { db, type CardRecord, type ItemType, type QueuedItemRecord } from './sch
 import { LEVEL_ORDER, LEVEL_TO_DIFFICULTY, type JlptLevel } from '../shared/contentTypes.ts'
 import type { ThemePreference } from '../shared/theme.ts'
 import type { SpeechRatePreset } from '../shared/speech.ts'
+import { enqueueSync, compositeKey } from './syncQueue.ts'
 
 export const scheduler = fsrs()
 
@@ -78,7 +79,10 @@ export async function addToReviewQueue(
   now: Date = new Date(),
 ): Promise<void> {
   if (await isInReviewQueueOrCards(itemType, itemId)) return
-  await db.queuedItems.put({ itemType, itemId, level, addedAt: now })
+  await db.transaction('rw', db.queuedItems, db.syncQueue, async () => {
+    await db.queuedItems.put({ itemType, itemId, level, addedAt: now })
+    await enqueueSync('queuedItems', compositeKey(itemType, itemId), 'upsert')
+  })
 }
 
 /** Manually-queued candidates awaiting their first review, oldest first, up to `limit`. */
@@ -129,10 +133,12 @@ export async function getItemStatuses(itemType: ItemType): Promise<Map<string, I
  * excluded going forward, without writing a reviewLog entry.
  */
 export async function suspendCard(itemType: ItemType, itemId: string, level: JlptLevel, now: Date = new Date()): Promise<void> {
-  await db.transaction('rw', db.cards, db.queuedItems, async () => {
+  await db.transaction('rw', db.cards, db.queuedItems, db.syncQueue, async () => {
     const existing = await getCard(itemType, itemId)
+    const key = compositeKey(itemType, itemId)
     if (existing) {
       await db.cards.update([itemType, itemId], { suspended: true })
+      await enqueueSync('cards', key, 'upsert')
       return
     }
     const empty = createEmptyCard(now)
@@ -152,14 +158,19 @@ export async function suspendCard(itemType: ItemType, itemId: string, level: Jlp
       last_review: empty.last_review,
       suspended: true,
     })
+    await enqueueSync('cards', key, 'upsert')
     // Was queued but never reviewed — it now has a real card row instead.
     await db.queuedItems.delete([itemType, itemId])
+    await enqueueSync('queuedItems', key, 'delete')
   })
 }
 
 /** Reverses suspendCard — the card resumes its existing schedule, not a fresh one. */
 export async function resumeCard(itemType: ItemType, itemId: string): Promise<void> {
-  await db.cards.update([itemType, itemId], { suspended: false })
+  await db.transaction('rw', db.cards, db.syncQueue, async () => {
+    await db.cards.update([itemType, itemId], { suspended: false })
+    await enqueueSync('cards', compositeKey(itemType, itemId), 'upsert')
+  })
 }
 
 /** All suspended cards ("已熟悉清單"), across both item types. */
@@ -181,11 +192,12 @@ export async function addManyToReviewQueue(
   now: Date = new Date(),
 ): Promise<number> {
   let added = 0
-  await db.transaction('rw', db.cards, db.queuedItems, async () => {
+  await db.transaction('rw', db.cards, db.queuedItems, db.syncQueue, async () => {
     for (const item of items) {
       const alreadyAdded = await isInReviewQueueOrCards(item.itemType, item.itemId)
       if (alreadyAdded) continue
       await db.queuedItems.put({ itemType: item.itemType, itemId: item.itemId, level: item.level, addedAt: now })
+      await enqueueSync('queuedItems', compositeKey(item.itemType, item.itemId), 'upsert')
       added++
     }
   })
@@ -223,7 +235,10 @@ export async function getDailyNewCardLimit(): Promise<number> {
 }
 
 export async function setDailyNewCardLimit(value: number): Promise<void> {
-  await db.settings.put({ key: DAILY_NEW_CARD_LIMIT_KEY, value })
+  await db.transaction('rw', db.settings, db.syncQueue, async () => {
+    await db.settings.put({ key: DAILY_NEW_CARD_LIMIT_KEY, value })
+    await enqueueSync('settings', DAILY_NEW_CARD_LIMIT_KEY, 'upsert')
+  })
 }
 
 /**
@@ -238,7 +253,10 @@ export async function getCurrentLevel(): Promise<JlptLevel> {
 }
 
 export async function setCurrentLevel(level: JlptLevel): Promise<void> {
-  await db.settings.put({ key: CURRENT_LEVEL_KEY, value: LEVEL_TO_DIFFICULTY[level] })
+  await db.transaction('rw', db.settings, db.syncQueue, async () => {
+    await db.settings.put({ key: CURRENT_LEVEL_KEY, value: LEVEL_TO_DIFFICULTY[level] })
+    await enqueueSync('settings', CURRENT_LEVEL_KEY, 'upsert')
+  })
 }
 
 /** Global "例句顯示假名注音" toggle, default on. Encoded as 1/0 to fit the `settings` table's `value: number` shape. */
@@ -248,7 +266,10 @@ export async function getShowFurigana(): Promise<boolean> {
 }
 
 export async function setShowFurigana(value: boolean): Promise<void> {
-  await db.settings.put({ key: SHOW_FURIGANA_KEY, value: value ? 1 : 0 })
+  await db.transaction('rw', db.settings, db.syncQueue, async () => {
+    await db.settings.put({ key: SHOW_FURIGANA_KEY, value: value ? 1 : 0 })
+    await enqueueSync('settings', SHOW_FURIGANA_KEY, 'upsert')
+  })
 }
 
 /** Global appearance setting (跟隨系統/淺色/深色), default 跟隨系統. Encoded as an index into THEME_VALUES to fit the `settings` table's `value: number` shape. */
@@ -258,7 +279,10 @@ export async function getTheme(): Promise<ThemePreference> {
 }
 
 export async function setTheme(value: ThemePreference): Promise<void> {
-  await db.settings.put({ key: THEME_KEY, value: THEME_VALUES.indexOf(value) })
+  await db.transaction('rw', db.settings, db.syncQueue, async () => {
+    await db.settings.put({ key: THEME_KEY, value: THEME_VALUES.indexOf(value) })
+    await enqueueSync('settings', THEME_KEY, 'upsert')
+  })
 }
 
 /** Global "發音語速" setting (慢/標準/快), default 標準. Encoded as an index into SPEECH_RATE_VALUES to fit the `settings` table's `value: number` shape. */
@@ -268,7 +292,10 @@ export async function getSpeechRate(): Promise<SpeechRatePreset> {
 }
 
 export async function setSpeechRate(value: SpeechRatePreset): Promise<void> {
-  await db.settings.put({ key: SPEECH_RATE_KEY, value: SPEECH_RATE_VALUES.indexOf(value) })
+  await db.transaction('rw', db.settings, db.syncQueue, async () => {
+    await db.settings.put({ key: SPEECH_RATE_KEY, value: SPEECH_RATE_VALUES.indexOf(value) })
+    await enqueueSync('settings', SPEECH_RATE_KEY, 'upsert')
+  })
 }
 
 /**
@@ -304,9 +331,14 @@ export async function gradeItem(
     suspended: existing?.suspended ?? false,
   }
 
-  await db.transaction('rw', db.cards, db.reviewLogs, db.queuedItems, async () => {
+  const key = compositeKey(itemType, itemId)
+  const reviewLogRemoteId = crypto.randomUUID()
+
+  await db.transaction('rw', db.cards, db.reviewLogs, db.queuedItems, db.syncQueue, async () => {
     await db.cards.put(record)
+    await enqueueSync('cards', key, 'upsert')
     await db.reviewLogs.add({
+      remoteId: reviewLogRemoteId,
       itemId,
       itemType,
       rating: log.rating,
@@ -318,8 +350,10 @@ export async function gradeItem(
       learning_steps: log.learning_steps,
       review: log.review,
     })
+    await enqueueSync('reviewLogs', reviewLogRemoteId, 'upsert')
     // No-op if it was never queued (e.g. auto-sourced from the N5 pool).
     await db.queuedItems.delete([itemType, itemId])
+    await enqueueSync('queuedItems', key, 'delete')
   })
 
   return record
