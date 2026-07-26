@@ -24,6 +24,19 @@ vi.mock('./shared/contentLoader.ts', () => ({
   loadContentIndex: vi.fn(async () => ({ vocab: [], grammar: [] })),
 }))
 
+// HomePage now touches the Supabase client for auth state — avoid
+// constructing a real one (which throws without VITE_SUPABASE_URL/ANON_KEY
+// configured in the test environment).
+vi.mock('./db/supabase.ts', () => ({
+  supabase: {
+    auth: {
+      getSession: vi.fn(async () => ({ data: { session: null } })),
+      onAuthStateChange: vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } })),
+      signOut: vi.fn(async () => ({ error: null })),
+    },
+  },
+}))
+
 const { default: App } = await import('./App.tsx')
 
 function dispatchPop(depth: number) {

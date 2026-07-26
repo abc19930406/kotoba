@@ -17,6 +17,8 @@ import { LEVEL_ORDER, type JlptLevel } from '../../shared/contentTypes.ts'
 import type { ThemePreference } from '../../shared/theme.ts'
 import { useSpeechAvailable, setSpeechRatePreset, type SpeechRatePreset } from '../../shared/speech.ts'
 import { getDailyPasscode, setDailyPasscode } from '../../shared/dailyPasscode.ts'
+import { useAuthSession } from '../../shared/authSession.ts'
+import { supabase } from '../../db/supabase.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
 interface HomePageProps {
@@ -28,6 +30,7 @@ interface HomePageProps {
   onOpenStats: () => void
   onOpenNotebook: () => void
   onOpenDaily: () => void
+  onOpenLogin: () => void
   theme: ThemePreference
   onThemeChange: (theme: ThemePreference) => void
 }
@@ -41,9 +44,11 @@ export function HomePage({
   onOpenStats,
   onOpenNotebook,
   onOpenDaily,
+  onOpenLogin,
   theme,
   onThemeChange,
 }: HomePageProps) {
+  const session = useAuthSession()
   const [stats, setStats] = useState<HomeReviewStats | null>(null)
   const [dailyLimit, setDailyLimitState] = useState(DEFAULT_DAILY_NEW_CARD_LIMIT)
   const [currentLevel, setCurrentLevelState] = useState<JlptLevel>(DEFAULT_CURRENT_LEVEL)
@@ -102,6 +107,10 @@ export function HomePage({
   function handleDailyPasscodeChange(value: string) {
     setDailyPasscode(value)
     setDailyPasscodeState(value)
+  }
+
+  async function handleLogout() {
+    await supabase?.auth.signOut()
   }
 
   const loaded = stats !== null
@@ -197,6 +206,20 @@ export function HomePage({
           onChange={(e) => handleDailyPasscodeChange(e.target.value)}
         />
       </label>
+      <div className="auth-setting">
+        {session ? (
+          <>
+            <p>已登入：{session.user.email}</p>
+            <button type="button" className="suspended-list-link" onClick={handleLogout}>
+              登出
+            </button>
+          </>
+        ) : (
+          <button type="button" className="suspended-list-link" onClick={onOpenLogin}>
+            登入
+          </button>
+        )}
+      </div>
       {loaded && stats.suspendedCount > 0 && (
         <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
           已熟悉清單（{stats.suspendedCount}）

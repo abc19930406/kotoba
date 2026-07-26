@@ -9,6 +9,7 @@
 - Vite + React 19 + TypeScript（strict mode）
 - SRS：`ts-fsrs`（不得自行實作排程演算法）
 - 使用者資料：IndexedDB via `dexie`
+- 帳密登入：`@supabase/supabase-js`（共用主站 Supabase 專案的 Auth；目前僅登入/登出，尚無資料同步）
 - 內容資料：建置期產出的靜態 JSON，位於 `public/data/`，按等級分塊
 - PWA：`vite-plugin-pwa`（Workbox）
 - 測試：Vitest + @testing-library/react

@@ -67,6 +67,17 @@
 - 文法解析引用句新增專屬繁中翻譯（`grammarNotes[].zh`，只譯該句非整篇節錄）
 - 快取版本號遞增至 `:v3`
 
+### ✅ Phase C0：雲端同步前置——資料規模盤點（2026-07-25）
+- 臨時 DEBUG 診斷工具（`src/features/debug/DataInventoryDebug.tsx`，掛在統計頁底部）：統計 7 張 IndexedDB 表筆數、`noteImages` 圖片總數/總大小/單張最大值、非圖片資料的 JSON 序列化大小估計
+- 純讀取顯示，不修改任何資料；程式碼集中單一檔案，之後易於整段移除
+- 為雲端同步方案與成本評估提供實測資料規模依據，本身不做任何同步邏輯
+
+### ✅ Phase C1：接主站 Supabase + 帳密登入（2026-07-26）
+- 安裝 `@supabase/supabase-js`，`src/db/supabase.ts` 建立 client，共用主站 Supabase 專案的 Auth（同一組帳密）
+- 登入頁（email/password → `signInWithPassword`）、`useAuthSession()` hook（`onAuthStateChange` 反應式更新）、首頁顯示登入 email + 登出按鈕
+- 本階段僅驗證 Auth 本身可用，**不接任何資料同步**——見下方架構決策 #7
+- **開發時發現並修正一個嚴重的離線優先違規**：`createClient()` 在環境變數缺漏時會同步拋錯，而 `src/db/supabase.ts` 原本在模組層級無條件呼叫它、又被首頁無條件 import，等於「只要沒設定 Supabase 環境變數，整個 app 一載入就白屏」——不只是登入功能失效，是所有功能全滅。修正為 `supabase: SupabaseClient | null`（環境變數缺任一個就是 `null`），`useAuthSession()`/`LoginPage.tsx`/`HomePage.tsx` 對應加上 null 防護，在 dev server 用今天實際尚未設定 `.env` 的環境驗證過修正前會崩潰、修正後不會
+
 ---
 
 ## 二、關鍵架構決策與理由
@@ -88,6 +99,9 @@
 
 6. **不自行實作 SRS 排程演算法**（CLAUDE.md 既定原則）
    `ts-fsrs` 是成熟函式庫，`gradeItem`/`toFsrsCard`/`scheduler.get_retrievability` 全部委派給它，本專案程式碼只負責資料存取與呼叫時機。
+
+7. **Auth 與資料同步分兩階段**（Phase C1）
+   先驗證登入本身可用（能登入、能登出、能記住登入狀態），資料同步邏輯留到後續 Phase 才做。避免一次把「離線優先」的核心承諾跟雲端依賴綁在一起——這次的改動已經證明了風險是真實的（見上方 Phase C1 條目：env var 缺漏一度會讓整個 app 崩潰），分階段能把每一步的風險範圍縮到最小、獨立驗證。
 
 ---
 
@@ -149,6 +163,8 @@
 |---|---|---|
 | `ANTHROPIC_API_KEY` | `api/daily-material.ts` 呼叫 Anthropic API | 僅 serverless function（後端），前端絕不可見 |
 | `DAILY_SECRET` | 每日教材通行碼比對（`X-Daily-Passcode` header） | 同上 |
+| `VITE_SUPABASE_URL` | Supabase 專案 URL（`src/db/supabase.ts` 建立 client 用） | 前端可見（Vite `VITE_` 前綴變數會被打包進前端 bundle，這是預期行為——Supabase anon key 本來就設計成可公開） |
+| `VITE_SUPABASE_ANON_KEY` | Supabase anon key | 同上 |
 
 三環境驗收規則（完整版見 CLAUDE.md 累積規則，此為摘要）：
 - **dev**（`npm run dev`）：本地 Vite dev server **無法執行 `api/*.ts`**（Vercel 專屬 serverless 環境），只能驗證離線可用的部分（本地組裝層、UI 狀態機、錯誤/降級路徑）
@@ -156,6 +172,12 @@
 - 涉及捲動/觸控/版面的修改，自我驗證須包含 DevTools 響應式模式並在回報中註明實際驗證環境（桌面／DevTools 模擬／真機）
 
 **IndexedDB 資料是網域鎖定的**——部署網域不得隨意更換，換網域等同使用者複習進度全部遺失（詳見 CLAUDE.md）。
+
+**連主站 Supabase**（Phase C1 起）：
+- 專案 ref：**TODO：待補**
+- Auth 與主站共用同一個 Supabase 專案——同一組 email/password 在 kotoba 與主站都能登入，kotoba 目前只用 Auth，不建立/讀寫任何資料表
+- 未來資料表命名慣例：`kotoba_` 前綴；RLS 走 `is_admin()`（沿用主站慣例）——這些是規格要求先寫下的未來意圖，Phase C1 尚未實作任何資料表或同步邏輯
+- `supabase` client（`src/db/supabase.ts`）在 `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` 任一缺漏時是 `null`（不會讓 app 崩潰），此時登入功能不可用但其餘既有功能不受影響——這是 offline-first 承諾的直接延伸，不只涵蓋離線，也涵蓋「雲端服務尚未設定/連不上」
 
 ---
 
