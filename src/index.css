@@ -1267,6 +1267,41 @@ button {
   height: auto;
 }
 
+.data-inventory-debug {
+  margin: 1.5rem 0 0;
+  padding: 0.75rem;
+  border: 1px dashed var(--warning-border);
+  border-radius: 8px;
+  background: var(--warning-tint-bg);
+}
+
+.data-inventory-debug h2 {
+  font-size: 0.9375rem;
+  margin: 0 0 0.5rem;
+}
+
+.data-inventory-debug h3 {
+  font-size: 0.875rem;
+  margin: 0.75rem 0 0.25rem;
+  opacity: 0.8;
+}
+
+.data-inventory-debug button {
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--warning-border);
+  background: none;
+  color: var(--text);
+  font-size: 0.9375rem;
+}
+
+.data-inventory-result ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+}
+
 .level-progress-group {
   margin: 0 0 1rem;
 }

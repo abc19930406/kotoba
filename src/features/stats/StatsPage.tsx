@@ -11,6 +11,7 @@ import {
 import { DailyReviewChart } from './DailyReviewChart.tsx'
 import { LevelProgressList } from './LevelProgressList.tsx'
 import { BackupSection } from './BackupSection.tsx'
+import { DataInventoryDebug } from '../debug/DataInventoryDebug.tsx'
 
 interface StatsPageProps {
   onBack: () => void
@@ -90,6 +91,7 @@ export function StatsPage({ onBack }: StatsPageProps) {
       )}
 
       <BackupSection />
+      <DataInventoryDebug />
     </div>
   )
 }
