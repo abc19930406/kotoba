@@ -6,7 +6,7 @@
 
 ---
 
-## 一、已完成階段（Phase 0–10.6）
+## 一、已完成階段（Phase 0–C3b）
 
 ### ✅ Phase 0 + 1：專案骨架 + 資料管線（2026-07-17）
 - Vite + React 18 + TypeScript strict PWA 骨架建立
@@ -85,6 +85,20 @@
 - **規劃階段的錯誤**：原本假設主站現成的 `public.is_admin()` helper function 存在，直接寫進 RLS policy——使用者實際執行時才發現這個函式根本不存在（文件推斷有誤）。改為 RLS 直接用 `auth.uid() = 固定 uid` 判斷，不依賴任何主站 helper function，kotoba 的權限模型完全自成一格
 - 六張表的 RLS 全部啟用，四個操作（SELECT/INSERT/UPDATE/DELETE）都限本人，連 SELECT 都不對外開放——學習資料視為純私人資料
 
+### ✅ Phase C3a：同步引擎——push（本地推送到雲端）（2026-07-26）
+- 新增 `syncQueue` outbox 表：六類本地資料（cards/reviewLogs/queuedItems/notes/standaloneNotes/settings）寫入時記錄待同步標記，debounce 5 秒後批次 push 到對應 `kotoba_*` 表；未登入/離線/連不上時靜默跳過，絕不依雲端狀態刪改本地資料
+- `reviewLogs`/`standaloneNotes` 本地是裝置內 auto-increment 整數、跨裝置會撞，改用 client 端產生的 uuid（`remoteId`）當遠端主鍵；Dexie v7 遷移回填既有資料的 `remoteId` 並整批排入同步佇列，讓既有使用者登入後舊資料也會逐步推上雲
+- **離線指示修正**：原本純被動依賴 `navigator.onLine`（部分瀏覽器尤其 iOS Safari 不可靠），後改回被動雙訊號判定，佇列非空時優先顯示待同步數而非離線標籤
+- 已在 iPhone Safari 正式站真機驗收通過
+
+### ✅ Phase C3b：同步引擎——pull（雲端拉取到本地）（2026-07-27）
+- 新增 `pullRemoteChanges()`：六張表各自獨立 try/catch 從 `kotoba_*` 拉取，依 `updated_at` 做 last-write-wins 比對（本地沒有則新增、遠端較新才覆蓋、本地較新或相等一律保留本地）；`reviewLogs` 只用 `remoteId` 判斷是否已存在，不做時間比較
+- 絕不刪除本地資料——結構上完全不存在對六張表呼叫 `.delete()`/`.clear()` 的路徑；所有寫入直接呼叫 `db.X.put()`/`.add()`，完全繞過 `enqueueSync()`，避免 pull 覆蓋本地後又把同一筆重新推回雲端造成迴圈
+- **前置修正**：push 送往雲端的 `updated_at` 原本來自 `syncQueue` 佇列項自己的暫存時間戳，push 成功後就消失，本地完全沒有留下「上次何時修改」的紀錄，pull 的 last-write-wins 比對無從比起。改為 `cards`/`settings` 新增持久化的 `updatedAt` 欄位（schema v8，既有資料回填為遷移當下時間）；`queuedItems` 借用既有 `addedAt`；`reviewLogs` 借用 `review` 時間——push 與 pull 現在共用同一組本地欄位當作 `updated_at` 的權威來源
+- 觸發時機：app 啟動、登入、回前景、恢復網路，一律先 pull 再 push（`syncNow`）；寫入後 debounce 觸發維持純 push，不牽動 pull
+- 雙裝置驗證通過：文字類資料（cards/reviewLogs/queuedItems/notes/standaloneNotes/settings）雙向同步已打通。驗證過程中發現一則裝置間 notes 差異，追查後確認是「其中一裝置本地刪除但雲端保留」的**預期行為**（C3b 明確排除刪除同步），非 bug——刪除同步現況見下方「待決事項」
+- **驗收流程教訓**：本次一度誤判 pull 有 bug，追查後發現是 pull 的 commit 完成後忘記 push/部署，正式站上跑的還是舊版——教訓已寫入 CLAUDE.md 累積規則
+
 ---
 
 ## 二、關鍵架構決策與理由
@@ -114,17 +128,20 @@
 
 ## 三、資料層現況
 
-**Dexie（IndexedDB）**：`DB_SCHEMA_VERSION = 6`（見 `src/db/schema.ts`），7 張表：
+**Dexie（IndexedDB）**：`DB_SCHEMA_VERSION = 8`（見 `src/db/schema.ts`），9 張表：
 
 | 表 | 用途 |
 |---|---|
-| `cards` | FSRS 卡片狀態（含 suspended flag），複合主鍵 `[itemType+itemId]` |
-| `reviewLogs` | 每次複習的評分紀錄 |
-| `settings` | 全域設定（等級、假名開關、主題、語速、每日新卡上限） |
-| `queuedItems` | 已加入複習但尚未首次評分的項目 |
+| `cards` | FSRS 卡片狀態（含 suspended flag、`updatedAt`），複合主鍵 `[itemType+itemId]` |
+| `reviewLogs` | 每次複習的評分紀錄，`remoteId`（client 端產生的 uuid）為雲端主鍵 |
+| `settings` | 全域設定（等級、假名開關、主題、語速、每日新卡上限、`updatedAt`） |
+| `queuedItems` | 已加入複習但尚未首次評分的項目（`addedAt` 兼作同步用的最後修改時間） |
 | `notes` / `noteImages` | 單字/文法個人筆記 + 圖片 Blob |
-| `standaloneNotes` | 獨立筆記本 |
+| `standaloneNotes` | 獨立筆記本，`remoteId` 為雲端主鍵 |
 | `dailyMaterialCache` | AI 短文快取，主鍵 `dateLevel`（含版本號後綴），**排除於備份之外**（可重新生成，非珍貴資料） |
+| `syncQueue` | Push outbox，記錄待同步的 `(table, key, op)`，**排除於備份之外**（操作性佇列，非使用者內容） |
+
+`cards`/`reviewLogs`/`queuedItems`/`notes`/`standaloneNotes`/`settings` 六張表會雙向同步到 Supabase 的 `kotoba_*` 表（`noteImages`／`dailyMaterialCache` 不同步，見下方「連主站 Supabase」）。
 
 **跨筆 invariant 檢查**（`pipeline/emit.ts` 寫檔後執行，非單筆 zod schema 能捕捉）：
 - 文法 id 全域唯一（違反即中止管線）
@@ -185,12 +202,18 @@
 - Auth 與主站共用同一個 Supabase 專案——同一組 email/password 在 kotoba 與主站都能登入
 - 資料表已建立（Phase C2）：`kotoba_cards`／`kotoba_review_logs`／`kotoba_queued_items`／`kotoba_notes`／`kotoba_standalone_notes`／`kotoba_settings`，`kotoba_` 前綴與主站既有表完全隔離；`noteImages`（圖片）走 Storage，留給 C4 處理，尚未建立
 - **RLS 不依賴 `is_admin()`**——Phase C1 原文件推斷主站有現成的 `public.is_admin()` helper function 可用，Phase C2 實際操作時發現它不存在。六張表的 RLS 改用 `auth.uid() = 固定 uid` 直接判斷，四個操作（SELECT/INSERT/UPDATE/DELETE）都限本人，連 SELECT 都不對外開放
-- 目前僅完成後端結構，前端尚未接上任何同步邏輯（C3 才開始）
-- `supabase` client（`src/db/supabase.ts`）在 `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` 任一缺漏時是 `null`（不會讓 app 崩潰），此時登入功能不可用但其餘既有功能不受影響——這是 offline-first 承諾的直接延伸，不只涵蓋離線，也涵蓋「雲端服務尚未設定/連不上」
+- **雙向同步已打通（Phase C3a push + C3b pull，2026-07-27 雙裝置驗證通過）**：`cards`／`reviewLogs`／`queuedItems`／`notes`／`standaloneNotes`／`settings` 六張表持續雙向同步；`noteImages`（圖片）與 `dailyMaterialCache`（AI 短文快取）不同步
+- `supabase` client（`src/db/supabase.ts`）在 `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` 任一缺漏時是 `null`（不會讓 app 崩潰），此時登入與同步功能不可用但其餘既有功能不受影響——這是 offline-first 承諾的直接延伸，不只涵蓋離線，也涵蓋「雲端服務尚未設定/連不上」
 
 ---
 
-## 六、開始新任務的指令
+## 六、待決事項
+
+- **刪除同步（tombstone）尚未實作**：C3a/C3b 明確排除刪除同步——單一裝置刪除的資料（筆記、卡片等）不會傳播到其他裝置，且下次 pull 時會從雲端重新拉回本地（因為 pull 的規則是「本地沒有就新增」，無法區分「本地從未有過」與「本地曾經有、被使用者主動刪除」）。雙裝置驗證中已實際遇到一次（裝置刪除的筆記從雲端 pull 回來），確認是此限制的預期行為，非 bug。使用者評估中，尚未決定是否要做（若要做需另外設計 tombstone 機制，記錄「這筆已被誰在何時刪除」，不是本次 C3a/C3b 範圍）。
+
+---
+
+## 七、開始新任務的指令
 
 給新的 Claude 對話：
 
