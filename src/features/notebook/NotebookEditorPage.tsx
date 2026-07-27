@@ -61,19 +61,36 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
   async function handleImageSelected(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     e.target.value = ''
-    if (!file || !note) return
-    if (note.images.length >= MAX_IMAGES) {
+    if (!file) return
+
+    let currentNote = note
+    if (!currentNote) {
+      // First image on a not-yet-saved note — create it now (same title
+      // validation as the explicit 儲存 button) so there's a real id to
+      // attach the image to, then continue as if it already existed.
+      if (title.trim().length === 0) {
+        setTitleError('請輸入標題')
+        return
+      }
+      setTitleError(null)
+      const id = await createStandaloneNote(title, text)
+      currentNote = await getStandaloneNote(id)
+      setNote(currentNote)
+    }
+    if (!currentNote) return
+
+    if (currentNote.images.length >= MAX_IMAGES) {
       setImageError(`每篇筆記最多 ${MAX_IMAGES} 張圖片`)
       return
     }
     const compressed = await compressImage(file)
-    const result = await addStandaloneNoteImage(note.id, compressed)
+    const result = await addStandaloneNoteImage(currentNote.id, compressed)
     if (!result.ok) {
       setImageError(`每篇筆記最多 ${MAX_IMAGES} 張圖片`)
       return
     }
     setImageError(null)
-    setNote(await getStandaloneNote(note.id))
+    setNote(await getStandaloneNote(currentNote.id))
   }
 
   async function handleRemoveImage(imageId: number | undefined) {
@@ -136,7 +153,7 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
 
       {imageError && <p className="vocab-error-inline">{imageError}</p>}
 
-      {note && note.images.length < MAX_IMAGES && (
+      {(note?.images.length ?? 0) < MAX_IMAGES && (
         <label className="note-add-image-button">
           加入圖片
           <input type="file" accept="image/*" onChange={handleImageSelected} />
