@@ -315,6 +315,22 @@ export class KotobaDB extends Dexie {
             row.remoteId = crypto.randomUUID()
           })
       })
+    // Phase C4b: download needs to look up a noteImages row by remoteId
+    // (global dedup — has this image already been fetched, regardless of
+    // which note it's filed under) without scanning every row. No .upgrade()
+    // needed: the field already exists on every row since v9's backfill,
+    // Dexie just builds the index over existing data on this version bump.
+    this.version(10).stores({
+      cards: '[itemType+itemId], due, state',
+      reviewLogs: '++id, [itemType+itemId], review, remoteId',
+      settings: 'key',
+      queuedItems: '[itemType+itemId], addedAt',
+      notes: '[itemType+itemId]',
+      noteImages: '++id, noteKey, remoteId',
+      standaloneNotes: '++id, updatedAt, remoteId',
+      dailyMaterialCache: 'dateLevel',
+      syncQueue: '++id, table, key',
+    })
   }
 }
 
@@ -324,4 +340,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 9
+export const DB_SCHEMA_VERSION = 10

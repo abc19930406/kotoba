@@ -1,5 +1,6 @@
 import { supabase } from '../db/supabase.ts'
 import { pullRemoteChanges } from '../db/syncPull.ts'
+import { downloadPendingImages } from '../db/syncImageDownload.ts'
 import { pushPendingChanges } from '../db/syncPush.ts'
 import { uploadPendingImages } from '../db/syncImageUpload.ts'
 import { setSyncing, refreshPendingCount } from './syncStatus.ts'
@@ -10,13 +11,14 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 let syncing = false
 let initialized = false
 
-/** Pull first, then push, then upload pending images — reduces the odds of pushing stale local data over a newer remote change that just arrived. Pull failures don't block push: pull already retries safely on its own on the next trigger, and push has its own independent safety regardless of whether pull succeeded. */
+/** Pull text, then download pending images (Phase C4b — the freshly-pulled note rows give the download step its prefixes in the same pass), then push, then upload pending images. Pull/download failures don't block push: both already retry safely on their own on the next trigger, and push has its own independent safety regardless of whether they succeeded. */
 async function runSync(): Promise<void> {
   if (syncing) return
   syncing = true
   setSyncing(true)
   try {
     await pullRemoteChanges().catch(() => {})
+    await downloadPendingImages().catch(() => {})
     await pushPendingChanges()
     await uploadPendingImages()
   } finally {

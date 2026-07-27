@@ -3,6 +3,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 const mockPullRemoteChanges = vi.fn(async () => {})
 vi.mock('../db/syncPull.ts', () => ({ pullRemoteChanges: mockPullRemoteChanges }))
 
+const mockDownloadPendingImages = vi.fn(async () => {})
+vi.mock('../db/syncImageDownload.ts', () => ({ downloadPendingImages: mockDownloadPendingImages }))
+
 const mockPushPendingChanges = vi.fn(async () => {})
 vi.mock('../db/syncPush.ts', () => ({ pushPendingChanges: mockPushPendingChanges }))
 
@@ -18,6 +21,7 @@ const { scheduleSyncPush, syncNow, initSyncEngine } = await import('./syncEngine
 
 beforeEach(() => {
   mockPullRemoteChanges.mockClear().mockResolvedValue(undefined)
+  mockDownloadPendingImages.mockClear().mockResolvedValue(undefined)
   mockPushPendingChanges.mockClear().mockResolvedValue(undefined)
   mockUploadPendingImages.mockClear().mockResolvedValue(undefined)
 })
@@ -38,13 +42,14 @@ describe('scheduleSyncPush', () => {
     expect(mockPushPendingChanges).toHaveBeenCalledTimes(1)
   })
 
-  it('never pulls — the debounced after-write trigger is push-only', async () => {
+  it('never pulls or downloads images — the debounced after-write trigger is push-only', async () => {
     vi.useFakeTimers()
     scheduleSyncPush()
 
     await vi.advanceTimersByTimeAsync(5000)
 
     expect(mockPullRemoteChanges).not.toHaveBeenCalled()
+    expect(mockDownloadPendingImages).not.toHaveBeenCalled()
     expect(mockPushPendingChanges).toHaveBeenCalledTimes(1)
   })
 
@@ -81,10 +86,13 @@ describe('syncNow', () => {
     await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
   })
 
-  it('uploads pending images after pull and push', async () => {
+  it('downloads pending images after pull, then pushes, then uploads pending images', async () => {
     const order: string[] = []
     mockPullRemoteChanges.mockImplementation(async () => {
       order.push('pull')
+    })
+    mockDownloadPendingImages.mockImplementation(async () => {
+      order.push('download')
     })
     mockPushPendingChanges.mockImplementation(async () => {
       order.push('push')
@@ -95,7 +103,15 @@ describe('syncNow', () => {
 
     syncNow()
 
-    await vi.waitFor(() => expect(order).toEqual(['pull', 'push', 'upload']))
+    await vi.waitFor(() => expect(order).toEqual(['pull', 'download', 'push', 'upload']))
+  })
+
+  it('still pushes even when downloading images fails', async () => {
+    mockDownloadPendingImages.mockRejectedValue(new Error('network down'))
+
+    syncNow()
+
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
   })
 
   it('skips a concurrent call while a sync is already in flight', async () => {
