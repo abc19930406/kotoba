@@ -71,6 +71,11 @@ const noteImageRecordSchema = z.object({
   sort: z.number(),
   imageBase64: z.string(),
   mimeType: z.string(),
+  // Same rationale as reviewLogRecordSchema.remoteId above.
+  remoteId: z.string().default(() => crypto.randomUUID()),
+  // storagePath is deliberately NOT part of this schema — src/db/backup.ts's
+  // importBackup always treats restored images as pending upload regardless
+  // of what a backup JSON might claim; see its comment for why.
 })
 
 const standaloneNoteRecordSchema = z.object({

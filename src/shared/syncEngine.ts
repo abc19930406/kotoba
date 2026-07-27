@@ -1,6 +1,7 @@
 import { supabase } from '../db/supabase.ts'
 import { pullRemoteChanges } from '../db/syncPull.ts'
 import { pushPendingChanges } from '../db/syncPush.ts'
+import { uploadPendingImages } from '../db/syncImageUpload.ts'
 import { setSyncing, refreshPendingCount } from './syncStatus.ts'
 
 const DEBOUNCE_MS = 5000
@@ -9,7 +10,7 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 let syncing = false
 let initialized = false
 
-/** Pull first, then push — reduces the odds of pushing stale local data over a newer remote change that just arrived. Pull failures don't block push: pull already retries safely on its own on the next trigger, and push has its own independent safety regardless of whether pull succeeded. */
+/** Pull first, then push, then upload pending images — reduces the odds of pushing stale local data over a newer remote change that just arrived. Pull failures don't block push: pull already retries safely on its own on the next trigger, and push has its own independent safety regardless of whether pull succeeded. */
 async function runSync(): Promise<void> {
   if (syncing) return
   syncing = true
@@ -17,6 +18,7 @@ async function runSync(): Promise<void> {
   try {
     await pullRemoteChanges().catch(() => {})
     await pushPendingChanges()
+    await uploadPendingImages()
   } finally {
     syncing = false
     setSyncing(false)
@@ -24,13 +26,14 @@ async function runSync(): Promise<void> {
   }
 }
 
-/** Push only — no pull. Used by the debounced after-write trigger, where the only goal is getting *this* write up promptly; pulling isn't relevant to that and would just be extra network cost. */
+/** Push text + upload pending images — no pull. Used by the debounced after-write trigger, where the only goal is getting *this* write up promptly; pulling isn't relevant to that and would just be extra network cost. */
 async function runPushOnly(): Promise<void> {
   if (syncing) return
   syncing = true
   setSyncing(true)
   try {
     await pushPendingChanges()
+    await uploadPendingImages()
   } finally {
     syncing = false
     setSyncing(false)

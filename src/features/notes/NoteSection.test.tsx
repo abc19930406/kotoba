@@ -1,9 +1,18 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { db } from '../../db/schema.ts'
 import { getNote } from '../../db/notes.ts'
 import { resetBackStackForTests } from '../../shared/backStack.ts'
 import { NoteSection } from './NoteSection.tsx'
+
+// saveNoteText/addNoteImage's enqueueSync() otherwise fires a real 5s
+// debounce timer — irrelevant to these tests, and firing after a test's
+// fake-indexeddb instance is torn down throws an unhandled NotFoundError.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  syncNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
 
 beforeEach(async () => {
   await db.notes.clear()

@@ -162,6 +162,36 @@ describe('exportBackup / importBackup round trip', () => {
     expect(restoredSetting!.updatedAt).toBeInstanceOf(Date)
   })
 
+  it('accepts an old (pre-Phase-C4a) backup whose noteImages have no remoteId, and ignores any storagePath the JSON might claim', async () => {
+    const oldBackup = {
+      schemaVersion: 8,
+      exportedAt: new Date().toISOString(),
+      cards: [],
+      reviewLogs: [],
+      queuedItems: [],
+      settings: [],
+      noteImages: [
+        {
+          noteKey: 'vocab:v1',
+          sort: 0,
+          imageBase64: btoa('x'),
+          mimeType: 'image/jpeg',
+          // no remoteId — matches a real pre-C4a export
+          storagePath: 'vocab/v1/some-old-uuid.jpg', // hypothetical claim — must be ignored on import
+        },
+      ],
+    }
+
+    const parsed = backupSchema.parse(oldBackup)
+    expect(parsed.noteImages[0].remoteId).toEqual(expect.any(String))
+    expect('storagePath' in parsed.noteImages[0]).toBe(false) // not part of the schema — zod strips it
+
+    await expect(importBackup(parsed)).resolves.toBeUndefined()
+    const restored = await db.noteImages.where('noteKey').equals('vocab:v1').first()
+    expect(restored!.remoteId).toEqual(expect.any(String))
+    expect(restored!.storagePath).toBeUndefined()
+  })
+
   it('accepts an old (pre-Phase-8) backup that has no notes/noteImages/standaloneNotes fields, defaulting them to empty', () => {
     const oldBackup = {
       schemaVersion: 3,

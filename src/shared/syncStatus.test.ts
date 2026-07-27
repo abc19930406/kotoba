@@ -9,6 +9,7 @@ function setOnline(value: boolean) {
 
 beforeEach(async () => {
   await db.syncQueue.clear()
+  await db.noteImages.clear()
   setOnline(true)
   setSyncing(false)
 })
@@ -23,6 +24,19 @@ describe('useSyncStatus', () => {
     await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
     const { result } = renderHook(() => useSyncStatus())
     await waitFor(() => expect(result.current).toEqual({ kind: 'pending', count: 1 }))
+  })
+
+  it('merges pending image uploads (Phase C4a) into the same count as the text outbox', async () => {
+    await db.syncQueue.add({ table: 'cards', key: 'vocab:v1', op: 'upsert' })
+    await db.noteImages.add({ noteKey: 'vocab:v1', blob: new Blob(['x']), sort: 0, remoteId: 'img-uuid-1' })
+    const { result } = renderHook(() => useSyncStatus())
+    await waitFor(() => expect(result.current).toEqual({ kind: 'pending', count: 2 }))
+  })
+
+  it('an already-uploaded image (storagePath set) does not count as pending', async () => {
+    await db.noteImages.add({ noteKey: 'vocab:v1', blob: new Blob(['x']), sort: 0, remoteId: 'img-uuid-1', storagePath: 'vocab/v1/img-uuid-1.jpg' })
+    const { result } = renderHook(() => useSyncStatus())
+    await waitFor(() => expect(result.current).toEqual({ kind: 'synced' }))
   })
 
   it('reports syncing when setSyncing(true) is called', async () => {

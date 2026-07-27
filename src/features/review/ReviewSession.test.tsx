@@ -22,6 +22,15 @@ vi.mock('../../shared/contentLoader.ts', () => ({
   findGrammarEntry: vi.fn(async () => undefined),
 }))
 
+// gradeItem/suspendCard/resumeCard's enqueueSync() otherwise fires a real 5s
+// debounce timer — irrelevant to these tests and would leave a dangling
+// timer that can throw once the test's fake-indexeddb instance is torn down.
+vi.mock('../../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  syncNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
+
 const { ReviewSession } = await import('./ReviewSession.tsx')
 
 beforeEach(async () => {

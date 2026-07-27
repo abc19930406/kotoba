@@ -6,6 +6,9 @@ vi.mock('../db/syncPull.ts', () => ({ pullRemoteChanges: mockPullRemoteChanges }
 const mockPushPendingChanges = vi.fn(async () => {})
 vi.mock('../db/syncPush.ts', () => ({ pushPendingChanges: mockPushPendingChanges }))
 
+const mockUploadPendingImages = vi.fn(async () => {})
+vi.mock('../db/syncImageUpload.ts', () => ({ uploadPendingImages: mockUploadPendingImages }))
+
 const mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }))
 vi.mock('../db/supabase.ts', () => ({
   supabase: { auth: { onAuthStateChange: mockOnAuthStateChange } },
@@ -16,6 +19,7 @@ const { scheduleSyncPush, syncNow, initSyncEngine } = await import('./syncEngine
 beforeEach(() => {
   mockPullRemoteChanges.mockClear().mockResolvedValue(undefined)
   mockPushPendingChanges.mockClear().mockResolvedValue(undefined)
+  mockUploadPendingImages.mockClear().mockResolvedValue(undefined)
 })
 
 afterEach(() => {
@@ -43,6 +47,15 @@ describe('scheduleSyncPush', () => {
     expect(mockPullRemoteChanges).not.toHaveBeenCalled()
     expect(mockPushPendingChanges).toHaveBeenCalledTimes(1)
   })
+
+  it('uploads pending images too (Phase C4a) — text and image sync share one trigger', async () => {
+    vi.useFakeTimers()
+    scheduleSyncPush()
+
+    await vi.advanceTimersByTimeAsync(5000)
+
+    expect(mockUploadPendingImages).toHaveBeenCalledTimes(1)
+  })
 })
 
 describe('syncNow', () => {
@@ -66,6 +79,23 @@ describe('syncNow', () => {
     syncNow()
 
     await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+
+  it('uploads pending images after pull and push', async () => {
+    const order: string[] = []
+    mockPullRemoteChanges.mockImplementation(async () => {
+      order.push('pull')
+    })
+    mockPushPendingChanges.mockImplementation(async () => {
+      order.push('push')
+    })
+    mockUploadPendingImages.mockImplementation(async () => {
+      order.push('upload')
+    })
+
+    syncNow()
+
+    await vi.waitFor(() => expect(order).toEqual(['pull', 'push', 'upload']))
   })
 
   it('skips a concurrent call while a sync is already in flight', async () => {

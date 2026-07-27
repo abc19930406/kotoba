@@ -37,6 +37,7 @@ export async function exportBackup(): Promise<BackupData> {
       sort: img.sort,
       imageBase64: await blobToBase64(img.blob),
       mimeType: img.blob.type || 'image/jpeg',
+      remoteId: img.remoteId,
     })),
   )
   return {
@@ -60,11 +61,16 @@ export async function exportBackup(): Promise<BackupData> {
  * ids after this.
  */
 export async function importBackup(data: BackupData): Promise<void> {
+  // storagePath is deliberately omitted — every restored image starts as
+  // "pending upload" regardless of what the backup JSON might have claimed;
+  // uploadPendingImages() will re-confirm it in Storage via upsert, which is
+  // harmless if it was already there and correct if it wasn't.
   const decodedImages: NoteImageRecord[] = data.noteImages.map((img) => ({
     id: img.id,
     noteKey: img.noteKey,
     sort: img.sort,
     blob: base64ToBlob(img.imageBase64, img.mimeType),
+    remoteId: img.remoteId,
   }))
 
   await db.transaction(

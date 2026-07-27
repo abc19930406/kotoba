@@ -34,8 +34,19 @@ export function setSyncing(value: boolean): void {
   notify()
 }
 
+/**
+ * "N 筆待同步" is one merged number covering both the text outbox
+ * (`syncQueue`) and images still waiting to upload (Phase C4a) — reporting
+ * them as two separate counts would just raise "what's the difference"
+ * questions without telling the user anything more actionable than "not
+ * everything is synced yet".
+ */
 export async function refreshPendingCount(): Promise<void> {
-  pendingCount = await db.syncQueue.count()
+  const [queueCount, pendingImages] = await Promise.all([
+    db.syncQueue.count(),
+    db.noteImages.filter((img) => img.storagePath === undefined).count(),
+  ])
+  pendingCount = queueCount + pendingImages
   notify()
 }
 

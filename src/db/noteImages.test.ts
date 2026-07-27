@@ -1,6 +1,15 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { db } from './schema.ts'
 import { listNoteImages, addNoteImageByKey, removeNoteImage, deleteNoteImagesByKey } from './noteImages.ts'
+
+// addNoteImageByKey's scheduleSyncPush() side effect fires a real 5s
+// debounce timer otherwise — irrelevant to these tests and would leave a
+// dangling timer.
+vi.mock('../shared/syncEngine.ts', () => ({
+  scheduleSyncPush: vi.fn(),
+  syncNow: vi.fn(),
+  initSyncEngine: vi.fn(),
+}))
 
 function makeBlob(byte: number): Blob {
   return new Blob([new Uint8Array([byte])], { type: 'image/jpeg' })
@@ -62,5 +71,19 @@ describe('deleteNoteImagesByKey', () => {
 
     expect(await listNoteImages('key-a')).toHaveLength(0)
     expect(await listNoteImages('key-b')).toHaveLength(1)
+  })
+})
+
+describe('Phase C4a: sync metadata', () => {
+  it('assigns each image its own remoteId and leaves storagePath unset', async () => {
+    await addNoteImageByKey('key-a', makeBlob(1))
+    await addNoteImageByKey('key-a', makeBlob(2))
+
+    const [first, second] = await listNoteImages('key-a')
+    expect(first.remoteId).toEqual(expect.any(String))
+    expect(second.remoteId).toEqual(expect.any(String))
+    expect(first.remoteId).not.toBe(second.remoteId)
+    expect(first.storagePath).toBeUndefined()
+    expect(second.storagePath).toBeUndefined()
   })
 })

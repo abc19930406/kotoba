@@ -1,4 +1,5 @@
 import { db, type NoteImageRecord } from './schema.ts'
+import { scheduleSyncPush } from '../shared/syncEngine.ts'
 
 export const MAX_NOTE_IMAGES = 4
 
@@ -9,10 +10,12 @@ export async function listNoteImages(noteKey: string): Promise<NoteImageRecord[]
   return db.noteImages.where('noteKey').equals(noteKey).sortBy('sort')
 }
 
+/** Both notes.ts and standaloneNotes.ts funnel image creation through here, so the remoteId (Phase C4a Storage path key) and the upload trigger only need to live in one place. */
 export async function addNoteImageByKey(noteKey: string, blob: Blob): Promise<AddImageResult> {
   const currentCount = await db.noteImages.where('noteKey').equals(noteKey).count()
   if (currentCount >= MAX_NOTE_IMAGES) return { ok: false, reason: 'max-reached' }
-  await db.noteImages.add({ noteKey, blob, sort: currentCount })
+  await db.noteImages.add({ noteKey, blob, sort: currentCount, remoteId: crypto.randomUUID() })
+  scheduleSyncPush()
   return { ok: true }
 }
 

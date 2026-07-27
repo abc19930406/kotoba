@@ -87,6 +87,10 @@ export interface NoteImageRecord {
   noteKey: string
   blob: Blob
   sort: number
+  /** Client-generated at creation — Storage object path is `${noteKey with ':' replaced by '/'}/${remoteId}.jpg` (Phase C4a). Same collision rationale as ReviewLogRecord.remoteId: the local auto-increment id is per-device and could collide across devices. */
+  remoteId: string
+  /** Set once the upload succeeds — its presence (not a separate boolean) is what "already uploaded" means. Absent = still pending. */
+  storagePath?: string
 }
 
 /** A standalone note (not tied to any vocab/grammar item) — a plain notebook entry. Images share the same `noteImages` table via the `standalone:{id}` noteKey namespace (see src/db/noteImages.ts). */
@@ -285,6 +289,32 @@ export class KotobaDB extends Dexie {
             row.updatedAt = now
           })
       })
+    // Phase C4a: noteImages needs its own remoteId for the same reason
+    // reviewLogs/standaloneNotes did in C3a — the local auto-increment id
+    // is per-device and would collide across devices if used as a Storage
+    // path. storagePath is deliberately left unset here (not backfilled):
+    // every pre-existing image becomes "pending upload", which is exactly
+    // right — none of them have ever been uploaded before this phase.
+    this.version(9)
+      .stores({
+        cards: '[itemType+itemId], due, state',
+        reviewLogs: '++id, [itemType+itemId], review, remoteId',
+        settings: 'key',
+        queuedItems: '[itemType+itemId], addedAt',
+        notes: '[itemType+itemId]',
+        noteImages: '++id, noteKey',
+        standaloneNotes: '++id, updatedAt, remoteId',
+        dailyMaterialCache: 'dateLevel',
+        syncQueue: '++id, table, key',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table<NoteImageRecord, number>('noteImages')
+          .toCollection()
+          .modify((row) => {
+            row.remoteId = crypto.randomUUID()
+          })
+      })
   }
 }
 
@@ -294,4 +324,4 @@ export const db = new KotobaDB()
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape
 // via zod rather than branching on this number.
-export const DB_SCHEMA_VERSION = 8
+export const DB_SCHEMA_VERSION = 9
