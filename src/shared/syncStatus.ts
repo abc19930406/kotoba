@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { db } from '../db/schema.ts'
+import { db, dbReady } from '../db/schema.ts'
 
 export type SyncStatus = { kind: 'syncing' } | { kind: 'pending'; count: number } | { kind: 'synced' } | { kind: 'offline' }
 
@@ -40,13 +40,26 @@ export function setSyncing(value: boolean): void {
  * them as two separate counts would just raise "what's the difference"
  * questions without telling the user anything more actionable than "not
  * everything is synced yet".
+ *
+ * Called unconditionally on every HomePage mount (via useSyncStatus below),
+ * regardless of login state — unlike pull/push/upload/download, there's no
+ * "not logged in" guard to naturally delay this past the db's first-ever
+ * open. Awaits dbReady explicitly and defaults to 0 on any failure (a
+ * brand-new device still mid-migration, or anything else) rather than
+ * throwing — a background status probe should never crash the app (Phase
+ * C4b bugfix: this threw NotFoundError on a genuinely fresh IndexedDB).
  */
 export async function refreshPendingCount(): Promise<void> {
-  const [queueCount, pendingImages] = await Promise.all([
-    db.syncQueue.count(),
-    db.noteImages.filter((img) => img.storagePath === undefined).count(),
-  ])
-  pendingCount = queueCount + pendingImages
+  try {
+    await dbReady
+    const [queueCount, pendingImages] = await Promise.all([
+      db.syncQueue.count(),
+      db.noteImages.filter((img) => img.storagePath === undefined).count(),
+    ])
+    pendingCount = queueCount + pendingImages
+  } catch {
+    pendingCount = 0
+  }
   notify()
 }
 

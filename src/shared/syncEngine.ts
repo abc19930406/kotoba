@@ -1,3 +1,4 @@
+import { dbReady } from '../db/schema.ts'
 import { supabase } from '../db/supabase.ts'
 import { pullRemoteChanges } from '../db/syncPull.ts'
 import { downloadPendingImages } from '../db/syncImageDownload.ts'
@@ -11,12 +12,13 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 let syncing = false
 let initialized = false
 
-/** Pull text, then download pending images (Phase C4b — the freshly-pulled note rows give the download step its prefixes in the same pass), then push, then upload pending images. Pull/download failures don't block push: both already retry safely on their own on the next trigger, and push has its own independent safety regardless of whether they succeeded. */
+/** Pull text, then download pending images (Phase C4b — the freshly-pulled note rows give the download step its prefixes in the same pass), then push, then upload pending images. Awaits dbReady first (belt-and-suspenders for a device that's already logged in but still running its first-ever schema migration, e.g. C5's "new device" scenario) — a rejection there is swallowed since every step below already guards/retries independently. Pull/download failures don't block push: both already retry safely on their own on the next trigger, and push has its own independent safety regardless of whether they succeeded. */
 async function runSync(): Promise<void> {
   if (syncing) return
   syncing = true
   setSyncing(true)
   try {
+    await dbReady.catch(() => {})
     await pullRemoteChanges().catch(() => {})
     await downloadPendingImages().catch(() => {})
     await pushPendingChanges()
@@ -34,6 +36,7 @@ async function runPushOnly(): Promise<void> {
   syncing = true
   setSyncing(true)
   try {
+    await dbReady.catch(() => {})
     await pushPendingChanges()
     await uploadPendingImages()
   } finally {

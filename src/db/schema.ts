@@ -336,6 +336,22 @@ export class KotobaDB extends Dexie {
 
 export const db = new KotobaDB()
 
+/**
+ * Explicit, awaitable readiness signal for a brand-new IndexedDB with no
+ * prior data — Dexie auto-opens (and runs every `.version().upgrade()` in
+ * the chain) on first table access, but boot-time sync code that runs
+ * unconditionally on mount (src/shared/syncStatus.ts's refreshPendingCount,
+ * src/shared/syncEngine.ts's runSync/runPushOnly) awaits this directly
+ * rather than relying on that implicit per-table auto-open, so it never
+ * races the first-ever version-upgrade transaction. `dbReady.catch()` below
+ * is a separate silent subscription purely to avoid a spurious "unhandled
+ * rejection" console warning if `db.open()` itself fails before any
+ * consumer has awaited it — it doesn't swallow the rejection for callers
+ * that `await dbReady` themselves, since that's the same promise object.
+ */
+export const dbReady: Promise<void> = db.open().then(() => undefined)
+dbReady.catch(() => {})
+
 // Mirrors the highest `.version(N)` above — bump alongside any future schema
 // migration. Written into backup exports (src/db/backup.ts) as an FYI for
 // the import confirmation screen; import validates the *current* row shape

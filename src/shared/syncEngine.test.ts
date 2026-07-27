@@ -1,5 +1,19 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+// A brand-new device still running its first-ever schema migration when
+// runSync/runPushOnly fire (Phase C4b bugfix scenario) — dbReady rejects
+// for the whole file; every test below still passes, proving runSync's
+// `await dbReady.catch(() => {})` genuinely swallows it rather than
+// happening to work only because dbReady resolves in this test env.
+// vi.hoisted (not a plain outer const) guarantees this is initialized
+// before vi.mock's factory below ever runs, regardless of statement order.
+const { mockDbReady } = vi.hoisted(() => {
+  const rejected = Promise.reject(new Error('simulated: still mid-migration'))
+  rejected.catch(() => {})
+  return { mockDbReady: rejected }
+})
+vi.mock('../db/schema.ts', () => ({ dbReady: mockDbReady }))
+
 const mockPullRemoteChanges = vi.fn(async () => {})
 vi.mock('../db/syncPull.ts', () => ({ pullRemoteChanges: mockPullRemoteChanges }))
 
@@ -125,9 +139,31 @@ describe('syncNow', () => {
 
     syncNow()
     syncNow()
-    resolvePush()
 
+    // syncNow() only synchronously sets the `syncing` flag before its first
+    // await — pushPendingChanges() itself isn't actually invoked (and
+    // resolvePush reassigned from its no-op default) until a few microtasks
+    // later. Resolving before that point would resolve the wrong (stale,
+    // never-awaited) closure value, permanently hanging this call's
+    // runSync() and leaking a stuck `syncing = true` into later tests.
     await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+    resolvePush()
+  })
+})
+
+describe('syncNow / scheduleSyncPush — database not ready yet', () => {
+  it('syncNow still pushes even though dbReady rejects for the whole file', async () => {
+    syncNow()
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+
+  it('scheduleSyncPush still pushes even though dbReady rejects for the whole file', async () => {
+    vi.useFakeTimers()
+    scheduleSyncPush()
+
+    await vi.advanceTimersByTimeAsync(5000)
+
+    expect(mockPushPendingChanges).toHaveBeenCalledTimes(1)
   })
 })
 
