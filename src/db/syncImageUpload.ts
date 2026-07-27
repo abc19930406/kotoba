@@ -3,9 +3,47 @@ import { supabase } from './supabase.ts'
 
 const BUCKET = 'kotoba-note-images'
 
-/** `vocab:v1` → `vocab/v1`, `standalone:42` → `standalone/42` — noteKey's existing format already carries everything needed for a stable, traceable Storage path. */
-function storagePathFor(noteKey: string, remoteId: string): string {
-  return `${noteKey.replace(':', '/')}/${remoteId}.jpg`
+async function sha256Hex(input: string): Promise<string> {
+  const bytes = new TextEncoder().encode(input)
+  const digest = await crypto.subtle.digest('SHA-256', bytes)
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('')
+}
+
+/**
+ * `vocab:v1` / `grammar:N5-～（場所）に～があります` → `vocab/{hash}/…` /
+ * `grammar/{hash}/…`, `standalone:42` → `standalone/{that note's remoteId}/…`.
+ *
+ * `itemId` can be an arbitrary human-readable string (confirmed root cause:
+ * grammar ids are titles, e.g. containing full-width brackets/tildes/spaces
+ * — all invalid or problematic in a Storage object key, which is what
+ * produced the 400s). It's hashed rather than sanitized-in-place so the
+ * result is guaranteed safe regardless of what future itemIds ever contain,
+ * and the hash is a pure function of itemId — any device can recompute the
+ * same path prefix from just the note's identity, with no separate
+ * path↔noteKey mapping to store or sync.
+ *
+ * Standalone notes use their own `remoteId` instead of noteKey's local
+ * auto-increment id — that id is per-device (Phase C3b's pull assigns a
+ * fresh one on each device), so it can't be a stable Storage path segment;
+ * `remoteId` is the same cross-device identifier C3a/C3b already rely on.
+ */
+async function storagePathFor(noteKey: string, imageRemoteId: string): Promise<string> {
+  const sep = noteKey.indexOf(':')
+  const prefix = noteKey.slice(0, sep)
+  const rest = noteKey.slice(sep + 1)
+
+  if (prefix === 'standalone') {
+    const note = await db.standaloneNotes.get(Number(rest))
+    // Falls back to the local id if the note is somehow already gone —
+    // never throws; worst case is a slightly less ideal path, not a failure.
+    const stableId = note?.remoteId ?? rest
+    return `standalone/${stableId}/${imageRemoteId}.jpg`
+  }
+
+  const hash = (await sha256Hex(rest)).slice(0, 16)
+  return `${prefix}/${hash}/${imageRemoteId}.jpg`
 }
 
 /**
@@ -28,7 +66,7 @@ export async function uploadPendingImages(): Promise<void> {
 
   for (const image of pending) {
     try {
-      const path = storagePathFor(image.noteKey, image.remoteId)
+      const path = await storagePathFor(image.noteKey, image.remoteId)
       const { error } = await supabase.storage.from(BUCKET).upload(path, image.blob, {
         upsert: true,
         contentType: 'image/jpeg',

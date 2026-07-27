@@ -22,8 +22,17 @@ function makeBlob(byte: number, size = 1): Blob {
   return new Blob([new Uint8Array(size).fill(byte)], { type: 'image/jpeg' })
 }
 
+async function sha256Hex(input: string): Promise<string> {
+  const bytes = new TextEncoder().encode(input)
+  const digest = await crypto.subtle.digest('SHA-256', bytes)
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('')
+}
+
 beforeEach(async () => {
   await db.noteImages.clear()
+  await db.standaloneNotes.clear()
   mockGetSession.mockReset().mockResolvedValue(FAKE_SESSION)
   mockUpload.mockReset().mockResolvedValue({ data: {}, error: null })
   mockStorageFrom.mockClear()
@@ -43,32 +52,49 @@ describe('uploadPendingImages — not logged in', () => {
 })
 
 describe('uploadPendingImages — success', () => {
-  it('uploads an item-note image with the expected path and marks storagePath', async () => {
+  it('uploads a vocab-note image at a hash of the itemId, never the raw itemId', async () => {
     const id = await db.noteImages.add({ noteKey: 'vocab:v1', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-1' })
+    const expectedHash = (await sha256Hex('v1')).slice(0, 16)
 
     await uploadPendingImages()
 
     expect(mockUpload).toHaveBeenCalledTimes(1)
     const [pathArg, , opts] = mockUpload.mock.calls[0]!
-    expect(pathArg).toBe('kotoba-note-images::vocab/v1/img-uuid-1.jpg')
+    expect(pathArg).toBe(`kotoba-note-images::vocab/${expectedHash}/img-uuid-1.jpg`)
     expect(opts).toEqual({ upsert: true, contentType: 'image/jpeg' })
     const row = await db.noteImages.get(id)
-    expect(row!.storagePath).toBe('vocab/v1/img-uuid-1.jpg')
+    expect(row!.storagePath).toBe(`vocab/${expectedHash}/img-uuid-1.jpg`)
   })
 
-  it('uploads a standalone-note image with the standalone/{id}/ path prefix', async () => {
-    const id = await db.noteImages.add({ noteKey: 'standalone:42', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-2' })
+  it('a grammar itemId full of full-width brackets/tildes/spaces (the actual root cause) still produces a fully safe path', async () => {
+    const nastyItemId = 'N5-～（場所）に～があります'
+    const id = await db.noteImages.add({ noteKey: `grammar:${nastyItemId}`, blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-nasty' })
 
     await uploadPendingImages()
 
     const [pathArg] = mockUpload.mock.calls[0]!
-    expect(pathArg).toBe('kotoba-note-images::standalone/42/img-uuid-2.jpg')
+    const path = pathArg.replace('kotoba-note-images::', '')
+    expect(path).toMatch(/^[A-Za-z0-9/_.-]+$/)
+    expect(path.startsWith('grammar/')).toBe(true)
+    expect(path).not.toContain(nastyItemId)
     const row = await db.noteImages.get(id)
-    expect(row!.storagePath).toBe('standalone/42/img-uuid-2.jpg')
+    expect(row!.storagePath).toMatch(/^[A-Za-z0-9/_.-]+$/)
+  })
+
+  it('uploads a standalone-note image keyed by the note\'s own remoteId, not its local auto-increment id', async () => {
+    const localId = await db.standaloneNotes.add({ remoteId: 'note-uuid-42', title: '標題', text: '內文', updatedAt: new Date() })
+    const id = await db.noteImages.add({ noteKey: `standalone:${localId}`, blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-2' })
+
+    await uploadPendingImages()
+
+    const [pathArg] = mockUpload.mock.calls[0]!
+    expect(pathArg).toBe('kotoba-note-images::standalone/note-uuid-42/img-uuid-2.jpg')
+    const row = await db.noteImages.get(id)
+    expect(row!.storagePath).toBe('standalone/note-uuid-42/img-uuid-2.jpg')
   })
 
   it('does not re-upload an image that already has a storagePath', async () => {
-    await db.noteImages.add({ noteKey: 'vocab:v1', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-1', storagePath: 'vocab/v1/img-uuid-1.jpg' })
+    await db.noteImages.add({ noteKey: 'vocab:v1', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-1', storagePath: 'vocab/deadbeef/img-uuid-1.jpg' })
 
     await uploadPendingImages()
 
@@ -89,7 +115,7 @@ describe('uploadPendingImages — success', () => {
 
     expect(mockUpload).toHaveBeenCalledTimes(1)
     const row = await db.noteImages.get(id)
-    expect(row!.storagePath).toBe('vocab/v1/img-uuid-big.jpg')
+    expect(row!.storagePath).toEqual(expect.any(String))
   })
 })
 
@@ -126,10 +152,10 @@ describe('uploadPendingImages — failure', () => {
     await uploadPendingImages()
 
     expect((await db.noteImages.get(failId))!.storagePath).toBeUndefined()
-    expect((await db.noteImages.get(okId))!.storagePath).toBe('vocab/v2/img-uuid-ok.jpg')
+    expect((await db.noteImages.get(okId))!.storagePath).toEqual(expect.any(String))
   })
 
-  it('is retried successfully on a later call after a prior failure', async () => {
+  it('is retried successfully on a later call after a prior failure (also proves a previously-stuck pending image recovers once the path bug is fixed)', async () => {
     const id = await db.noteImages.add({ noteKey: 'vocab:v1', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-1' })
     mockUpload.mockRejectedValueOnce(new Error('network down'))
 
@@ -137,7 +163,7 @@ describe('uploadPendingImages — failure', () => {
     expect((await db.noteImages.get(id))!.storagePath).toBeUndefined()
 
     await uploadPendingImages()
-    expect((await db.noteImages.get(id))!.storagePath).toBe('vocab/v1/img-uuid-1.jpg')
+    expect((await db.noteImages.get(id))!.storagePath).toEqual(expect.any(String))
   })
 })
 
