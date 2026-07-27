@@ -91,6 +91,14 @@ describe('downloadPendingImages — local missing, cloud has it (vocab/grammar i
 
     await downloadPendingImages()
 
+    // Asserts the download step itself ran (not just list()) — a Phase C4b
+    // bug shipped where the code only ever listed the cloud folder and
+    // silently never reached .download() for any listed file; a test that
+    // only checked "images.length === 1" wouldn't have caught it if a mock
+    // slip made that assertion pass some other way, so this checks the mock
+    // call directly too.
+    expect(mockDownload).toHaveBeenCalledWith(`${BUCKET_PREFIX}${prefix}/img-remote-1.jpg`)
+
     const images = await db.noteImages.where('noteKey').equals('vocab:v1').toArray()
     expect(images).toHaveLength(1)
     expect(images[0]!.remoteId).toBe('img-remote-1')
@@ -203,6 +211,28 @@ describe('downloadPendingImages — interruption resilience', () => {
 
     const images = await db.noteImages.where('noteKey').equals('vocab:v1').toArray()
     expect(images.map((i) => i.remoteId)).toEqual(['good'])
+  })
+
+  // Real Supabase Storage failures (e.g. an RLS policy that permits list()
+  // but denies the actual object GET — plausible root cause for a Phase
+  // C4b field report of "list succeeds, download never appears in Network")
+  // resolve as { data: null, error: {...} } rather than throwing. The code
+  // must catch this shape too, not just a thrown exception, and — since a
+  // silently-swallowed failure here is indistinguishable from "download was
+  // never attempted" from the outside — must actually surface it somewhere
+  // observable (console.warn) instead of failing invisibly forever.
+  it('a .download() that resolves with an error object (not a thrown exception) is treated as a failure and logged', async () => {
+    await db.notes.add({ itemType: 'vocab', itemId: 'v1', text: '', updatedAt: new Date() })
+    const prefix = await itemPrefix('vocab', 'v1')
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    mockList.mockResolvedValue({ data: [{ name: 'denied.jpg' }], error: null })
+    mockDownload.mockResolvedValue({ data: null, error: { message: 'permission denied' } })
+
+    await expect(downloadPendingImages()).resolves.toBeUndefined()
+
+    expect(await db.noteImages.where('noteKey').equals('vocab:v1').count()).toBe(0)
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining(`${prefix}/denied.jpg`), expect.anything())
+    warnSpy.mockRestore()
   })
 })
 

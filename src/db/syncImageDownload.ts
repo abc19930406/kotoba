@@ -18,12 +18,14 @@ async function downloadImagesForNote(noteKey: string, prefix: string): Promise<v
     const { data, error } = await supabase!.storage.from(BUCKET).list(prefix)
     if (error) throw error
     files = data ?? []
-  } catch {
+  } catch (err) {
+    console.warn(`[syncImageDownload] list failed for ${prefix}`, err)
     return
   }
 
   for (const file of files) {
     if (!file.name.endsWith(JPG_SUFFIX)) continue
+    const path = `${prefix}/${file.name}`
     try {
       const imageRemoteId = file.name.slice(0, -JPG_SUFFIX.length)
 
@@ -35,7 +37,6 @@ async function downloadImagesForNote(noteKey: string, prefix: string): Promise<v
       const currentCount = await db.noteImages.where('noteKey').equals(noteKey).count()
       if (currentCount >= MAX_NOTE_IMAGES) continue
 
-      const path = `${prefix}/${file.name}`
       const { data: blob, error: downloadError } = await supabase!.storage.from(BUCKET).download(path)
       if (downloadError || !blob) throw downloadError ?? new Error('empty download')
 
@@ -45,8 +46,14 @@ async function downloadImagesForNote(noteKey: string, prefix: string): Promise<v
       // separate "came from remote" flag needed (Phase C3b's pull uses the
       // analogous trick of just never calling enqueueSync).
       await db.noteImages.add({ noteKey, blob, sort: currentCount, remoteId: imageRemoteId, storagePath: path })
-    } catch {
+    } catch (err) {
       // Leave this image undownloaded — retried on the next pull trigger.
+      // Logged (not silent) because a per-image failure here is otherwise
+      // indistinguishable from "download was never attempted" from the
+      // outside — exactly the ambiguity that made a real Storage-side
+      // failure (e.g. an RLS policy that allows list but denies the actual
+      // object GET) hard to tell apart from a code bug during Phase C4b.
+      console.warn(`[syncImageDownload] download failed for ${path}`, err)
     }
   }
 }
@@ -84,8 +91,9 @@ export async function downloadPendingImages(): Promise<void> {
       const noteKey = `${note.itemType}:${note.itemId}`
       const prefix = await storagePrefixForItemNote(note.itemType, note.itemId)
       await downloadImagesForNote(noteKey, prefix)
-    } catch {
+    } catch (err) {
       // Leave this note's images as-is — retried on the next pull trigger.
+      console.warn(`[syncImageDownload] failed to process note ${note.itemType}:${note.itemId}`, err)
     }
   }
 
@@ -94,8 +102,9 @@ export async function downloadPendingImages(): Promise<void> {
       const noteKey = `standalone:${note.id}`
       const prefix = storagePrefixForStandaloneNoteRemoteId(note.remoteId)
       await downloadImagesForNote(noteKey, prefix)
-    } catch {
+    } catch (err) {
       // Leave this note's images as-is — retried on the next pull trigger.
+      console.warn(`[syncImageDownload] failed to process standalone note ${note.id}`, err)
     }
   }
 }
