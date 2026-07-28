@@ -152,7 +152,7 @@ describe('sync queue', () => {
     expect(await db.syncQueue.where('table').equals('notes').count()).toBe(0)
   })
 
-  it('deleteNote enqueues a notes delete', async () => {
+  it('deleteNote enqueues a notes delete carrying a deletedAt timestamp (Phase C6 tombstone)', async () => {
     await saveNoteText('vocab', 'v1', 'delete me')
     await db.syncQueue.clear()
 
@@ -160,6 +160,8 @@ describe('sync queue', () => {
 
     const rows = await db.syncQueue.toArray()
     expect(rows).toEqual(expect.arrayContaining([expect.objectContaining({ table: 'notes', key: 'vocab:v1', op: 'delete' })]))
+    const deleteEntry = rows.find((r) => r.table === 'notes' && r.op === 'delete')
+    expect(deleteEntry!.deletedAt).toEqual(expect.any(String))
   })
 })
 

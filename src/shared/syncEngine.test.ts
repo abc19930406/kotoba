@@ -20,6 +20,9 @@ vi.mock('../db/syncPull.ts', () => ({ pullRemoteChanges: mockPullRemoteChanges }
 const mockDownloadPendingImages = vi.fn(async () => {})
 vi.mock('../db/syncImageDownload.ts', () => ({ downloadPendingImages: mockDownloadPendingImages }))
 
+const mockApplyImageDeletions = vi.fn(async () => {})
+vi.mock('../db/syncImageDelete.ts', () => ({ applyImageDeletions: mockApplyImageDeletions }))
+
 const mockPushPendingChanges = vi.fn(async () => {})
 vi.mock('../db/syncPush.ts', () => ({ pushPendingChanges: mockPushPendingChanges }))
 
@@ -36,6 +39,7 @@ const { scheduleSyncPush, syncNow, initSyncEngine } = await import('./syncEngine
 beforeEach(() => {
   mockPullRemoteChanges.mockClear().mockResolvedValue(undefined)
   mockDownloadPendingImages.mockClear().mockResolvedValue(undefined)
+  mockApplyImageDeletions.mockClear().mockResolvedValue(undefined)
   mockPushPendingChanges.mockClear().mockResolvedValue(undefined)
   mockUploadPendingImages.mockClear().mockResolvedValue(undefined)
 })
@@ -56,7 +60,7 @@ describe('scheduleSyncPush', () => {
     expect(mockPushPendingChanges).toHaveBeenCalledTimes(1)
   })
 
-  it('never pulls or downloads images — the debounced after-write trigger is push-only', async () => {
+  it('never pulls, downloads images, or applies image deletions — the debounced after-write trigger is push-only', async () => {
     vi.useFakeTimers()
     scheduleSyncPush()
 
@@ -64,6 +68,7 @@ describe('scheduleSyncPush', () => {
 
     expect(mockPullRemoteChanges).not.toHaveBeenCalled()
     expect(mockDownloadPendingImages).not.toHaveBeenCalled()
+    expect(mockApplyImageDeletions).not.toHaveBeenCalled()
     expect(mockPushPendingChanges).toHaveBeenCalledTimes(1)
   })
 
@@ -100,13 +105,16 @@ describe('syncNow', () => {
     await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
   })
 
-  it('downloads pending images after pull, then pushes, then uploads pending images', async () => {
+  it('downloads pending images after pull, applies image deletions after download, then pushes, then uploads pending images', async () => {
     const order: string[] = []
     mockPullRemoteChanges.mockImplementation(async () => {
       order.push('pull')
     })
     mockDownloadPendingImages.mockImplementation(async () => {
       order.push('download')
+    })
+    mockApplyImageDeletions.mockImplementation(async () => {
+      order.push('applyDeletions')
     })
     mockPushPendingChanges.mockImplementation(async () => {
       order.push('push')
@@ -117,11 +125,19 @@ describe('syncNow', () => {
 
     syncNow()
 
-    await vi.waitFor(() => expect(order).toEqual(['pull', 'download', 'push', 'upload']))
+    await vi.waitFor(() => expect(order).toEqual(['pull', 'download', 'applyDeletions', 'push', 'upload']))
   })
 
   it('still pushes even when downloading images fails', async () => {
     mockDownloadPendingImages.mockRejectedValue(new Error('network down'))
+
+    syncNow()
+
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+
+  it('still pushes even when applying image deletions fails', async () => {
+    mockApplyImageDeletions.mockRejectedValue(new Error('network down'))
 
     syncNow()
 

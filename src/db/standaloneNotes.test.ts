@@ -155,7 +155,7 @@ describe('sync queue', () => {
     expect(rows).toEqual([expect.objectContaining({ table: 'standaloneNotes', key: remoteId, op: 'upsert' })])
   })
 
-  it('deleteStandaloneNote enqueues a delete keyed by the remoteId it had before deletion', async () => {
+  it('deleteStandaloneNote enqueues a delete keyed by the remoteId it had before deletion, carrying a deletedAt timestamp (Phase C6 tombstone)', async () => {
     const id = await createStandaloneNote('要刪除', '')
     const remoteId = (await db.standaloneNotes.get(id))!.remoteId
     await db.syncQueue.clear()
@@ -164,5 +164,6 @@ describe('sync queue', () => {
 
     const rows = await db.syncQueue.toArray()
     expect(rows).toEqual([expect.objectContaining({ table: 'standaloneNotes', key: remoteId, op: 'delete' })])
+    expect(rows[0]!.deletedAt).toEqual(expect.any(String))
   })
 })

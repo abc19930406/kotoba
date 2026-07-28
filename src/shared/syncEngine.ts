@@ -2,6 +2,7 @@ import { dbReady } from '../db/schema.ts'
 import { supabase } from '../db/supabase.ts'
 import { pullRemoteChanges } from '../db/syncPull.ts'
 import { downloadPendingImages } from '../db/syncImageDownload.ts'
+import { applyImageDeletions } from '../db/syncImageDelete.ts'
 import { pushPendingChanges } from '../db/syncPush.ts'
 import { uploadPendingImages } from '../db/syncImageUpload.ts'
 import { setSyncing, refreshPendingCount } from './syncStatus.ts'
@@ -12,7 +13,23 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null
 let syncing = false
 let initialized = false
 
-/** Pull text, then download pending images (Phase C4b — the freshly-pulled note rows give the download step its prefixes in the same pass), then push, then upload pending images. Awaits dbReady first (belt-and-suspenders for a device that's already logged in but still running its first-ever schema migration, e.g. C5's "new device" scenario) — a rejection there is swallowed since every step below already guards/retries independently. Pull/download failures don't block push: both already retry safely on their own on the next trigger, and push has its own independent safety regardless of whether they succeeded. */
+/**
+ * Pull text, then download pending images (Phase C4b — the freshly-pulled
+ * note rows give the download step its prefixes in the same pass), then
+ * apply image-deletion tombstones (Phase C6 — deliberately AFTER download,
+ * not before: an image that was just deleted on another device but whose
+ * Storage object hadn't been removed yet could otherwise get freshly
+ * downloaded by the step above and then never get cleaned up until the next
+ * sync pass; running the tombstone check right after download catches that
+ * in the same pass), then push, then upload pending images. Awaits dbReady
+ * first (belt-and-suspenders for a device that's already logged in but
+ * still running its first-ever schema migration, e.g. C5's "new device"
+ * scenario) — a rejection there is swallowed since every step below already
+ * guards/retries independently. Pull/download/deletion failures don't block
+ * push: all three already retry safely on their own on the next trigger,
+ * and push has its own independent safety regardless of whether they
+ * succeeded.
+ */
 async function runSync(): Promise<void> {
   if (syncing) return
   syncing = true
@@ -21,6 +38,7 @@ async function runSync(): Promise<void> {
     await dbReady.catch(() => {})
     await pullRemoteChanges().catch(() => {})
     await downloadPendingImages().catch(() => {})
+    await applyImageDeletions().catch(() => {})
     await pushPendingChanges()
     await uploadPendingImages()
   } finally {

@@ -77,7 +77,7 @@ export async function deleteStandaloneNote(id: number): Promise<void> {
   await db.transaction('rw', db.standaloneNotes, db.noteImages, db.syncQueue, async () => {
     const existing = await db.standaloneNotes.get(id)
     await db.standaloneNotes.delete(id)
-    if (existing) await enqueueSync('standaloneNotes', existing.remoteId, 'delete')
+    if (existing) await enqueueSync('standaloneNotes', existing.remoteId, 'delete', { deletedAt: new Date().toISOString() })
     await deleteNoteImagesByKey(noteKeyOf(id))
   })
 }

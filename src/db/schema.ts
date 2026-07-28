@@ -121,8 +121,14 @@ export interface DailyMaterialCacheRecord {
   createdAt: Date
 }
 
-/** The six tables that push to Supabase (Phase C3a) — noteImages/dailyMaterialCache are excluded (image sync is C4; cache is regeneratable). */
-export type SyncTable = 'cards' | 'reviewLogs' | 'queuedItems' | 'notes' | 'standaloneNotes' | 'settings'
+/**
+ * The six tables that push to Supabase (Phase C3a) plus `noteImages`
+ * (Phase C6 — delete-only; image upload/download itself is a separate
+ * mechanism in src/db/syncImageUpload.ts/syncImageDownload.ts). `key` for
+ * `noteImages` is the image's own `remoteId`. `dailyMaterialCache` is
+ * excluded (regeneratable cache, not user content).
+ */
+export type SyncTable = 'cards' | 'reviewLogs' | 'queuedItems' | 'notes' | 'standaloneNotes' | 'settings' | 'noteImages'
 
 /**
  * Outbox entry: "this (table, key) needs an upsert or delete pushed to
@@ -130,12 +136,24 @@ export type SyncTable = 'cards' | 'reviewLogs' | 'queuedItems' | 'notes' | 'stan
  * necessarily its local one) — see src/db/syncQueue.ts for the encoding per
  * table. Deliberately not a `dirty` flag per table: deletes need something to
  * survive the local row being gone, which a flag on the row itself can't do.
+ *
+ * `deletedAt`/`storagePath` (Phase C6, delete-only) are captured at the
+ * moment of the local delete — by push time the local row is already gone,
+ * so there's nothing left to read these back from:
+ * - `deletedAt`: the local delete's own timestamp (ISO string). Push uses it
+ *   both as the tombstone's `deleted_at` value and as the comparison basis
+ *   against the cloud row's current `updated_at`, so a delete never clobbers
+ *   a genuinely newer edit this device hasn't pulled yet (see syncPush.ts).
+ * - `storagePath`: only for `noteImages` deletes — the Storage object path
+ *   to remove, if the image had ever been uploaded.
  */
 export interface SyncQueueRecord {
   id?: number
   table: SyncTable
   key: string
   op: 'upsert' | 'delete'
+  deletedAt?: string
+  storagePath?: string
 }
 
 export class KotobaDB extends Dexie {

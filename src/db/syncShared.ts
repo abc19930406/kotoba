@@ -1,6 +1,11 @@
 import type { SyncTable, ItemType } from './schema.ts'
 
-/** The `kotoba_*` table name for each local syncable table. */
+/**
+ * The `kotoba_*` table name for each local syncable table.
+ * `noteImages` (Phase C6) maps to the deletion-tombstone table, not a table
+ * of the images themselves — images have no per-row cloud table at all,
+ * they live purely in Storage (see src/db/syncImageUpload.ts).
+ */
 export const CLOUD_TABLE: Record<SyncTable, string> = {
   cards: 'kotoba_cards',
   reviewLogs: 'kotoba_review_logs',
@@ -8,6 +13,7 @@ export const CLOUD_TABLE: Record<SyncTable, string> = {
   notes: 'kotoba_notes',
   standaloneNotes: 'kotoba_standalone_notes',
   settings: 'kotoba_settings',
+  noteImages: 'kotoba_note_image_deletions',
 }
 
 export interface CompositeKey {

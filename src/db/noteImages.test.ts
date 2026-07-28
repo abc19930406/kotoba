@@ -87,3 +87,54 @@ describe('Phase C4a: sync metadata', () => {
     expect(second.storagePath).toBeUndefined()
   })
 })
+
+describe('Phase C6: removeNoteImage tombstone/enqueue behavior', () => {
+  beforeEach(async () => {
+    await db.syncQueue.clear()
+  })
+
+  it('an image that was never uploaded (no storagePath) produces no sync queue entry at all', async () => {
+    await addNoteImageByKey('key-a', makeBlob(1))
+    const [image] = await listNoteImages('key-a')
+
+    await removeNoteImage(image.id!)
+
+    expect(await db.syncQueue.count()).toBe(0)
+  })
+
+  it('an already-uploaded image (storagePath set) enqueues a noteImages delete carrying its remoteId, deletedAt, and storagePath', async () => {
+    const id = await db.noteImages.add({ noteKey: 'key-a', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-1', storagePath: 'vocab/abc/img-uuid-1.jpg' })
+
+    await removeNoteImage(id)
+
+    const queued = await db.syncQueue.toArray()
+    expect(queued).toHaveLength(1)
+    expect(queued[0]).toMatchObject({
+      table: 'noteImages',
+      key: 'img-uuid-1',
+      op: 'delete',
+      storagePath: 'vocab/abc/img-uuid-1.jpg',
+    })
+    expect(queued[0]!.deletedAt).toEqual(expect.any(String))
+  })
+
+  it('the local row is gone either way, regardless of whether it had been uploaded', async () => {
+    const id = await db.noteImages.add({ noteKey: 'key-a', blob: makeBlob(1), sort: 0, remoteId: 'img-uuid-1', storagePath: 'vocab/abc/img-uuid-1.jpg' })
+
+    await removeNoteImage(id)
+
+    expect(await db.noteImages.get(id)).toBeUndefined()
+  })
+
+  it('deleteNoteImagesByKey enqueues one tombstone per uploaded image and none for never-uploaded ones', async () => {
+    await db.noteImages.add({ noteKey: 'key-a', blob: makeBlob(1), sort: 0, remoteId: 'img-uploaded', storagePath: 'vocab/abc/img-uploaded.jpg' })
+    await db.noteImages.add({ noteKey: 'key-a', blob: makeBlob(2), sort: 1, remoteId: 'img-not-uploaded' })
+
+    await deleteNoteImagesByKey('key-a')
+
+    expect(await listNoteImages('key-a')).toHaveLength(0)
+    const queued = await db.syncQueue.where('table').equals('noteImages').toArray()
+    expect(queued).toHaveLength(1)
+    expect(queued[0]).toMatchObject({ key: 'img-uploaded', op: 'delete' })
+  })
+})

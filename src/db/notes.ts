@@ -49,7 +49,7 @@ export async function deleteNote(itemType: ItemType, itemId: string): Promise<vo
   const noteKey = noteKeyOf(itemType, itemId)
   await db.transaction('rw', db.notes, db.noteImages, db.syncQueue, async () => {
     await db.notes.delete([itemType, itemId])
-    await enqueueSync('notes', compositeKey(itemType, itemId), 'delete')
+    await enqueueSync('notes', compositeKey(itemType, itemId), 'delete', { deletedAt: new Date().toISOString() })
     await deleteNoteImagesByKey(noteKey)
   })
 }
