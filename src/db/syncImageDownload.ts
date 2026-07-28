@@ -40,19 +40,29 @@ async function downloadImagesForNote(noteKey: string, prefix: string): Promise<v
       const { data: blob, error: downloadError } = await supabase!.storage.from(BUCKET).download(path)
       if (downloadError || !blob) throw downloadError ?? new Error('empty download')
 
+      // Confirmed via a real incognito-window field test: Chrome's
+      // Incognito IndexedDB backend throws "Error preparing Blob/File data
+      // to be stored in object store" (DexieError/UnknownError) when asked
+      // to structured-clone a Blob that's backed directly by a fetch()
+      // Response rather than a fully-realized in-memory buffer — list()
+      // succeeds (no Blob involved) and download() itself succeeds at the
+      // network level, but the subsequent IndexedDB write fails. Re-wrapping
+      // through arrayBuffer() produces a Blob IndexedDB can reliably store,
+      // at the cost of one extra buffer copy.
+      const storableBlob = new Blob([await blob.arrayBuffer()], { type: blob.type })
+
       // storagePath is set immediately — the same "already uploaded" filter
       // uploadPendingImages() already uses (storagePath === undefined means
       // pending) naturally treats this row as never-pending, with no
       // separate "came from remote" flag needed (Phase C3b's pull uses the
       // analogous trick of just never calling enqueueSync).
-      await db.noteImages.add({ noteKey, blob, sort: currentCount, remoteId: imageRemoteId, storagePath: path })
+      await db.noteImages.add({ noteKey, blob: storableBlob, sort: currentCount, remoteId: imageRemoteId, storagePath: path })
     } catch (err) {
       // Leave this image undownloaded — retried on the next pull trigger.
       // Logged (not silent) because a per-image failure here is otherwise
       // indistinguishable from "download was never attempted" from the
-      // outside — exactly the ambiguity that made a real Storage-side
-      // failure (e.g. an RLS policy that allows list but denies the actual
-      // object GET) hard to tell apart from a code bug during Phase C4b.
+      // outside — exactly the ambiguity that made this real bug (see the
+      // arrayBuffer() re-wrap above) hard to pin down during Phase C4b.
       console.warn(`[syncImageDownload] download failed for ${path}`, err)
     }
   }

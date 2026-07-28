@@ -105,6 +105,34 @@ describe('downloadPendingImages — local missing, cloud has it (vocab/grammar i
     expect(images[0]!.storagePath).toBe(`${prefix}/img-remote-1.jpg`)
   })
 
+  // A real incognito-window field test hit Chrome's Incognito IndexedDB
+  // backend rejecting a Blob backed directly by a fetch() Response with
+  // "Error preparing Blob/File data to be stored in object store" — the
+  // fix re-wraps the downloaded Blob via arrayBuffer() before storing.
+  // fake-indexeddb doesn't reproduce that browser-specific failure, so this
+  // instead pins down that the re-wrap preserves content/type exactly (the
+  // one thing that fix could plausibly get wrong) as a regression guard.
+  // Reads the blob at the point db.noteImages.add() is called, not after —
+  // fake-indexeddb (under jsdom, as used here) doesn't structured-clone Blob
+  // values correctly, the same pre-existing limitation documented in Phase
+  // 8's backup.test.ts, so a round-tripped read back out would be corrupted
+  // regardless of whether this fix is correct.
+  it('stores a blob with the same bytes and MIME type as the one downloaded', async () => {
+    await db.notes.add({ itemType: 'vocab', itemId: 'v1', text: '', updatedAt: new Date() })
+    const prefix = await itemPrefix('vocab', 'v1')
+    const original = new Blob([new Uint8Array([1, 2, 3, 4])], { type: 'image/jpeg' })
+    serveFolder(prefix, { 'img-remote-1.jpg': original })
+    const addSpy = vi.spyOn(db.noteImages, 'add')
+
+    await downloadPendingImages()
+
+    const stored = addSpy.mock.calls[0]![0].blob
+    expect(stored).not.toBe(original)
+    expect(stored.type).toBe('image/jpeg')
+    expect(new Uint8Array(await stored.arrayBuffer())).toEqual(new Uint8Array([1, 2, 3, 4]))
+    addSpy.mockRestore()
+  })
+
   it('also works for a grammar note (hash-based prefix, same as vocab)', async () => {
     const nastyItemId = 'N5-～（場所）に～があります'
     await db.notes.add({ itemType: 'grammar', itemId: nastyItemId, text: '', updatedAt: new Date() })
