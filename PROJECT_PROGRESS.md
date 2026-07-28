@@ -6,7 +6,7 @@
 
 ---
 
-## 一、已完成階段（Phase 0–C3b）
+## 一、已完成階段（Phase 0–C5）
 
 ### ✅ Phase 0 + 1：專案骨架 + 資料管線（2026-07-17）
 - Vite + React 18 + TypeScript strict PWA 骨架建立
@@ -68,7 +68,7 @@
 - 快取版本號遞增至 `:v3`
 
 ### ✅ Phase C0：雲端同步前置——資料規模盤點（2026-07-25）
-- 臨時 DEBUG 診斷工具（`src/features/debug/DataInventoryDebug.tsx`，掛在統計頁底部）：統計 7 張 IndexedDB 表筆數、`noteImages` 圖片總數/總大小/單張最大值、非圖片資料的 JSON 序列化大小估計
+- 臨時 DEBUG 診斷工具（`src/features/debug/DataInventoryDebug.tsx`，掛在統計頁底部，**已於 Phase C5 移除**）：統計 7 張 IndexedDB 表筆數、`noteImages` 圖片總數/總大小/單張最大值、非圖片資料的 JSON 序列化大小估計
 - 純讀取顯示，不修改任何資料；程式碼集中單一檔案，之後易於整段移除
 - 為雲端同步方案與成本評估提供實測資料規模依據，本身不做任何同步邏輯
 
@@ -99,6 +99,29 @@
 - 雙裝置驗證通過：文字類資料（cards/reviewLogs/queuedItems/notes/standaloneNotes/settings）雙向同步已打通。驗證過程中發現一則裝置間 notes 差異，追查後確認是「其中一裝置本地刪除但雲端保留」的**預期行為**（C3b 明確排除刪除同步），非 bug——刪除同步現況見下方「待決事項」
 - **驗收流程教訓**：本次一度誤判 pull 有 bug，追查後發現是 pull 的 commit 完成後忘記 push/部署，正式站上跑的還是舊版——教訓已寫入 CLAUDE.md 累積規則
 
+### ✅ Phase C4a：圖片上傳同步（本地 → Supabase Storage）（2026-07-27）
+- `noteImages` 表擴充 `remoteId`（client 端 uuid，Storage 物件檔名）與 `storagePath`（成功上傳後才填入，其存在與否即代表「已上傳」狀態，無需額外 boolean 欄位）；schema v9
+- Storage 路徑安全鍵：`itemId` 可能含全形括號/波浪號/空格等人類可讀字元（grammar 標題），不能直接組進路徑。改用 `${itemType}/{sha256(itemId).slice(0,16)}/{remoteId}.jpg`（單字/文法筆記，純函式雜湊，任何裝置可獨立重算）與 `standalone/{該筆記的 remoteId}/{remoteId}.jpg`（獨立筆記，用筆記自己的跨裝置穩定 uuid，不用本地 auto-increment id）
+- 上傳觸發時機與文字 push 共用同一顆 debounce；待上傳圖片數併入同一個「N 筆待同步」計數（本地零成本可算，與下載積壓不同，見 C4b）
+- **踩過的雷**：最初直接用 `noteKey`（含原始 `itemId`）組路徑，grammar 特殊字元導致上傳全部回 400；獨立筆記另外發現用本地 auto-increment id 組路徑也不穩定（跨裝置 pull 會產生新的本地 id）。兩者皆已修正，詳見 CLAUDE.md 累積規則「itemId 離開本地主鍵用途前必須先轉安全鍵」一條
+
+### ✅ Phase C4b：圖片下載同步（Supabase Storage → 本地）+ 獨立筆記本加圖 UI（2026-07-28）
+- 補上獨立筆記本缺少的「加入圖片」入口（資料層本就支援，純 UI 缺口：加圖按鈕原本要求筆記已存檔才顯示，比照 Phase 8 單字/文法筆記改為未存檔也能顯示，選圖時自動代為建立筆記）
+- `downloadPendingImages()`：重用 C4a 的路徑雜湊規則反查雲端資料夾，`.list()` 列出檔名、以圖片 `remoteId` 全域去重、下載後 `storagePath` 立即填入（與 uploadPendingImages 判斷「待上傳」用同一個欄位，自然防止 pull→upload 迴圈，不需額外旗標）；絕不刪除本地既有圖片
+- 私有 bucket 顯示不需要 signed URL：`.download()` 本身就是用目前 session 認證直接回傳 Blob，顯示端本來就只用本地 Blob（`URL.createObjectURL`），不需改動
+- **三個真實 bug**（依序修正，過程見對應 commit）：
+  1. `noteImages` 表缺 `remoteId` 索引（C4a 只 backfill 欄位沒建索引）——下載端的全域去重查詢因此靜默失敗，schema 補到 v10
+  2. 無痕視窗下 `refreshPendingCount()` 在 schema migration 完成前就存取 object store，拋 `NotFoundError`——新增 `dbReady`（`db.open()` 的顯式 await 訊號），該函式與 `runSync`/`runPushOnly` 都改為等它、失敗安全預設空值
+  3. 無痕視窗下載圖片寫入 IndexedDB 失敗（`DexieError: Error preparing Blob/File data to be stored in object store`）——Chrome 無痕視窗的 IndexedDB 無法對「直接由網路回應支撐」的 Blob 做 structured clone，改用 `new Blob([await blob.arrayBuffer()], {type})` 重新包裝後解決
+- 這三個 bug 的除錯過程本身也留下教訓（測試 mock 深度、dev server 版本確認、靜默 catch 的危害），已寫入 CLAUDE.md 累積規則，不在此重複
+- 正式站真機雙裝置驗證通過：圖片雙向同步（上傳+下載）全部打通
+
+### ✅ Phase C5：雲端同步收尾（2026-07-28）
+- 移除 Phase C0 的臨時 DEBUG 資料盤點工具（`src/features/debug/`整個目錄 + `StatsPage.tsx`/`index.css` 的對應引用），當初設計成集中單一資料夾即為了此刻能整段移除
+- 首頁同步狀態旁新增一句使用者可見說明：「同步採最終一致：資料在 app 啟動或回到前景時對帳，非即時」，避免「切回才更新」被誤認為 bug
+- 修正兩個收尾發現的問題：獨立筆記本存檔後未自動返回列表（`handleSave()` 原本沒有導航）；`visibilitychange` 在 iOS Safari/WebKit 上對「已加到主畫面的 standalone PWA 從背景切回前景」時常不觸發（已紀錄的已知限制），加上 `window focus`/`pageshow` 兩個更可靠訊號互為備援
+- 本文件完整歸檔雲端同步工程（本節其餘條目 + 下方架構/資料層/Supabase 資源章節）
+
 ---
 
 ## 二、關鍵架構決策與理由
@@ -128,7 +151,7 @@
 
 ## 三、資料層現況
 
-**Dexie（IndexedDB）**：`DB_SCHEMA_VERSION = 8`（見 `src/db/schema.ts`），9 張表：
+**Dexie（IndexedDB）**：`DB_SCHEMA_VERSION = 10`（見 `src/db/schema.ts`），9 張表：
 
 | 表 | 用途 |
 |---|---|
@@ -136,12 +159,13 @@
 | `reviewLogs` | 每次複習的評分紀錄，`remoteId`（client 端產生的 uuid）為雲端主鍵 |
 | `settings` | 全域設定（等級、假名開關、主題、語速、每日新卡上限、`updatedAt`） |
 | `queuedItems` | 已加入複習但尚未首次評分的項目（`addedAt` 兼作同步用的最後修改時間） |
-| `notes` / `noteImages` | 單字/文法個人筆記 + 圖片 Blob |
+| `notes` | 單字/文法個人筆記文字，複合主鍵 `[itemType+itemId]` |
+| `noteImages` | 筆記圖片 Blob（單字/文法筆記與獨立筆記本共用，`noteKey` 字串關聯），`remoteId`（已建索引，C4b 圖片下載全域去重用）為 Storage 檔名、`storagePath` 存在與否即代表「已上傳/已下載」 |
 | `standaloneNotes` | 獨立筆記本，`remoteId` 為雲端主鍵 |
 | `dailyMaterialCache` | AI 短文快取，主鍵 `dateLevel`（含版本號後綴），**排除於備份之外**（可重新生成，非珍貴資料） |
 | `syncQueue` | Push outbox，記錄待同步的 `(table, key, op)`，**排除於備份之外**（操作性佇列，非使用者內容） |
 
-`cards`/`reviewLogs`/`queuedItems`/`notes`/`standaloneNotes`/`settings` 六張表會雙向同步到 Supabase 的 `kotoba_*` 表（`noteImages`／`dailyMaterialCache` 不同步，見下方「連主站 Supabase」）。
+`cards`/`reviewLogs`/`queuedItems`/`notes`/`standaloneNotes`/`settings` 六張表雙向同步到 Supabase 的 `kotoba_*` 表；`noteImages` 走 Storage bucket `kotoba-note-images`（上傳 C4a、下載 C4b，同樣雙向）；只有 `dailyMaterialCache`（可重新生成的快取）不同步。
 
 **跨筆 invariant 檢查**（`pipeline/emit.ts` 寫檔後執行，非單筆 zod schema 能捕捉）：
 - 文法 id 全域唯一（違反即中止管線）
@@ -197,19 +221,49 @@
 
 **IndexedDB 資料是網域鎖定的**——部署網域不得隨意更換，換網域等同使用者複習進度全部遺失（詳見 CLAUDE.md）。
 
-**連主站 Supabase**（Phase C1 起，Phase C2 建表）：
+**連主站 Supabase**（Phase C1 起，Phase C2 建表，Phase C5 收尾歸檔）：
 - 專案 ref：`ltmrkdldmgysczfnidra`（主站專案，與 kotoba 共用）
 - Auth 與主站共用同一個 Supabase 專案——同一組 email/password 在 kotoba 與主站都能登入
-- 資料表已建立（Phase C2）：`kotoba_cards`／`kotoba_review_logs`／`kotoba_queued_items`／`kotoba_notes`／`kotoba_standalone_notes`／`kotoba_settings`，`kotoba_` 前綴與主站既有表完全隔離；`noteImages`（圖片）走 Storage，留給 C4 處理，尚未建立
-- **RLS 不依賴 `is_admin()`**——Phase C1 原文件推斷主站有現成的 `public.is_admin()` helper function 可用，Phase C2 實際操作時發現它不存在。六張表的 RLS 改用 `auth.uid() = 固定 uid` 直接判斷，四個操作（SELECT/INSERT/UPDATE/DELETE）都限本人，連 SELECT 都不對外開放
-- **雙向同步已打通（Phase C3a push + C3b pull，2026-07-27 雙裝置驗證通過）**：`cards`／`reviewLogs`／`queuedItems`／`notes`／`standaloneNotes`／`settings` 六張表持續雙向同步；`noteImages`（圖片）與 `dailyMaterialCache`（AI 短文快取）不同步
+- **RLS 不依賴 `is_admin()`**——Phase C1 原文件推斷主站有現成的 `public.is_admin()` helper function 可用，Phase C2 實際操作時發現它不存在。所有表與 bucket 的 RLS 都改用 `auth.uid() = 固定 uid` 直接判斷，不依賴任何主站 helper function
 - `supabase` client（`src/db/supabase.ts`）在 `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` 任一缺漏時是 `null`（不會讓 app 崩潰），此時登入與同步功能不可用但其餘既有功能不受影響——這是 offline-first 承諾的直接延伸，不只涵蓋離線，也涵蓋「雲端服務尚未設定/連不上」
+
+**雲端同步架構總覽**（C1–C4b 建立，C5 收尾確認）：
+- **IndexedDB 為主儲存，雲端只是同步層**：app 全功能永遠以本地 IndexedDB 為準，雲端資料庫/Storage 純粹是「多裝置之間互相補齊」的媒介，任何時候拔網路、登出、Supabase 整個掛掉，app 既有功能都不受影響（只是不會再有新資料進來/出去）
+- **最終一致（eventual consistency），非即時同步**：沒有 realtime 訂閱，全部靠「觸發時對帳」——app 啟動、登入、回到前景（`visibilitychange`/`focus`/`pageshow`）、恢復網路時觸發一次 `pull → push`，寫入後 debounce 5 秒觸發一次純 `push`。兩裝置間的資料一致，要等其中一方觸發同步才會發生，不是寫入當下就跨裝置可見
+- **衝突解法是 last-write-wins**：每張表都有自己持久化的「最後修改時間」欄位（`cards`/`settings` 的 `updatedAt`、`queuedItems` 的 `addedAt`、`notes`/`standaloneNotes` 的 `updatedAt`），pull 時本地與遠端這個時間戳嚴格比較，遠端較新才覆蓋、本地較新或相等一律保留本地；`reviewLogs`（純新增歷史）與圖片（`noteImages`，全域 `remoteId` 去重）不比時間，只看本地是否已存在
+- **pull 絕不刪除本地資料**——六張表 + 圖片下載，程式碼裡結構上不存在對它們呼叫 `.delete()`/`.clear()` 的路徑；雲端缺某筆本地有的資料，一律視為「還沒推上去」而非「該刪除」
+
+**Supabase 資源清單**：
+
+| 資源 | 類型 | 用途 | RLS |
+|---|---|---|---|
+| `kotoba_cards` | 表 | FSRS 卡片狀態 | `auth.uid() = 固定 uid`，SELECT/INSERT/UPDATE/DELETE 皆限本人 |
+| `kotoba_review_logs` | 表 | 複習評分歷史（append-only） | 同上 |
+| `kotoba_queued_items` | 表 | 已加入複習、尚未首評的項目 | 同上 |
+| `kotoba_notes` | 表 | 單字/文法個人筆記文字 | 同上 |
+| `kotoba_standalone_notes` | 表 | 獨立筆記本 | 同上 |
+| `kotoba_settings` | 表 | 全域設定 | 同上 |
+| `kotoba-note-images` | Storage bucket（私有） | 筆記圖片二進位內容 | 同上（bucket policy 綁同一組固定 uid，非公開 bucket） |
+
+六張表皆為 Phase C2 所建；bucket 為 Phase C4a 所建。`kotoba_` 前綴與主站既有表完全隔離；連 SELECT 都不對外開放，學習資料視為純私人資料。
 
 ---
 
-## 六、待決事項
+## 六、已知限制與待決事項
 
+**同步本身的已知限制**（設計如此，非 bug）：
+- **最終一致、非即時**：見上方「雲端同步架構總覽」——不要把「切到另一裝置沒有立刻看到剛剛的變更」誤判成同步壞了，等下一次觸發（回前景/重開）即可
+- **離線佇列補推**：離線或推送失敗時，變更留在本地 `syncQueue`（文字）／`noteImages.storagePath === undefined`（圖片）佇列裡，UI 顯示「N 筆待同步」，下次任何觸發時機都會自動重試，不需要使用者手動介入
+
+**待決事項**：
 - **刪除同步（tombstone）尚未實作**：C3a/C3b 明確排除刪除同步——單一裝置刪除的資料（筆記、卡片等）不會傳播到其他裝置，且下次 pull 時會從雲端重新拉回本地（因為 pull 的規則是「本地沒有就新增」，無法區分「本地從未有過」與「本地曾經有、被使用者主動刪除」）。雙裝置驗證中已實際遇到一次（裝置刪除的筆記從雲端 pull 回來），確認是此限制的預期行為，非 bug。使用者評估中，尚未決定是否要做（若要做需另外設計 tombstone 機制，記錄「這筆已被誰在何時刪除」，不是本次 C3a/C3b 範圍）。
+
+**雲端同步關鍵教訓**（已寫入 CLAUDE.md 累積規則，此處僅列標題並指向）：
+- fetch 來的 Blob 存進 IndexedDB 前必須重新包裝（`arrayBuffer()`），否則無痕視窗等環境 structured clone 會失敗
+- `itemId` 離開本地主鍵用途、進到 Storage 路徑等外部系統前必須先轉安全鍵（grammar id 含特殊字元，已踩過兩次）
+- PWA 正式站 Service Worker 快取、本機 dev server process 存活時間，都是「改了沒生效」的常見成因，驗收前務必先排除
+- 規劃跨專案共用資源（如 `is_admin()`）如果只憑文件推斷、沒有實際查證，必須在方案裡明確標示「未驗證」
+- 測試全過但真機壞掉時，優先懷疑 mock 只驗到「呼叫了 API」、沒驗到「真正的副作用發生了沒有」
 
 ---
 

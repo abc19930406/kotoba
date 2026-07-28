@@ -229,6 +229,7 @@ export function HomePage({
               登出
             </button>
             <p className="sync-status">{syncStatusLabel(syncStatus)}</p>
+            <p className="sync-status-note">同步採最終一致：資料在 app 啟動或回到前景時對帳，非即時。</p>
           </>
         ) : (
           <button type="button" className="suspended-list-link" onClick={onOpenLogin}>
