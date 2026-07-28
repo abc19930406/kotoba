@@ -80,8 +80,21 @@ export function initSyncEngine(): void {
   supabase.auth.onAuthStateChange((_event, session) => {
     if (session) syncNow()
   })
-  document.addEventListener('visibilitychange', () => {
+
+  // iOS Safari/WebKit is documented as unreliable about firing
+  // visibilitychange when a home-screen-installed (standalone) PWA resumes
+  // from being backgrounded/app-switched — confirmed by a real-device field
+  // report where sync only ever ran after a full close-and-reopen (which
+  // re-triggers the onAuthStateChange fire above), never on a plain
+  // switch-away-and-back. focus/pageshow are added as redundant, more
+  // reliable signals for the same "we're back in the foreground" moment —
+  // harmless if visibilitychange also fires for the same transition, since
+  // syncNow()'s `syncing` guard already collapses overlapping calls.
+  const triggerIfVisible = () => {
     if (document.visibilityState === 'visible') syncNow()
-  })
+  }
+  document.addEventListener('visibilitychange', triggerIfVisible)
+  window.addEventListener('focus', triggerIfVisible)
+  window.addEventListener('pageshow', triggerIfVisible)
   window.addEventListener('online', () => syncNow())
 }

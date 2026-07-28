@@ -51,11 +51,10 @@ export function NotebookEditorPage({ noteId, onBack }: NotebookEditorPageProps) 
     setTitleError(null)
     if (note) {
       await updateStandaloneNote(note.id, title, text)
-      setNote({ ...note, title, text })
     } else {
-      const id = await createStandaloneNote(title, text)
-      setNote(await getStandaloneNote(id))
+      await createStandaloneNote(title, text)
     }
+    onBack()
   }
 
   async function handleImageSelected(e: ChangeEvent<HTMLInputElement>) {

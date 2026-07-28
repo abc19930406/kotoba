@@ -174,3 +174,48 @@ describe('initSyncEngine', () => {
     expect(mockOnAuthStateChange).toHaveBeenCalledTimes(1)
   })
 })
+
+function setVisibilityState(value: DocumentVisibilityState) {
+  Object.defineProperty(document, 'visibilityState', { value, configurable: true })
+}
+
+// iOS Safari/WebKit is documented as unreliable about firing
+// visibilitychange when a standalone (home-screen-installed) PWA resumes
+// from being backgrounded — a real-device report found sync only ever ran
+// after a full close-and-reopen, never on a plain app-switch-away-and-back.
+// focus/pageshow are registered as redundant, more reliable "back in the
+// foreground" signals; each is tested independently so a regression in any
+// one of the three wouldn't be masked by the other two still passing.
+describe('initSyncEngine — returning to the foreground', () => {
+  beforeEach(() => {
+    initSyncEngine() // idempotent — ensures listeners are registered regardless of prior test order
+    setVisibilityState('visible')
+  })
+
+  it('visibilitychange while visible triggers a sync', async () => {
+    document.dispatchEvent(new Event('visibilitychange'))
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+
+  it('visibilitychange while hidden does not trigger a sync', async () => {
+    setVisibilityState('hidden')
+    document.dispatchEvent(new Event('visibilitychange'))
+    await new Promise((resolve) => setTimeout(resolve, 20))
+    expect(mockPushPendingChanges).not.toHaveBeenCalled()
+  })
+
+  it('window focus triggers a sync', async () => {
+    window.dispatchEvent(new Event('focus'))
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+
+  it('pageshow triggers a sync', async () => {
+    window.dispatchEvent(new Event('pageshow'))
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+
+  it('coming back online triggers a sync', async () => {
+    window.dispatchEvent(new Event('online'))
+    await vi.waitFor(() => expect(mockPushPendingChanges).toHaveBeenCalledTimes(1))
+  })
+})

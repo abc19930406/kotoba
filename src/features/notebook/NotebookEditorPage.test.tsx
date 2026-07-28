@@ -41,22 +41,26 @@ beforeEach(async () => {
 
 describe('NotebookEditorPage — new note', () => {
   it('blocks save and shows an error when the title is empty', async () => {
-    render(<NotebookEditorPage noteId={null} onBack={() => {}} />)
+    const onBack = vi.fn()
+    render(<NotebookEditorPage noteId={null} onBack={onBack} />)
 
     fireEvent.click(screen.getByText('儲存'))
 
     expect(await screen.findByText('請輸入標題')).toBeInTheDocument()
     expect(await db.standaloneNotes.count()).toBe(0)
+    expect(onBack).not.toHaveBeenCalled()
   })
 
-  it('creates the note on save', async () => {
-    render(<NotebookEditorPage noteId={null} onBack={() => {}} />)
+  it('creates the note on save and returns to the list', async () => {
+    const onBack = vi.fn()
+    render(<NotebookEditorPage noteId={null} onBack={onBack} />)
 
     fireEvent.change(screen.getByPlaceholderText('標題'), { target: { value: '我的筆記' } })
     fireEvent.change(screen.getByPlaceholderText('寫點什麼…'), { target: { value: '內容' } })
     fireEvent.click(screen.getByText('儲存'))
 
     await waitFor(async () => expect(await db.standaloneNotes.count()).toBe(1))
+    expect(onBack).toHaveBeenCalledTimes(1)
   })
 
   it('shows the 加入圖片 control immediately, even before the note is ever saved (matches Phase 8 item notes)', async () => {
@@ -112,9 +116,10 @@ describe('NotebookEditorPage — adding an image before the note has ever been s
 
 describe('NotebookEditorPage — existing note deletion', () => {
   it('deletes the note only after the confirm dialog is confirmed, not before', async () => {
-    render(<NotebookEditorPage noteId={null} onBack={() => {}} />)
-    fireEvent.change(screen.getByPlaceholderText('標題'), { target: { value: '要刪除的筆記' } })
-    fireEvent.click(screen.getByText('儲存'))
+    const { createStandaloneNote } = await import('../../db/standaloneNotes.ts')
+    const id = await createStandaloneNote('要刪除的筆記', '')
+
+    render(<NotebookEditorPage noteId={id} onBack={() => {}} />)
     await waitFor(() => screen.getByText('刪除整篇筆記'))
 
     fireEvent.click(screen.getByText('刪除整篇筆記'))
@@ -143,5 +148,20 @@ describe('NotebookEditorPage — editing an existing note', () => {
     await waitFor(() => expect(screen.getByDisplayValue('既有標題')).toBeInTheDocument())
     expect(screen.getByDisplayValue('既有內文')).toBeInTheDocument()
     expect(await getStandaloneNote(id)).not.toBeNull()
+  })
+
+  it('saves the edit and returns to the list', async () => {
+    const { createStandaloneNote } = await import('../../db/standaloneNotes.ts')
+    const id = await createStandaloneNote('既有標題', '既有內文')
+    const onBack = vi.fn()
+
+    render(<NotebookEditorPage noteId={id} onBack={onBack} />)
+    await waitFor(() => expect(screen.getByDisplayValue('既有標題')).toBeInTheDocument())
+
+    fireEvent.change(screen.getByPlaceholderText('標題'), { target: { value: '改過的標題' } })
+    fireEvent.click(screen.getByText('儲存'))
+
+    await waitFor(async () => expect((await getStandaloneNote(id))!.title).toBe('改過的標題'))
+    expect(onBack).toHaveBeenCalledTimes(1)
   })
 })
