@@ -19,6 +19,8 @@ import { useSpeechAvailable, setSpeechRatePreset, type SpeechRatePreset } from '
 import { getDailyPasscode, setDailyPasscode } from '../../shared/dailyPasscode.ts'
 import { useAuthSession } from '../../shared/authSession.ts'
 import { useSyncStatus, type SyncStatus } from '../../shared/syncStatus.ts'
+import { syncNow } from '../../shared/syncEngine.ts'
+import { PullToRefresh } from '../../shared/PullToRefresh.tsx'
 import { supabase } from '../../db/supabase.ts'
 import { getHomeReviewStats, type HomeReviewStats } from './queue.ts'
 
@@ -128,126 +130,133 @@ export function HomePage({
     await supabase?.auth.signOut()
   }
 
+  async function handlePullRefresh() {
+    await syncNow()
+    await refresh()
+  }
+
   const loaded = stats !== null
   const hasWork = loaded && (stats.dueCount > 0 || stats.newCount > 0)
 
   return (
-    <main className="home-page">
-      <h1>kotoba</h1>
-      <div className="home-stats">
-        <div className="stat">
-          <span className="stat-value">{stats?.dueCount ?? '…'}</span>
-          <span className="stat-label">今日到期</span>
+    <PullToRefresh onRefresh={handlePullRefresh}>
+      <main className="home-page">
+        <h1>kotoba</h1>
+        <div className="home-stats">
+          <div className="stat">
+            <span className="stat-value">{stats?.dueCount ?? '…'}</span>
+            <span className="stat-label">今日到期</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">{stats?.newCount ?? '…'}</span>
+            <span className="stat-label">新卡</span>
+          </div>
         </div>
-        <div className="stat">
-          <span className="stat-value">{stats?.newCount ?? '…'}</span>
-          <span className="stat-label">新卡</span>
-        </div>
-      </div>
-      {loaded && stats.queuedCount > 0 && (
-        <p className="queued-status">
-          已排隊 {stats.queuedCount} 張
-          {stats.budgetExhausted && '（今日新卡額度已用完，明天繼續）'}
-        </p>
-      )}
-      <button type="button" className="start-review" onClick={onStartReview} disabled={!hasWork}>
-        {hasWork ? '開始複習' : '今天沒有待複習卡片'}
-      </button>
-      <button type="button" className="browse-vocab" onClick={onBrowseVocab}>
-        瀏覽單字
-      </button>
-      <button type="button" className="browse-vocab" onClick={onBrowseGrammar}>
-        瀏覽文法
-      </button>
-      <button type="button" className="browse-vocab" onClick={onOpenNotebook}>
-        筆記本
-      </button>
-      <button type="button" className="browse-vocab" onClick={onOpenDaily}>
-        今日教材
-      </button>
-      <label className={loaded && stats.budgetExhausted ? 'daily-limit-setting emphasized' : 'daily-limit-setting'}>
-        每日新卡上限：
-        <input
-          type="number"
-          min={0}
-          value={dailyLimit}
-          onChange={(e) => handleLimitChange(e.target.valueAsNumber)}
-        />
-      </label>
-      <label className="current-level-setting">
-        目前主要學習等級：
-        <select value={currentLevel} onChange={(e) => handleCurrentLevelChange(e.target.value as JlptLevel)}>
-          {LEVEL_ORDER.map((level) => (
-            <option key={level} value={level}>
-              {level}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className="show-furigana-setting">
-        <input
-          type="checkbox"
-          checked={showFurigana}
-          onChange={(e) => handleShowFuriganaChange(e.target.checked)}
-        />
-        例句顯示假名注音
-      </label>
-      <label className="theme-setting">
-        外觀：
-        <select value={theme} onChange={(e) => onThemeChange(e.target.value as ThemePreference)}>
-          <option value="system">跟隨系統</option>
-          <option value="light">淺色</option>
-          <option value="dark">深色</option>
-        </select>
-      </label>
-      {speechAvailable ? (
-        <label className="speech-rate-setting">
-          發音語速：
-          <select value={speechRate} onChange={(e) => handleSpeechRateChange(e.target.value as SpeechRatePreset)}>
-            <option value="slow">慢</option>
-            <option value="standard">標準</option>
-            <option value="fast">快</option>
+        {loaded && stats.queuedCount > 0 && (
+          <p className="queued-status">
+            已排隊 {stats.queuedCount} 張
+            {stats.budgetExhausted && '（今日新卡額度已用完，明天繼續）'}
+          </p>
+        )}
+        <button type="button" className="start-review" onClick={onStartReview} disabled={!hasWork}>
+          {hasWork ? '開始複習' : '今天沒有待複習卡片'}
+        </button>
+        <button type="button" className="browse-vocab" onClick={onBrowseVocab}>
+          瀏覽單字
+        </button>
+        <button type="button" className="browse-vocab" onClick={onBrowseGrammar}>
+          瀏覽文法
+        </button>
+        <button type="button" className="browse-vocab" onClick={onOpenNotebook}>
+          筆記本
+        </button>
+        <button type="button" className="browse-vocab" onClick={onOpenDaily}>
+          今日教材
+        </button>
+        <label className={loaded && stats.budgetExhausted ? 'daily-limit-setting emphasized' : 'daily-limit-setting'}>
+          每日新卡上限：
+          <input
+            type="number"
+            min={0}
+            value={dailyLimit}
+            onChange={(e) => handleLimitChange(e.target.valueAsNumber)}
+          />
+        </label>
+        <label className="current-level-setting">
+          目前主要學習等級：
+          <select value={currentLevel} onChange={(e) => handleCurrentLevelChange(e.target.value as JlptLevel)}>
+            {LEVEL_ORDER.map((level) => (
+              <option key={level} value={level}>
+                {level}
+              </option>
+            ))}
           </select>
         </label>
-      ) : (
-        <p className="speech-unavailable-note">此裝置沒有偵測到可用的日文語音，發音功能已隱藏。</p>
-      )}
-      <label className="daily-passcode-setting">
-        每日教材通行碼：
-        <input
-          type="password"
-          autoComplete="off"
-          value={dailyPasscode}
-          onChange={(e) => handleDailyPasscodeChange(e.target.value)}
-        />
-      </label>
-      <div className="auth-setting">
-        {session ? (
-          <>
-            <p>已登入：{session.user.email}</p>
-            <button type="button" className="suspended-list-link" onClick={handleLogout}>
-              登出
-            </button>
-            <p className="sync-status">{syncStatusLabel(syncStatus)}</p>
-            <p className="sync-status-note">同步採最終一致：資料在 app 啟動或回到前景時對帳，非即時。</p>
-          </>
+        <label className="show-furigana-setting">
+          <input
+            type="checkbox"
+            checked={showFurigana}
+            onChange={(e) => handleShowFuriganaChange(e.target.checked)}
+          />
+          例句顯示假名注音
+        </label>
+        <label className="theme-setting">
+          外觀：
+          <select value={theme} onChange={(e) => onThemeChange(e.target.value as ThemePreference)}>
+            <option value="system">跟隨系統</option>
+            <option value="light">淺色</option>
+            <option value="dark">深色</option>
+          </select>
+        </label>
+        {speechAvailable ? (
+          <label className="speech-rate-setting">
+            發音語速：
+            <select value={speechRate} onChange={(e) => handleSpeechRateChange(e.target.value as SpeechRatePreset)}>
+              <option value="slow">慢</option>
+              <option value="standard">標準</option>
+              <option value="fast">快</option>
+            </select>
+          </label>
         ) : (
-          <button type="button" className="suspended-list-link" onClick={onOpenLogin}>
-            登入
+          <p className="speech-unavailable-note">此裝置沒有偵測到可用的日文語音，發音功能已隱藏。</p>
+        )}
+        <label className="daily-passcode-setting">
+          每日教材通行碼：
+          <input
+            type="password"
+            autoComplete="off"
+            value={dailyPasscode}
+            onChange={(e) => handleDailyPasscodeChange(e.target.value)}
+          />
+        </label>
+        <div className="auth-setting">
+          {session ? (
+            <>
+              <p>已登入：{session.user.email}</p>
+              <button type="button" className="suspended-list-link" onClick={handleLogout}>
+                登出
+              </button>
+              <p className="sync-status">{syncStatusLabel(syncStatus)}</p>
+              <p className="sync-status-note">同步採最終一致：資料在 app 啟動或回到前景時對帳，非即時。</p>
+            </>
+          ) : (
+            <button type="button" className="suspended-list-link" onClick={onOpenLogin}>
+              登入
+            </button>
+          )}
+        </div>
+        {loaded && stats.suspendedCount > 0 && (
+          <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
+            已熟悉清單（{stats.suspendedCount}）
           </button>
         )}
-      </div>
-      {loaded && stats.suspendedCount > 0 && (
-        <button type="button" className="suspended-list-link" onClick={onOpenSuspended}>
-          已熟悉清單（{stats.suspendedCount}）
+        <button type="button" className="suspended-list-link" onClick={onOpenStats}>
+          統計
         </button>
-      )}
-      <button type="button" className="suspended-list-link" onClick={onOpenStats}>
-        統計
-      </button>
-      <button type="button" className="suspended-list-link" onClick={onOpenAbout}>
-        關於
-      </button>
-    </main>
+        <button type="button" className="suspended-list-link" onClick={onOpenAbout}>
+          關於
+        </button>
+      </main>
+    </PullToRefresh>
   )
 }

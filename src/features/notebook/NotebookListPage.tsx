@@ -3,6 +3,8 @@ import { listStandaloneNotes, type StandaloneNoteSummary } from '../../db/standa
 import { filterStandaloneNotes } from './filterStandaloneNotes.ts'
 import { saveScrollPosition, useScrollRestore } from '../../shared/useScrollRestore.ts'
 import { pushLayer, goBack } from '../../shared/backStack.ts'
+import { syncNow } from '../../shared/syncEngine.ts'
+import { PullToRefresh } from '../../shared/PullToRefresh.tsx'
 import { NoteImageThumb } from '../notes/NoteImageThumb.tsx'
 import { NotebookEditorPage } from './NotebookEditorPage.tsx'
 
@@ -42,53 +44,60 @@ export function NotebookListPage({ onBack }: NotebookListPageProps) {
     setEditingId(id)
   }
 
+  async function handlePullRefresh() {
+    await syncNow()
+    await refresh()
+  }
+
   if (editingId !== null) {
     return <NotebookEditorPage noteId={editingId === 'new' ? null : editingId} onBack={goBack} />
   }
 
   return (
-    <div className="vocab-browse-page">
-      <div className="vocab-browse-header">
-        <button type="button" className="vocab-browse-back" onClick={onBack}>
-          ← 首頁
-        </button>
-        <h1>筆記本</h1>
-      </div>
-
-      <div className="vocab-browse-sticky-bar">
-        <div className="vocab-filters">
-          <input
-            type="search"
-            className="vocab-search"
-            placeholder="搜尋標題／內文"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            aria-label="搜尋筆記"
-          />
+    <PullToRefresh onRefresh={handlePullRefresh}>
+      <div className="vocab-browse-page">
+        <div className="vocab-browse-header">
+          <button type="button" className="vocab-browse-back" onClick={onBack}>
+            ← 首頁
+          </button>
+          <h1>筆記本</h1>
         </div>
+
+        <div className="vocab-browse-sticky-bar">
+          <div className="vocab-filters">
+            <input
+              type="search"
+              className="vocab-search"
+              placeholder="搜尋標題／內文"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              aria-label="搜尋筆記"
+            />
+          </div>
+        </div>
+
+        <button type="button" className="note-add-button" onClick={() => openEditor('new')}>
+          新增筆記
+        </button>
+
+        {notes === null && <p className="vocab-status">載入中…</p>}
+        {notes !== null && filtered.length === 0 && <p className="vocab-empty">沒有符合條件的筆記。</p>}
+        {notes !== null && filtered.length > 0 && (
+          <ul className="notebook-list">
+            {filtered.map((note) => (
+              <li key={note.id}>
+                <button type="button" className="notebook-list-button" onClick={() => openEditor(note.id)}>
+                  {note.firstImage && <NoteImageThumb blob={note.firstImage.blob} />}
+                  <div className="notebook-list-text">
+                    <span className="notebook-list-title">{note.title}</span>
+                    <span className="notebook-list-preview">{note.text}</span>
+                  </div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-
-      <button type="button" className="note-add-button" onClick={() => openEditor('new')}>
-        新增筆記
-      </button>
-
-      {notes === null && <p className="vocab-status">載入中…</p>}
-      {notes !== null && filtered.length === 0 && <p className="vocab-empty">沒有符合條件的筆記。</p>}
-      {notes !== null && filtered.length > 0 && (
-        <ul className="notebook-list">
-          {filtered.map((note) => (
-            <li key={note.id}>
-              <button type="button" className="notebook-list-button" onClick={() => openEditor(note.id)}>
-                {note.firstImage && <NoteImageThumb blob={note.firstImage.blob} />}
-                <div className="notebook-list-text">
-                  <span className="notebook-list-title">{note.title}</span>
-                  <span className="notebook-list-preview">{note.text}</span>
-                </div>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    </PullToRefresh>
   )
 }

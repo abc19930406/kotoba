@@ -83,6 +83,18 @@ describe('scheduleSyncPush', () => {
 })
 
 describe('syncNow', () => {
+  it('returns a promise that resolves only after every step (including push) has settled — pull-to-refresh awaits this to know when to stop showing 同步中…', async () => {
+    let pushResolved = false
+    mockPushPendingChanges.mockImplementation(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0))
+      pushResolved = true
+    })
+
+    await syncNow()
+
+    expect(pushResolved).toBe(true)
+  })
+
   it('pulls before pushing', async () => {
     const order: string[] = []
     mockPullRemoteChanges.mockImplementation(async () => {

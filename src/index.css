@@ -1436,6 +1436,30 @@ button {
   opacity: 0.5;
 }
 
+/* Fixed overlay, not a wrapper around page content — see
+   src/shared/PullToRefresh.tsx's doc comment for why (avoids transforming
+   any ancestor of the sticky filter bars used on the browse pages).
+   z-index above .vocab-browse-sticky-bar (10) so it's visible above it
+   while pulling. */
+.pull-to-refresh-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  padding-top: env(safe-area-inset-top);
+  background: var(--page-bg);
+  color: var(--text);
+  font-size: 0.8125rem;
+  opacity: 0.75;
+  transition: height 0.15s ease-out;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;

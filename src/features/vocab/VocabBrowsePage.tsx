@@ -13,6 +13,8 @@ import {
 } from '../../db/cards.ts'
 import { saveScrollPosition, useScrollRestore } from '../../shared/useScrollRestore.ts'
 import { pushLayer, goBack } from '../../shared/backStack.ts'
+import { syncNow } from '../../shared/syncEngine.ts'
+import { PullToRefresh } from '../../shared/PullToRefresh.tsx'
 import { LevelTabs } from './LevelTabs.tsx'
 import { VocabFilters } from './VocabFilters.tsx'
 import { VocabList } from './VocabList.tsx'
@@ -153,6 +155,11 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
     setLevel(newLevel)
   }
 
+  async function handlePullRefresh() {
+    await syncNow()
+    await refreshStatuses()
+  }
+
   if (selectedEntry) {
     return (
       <VocabDetail
@@ -167,65 +174,67 @@ export function VocabBrowsePage({ onBack }: VocabBrowsePageProps) {
   }
 
   return (
-    <div className="vocab-browse-page">
-      <div className="vocab-browse-header">
-        <button type="button" className="vocab-browse-back" onClick={onBack}>
-          ← 首頁
-        </button>
-        <h1>單字瀏覽</h1>
-      </div>
+    <PullToRefresh onRefresh={handlePullRefresh}>
+      <div className="vocab-browse-page">
+        <div className="vocab-browse-header">
+          <button type="button" className="vocab-browse-back" onClick={onBack}>
+            ← 首頁
+          </button>
+          <h1>單字瀏覽</h1>
+        </div>
 
-      <div className="vocab-browse-sticky-bar">
-        <LevelTabs current={level} onChange={handleLevelChange} />
+        <div className="vocab-browse-sticky-bar">
+          <LevelTabs current={level} onChange={handleLevelChange} />
+
+          {(isSearching || (currentLevelReady && !currentLevelError)) && (
+            <VocabFilters
+              search={search}
+              onSearchChange={setSearch}
+              posCodes={posCodes}
+              selectedPos={selectedPos}
+              onTogglePos={togglePos}
+            />
+          )}
+        </div>
+
+        {!isSearching && currentLevelError && (
+          <div className="vocab-error">
+            <p>載入 {level} 單字失敗：{currentLevelError}</p>
+            <button type="button" onClick={() => retryLevel(level)}>
+              重試
+            </button>
+          </div>
+        )}
+
+        {!isSearching && !currentLevelError && !currentLevelReady && <p className="vocab-status">載入中…</p>}
 
         {(isSearching || (currentLevelReady && !currentLevelError)) && (
-          <VocabFilters
-            search={search}
-            onSearchChange={setSearch}
-            posCodes={posCodes}
-            selectedPos={selectedPos}
-            onTogglePos={togglePos}
+          <>
+            {isSearching && pendingLevels.length > 0 && (
+              <p className="vocab-status">搜尋中…（載入中：{pendingLevels.join('、')}）</p>
+            )}
+            {isSearching && erroredLevels.length > 0 && (
+              <p className="vocab-error-inline">{erroredLevels.map((l) => `${l} 載入失敗`).join('、')}</p>
+            )}
+
+            <div className="vocab-batch-add">
+              <button type="button" onClick={() => setConfirmingBatch(true)} disabled={filtered.length === 0}>
+                批次加入目前 {filtered.length} 筆結果
+              </button>
+            </div>
+
+            <VocabList entries={filtered} statuses={statuses} showLevel={isSearching} onSelect={handleSelectEntry} />
+          </>
+        )}
+
+        {confirmingBatch && (
+          <BatchAddConfirm
+            count={filtered.length}
+            onConfirm={handleBatchConfirm}
+            onCancel={() => setConfirmingBatch(false)}
           />
         )}
       </div>
-
-      {!isSearching && currentLevelError && (
-        <div className="vocab-error">
-          <p>載入 {level} 單字失敗：{currentLevelError}</p>
-          <button type="button" onClick={() => retryLevel(level)}>
-            重試
-          </button>
-        </div>
-      )}
-
-      {!isSearching && !currentLevelError && !currentLevelReady && <p className="vocab-status">載入中…</p>}
-
-      {(isSearching || (currentLevelReady && !currentLevelError)) && (
-        <>
-          {isSearching && pendingLevels.length > 0 && (
-            <p className="vocab-status">搜尋中…（載入中：{pendingLevels.join('、')}）</p>
-          )}
-          {isSearching && erroredLevels.length > 0 && (
-            <p className="vocab-error-inline">{erroredLevels.map((l) => `${l} 載入失敗`).join('、')}</p>
-          )}
-
-          <div className="vocab-batch-add">
-            <button type="button" onClick={() => setConfirmingBatch(true)} disabled={filtered.length === 0}>
-              批次加入目前 {filtered.length} 筆結果
-            </button>
-          </div>
-
-          <VocabList entries={filtered} statuses={statuses} showLevel={isSearching} onSelect={handleSelectEntry} />
-        </>
-      )}
-
-      {confirmingBatch && (
-        <BatchAddConfirm
-          count={filtered.length}
-          onConfirm={handleBatchConfirm}
-          onCancel={() => setConfirmingBatch(false)}
-        />
-      )}
-    </div>
+    </PullToRefresh>
   )
 }

@@ -64,9 +64,19 @@ async function runPushOnly(): Promise<void> {
   }
 }
 
-/** Full sync (pull then push) immediately — app startup / login / back to foreground / back online. */
-export function syncNow(): void {
-  void runSync()
+/**
+ * Full sync (pull then push) immediately — app startup / login / back to
+ * foreground / back online / pull-to-refresh (src/shared/PullToRefresh.tsx).
+ * Returns the underlying runSync() promise so a caller that cares (like
+ * pull-to-refresh, which needs to know when to stop showing "同步中…") can
+ * await completion; existing fire-and-forget callers are unaffected since
+ * they never awaited this to begin with. If a sync is already in flight,
+ * this resolves immediately without waiting for it (runSync's own `syncing`
+ * guard short-circuits) — deliberate, not a bug: see PullToRefresh's own
+ * doc comment for why that's the desired de-duplication behavior.
+ */
+export function syncNow(): Promise<void> {
+  return runSync()
 }
 
 /** Push after a short quiet period — multiple writes in quick succession only trigger one push. Called from src/db/syncQueue.ts's enqueueSync(). */

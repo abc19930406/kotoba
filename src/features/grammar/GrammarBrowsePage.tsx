@@ -14,6 +14,8 @@ import {
 } from '../../db/cards.ts'
 import { saveScrollPosition, useScrollRestore } from '../../shared/useScrollRestore.ts'
 import { pushLayer, goBack } from '../../shared/backStack.ts'
+import { syncNow } from '../../shared/syncEngine.ts'
+import { PullToRefresh } from '../../shared/PullToRefresh.tsx'
 import { LevelTabs } from '../vocab/LevelTabs.tsx'
 import { GrammarList } from './GrammarList.tsx'
 import { GrammarDetail } from './GrammarDetail.tsx'
@@ -128,6 +130,11 @@ export function GrammarBrowsePage({ onBack }: GrammarBrowsePageProps) {
     setLevel(newLevel)
   }
 
+  async function handlePullRefresh() {
+    await syncNow()
+    await refreshStatuses()
+  }
+
   if (selectedEntry) {
     return (
       <GrammarDetail
@@ -143,53 +150,55 @@ export function GrammarBrowsePage({ onBack }: GrammarBrowsePageProps) {
   }
 
   return (
-    <div className="vocab-browse-page">
-      <div className="vocab-browse-header">
-        <button type="button" className="vocab-browse-back" onClick={onBack}>
-          ← 首頁
-        </button>
-        <h1>文法瀏覽</h1>
-      </div>
-
-      <div className="vocab-browse-sticky-bar">
-        <LevelTabs current={level} onChange={handleLevelChange} />
-        <div className="vocab-filters">
-          <input
-            type="search"
-            className="vocab-search"
-            placeholder="搜尋文法標題／說明"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            aria-label="搜尋文法"
-          />
-        </div>
-      </div>
-
-      {!isSearching && currentLevelError && (
-        <div className="vocab-error">
-          <p>
-            載入 {level} 文法失敗：{currentLevelError}
-          </p>
-          <button type="button" onClick={() => retryLevel(level)}>
-            重試
+    <PullToRefresh onRefresh={handlePullRefresh}>
+      <div className="vocab-browse-page">
+        <div className="vocab-browse-header">
+          <button type="button" className="vocab-browse-back" onClick={onBack}>
+            ← 首頁
           </button>
+          <h1>文法瀏覽</h1>
         </div>
-      )}
 
-      {!isSearching && !currentLevelError && !currentLevelReady && <p className="vocab-status">載入中…</p>}
+        <div className="vocab-browse-sticky-bar">
+          <LevelTabs current={level} onChange={handleLevelChange} />
+          <div className="vocab-filters">
+            <input
+              type="search"
+              className="vocab-search"
+              placeholder="搜尋文法標題／說明"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              aria-label="搜尋文法"
+            />
+          </div>
+        </div>
 
-      {(isSearching || (currentLevelReady && !currentLevelError)) && (
-        <>
-          {isSearching && pendingLevels.length > 0 && (
-            <p className="vocab-status">搜尋中…（載入中：{pendingLevels.join('、')}）</p>
-          )}
-          {isSearching && erroredLevels.length > 0 && (
-            <p className="vocab-error-inline">{erroredLevels.map((l) => `${l} 載入失敗`).join('、')}</p>
-          )}
+        {!isSearching && currentLevelError && (
+          <div className="vocab-error">
+            <p>
+              載入 {level} 文法失敗：{currentLevelError}
+            </p>
+            <button type="button" onClick={() => retryLevel(level)}>
+              重試
+            </button>
+          </div>
+        )}
 
-          <GrammarList entries={filtered} statuses={statuses} showLevel={isSearching} onSelect={handleSelectEntry} />
-        </>
-      )}
-    </div>
+        {!isSearching && !currentLevelError && !currentLevelReady && <p className="vocab-status">載入中…</p>}
+
+        {(isSearching || (currentLevelReady && !currentLevelError)) && (
+          <>
+            {isSearching && pendingLevels.length > 0 && (
+              <p className="vocab-status">搜尋中…（載入中：{pendingLevels.join('、')}）</p>
+            )}
+            {isSearching && erroredLevels.length > 0 && (
+              <p className="vocab-error-inline">{erroredLevels.map((l) => `${l} 載入失敗`).join('、')}</p>
+            )}
+
+            <GrammarList entries={filtered} statuses={statuses} showLevel={isSearching} onSelect={handleSelectEntry} />
+          </>
+        )}
+      </div>
+    </PullToRefresh>
   )
 }
